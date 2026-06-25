@@ -1,0 +1,192 @@
+{
+  "sections": [
+    {
+      "id": "sec_1781494346900",
+      "type": "rich-text-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "PRIVACY POLICY",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "\n\n\nAt tezhhomayaa.com, we respect your need to maintain the privacy of your information. It is important that you have full information about what information we collect, how we use it, and how we store it. Please read below to know these aspects.\n\n1. This Privacy Policy is issued by Victory Roll Fashion Private Limited, the entity which owns and operates tezhhomayaa.com (hereinafter referred to as “the website”).\n\n2. We collect personal information to provide better products and services for the customers and visitors of the website. We use this information to continuously improve the products and services.\n\n3. In the course of selling/providing you with the products and services, we may have to share your personal information with our employees, business associates, partners, contractors, and service providers. We do so only after they have agreed to maintain confidentiality.\n\n4. This Privacy Policy follows the laws of India where Victory Roll Fashion Private Limited is located. At the same time, we also follow generally accepted norms of maintaining privacy and confidentiality.\n\n5. This Privacy Policy may be amended or replaced at any time without any notice. You may wish to refer to it periodically to ensure that you have updated information.\n\n6. When any visitor to the website views and/or interacts with it, we collect the following information.\n\na. The information related to Operating Systems running on your device, Internet Protocol address, access times, browser type, server systems, and language, and the website you visited before the website is automatically collected by the website.\n\nb. When you interact with the website, we collect information about clicks, visits to specific pages and/or sections of the website, and overall interaction behavior.\n\nc. When you enter your personal information in any of the forms on the website and/or when you shop for any products, we collect information about name, address, phone number, and email. We do not collect information about your credit card/debit card or any other mode of payment. It is collected by the Payment Gateway provider and we do not collect or store it.\n\nd. We collect information using “Cookies”. Cookies are small data files stored on your hard drive by the websites. The Cookies help improve the website, provide a better experience for you, and to minimize repetitive actions on the website. The Cookies also help us in our marketing and analytical activities as well as capture details about the number of visits to the website and what areas of the website are more visited or are popular.\n\ni. You can change settings within the browser/s you use to customize the Cookies. You may delete old Cookies and even configure them to reject the Cookies. You can check your browser’s help information on how to do it. If you reject the Cookies, some features of the website are not available.\n\ne. When you sign up on the website, enter details in contact forms, and subscribe to our newsletters, we will use the information so collected to send you electronic communication on products, new launches, special deals, lookbooks etc. Some of this may be a marketing communication.\n\n7. All the information that we collect is processed and/or used by us in the following manner…\n\na. To understand and improve user experience on the website;\n\nb. To improve the services that we provide;\n\nc. To provide products that you have ordered;\n\nd. To create your account on the website and to carry out transactions from ordering to delivery.\n\ne. To respond to your queries, questions, comments, and feedback.\n\nf. To communicate with you in connection with the orders, payment, delivery, returns, refunds, security alerts, and technical elements.\n\ng. To communicate with you about promotions, upcoming events, and information about products and services;\n\nh. To protect and deter any fraudulent, illegal, or unauthorized activities;\n\ni. To comply with the requirements of the law. We will share your information without your consent if required or ordered under any law or regulations.\n\n8. We take adequate precautions to ensure that the data stored is secure and is not accessible by any unauthorized person/entity.\n\n9. We use the Secure Socket Layer (SSL) protocol on the website that ensures that the communication between the visitor of the website and the website happens in encrypted form.\n\n10. We do not store any credit card/debit card or such payment information. Our Payment Gateway providers may store this information. The Payment Gateway is compliant with Payment Card Industry Data Security Standard (PCI DSS).\n\n11. We store your information until you ask us to remove it or it needs to be removed due to a legal requirement.\n\n12. At any time, you wish to remove your personal information from the website/storage, you may notify us at customercare@tezhhomayaa.com. We will try to remove the information within 72 hours of your notice. However, in some cases, the removal may take some more time.\n\n13. If you are under 18, or the age of majority in the jurisdiction in which you reside, you may only use the website with the consent of your parent or legal guardian. In any case, we will not be liable for any cause of action that may arise due to non-compliance with this condition.\n\n14. For any grievances, questions, concerns, and feedback, please contact…\n\n\n\nMr. Sarang Mehta\nEmail: customercare@tezhhomayaa.com\nVictory Roll Fashion Private Limited\n201-206 K P Landmark\nNear Bright Day School\nVasna Bhayli Road\nVadodara – 311410\nIndia",
+          "primaryButton": {
+            "enabled": false,
+            "label": "Discover the campaign",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "11rem 0",
+            "margin": "0",
+            "textWidth": 57
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2.5,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#791529",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "left",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#1a1a18",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

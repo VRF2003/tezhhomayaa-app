@@ -1,0 +1,22 @@
+{
+  "sections": [
+    {
+      "id": "sec_1781595390218",
+      "type": "spacer",
+      "hidden": false,
+      "data": {
+        "heightMobile": 64,
+        "heightDesktop": 120
+      }
+    },
+    {
+      "id": "sec_1781595480350",
+      "type": "spacer",
+      "hidden": false,
+      "data": {
+        "heightMobile": 64,
+        "heightDesktop": 120
+      }
+    }
+  ]
+}

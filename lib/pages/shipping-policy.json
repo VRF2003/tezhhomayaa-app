@@ -1,0 +1,192 @@
+{
+  "sections": [
+    {
+      "id": "sec_1781675947284",
+      "type": "rich-text-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "Shipping Policy",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "\n\n\n\nAs a customer of tezhhomayaa.com, it is important that you have all the information relating to the dispatch and delivery of the ordered products to you. The following provides you with clear information on these aspects. \n\n1. Your order will generally be shipped within 48 hours from the time the order is received except if there is a weekend / public holiday within this period.\n\n2. We currently ship to the following countries and regions…..\n\na. India\n\nb. United Arab Emirates\n\nc. Bahrain\n\nd. Qatar\n\ne. Kuwait\n\nf. Oman\n\ng. Saudi Arabia\n\nh. Egypt\n\n\n3. It can take anywhere between 3 days to 10 days for the product to reach you depending on the delivery location.\n\n4. The courier charges are fixed for each country. There may be areas that are not served by the courier partner. In that case, we will not accept the order or if possible, find a courier who can deliver to your location. This may cost you additional courier charges.\n\n5. In addition to the courier charges, there would be import duty that is levied by each country at a different value. This would be added to the cost of the product at the time of checkout based on the country where the delivery is required.\n\n6. As soon as the product is shipped, we will send you an email with tracking information. You can also review the status of the order in the My Account section of the website after logging in.\n\n7. For returns and exchanges, please see our Refund and Returns Policy.",
+          "primaryButton": {
+            "enabled": false,
+            "label": "Discover the campaign",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "11rem 0",
+            "margin": "0",
+            "textWidth": 60
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2.5,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#791529",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "left",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#1a1a18",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

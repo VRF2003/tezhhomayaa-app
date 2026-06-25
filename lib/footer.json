@@ -1,0 +1,169 @@
+{
+  "blocks": [
+    {
+      "id": "blk_1781591265741",
+      "type": "link-group",
+      "heading": "May we help you?",
+      "links": [
+        {
+          "label": "Contact Tezhhomayaa",
+          "url": "/contact-us"
+        },
+        {
+          "label": "FAQs",
+          "url": "#"
+        },
+        {
+          "label": "My Order",
+          "url": "#"
+        },
+        {
+          "label": "Size Guide",
+          "url": "/size-guide"
+        }
+      ],
+      "style": {
+        "colSpan": 5
+      }
+    },
+    {
+      "id": "links-house",
+      "type": "link-group",
+      "heading": "House",
+      "links": [
+        {
+          "label": "About Tezhhomayaa",
+          "url": "/about-us"
+        },
+        {
+          "label": "Privacy Policy",
+          "url": "/privacy-policy"
+        },
+        {
+          "label": "Terms Of Service",
+          "url": "/terms-and-conditions"
+        },
+        {
+          "label": "Refund Policy",
+          "url": "/refund-policy"
+        },
+        {
+          "label": "Shipping Policy",
+          "url": "/shipping-policy"
+        }
+      ],
+      "style": {
+        "colSpan": 3
+      }
+    },
+    {
+      "id": "links-explore",
+      "type": "link-group",
+      "heading": "Explore",
+      "links": [
+        {
+          "label": "Philosophy",
+          "url": "#philosophy"
+        },
+        {
+          "label": "Journal",
+          "url": "#"
+        }
+      ],
+      "style": {
+        "colSpan": 3
+      }
+    },
+    {
+      "id": "social-1",
+      "type": "social-links",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/tezhhomayaa/"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/people/Tezhhomayaa/100083177926640/#"
+        }
+      ],
+      "style": {
+        "colSpan": 8
+      },
+      "socialPlatforms": [
+        {
+          "platform": "Instagram",
+          "url": "#",
+          "enabled": true
+        },
+        {
+          "platform": "Facebook",
+          "url": "#",
+          "enabled": true
+        },
+        {
+          "platform": "Pinterest",
+          "url": "#",
+          "enabled": false
+        },
+        {
+          "platform": "YouTube",
+          "url": "#",
+          "enabled": false
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "#",
+          "enabled": false
+        },
+        {
+          "platform": "TikTok",
+          "url": "#",
+          "enabled": false
+        }
+      ]
+    },
+    {
+      "id": "blk_1781593631772",
+      "type": "newsletter",
+      "style": {
+        "colSpan": 15
+      },
+      "heading": "SIGN UP FOR TEZHHOMAYAA UPDATE",
+      "content": "By entering your email address below, you consent to receiving our newsletter with access to our latest collections, events and initiatives. More details on this are provided in our \nPrivacy Policy",
+      "placeholder": "Your email address",
+      "buttonText": "Subscribe"
+    }
+  ],
+  "settings": {
+    "backgroundColor": "var(--paper)",
+    "textColor": "var(--stone)",
+    "headingColor": "var(--brand)",
+    "linkColor": "#1a1a18",
+    "hoverColor": "#7c2a00",
+    "borderColor": "var(--border-soft)",
+    "dividerColor": "#e5e2dc",
+    "paddingTop": "clamp(4rem, 8vw, 6rem)",
+    "paddingBottom": "clamp(3rem, 6vw, 5rem)",
+    "columnGap": "2rem",
+    "maxWidth": "none",
+    "alignment": "start",
+    "bottomBarText": "© TEZHHOMAYAA — ALL RIGHTS RESERVED",
+    "bottomBarAlignment": "space-between",
+    "bottomBarFontSize": "clamp(0.55rem, 0.8vw, 0.9rem)",
+    "bottomBarLinks": [
+      {
+        "label": "PRIVACY",
+        "url": "/privacy-policy"
+      },
+      {
+        "label": "Instagram",
+        "url": "https://instagram.com/tezhhomayaa"
+      },
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/people/Tezhhomayaa/100083177926640/#"
+      }
+    ]
+  }
+}

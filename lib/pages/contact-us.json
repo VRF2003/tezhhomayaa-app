@@ -1,0 +1,578 @@
+{
+  "sections": [
+    {
+      "id": "contact-hero",
+      "type": "editorial-section",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "CONTACT TEZHHOMAYAA",
+          "subheading": "",
+          "description": "For client services, private appointments,\nretail partnerships and bespoke enquiries.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "EMAIL US",
+            "url": "mailto:care@tezhhomayaa.com",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": true,
+            "label": "WHATSAPP",
+            "url": "https://wa.me/",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": true,
+            "label": "BOOK APPOINTMENT",
+            "url": "/book-appointment",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 60
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 4,
+            "fontWeight": 300,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.2,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0.4,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#ffffff",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "/uploads/1781448747421-22.jpg"
+          },
+          "mobile": {
+            "url": "/uploads/1781448747421-22.jpg",
+            "width": 4500,
+            "height": 4500
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 60
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 60
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "client-services",
+      "type": "contact-info-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "CLIENT SERVICES",
+          "description": "Our Client Advisors are available Monday through Saturday, 10 AM to 7 PM (CET)."
+        },
+        "layout": {
+          "desktop": {
+            "padding": "6rem 2rem",
+            "textWidth": 80
+          },
+          "mobile": {
+            "padding": "4rem 1.5rem",
+            "textWidth": 95
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2,
+            "fontWeight": 400,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.2,
+            "textColor": "#000000"
+          },
+          "description": {
+            "fontSize": 1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#000000"
+          }
+        },
+        "contactInfo": {
+          "fields": [
+            {
+              "label": "Email",
+              "value": "care@tezhhomayaa.com",
+              "link": "mailto:care@tezhhomayaa.com"
+            },
+            {
+              "label": "Phone",
+              "value": "+33 1 40 20 00 00",
+              "link": "tel:+33140200000"
+            },
+            {
+              "label": "WhatsApp",
+              "value": "Message Us",
+              "link": "https://wa.me/"
+            },
+            {
+              "label": "Business Hours",
+              "value": "Mon-Sat: 10:00 - 19:00 CET\nSun: Closed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "retail-press",
+      "type": "contact-info-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "RETAIL & PRESS",
+          "description": "For wholesale inquiries, press relations, and corporate partnerships."
+        },
+        "layout": {
+          "desktop": {
+            "padding": "0rem 2rem 6rem 2rem",
+            "textWidth": 80
+          },
+          "mobile": {
+            "padding": "0rem 1.5rem 4rem 1.5rem",
+            "textWidth": 95
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2,
+            "fontWeight": 400,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.2,
+            "textColor": "#000000"
+          },
+          "description": {
+            "fontSize": 1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#000000"
+          }
+        },
+        "contactInfo": {
+          "fields": [
+            {
+              "label": "Wholesale",
+              "value": "wholesale@tezhhomayaa.com",
+              "link": "mailto:wholesale@tezhhomayaa.com"
+            },
+            {
+              "label": "Press & PR",
+              "value": "press@tezhhomayaa.com",
+              "link": "mailto:press@tezhhomayaa.com"
+            },
+            {
+              "label": "Careers",
+              "value": "careers@tezhhomayaa.com",
+              "link": "mailto:careers@tezhhomayaa.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "contact-form",
+      "type": "contact-form",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "SEND AN ENQUIRY"
+        },
+        "layout": {
+          "desktop": {
+            "padding": "6rem 2rem",
+            "textWidth": 60
+          },
+          "mobile": {
+            "padding": "4rem 1.5rem",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 1.5,
+            "fontWeight": 400,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.2,
+            "textColor": "#000000"
+          },
+          "button": {
+            "fontSize": 0.8,
+            "fontWeight": 400,
+            "padding": "1rem 2rem",
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          }
+        },
+        "contactForm": {
+          "enabled": true,
+          "destinationEmail": "care@tezhhomayaa.com",
+          "successMessage": "Thank you for your enquiry. A Client Advisor will respond within 24 hours.",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        }
+      }
+    },
+    {
+      "id": "social-presence",
+      "type": "social-presence",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "TEZHHOMAYAA WORLD",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "Follow the house's latest collections and campaigns.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "8rem 2rem",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "6rem 1.5rem",
+            "margin": "0",
+            "textWidth": 95
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2,
+            "fontWeight": 300,
+            "letterSpacing": 0.1,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.6
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#ffffff",
+          "textShadow": "none"
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "https://instagram.com/tezhhomayaa"
+            },
+            {
+              "platform": "Facebook",
+              "url": "https://www.facebook.com/people/Tezhhomayaa/100083177926640/#"
+            }
+          ]
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "",
+            "width": 736,
+            "height": 1104
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "padding": "8rem 2rem",
+              "textWidth": 80
+            },
+            "mobile": {
+              "padding": "6rem 1.5rem",
+              "textWidth": 95
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "padding": "8rem 2rem",
+              "textWidth": 80
+            },
+            "mobile": {
+              "padding": "6rem 1.5rem",
+              "textWidth": 95
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        }
+      }
+    }
+  ]
+}

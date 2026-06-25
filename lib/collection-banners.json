@@ -1,0 +1,2744 @@
+{
+  "women": {
+    "content": {
+      "heading": "",
+      "italicHeading": "",
+      "subheading": "",
+      "description": "",
+      "primaryButton": {
+        "enabled": true,
+        "label": "SHOP NOW",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781267753997-Bnn.jpg",
+        "width": 6336,
+        "height": 2688
+      },
+      "mobile": {
+        "url": ""
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "women/new-in": {
+    "content": {
+      "heading": "New In",
+      "italicHeading": "",
+      "subheading": "Women",
+      "description": "The newest arrivals. Considered additions to the Tezhhomayaa wardrobe.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781352484623-hf_20260611_084633_d6e6dc98-913f-47f6-ac56-d2360f6b7dbd.png",
+        "width": 6336,
+        "height": 2688
+      },
+      "mobile": {
+        "url": "/uploads/1781352485631-hf_20260611_084633_d6e6dc98-913f-47f6-ac56-d2360f6b7dbd.png",
+        "width": 6336,
+        "height": 2688
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "women/bags": {
+    "content": {
+      "heading": "Women's Bags",
+      "italicHeading": "",
+      "subheading": "Crafted Forms",
+      "description": "Architecturally precise. Every bag is a study in proportion.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-bags.jpg",
+        "width": 1792,
+        "height": 2400
+      },
+      "mobile": {
+        "url": "/images/category-bags.jpg",
+        "width": 1792,
+        "height": 2400
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "women/ready-to-wear": {
+    "content": {
+      "heading": "Ready To Wear",
+      "italicHeading": "",
+      "subheading": "Women",
+      "description": "Garments that inhabit the body like a second skin. Considered, unhurried.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781267828919-hf_20260611_073446_62e5e14a-e6a0-4473-8624-209f88925c9a.png",
+        "width": 2752,
+        "height": 1536
+      },
+      "mobile": {
+        "url": "/uploads/1781616113710-hf_20260611_073446_62e5e14a-e6a0-4473-8624-209f88925c9a.png",
+        "width": 2752,
+        "height": 1536
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    }
+  },
+  "women/ready-to-wear/tops-shirts": {
+    "content": {
+      "heading": "Tops & Shirts",
+      "subheading": "Women",
+      "description": "From the precise collar to the open hem — tops designed to be worn, not just seen.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781355206265-Top___Shirt_W.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "mobile": {
+        "url": "/uploads/1781355206310-Top___Shirt_W.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "women/ready-to-wear/dresses-jumpsuits": {
+    "content": {
+      "heading": "Dresses & Jumpsuits",
+      "subheading": "Women",
+      "description": "A single garment that holds everything. Form and movement in complete resolution.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-women.jpg",
+        "width": 1792,
+        "height": 2400
+      },
+      "mobile": {
+        "url": "/images/category-women.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "women/ready-to-wear/pants-shorts": {
+    "content": {
+      "heading": "Pants & Shorts",
+      "subheading": "Women",
+      "description": "Cut for ease and precision. Every silhouette rests correctly on the body.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/collection-banner.jpg"
+      },
+      "mobile": {
+        "url": "/images/collection-banner.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "women/ready-to-wear/skirts": {
+    "content": {
+      "heading": "Skirts",
+      "subheading": "Women",
+      "description": "Volume and restraint. Each skirt is a study in the geometry of movement.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-women.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-women.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "women/ready-to-wear/sweatshirts": {
+    "content": {
+      "heading": "Sweatshirts",
+      "subheading": "Women",
+      "description": "Ease made precise. Comfort elevated into something worth keeping.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/collection-02.jpg"
+      },
+      "mobile": {
+        "url": "/images/collection-02.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "women/accessories": {
+    "content": {
+      "heading": "Accessories",
+      "subheading": "Women",
+      "description": "Considered detail. Accessories that complete without overwhelming.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/campaign-story.jpg"
+      },
+      "mobile": {
+        "url": "/images/campaign-story.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men": {
+    "content": {
+      "heading": "New Banner",
+      "subheading": "",
+      "description": "",
+      "primaryButton": {
+        "enabled": true,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "",
+        "width": 3584,
+        "height": 4800
+      },
+      "mobile": {
+        "url": ""
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/new-in": {
+    "content": {
+      "heading": "New In",
+      "subheading": "Men",
+      "description": "The newest arrivals. Considered additions to the Tezhhomayaa wardrobe.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-men.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-men.jpg",
+        "width": 1792,
+        "height": 2400
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/bags": {
+    "content": {
+      "heading": "Men's Bags",
+      "subheading": "Functional Sculpture",
+      "description": "Objects built for transit — resolved forms that carry with authority.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-bags.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-bags.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear": {
+    "content": {
+      "heading": "Ready To Wear",
+      "subheading": "Men",
+      "description": "Unhurried garments for those who dress with intention.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781505313794-hf_20260526_070003_2ef0bdab-6bc7-49ac-91d1-c4e955679343.png",
+        "width": 1696,
+        "height": 2528
+      },
+      "mobile": {
+        "url": "/uploads/1781505323385-hf_20260526_070003_2ef0bdab-6bc7-49ac-91d1-c4e955679343.png",
+        "width": 1696,
+        "height": 2528
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear/shirts": {
+    "content": {
+      "heading": "Shirts",
+      "subheading": "Men",
+      "description": "Woven with the same precision as the house's architecture. Shirts that hold form.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781353406698-Shirt_Banner.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "mobile": {
+        "url": "/uploads/1781353406811-Shirt_Banner.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear/t-shirts-polos": {
+    "content": {
+      "heading": "T-Shirts & Polos",
+      "subheading": "Men",
+      "description": "The essentials, reconsidered. Foundational garments stripped of excess.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781359621030-Sports_M.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "mobile": {
+        "url": "/uploads/1781353875484-Sports_M.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear/trousers-shorts": {
+    "content": {
+      "heading": "Trousers & Shorts",
+      "subheading": "Men",
+      "description": "Cut for the correct break and the correct weight. Proportion as intention.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/collection-02.jpg"
+      },
+      "mobile": {
+        "url": "/images/collection-02.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear/tracksuits-sweatshirts": {
+    "content": {
+      "heading": "Tracksuits & Sweatshirts",
+      "subheading": "Men",
+      "description": "Rest as uniform. Active ease elevated into considered form.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "mobile": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/ready-to-wear/coats-jackets": {
+    "content": {
+      "heading": "Coats & Jackets",
+      "subheading": "Men",
+      "description": "Outerwear as statement. The garment that precedes all others.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "mobile": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "men/accessories": {
+    "content": {
+      "heading": "Accessories",
+      "subheading": "Men",
+      "description": "Considered additions. Accessories that complete without competing.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "mobile": {
+        "url": "/images/hero-slide-3.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "fragrances": {
+    "content": {
+      "heading": "Fragrances",
+      "subheading": "The House Scent",
+      "description": "Scent as architecture. Our fragrances are built like spaces — quiet, layered, enduring.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "fragrances/women": {
+    "content": {
+      "heading": "Women's Fragrances",
+      "subheading": "The Feminine Form",
+      "description": "Scent that opens with clarity and deepens over hours.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "fragrances/men": {
+    "content": {
+      "heading": "Men's Fragrances",
+      "subheading": "The Masculine Form",
+      "description": "Structured and enduring. The masculine form expressed through scent.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "mobile": {
+        "url": "/images/category-fragrance.jpg"
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  },
+  "bags": {
+    "content": {
+      "heading": "New Banner",
+      "subheading": "",
+      "description": "",
+      "primaryButton": {
+        "enabled": true,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "fontFamily": "var(--font-cormorant, serif)",
+      "fontSize": 4,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "textShadow": "none",
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "",
+        "width": 1792,
+        "height": 2400
+      },
+      "mobile": {
+        "url": "",
+        "width": 1792,
+        "height": 2400
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "advanced": {
+      "animation": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "enabled": true
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    }
+  }
+}

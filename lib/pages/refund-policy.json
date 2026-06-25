@@ -1,0 +1,192 @@
+{
+  "sections": [
+    {
+      "id": "sec_1781616425165",
+      "type": "rich-text-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "Refund Policy",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "\n\n\n\nAt tezhhomayaa.com, we believe that customer delight takes precedence over anything else. Hence, we are committed to ensuring your satisfaction with any products you have ordered from us.\n\nAt tezhhomayaa.com we offer a 14 days return policy. If you are not entirely satisfied with your purchase, you may exchange or return most items bought from Tezhhomayaa.com\n\nYou can initiate a refund/exchange by sending an email to customercare@tezhhomayaa.com mentioning the Order number and whether you want a refund or exchange. Alternatively, you can WhatsApp us using the WhatsApp button on our website. You can also log into your account and use the refund/exchange option from within it.\n\nThe following terms and conditions shall apply to returns and exchanges.\n\n1. Only products that have not been used can be returned/exchanged.\n\n2. The return of the product must be done in the original packing it was received.\n\n3. The returned product must be accompanied by the original tags and invoice.\n\n4. Upon receipt of the returned product, we will inspect and confirm that the product is not used and/or damaged. If it is found that the product is used and / or damaged, no refund/exchange will be made.\n\n5. The refund shall be made only in the same mode in which the payment was received except in the case of Cash on Delivery. In the case of Cash on Delivery, the amount paid will be converted into credit points (in form of a discount code) of the same value which can be redeemed for any future purchases on tezhhomayaa.com\n\n6. It can take 7 days to 30 days for the banks to process and credit the funds to your account. We do not have control over this process.\n\n7. Any products purchased during a sale or at a discounted price cannot be returned/exchanged.\n\nWAYS TO RETURN / EXCHANGE\nLog in to your account and use Refund or Exchange option. This is the most preferred and quickest method.\n\nSend an email to customercare@tezhhomayaa.com with the subject either of the Return or Exchange, as the case may be, with the order number.",
+          "primaryButton": {
+            "enabled": false,
+            "label": "Discover the campaign",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 43,
+            "y": 44,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "11rem 0",
+            "margin": "0",
+            "textWidth": 71
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2.5,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#791529",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "left",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#1a1a18",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

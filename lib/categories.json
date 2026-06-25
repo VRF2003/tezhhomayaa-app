@@ -1,0 +1,100 @@
+{
+  "departments": [
+    {
+      "label": "Women",
+      "value": "women"
+    },
+    {
+      "label": "Men",
+      "value": "men"
+    },
+    {
+      "label": "Unisex",
+      "value": "unisex"
+    },
+    {
+      "label": "Fragrances",
+      "value": "fragrances"
+    }
+  ],
+  "categories": [
+    {
+      "label": "Ready To Wear",
+      "value": "ready-to-wear"
+    },
+    {
+      "label": "Bags",
+      "value": "bags"
+    },
+    {
+      "label": "Accessories",
+      "value": "accessories"
+    }
+  ],
+  "subcategories": {
+    "ready-to-wear": [
+      {
+        "label": "Tops & Shirts",
+        "value": "tops-shirts"
+      },
+      {
+        "label": "Dresses & Jumpsuits",
+        "value": "dresses-jumpsuits"
+      },
+      {
+        "label": "Pants & Shorts",
+        "value": "pants-shorts"
+      },
+      {
+        "label": "Skirts",
+        "value": "skirts"
+      },
+      {
+        "label": "Sweatshirts",
+        "value": "sweatshirts"
+      },
+      {
+        "label": "T-Shirts & Polos",
+        "value": "t-shirts-polos"
+      },
+      {
+        "label": "Trousers & Shorts",
+        "value": "trousers-shorts"
+      },
+      {
+        "label": "Tracksuits & Sweatshirts",
+        "value": "tracksuits-sweatshirts"
+      },
+      {
+        "label": "Coats & Jackets",
+        "value": "coats-jackets"
+      }
+    ],
+    "bags": [
+      {
+        "label": "Tote Bags",
+        "value": "tote-bags"
+      },
+      {
+        "label": "Shoulder Bags",
+        "value": "shoulder-bags"
+      },
+      {
+        "label": "Mini Bags",
+        "value": "mini-bags"
+      },
+      {
+        "label": "Backpacks",
+        "value": "backpacks"
+      },
+      {
+        "label": "Travel Bags",
+        "value": "travel-bags"
+      },
+      {
+        "label": "Backpacks",
+        "value": "back-packs"
+      }
+    ]
+  }
+}

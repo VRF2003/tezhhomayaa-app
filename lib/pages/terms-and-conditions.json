@@ -1,0 +1,192 @@
+{
+  "sections": [
+    {
+      "id": "sec_1781495517110",
+      "type": "rich-text-block",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "Terms of service",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "\n\n\nAt tezhhomayaa.com we value your relationship and patronage and hence we strive to provide you with all necessary information fully and transparently.\n\nBy visiting tezhhomayaa.com, you agree that you have read and accepted all the terms and conditions (as mentioned below or on any other page of the website), policies, and other relevant information.\n\n1. The website tezhhomayaa.com is a venture of GlitzUp Fashion W.L.L, an Indian entity focused on the fashion business.\n\n2. Tezhhomayaa and Tezhhomayaa logos are registered trademarks and are not allowed to be used by any other entity / person. All audios, videos, photographs, trademarks, logos, designs, text, and other such creative and intellectual properties displayed /mentioned on tezhhomayaa.com are proprietary and subject to protection under Copyright and Trademark laws. No copying or unauthorized use is permitted.\n\n3. The website tezhhomayaa.com allows for registration as a user/customer and also allows you to purchase from the website without registering. You must be competent to enter into a contract under the provisions of the Indian Contract Act, 1872, and any other applicable laws if you use the Website as a Registered User or you purchase products from the Website without registering. If it comes to our knowledge that you have registered as a user or purchased from the website while you are younger than 18 years of age, www.tezhhomayaa.com reserves the right to refuse to execute your order and/or close your account.\n\n4. Your account User name / ID and password are critical information. You are not allowed to share it with anyone. You are solely responsible for maintaining the confidentiality of your User ID and Password. All activities that occur on the website under your user ID and password are considered to be the activities carried out by you for which you are fully responsible. It is your responsibility to provide true, correct, and accurate information in various forms including the Registration form for creating your account on the website.\n\n5. If you provide any information that is untrue, inaccurate, not current, or incomplete or we have reasonable grounds to suspect that such information is untrue, inaccurate, not current or incomplete, or not in accordance with these terms and conditions, we have the right to indefinitely suspend or terminate or block access of your account with the Website.\n\n6. That in case it is found that you are in violation of these express conditions, you shall be solely responsible and shall be solely liable to face all legal consequences of the same by yourself and in no case www.tezhhomayaa.com and/or GlitzUp Fashion W.L.L Designs shall be responsible.\n\n7. When you make a purchase from tezhhomayaa.com, you accept and agree to the following….\n\na. www.tezhhomayaa.com and/or GlitzUp Fashion W.L.L reserve the right to deny or cancel any order without assigning any reasons.\n\nb. The colors of the garments may vary from what is displayed on the screen due to the resolution and quality of image rendering which may differ from screen to screen.\n\nc. All returns and exchanges are subject to our Refund and Returns Policy.\n\nd. You agree to receive communication electronically about your order/s and also, periodic communication electronically about new arrivals, lookbooks, events, special offers, and discounts.\n\ne. The base currency is Indian Rupee. If you are purchasing from India or for delivery to an Indian address, the prices are exclusive of VAT and other applicable taxes.\n\nf. If you are purchasing from any other country than India, the prices displayed are inclusive of import duties but exclusive of any other local duties and taxes.\n\n8. All purchases made from tezhhomayaa.com and any returns, replacements, cancellations, and refunds are made with the understanding that any disputes arising out of it will be settled in accordance with the applicable laws of India. The courts Kingdom Of Bahrain will have jurisdiction over any litigation or disputes. \n\n9. For any disputes, claims, or complaints, you can use the contact details given on the Contact Us page on this website.\n\n10. GlitzUp Fashion W.L.L and tezhhomayaa.com reserve the right to amend, change, modify and replace these Terms and Conditions at any time without any notice.",
+          "primaryButton": {
+            "enabled": false,
+            "label": "Discover the campaign",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 34,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "11rem 0",
+            "margin": "0",
+            "textWidth": 47
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 2.5,
+            "fontWeight": 400,
+            "letterSpacing": 0.05,
+            "lineHeight": 0.8,
+            "textColor": "#791529",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 200,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "left",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "transparent",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#1a1a18",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          },
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": {
+            "desktop": {
+              "textWidth": 60,
+              "align": "center",
+              "padding": "6rem 0"
+            }
+          }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

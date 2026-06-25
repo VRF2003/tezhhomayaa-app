@@ -1,0 +1,562 @@
+{
+  "sections": [
+    {
+      "id": "motion-1-arrival",
+      "type": "motion-arrival",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "ART INFUSED FASHION"
+        },
+        "style": {
+          "backgroundColor": "#000000",
+          "textColor": "#ffffff"
+        }
+      }
+    },
+    {
+      "id": "motion-2-manifesto",
+      "type": "motion-manifesto",
+      "hidden": false,
+      "data": {
+        "content": {
+          "description": "Form beyond motion.\nA luxury house redefined\nby pure architectural intent."
+        },
+        "style": {
+          "backgroundColor": "#000000",
+          "textColor": "#ffffff",
+          "descriptionFontSize": 4
+        }
+      }
+    },
+    {
+      "id": "motion-3-canvas",
+      "type": "motion-canvas",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "THE GENESIS",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "/uploads/1782385085851-hf_20260616_121428_1d002d9f-08b4-4144-af8f-232351c22634.png",
+            "width": 3168,
+            "height": 1344
+          },
+          "mobile": {
+            "url": "/hero-film.jpg"
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 4,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "#1a1a18",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#ffffff",
+          "textShadow": "none"
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": "grid",
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": "image-left"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "motion-4-storytelling",
+      "type": "motion-storytelling",
+      "hidden": false,
+      "data": {
+        "content": {
+          "description": "Tezhhomayaa embodies a bold, revolutionary spirit where creativity and movement merge.\nInspired by the essence of existence, the brand transforms garments into living art.\nEvery creation is a canvas of color and motion, inviting you to break conventions and embrace limitless imagination.\nEach stride, jump, or run becomes a brushstroke in a masterpiece of movement.\nIt is an expression of individuality, creativity, and the art of motion."
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "/campaign-story.jpg"
+          },
+          "mobile": {
+            "url": "/campaign-story.jpg"
+          }
+        },
+        "style": {
+          "backgroundColor": "#000000",
+          "textColor": "#ffffff"
+        }
+      }
+    },
+    {
+      "id": "motion-5-value-1",
+      "type": "motion-values",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "BE JOYFUL",
+          "description": "We believe our energies are felt in every product we create. Our creative process starts with keeping ourselves in a pleasant and joyful state."
+        },
+        "style": {
+          "backgroundColor": "#f0ece6",
+          "textColor": "#1a1a18",
+          "fontSize": 6
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "motion-5-value-2",
+      "type": "motion-values",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "KEEP EVOLVING",
+          "description": "We put tremendous emphasis on unleashing more and more of our hidden potential."
+        },
+        "style": {
+          "backgroundColor": "#ffffff",
+          "textColor": "#1a1a18",
+          "fontSize": 5
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "motion-5-value-3",
+      "type": "motion-values",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "REMOVE UNNECESSARY",
+          "description": "Simplicity. Starting with something as basic as the side seams, we make sure every unnecessary thing is removed from our product."
+        },
+        "style": {
+          "backgroundColor": "#1a1a18",
+          "textColor": "#ffffff",
+          "fontSize": 4
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "motion-5-value-4",
+      "type": "motion-values",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "REJECT UNSPECTACULAR",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "Reject everything that is not absolutely spectacular : we do not go ahead at 99%.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "style": {
+          "heading": {
+            "fontSize": 5,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
+          "backgroundColor": "#7a172b",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 5,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#ffffff",
+          "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "",
+            "width": 2752,
+            "height": 1536
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": "grid",
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": "image-left"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "motion-6-atelier",
+      "type": "motion-atelier",
+      "hidden": false,
+      "data": {
+        "collectionShowcase": {
+          "items": [
+            {
+              "id": "atelier-1",
+              "content": {
+                "heading": "THE ATELIER",
+                "description": "Our artisans blend traditional tailoring techniques with avant-garde pattern making."
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": "/collection_01.jpg"
+                }
+              }
+            },
+            {
+              "id": "atelier-2",
+              "content": {
+                "heading": "CRAFTSMANSHIP",
+                "description": "Every piece is constructed with an obsession for detail."
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": "/collection_02.jpg"
+                }
+              }
+            }
+          ]
+        },
+        "style": {
+          "backgroundColor": "#000000"
+        }
+      }
+    },
+    {
+      "id": "motion-7-future",
+      "type": "motion-future",
+      "hidden": false,
+      "data": {
+        "content": {
+          "description": "We are leading a movement\ntoward conscious,\narchitecturally driven design.\nA philosophy that reveres the human form."
+        },
+        "style": {
+          "backgroundColor": "#ffffff",
+          "textColor": "#1a1a18",
+          "descriptionFontSize": 3
+        }
+      }
+    },
+    {
+      "id": "motion-8-signature",
+      "type": "motion-signature",
+      "hidden": false,
+      "data": {
+        "content": {
+          "heading": "ART INFUSED FASHION",
+          "primaryButton": {
+            "enabled": true,
+            "label": "ENTER THE HOUSE",
+            "url": "/collections",
+            "style": "outline"
+          }
+        },
+        "style": {
+          "backgroundColor": "#000000",
+          "textColor": "#ffffff"
+        }
+      }
+    }
+  ]
+}

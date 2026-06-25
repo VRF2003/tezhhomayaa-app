@@ -1,0 +1,8 @@
+{
+  "logoImage": "/branding/tezhhomayaa-logo-v2.png",
+  "desktopLogoWidth": 420,
+  "mobileLogoWidth": 280,
+  "logoLinkUrl": "/",
+  "stickyHeader": true,
+  "transparentHeader": true
+}
