@@ -242,14 +242,14 @@
         "media": {
           "type": "image",
           "desktop": {
-            "url": "/uploads/1781270889775-Bnn.jpg",
+            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782849469/tezhhomayaa_app/khpznmz6vcl8inszsszx.jpg",
             "width": 6336,
             "height": 2688
           },
           "mobile": {
-            "url": "/uploads/1781167226335-hf_20260611_083158_7268033c-afc7-437d-abca-43383fa243b6.png",
-            "width": 6336,
-            "height": 2688
+            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782849507/tezhhomayaa_app/e7kzf2vwvkh9qn0shkaj.jpg",
+            "width": 1152,
+            "height": 1536
           },
           "videoSettings": {
             "autoplay": true,
@@ -262,6 +262,7 @@
         },
         "content": {
           "heading": "Evening Collection",
+          "italicHeading": "",
           "subheading": "Discover the SS26 Evening Edit",
           "description": "",
           "primaryButton": {
@@ -411,6 +412,9 @@
               "url": "#"
             }
           ]
+        },
+        "typographyOverrides": {
+          "enabled": false
         }
       }
     },
