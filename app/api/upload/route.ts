@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFileSync, mkdirSync, existsSync } from "fs";
-import { join } from "path";
+import { v2 as cloudinary } from "cloudinary";
+
+// Ensure the environment variable is loaded (Vercel will inject this automatically)
+cloudinary.config({
+  secure: true,
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -14,19 +18,23 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    const uploadsDir = join(process.cwd(), "public", "uploads");
-    if (!existsSync(uploadsDir)) {
-      mkdirSync(uploadsDir, { recursive: true });
-    }
+    // Upload to Cloudinary using a stream
+    const uploadResult = await new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder: "tezhhomayaa_app" },
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      uploadStream.end(buffer);
+    });
 
-    const uniqueName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
-    const filePath = join(uploadsDir, uniqueName);
-    
-    writeFileSync(filePath, buffer);
+    const url = (uploadResult as any).secure_url;
 
-    return NextResponse.json({ success: true, url: `/uploads/${uniqueName}` });
+    return NextResponse.json({ success: true, url });
   } catch (err: any) {
-    console.error("Local Upload Error:", err);
+    console.error("Cloudinary Upload Error:", err);
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }
