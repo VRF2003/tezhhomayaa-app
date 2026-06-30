@@ -38,14 +38,14 @@
             "media": {
               "type": "image",
               "desktop": {
-                "url": "/uploads/1781268832703-Banner.jpg",
-                "width": 2752,
-                "height": 1536
+                "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782848655/tezhhomayaa_app/vwyowg3cvogyinilbvrt.jpg",
+                "width": 5504,
+                "height": 3072
               },
               "mobile": {
-                "url": "/uploads/1781268832718-Mob_Banner.jpg",
-                "width": 1536,
-                "height": 2752
+                "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782848674/tezhhomayaa_app/kuuhexqtp29kj4dfptyl.jpg",
+                "width": 5504,
+                "height": 3072
               },
               "videoSettings": {
                 "autoplay": true,
@@ -207,6 +207,9 @@
                   "url": "#"
                 }
               ]
+            },
+            "typographyOverrides": {
+              "enabled": false
             }
           }
         ],
@@ -412,12 +415,22 @@
       }
     },
     {
+      "id": "sec_spacer_4",
+      "type": "spacer",
+      "hidden": false,
+      "data": {
+        "heightMobile": 96,
+        "heightDesktop": 128
+      }
+    },
+    {
       "id": "sec_1781351265013",
       "type": "rich-text-block",
       "hidden": false,
       "data": {
         "content": {
           "heading": "Collection",
+          "italicHeading": "",
           "subheading": "",
           "description": "",
           "primaryButton": {
@@ -431,6 +444,12 @@
             "label": "Learn More",
             "url": "#",
             "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
           }
         },
         "layout": {
@@ -442,7 +461,7 @@
             "align": "center",
             "padding": "2rem 0",
             "margin": "0",
-            "textWidth": 81
+            "textWidth": 69
           },
           "tablet": {
             "x": 50,
@@ -466,20 +485,58 @@
           }
         },
         "style": {
+          "heading": {
+            "fontSize": 10,
+            "fontWeight": 100,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.7,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#1a1a18",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
           "fontFamily": "var(--font-cormorant, serif)",
-          "fontSize": 4,
-          "fontWeight": 300,
-          "letterSpacing": 0.05,
-          "lineHeight": 1.1,
-          "textColor": "#1a1a18",
           "backgroundColor": "transparent",
           "borderColor": "transparent",
           "borderWidth": 0,
           "borderRadius": 0,
-          "textShadow": "soft",
           "darkOverlay": 0,
           "lightOverlay": 0,
-          "gradientOverlay": false
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#1a1a18",
+          "textShadow": "soft"
         },
         "media": {
           "type": "image",
@@ -524,7 +581,46 @@
               "padding": "6rem 0"
             }
           }
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
+        },
+        "typographyOverrides": {
+          "enabled": false
         }
+      }
+    },
+    {
+      "id": "sec_1782848195786",
+      "type": "spacer",
+      "hidden": false,
+      "data": {
+        "heightMobile": 64,
+        "heightDesktop": 120
       }
     },
     {
@@ -636,6 +732,7 @@
         ],
         "content": {
           "heading": "Collections",
+          "italicHeading": "",
           "subheading": "",
           "description": "",
           "primaryButton": {
@@ -649,23 +746,67 @@
             "label": "Learn More",
             "url": "#",
             "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
           }
         },
         "style": {
+          "heading": {
+            "fontSize": 7.5,
+            "fontWeight": 300,
+            "letterSpacing": 0.3,
+            "lineHeight": 1.5,
+            "textColor": "#7c2a00",
+            "textShadow": "none",
+            "align": "left"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#7c2a00",
+            "textShadow": "none",
+            "align": "left"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#7c2a00",
+            "textShadow": "none",
+            "align": "left",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
           "fontFamily": "var(--font-cormorant, serif)",
-          "fontSize": 4,
-          "fontWeight": 300,
-          "letterSpacing": 0.05,
-          "lineHeight": 1.1,
-          "textColor": "#7c2a00",
           "backgroundColor": "transparent",
           "borderColor": "transparent",
           "borderWidth": 0,
           "borderRadius": 0,
-          "textShadow": "none",
           "darkOverlay": 0,
           "lightOverlay": 0,
-          "gradientOverlay": false
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#7c2a00",
+          "textShadow": "none"
         },
         "media": {
           "type": "image",
@@ -1153,16 +1294,43 @@
         "splitLayout": {
           "ratio": "50-50",
           "layout": "full-width-tiles"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
         }
       }
     },
     {
-      "id": "sec_spacer_4",
+      "id": "sec_1782848259718",
       "type": "spacer",
       "hidden": false,
       "data": {
-        "heightMobile": 96,
-        "heightDesktop": 128
+        "heightMobile": 64,
+        "heightDesktop": 120
       }
     },
     {
@@ -1236,6 +1404,7 @@
         },
         "content": {
           "heading": "The Process",
+          "italicHeading": "",
           "subheading": "",
           "description": "Every garment is constructed with an architectural precision.",
           "primaryButton": {
@@ -1249,6 +1418,12 @@
             "label": "Learn More",
             "url": "#",
             "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
           }
         },
         "style": {
@@ -1319,6 +1494,33 @@
         "splitLayout": {
           "ratio": "50-50",
           "layout": "image-left"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
         }
       }
     },

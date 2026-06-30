@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
 import { normalizeSectionData, UniversalSectionData } from "@/lib/types/homepage";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
 
 type CollectionBannerProps = {
@@ -62,7 +63,7 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
       ref={containerRef} 
       aria-label={norm.content.heading || ""} 
       className="relative w-full overflow-hidden bg-[#1a1a18]"
-      style={{ height: bannerHeightStyle }}
+      style={{ height: bannerHeightStyle, ...injectTypographyOverrides(norm.typographyOverrides) }}
     >
       {(!norm.media?.desktop?.url && !norm.media?.mobile?.url) && (
         <div className="absolute inset-0 flex items-center justify-center bg-[#2a2a28] text-[#9a9690] text-xs uppercase tracking-[0.2em] z-0">
@@ -99,9 +100,8 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
       >
         {norm.content.subheading && (
           <p 
-            className="tracking-[0.2em] uppercase mb-4 opacity-90 font-medium"
+            className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
             style={{ 
-              fontSize: `${norm.style.subheading.fontSize}rem`,
               fontWeight: norm.style.subheading.fontWeight,
               letterSpacing: `${norm.style.subheading.letterSpacing}em`,
               lineHeight: norm.style.subheading.lineHeight,
@@ -117,7 +117,6 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
         {norm.content.heading && (
           <h2 style={{ 
             fontFamily: norm.style.fontFamily,
-            fontSize: `${norm.style.heading.fontSize}rem`,
             fontWeight: norm.style.heading.fontWeight,
             letterSpacing: `${norm.style.heading.letterSpacing}em`,
             lineHeight: norm.style.heading.lineHeight,
@@ -125,15 +124,14 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
             textAlign: norm.style.heading.align as any,
             textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
             width: "100%"
-          }} className="mb-4">
+          }} className={`mb-4 ${getResponsiveTypographyClass(norm.style.heading.fontSize)}`}>
             {norm.content.heading}
           </h2>
         )}
         {norm.content.description && (
           <p 
-            className="text-editorial whitespace-pre-wrap"
+            className={`text-editorial whitespace-pre-wrap ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
             style={{ 
-              fontSize: `${norm.style.description.fontSize}rem`,
               fontWeight: norm.style.description.fontWeight,
               letterSpacing: `${norm.style.description.letterSpacing}em`,
               lineHeight: norm.style.description.lineHeight,

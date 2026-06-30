@@ -153,7 +153,7 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
           <ul className="flex flex-col gap-3" role="list">
             {block.links?.map((link) => (
               <li key={link.label}>
-                <Link href={link.url || "#"} className="group relative text-editorial" style={{ fontSize: "clamp(1rem, 1.2vw, 1.5rem)", textDecoration: "none", color: settings.linkColor || settings.textColor, display: "inline-block" }}>
+                <Link href={link.url || "#"} className="group relative text-editorial py-1 md:py-0" style={{ fontSize: "clamp(1rem, 1.2vw, 1.5rem)", textDecoration: "none", color: settings.linkColor || settings.textColor, display: "inline-block" }}>
                   {link.label}
                   <span className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full" style={{ backgroundColor: settings.hoverColor || settings.headingColor, transition: "width 0.35s cubic-bezier(0.16,1,0.3,1)" }} />
                 </Link>
@@ -174,7 +174,7 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
           <ScrollReveal delay={0.14} y={14} className="flex flex-wrap items-center gap-5 mt-8 md:mt-0">
             {(block.socialPlatforms ? block.socialPlatforms.filter((p) => p.enabled) : block.links || []).map((s: any) => (
               <a key={s.platform || s.label} href={s.url || "#"} target={s.url?.startsWith("http") ? "_blank" : undefined} rel={s.url?.startsWith("http") ? "noopener noreferrer" : undefined}
-                className="group relative text-label" style={{ color: settings.textColor, fontSize: "clamp(0.65rem, 0.9vw, 1rem)", letterSpacing: "0.15em", textDecoration: "none", transition: "color 0.3s ease" }}>
+                className="group relative text-label py-1 md:py-0 inline-block" style={{ color: settings.textColor, fontSize: "clamp(0.65rem, 0.9vw, 1rem)", letterSpacing: "0.15em", textDecoration: "none", transition: "color 0.3s ease" }}>
                 {(s.platform || s.label || "").toUpperCase()}
                 <span className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full" style={{ backgroundColor: settings.hoverColor || settings.headingColor, transition: "width 0.4s cubic-bezier(0.16,1,0.3,1)" }} />
               </a>
@@ -224,7 +224,7 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
           <ul className="flex flex-col gap-2" role="list">
             {(block.legalLinks || []).filter((l) => l.enabled).map((link) => (
               <li key={link.label}>
-                <Link href={link.url || "#"} className="group relative text-editorial" style={{ fontSize: "clamp(0.9rem, 1.05vw, 1.25rem)", textDecoration: "none", color: settings.textColor, display: "inline-block" }}>
+                <Link href={link.url || "#"} className="group relative text-editorial py-1 md:py-0" style={{ fontSize: "clamp(0.9rem, 1.05vw, 1.25rem)", textDecoration: "none", color: settings.textColor, display: "inline-block" }}>
                   {link.label}
                   <span className="absolute bottom-0 left-0 h-px w-0 group-hover:w-full" style={{ backgroundColor: settings.hoverColor || settings.headingColor, transition: "width 0.35s cubic-bezier(0.16,1,0.3,1)" }} />
                 </Link>

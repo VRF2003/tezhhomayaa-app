@@ -52,6 +52,15 @@ function ProtectedLayoutContent({ children }: { children: React.ReactNode }) {
     { name: "Customers", href: "/admin/customers", req: "Orders" as const },
     { name: "Subscribers", href: "/admin/subscribers", req: "Orders" as const },
     { name: "Inventory", href: "/admin/inventory", req: "Stock" as const },
+    { 
+      name: "Appearance", 
+      href: "/admin/appearance", 
+      req: "Full Access" as const,
+      subItems: [
+        { name: "Mobile Layout", href: "/admin/appearance/mobile" },
+        { name: "Typography", href: "/admin/appearance/typography" },
+      ]
+    },
     { name: "Settings", href: "/admin/settings", req: "Full Access" as const },
   ];
 

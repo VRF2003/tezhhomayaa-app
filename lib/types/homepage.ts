@@ -1,4 +1,5 @@
 import { UniversalMediaData } from "@/components/sections/UniversalMediaRenderer";
+import { BreakpointConfig } from "@/components/admin/AppearanceProvider";
 
 export type SectionType = 
   | "hero-slider"
@@ -141,6 +142,12 @@ export type UniversalSectionData = {
   };
   socialPresence?: {
     links: { platform: string; url: string }[];
+  };
+  typographyOverrides?: {
+    enabled: boolean;
+    desktop?: Partial<BreakpointConfig>;
+    tablet?: Partial<BreakpointConfig>;
+    mobile?: Partial<BreakpointConfig>;
   };
 };
 
@@ -327,6 +334,9 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         { platform: "Instagram", url: "#" },
         { platform: "Facebook", url: "#" }
       ]
+    },
+    typographyOverrides: d.typographyOverrides ?? {
+      enabled: false
     }
   };
 }

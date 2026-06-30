@@ -1,113 +1,112 @@
 import React from "react";
 import Link from "next/link";
-import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
+import { normalizeSectionData } from "@/lib/types/homepage";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
-  const data = normalizeSectionData(cmsData);
-  const { content, layout, style } = data;
+  const norm = normalizeSectionData(cmsData);
 
   return (
     <section 
       id={sectionId} 
-      className="w-full relative flex items-center justify-center bg-white"
+      className="w-full relative flex items-center justify-center max-md:[padding:var(--local-pad-mob)] md:[padding:var(--local-pad-desk)] max-md:[margin:var(--local-mar-mob)] md:[margin:var(--local-mar-desk)]"
       style={{ 
-        padding: layout.desktop.padding || "4rem 2rem",
-      }}
+        "--local-pad-mob": norm.layout.mobile.padding,
+        "--local-pad-desk": norm.layout.desktop.padding,
+        "--local-mar-mob": norm.layout.mobile.margin,
+        "--local-mar-desk": norm.layout.desktop.margin,
+        backgroundColor: norm.style.backgroundColor,
+        ...injectTypographyOverrides(norm.typographyOverrides)
+      } as React.CSSProperties}
     >
       <div 
         className="relative z-10 flex flex-col"
         style={{
-          width: `${layout.desktop.textWidth || 60}%`,
+          width: `${norm.layout.desktop.textWidth || 60}%`,
           minWidth: "300px"
         }}
       >
-        {content.subheading && (
-          <h3 
-            className="tracking-[0.2em] uppercase font-mono"
+        {norm.content.subheading && (
+          <p 
+            className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
             style={{ 
-              fontSize: `${style.subheading.fontSize}rem`,
-              fontWeight: style.subheading.fontWeight,
-              letterSpacing: `${style.subheading.letterSpacing}em`,
-              lineHeight: style.subheading.lineHeight,
-              color: style.subheading.textColor,
-              textAlign: style.subheading.align as any,
-              textShadow: style.subheading.textShadow === "none" ? "none" : "0 4px 20px rgba(0,0,0,0.1)",
-              marginBottom: `${style.subheading.lineHeight * 0.5}rem`,
+              fontWeight: norm.style.subheading.fontWeight,
+              letterSpacing: `${norm.style.subheading.letterSpacing}em`,
+              lineHeight: norm.style.subheading.lineHeight,
+              color: norm.style.subheading.textColor,
+              textAlign: norm.style.subheading.align as any,
+              textShadow: norm.style.subheading.textShadow === "none" ? "none" : "0 4px 20px rgba(0,0,0,0.1)",
               width: "100%"
             }}
           >
-            {content.subheading}
-          </h3>
+            {norm.content.subheading}
+          </p>
         )}
 
-        {content.heading && (
+        {norm.content.heading && (
           <h2 
-            className="tracking-wider uppercase font-serif"
+            className={`mb-6 ${getResponsiveTypographyClass(norm.style.heading.fontSize)}`}
             style={{ 
-              fontSize: `${style.heading.fontSize}rem`,
-              fontWeight: style.heading.fontWeight,
-              letterSpacing: `${style.heading.letterSpacing}em`,
-              lineHeight: style.heading.lineHeight,
-              color: style.heading.textColor,
-              textAlign: style.heading.align as any,
-              textShadow: style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.2)",
-              marginBottom: `${style.heading.lineHeight * 0.8}rem`,
+              fontFamily: norm.style.fontFamily,
+              fontWeight: norm.style.heading.fontWeight,
+              letterSpacing: `${norm.style.heading.letterSpacing}em`,
+              lineHeight: norm.style.heading.lineHeight,
+              color: norm.style.heading.textColor,
+              textAlign: norm.style.heading.align as any,
+              textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
               width: "100%"
             }}
           >
-            {content.heading}
+            {norm.content.heading}
           </h2>
         )}
-
-        {content.description && (
+        {norm.content.description && (
           <p 
-            className="font-light opacity-80 whitespace-pre-wrap"
+            className={`text-editorial whitespace-pre-wrap ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
             style={{ 
-              fontSize: `${style.description.fontSize}rem`,
-              fontWeight: style.description.fontWeight,
-              letterSpacing: `${style.description.letterSpacing}em`,
-              lineHeight: style.description.lineHeight,
-              color: style.description.textColor,
-              textAlign: style.description.align as any,
-              maxWidth: `${style.description.maxWidth}px`,
-              marginLeft: style.description.align === "center" ? "auto" : "0", 
-              marginRight: style.description.align === "center" ? "auto" : "0"
+              fontWeight: norm.style.description.fontWeight,
+              letterSpacing: `${norm.style.description.letterSpacing}em`,
+              lineHeight: norm.style.description.lineHeight,
+              color: norm.style.description.textColor,
+              textAlign: norm.style.description.align as any,
+              maxWidth: `${norm.style.description.maxWidth}px`,
+              marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+              marginRight: norm.style.description.align === "center" ? "auto" : "0"
             }}
           >
-            {content.description}
+            {norm.content.description}
           </p>
         )}
 
         <div className="flex flex-wrap gap-4 mt-4 justify-center">
-          {content.primaryButton.enabled && content.primaryButton.label && (
+          {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
             <Link 
-              href={content.primaryButton.url || "#"}
-              className="hover:opacity-70 transition-opacity"
+              href={norm.content.primaryButton.url || "#"}
+              className="hover:opacity-70 transition-opacity fluid-button"
               style={{
-                fontSize: `${style.button.fontSize}rem`,
-                fontWeight: style.button.fontWeight,
-                padding: style.button.padding,
-                borderRadius: `${style.button.borderRadius}px`,
-                color: style.button.textColor,
-                backgroundColor: style.button.backgroundColor,
+                fontWeight: norm.style.button.fontWeight,
+                padding: norm.style.button.padding,
+                borderRadius: `${norm.style.button.borderRadius}px`,
+                color: norm.style.button.textColor,
+                backgroundColor: norm.style.button.backgroundColor,
                 display: "inline-block",
                 letterSpacing: "0.1em",
                 textTransform: "uppercase"
               }}
             >
-              {content.primaryButton.label}
+              {norm.content.primaryButton.label}
             </Link>
           )}
-          {content.secondaryButton.enabled && content.secondaryButton.label && (
+          {norm.content.secondaryButton.enabled && norm.content.secondaryButton.label && (
             <Link 
-              href={content.secondaryButton.url || "#"}
+              href={norm.content.secondaryButton.url || "#"}
               className="text-[0.75rem] tracking-[0.1em] uppercase hover:opacity-70 transition-opacity"
               style={{
                 borderBottom: "1px solid currentColor",
                 paddingBottom: "0.2rem"
               }}
             >
-              {content.secondaryButton.label}
+              {norm.content.secondaryButton.label}
             </Link>
           )}
         </div>

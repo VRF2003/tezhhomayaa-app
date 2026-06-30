@@ -10,22 +10,22 @@ import CurrencySelector from "@/components/layout/CurrencySelector";
 
 // ─── Icons ────────────────────────────────────────────────────
 const SearchIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
   </svg>
 );
 const CartIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
   </svg>
 );
 const CloseIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" aria-hidden="true">
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" aria-hidden="true">
     <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
   </svg>
 );
 const WishlistIcon = () => (
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+  <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
   </svg>
 );
@@ -232,9 +232,12 @@ export default function Navbar() {
     <>
       {/* ── Header ──────────────────────────────────────────── */}
       <motion.header
-        className={`${headerSettings.stickyHeader ? 'fixed' : 'absolute'} top-0 left-0 right-0 z-50 flex items-center justify-between flex-nowrap`}
+        className={`${headerSettings.stickyHeader ? 'fixed' : 'absolute'} top-0 left-0 right-0 z-50`}
         style={{
-          padding: "0 clamp(1.5rem, 4vw, 3rem)",
+          display: "grid",
+          gridTemplateColumns: "1fr auto 1fr",
+          alignItems: "center",
+          padding: "0 clamp(1rem, 4vw, 3rem)",
           height: "80px",
           background: scrolled || !headerSettings.transparentHeader ? "rgba(250, 250, 248, 0.96)" : "transparent",
           backdropFilter: scrolled || !headerSettings.transparentHeader ? "blur(20px)" : "none",
@@ -242,7 +245,32 @@ export default function Navbar() {
           transition: "background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.4s ease",
         }}
       >
-        <div className="flex items-center" style={{ zIndex: 10, flexShrink: 0 }}>
+        <style>{`
+          .navbar-logo-img {
+            height: clamp(38px, 4.5vw, 50px);
+          }
+          .header-icon-btn {
+            font-size: 18px;
+            position: relative;
+          }
+          .header-icon-btn.wishlist-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          }
+          @media (max-width: 768px) {
+            .navbar-logo-img {
+              height: calc(var(--mobile-logo-size, 1.05rem) * 2.25);
+              width: 100%;
+              max-width: 180px;
+            }
+            .header-icon-btn {
+              font-size: var(--mobile-icon-size, 19px);
+            }
+          }
+        `}</style>
+        <div className="flex items-center justify-start" style={{ zIndex: 10 }}>
           <button
             className="icon-btn"
             onClick={() => { clearAllTimers(); setPanelOpen(true); }}
@@ -257,18 +285,19 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <Link href={headerSettings.logoLinkUrl || "/"} aria-label="Tezhhomayaa — home" className="pointer-events-auto" style={{ display: "block", paddingTop: "0.4rem", zIndex: 50, cursor: "pointer" }}>
             <Image
               src={headerSettings.logoImage || "/branding/tezhhomayaa-logo-v2.png"}
               alt="Tezhhomayaa"
               width={headerSettings.desktopLogoWidth || 420} height={156} priority
-              style={{ width: "auto", height: "clamp(38px, 4.5vw, 50px)", objectFit: "contain" }}
+              className="navbar-logo-img"
+              style={{ width: "auto", objectFit: "contain" }}
             />
           </Link>
         </div>
 
-        <div className="flex items-center" style={{ zIndex: 10, gap: "clamp(0.5rem, 3vw, 1.8rem)", flexShrink: 0 }}>
+        <div className="flex items-center justify-end" style={{ zIndex: 10, gap: "clamp(1rem, 4vw, 1.8rem)" }}>
           {/* Currency */}
           <div className="hidden md:flex items-center">
             <CurrencySelector />
@@ -276,11 +305,10 @@ export default function Navbar() {
 
           {/* Search */}
           <button
-            className="icon-btn"
+            className="icon-btn header-icon-btn"
             onClick={openSearch}
             aria-label="Search"
             id="nav-search"
-            style={{ position: "relative" }}
           >
             <SearchIcon />
           </button>
@@ -288,10 +316,9 @@ export default function Navbar() {
           {/* Wishlist */}
           <Link
             href="/wishlist"
-            className="icon-btn"
+            className="icon-btn header-icon-btn wishlist-btn"
             aria-label={`Wishlist — ${wishlist.length} saved`}
             id="nav-wishlist"
-            style={{ position: "relative", display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}
           >
             <WishlistIcon />
             {wishlist.length > 0 && (
@@ -310,11 +337,10 @@ export default function Navbar() {
 
           {/* Cart */}
           <button
-            className="icon-btn"
+            className="icon-btn header-icon-btn"
             onClick={openMiniCart}
             aria-label={`Shopping bag — ${cartCount} ${cartCount === 1 ? "item" : "items"}`}
             id="nav-cart"
-            style={{ position: "relative" }}
           >
             <CartIcon />
             {cartCount > 0 && (

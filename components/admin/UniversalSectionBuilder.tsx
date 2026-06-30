@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import { UniversalMediaBuilder } from "./UniversalMediaBuilder";
 
-type TabType = "CONTENT" | "LAYOUT" | "STYLE" | "MEDIA" | "MOBILE" | "ADVANCED" | "SHOWCASE" | "SPLIT" | "CONTACT_INFO" | "CONTACT_FORM" | "SOCIAL_LINKS";
+type TabType = "CONTENT" | "LAYOUT" | "STYLE" | "TYPOGRAPHY" | "MEDIA" | "MOBILE" | "ADVANCED" | "SHOWCASE" | "SPLIT" | "CONTACT_INFO" | "CONTACT_FORM" | "SOCIAL_LINKS";
 
 interface Props {
   data: any;
@@ -20,6 +20,7 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
   const norm = normalizeSectionData(data);
   const [activeTab, setActiveTab] = useState<TabType>("CONTENT");
   const [activeStyleTab, setActiveStyleTab] = useState<"HEADING" | "SUBHEADING" | "DESCRIPTION" | "BUTTON" | "EFFECTS">("HEADING");
+  const [activeTypoTab, setActiveTypoTab] = useState<"desktop" | "tablet" | "mobile">("desktop");
 
   const hasMediaTab = true;
   const hasMobileTab = true;
@@ -71,6 +72,7 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
         <button style={tabStyle("CONTENT")} onClick={() => setActiveTab("CONTENT")}>Content</button>
         <button style={tabStyle("LAYOUT")} onClick={() => setActiveTab("LAYOUT")}>Layout</button>
         <button style={tabStyle("STYLE")} onClick={() => setActiveTab("STYLE")}>Style</button>
+        <button style={tabStyle("TYPOGRAPHY")} onClick={() => setActiveTab("TYPOGRAPHY")}>Typography</button>
         {hasMediaTab && <button style={tabStyle("MEDIA")} onClick={() => setActiveTab("MEDIA")}>Media</button>}
         {hasMobileTab && <button style={tabStyle("MOBILE")} onClick={() => setActiveTab("MOBILE")}>Mobile</button>}
         {hasAdvancedTab && <button style={tabStyle("ADVANCED")} onClick={() => setActiveTab("ADVANCED")}>Advanced</button>}
@@ -294,6 +296,51 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
                 <div style={{ gridColumn: "span 2" }}>
                   <label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Dark Overlay (%)</span><span>{norm.style.darkOverlay}</span></label><input type="range" min="0" max="100" value={norm.style.darkOverlay} onChange={e => update("style", "darkOverlay", Number(e.target.value))} style={{ width: "100%", marginBottom: "1rem" }} />
                   <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.75rem" }}><input type="checkbox" checked={norm.style.gradientOverlay} onChange={e => update("style", "gradientOverlay", e.target.checked)} /> Enable Bottom Gradient Overlay</label>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── TYPOGRAPHY TAB ── */}
+        {activeTab === "TYPOGRAPHY" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+            <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", fontWeight: 600, paddingBottom: "1rem", borderBottom: "1px solid #e8e4df" }}>
+              <input type="checkbox" checked={norm.typographyOverrides?.enabled} onChange={e => update("typographyOverrides", "enabled", e.target.checked)} />
+              Use Custom Typography (Overrides Global Settings)
+            </label>
+            
+            {norm.typographyOverrides?.enabled && (
+              <div>
+                <div style={{ display: "flex", borderBottom: "1px solid #e8e4df", marginBottom: "1.5rem" }}>
+                  {(["desktop", "tablet", "mobile"] as const).map(t => (
+                    <button
+                      key={t}
+                      onClick={() => setActiveTypoTab(t)}
+                      style={{
+                        padding: "0.5rem 1rem",
+                        fontSize: "0.7rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                        background: activeTypoTab === t ? "#1a1a18" : "transparent",
+                        color: activeTypoTab === t ? "#ffffff" : "#666",
+                        border: "none",
+                        cursor: "pointer"
+                      }}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+                
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Hero Title Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.heroTitleSize || ""}</span></label><input type="range" min="1" max="12" step="0.25" value={norm.typographyOverrides?.[activeTypoTab]?.heroTitleSize || 6} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "heroTitleSize", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>H1 Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.h1Size || ""}</span></label><input type="range" min="1" max="10" step="0.25" value={norm.typographyOverrides?.[activeTypoTab]?.h1Size || 4} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "h1Size", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>H2 Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.h2Size || ""}</span></label><input type="range" min="0.5" max="8" step="0.125" value={norm.typographyOverrides?.[activeTypoTab]?.h2Size || 3} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "h2Size", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>H3 Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.h3Size || ""}</span></label><input type="range" min="0.5" max="6" step="0.125" value={norm.typographyOverrides?.[activeTypoTab]?.h3Size || 2} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "h3Size", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Body Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.bodySize || ""}</span></label><input type="range" min="0.5" max="3" step="0.05" value={norm.typographyOverrides?.[activeTypoTab]?.bodySize || 1} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "bodySize", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Caption Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.captionSize || ""}</span></label><input type="range" min="0.5" max="2" step="0.05" value={norm.typographyOverrides?.[activeTypoTab]?.captionSize || 0.75} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "captionSize", Number(e.target.value))} style={{ width: "100%" }} /></div>
+                  <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Button Size (rem)</span><span>{norm.typographyOverrides?.[activeTypoTab]?.buttonSize || ""}</span></label><input type="range" min="0.5" max="2" step="0.05" value={norm.typographyOverrides?.[activeTypoTab]?.buttonSize || 0.875} onChange={e => updateDeep("typographyOverrides", activeTypoTab, "buttonSize", Number(e.target.value))} style={{ width: "100%" }} /></div>
                 </div>
               </div>
             )}

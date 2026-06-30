@@ -3,6 +3,9 @@ import { Cormorant_Garamond, DM_Mono } from "next/font/google";
 import "./globals.css";
 import StoreProviders from "@/components/ecommerce/StoreProviders";
 import { getAllProducts } from "@/lib/collections";
+import { AppearanceProvider } from "@/components/admin/AppearanceProvider";
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -33,12 +36,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const allProducts = getAllProducts();
+  let appearanceConfig = null;
+  try {
+    const p = join(process.cwd(), "lib", "appearance.json");
+    if (existsSync(p)) {
+      appearanceConfig = JSON.parse(readFileSync(p, "utf-8"));
+    }
+  } catch(e) {}
+
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable}`}>
       <body className="bg-white text-obsidian">
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />
-        <StoreProviders allProducts={allProducts}>{children}</StoreProviders>
+        <AppearanceProvider initialConfig={appearanceConfig}>
+          <StoreProviders allProducts={allProducts}>{children}</StoreProviders>
+        </AppearanceProvider>
       </body>
     </html>
   );

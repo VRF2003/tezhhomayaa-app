@@ -198,6 +198,7 @@ export default function ProductGrid({ products, presentation }: { products: Prod
         padding: `clamp(1rem, ${paddingV}vw, 4rem) clamp(0.5rem, ${paddingH}vw, 3rem)`,
         background: "#F7F5F2", // Ivory background per luxury requirements
       }}
+      className="mobile-product-section"
     >
       <div 
         className="dynamic-tezh-grid"
@@ -229,10 +230,14 @@ export default function ProductGrid({ products, presentation }: { products: Prod
         }
 
         @media (max-width: 480px) {
+          .mobile-product-section {
+            padding-top: var(--mobile-section-spacing, 4rem) !important;
+            padding-bottom: var(--mobile-section-spacing, 4rem) !important;
+          }
           .dynamic-tezh-grid {
             grid-template-columns: repeat(${mobCols}, 1fr) !important;
-            column-gap: ${mobGap}px !important;
-            row-gap: ${mobGap}px !important;
+            column-gap: var(--mobile-product-gap, ${mobGap}px) !important;
+            row-gap: var(--mobile-product-gap, ${mobGap}px) !important;
           }
         }
       `}</style>

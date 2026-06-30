@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
 import { normalizeSectionData } from "@/lib/types/homepage";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
 
 export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?: any, sectionId?: string }) {
@@ -43,7 +44,11 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
   };
 
   return (
-    <section ref={containerRef} aria-label={norm.content.heading || ""} className="relative w-full h-[60dvh] min-h-[500px] overflow-hidden">
+    <section 
+      ref={containerRef}
+      className={`relative w-full h-[60dvh] min-h-[500px] bg-[#1a1a18] ${isMobile ? 'flex flex-col' : 'overflow-hidden'}`}
+      style={injectTypographyOverrides(norm.typographyOverrides)}
+    >
       <UniversalMediaRenderer 
         media={norm.media}
         fallbackDesktopUrl={cmsData.image || ""}
@@ -71,9 +76,8 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
       >
         {norm.content.subheading && (
           <p 
-            className="tracking-[0.2em] uppercase mb-4 opacity-90 font-medium"
+            className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
             style={{ 
-              fontSize: `${norm.style.subheading.fontSize}rem`,
               fontWeight: norm.style.subheading.fontWeight,
               letterSpacing: `${norm.style.subheading.letterSpacing}em`,
               lineHeight: norm.style.subheading.lineHeight,
@@ -89,7 +93,6 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
         {norm.content.heading && (
           <h2 style={{ 
             fontFamily: norm.style.fontFamily,
-            fontSize: `${norm.style.heading.fontSize}rem`,
             fontWeight: norm.style.heading.fontWeight,
             letterSpacing: `${norm.style.heading.letterSpacing}em`,
             lineHeight: norm.style.heading.lineHeight,
@@ -97,15 +100,14 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
             textAlign: norm.style.heading.align as any,
             textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
             width: "100%"
-          }} className="mb-4">
+          }} className={`mb-4 ${getResponsiveTypographyClass(norm.style.heading.fontSize)}`}>
             {norm.content.heading}
           </h2>
         )}
         {norm.content.description && (
             <p 
-              className="text-editorial whitespace-pre-wrap"
+              className={`text-editorial whitespace-pre-wrap ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
               style={{ 
-                fontSize: `${norm.style.description.fontSize}rem`,
                 fontWeight: norm.style.description.fontWeight,
                 letterSpacing: `${norm.style.description.letterSpacing}em`,
                 lineHeight: norm.style.description.lineHeight,

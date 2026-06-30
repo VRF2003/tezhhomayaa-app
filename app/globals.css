@@ -43,7 +43,53 @@
   --ease-luxury:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-cinematic: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-panel:     cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Mobile Layout Fallbacks */
+  --mobile-hero-height: 75vh;
+  --mobile-logo-size: 1.05rem;
+  --mobile-icon-size: 22px;
+  --mobile-section-spacing: 4rem;
+  --mobile-product-gap: 1rem;
+  --mobile-heading-scale: 0.85;
+  --mobile-button-height: 46px;
+  --mobile-collection-gap: 2rem;
+
+  /* ─── Universal Typography Engine ────────────────────────────── */
+  /* Fallbacks in case JS is not ready */
+  --global-desktop-hero: 6rem;
+  --global-tablet-hero: 4rem;
+  --global-mobile-hero: 2.5rem;
+
+  --global-desktop-h1: 4rem;
+  --global-tablet-h1: 3rem;
+  --global-mobile-h1: 2.5rem;
+
+  --global-desktop-h2: 3rem;
+  --global-tablet-h2: 2.25rem;
+  --global-mobile-h2: 1.75rem;
+
+  --global-desktop-h3: 2rem;
+  --global-tablet-h3: 1.5rem;
+  --global-mobile-h3: 1.25rem;
+
+  --global-desktop-body: 1rem;
+  --global-tablet-body: 1rem;
+  --global-mobile-body: 1rem;
+
+  --global-desktop-caption: 0.75rem;
+  --global-tablet-caption: 0.75rem;
+  --global-mobile-caption: 0.75rem;
+
+  --global-desktop-button: 0.875rem;
+  --global-tablet-button: 0.875rem;
+  --global-mobile-button: 0.75rem;
+
+  --type-letter-spacing: 0.05em;
+  --type-line-height: 1.1;
+  --type-font-weight: 400;
+  --type-heading-max-width: 100%;
 }
+
 
 /* ─── Tailwind Theme ─────────────────────────────────────────── */
 @theme {
@@ -105,6 +151,79 @@ body {
 .font-mono    { font-family: var(--font-dm-mono, 'DM Mono'), monospace; }
 .font-devasia { font-family: 'Devasia', var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif; }
 
+/* ─── Typography Utility Classes ───────────────────────────────── */
+.fluid-hero {
+  font-size: var(--local-mobile-hero, var(--global-mobile-hero));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+  max-width: var(--local-heading-max-width, var(--type-heading-max-width));
+}
+
+.fluid-h1 {
+  font-size: var(--local-mobile-h1, var(--global-mobile-h1));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+  max-width: var(--local-heading-max-width, var(--type-heading-max-width));
+}
+
+.fluid-h2 {
+  font-size: var(--local-mobile-h2, var(--global-mobile-h2));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+  max-width: var(--local-heading-max-width, var(--type-heading-max-width));
+}
+
+.fluid-h3 {
+  font-size: var(--local-mobile-h3, var(--global-mobile-h3));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+  max-width: var(--local-heading-max-width, var(--type-heading-max-width));
+}
+
+.fluid-body {
+  font-size: var(--local-mobile-body, var(--global-mobile-body));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+  max-width: var(--local-content-width, 100%);
+}
+
+.fluid-caption {
+  font-size: var(--local-mobile-caption, var(--global-mobile-caption));
+  font-weight: var(--local-font-weight, var(--type-font-weight));
+  letter-spacing: var(--local-letter-spacing, var(--type-letter-spacing));
+  line-height: var(--local-line-height, var(--type-line-height));
+}
+
+.fluid-button {
+  font-size: var(--local-mobile-button, var(--global-mobile-button));
+}
+
+/* Breakpoint Resolutions */
+@media (min-width: 768px) {
+  .fluid-hero { font-size: var(--local-tablet-hero, var(--global-tablet-hero)); }
+  .fluid-h1 { font-size: var(--local-tablet-h1, var(--global-tablet-h1)); }
+  .fluid-h2 { font-size: var(--local-tablet-h2, var(--global-tablet-h2)); }
+  .fluid-h3 { font-size: var(--local-tablet-h3, var(--global-tablet-h3)); }
+  .fluid-body { font-size: var(--local-tablet-body, var(--global-tablet-body)); }
+  .fluid-caption { font-size: var(--local-tablet-caption, var(--global-tablet-caption)); }
+  .fluid-button { font-size: var(--local-tablet-button, var(--global-tablet-button)); }
+}
+
+@media (min-width: 1024px) {
+  .fluid-hero { font-size: var(--local-desktop-hero, var(--global-desktop-hero)); }
+  .fluid-h1 { font-size: var(--local-desktop-h1, var(--global-desktop-h1)); }
+  .fluid-h2 { font-size: var(--local-desktop-h2, var(--global-desktop-h2)); }
+  .fluid-h3 { font-size: var(--local-desktop-h3, var(--global-desktop-h3)); }
+  .fluid-body { font-size: var(--local-desktop-body, var(--global-desktop-body)); }
+  .fluid-caption { font-size: var(--local-desktop-caption, var(--global-desktop-caption)); }
+  .fluid-button { font-size: var(--local-desktop-button, var(--global-desktop-button)); }
+}
+
 .text-display {
   font-family: var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
   font-weight: 300;
@@ -125,6 +244,17 @@ body {
   font-weight: 300;
   line-height: 1.75;
   letter-spacing: 0.01em;
+  font-size: var(--text-body);
+}
+
+/* Auto-Fit Safeguard for Headings */
+.fluid-heading {
+  max-width: var(--type-heading-max-width, 90vw);
+  margin-left: auto;
+  margin-right: auto;
+  word-wrap: break-word;
+  line-height: var(--type-line-height, 1.1);
+  letter-spacing: var(--type-letter-spacing, 0.05em);
 }
 
 /* ─── Logo — Devasia style ───────────────────────────────────── */
@@ -209,6 +339,20 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Luxury Animations ──────────────────────────────────────── */
+.tz-fade-up {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: tzFadeUp 700ms ease-out forwards;
+}
+
+@keyframes tzFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

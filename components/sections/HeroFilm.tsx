@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
 import { normalizeSectionData } from "@/lib/types/homepage";
 
@@ -155,9 +156,17 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
       id="hero"
       aria-label="Tezhhomayaa hero showcase"
       className="relative w-full overflow-hidden bg-black"
-      style={{ height: "100dvh" }}
+      style={injectTypographyOverrides(slide.norm?.typographyOverrides)}
     >
       <style>{`
+        #hero {
+          height: var(--mobile-hero-height, 75vh);
+        }
+        @media (min-width: 768px) {
+          #hero {
+            height: 100dvh;
+          }
+        }
         .hero-text-pos {
           left: var(--mobile-x, 50%);
           top: var(--mobile-y, 50%);
@@ -239,12 +248,28 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                 transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
                 style={{ pointerEvents: isDragging ? "none" : "auto" }}
               >
+            {/* Subheading */}
+            {norm.content.subheading && (
+              <p 
+                  className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium drop-shadow-sm ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
+                  style={{ 
+                    fontWeight: norm.style.subheading.fontWeight,
+                    letterSpacing: `${norm.style.subheading.letterSpacing}em`,
+                    lineHeight: norm.style.subheading.lineHeight,
+                    color: norm.style.subheading.textColor,
+                    textAlign: norm.style.subheading.align as any,
+                    textShadow: norm.style.subheading.textShadow === "none" ? "none" : "0 1px 4px rgba(0,0,0,0.4)"
+                  }}
+              >
+                {norm.content.subheading}
+              </p>
+            )}
+
             {/* Headline */}
-            {(slide.title || slide.titleItalic) && (
+            {(norm.content.heading) && (
               <h2 
                 style={{ 
-                  fontFamily: slide.fontFamily || norm.style.fontFamily,
-                  fontSize: `${norm.style.heading.fontSize}rem`,
+                  fontFamily: norm.style.fontFamily,
                   fontWeight: norm.style.heading.fontWeight,
                   letterSpacing: `${norm.style.heading.letterSpacing}em`,
                   lineHeight: norm.style.heading.lineHeight,
@@ -253,30 +278,28 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                   textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
                   width: "100%"
                 }}
-                className="mb-6 uppercase"
-              >{slide.title} {slide.titleItalic && <span style={{ fontStyle: "italic" }}>{slide.titleItalic}</span>}
+                className={`mb-6 ${getResponsiveTypographyClass(norm.style.heading.fontSize)}`}
+              >{norm.content.heading}
               </h2>
             )}
 
-            {/* Sub */}
-            {slide.sub && (
+            {/* Description */}
+            {norm.content.description && (
               <p 
-                  className="font-light"
-                  style={{ 
-                    fontSize: `${norm.style.description.fontSize}rem`,
-                    fontWeight: norm.style.description.fontWeight,
-                    letterSpacing: `${norm.style.description.letterSpacing}em`,
-                    lineHeight: norm.style.description.lineHeight,
-                    color: norm.style.description.textColor,
-                    textAlign: norm.style.description.align as any,
-                    maxWidth: `${norm.style.description.maxWidth}px`,
-                    marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
-                    marginRight: norm.style.description.align === "center" ? "auto" : "0",
-                    whiteSpace: "pre-wrap",
-                    textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)"
-                  }}
-                >
-                {slide.sub}
+                className={`text-editorial whitespace-pre-wrap max-w-[800px] drop-shadow-md ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
+                style={{ 
+                  fontWeight: norm.style.description.fontWeight,
+                  letterSpacing: `${norm.style.description.letterSpacing}em`,
+                  lineHeight: norm.style.description.lineHeight,
+                  color: norm.style.description.textColor,
+                  textAlign: norm.style.description.align as any,
+                  maxWidth: `${norm.style.description.maxWidth}px`,
+                  marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+                  marginRight: norm.style.description.align === "center" ? "auto" : "0",
+                  textShadow: norm.style.description.textShadow === "none" ? "none" : "0 1px 4px rgba(0,0,0,0.4)"
+                }}
+              >
+                {norm.content.description}
               </p>
             )}
 
