@@ -452,10 +452,21 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
       <div style={{ height: "100%", background: "#f0ece6", borderRadius: "4px", border: "1px solid #e8e4df", display: "flex", flexDirection: "column", overflow: "hidden" }}>
         {/* Viewport Toolbar */}
         <div style={{ padding: "0.75rem 1rem", background: "#ffffff", borderBottom: "1px solid #e8e4df", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <span style={{ fontSize: "0.6rem", color: "#1a1a18", textTransform: "uppercase", letterSpacing: "0.15em", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span style={{ width: "8px", height: "8px", background: "#2d6b3a", borderRadius: "50%", display: "inline-block" }}></span>
-            Live Preview
-          </span>
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <span style={{ fontSize: "0.6rem", color: "#1a1a18", textTransform: "uppercase", letterSpacing: "0.15em", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <span style={{ width: "8px", height: "8px", background: "#2d6b3a", borderRadius: "50%", display: "inline-block" }}></span>
+              Live Preview
+            </span>
+            <Link 
+              href={previewUrl} 
+              target="_blank"
+              style={{ fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#6b6865", textDecoration: "none", border: "1px solid #e8e4df", padding: "0.3rem 0.6rem", borderRadius: "2px", display: "flex", alignItems: "center", gap: "0.25rem", transition: "all 0.2s" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "#1a1a18"; e.currentTarget.style.borderColor = "#ccc9c4"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "#6b6865"; e.currentTarget.style.borderColor = "#e8e4df"; }}
+            >
+              Open Storefront ↗
+            </Link>
+          </div>
           <div style={{ display: "flex", gap: "0.25rem", background: "#f0ece6", padding: "0.25rem", borderRadius: "4px" }}>
             <button onClick={() => setViewMode("desktop")} style={{ padding: "0.4rem 0.8rem", background: viewMode === "desktop" ? "#ffffff" : "transparent", border: "none", borderRadius: "2px", fontSize: "0.65rem", textTransform: "uppercase", cursor: "pointer", boxShadow: viewMode === "desktop" ? "0 1px 3px rgba(0,0,0,0.1)" : "none" }}>Desktop</button>
             <button onClick={() => setViewMode("tablet")} style={{ padding: "0.4rem 0.8rem", background: viewMode === "tablet" ? "#ffffff" : "transparent", border: "none", borderRadius: "2px", fontSize: "0.65rem", textTransform: "uppercase", cursor: "pointer", boxShadow: viewMode === "tablet" ? "0 1px 3px rgba(0,0,0,0.1)" : "none" }}>Tablet</button>
@@ -478,7 +489,7 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
           }}>
             <iframe 
               ref={iframeRef}
-              src={previewUrl} 
+              src={previewUrl + (previewUrl.includes('?') ? '&adminPreview=true' : '?adminPreview=true')} 
               style={{ width: "100%", height: "100%", border: "none" }}
               title="Storefront Preview"
             />

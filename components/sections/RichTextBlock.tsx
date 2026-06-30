@@ -61,7 +61,7 @@ export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; se
 
         {content.description && (
           <p 
-            className="font-light"
+            className="font-light opacity-80 whitespace-pre-wrap"
             style={{ 
               fontSize: `${style.description.fontSize}rem`,
               fontWeight: style.description.fontWeight,
@@ -69,13 +69,9 @@ export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; se
               lineHeight: style.description.lineHeight,
               color: style.description.textColor,
               textAlign: style.description.align as any,
-              textShadow: style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.1)",
-              opacity: 0.8,
               maxWidth: `${style.description.maxWidth}px`,
-              marginLeft: "auto",
-              marginRight: "auto",
-              marginBottom: `${style.description.lineHeight * 1.5}rem`,
-              whiteSpace: "pre-wrap"
+              marginLeft: style.description.align === "center" ? "auto" : "0", 
+              marginRight: style.description.align === "center" ? "auto" : "0"
             }}
           >
             {content.description}

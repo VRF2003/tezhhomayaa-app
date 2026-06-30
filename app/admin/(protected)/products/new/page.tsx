@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Product } from "@/lib/collections";
 import TagEditor from "@/components/admin/TagEditor";
+import { UniversalRichEditor } from "@/components/admin/UniversalRichEditor";
 
 export default function AddProductPage() {
   const router = useRouter();
@@ -369,12 +370,12 @@ export default function AddProductPage() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Description</label>
-              <textarea value={description} onChange={e => setDescription(e.target.value)} rows={4} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={description} onChange={setDescription} />
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Product Story</label>
-              <textarea value={productStory} onChange={e => setProductStory(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} placeholder="Optional storytelling separate from technical description..." />
+              <UniversalRichEditor value={productStory} onChange={setProductStory} placeholder="Optional storytelling separate from technical description..." />
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
@@ -413,22 +414,22 @@ export default function AddProductPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Design Story</label>
-              <textarea value={designStory} onChange={e => setDesignStory(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={designStory} onChange={setDesignStory} />
             </div>
             
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Inspiration Story</label>
-              <textarea value={inspirationStory} onChange={e => setInspirationStory(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={inspirationStory} onChange={setInspirationStory} />
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Fabric & Materials Details</label>
-              <textarea value={fabricDetails} onChange={e => setFabricDetails(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={fabricDetails} onChange={setFabricDetails} />
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Craftsmanship Details</label>
-              <textarea value={craftsmanshipDetails} onChange={e => setCraftsmanshipDetails(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={craftsmanshipDetails} onChange={setCraftsmanshipDetails} />
             </div>
           </div>
         </div>
@@ -441,17 +442,17 @@ export default function AddProductPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "1.5rem" }}>
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Size Guide</label>
-              <textarea value={sizeGuide} onChange={e => setSizeGuide(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={sizeGuide} onChange={setSizeGuide} />
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Fabric & Care</label>
-              <textarea value={fabricCare} onChange={e => setFabricCare(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={fabricCare} onChange={setFabricCare} />
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>Shipping & Returns</label>
-              <textarea value={shippingReturns} onChange={e => setShippingReturns(e.target.value)} rows={3} style={{ padding: "0.85rem", border: "1px solid #ccc9c4", outline: "none", fontSize: "0.9rem", resize: "vertical" }} />
+              <UniversalRichEditor value={shippingReturns} onChange={setShippingReturns} />
             </div>
           </div>
         </div>

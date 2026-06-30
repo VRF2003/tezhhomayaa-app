@@ -148,25 +148,22 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
             </span>
           )}
           {norm.content.description && (
-            <p 
-              className="font-light opacity-80"
-              style={{ 
-                fontSize: `${norm.style.description.fontSize}rem`,
-                fontWeight: norm.style.description.fontWeight,
-                letterSpacing: `${norm.style.description.letterSpacing}em`,
-                lineHeight: norm.style.description.lineHeight,
-                color: norm.style.description.textColor,
-                textAlign: norm.style.description.align as any,
-                maxWidth: `${norm.style.description.maxWidth}px`,
-                marginLeft: "auto", 
-                marginRight: "auto",
-                whiteSpace: "pre-wrap",
-                textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)",
-                marginTop: "1rem"
-              }}
-            >
-              {norm.content.description}
-            </p>
+              <p 
+                className="font-light opacity-80 whitespace-pre-wrap"
+                style={{ 
+                  fontSize: `${norm.style.description.fontSize}rem`,
+                  fontWeight: norm.style.description.fontWeight,
+                  color: norm.style.description.textColor,
+                  textAlign: norm.style.description.align as any,
+                  maxWidth: `${norm.style.description.maxWidth}px`,
+                  marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+                  marginRight: norm.style.description.align === "center" ? "auto" : "0",
+                  textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)",
+                  marginTop: "1rem"
+                }}
+              >
+                {norm.content.description}
+              </p>
           )}
           {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
             <span className={`inline-block mt-4 text-xs tracking-widest uppercase border-b pb-1 transition-colors border-current opacity-80 hover:opacity-100`}>

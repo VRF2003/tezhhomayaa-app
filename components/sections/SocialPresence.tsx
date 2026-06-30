@@ -37,7 +37,7 @@ export default function SocialPresence({ cmsData, sectionId }: { cmsData: any; s
         
         {content.description && (
           <p 
-            className="font-light mb-12"
+            className="font-light mb-12 whitespace-pre-wrap"
             style={{ 
               fontSize: `${style.description.fontSize}rem`,
               fontWeight: style.description.fontWeight,

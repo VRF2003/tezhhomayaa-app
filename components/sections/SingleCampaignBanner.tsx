@@ -102,24 +102,23 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
           </h2>
         )}
         {norm.content.description && (
-          <p 
-            className="font-light opacity-80"
-            style={{ 
-              fontSize: `${norm.style.description.fontSize}rem`,
-              fontWeight: norm.style.description.fontWeight,
-              letterSpacing: `${norm.style.description.letterSpacing}em`,
-              lineHeight: norm.style.description.lineHeight,
-              color: norm.style.description.textColor,
-              textAlign: norm.style.description.align as any,
-              maxWidth: `${norm.style.description.maxWidth}px`,
-              marginLeft: "auto", 
-              marginRight: "auto",
-              whiteSpace: "pre-wrap",
-              textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)"
-            }}
-          >
-            {norm.content.description}
-          </p>
+            <p 
+              className="text-editorial whitespace-pre-wrap"
+              style={{ 
+                fontSize: `${norm.style.description.fontSize}rem`,
+                fontWeight: norm.style.description.fontWeight,
+                letterSpacing: `${norm.style.description.letterSpacing}em`,
+                lineHeight: norm.style.description.lineHeight,
+                color: norm.style.description.textColor,
+                textAlign: norm.style.description.align as any,
+                maxWidth: `${norm.style.description.maxWidth}px`,
+                marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+                marginRight: norm.style.description.align === "center" ? "auto" : "0",
+                textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.1)"
+              }}
+            >
+              {norm.content.description}
+            </p>
         )}
         
         <div className={`flex flex-wrap gap-4 ${layout.align === "left" ? "justify-start" : layout.align === "right" ? "justify-end" : "justify-center"}`}>

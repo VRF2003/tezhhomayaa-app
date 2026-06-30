@@ -20,12 +20,175 @@
       "hidden": false,
       "data": {
         "content": {
-          "description": "Form beyond motion.\nA luxury house redefined\nby pure architectural intent."
+          "heading": "New Section",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "Form beyond motion.\nA luxury house redefined\nby pure architectural intent.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
         },
         "style": {
+          "heading": {
+            "fontSize": 4,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 4,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
           "backgroundColor": "#000000",
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 4,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
           "textColor": "#ffffff",
-          "descriptionFontSize": 4
+          "textShadow": "none"
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "/uploads/1782391696631-hf_20260624_204359_188b0e16-4fa6-4a74-8898-d354620ba730.png",
+            "width": 2752,
+            "height": 1536
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": "grid",
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": "image-left"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
         }
       }
     },
@@ -213,20 +376,175 @@
       "hidden": false,
       "data": {
         "content": {
-          "description": "Tezhhomayaa embodies a bold, revolutionary spirit where creativity and movement merge.\nInspired by the essence of existence, the brand transforms garments into living art.\nEvery creation is a canvas of color and motion, inviting you to break conventions and embrace limitless imagination.\nEach stride, jump, or run becomes a brushstroke in a masterpiece of movement.\nIt is an expression of individuality, creativity, and the art of motion."
+          "heading": "New Section",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "Tezhhomayaa embodies a bold, revolutionary spirit where creativity and movement merge.\nInspired by the essence of existence, the brand transforms garments into living art.\nEvery creation is a canvas of color and motion, inviting you to break conventions and embrace limitless imagination.\nEach stride, jump, or run becomes a brushstroke in a masterpiece of movement.\nIt is an expression of individuality, creativity, and the art of motion.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
         },
         "media": {
           "type": "image",
           "desktop": {
-            "url": "/campaign-story.jpg"
+            "url": "/uploads/1782391802623-hf_20260625_071939_6081a68a-1810-42d7-a5ed-ca9fb814b1b5.png",
+            "width": 5504,
+            "height": 3072
           },
           "mobile": {
             "url": "/campaign-story.jpg"
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
           }
         },
         "style": {
+          "heading": {
+            "fontSize": 4,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "subheading": {
+            "fontSize": 1,
+            "fontWeight": 400,
+            "letterSpacing": 0.2,
+            "lineHeight": 1.2,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center"
+          },
+          "description": {
+            "fontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.02,
+            "lineHeight": 1.6,
+            "textColor": "#ffffff",
+            "textShadow": "none",
+            "align": "center",
+            "maxWidth": 800
+          },
+          "button": {
+            "fontSize": 0.75,
+            "fontWeight": 400,
+            "padding": "0.6rem 1.4rem",
+            "borderRadius": 0,
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
+          },
+          "fontFamily": "var(--font-cormorant, serif)",
           "backgroundColor": "#000000",
-          "textColor": "#ffffff"
+          "borderColor": "transparent",
+          "borderWidth": 0,
+          "borderRadius": 0,
+          "darkOverlay": 0,
+          "lightOverlay": 0,
+          "gradientOverlay": false,
+          "fontSize": 4,
+          "subheadingFontSize": 1,
+          "descriptionFontSize": 1.1,
+          "fontWeight": 300,
+          "letterSpacing": 0.05,
+          "lineHeight": 1.1,
+          "textColor": "#ffffff",
+          "textShadow": "none"
+        },
+        "layout": {
+          "desktop": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "tablet": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 80
+          },
+          "mobile": {
+            "x": 50,
+            "y": 50,
+            "width": 100,
+            "height": 100,
+            "align": "center",
+            "padding": "0",
+            "margin": "0",
+            "textWidth": 90
+          }
+        },
+        "advanced": {
+          "animation": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "enabled": true
+        },
+        "collectionShowcase": {
+          "layoutType": "grid",
+          "maxWidth": "boxed",
+          "items": []
+        },
+        "splitLayout": {
+          "ratio": "50-50",
+          "layout": "image-left"
+        },
+        "contactInfo": {
+          "fields": []
+        },
+        "contactForm": {
+          "successMessage": "Thank you for your message. We will be in touch shortly.",
+          "destinationEmail": "care@tezhhomayaa.com",
+          "subjects": [
+            "Client Services",
+            "Order Support",
+            "Wholesale",
+            "Press",
+            "Collaboration",
+            "Other"
+          ]
+        },
+        "socialPresence": {
+          "links": [
+            {
+              "platform": "Instagram",
+              "url": "#"
+            },
+            {
+              "platform": "Facebook",
+              "url": "#"
+            }
+          ]
         }
       }
     },

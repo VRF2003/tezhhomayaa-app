@@ -131,7 +131,7 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
         )}
         {norm.content.description && (
           <p 
-            className="font-light opacity-80"
+            className="text-editorial whitespace-pre-wrap"
             style={{ 
               fontSize: `${norm.style.description.fontSize}rem`,
               fontWeight: norm.style.description.fontWeight,
@@ -140,10 +140,9 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
               color: norm.style.description.textColor,
               textAlign: norm.style.description.align as any,
               maxWidth: `${norm.style.description.maxWidth}px`,
-              marginLeft: "auto", 
-              marginRight: "auto",
-              whiteSpace: "pre-wrap",
-              textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)"
+              marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+              marginRight: norm.style.description.align === "center" ? "auto" : "0",
+              textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.1)"
             }}
           >
             {norm.content.description}

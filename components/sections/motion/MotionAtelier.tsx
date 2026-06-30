@@ -44,7 +44,7 @@ export default function MotionAtelier({ cmsData, sectionId }: { cmsData: any; se
 
           return (
             <motion.div
-              key={nItem.id || idx}
+              key={(nItem as any).id || idx}
               className="absolute inset-0 w-full h-full"
               style={{
                 opacity: isFirst ? 1 : opacity,

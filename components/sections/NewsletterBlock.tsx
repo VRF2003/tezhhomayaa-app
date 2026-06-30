@@ -25,8 +25,15 @@ export default function NewsletterBlock({ cmsData, sectionId }: { cmsData: any; 
         )}
         {content.description && (
           <p 
-            className="font-light mb-8 opacity-80"
-            style={{ fontSize: `${style.description.fontSize}rem` }}
+            className="font-light opacity-80 whitespace-pre-wrap"
+            style={{ 
+              fontSize: `${style.description.fontSize}rem`,
+              fontWeight: style.description.fontWeight,
+              letterSpacing: `${style.description.letterSpacing}em`,
+              lineHeight: style.description.lineHeight,
+              color: style.description.textColor,
+              textAlign: "center"
+            }}
           >
             {content.description}
           </p>

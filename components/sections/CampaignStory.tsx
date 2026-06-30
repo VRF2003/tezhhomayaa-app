@@ -111,7 +111,7 @@ export default function CampaignStory({ cmsData }: { cmsData?: any }) {
           {cmsData?.description && (
             <ScrollReveal delay={0.5} y={18} className="mt-8">
               <p
-                className="text-editorial"
+                className="text-editorial whitespace-pre-wrap"
                 style={{ fontSize: "1.05rem", lineHeight: 1.85, maxWidth: "330px", color: "var(--slate)" }}
               >
                 {cmsData.description}

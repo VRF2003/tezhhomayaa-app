@@ -27,6 +27,14 @@ import MotionSignature from "./motion/MotionSignature";
 export default function HomepageClientWrapper({ initialSections }: { initialSections: any[] }) {
   const [sections, setSections] = useState(initialSections);
 
+  const [isAdminPreview, setIsAdminPreview] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsAdminPreview(window.location.search.includes("adminPreview=true"));
+    }
+  }, []);
+
   useEffect(() => {
     // Only listen if we are inside an iframe
     if (typeof window !== "undefined" && window !== window.parent) {
@@ -46,6 +54,14 @@ export default function HomepageClientWrapper({ initialSections }: { initialSect
 
   return (
     <>
+      {isAdminPreview && (
+        <style dangerouslySetInnerHTML={{ __html: `
+          a, button { 
+            pointer-events: none !important; 
+            cursor: default !important; 
+          }
+        `}} />
+      )}
       {sections.filter((s: any) => !s.hidden).map((section: any) => {
         switch (section.type) {
           case "hero-slider":

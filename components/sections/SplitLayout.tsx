@@ -121,7 +121,7 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
             )}
             {norm.content.description && (
               <p 
-                className="font-light opacity-80"
+                className="font-light opacity-80 whitespace-pre-wrap"
                 style={{ 
                   fontSize: `${norm.style.description.fontSize}rem`,
                   fontWeight: norm.style.description.fontWeight,
@@ -132,7 +132,6 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
                   maxWidth: `${norm.style.description.maxWidth}px`,
                   marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
                   marginRight: norm.style.description.align === "center" ? "auto" : "0",
-                  whiteSpace: "pre-wrap",
                   textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.1)"
                 }}
               >
