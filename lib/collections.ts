@@ -46,9 +46,9 @@ export type Product = {
   // Merchandising
   merchandising?: {
     gridThumbnail?: number;
-    desktopHeroImage?: number;
-    tabletHeroImage?: number;
-    mobileHeroImage?: number;
+    desktopGalleryOrder?: number[];
+    tabletGalleryOrder?: number[];
+    mobileGalleryOrder?: number[];
   };
 };
 

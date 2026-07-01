@@ -58,9 +58,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
 
   // Merchandising
   const [gridThumbnail, setGridThumbnail] = useState<number>(0);
-  const [desktopHeroImage, setDesktopHeroImage] = useState<number>(0);
-  const [tabletHeroImage, setTabletHeroImage] = useState<number>(0);
-  const [mobileHeroImage, setMobileHeroImage] = useState<number>(0);
+  const [desktopGalleryOrder, setDesktopGalleryOrder] = useState<number[]>([]);
+  const [tabletGalleryOrder, setTabletGalleryOrder] = useState<number[]>([]);
+  const [mobileGalleryOrder, setMobileGalleryOrder] = useState<number[]>([]);
 
   // Extras
   const [enableStickyCheckout, setEnableStickyCheckout] = useState(true);
@@ -139,9 +139,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       status: "active",
       merchandising: {
         gridThumbnail,
-        desktopHeroImage,
-        tabletHeroImage,
-        mobileHeroImage
+        desktopGalleryOrder,
+        tabletGalleryOrder,
+        mobileGalleryOrder
       }
     };
 
@@ -155,7 +155,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
     sizeGuide, fabricCare, shippingReturns,
     gender, category, subcategory,
     mediaItems, tags, collectionName,
-    gridThumbnail, desktopHeroImage, tabletHeroImage, mobileHeroImage
+    gridThumbnail, desktopGalleryOrder, tabletGalleryOrder, mobileGalleryOrder
   ]);
 
   useEffect(() => {
@@ -258,9 +258,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
             
             if (product.merchandising) {
               setGridThumbnail(product.merchandising.gridThumbnail ?? 0);
-              setDesktopHeroImage(product.merchandising.desktopHeroImage ?? 0);
-              setTabletHeroImage(product.merchandising.tabletHeroImage ?? 0);
-              setMobileHeroImage(product.merchandising.mobileHeroImage ?? 0);
+              setDesktopGalleryOrder(product.merchandising.desktopGalleryOrder ?? []);
+              setTabletGalleryOrder(product.merchandising.tabletGalleryOrder ?? []);
+              setMobileGalleryOrder(product.merchandising.mobileGalleryOrder ?? []);
             }
           } else {
             setError("Product not found");
@@ -433,9 +433,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
         relatedProductIds,
         merchandising: {
           gridThumbnail,
-          desktopHeroImage,
-          tabletHeroImage,
-          mobileHeroImage
+          desktopGalleryOrder,
+          tabletGalleryOrder,
+          mobileGalleryOrder
         }
       };
 
@@ -820,9 +820,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             {[
               { label: "Grid Thumbnail", key: "gridThumbnail", val: gridThumbnail, setVal: setGridThumbnail },
-              { label: "Desktop Hero Image", key: "desktopHeroImage", val: desktopHeroImage, setVal: setDesktopHeroImage },
-              { label: "Tablet Hero Image", key: "tabletHeroImage", val: tabletHeroImage, setVal: setTabletHeroImage },
-              { label: "Mobile Hero Image", key: "mobileHeroImage", val: mobileHeroImage, setVal: setMobileHeroImage }
+              { label: "Desktop Gallery Order", key: "desktopGalleryOrder", val: desktopGalleryOrder, setVal: setDesktopGalleryOrder },
+              { label: "Tablet Gallery Order", key: "tabletGalleryOrder", val: tabletGalleryOrder, setVal: setTabletGalleryOrder },
+              { label: "Mobile Gallery Order", key: "mobileGalleryOrder", val: mobileGalleryOrder, setVal: setMobileGalleryOrder }
             ].map(({ label, key, val, setVal }) => (
               <div key={key} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>{label}</label>
@@ -832,12 +832,25 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
                     {mediaItems.filter(m => m.type !== 'file' ? !m.previewUrl.match(/\.(mp4|webm|mov)$/i) : !m.file?.type.startsWith('video/')).map((item, originalIndex) => {
                       // Find the actual index in the mediaItems array to save
                       const actualIndex = mediaItems.findIndex(m => m.id === item.id);
-                      const isSelected = val === actualIndex;
+                      const isArray = Array.isArray(val);
+                      const isSelected = isArray ? (val as number[]).includes(actualIndex) : val === actualIndex;
+                      const badgeText = isArray ? ((val as number[]).indexOf(actualIndex) + 1).toString() : "✓";
                       
                       return (
                         <div 
                           key={item.id}
-                          onClick={() => setVal(actualIndex)}
+                          onClick={() => {
+                            if (isArray) {
+                              const arr = val as number[];
+                              if (arr.includes(actualIndex)) {
+                                setVal(arr.filter(i => i !== actualIndex));
+                              } else {
+                                setVal([...arr, actualIndex]);
+                              }
+                            } else {
+                              setVal(actualIndex);
+                            }
+                          }}
                           style={{
                             position: "relative",
                             width: "80px",
@@ -866,7 +879,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
                               justifyContent: "center",
                               fontSize: "12px"
                             }}>
-                              ✓
+                              {badgeText}
                             </div>
                           )}
                         </div>

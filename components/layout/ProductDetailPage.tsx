@@ -48,26 +48,58 @@ function isVideo(src: string) {
 }
 
 export function CinematicMorphingGallery({ images, isPreviewMode, merchandising }: { images: string[], isPreviewMode?: boolean, merchandising?: any }) {
+  const [displayImages, setDisplayImages] = useState<string[]>(images);
   const [current, setCurrent] = useState(0);
-  const total = images.length;
+  const total = displayImages.length;
   
-  // Set initial hero image based on merchandising settings
+  // Set display images based on custom sequence
   useEffect(() => {
+    let order: number[] = [];
     if (merchandising) {
-      let heroIndex = 0;
       const w = window.innerWidth;
-      if (w < 768 && merchandising.mobileHeroImage !== undefined) {
-        heroIndex = merchandising.mobileHeroImage;
-      } else if (w >= 768 && w <= 1024 && merchandising.tabletHeroImage !== undefined) {
-        heroIndex = merchandising.tabletHeroImage;
-      } else if (w > 1024 && merchandising.desktopHeroImage !== undefined) {
-        heroIndex = merchandising.desktopHeroImage;
+      if (w < 768 && merchandising.mobileGalleryOrder) {
+        order = merchandising.mobileGalleryOrder;
+      } else if (w >= 768 && w <= 1024 && merchandising.tabletGalleryOrder) {
+        order = merchandising.tabletGalleryOrder;
+      } else if (w > 1024 && merchandising.desktopGalleryOrder) {
+        order = merchandising.desktopGalleryOrder;
       }
-      if (heroIndex >= 0 && heroIndex < images.length) {
-        setCurrent(heroIndex);
+      
+      // Fallback for legacy fields just in case
+      if (order.length === 0) {
+        if (w < 768 && merchandising.mobileHeroImage !== undefined) {
+          order = [merchandising.mobileHeroImage];
+        } else if (w >= 768 && w <= 1024 && merchandising.tabletHeroImage !== undefined) {
+          order = [merchandising.tabletHeroImage];
+        } else if (w > 1024 && merchandising.desktopHeroImage !== undefined) {
+          order = [merchandising.desktopHeroImage];
+        }
       }
     }
-  }, [merchandising, images.length]);
+    
+    if (order.length > 0) {
+      const customSequence: string[] = [];
+      const usedIndices = new Set<number>();
+      
+      order.forEach(idx => {
+        if (idx >= 0 && idx < images.length && !usedIndices.has(idx)) {
+          customSequence.push(images[idx]);
+          usedIndices.add(idx);
+        }
+      });
+      
+      images.forEach((img, idx) => {
+        if (!usedIndices.has(idx)) {
+          customSequence.push(img);
+        }
+      });
+      
+      setDisplayImages(customSequence);
+    } else {
+      setDisplayImages(images);
+    }
+    setCurrent(0);
+  }, [merchandising, images]);
 
   // In-place Zoom State
   const [zoomed, setZoomed] = useState(false);
@@ -200,7 +232,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
     <div style={{ display: "flex", flexDirection: "column", width: "100%", height: "100%" }}>
       <div style={{ position: "relative", width: "100%", flexGrow: 1, overflow: "hidden" }}>
         {/* Image/Video Frames */}
-        {images.map((src, i) => {
+        {displayImages.map((src, i) => {
           const xOffset = getFrameX(i, current);
           const { width, height } = getFrameSize(i, current);
           const zIndex = i === current ? 10 : 5;
@@ -321,7 +353,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
           scrollbarWidth: "none",
           borderTop: "1px solid #f0ece6"
         }}>
-          {images.map((src, i) => (
+          {displayImages.map((src, i) => (
             <button
               key={i}
               onClick={() => { setCurrent(i); setZoomed(false); }}
