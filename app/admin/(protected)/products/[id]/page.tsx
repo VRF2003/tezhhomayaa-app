@@ -819,10 +819,10 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
           
           <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             {[
-              { label: "Grid Thumbnail", key: "gridThumbnail", val: gridThumbnail, setVal: setGridThumbnail },
-              { label: "Desktop Gallery Order", key: "desktopGalleryOrder", val: desktopGalleryOrder, setVal: setDesktopGalleryOrder },
-              { label: "Tablet Gallery Order", key: "tabletGalleryOrder", val: tabletGalleryOrder, setVal: setTabletGalleryOrder },
-              { label: "Mobile Gallery Order", key: "mobileGalleryOrder", val: mobileGalleryOrder, setVal: setMobileGalleryOrder }
+              { label: "Grid Thumbnail", key: "gridThumbnail", val: gridThumbnail, setVal: setGridThumbnail as any },
+              { label: "Desktop Gallery Order", key: "desktopGalleryOrder", val: desktopGalleryOrder, setVal: setDesktopGalleryOrder as any },
+              { label: "Tablet Gallery Order", key: "tabletGalleryOrder", val: tabletGalleryOrder, setVal: setTabletGalleryOrder as any },
+              { label: "Mobile Gallery Order", key: "mobileGalleryOrder", val: mobileGalleryOrder, setVal: setMobileGalleryOrder as any }
             ].map(({ label, key, val, setVal }) => (
               <div key={key} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>{label}</label>
