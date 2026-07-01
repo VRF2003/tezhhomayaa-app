@@ -158,10 +158,13 @@ export function getCollectionBanner(categoryKey: string): UniversalSectionData {
   const smartCols = getSmartCollections();
   const smartCol = smartCols.find(c => c.slug === categoryKey);
   
+  const titleFallback = categoryKey.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || "Collection";
+  const subtitleFallback = categoryKey.split('/')[0]?.toUpperCase() || "";
+  
   return normalizeSectionData({
     content: {
-      heading: meta?.title || smartCol?.title || "Collection",
-      subheading: meta?.subtitle || "",
+      heading: meta?.title || smartCol?.title || titleFallback,
+      subheading: meta?.subtitle || subtitleFallback,
       description: meta?.description || smartCol?.description || "",
       primaryButton: { enabled: false, label: "Explore", url: "#", style: "luxury" },
       secondaryButton: { enabled: false, label: "Learn More", url: "#", style: "outline" }

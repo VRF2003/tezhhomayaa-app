@@ -957,7 +957,7 @@
               "media": {
                 "type": "image",
                 "desktop": {
-                  "url": "/uploads/1781612630973-hf_20260509_074732_68d71928-993d-4f09-9e74-e3a8779e5fc7_copy.png",
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907226/tezhhomayaa_app/zyt2vqeu3ib4a0rqigv6.png",
                   "width": 1612,
                   "height": 2160
                 },
@@ -1016,6 +1016,9 @@
                     "url": "#"
                   }
                 ]
+              },
+              "typographyOverrides": {
+                "enabled": false
               }
             },
             {
@@ -1023,6 +1026,7 @@
               "url": "/new-collection",
               "content": {
                 "heading": "Men",
+                "italicHeading": "",
                 "subheading": "",
                 "description": "",
                 "primaryButton": {
@@ -1036,6 +1040,12 @@
                   "label": "Learn More",
                   "url": "#",
                   "style": "outline"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
                 }
               },
               "layout": {
@@ -1071,27 +1081,65 @@
                 }
               },
               "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18"
+                },
                 "fontFamily": "var(--font-cormorant, serif)",
-                "fontSize": 4,
-                "fontWeight": 300,
-                "letterSpacing": 0.05,
-                "lineHeight": 1.1,
-                "textColor": "#ffffff",
                 "backgroundColor": "transparent",
                 "borderColor": "transparent",
                 "borderWidth": 0,
                 "borderRadius": 0,
-                "textShadow": "none",
                 "darkOverlay": 0,
                 "lightOverlay": 0,
-                "gradientOverlay": false
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#ffffff",
+                "textShadow": "none"
               },
               "media": {
                 "type": "image",
                 "desktop": {
-                  "url": "/uploads/1781346216994-01_Banner.jpg",
-                  "width": 1792,
-                  "height": 2400
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907228/tezhhomayaa_app/yblekeb5rup4uidwyiie.jpg",
+                  "width": 1612,
+                  "height": 2160
                 },
                 "mobile": {
                   "url": "/uploads/1781346358338-01_Banner.jpg",
@@ -1121,6 +1169,36 @@
               "splitLayout": {
                 "ratio": "50-50",
                 "layout": "image-left"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
               }
             },
             {
@@ -1128,6 +1206,7 @@
               "url": "/new-collection",
               "content": {
                 "heading": "Bags",
+                "italicHeading": "",
                 "subheading": "",
                 "description": "",
                 "primaryButton": {
@@ -1141,6 +1220,12 @@
                   "label": "Learn More",
                   "url": "#",
                   "style": "outline"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
                 }
               },
               "layout": {
@@ -1176,32 +1261,70 @@
                 }
               },
               "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18"
+                },
                 "fontFamily": "var(--font-cormorant, serif)",
-                "fontSize": 4,
-                "fontWeight": 300,
-                "letterSpacing": 0.05,
-                "lineHeight": 1.1,
-                "textColor": "#ffffff",
                 "backgroundColor": "transparent",
                 "borderColor": "transparent",
                 "borderWidth": 0,
                 "borderRadius": 0,
-                "textShadow": "none",
                 "darkOverlay": 0,
                 "lightOverlay": 0,
-                "gradientOverlay": false
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#ffffff",
+                "textShadow": "none"
               },
               "media": {
                 "type": "image",
                 "desktop": {
-                  "url": "/uploads/1781346289856-03_Banner.jpg",
-                  "width": 1792,
-                  "height": 2400
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782908193/tezhhomayaa_app/wz7pavb5ybvbrp2kyzcc.jpg",
+                  "width": 1612,
+                  "height": 2160
                 },
                 "mobile": {
-                  "url": "/uploads/1781346358367-03_Banner.jpg",
-                  "width": 1792,
-                  "height": 2400
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782908198/tezhhomayaa_app/jreothhpyixhzmndokuh.png",
+                  "width": 2752,
+                  "height": 1536
                 },
                 "videoSettings": {
                   "autoplay": true,
@@ -1226,6 +1349,36 @@
               "splitLayout": {
                 "ratio": "50-50",
                 "layout": "image-left"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
               }
             }
           ],
@@ -1525,6 +1678,9 @@
               "url": "#"
             }
           ]
+        },
+        "typographyOverrides": {
+          "enabled": false
         }
       }
     },

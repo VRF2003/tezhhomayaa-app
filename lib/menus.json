@@ -17,19 +17,19 @@
         "items": [
           {
             "label": "Tote Bags",
-            "href": "/women/tote-bags"
+            "href": "/women/bags/tote-bags"
           },
           {
             "label": "Shoulder Bags",
-            "href": "/women/shoulder-bags"
+            "href": "/women/bags/shoulder-bags"
           },
           {
             "label": "Mini Bags",
-            "href": "/women/mini-bags"
+            "href": "/women/bags/mini-bags"
           },
           {
             "label": "Back Packs",
-            "href": "/women/back-packs"
+            "href": "/women/bags/back-packs"
           }
         ]
       },
@@ -79,15 +79,15 @@
         "items": [
           {
             "label": "Tote Bags",
-            "href": "/men/bags"
+            "href": "/men/bags/tote-bags"
           },
           {
             "label": "Backpacks",
-            "href": "/men/bags"
+            "href": "/men/bags/backpacks"
           },
           {
             "label": "Travel Bags",
-            "href": "/men/bags"
+            "href": "/men/bags/travel-bags"
           }
         ]
       },

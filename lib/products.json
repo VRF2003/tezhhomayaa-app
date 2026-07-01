@@ -7328,36 +7328,6 @@
     "status": "active"
   },
   {
-    "id": "imported_92",
-    "slug": "timeless-impression-tote-bag",
-    "handle": "timeless-impression-tote-bag",
-    "name": "Timeless Impression Tote Bag",
-    "price": 11000,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_GivefrontangleofthisBag.365928.png?v=1764931990",
-    "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_GivedifferentangleofthisBag.186235.png?v=1764931990",
-    "gallery": [
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_GivefrontangleofthisBag.365928.png?v=1764931990",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_GivedifferentangleofthisBag.186235.png?v=1764931990",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_GivedifferentangleofthisBag.SuperClose-upforthebagtexture.654586.png?v=1764931990",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_HoldthisbaginfemaleModel-Theshotisbeingcapturedinstudiowithsimilarkin296925.png?v=1764931990",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Firefly_GeminiFlash_Makethisimageasitisshotinsuperhigh-endlighting-Crisplightingonthebag684062.png?v=1764931990"
-    ],
-    "category": "women/bags",
-    "categoryLabel": "Women's Bags",
-    "href": "/products/timeless-impression-tote-bag",
-    "editorialDescription": "Timeless Impression Tote Bag — Tezhhomayaa SS 2026 Collection.",
-    "tags": [],
-    "variants": [
-      {
-        "optionName": "Title",
-        "option": "Default Title",
-        "price": 11000,
-        "sku": ""
-      }
-    ],
-    "status": "active"
-  },
-  {
     "id": "imported_93",
     "slug": "the-opal-reign-asymmetric-hem-top",
     "handle": "the-opal-reign-asymmetric-hem-top",
@@ -28538,46 +28508,13 @@
     "gender": "women"
   },
   {
-    "name": "The \"Astral Dynasty\" Travel Bag",
+    "name": "Bags",
     "editorialDescription": "",
-    "price": 23000,
+    "price": "4000",
     "compareAtPrice": "",
-    "sku": "1",
-    "barcode": "AsDyTb",
-    "quantity": 5,
-    "gender": "women",
-    "category": "women/bags/mini-bags",
-    "status": "active",
-    "image": "/uploads/1781078082646-hf_20260609_182728_f49e7ed2-44e1-421e-add8-29b86f4cca73.png",
-    "gallery": [
-      "/uploads/1781078082646-hf_20260609_182728_f49e7ed2-44e1-421e-add8-29b86f4cca73.png"
-    ],
-    "slug": "the-astral-dynasty-travel-bag-4naw",
-    "handle": "the-astral-dynasty-travel-bag-4naw",
-    "href": "/women/bags/mini-bags/the-astral-dynasty-travel-bag-4naw",
-    "id": "prod_1781078082666_fwt6x89",
-    "categoryLabel": "women/bags/mini-bags"
-  },
-  {
-    "name": "The \"Mireaux II\" Bag",
-    "editorialDescription": "",
-    "price": 5000,
-    "compareAtPrice": "",
-    "sku": "MirIIBg",
+    "sku": "",
     "barcode": "",
-    "quantity": 5,
-    "gender": "women",
-    "category": "women/bags/back-packs",
-    "status": "active",
-    "image": "/uploads/1781079509674-hf_20260609_184715_314a79b3-b93f-4977-a539-a23e416481c5.png",
-    "gallery": [
-      "/uploads/1781079509674-hf_20260609_184715_314a79b3-b93f-4977-a539-a23e416481c5.png"
-    ],
-    "slug": "the-mireaux-ii-bag-sqey",
-    "handle": "the-mireaux-ii-bag-sqey",
-    "href": "/women/bags/back-packs/the-mireaux-ii-bag-sqey",
-    "id": "prod_1781079509699_k0usqey",
-    "categoryLabel": "women/bags/tote-bags",
+    "quantity": 10,
     "designStory": "",
     "inspirationStory": "",
     "fabricDetails": "",
@@ -28586,10 +28523,9 @@
     "sizeGuide": "",
     "fabricCare": "",
     "shippingReturns": "",
-    "enableStickyCheckout": true,
-    "relatedProductIds": [
-      "imported_3"
-    ],
+    "gender": "women",
+    "category": "women/bags/mini-bags",
+    "status": "active",
     "season": "",
     "color": "",
     "material": "",
@@ -28597,51 +28533,64 @@
     "collectionName": "",
     "tags": [
       "gender_women",
-      "category_bags",
-      "new_in"
-    ]
+      "category_bags"
+    ],
+    "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907907/tezhhomayaa_app/vdvvuqfj2pidf3qnpyxp.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907907/tezhhomayaa_app/vdvvuqfj2pidf3qnpyxp.jpg",
+      "https://res.cloudinary.com/dhezwtyku/image/upload/v1782906042/tezhhomayaa_app/a9ff02zzafzsqbcjgzq3.jpg",
+      "https://res.cloudinary.com/dhezwtyku/image/upload/v1782906042/tezhhomayaa_app/toth727tu0skams6p7fu.jpg"
+    ],
+    "slug": "bags-lmzg",
+    "handle": "bags-lmzg",
+    "href": "/women/bags/mini-bags/bags-lmzg",
+    "id": "prod_1782906043645_7gzlmzg",
+    "categoryLabel": "women/bags/mini-bags",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
-    "name": "Continuum Bag",
-    "editorialDescription": "<blockquote data-type=\"luxury-quote\" class=\"relative my-8 border-l-2 border-gold-400/50 pl-6 py-2 before:content-[&quot;&quot;] before:absolute before:-left-[1px] before:top-0 before:w-[2px] before:h-1/3 before:bg-gold-400 italic text-xl text-zinc-300 font-serif leading-relaxed\">dasdasdsd</blockquote><p></p>",
-    "price": 5000,
+    "name": "Cosmic Chaos Tote Bag",
+    "editorialDescription": "",
+    "price": "25000",
     "compareAtPrice": "",
-    "sku": "MirIIBg",
+    "sku": "",
     "barcode": "",
-    "quantity": 5,
-    "gender": "women",
-    "category": "women/bags/tote-bags",
-    "status": "active",
-    "image": "/uploads/1781079509674-hf_20260609_184715_314a79b3-b93f-4977-a539-a23e416481c5.png",
-    "gallery": [
-      "/uploads/1781079509674-hf_20260609_184715_314a79b3-b93f-4977-a539-a23e416481c5.png"
-    ],
-    "slug": "continuum-bag-thvo",
-    "handle": "continuum-bag-thvo",
-    "href": "/women/bags/tote-bags/continuum-bag-thvo",
-    "categoryLabel": "women/bags/tote-bags",
+    "quantity": 10,
     "designStory": "",
     "inspirationStory": "",
     "fabricDetails": "",
     "craftsmanshipDetails": "",
-    "productStory": "<blockquote><p>fsd</p></blockquote><p></p>",
+    "productStory": "",
     "sizeGuide": "",
     "fabricCare": "",
     "shippingReturns": "",
-    "enableStickyCheckout": true,
-    "relatedProductIds": [
-      "imported_3"
-    ],
+    "gender": "women",
+    "category": "women/bags/tote-bags",
+    "status": "active",
     "season": "",
     "color": "",
     "material": "",
     "fit": "",
     "collectionName": "",
     "tags": [
-      "gender_women",
       "category_bags",
-      "new_in"
+      "gender_women"
     ],
-    "id": "prod_1782717693449_xrmthvo"
+    "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782908033/tezhhomayaa_app/edyxtahdtkmfjh271jb9.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dhezwtyku/image/upload/v1782908033/tezhhomayaa_app/edyxtahdtkmfjh271jb9.jpg"
+    ],
+    "slug": "cosmic-chaos-tote-bag-6ck0",
+    "handle": "cosmic-chaos-tote-bag-6ck0",
+    "href": "/women/bags/tote-bags/cosmic-chaos-tote-bag-6ck0",
+    "id": "prod_1782908033724_3f3eakv",
+    "categoryLabel": "women/bags/tote-bags"
   }
 ]

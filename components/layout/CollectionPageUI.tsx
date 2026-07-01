@@ -24,7 +24,15 @@ export default function CollectionPageUI({
   totalDraft, 
   smartCollection 
 }: CollectionPageUIProps) {
-  if (!meta && !smartCollection) {
+  // Dynamically generate fallback meta if none exists but we have products
+  const pageMeta = meta || smartCollection || (finalProducts.length > 0 ? {
+    title: categoryKey.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
+    subtitle: categoryKey.split('/')[0]?.toUpperCase(),
+    bannerImage: "",
+    description: ""
+  } : null);
+
+  if (!pageMeta && finalProducts.length === 0) {
     return (
       <main>
         <Navbar />
@@ -59,6 +67,8 @@ export default function CollectionPageUI({
           products={finalProducts} 
           presentation={smartCollection?.presentation}
         />
+
+
 
         <Footer />
       </main>
