@@ -22,7 +22,9 @@ export function useWysiwygDrag({ sectionId, slideId, defaultDesktop, defaultMobi
     e.preventDefault(); e.stopPropagation();
     
     // Set initial position based on viewport at the exact moment drag begins
-    const isMobile = window.innerWidth < 768;
+    const params = new URLSearchParams(window.location.search);
+    const viewModeParam = params.get("viewMode");
+    const isMobile = viewModeParam === "mobile" || (!viewModeParam && window.innerWidth < 768);
     setLocalPos({
       x: isMobile ? (defaultMobile.x ?? 50) : (defaultDesktop.x ?? 50),
       y: isMobile ? (defaultMobile.y ?? 50) : (defaultDesktop.y ?? 50)
@@ -49,7 +51,9 @@ export function useWysiwygDrag({ sectionId, slideId, defaultDesktop, defaultMobi
       let newY = ((upEv.clientY - rect.top) / rect.height) * 100;
       const finalX = Math.round(Math.max(0, Math.min(100, newX)));
       const finalY = Math.round(Math.max(0, Math.min(100, newY)));
-      const mode = window.innerWidth < 768 ? "mobile" : "desktop";
+      const params = new URLSearchParams(window.location.search);
+      const viewModeParam = params.get("viewMode");
+      const mode = viewModeParam || (window.innerWidth < 768 ? "mobile" : "desktop");
       
       window.parent.postMessage({ type: "UPDATE_POSITION", secId: sectionId, slideId, x: finalX, y: finalY, mode }, "*");
     };

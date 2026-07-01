@@ -489,7 +489,7 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
           }}>
             <iframe 
               ref={iframeRef}
-              src={previewUrl + (previewUrl.includes('?') ? '&adminPreview=true' : '?adminPreview=true')} 
+              src={previewUrl + (previewUrl.includes('?') ? '&' : '?') + 'adminPreview=true&viewMode=' + viewMode} 
               style={{ width: "100%", height: "100%", border: "none" }}
               title="Storefront Preview"
             />

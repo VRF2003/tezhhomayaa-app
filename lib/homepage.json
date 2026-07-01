@@ -82,8 +82,8 @@
             },
             "layout": {
               "desktop": {
-                "x": 49,
-                "y": 92,
+                "x": 50,
+                "y": 45,
                 "width": 100,
                 "height": 100,
                 "align": "center",
@@ -102,8 +102,8 @@
                 "textWidth": 80
               },
               "mobile": {
-                "x": 50,
-                "y": 50,
+                "x": 51,
+                "y": 75,
                 "width": 100,
                 "height": 100,
                 "align": "center",
@@ -146,8 +146,8 @@
                 "fontWeight": 400,
                 "padding": "0.6rem 1.4rem",
                 "borderRadius": 0,
-                "textColor": "#ffffff",
-                "backgroundColor": "#1a1a18"
+                "textColor": "#49171b",
+                "backgroundColor": "#ffffff"
               },
               "fontFamily": "var(--font-cormorant, serif)",
               "backgroundColor": "transparent",
@@ -261,21 +261,21 @@
           }
         },
         "content": {
-          "heading": "Evening Collection",
+          "heading": "",
           "italicHeading": "",
-          "subheading": "Discover the SS26 Evening Edit",
+          "subheading": "",
           "description": "",
           "primaryButton": {
             "enabled": true,
-            "label": "Shop Now",
-            "url": "/products/the-cosmic-chaos-knee-length-dress",
-            "style": "luxury"
+            "label": "Shop Bag",
+            "url": "women/bags/tote-bags/cosmic-chaos-tote-bag-6ck0",
+            "style": "filled"
           },
           "secondaryButton": {
-            "enabled": false,
-            "label": "Learn More",
-            "url": "#",
-            "style": "outline"
+            "enabled": true,
+            "label": "Shop Dress",
+            "url": "/women/ready-to-wear/dresses-jumpsuits/the-rough-notes-dress-with-elasticated-waistband-ed_3",
+            "style": "luxury"
           },
           "tertiaryButton": {
             "enabled": false,
@@ -350,8 +350,8 @@
             "fontWeight": 400,
             "padding": "0.6rem 1.4rem",
             "borderRadius": 0,
-            "textColor": "#ffffff",
-            "backgroundColor": "#1a1a18"
+            "textColor": "#49171b",
+            "backgroundColor": "#ffffff"
           },
           "fontFamily": "var(--font-cormorant, serif)",
           "backgroundColor": "transparent",
@@ -1322,7 +1322,7 @@
                   "height": 2160
                 },
                 "mobile": {
-                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912653/tezhhomayaa_app/qecmddvkdlscelzbpflm.jpg",
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912306/tezhhomayaa_app/nvrh46vequryrtzpqhpy.jpg",
                   "width": 1400,
                   "height": 640
                 },
