@@ -5,8 +5,8 @@
     "slug": "about-us",
     "status": "Published",
     "template": "Editorial Page",
-    "lastUpdated": "2026-06-30T18:14:41.843Z",
-    "mode": "motion"
+    "lastUpdated": "2026-07-01T14:09:31.926Z",
+    "mode": "classic"
   },
   {
     "id": "privacy-policy",
@@ -14,7 +14,7 @@
     "slug": "privacy-policy",
     "status": "Published",
     "template": "Legal Page",
-    "lastUpdated": "2026-06-26T09:21:26.690Z"
+    "lastUpdated": "2026-07-01T14:08:40.590Z"
   },
   {
     "id": "terms-and-conditions",

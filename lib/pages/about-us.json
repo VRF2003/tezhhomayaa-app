@@ -10,6 +10,7 @@
             "id": "slide-1",
             "content": {
               "heading": "Tezhhomayaa",
+              "italicHeading": "",
               "subheading": "",
               "description": "Form beyond motion. A luxury house redefined by pure architectural intent.",
               "primaryButton": {
@@ -23,6 +24,12 @@
                 "label": "View Collection",
                 "url": "#",
                 "style": "outline"
+              },
+              "tertiaryButton": {
+                "enabled": false,
+                "label": "Contact Us",
+                "url": "#",
+                "style": "ghost"
               }
             },
             "layout": {
@@ -64,7 +71,7 @@
                 "letterSpacing": 0.05,
                 "lineHeight": 1.6,
                 "textColor": "#7a172b",
-                "textShadow": "luxury",
+                "textShadow": "none",
                 "align": "center"
               },
               "subheading": {
@@ -190,6 +197,36 @@
                   "textWidth": 90
                 }
               }
+            },
+            "contactInfo": {
+              "fields": []
+            },
+            "contactForm": {
+              "successMessage": "Thank you for your message. We will be in touch shortly.",
+              "destinationEmail": "care@tezhhomayaa.com",
+              "subjects": [
+                "Client Services",
+                "Order Support",
+                "Wholesale",
+                "Press",
+                "Collaboration",
+                "Other"
+              ]
+            },
+            "socialPresence": {
+              "links": [
+                {
+                  "platform": "Instagram",
+                  "url": "#"
+                },
+                {
+                  "platform": "Facebook",
+                  "url": "#"
+                }
+              ]
+            },
+            "typographyOverrides": {
+              "enabled": false
             }
           }
         ]
