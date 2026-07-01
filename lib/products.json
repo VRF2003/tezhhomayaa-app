@@ -490,7 +490,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_6",
@@ -572,7 +578,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_7",
@@ -653,7 +665,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 4
+    }
   },
   {
     "id": "imported_8",
@@ -733,7 +751,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_9",
@@ -814,7 +838,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_10",
@@ -895,7 +925,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 2
+    }
   },
   {
     "id": "imported_11",
@@ -974,7 +1010,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_12",
@@ -1055,7 +1097,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 4
+    }
   },
   {
     "id": "imported_13",
@@ -1137,7 +1185,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 3
+    }
   },
   {
     "id": "imported_14",
@@ -1217,7 +1271,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_15",
@@ -1297,7 +1357,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_16",
@@ -1378,7 +1444,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 4
+    }
   },
   {
     "id": "imported_17",
@@ -1459,7 +1531,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 3
+    }
   },
   {
     "id": "imported_18",
@@ -1541,7 +1619,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 3
+    }
   },
   {
     "id": "imported_19",
@@ -1624,7 +1708,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_20",
@@ -2426,7 +2516,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 4
+    }
   },
   {
     "id": "imported_30",
@@ -2510,7 +2606,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_31",
@@ -2595,7 +2697,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 6
+    }
   },
   {
     "id": "imported_32",
@@ -2610,7 +2718,6 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/03_cfa8b036-dabc-44b5-bdd4-224602f70172.jpg?v=1773926273",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/02_ebf7f9c3-f68d-496f-968b-44ae28e0c368.jpg?v=1773926273",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/01_7abc1b92-e0e1-4d88-be67-d51edac1ccab.jpg?v=1773926273",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/06_79bd9f51-19ce-46e9-b866-6e79f8cc79b9.jpg?v=1773926273",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/05_4fd42cdf-853d-4637-a82d-7aa30c274a01.jpg?v=1773926273",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/04_63984a52-573b-4d89-b701-4967a583cd6a.jpg?v=1773926273",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/0050__0007__DSC7624_86c09965-9668-4e3c-b8ab-53c516285f35.jpg?v=1773926273"
@@ -2679,7 +2786,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_33",
@@ -2761,7 +2874,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_34",
@@ -2842,7 +2961,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_35",
@@ -3834,7 +3959,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_47",
@@ -3913,7 +4044,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_48",
@@ -3994,7 +4131,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_49",
@@ -5306,7 +5449,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_65",
@@ -5386,7 +5535,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_66",
@@ -5467,7 +5622,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 4
+    }
   },
   {
     "id": "imported_67",
@@ -5547,7 +5708,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_68",
@@ -5628,7 +5795,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_69",
