@@ -22,8 +22,9 @@ function ProductCard({ product, presentation }: { product: Product, presentation
   const [hovered, setHovered] = useState(false);
   const { formatPrice } = useCurrency();
   
-  const mainImg = product.gallery?.[0] || product.image;
-  const hoverImg = product.gallery?.[1] || mainImg;
+  const thumbIndex = product.merchandising?.gridThumbnail ?? 0;
+  const mainImg = product.gallery?.[thumbIndex] || product.image;
+  const hoverImg = product.gallery?.[thumbIndex + 1] || mainImg;
 
   let pb = "133.33%"; // default 3:4
   if (presentation?.imageRatio === "Square" || presentation?.imageRatio === "1:1") pb = "100%";

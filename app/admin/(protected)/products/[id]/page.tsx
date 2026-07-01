@@ -56,6 +56,12 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
 
+  // Merchandising
+  const [gridThumbnail, setGridThumbnail] = useState<number>(0);
+  const [desktopHeroImage, setDesktopHeroImage] = useState<number>(0);
+  const [tabletHeroImage, setTabletHeroImage] = useState<number>(0);
+  const [mobileHeroImage, setMobileHeroImage] = useState<number>(0);
+
   // Extras
   const [enableStickyCheckout, setEnableStickyCheckout] = useState(true);
   const [relatedProductIds, setRelatedProductIds] = useState<string[]>([]);
@@ -130,7 +136,13 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       href,
       tags,
       collectionName,
-      status: "active"
+      status: "active",
+      merchandising: {
+        gridThumbnail,
+        desktopHeroImage,
+        tabletHeroImage,
+        mobileHeroImage
+      }
     };
 
     previewIframeRef.current.contentWindow.postMessage({
@@ -142,7 +154,8 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
     productStory, designStory, inspirationStory, fabricDetails, craftsmanshipDetails,
     sizeGuide, fabricCare, shippingReturns,
     gender, category, subcategory,
-    mediaItems, tags, collectionName
+    mediaItems, tags, collectionName,
+    gridThumbnail, desktopHeroImage, tabletHeroImage, mobileHeroImage
   ]);
 
   useEffect(() => {
@@ -242,6 +255,13 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
               type: 'url',
               previewUrl: url
             })));
+            
+            if (product.merchandising) {
+              setGridThumbnail(product.merchandising.gridThumbnail ?? 0);
+              setDesktopHeroImage(product.merchandising.desktopHeroImage ?? 0);
+              setTabletHeroImage(product.merchandising.tabletHeroImage ?? 0);
+              setMobileHeroImage(product.merchandising.mobileHeroImage ?? 0);
+            }
           } else {
             setError("Product not found");
           }
@@ -411,6 +431,12 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
         href,
         enableStickyCheckout,
         relatedProductIds,
+        merchandising: {
+          gridThumbnail,
+          desktopHeroImage,
+          tabletHeroImage,
+          mobileHeroImage
+        }
       };
 
       const res = await fetch(`/api/products/${id}`, {
@@ -784,6 +810,74 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
                 No media added yet. Click "Add Images" to upload.
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Image Merchandising */}
+        <div style={{ background: "#ffffff", border: "1px solid #e8e4df", padding: "2rem", borderRadius: "2px" }}>
+          <h2 style={{ fontSize: "1rem", fontWeight: 400, color: "#1a1a18", margin: "0 0 1.5rem" }}>Image Merchandising</h2>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+            {[
+              { label: "Grid Thumbnail", key: "gridThumbnail", val: gridThumbnail, setVal: setGridThumbnail },
+              { label: "Desktop Hero Image", key: "desktopHeroImage", val: desktopHeroImage, setVal: setDesktopHeroImage },
+              { label: "Tablet Hero Image", key: "tabletHeroImage", val: tabletHeroImage, setVal: setTabletHeroImage },
+              { label: "Mobile Hero Image", key: "mobileHeroImage", val: mobileHeroImage, setVal: setMobileHeroImage }
+            ].map(({ label, key, val, setVal }) => (
+              <div key={key} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <label style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>{label}</label>
+                
+                {mediaItems.filter(m => m.type !== 'file' ? !m.previewUrl.match(/\.(mp4|webm|mov)$/i) : !m.file?.type.startsWith('video/')).length > 0 ? (
+                  <div style={{ display: "flex", gap: "1rem", overflowX: "auto", paddingBottom: "1rem" }}>
+                    {mediaItems.filter(m => m.type !== 'file' ? !m.previewUrl.match(/\.(mp4|webm|mov)$/i) : !m.file?.type.startsWith('video/')).map((item, originalIndex) => {
+                      // Find the actual index in the mediaItems array to save
+                      const actualIndex = mediaItems.findIndex(m => m.id === item.id);
+                      const isSelected = val === actualIndex;
+                      
+                      return (
+                        <div 
+                          key={item.id}
+                          onClick={() => setVal(actualIndex)}
+                          style={{
+                            position: "relative",
+                            width: "80px",
+                            height: "106px",
+                            border: isSelected ? "2px solid #1a1a18" : "1px solid #e8e4df",
+                            padding: isSelected ? "2px" : "0",
+                            cursor: "pointer",
+                            flexShrink: 0,
+                            borderRadius: "2px",
+                            background: "#fafaf8"
+                          }}
+                        >
+                          <img src={item.previewUrl} style={{ width: "100%", height: "100%", objectFit: "cover" }} alt="" />
+                          {isSelected && (
+                            <div style={{
+                              position: "absolute",
+                              top: "-8px",
+                              right: "-8px",
+                              background: "#1a1a18",
+                              color: "#fff",
+                              borderRadius: "50%",
+                              width: "20px",
+                              height: "20px",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: "12px"
+                            }}>
+                              ✓
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div style={{ fontSize: "0.75rem", color: "#9a9690", padding: "1rem 0" }}>No images available for merchandising.</div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 

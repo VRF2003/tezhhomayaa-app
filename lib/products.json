@@ -79,7 +79,13 @@
     "fit": "",
     "collectionName": "",
     "enableStickyCheckout": true,
-    "relatedProductIds": []
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopHeroImage": 0,
+      "tabletHeroImage": 0,
+      "mobileHeroImage": 1
+    }
   },
   {
     "id": "imported_1",

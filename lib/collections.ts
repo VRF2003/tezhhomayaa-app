@@ -42,6 +42,14 @@ export type Product = {
   // Custom features
   enableStickyCheckout?: boolean;
   relatedProductIds?: string[];
+  
+  // Merchandising
+  merchandising?: {
+    gridThumbnail?: number;
+    desktopHeroImage?: number;
+    tabletHeroImage?: number;
+    mobileHeroImage?: number;
+  };
 };
 
 export type CategoryMeta = {

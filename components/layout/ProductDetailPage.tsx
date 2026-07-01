@@ -47,9 +47,27 @@ function isVideo(src: string) {
   return !!src.match(/\.(mp4|webm|mov)$/i);
 }
 
-export function CinematicMorphingGallery({ images, isPreviewMode }: { images: string[], isPreviewMode?: boolean }) {
+export function CinematicMorphingGallery({ images, isPreviewMode, merchandising }: { images: string[], isPreviewMode?: boolean, merchandising?: any }) {
   const [current, setCurrent] = useState(0);
   const total = images.length;
+  
+  // Set initial hero image based on merchandising settings
+  useEffect(() => {
+    if (merchandising) {
+      let heroIndex = 0;
+      const w = window.innerWidth;
+      if (w < 768 && merchandising.mobileHeroImage !== undefined) {
+        heroIndex = merchandising.mobileHeroImage;
+      } else if (w >= 768 && w <= 1024 && merchandising.tabletHeroImage !== undefined) {
+        heroIndex = merchandising.tabletHeroImage;
+      } else if (w > 1024 && merchandising.desktopHeroImage !== undefined) {
+        heroIndex = merchandising.desktopHeroImage;
+      }
+      if (heroIndex >= 0 && heroIndex < images.length) {
+        setCurrent(heroIndex);
+      }
+    }
+  }, [merchandising, images.length]);
 
   // In-place Zoom State
   const [zoomed, setZoomed] = useState(false);
@@ -425,7 +443,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
         overflow: "hidden", 
         background: "#000" 
       }}>
-        <CinematicMorphingGallery images={product.gallery} isPreviewMode={isPreviewMode} />
+        <CinematicMorphingGallery images={product.gallery} isPreviewMode={isPreviewMode} merchandising={product.merchandising} />
       </section>
 
       <motion.div
