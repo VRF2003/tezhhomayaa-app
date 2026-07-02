@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     // Upload to Cloudinary using a stream
     const uploadResult = await new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: "tezhhomayaa_app" },
+        { folder: "tezhhomayaa_app", resource_type: "auto" },
         (error, result) => {
           if (error) reject(error);
           else resolve(result);

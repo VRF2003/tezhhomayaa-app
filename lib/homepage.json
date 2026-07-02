@@ -1833,9 +1833,9 @@
           "textShadow": "none"
         },
         "media": {
-          "type": "image",
+          "type": "video",
           "desktop": {
-            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782843180/tezhhomayaa_app/sbmnfagxyimo4vxt7ikv.jpg",
+            "url": "https://res.cloudinary.com/dhezwtyku/video/upload/v1782977859/tezhhomayaa_app/vgdyrnieffufg1cj94c5.mp4",
             "width": 1920,
             "height": 1080
           },
@@ -1892,6 +1892,9 @@
               "url": "#"
             }
           ]
+        },
+        "typographyOverrides": {
+          "enabled": false
         }
       }
     }
