@@ -63,21 +63,22 @@ export default function JournalEditorPage() {
   const handleImageUpload = async (file: File, field: "heroImage" | "thumbnailImage") => {
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "tezhhomayaa_app");
     try {
-      const res = await fetch("https://api.cloudinary.com/v1_1/dhezwtyku/image/upload", {
+      const res = await fetch("/api/upload", {
         method: "POST",
         body: formData,
       });
       const data = await res.json();
-      if (data.secure_url) {
+      if (data.success && data.url) {
         setArticle((prev: any) => ({
           ...prev,
-          [field]: { url: data.secure_url, alt: prev.title || "" }
+          [field]: { url: data.url, alt: prev.title || "" }
         }));
+      } else {
+        console.error("Upload failed:", data.error);
       }
     } catch (e) {
-      console.error("Upload failed", e);
+      console.error("Upload exception", e);
     }
   };
 

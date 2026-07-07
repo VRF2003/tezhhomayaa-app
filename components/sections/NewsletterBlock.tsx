@@ -48,7 +48,17 @@ export default function NewsletterBlock({ cmsData, sectionId }: { cmsData: any; 
           {content.primaryButton?.label && (
             <button 
               type="submit"
-              className="uppercase tracking-[0.1em] text-xs border border-white px-8 py-3 hover:bg-white hover:text-[#1a1a18] transition-colors"
+              className="uppercase hover:opacity-80 transition-opacity"
+              style={{
+                fontSize: `${style.button.fontSize}rem`,
+                fontWeight: style.button.fontWeight,
+                padding: style.button.padding,
+                borderRadius: `${style.button.borderRadius}px`,
+                color: style.button.textColor,
+                backgroundColor: style.button.backgroundColor,
+                letterSpacing: "0.1em",
+                border: `1px solid ${style.button.textColor}`
+              }}
             >
               {content.primaryButton.label}
             </button>

@@ -175,15 +175,6 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
               slide.media.mobile.url = await uploadFile(files[`${sec.id}_${slide.id}_mobile`] as File);
             }
           }
-        } else if (sec.type === "image-section" || sec.type === "editorial-section" || sec.type === "split-layout" || sec.type === "quote-block" || sec.type === "newsletter-block" || sec.type === "featured-collection" || sec.type === "product-carousel" || sec.type === "rich-text-block" || sec.type === "motion-arrival" || sec.type === "motion-manifesto" || sec.type === "motion-canvas" || sec.type === "motion-storytelling" || sec.type === "motion-values" || sec.type === "motion-future" || sec.type === "motion-signature") {
-          if (files[`${sec.id}_desktop`]) {
-            if(!sec.data.media) sec.data.media = { desktop: {} };
-            sec.data.media.desktop.url = await uploadFile(files[`${sec.id}_desktop`] as File);
-          }
-          if (files[`${sec.id}_mobile`]) {
-            if(!sec.data.media) sec.data.media = { mobile: {} };
-            sec.data.media.mobile.url = await uploadFile(files[`${sec.id}_mobile`] as File);
-          }
         } else if (sec.type === "collection-showcase" || sec.type === "lookbook-grid" || sec.type === "motion-atelier") {
           if (sec.data.collectionShowcase?.items) {
             for (const item of sec.data.collectionShowcase.items) {
@@ -196,6 +187,23 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
                 item.media.mobile.url = await uploadFile(files[`${sec.id}_item_${item.id}_mobile`] as File);
               }
             }
+          }
+          if (files[`${sec.id}_container_desktop`]) {
+            if(!sec.data.media) sec.data.media = { desktop: {} };
+            sec.data.media.desktop.url = await uploadFile(files[`${sec.id}_container_desktop`] as File);
+          }
+          if (files[`${sec.id}_container_mobile`]) {
+            if(!sec.data.media) sec.data.media = { mobile: {} };
+            sec.data.media.mobile.url = await uploadFile(files[`${sec.id}_container_mobile`] as File);
+          }
+        } else {
+          if (files[`${sec.id}_desktop`]) {
+            if(!sec.data.media) sec.data.media = { desktop: {} };
+            sec.data.media.desktop.url = await uploadFile(files[`${sec.id}_desktop`] as File);
+          }
+          if (files[`${sec.id}_mobile`]) {
+            if(!sec.data.media) sec.data.media = { mobile: {} };
+            sec.data.media.mobile.url = await uploadFile(files[`${sec.id}_mobile`] as File);
           }
         }
       }

@@ -42,8 +42,16 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
     luxury: "border-b border-white pb-1 hover:text-gray-200 hover:border-gray-200"
   };
 
+  const hasMedia = !!(norm.media?.desktop?.url || cmsData.desktopImage || cmsData.video || norm.media?.video?.url);
+
+  // height: 0 means "auto" (no image, text-only). Otherwise use layout.height as vh.
+  const sectionHeight = layout.height ?? 80; // default 80vh
+  const heightStyle = (!hasMedia || sectionHeight === 0)
+    ? { minHeight: "unset", height: "auto", paddingTop: "5rem", paddingBottom: "5rem" }
+    : { height: `${sectionHeight}vh`, minHeight: sectionHeight < 30 ? "unset" : "300px" };
+
   return (
-    <section ref={containerRef} aria-label={norm.content.heading || ""} className="relative w-full h-[80vh] min-h-[600px] overflow-hidden">
+    <section ref={containerRef} aria-label={norm.content.heading || ""} className="relative w-full overflow-hidden" style={heightStyle}>
       <UniversalMediaRenderer 
         media={norm.media}
         fallbackDesktopUrl={cmsData.desktopImage || ""}

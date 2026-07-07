@@ -254,6 +254,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                   className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium drop-shadow-sm ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
                   style={{ 
                     fontWeight: norm.style.subheading.fontWeight,
+                    fontSize: `${norm.style.subheading.fontSize}rem`,
                     letterSpacing: `${norm.style.subheading.letterSpacing}em`,
                     lineHeight: norm.style.subheading.lineHeight,
                     color: norm.style.subheading.textColor,
@@ -271,6 +272,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                 style={{ 
                   fontFamily: norm.style.fontFamily,
                   fontWeight: norm.style.heading.fontWeight,
+                  fontSize: `${norm.style.heading.fontSize}rem`,
                   letterSpacing: `${norm.style.heading.letterSpacing}em`,
                   lineHeight: norm.style.heading.lineHeight,
                   color: norm.style.heading.textColor,
@@ -289,6 +291,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                 className={`text-editorial whitespace-pre-wrap max-w-[800px] drop-shadow-md ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
                 style={{ 
                   fontWeight: norm.style.description.fontWeight,
+                  fontSize: `${norm.style.description.fontSize}rem`,
                   letterSpacing: `${norm.style.description.letterSpacing}em`,
                   lineHeight: norm.style.description.lineHeight,
                   color: norm.style.description.textColor,
@@ -314,7 +317,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                   <Link 
                     href={href}
                     className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70`}
-                    style={{ ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor), pointerEvents: "auto" }}
+                    style={{ fontSize: `${norm.style.button.fontSize}rem`, ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor), pointerEvents: "auto" }}
                     draggable={false}
                     onClick={e => isPreviewMode && e.preventDefault()}
                   >
@@ -332,6 +335,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                     href={href}
                     className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70`}
                     style={{ 
+                      fontSize: `${norm.style.button.fontSize}rem`,
                       ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor), 
                       pointerEvents: "auto",
                       opacity: slide.buttonStyle === "luxury" ? 0.6 : 1 

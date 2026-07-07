@@ -254,7 +254,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         x: d.layout?.desktop?.x ?? d.x ?? 50,
         y: d.layout?.desktop?.y ?? d.y ?? 50,
         width: d.layout?.desktop?.width ?? d.width ?? 100,
-        height: d.layout?.desktop?.height ?? 100,
+        height: d.layout?.desktop?.height ?? 80,
         align: d.layout?.desktop?.align ?? "center",
         padding: d.layout?.desktop?.padding ?? "0",
         margin: d.layout?.desktop?.margin ?? "0",
@@ -264,7 +264,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         x: d.layout?.tablet?.x ?? d.x ?? 50,
         y: d.layout?.tablet?.y ?? d.y ?? 50,
         width: d.layout?.tablet?.width ?? d.width ?? 100,
-        height: d.layout?.tablet?.height ?? 100,
+        height: d.layout?.tablet?.height ?? 80,
         align: d.layout?.tablet?.align ?? "center",
         padding: d.layout?.tablet?.padding ?? "0",
         margin: d.layout?.tablet?.margin ?? "0",
@@ -274,7 +274,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         x: d.layout?.mobile?.x ?? d.mobileX ?? d.x ?? 50,
         y: d.layout?.mobile?.y ?? d.mobileY ?? d.y ?? 50,
         width: d.layout?.mobile?.width ?? d.width ?? 100,
-        height: d.layout?.mobile?.height ?? 100,
+        height: d.layout?.mobile?.height ?? 80,
         align: d.layout?.mobile?.align ?? "center",
         padding: d.layout?.mobile?.padding ?? "0",
         margin: d.layout?.mobile?.margin ?? "0",
@@ -282,35 +282,35 @@ export function normalizeSectionData(data: any): UniversalSectionData {
       }
     },
     style: {
-      heading: d.style?.heading ?? {
-        fontSize: d.style?.fontSize ?? d.fontSize ?? 4,
-        fontWeight: d.style?.fontWeight ?? d.fontWeight ?? 300,
-        letterSpacing: d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
-        lineHeight: d.style?.lineHeight ?? d.lineHeight ?? 1.1,
-        textColor: d.style?.textColor ?? d.textColor ?? "#ffffff",
-        textShadow: d.style?.textShadow ?? d.shadow ?? "none",
+      heading: {
+        fontSize: d.style?.heading?.fontSize ?? d.style?.fontSize ?? d.fontSize ?? 4,
+        fontWeight: d.style?.heading?.fontWeight ?? d.style?.fontWeight ?? d.fontWeight ?? 300,
+        letterSpacing: d.style?.heading?.letterSpacing ?? d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
+        lineHeight: d.style?.heading?.lineHeight ?? d.style?.lineHeight ?? d.lineHeight ?? 1.1,
+        textColor: d.style?.heading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
+        textShadow: d.style?.heading?.textShadow ?? d.style?.textShadow ?? d.shadow ?? "none",
         align: d.style?.heading?.align ?? d.layout?.desktop?.align ?? "center"
       },
-      subheading: d.style?.subheading ?? {
-        fontSize: d.style?.subheadingFontSize ?? 1,
+      subheading: {
+        fontSize: d.style?.subheading?.fontSize ?? d.style?.subheadingFontSize ?? 1,
         fontWeight: d.style?.subheading?.fontWeight ?? 400,
         letterSpacing: d.style?.subheading?.letterSpacing ?? 0.2,
         lineHeight: d.style?.subheading?.lineHeight ?? 1.2,
-        textColor: d.style?.subheading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#ffffff",
+        textColor: d.style?.subheading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
         textShadow: d.style?.subheading?.textShadow ?? "none",
         align: d.style?.subheading?.align ?? d.layout?.desktop?.align ?? "center"
       },
-      description: d.style?.description ?? {
-        fontSize: d.style?.descriptionFontSize ?? 1.1,
+      description: {
+        fontSize: d.style?.description?.fontSize ?? d.style?.descriptionFontSize ?? 1.1,
         fontWeight: d.style?.description?.fontWeight ?? 300,
         letterSpacing: d.style?.description?.letterSpacing ?? 0.02,
         lineHeight: d.style?.description?.lineHeight ?? 1.6,
-        textColor: d.style?.description?.textColor ?? d.style?.textColor ?? d.textColor ?? "#ffffff",
+        textColor: d.style?.description?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
         textShadow: d.style?.description?.textShadow ?? "none",
         align: d.style?.description?.align ?? d.layout?.desktop?.align ?? "center",
         maxWidth: d.style?.description?.maxWidth ?? 800
       },
-      button: d.style?.button ?? {
+      button: {
         fontSize: d.style?.button?.fontSize ?? 0.75,
         fontWeight: d.style?.button?.fontWeight ?? 400,
         padding: d.style?.button?.padding ?? "0.6rem 1.4rem",
@@ -333,7 +333,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
       fontWeight: d.style?.fontWeight ?? d.fontWeight ?? 300,
       letterSpacing: d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
       lineHeight: d.style?.lineHeight ?? d.lineHeight ?? 1.1,
-      textColor: d.style?.textColor ?? d.textColor ?? "#ffffff",
+      textColor: d.style?.textColor ?? d.textColor ?? "#1a1a18",
       textShadow: d.style?.textShadow ?? d.shadow ?? "none",
     },
     media: d.media ? {

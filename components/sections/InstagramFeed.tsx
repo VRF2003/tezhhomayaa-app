@@ -39,7 +39,13 @@ export default function InstagramFeed({ cmsData, sectionId }: { cmsData: any; se
         {content.primaryButton?.enabled && content.primaryButton.label && (
           <a 
             href={content.primaryButton.url || "#"} 
-            className="mt-8 border-b border-black pb-1 uppercase tracking-widest text-xs hover:opacity-70 transition-opacity"
+            className="mt-8 uppercase tracking-widest hover:opacity-70 transition-opacity"
+            style={{
+              fontSize: `${style.button.fontSize}rem`,
+              fontWeight: style.button.fontWeight,
+              borderBottom: "1px solid currentColor",
+              paddingBottom: "2px"
+            }}
             target="_blank"
             rel="noreferrer"
           >

@@ -103,6 +103,7 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
             className={`tracking-[0.2em] uppercase mb-4 opacity-90 font-medium ${getResponsiveTypographyClass(norm.style.subheading.fontSize)}`}
             style={{ 
               fontWeight: norm.style.subheading.fontWeight,
+              fontSize: `${norm.style.subheading.fontSize}rem`,
               letterSpacing: `${norm.style.subheading.letterSpacing}em`,
               lineHeight: norm.style.subheading.lineHeight,
               color: norm.style.subheading.textColor,
@@ -118,6 +119,7 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
           <h2 style={{ 
             fontFamily: norm.style.fontFamily,
             fontWeight: norm.style.heading.fontWeight,
+            fontSize: `${norm.style.heading.fontSize}rem`,
             letterSpacing: `${norm.style.heading.letterSpacing}em`,
             lineHeight: norm.style.heading.lineHeight,
             color: norm.style.heading.textColor,
@@ -133,6 +135,7 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
             className={`text-editorial whitespace-pre-wrap ${getResponsiveTypographyClass(norm.style.description.fontSize)}`}
             style={{ 
               fontWeight: norm.style.description.fontWeight,
+              fontSize: `${norm.style.description.fontSize}rem`,
               letterSpacing: `${norm.style.description.letterSpacing}em`,
               lineHeight: norm.style.description.lineHeight,
               color: norm.style.description.textColor,

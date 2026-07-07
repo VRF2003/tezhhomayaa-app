@@ -17,8 +17,14 @@ export default function QuoteBlock({ cmsData, sectionId }: { cmsData: any; secti
       >
         {content.description && (
           <p 
-            className="font-serif italic text-2xl md:text-3xl lg:text-4xl leading-relaxed mb-6"
-            style={{ color: style.description.textColor || "#1a1a18" }}
+            className="font-serif italic leading-relaxed mb-6"
+            style={{ 
+              color: style.description.textColor || "#1a1a18",
+              fontSize: `${style.description.fontSize}rem`,
+              fontWeight: style.description.fontWeight,
+              letterSpacing: `${style.description.letterSpacing}em`,
+              lineHeight: style.description.lineHeight
+            }}
           >
             "{content.description}"
           </p>
@@ -26,8 +32,15 @@ export default function QuoteBlock({ cmsData, sectionId }: { cmsData: any; secti
         
         {content.heading && (
           <span 
-            className="uppercase tracking-[0.2em] text-xs font-mono"
-            style={{ color: style.heading.textColor || "#1a1a18", opacity: 0.6 }}
+            className="uppercase tracking-[0.2em] font-mono"
+            style={{ 
+              color: style.heading.textColor || "#1a1a18", 
+              opacity: 0.6,
+              fontSize: `${style.heading.fontSize}rem`,
+              fontWeight: style.heading.fontWeight,
+              letterSpacing: `${style.heading.letterSpacing}em`,
+              lineHeight: style.heading.lineHeight
+            }}
           >
             — {content.heading}
           </span>

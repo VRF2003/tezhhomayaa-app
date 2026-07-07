@@ -77,7 +77,7 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
         {hasMobileTab && <button style={tabStyle("MOBILE")} onClick={() => setActiveTab("MOBILE")}>Mobile</button>}
         {hasAdvancedTab && <button style={tabStyle("ADVANCED")} onClick={() => setActiveTab("ADVANCED")}>Advanced</button>}
         {sectionType === "collection-showcase" && <button style={tabStyle("SHOWCASE")} onClick={() => setActiveTab("SHOWCASE")}>Showcase Layout</button>}
-        {sectionType === "split-layout" && <button style={tabStyle("SPLIT")} onClick={() => setActiveTab("SPLIT")}>Split Config</button>}
+        {(sectionType === "split-layout" || sectionType === "image-text" || sectionType === "sticky-image") && <button style={tabStyle("SPLIT")} onClick={() => setActiveTab("SPLIT")}>Split Config</button>}
         {(sectionType === "product-carousel" || sectionType === "featured-collection") && <button style={tabStyle("ADVANCED")} onClick={() => setActiveTab("ADVANCED")}>Collection Config</button>}
         {sectionType === "contact-info-block" && <button style={tabStyle("CONTACT_INFO")} onClick={() => setActiveTab("CONTACT_INFO")}>Info Fields</button>}
         {sectionType === "contact-form" && <button style={tabStyle("CONTACT_FORM")} onClick={() => setActiveTab("CONTACT_FORM")}>Form Config</button>}
@@ -148,6 +148,47 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
         {activeTab === "LAYOUT" && (
           <div>
             <p style={{ fontSize: "0.7rem", color: "#a55", marginBottom: "1.5rem" }}>Tip: You can manually drag the text in the Live Preview pane to set these values instantly.</p>
+
+            {/* Section Height */}
+            <div style={{ marginBottom: "1.5rem", padding: "1rem", background: "#f7f5f2", borderRadius: "4px" }}>
+              <label style={{ fontSize: "0.75rem", fontWeight: 600, display: "block", marginBottom: "0.75rem" }}>Section Height</label>
+              <div style={{ display: "flex", gap: "0.5rem", marginBottom: "0.75rem", flexWrap: "wrap" }}>
+                {[0, 30, 50, 70, 80, 90, 100].map(v => {
+                  const isActive = (activeLayout.height ?? 80) === v;
+                  return (
+                    <button
+                      key={v}
+                      onClick={() => updateDeep("layout", viewMode === "mobile" ? "mobile" : "desktop", "height", v)}
+                      style={{
+                        padding: "0.4rem 0.75rem",
+                        fontSize: "0.7rem",
+                        border: `1px solid ${isActive ? "#1a1a18" : "#ccc9c4"}`,
+                        background: isActive ? "#1a1a18" : "transparent",
+                        color: isActive ? "#fff" : "#1a1a18",
+                        cursor: "pointer",
+                        borderRadius: "2px"
+                      }}
+                    >
+                      {v === 0 ? "Auto" : `${v}vh`}
+                    </button>
+                  );
+                })}
+              </div>
+              <div>
+                <label style={{ fontSize: "0.7rem", display: "flex", justifyContent: "space-between", marginBottom: "0.25rem" }}>
+                  <span>Custom Height (vh)</span>
+                  <span style={{ fontWeight: 600 }}>{(activeLayout.height ?? 80) === 0 ? "Auto" : `${activeLayout.height ?? 80}vh`}</span>
+                </label>
+                <input
+                  type="range" min="0" max="100" step="5"
+                  value={activeLayout.height ?? 80}
+                  onChange={e => updateDeep("layout", viewMode === "mobile" ? "mobile" : "desktop", "height", Number(e.target.value))}
+                  style={{ width: "100%" }}
+                />
+              </div>
+              <p style={{ fontSize: "0.65rem", color: "#999", marginTop: "0.5rem" }}>Set to "Auto" (0) for text-only sections with no image — removes the fixed height entirely.</p>
+            </div>
+
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
               <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>X Position (%)</span><span>{activeLayout.x}</span></label><input type="range" min="0" max="100" value={activeLayout.x} onChange={e => updateDeep("layout", viewMode === "mobile" ? "mobile" : "desktop", "x", Number(e.target.value))} style={{ width: "100%" }} /></div>
               <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Y Position (%)</span><span>{activeLayout.y}</span></label><input type="range" min="0" max="100" value={activeLayout.y} onChange={e => updateDeep("layout", viewMode === "mobile" ? "mobile" : "desktop", "y", Number(e.target.value))} style={{ width: "100%" }} /></div>
@@ -405,17 +446,17 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
           </div>
         )}
         {/* ── SPLIT LAYOUT OVERRIDES ── */}
-        {activeTab === "SPLIT" && sectionType === "split-layout" && norm.splitLayout && (
+        {activeTab === "SPLIT" && (sectionType === "split-layout" || sectionType === "image-text" || sectionType === "sticky-image") && norm.splitLayout && (
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             <div>
               <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Layout Direction</label>
-              <select value={norm.splitLayout.layout} onChange={e => updateDeep("splitLayout", "", "layout", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+              <select value={norm.splitLayout.layout} onChange={e => update("splitLayout", "layout", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
                 <option value="image-left">Image Left / Text Right</option><option value="image-right">Text Left / Image Right</option>
               </select>
             </div>
             <div>
               <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Width Ratio (Desktop)</label>
-              <select value={norm.splitLayout.ratio} onChange={e => updateDeep("splitLayout", "", "ratio", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+              <select value={norm.splitLayout.ratio} onChange={e => update("splitLayout", "ratio", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
                 <option value="50-50">50% / 50%</option><option value="60-40">60% Image / 40% Text</option><option value="40-60">40% Image / 60% Text</option>
               </select>
             </div>

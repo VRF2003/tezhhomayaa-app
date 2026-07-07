@@ -166,7 +166,14 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
               </p>
           )}
           {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
-            <span className={`inline-block mt-4 text-xs tracking-widest uppercase border-b pb-1 transition-colors border-current opacity-80 hover:opacity-100`}>
+            <span className={`inline-block mt-4 tracking-[0.1em] uppercase transition-colors opacity-80 hover:opacity-100`}
+              style={{
+                fontSize: `${norm.style.button.fontSize}rem`,
+                fontWeight: norm.style.button.fontWeight,
+                borderBottom: "1px solid currentColor",
+                paddingBottom: "2px"
+              }}
+            >
               {norm.content.primaryButton.label}
             </span>
           )}

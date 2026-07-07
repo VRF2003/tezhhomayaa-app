@@ -46,12 +46,27 @@ export const EditorialShopTheStory = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "8rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%", padding: "0 2rem" }}>
         
-        <div style={{ textAlign: "center", marginBottom: "4rem" }}>
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 300, textTransform: "uppercase", letterSpacing: "0.2em", color: style.color }}>
+        <div style={{ textAlign: section.style?.heading?.align as any || "center", marginBottom: "4rem" }}>
+          <h2 style={{ 
+            fontSize: `${section.style?.heading?.fontSize || 1.5}rem`,
+            fontWeight: section.style?.heading?.fontWeight || 300,
+            letterSpacing: `${section.style?.heading?.letterSpacing || 0.2}em`,
+            lineHeight: section.style?.heading?.lineHeight || 1.2,
+            color: section.style?.heading?.textColor || style.color,
+            textTransform: "uppercase" 
+          }}>
             {section.content?.heading || "Shop The Story"}
           </h2>
           {section.content?.description && (
-            <p style={{ marginTop: "1rem", color: "#6b6865", fontSize: "0.85rem" }}>
+            <p style={{ 
+              marginTop: "1rem", 
+              fontSize: `${section.style?.description?.fontSize || 0.85}rem`,
+              fontWeight: section.style?.description?.fontWeight || 300,
+              letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
+              lineHeight: section.style?.description?.lineHeight || 1.6,
+              color: section.style?.description?.textColor || "#6b6865",
+              textAlign: section.style?.description?.align as any || "center"
+            }}>
               {section.content.description}
             </p>
           )}
@@ -79,7 +94,15 @@ export const EditorialProductCarousel = ({ section }: BlockProps) => {
       <div style={{ maxWidth: "1600px", margin: "0 auto", paddingLeft: "2rem" }}>
         
         {section.content?.heading && (
-          <h2 style={{ fontSize: "1.25rem", fontWeight: 300, marginBottom: "3rem", color: style.color }}>
+          <h2 style={{ 
+            fontSize: `${section.style?.heading?.fontSize || 1.25}rem`,
+            fontWeight: section.style?.heading?.fontWeight || 300,
+            letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+            lineHeight: section.style?.heading?.lineHeight || 1.2,
+            color: section.style?.heading?.textColor || style.color,
+            textAlign: section.style?.heading?.align as any || "left",
+            marginBottom: "3rem" 
+          }}>
             {section.content.heading}
           </h2>
         )}
@@ -111,7 +134,15 @@ export const EditorialRelatedProducts = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "6rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%", padding: "0 2rem" }}>
         {section.content?.heading && (
-          <h2 style={{ fontSize: "1.5rem", fontWeight: 300, textAlign: style.textAlign, marginBottom: "4rem", color: style.color }}>
+          <h2 style={{ 
+            fontSize: `${section.style?.heading?.fontSize || 1.5}rem`,
+            fontWeight: section.style?.heading?.fontWeight || 300,
+            letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+            lineHeight: section.style?.heading?.lineHeight || 1.2,
+            color: section.style?.heading?.textColor || style.color,
+            textAlign: section.style?.heading?.align as any || style.textAlign,
+            marginBottom: "4rem" 
+          }}>
             {section.content.heading}
           </h2>
         )}
@@ -134,7 +165,16 @@ export const EditorialCompleteTheLook = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "6rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1200px", width: "100%", padding: "0 2rem" }}>
         
-        <h2 style={{ fontSize: "1.5rem", fontWeight: 300, textAlign: "center", marginBottom: "4rem", textTransform: "uppercase", letterSpacing: "0.2em", color: style.color }}>
+        <h2 style={{ 
+          fontSize: `${section.style?.heading?.fontSize || 1.5}rem`,
+          fontWeight: section.style?.heading?.fontWeight || 300,
+          letterSpacing: `${section.style?.heading?.letterSpacing || 0.2}em`,
+          lineHeight: section.style?.heading?.lineHeight || 1.2,
+          color: section.style?.heading?.textColor || style.color,
+          textAlign: section.style?.heading?.align as any || "center",
+          marginBottom: "4rem", 
+          textTransform: "uppercase" 
+        }}>
           {section.content?.heading || "Complete The Look"}
         </h2>
 
@@ -175,12 +215,31 @@ export const EditorialFeaturedCollection = ({ section }: BlockProps) => {
         <div className="absolute inset-0 bg-black/20" />
       </div>
       
-      <div className="relative z-10 text-center text-white px-4">
-        <h2 className="text-5xl md:text-7xl font-light mb-6 tracking-tight">
+      <div className="relative z-10 text-white px-4" style={{ textAlign: section.style?.heading?.align as any || "center" }}>
+        <h2 style={{ 
+          fontSize: `${section.style?.heading?.fontSize || 4}rem`,
+          fontWeight: section.style?.heading?.fontWeight || 300,
+          letterSpacing: `${section.style?.heading?.letterSpacing || -0.02}em`,
+          lineHeight: section.style?.heading?.lineHeight || 1.1,
+          color: section.style?.heading?.textColor || "white",
+          marginBottom: "1.5rem" 
+        }}>
           {section.content?.heading || "The New Collection"}
         </h2>
         {section.content?.description && (
-          <p className="text-xs uppercase tracking-[0.2em] mb-12 max-w-lg mx-auto opacity-90 leading-relaxed">
+          <p style={{ 
+            fontSize: `${section.style?.description?.fontSize || 0.75}rem`,
+            fontWeight: section.style?.description?.fontWeight || 400,
+            letterSpacing: `${section.style?.description?.letterSpacing || 0.2}em`,
+            lineHeight: section.style?.description?.lineHeight || 1.6,
+            color: section.style?.description?.textColor || "white",
+            textTransform: "uppercase",
+            marginBottom: "3rem", 
+            maxWidth: "32rem", 
+            marginLeft: "auto", 
+            marginRight: "auto", 
+            opacity: 0.9 
+          }}>
             {section.content.description}
           </p>
         )}
@@ -198,10 +257,24 @@ export const EditorialNewsletter = ({ section }: BlockProps) => {
   return (
     <div style={{ backgroundColor: style.backgroundColor || "#fcfbf9", padding: style.padding || "8rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "600px", width: "100%", padding: "0 2rem", textAlign: "center" }}>
-        <h2 style={{ fontSize: "2rem", fontWeight: 300, color: style.color, marginBottom: "1rem" }}>
+        <h2 style={{ 
+          fontSize: `${section.style?.heading?.fontSize || 2}rem`,
+          fontWeight: section.style?.heading?.fontWeight || 300,
+          letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+          lineHeight: section.style?.heading?.lineHeight || 1.2,
+          color: section.style?.heading?.textColor || style.color,
+          marginBottom: "1rem" 
+        }}>
           {section.content?.heading || "The Journal"}
         </h2>
-        <p style={{ color: "#6b6865", marginBottom: "3rem", fontSize: "0.9rem" }}>
+        <p style={{ 
+          fontSize: `${section.style?.description?.fontSize || 0.9}rem`,
+          fontWeight: section.style?.description?.fontWeight || 300,
+          letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
+          lineHeight: section.style?.description?.lineHeight || 1.6,
+          color: section.style?.description?.textColor || "#6b6865",
+          marginBottom: "3rem" 
+        }}>
           {section.content?.description || "Sign up to receive exclusive editorials, collection previews, and intimate stories from the Tezhhomayaa house."}
         </p>
         
@@ -229,7 +302,15 @@ export const EditorialRelatedStories = ({ section }: BlockProps) => {
       <div style={{ maxWidth: "1600px", width: "100%", padding: "0 2rem" }}>
         
         {section.content?.heading && (
-          <h2 style={{ fontSize: "1.25rem", fontWeight: 300, textAlign: style.textAlign, marginBottom: "4rem", color: style.color }}>
+          <h2 style={{ 
+            fontSize: `${section.style?.heading?.fontSize || 1.25}rem`,
+            fontWeight: section.style?.heading?.fontWeight || 300,
+            letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+            lineHeight: section.style?.heading?.lineHeight || 1.2,
+            color: section.style?.heading?.textColor || style.color,
+            textAlign: section.style?.heading?.align as any || style.textAlign,
+            marginBottom: "4rem" 
+          }}>
             {section.content.heading}
           </h2>
         )}
@@ -262,7 +343,15 @@ export const EditorialCTA = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "12rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "800px", width: "100%", textAlign: "center", padding: "0 2rem" }}>
         {section.content?.heading && (
-          <h2 style={{ fontSize: "3rem", fontWeight: 300, color: style.color, marginBottom: "3rem", lineHeight: 1.2 }}>
+          <h2 style={{ 
+            fontSize: `${section.style?.heading?.fontSize || 3}rem`,
+            fontWeight: section.style?.heading?.fontWeight || 300,
+            letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+            lineHeight: section.style?.heading?.lineHeight || 1.2,
+            color: section.style?.heading?.textColor || style.color,
+            textAlign: section.style?.heading?.align as any || "center",
+            marginBottom: "3rem" 
+          }}>
             {section.content.heading}
           </h2>
         )}
@@ -282,7 +371,15 @@ export const EditorialRecentlyViewed = ({ section }: BlockProps) => {
   return (
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "6rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%", padding: "0 2rem" }}>
-        <h2 style={{ fontSize: "1.25rem", fontWeight: 300, textAlign: style.textAlign, marginBottom: "4rem", color: style.color }}>
+        <h2 style={{ 
+          fontSize: `${section.style?.heading?.fontSize || 1.25}rem`,
+          fontWeight: section.style?.heading?.fontWeight || 300,
+          letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+          lineHeight: section.style?.heading?.lineHeight || 1.2,
+          color: section.style?.heading?.textColor || style.color,
+          textAlign: section.style?.heading?.align as any || style.textAlign,
+          marginBottom: "4rem" 
+        }}>
           {section.content?.heading || "Recently Viewed"}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -298,7 +395,15 @@ export const EditorialYouMayAlsoLike = ({ section }: BlockProps) => {
   return (
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding || "6rem 0", margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%", padding: "0 2rem" }}>
-        <h2 style={{ fontSize: "1.25rem", fontWeight: 300, textAlign: style.textAlign, marginBottom: "4rem", color: style.color }}>
+        <h2 style={{ 
+          fontSize: `${section.style?.heading?.fontSize || 1.25}rem`,
+          fontWeight: section.style?.heading?.fontWeight || 300,
+          letterSpacing: `${section.style?.heading?.letterSpacing || 0}em`,
+          lineHeight: section.style?.heading?.lineHeight || 1.2,
+          color: section.style?.heading?.textColor || style.color,
+          textAlign: section.style?.heading?.align as any || style.textAlign,
+          marginBottom: "4rem" 
+        }}>
           {section.content?.heading || "You May Also Like"}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
