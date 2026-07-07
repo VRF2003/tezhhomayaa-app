@@ -125,6 +125,8 @@ export default function UniversalMediaRenderer({
           src={dUrl || mUrl}
           alt=""
           loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
+          decoding={priority ? "sync" : "async"}
           style={{ objectFit: "cover", width: "100%", height: "100%" }}
         />
       </picture>

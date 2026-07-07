@@ -1,0 +1,1277 @@
+[
+  {
+    "id": "article_1783414931213",
+    "title": "The Architecture of Silence: FW26 Campaign",
+    "subtitle": "There is a profound luxury in quietness.",
+    "slug": "the-architecture-of-silence-fw26",
+    "category": "Campaign",
+    "author": "Tezhhomayaa Editorial",
+    "readingTime": "5 min read",
+    "publishDate": "2026-07-07T09:02:11.213Z",
+    "status": "Published",
+    "heroImage": {
+      "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783413996/tezhhomayaa_app/xlhiealj56irpajmub4b.jpg",
+      "alt": "FW26 Campaign Hero"
+    },
+    "seo": {
+      "title": "The Architecture of Silence | FW26 Campaign",
+      "description": "Explore the Tezhhomayaa Fall/Winter 2026 collection.",
+      "openGraphImage": ""
+    },
+    "featured": true,
+    "relatedProducts": [],
+    "relatedArticles": [],
+    "articleType": "editorial",
+    "useGlobalTheme": true,
+    "sections": [
+      {
+        "id": "sec_17834149312141",
+        "type": "hero-slider",
+        "hidden": false,
+        "data": {
+          "slides": [
+            {
+              "id": "slide_1",
+              "content": {
+                "heading": "",
+                "italicHeading": "",
+                "subheading": "",
+                "description": "",
+                "primaryButton": {
+                  "enabled": true,
+                  "label": "Explore",
+                  "url": "#",
+                  "style": "luxury"
+                },
+                "secondaryButton": {
+                  "enabled": false,
+                  "label": "Learn More",
+                  "url": "#",
+                  "style": "outline"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
+                }
+              },
+              "desktopImage": "",
+              "mobileImage": "",
+              "animation": {
+                "type": "museum-reveal",
+                "duration": 3,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
+              },
+              "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18"
+                },
+                "fontFamily": "var(--font-cormorant, serif)",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderWidth": 0,
+                "borderRadius": 0,
+                "darkOverlay": 10,
+                "lightOverlay": 0,
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#ffffff",
+                "textShadow": "none"
+              },
+              "layout": {
+                "desktop": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "tablet": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "mobile": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 90
+                }
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783416342/tezhhomayaa_app/dtaeytiwfte62phbztiy.jpg",
+                  "width": 1920,
+                  "height": 1080
+                },
+                "mobile": {
+                  "url": ""
+                },
+                "videoSettings": {
+                  "autoplay": true,
+                  "loop": true,
+                  "muted": true,
+                  "controls": false,
+                  "lazyLoad": true,
+                  "playOnHover": false
+                }
+              },
+              "advanced": {
+                "anchorId": "",
+                "customCssClass": ""
+              },
+              "collectionShowcase": {
+                "layoutType": "grid",
+                "maxWidth": "boxed",
+                "items": []
+              },
+              "splitLayout": {
+                "ratio": "50-50",
+                "layout": "image-left"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "sec_17834149312142",
+        "type": "editorial-heading",
+        "hidden": false,
+        "data": {
+          "content": {
+            "heading": "THE ARCHITECTURE OF SILENCE"
+          },
+          "style": {
+            "heading": {
+              "fontSize": 6,
+              "fontWeight": 300,
+              "letterSpacing": 0.1,
+              "align": "center",
+              "textColor": "#1a1a18"
+            },
+            "textColor": "#1a1a18"
+          },
+          "animation": {
+            "type": "soft-scale"
+          },
+          "layout": {
+            "desktop": {
+              "align": "center",
+              "textWidth": 80
+            }
+          }
+        }
+      },
+      {
+        "id": "sec_17834149312143",
+        "type": "editorial-paragraph",
+        "hidden": false,
+        "data": {
+          "content": {
+            "heading": "New Section",
+            "italicHeading": "",
+            "subheading": "",
+            "description": "There is a profound luxury in quietness. In an era defined by perpetual noise and relentless acceleration, the ultimate indulgence is the pause. For the Fall/Winter 2026 collection, Tezhhomayaa journeys into the void, exploring the intersection of brutalist architecture, monastic discipline, and the fluid geometry of the human form.\n\nThis is not merely a collection of garments. It is a meditation on space. It is an inquiry into what remains when everything unnecessary is stripped away. We arrived at the edge of the world to capture a wardrobe designed not to demand attention, but to command presence.",
+            "primaryButton": {
+              "enabled": true,
+              "label": "Explore",
+              "url": "#",
+              "style": "luxury"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "layout": {
+            "desktop": {
+              "align": "center",
+              "textWidth": 60
+            }
+          },
+          "animation": {
+            "type": "cinematic-fade",
+            "duration": 1.2,
+            "delay": 0.4,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18"
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#1a1a18",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": ""
+            },
+            "mobile": {
+              "url": ""
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "collectionShowcase": {
+            "layoutType": {
+              "desktop": {
+                "textWidth": 60,
+                "align": "center"
+              }
+            },
+            "maxWidth": "boxed",
+            "items": []
+          },
+          "splitLayout": {
+            "ratio": "50-50",
+            "layout": {
+              "desktop": {
+                "textWidth": 60,
+                "align": "center"
+              }
+            }
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          }
+        }
+      },
+      {
+        "id": "sec_17834149312144",
+        "type": "divider",
+        "hidden": false,
+        "data": {
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "4rem 0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "tablet": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "content": {
+            "heading": "New Section",
+            "italicHeading": "",
+            "subheading": "",
+            "description": "",
+            "primaryButton": {
+              "enabled": true,
+              "label": "Explore",
+              "url": "#",
+              "style": "luxury"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#ffffff",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#ffffff",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18"
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": ""
+            },
+            "mobile": {
+              "url": ""
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "animation": {
+            "type": "slide-up",
+            "duration": 1.2,
+            "delay": 0,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "collectionShowcase": {
+            "layoutType": {
+              "desktop": {
+                "padding": "4rem 0"
+              }
+            },
+            "maxWidth": "boxed",
+            "items": []
+          },
+          "splitLayout": {
+            "ratio": "50-50",
+            "layout": {
+              "desktop": {
+                "padding": "4rem 0"
+              }
+            }
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          }
+        }
+      },
+      {
+        "id": "sec_17834149312145",
+        "type": "split-layout",
+        "hidden": false,
+        "data": {
+          "content": {
+            "heading": "THE GEOMETRY OF DRAPE",
+            "italicHeading": "Form Following Feeling",
+            "subheading": "",
+            "description": "The foundation of the FW26 collection relies heavily on the tension between rigid structure and liquid drape. Our ateliers in Milan spent four months perfecting the shoulder line of the signature Aalto coat—ensuring it holds a severe architectural shape while allowing the body underneath to move with complete freedom.",
+            "primaryButton": {
+              "enabled": true,
+              "label": "Explore The Craft",
+              "url": "#",
+              "style": "luxury"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "splitLayout": {
+            "layout": "image-left",
+            "ratio": "50-50"
+          },
+          "animation": {
+            "type": "editorial-slide",
+            "duration": 1.2,
+            "delay": 0,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "tablet": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18"
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783416368/tezhhomayaa_app/bbiqeisx41yo2yp1j64s.jpg",
+              "width": 3168,
+              "height": 1344
+            },
+            "mobile": {
+              "url": ""
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "collectionShowcase": {
+            "layoutType": "grid",
+            "maxWidth": "boxed",
+            "items": []
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          }
+        }
+      },
+      {
+        "id": "sec_17834149312147",
+        "type": "masonry-gallery",
+        "hidden": false,
+        "data": {
+          "collectionShowcase": {
+            "items": [
+              {
+                "id": "img1",
+                "content": {
+                  "heading": "Detail 1"
+                }
+              },
+              {
+                "id": "img2",
+                "content": {
+                  "heading": "Detail 2"
+                }
+              },
+              {
+                "id": "img3",
+                "content": {
+                  "heading": "Detail 3"
+                }
+              },
+              {
+                "id": "img4",
+                "content": {
+                  "heading": "Detail 4"
+                }
+              }
+            ]
+          },
+          "animation": {
+            "type": "image-reveal",
+            "duration": 1.2,
+            "delay": 0,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "content": {
+            "heading": "New Section",
+            "italicHeading": "",
+            "subheading": "",
+            "description": "",
+            "primaryButton": {
+              "enabled": true,
+              "label": "Explore",
+              "url": "#",
+              "style": "luxury"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "tablet": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 100,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#000000",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#ffffff",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#ffffff",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18"
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#ffffff",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": "",
+              "width": 2752,
+              "height": 1536
+            },
+            "mobile": {
+              "url": ""
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "splitLayout": {
+            "ratio": "50-50",
+            "layout": "image-left"
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          }
+        }
+      },
+      {
+        "id": "sec_17834149312148",
+        "type": "image-text",
+        "hidden": false,
+        "data": {
+          "content": {
+            "heading": "TRANSLUCENCY AND WEIGHT",
+            "description": "To balance the heavy, protective outerwear that defines the season, we introduced elements of extreme fragility. Silk organza, woven so finely it resembles spun glass, acts as a counterpoint to the dense Melton wools. It is a study in contrasts—vulnerability shielded by armor."
+          },
+          "layout": {
+            "desktop": {
+              "align": "right"
+            }
+          }
+        }
+      }
+    ],
+    "updatedAt": "2026-07-07T09:37:28.554Z"
+  },
+  {
+    "id": "article_1783415315420",
+    "title": "Artistic Statement Jacket",
+    "subtitle": "",
+    "slug": "new-article-1783415315420",
+    "category": "Editorial",
+    "author": "",
+    "readingTime": "3 min read",
+    "publishDate": "2026-07-07T09:08:35.420Z",
+    "status": "Published",
+    "heroImage": {
+      "url": "/uploads/1782391599823-hf_20260625_071939_6081a68a-1810-42d7-a5ed-ca9fb814b1b5.png",
+      "alt": "Artistic Statement Jacket"
+    },
+    "seo": {
+      "title": "",
+      "description": "",
+      "openGraphImage": ""
+    },
+    "featured": false,
+    "relatedProducts": [],
+    "relatedArticles": [],
+    "sections": [
+      {
+        "id": "sec_1783415317691",
+        "type": "hero-slider",
+        "hidden": false,
+        "data": {
+          "slides": [
+            {
+              "id": "1",
+              "heading": "New Banner",
+              "description": "",
+              "x": 50,
+              "y": 50,
+              "mobileX": 50,
+              "mobileY": 50,
+              "width": 100,
+              "textColor": "#ffffff",
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "shadow": "none",
+              "gradientOverlay": false,
+              "overlayStrength": 0,
+              "buttonStyle": "luxury",
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
+              },
+              "primaryButton": {
+                "enabled": true,
+                "label": "Explore",
+                "url": "#"
+              },
+              "secondaryButton": {
+                "enabled": false,
+                "label": "",
+                "url": ""
+              },
+              "desktopImage": "",
+              "mobileImage": "",
+              "content": {
+                "heading": "",
+                "italicHeading": "",
+                "subheading": "",
+                "description": "",
+                "primaryButton": {
+                  "enabled": true,
+                  "label": "Explore",
+                  "url": "#",
+                  "style": "luxury"
+                },
+                "secondaryButton": {
+                  "enabled": false,
+                  "label": "",
+                  "url": "#",
+                  "style": "luxury"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
+                }
+              },
+              "layout": {
+                "desktop": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "tablet": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "mobile": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 90
+                }
+              },
+              "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18"
+                },
+                "fontFamily": "var(--font-cormorant, serif)",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderWidth": 0,
+                "borderRadius": 0,
+                "darkOverlay": 0,
+                "lightOverlay": 0,
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#ffffff",
+                "textShadow": "none"
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783415334/tezhhomayaa_app/mctdijnmy2mmbezbklo7.jpg",
+                  "width": 1920,
+                  "height": 1080
+                },
+                "mobile": {
+                  "url": ""
+                },
+                "videoSettings": {
+                  "autoplay": true,
+                  "loop": true,
+                  "muted": true,
+                  "controls": false,
+                  "lazyLoad": true,
+                  "playOnHover": false
+                }
+              },
+              "advanced": {
+                "anchorId": "",
+                "customCssClass": ""
+              },
+              "collectionShowcase": {
+                "layoutType": "grid",
+                "maxWidth": "boxed",
+                "items": []
+              },
+              "splitLayout": {
+                "ratio": "50-50",
+                "layout": "image-left"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
+              }
+            }
+          ],
+          "video": ""
+        }
+      }
+    ],
+    "order": 1,
+    "createdAt": "2026-07-07T09:08:35.420Z",
+    "updatedAt": "2026-07-07T09:38:23.906Z",
+    "articleType": "editorial",
+    "useGlobalTheme": true,
+    "thumbnailImage": {
+      "url": "/uploads/1782391599823-hf_20260625_071939_6081a68a-1810-42d7-a5ed-ca9fb814b1b5.png",
+      "alt": "New Article"
+    }
+  }
+]

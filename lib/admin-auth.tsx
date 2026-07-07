@@ -48,6 +48,7 @@ export function AdminGuard({ children, requiredPermission }: { children: ReactNo
       }
       
       const parsedUser = JSON.parse(stored) as AdminUser;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUser(parsedUser);
 
       if (requiredPermission && !hasPermission(parsedUser.role, requiredPermission)) {
@@ -72,6 +73,7 @@ export function useAdminUser() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem("tz_admin_user");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (stored) setUser(JSON.parse(stored));
     } catch {}
   }, []);

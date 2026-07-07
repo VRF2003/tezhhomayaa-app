@@ -23,8 +23,67 @@ import MotionValues from "./motion/MotionValues";
 import MotionAtelier from "./motion/MotionAtelier";
 import MotionFuture from "./motion/MotionFuture";
 import MotionSignature from "./motion/MotionSignature";
+import JournalSection from "./JournalSection";
 
-export default function HomepageClientWrapper({ initialSections }: { initialSections: any[] }) {
+// Editorial Blocks
+import { 
+  EditorialHeading, 
+  EditorialParagraph, 
+  EditorialDivider, 
+  EditorialSpacer, 
+  EditorialSingleImage, 
+  EditorialButtonGroup,
+  EditorialPullQuote,
+  EditorialLargeQuote,
+  EditorialSplitImageText,
+  EditorialTwoColumn,
+  EditorialThreeColumn,
+  EditorialStickyImage,
+  EditorialCaption
+} from "./EditorialBlocks";
+
+import {
+  EditorialImageGallery,
+  EditorialMasonryGallery,
+  EditorialVideo,
+  EditorialYouTube,
+  EditorialImageHotspots,
+  EditorialShopTheStory,
+  EditorialProductCarousel,
+  EditorialRelatedProducts,
+  EditorialCompleteTheLook,
+  EditorialFeaturedCollection,
+  EditorialNewsletter,
+  EditorialRelatedStories,
+  EditorialCTA,
+  EditorialRecentlyViewed,
+  EditorialYouMayAlsoLike,
+  EditorialStickyPurchaseBar,
+  EditorialFloatingWishlist,
+  AdvRichTextBlock,
+  AdvRawHTMLBlock,
+  AdvCodeBlock,
+  AdvFounderQuote,
+  AdvDownloadBlock,
+  AdvContactBlock,
+  AdvTimeline,
+  AdvStatistics,
+  AdvFAQ,
+  AdvTabs,
+  AdvTable,
+  AdvAwards,
+  AdvPressLogos,
+  AdvSustainability,
+  AdvBrandValues,
+  AdvBeforeAfter,
+  AdvAudioBlock,
+  AdvStoreLocator,
+  AdvEventCountdown,
+  AdvBentoGrid,
+  EditorialHero
+} from "./DynamicBlocks";
+
+export default function HomepageClientWrapper({ initialSections, articleMetadata }: { initialSections: any[], articleMetadata?: any }) {
   const [sections, setSections] = useState(initialSections);
 
   const [isAdminPreview, setIsAdminPreview] = useState(false);
@@ -146,6 +205,127 @@ export default function HomepageClientWrapper({ initialSections }: { initialSect
           
           case "motion-signature":
             return <MotionSignature key={section.id} cmsData={section.data} sectionId={section.id} />;
+            
+          case "journal-section":
+            return <JournalSection key={section.id} cmsData={section.data} sectionId={section.id} />;
+
+          // Editorial Mapping Phase 2A
+          case "editorial-hero":
+          case "hero-banner":
+            return <EditorialHero key={section.id} section={section.data} />;
+          case "editorial-heading":
+            return <EditorialHeading key={section.id} section={section.data} />;
+          case "editorial-paragraph":
+          case "rich-text-block": // Map legacy rich-text to here if used in journal, or keep separate. We'll leave rich-text-block above, so this just handles the new paragraph.
+            return <EditorialParagraph key={section.id} section={section.data} />;
+          case "divider":
+            return <EditorialDivider key={section.id} section={section.data} />;
+          case "spacer":
+            return <EditorialSpacer key={section.id} section={section.data} />;
+          case "fullscreen-image":
+            return <EditorialSingleImage key={section.id} section={section.data} />;
+          case "button-group":
+            return <EditorialButtonGroup key={section.id} section={section.data} />;
+
+          // Editorial Mapping Phase 2B
+          case "pull-quote":
+            return <EditorialPullQuote key={section.id} section={section.data} />;
+          case "large-quote":
+            return <EditorialLargeQuote key={section.id} section={section.data} />;
+          case "image-text":
+            return <EditorialSplitImageText key={section.id} section={section.data} />;
+          case "two-column-text":
+            return <EditorialTwoColumn key={section.id} section={section.data} />;
+          case "three-column-text":
+            return <EditorialThreeColumn key={section.id} section={section.data} />;
+          case "sticky-image":
+            return <EditorialStickyImage key={section.id} section={section.data} />;
+          case "caption":
+            return <EditorialCaption key={section.id} section={section.data} />;
+
+          // Editorial Mapping Phase 2C
+          case "image-gallery":
+            return <EditorialImageGallery key={section.id} section={section.data} />;
+          case "masonry-gallery":
+            return <EditorialMasonryGallery key={section.id} section={section.data} />;
+          case "video-block":
+            return <EditorialVideo key={section.id} section={section.data} />;
+          case "youtube-embed":
+            return <EditorialYouTube key={section.id} section={section.data} />;
+          case "image-hotspots":
+            return <EditorialImageHotspots key={section.id} section={section.data} />;
+
+          // Editorial Commerce Mapping Phase 2D
+          case "shop-the-story":
+            return <EditorialShopTheStory key={section.id} section={section.data} />;
+          case "product-carousel":
+            return <EditorialProductCarousel key={section.id} section={section.data} />;
+          case "related-products":
+            return <EditorialRelatedProducts key={section.id} section={section.data} />;
+          case "complete-the-look":
+            return <EditorialCompleteTheLook key={section.id} section={section.data} />;
+          case "featured-collection": // Reusing editorial wrapper
+            return <EditorialFeaturedCollection key={section.id} section={section.data} />;
+          case "newsletter-block": // Reusing editorial wrapper
+            return <EditorialNewsletter key={section.id} section={section.data} />;
+          case "related-stories":
+            return <EditorialRelatedStories key={section.id} section={section.data} />;
+          case "editorial-cta":
+            return <EditorialCTA key={section.id} section={section.data} />;
+          case "recently-viewed":
+            return <EditorialRecentlyViewed key={section.id} section={section.data} />;
+          case "you-may-also-like":
+            return <EditorialYouMayAlsoLike key={section.id} section={section.data} />;
+          case "sticky-purchase-bar":
+            return <EditorialStickyPurchaseBar key={section.id} section={section.data} />;
+          case "floating-wishlist":
+            return <EditorialFloatingWishlist key={section.id} section={section.data} />;
+
+          // Advanced Blocks Phase 2E.1
+          case "adv-rich-text":
+            return <AdvRichTextBlock key={section.id} section={section.data} />;
+          case "adv-raw-html":
+            return <AdvRawHTMLBlock key={section.id} section={section.data} />;
+          case "adv-code-block":
+            return <AdvCodeBlock key={section.id} section={section.data} />;
+          case "adv-founder-quote":
+            return <AdvFounderQuote key={section.id} section={section.data} />;
+          case "adv-download-block":
+            return <AdvDownloadBlock key={section.id} section={section.data} />;
+          case "adv-contact-block":
+            return <AdvContactBlock key={section.id} section={section.data} />;
+
+          // Advanced Blocks Phase 2E.2
+          case "adv-timeline":
+            return <AdvTimeline key={section.id} section={section.data} />;
+          case "adv-statistics":
+            return <AdvStatistics key={section.id} section={section.data} />;
+          case "adv-faq":
+            return <AdvFAQ key={section.id} section={section.data} />;
+          case "adv-tabs":
+            return <AdvTabs key={section.id} section={section.data} />;
+          case "adv-table":
+            return <AdvTable key={section.id} section={section.data} />;
+          case "adv-awards":
+            return <AdvAwards key={section.id} section={section.data} />;
+          case "adv-press-logos":
+            return <AdvPressLogos key={section.id} section={section.data} />;
+          case "adv-sustainability":
+            return <AdvSustainability key={section.id} section={section.data} />;
+          case "adv-brand-values":
+            return <AdvBrandValues key={section.id} section={section.data} />;
+
+          // Advanced Blocks Phase 2E.3
+          case "adv-before-after":
+            return <AdvBeforeAfter key={section.id} section={section.data} />;
+          case "adv-audio-block":
+            return <AdvAudioBlock key={section.id} section={section.data} />;
+          case "adv-store-locator":
+            return <AdvStoreLocator key={section.id} section={section.data} />;
+          case "adv-event-countdown":
+            return <AdvEventCountdown key={section.id} section={section.data} />;
+          case "adv-bento-grid":
+            return <AdvBentoGrid key={section.id} section={section.data} />;
 
           default:
             return null;

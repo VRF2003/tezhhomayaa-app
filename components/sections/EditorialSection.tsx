@@ -103,6 +103,22 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
             {norm.content.heading}
           </h2>
         )}
+        {norm.content.italicHeading && (
+          <h3 style={{ 
+            fontFamily: "var(--font-serif), serif",
+            fontStyle: "italic",
+            fontSize: `${norm.style.heading.fontSize * 1.25}rem`,
+            fontWeight: 300,
+            letterSpacing: `0.02em`,
+            lineHeight: 1.2,
+            color: norm.style.heading.textColor,
+            textAlign: norm.style.heading.align as any,
+            textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
+            width: "100%"
+          }} className="mb-6">
+            {norm.content.italicHeading}
+          </h3>
+        )}
         {norm.content.description && (
             <p 
               className="text-editorial whitespace-pre-wrap"

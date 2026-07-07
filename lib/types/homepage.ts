@@ -25,7 +25,60 @@ export type SectionType =
   | "motion-values"
   | "motion-atelier"
   | "motion-future"
-  | "motion-signature";
+  | "motion-signature"
+  | "journal-section"
+  | "editorial-heading"
+  | "editorial-paragraph"
+  | "large-quote"
+  | "pull-quote"
+  | "divider"
+  | "youtube-embed"
+  | "pinterest-embed"
+  | "timeline"
+  | "statistics"
+  | "faq"
+  | "table"
+  | "code-block"
+  | "html-block"
+  | "image-text"
+  | "two-column-text"
+  | "three-column-text"
+  | "sticky-image"
+  | "fullscreen-image"
+  | "image-hotspots"
+  | "image-gallery"
+  | "masonry-gallery"
+  | "video-block"
+  | "caption"
+  | "related-products"
+  | "shop-the-story"
+  | "related-stories"
+  | "complete-the-look"
+  | "editorial-cta"
+  | "recently-viewed"
+  | "you-may-also-like"
+  | "sticky-purchase-bar"
+  | "floating-wishlist"
+  | "adv-rich-text"
+  | "adv-raw-html"
+  | "adv-code-block"
+  | "adv-founder-quote"
+  | "adv-download-block"
+  | "adv-contact-block"
+  | "adv-timeline"
+  | "adv-statistics"
+  | "adv-faq"
+  | "adv-tabs"
+  | "adv-table"
+  | "adv-awards"
+  | "adv-press-logos"
+  | "adv-sustainability"
+  | "adv-brand-values"
+  | "adv-before-after"
+  | "adv-audio-block"
+  | "adv-store-locator"
+  | "adv-event-countdown"
+  | "adv-bento-grid";
 
 export type UniversalSectionData = {
   content: {
@@ -33,6 +86,8 @@ export type UniversalSectionData = {
     italicHeading: string;
     subheading: string;
     description: string;
+    description2?: string;
+    description3?: string;
     primaryButton: { enabled: boolean; label: string; url: string; style: string };
     secondaryButton: { enabled: boolean; label: string; url: string; style: string };
     tertiaryButton: { enabled: boolean; label: string; url: string; style: string };
@@ -88,6 +143,8 @@ export type UniversalSectionData = {
     letterSpacing?: number;
     lineHeight?: number;
     textColor?: string;
+    backgroundImage?: string;
+    backgroundVideo?: string;
     textShadow?: string;
     backgroundColor: string;
     borderColor: string;
@@ -97,14 +154,27 @@ export type UniversalSectionData = {
     lightOverlay: number;
     gradientOverlay: boolean;
   };
-  media: UniversalMediaData;
-  advanced: {
-    animation: string;
-    duration: number;
-    delay: number;
-    enabled: boolean;
+  animation?: {
+    type: "fade" | "slide-up" | "slide-left" | "slide-right" | "reveal" | "scale" | "mask-reveal" | "none";
+    duration: number; // e.g. 1000ms
+    delay: number; // e.g. 0ms
+    easing: string; // e.g. cubic-bezier(...)
+    scrollTrigger: boolean;
   };
-
+  advanced?: {
+    anchorId?: string;
+    customCssClass?: string;
+    zIndex?: number;
+    sticky?: boolean;
+    lazyLoad?: boolean;
+    cmsNotes?: string;
+  };
+  [key: string]: any;
+  media: UniversalMediaData;
+  journalConfig?: {
+    layout: string;
+    articleCount: number;
+  };
   // Legacy fallback fields for backwards compatibility
   heading?: string;
   description?: string;
@@ -125,7 +195,6 @@ export type UniversalSectionData = {
   primaryButton?: { enabled: boolean; label: string; url: string; style: string };
   secondaryButton?: { enabled: boolean; label: string; url: string; style: string };
   buttonStyle?: string;
-  animation?: string;
 
   // Specific extensions
   collectionShowcase?: { layoutType: string; items: any[], maxWidth: string };
@@ -286,11 +355,16 @@ export function normalizeSectionData(data: any): UniversalSectionData {
       mobile: { url: d.mobileImage || d.image || "" },
       videoSettings: { autoplay: true, loop: true, muted: true, controls: false, lazyLoad: true, playOnHover: false }
     },
+    animation: {
+      type: d.animation?.type ?? d.advanced?.animation ?? (typeof d.animation === "string" ? d.animation : "slide-up"),
+      duration: d.animation?.duration ?? d.advanced?.duration ?? 1.2,
+      delay: d.animation?.delay ?? d.advanced?.delay ?? 0,
+      easing: d.animation?.easing ?? "ease",
+      scrollTrigger: d.animation?.scrollTrigger ?? true,
+    },
     advanced: {
-      animation: d.advanced?.animation ?? d.animation ?? "slide-up",
-      duration: d.advanced?.duration ?? 1.2,
-      delay: d.advanced?.delay ?? 0,
-      enabled: d.advanced?.enabled ?? true,
+      anchorId: d.advanced?.anchorId ?? "",
+      customCssClass: d.advanced?.customCssClass ?? "",
     },
     collectionShowcase: d.collectionShowcase ?? {
       layoutType: d.layout || "grid",

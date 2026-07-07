@@ -1491,10 +1491,38 @@
       }
     },
     {
-      "id": "sec_split_1",
-      "type": "split-layout",
+      "id": "sec_1783407003383",
+      "type": "journal-section",
       "hidden": false,
       "data": {
+        "content": {
+          "heading": "JOURNAL",
+          "italicHeading": "",
+          "subheading": "",
+          "description": "Discover the latest stories.",
+          "primaryButton": {
+            "enabled": true,
+            "label": "Explore",
+            "url": "#",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
+        "journalConfig": {
+          "layout": "magazine-grid",
+          "articleCount": 3
+        },
         "layout": {
           "desktop": {
             "x": 50,
@@ -1527,62 +1555,6 @@
             "textWidth": 90
           }
         },
-        "ratio": "50-50",
-        "desktopImage": "/images/campaign-story.jpg",
-        "mobileImage": "/images/campaign-story.jpg",
-        "heading": "The Process",
-        "description": "Every garment is constructed with an architectural precision.",
-        "button": {
-          "enabled": true,
-          "label": "Read More",
-          "url": "#",
-          "style": "luxury"
-        },
-        "media": {
-          "type": "image",
-          "desktop": {
-            "url": "/images/campaign-story.jpg",
-            "width": 3168,
-            "height": 1344
-          },
-          "mobile": {
-            "url": "/images/campaign-story.jpg",
-            "width": 3168,
-            "height": 1344
-          },
-          "videoSettings": {
-            "autoplay": true,
-            "loop": true,
-            "muted": true,
-            "controls": false,
-            "lazyLoad": true,
-            "playOnHover": false
-          }
-        },
-        "content": {
-          "heading": "The Process",
-          "italicHeading": "",
-          "subheading": "",
-          "description": "Every garment is constructed with an architectural precision.",
-          "primaryButton": {
-            "enabled": true,
-            "label": "Read More",
-            "url": "#",
-            "style": "luxury"
-          },
-          "secondaryButton": {
-            "enabled": false,
-            "label": "Learn More",
-            "url": "#",
-            "style": "outline"
-          },
-          "tertiaryButton": {
-            "enabled": false,
-            "label": "Contact Us",
-            "url": "#",
-            "style": "ghost"
-          }
-        },
         "style": {
           "heading": {
             "fontSize": 4,
@@ -1598,7 +1570,7 @@
             "fontWeight": 400,
             "letterSpacing": 0.2,
             "lineHeight": 1.2,
-            "textColor": "#000000",
+            "textColor": "#ffffff",
             "textShadow": "none",
             "align": "center"
           },
@@ -1607,7 +1579,7 @@
             "fontWeight": 300,
             "letterSpacing": 0.02,
             "lineHeight": 1.6,
-            "textColor": "#000000",
+            "textColor": "#ffffff",
             "textShadow": "none",
             "align": "center",
             "maxWidth": 800
@@ -1617,7 +1589,7 @@
             "fontWeight": 400,
             "padding": "0.6rem 1.4rem",
             "borderRadius": 0,
-            "textColor": "#000000",
+            "textColor": "#ffffff",
             "backgroundColor": "#1a1a18"
           },
           "fontFamily": "var(--font-cormorant, serif)",
@@ -1637,14 +1609,36 @@
           "textColor": "#ffffff",
           "textShadow": "none"
         },
-        "advanced": {
-          "animation": "slide-up",
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": ""
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "animation": {
+          "type": "slide-up",
           "duration": 1.2,
           "delay": 0,
-          "enabled": true
+          "easing": "ease",
+          "scrollTrigger": true
+        },
+        "advanced": {
+          "anchorId": "",
+          "customCssClass": ""
         },
         "collectionShowcase": {
-          "layoutType": "image-left",
+          "layoutType": "grid",
           "maxWidth": "boxed",
           "items": []
         },

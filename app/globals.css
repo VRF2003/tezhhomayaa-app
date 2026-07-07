@@ -45,7 +45,7 @@
   --ease-panel:     cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Mobile Layout Fallbacks */
-  --mobile-hero-height: 75vh;
+  --mobile-hero-height: 75dvh;
   --mobile-logo-size: 1.05rem;
   --mobile-icon-size: 22px;
   --mobile-section-spacing: 4rem;
@@ -253,8 +253,14 @@ body {
   margin-left: auto;
   margin-right: auto;
   word-wrap: break-word;
+  overflow-wrap: break-word; /* i18n support */
   line-height: var(--type-line-height, 1.1);
   letter-spacing: var(--type-letter-spacing, 0.05em);
+}
+
+/* Global Internationalization / Long String Safeguard */
+h1, h2, h3, h4, h5, h6, p, a, span, button, li, .text-editorial {
+  overflow-wrap: break-word;
 }
 
 /* ─── Logo — Devasia style ───────────────────────────────────── */

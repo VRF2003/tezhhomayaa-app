@@ -46,6 +46,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://cdn.shopify.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
+      </head>
       <body className="bg-white text-obsidian">
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />

@@ -85,7 +85,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
           gradientOverlay: norm.style.gradientOverlay,
           overlayStrength: norm.style.darkOverlay || norm.style.lightOverlay || (s.overlayStrength ?? 15),
           buttonStyle: norm.content.primaryButton.style || "luxury",
-          animation: norm.advanced?.animation || s.animation || "slide-up"
+          animation: norm.animation?.type || s.animation || "slide-up"
         };
       });
     }
@@ -160,7 +160,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
     >
       <style>{`
         #hero {
-          height: var(--mobile-hero-height, 75vh);
+          height: var(--mobile-hero-height, 75dvh);
         }
         @media (min-width: 768px) {
           #hero {

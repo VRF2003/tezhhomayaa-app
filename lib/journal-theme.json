@@ -1,0 +1,48 @@
+{
+  "typographyPreset": "Luxury",
+  "designPreset": "Magazine",
+  "animationPreset": "Editorial",
+  "defaultHeroWidth": "90%",
+  "defaultHeroHeight": "80vh",
+  "readingWidth": "680px",
+  "paragraphWidth": "760px",
+  "paragraphLineHeight": 1.6,
+  "imageSpacing": "120px",
+  "imageWidth": "100%",
+  "navbarBehavior": "transparent-to-white",
+  "shopLayout": "manual",
+  "relatedStoriesLayout": "magazine",
+  "footerStyle": "immersive",
+  "typography": {
+    "desktop": {
+      "h1": 4.5,
+      "h2": 3,
+      "h3": 2,
+      "p": 1.125,
+      "caption": 0.75,
+      "quote": 2.5,
+      "meta": 0.65,
+      "button": 0.75
+    },
+    "tablet": {
+      "h1": 3.5,
+      "h2": 2.5,
+      "h3": 1.75,
+      "p": 1,
+      "caption": 0.7,
+      "quote": 2,
+      "meta": 0.6,
+      "button": 0.7
+    },
+    "mobile": {
+      "h1": 2.5,
+      "h2": 2,
+      "h3": 1.5,
+      "p": 1,
+      "caption": 0.65,
+      "quote": 1.5,
+      "meta": 0.55,
+      "button": 0.65
+    }
+  }
+}

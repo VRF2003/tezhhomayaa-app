@@ -18,7 +18,7 @@ import { getProductPrice } from "@/lib/currency";
  *  • Uniform height across all cards in the grid
  *  • Subtle scale on hover (0 → 1.04 over 1.1s cubic easing)
  */
-function ProductCard({ product, presentation }: { product: Product, presentation?: any }) {
+export function ProductCard({ product, presentation }: { product: Product, presentation?: any }) {
   const [hovered, setHovered] = useState(false);
   const { formatPrice } = useCurrency();
   

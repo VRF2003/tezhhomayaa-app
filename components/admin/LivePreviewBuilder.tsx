@@ -125,8 +125,9 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
     fetch(`${apiEndpoint}?t=${Date.now()}`)
       .then(res => res.json())
       .then(res => {
-        if (res.success && res.data) {
-          const loaded = res.data.sections || [];
+        if (res.success) {
+          const payload = res.data || res.article || res.page || res;
+          const loaded = payload.sections || [];
           const withIds = loaded.map((sec: any) => {
             if (sec.type === "collection-showcase" || sec.type === "lookbook-grid") {
               if (!sec.data.collectionShowcase && sec.data.items) {
@@ -203,7 +204,7 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
       const json = await res.json();
       if (!json.success) throw new Error(json.error);
 
-      setSections(json.data.sections || []);
+      setSections(json.data?.sections || json.article?.sections || json.sections || []);
       setFiles({}); setSuccess(true); setTimeout(() => setSuccess(false), 3000);
     } catch (err: any) { setError(err.message); }
     setSaving(false);
@@ -241,6 +242,66 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
       case "motion-atelier": defaultData = { collectionShowcase: { items: [{ overrideHeading: "Texture 1" }, { overrideHeading: "Detail 2" }] }, style: { backgroundColor: "#1a1a18" } }; break;
       case "motion-future": defaultData = { content: { description: "The future is\nform\nbeyond motion." }, style: { backgroundColor: "#ffffff", textColor: "#1a1a18", descriptionFontSize: 3 } }; break;
       case "motion-signature": defaultData = { content: { heading: "ART INFUSED FASHION" }, button: { enabled: true, label: "ENTER THE HOUSE", url: "/collections", style: "outline" }, style: { backgroundColor: "#000000", textColor: "#ffffff" } }; break;
+      case "journal-section": defaultData = { content: { heading: "JOURNAL", description: "Discover the latest stories." }, journalConfig: { layout: "magazine-grid", articleCount: 3 } }; break;
+      
+      // Editorial Blocks
+      case "editorial-heading": defaultData = { content: { heading: "Heading" }, style: { fontSize: 3, fontWeight: 300 } }; break;
+      case "editorial-paragraph": defaultData = { content: { description: "Write your paragraph here..." }, layout: { desktop: { textWidth: 100, align: "left" } } }; break;
+      case "large-quote": defaultData = { content: { heading: '"A timeless piece of art."', subheading: "— Designer" }, style: { fontSize: 4, fontWeight: 300, textColor: "#1a1a18" } }; break;
+      case "pull-quote": defaultData = { content: { description: "This is a pull quote to highlight important text." }, style: { textColor: "#6b6865" } }; break;
+      case "divider": defaultData = { layout: { desktop: { padding: "2rem 0" } } }; break;
+      case "youtube-embed": defaultData = { video: "https://youtube.com/watch?v=..." }; break;
+      case "pinterest-embed": defaultData = { url: "https://pinterest.com/..." }; break;
+      case "timeline": defaultData = { items: [] }; break;
+      case "statistics": defaultData = { items: [{ heading: "100%", description: "Craftsmanship" }] }; break;
+      case "faq": defaultData = { items: [{ heading: "Question?", description: "Answer." }] }; break;
+      case "table": defaultData = { tableData: [] }; break;
+      case "code-block": defaultData = { content: { description: "// Code here" } }; break;
+      case "html-block": defaultData = { content: { description: "<div>Custom HTML</div>" } }; break;
+      case "image-text": defaultData = { desktopImage: "", content: { heading: "Image & Text", description: "Content beside image." }, layout: { desktop: { align: "left" } } }; break;
+      case "two-column-text": defaultData = { content: { description: "Column 1 text...", description2: "Column 2 text..." } }; break;
+      case "three-column-text": defaultData = { content: { description: "Col 1", description2: "Col 2", description3: "Col 3" } }; break;
+      case "sticky-image": defaultData = { desktopImage: "", content: { description: "Scrollable content next to sticky image." } }; break;
+      case "fullscreen-image": defaultData = { desktopImage: "" }; break;
+      case "image-hotspots": defaultData = { desktopImage: "", hotspots: [] }; break;
+      case "image-gallery": defaultData = { items: [{ overrideImage: "" }, { overrideImage: "" }] }; break;
+      case "masonry-gallery": defaultData = { items: [{ overrideImage: "" }, { overrideImage: "" }, { overrideImage: "" }] }; break;
+      case "video-block": defaultData = { video: "", desktopImage: "", content: { description: "Video Caption" } }; break;
+      // Commerce Blocks
+      case "shop-the-story": defaultData = { content: { heading: "SHOP THE STORY" } }; break;
+      case "related-products": defaultData = { content: { heading: "MORE TO EXPLORE" } }; break;
+      case "complete-the-look": defaultData = { content: { heading: "COMPLETE THE LOOK" } }; break;
+      case "editorial-cta": defaultData = { content: { heading: "DISCOVER MORE", primaryButton: { enabled: true, label: "Explore", url: "#" } } }; break;
+      case "recently-viewed": defaultData = { content: { heading: "RECENTLY VIEWED" } }; break;
+      case "you-may-also-like": defaultData = { content: { heading: "YOU MAY ALSO LIKE" } }; break;
+      case "sticky-purchase-bar": defaultData = {}; break;
+      case "floating-wishlist": defaultData = {}; break;
+
+      // Advanced Blocks (Phase 2E.1)
+      case "adv-rich-text": defaultData = { content: { description: "<p>Advanced Rich Text</p>" } }; break;
+      case "adv-raw-html": defaultData = { content: { description: "<div>Raw HTML</div>" } }; break;
+      case "adv-code-block": defaultData = { content: { description: "console.log('Hello');" } }; break;
+      case "adv-founder-quote": defaultData = { content: { heading: "Founder", subheading: "CEO" } }; break;
+      case "adv-download-block": defaultData = { content: { heading: "Press Kit", primaryButton: { enabled: true, label: "Download", url: "#" } } }; break;
+      case "adv-contact-block": defaultData = { content: { heading: "Contact Us" } }; break;
+
+      // Advanced Blocks (Phase 2E.2)
+      case "adv-timeline": defaultData = { content: { heading: "Our Heritage" } }; break;
+      case "adv-statistics": defaultData = { content: { heading: "Key Metrics" } }; break;
+      case "adv-faq": defaultData = { content: { heading: "Frequently Asked Questions" } }; break;
+      case "adv-tabs": defaultData = {}; break;
+      case "adv-table": defaultData = {}; break;
+      case "adv-awards": defaultData = { content: { heading: "Awards & Recognition" } }; break;
+      case "adv-press-logos": defaultData = { content: { heading: "As featured in" } }; break;
+      case "adv-sustainability": defaultData = { content: { heading: "Designing for Tomorrow", subheading: "Conscious Craftsmanship" } }; break;
+      case "adv-brand-values": defaultData = { content: { heading: "The Philosophy" } }; break;
+
+      // Advanced Blocks (Phase 2E.3)
+      case "adv-before-after": defaultData = { content: { heading: "Before & After" } }; break;
+      case "adv-audio-block": defaultData = { content: { heading: "Campaign Soundtrack", subheading: "FW26" } }; break;
+      case "adv-store-locator": defaultData = { content: { heading: "Flagship Boutiques" } }; break;
+      case "adv-event-countdown": defaultData = { content: { heading: "The FW26 Runway Show", subheading: "Upcoming Event" } }; break;
+      case "adv-bento-grid": defaultData = {}; break;
     }
     setSections([...sections, { id: newId, type, hidden: false, data: defaultData }]);
     setExpandedId(newId); setShowSectionMenu(false);
@@ -276,6 +337,65 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
     { label: "(Motion) Atelier", value: "motion-atelier" },
     { label: "(Motion) Future", value: "motion-future" },
     { label: "(Motion) Signature", value: "motion-signature" },
+    
+    // Editorial Blocks
+    { label: "[Editorial] Heading", value: "editorial-heading" },
+    { label: "[Editorial] Paragraph", value: "editorial-paragraph" },
+    { label: "[Editorial] Large Quote", value: "large-quote" },
+    { label: "[Editorial] Pull Quote", value: "pull-quote" },
+    { label: "[Editorial] Divider", value: "divider" },
+    { label: "[Editorial] YouTube", value: "youtube-embed" },
+    { label: "[Editorial] Pinterest", value: "pinterest-embed" },
+    { label: "[Editorial] Timeline", value: "timeline" },
+    { label: "[Editorial] Statistics", value: "statistics" },
+    { label: "[Editorial] FAQ", value: "faq" },
+    { label: "[Editorial] Table", value: "table" },
+    { label: "[Editorial] Code Block", value: "code-block" },
+    { label: "[Editorial] HTML", value: "html-block" },
+    { label: "[Editorial] Image + Text", value: "image-text" },
+    { label: "[Editorial] Two Column", value: "two-column-text" },
+    { label: "[Editorial] Three Column", value: "three-column-text" },
+    { label: "[Editorial] Sticky Image", value: "sticky-image" },
+    { label: "[Editorial] Fullscreen Image", value: "fullscreen-image" },
+    { label: "[Editorial] Image Gallery", value: "image-gallery" },
+    { label: "[Editorial] Masonry Gallery", value: "masonry-gallery" },
+    { label: "[Editorial] Video", value: "video-block" },
+    { label: "[Editorial] Caption", value: "caption" },
+    { label: "[Editorial] Image Hotspots", value: "image-hotspots" },
+    { label: "[Editorial] Shop The Story", value: "shop-the-story" },
+    { label: "[Editorial] Related Stories", value: "related-stories" },
+    { label: "[Commerce] Related Products", value: "related-products" },
+    { label: "[Commerce] Complete The Look", value: "complete-the-look" },
+    { label: "[Commerce] Editorial CTA", value: "editorial-cta" },
+    { label: "[Commerce] Recently Viewed", value: "recently-viewed" },
+    { label: "[Commerce] You May Also Like", value: "you-may-also-like" },
+    { label: "[Commerce] Sticky Purchase Bar", value: "sticky-purchase-bar" },
+    { label: "[Commerce] Floating Wishlist", value: "floating-wishlist" },
+    
+    { label: "[Adv] Rich Text", value: "adv-rich-text" },
+    { label: "[Adv] Raw HTML", value: "adv-raw-html" },
+    { label: "[Adv] Code Block", value: "adv-code-block" },
+    { label: "[Adv] Founder Quote", value: "adv-founder-quote" },
+    { label: "[Adv] Download Block", value: "adv-download-block" },
+    { label: "[Adv] Contact Block", value: "adv-contact-block" },
+
+    { label: "[Adv] Timeline", value: "adv-timeline" },
+    { label: "[Adv] Statistics", value: "adv-statistics" },
+    { label: "[Adv] FAQ", value: "adv-faq" },
+    { label: "[Adv] Tabs", value: "adv-tabs" },
+    { label: "[Adv] Table", value: "adv-table" },
+    { label: "[Adv] Awards", value: "adv-awards" },
+    { label: "[Adv] Press Logos", value: "adv-press-logos" },
+    { label: "[Adv] Sustainability", value: "adv-sustainability" },
+    { label: "[Adv] Brand Values", value: "adv-brand-values" },
+
+    { label: "[Adv] Before & After", value: "adv-before-after" },
+    { label: "[Adv] Audio Block", value: "adv-audio-block" },
+    { label: "[Adv] Store Locator", value: "adv-store-locator" },
+    { label: "[Adv] Event Countdown", value: "adv-event-countdown" },
+    { label: "[Adv] Bento Grid", value: "adv-bento-grid" },
+
+    { label: "Journal Section", value: "journal-section" },
   ];
 
   const availableTypes = allowedSections ? allTypes.filter(t => allowedSections.includes(t.value)) : allTypes;

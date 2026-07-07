@@ -377,11 +377,11 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             <div>
               <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Entry Animation</label>
-              <select value={norm.advanced.animation} onChange={e => updateDeep("advanced", "", "animation", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+              <select value={norm.animation?.type} onChange={e => updateDeep("animation", "", "type", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
                 <option value="none">None</option><option value="fade">Fade In</option><option value="slide-up">Slide Up</option><option value="slide-left">Slide Left</option><option value="slide-right">Slide Right</option><option value="zoom">Zoom</option>
               </select>
             </div>
-            <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Duration (s)</span><span>{norm.advanced.duration}</span></label><input type="range" min="0.1" max="3" step="0.1" value={norm.advanced.duration} onChange={e => updateDeep("advanced", "", "duration", Number(e.target.value))} style={{ width: "100%" }} /></div>
+            <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Duration (s)</span><span>{norm.animation?.duration}</span></label><input type="range" min="0.1" max="3" step="0.1" value={norm.animation?.duration} onChange={e => updateDeep("animation", "", "duration", Number(e.target.value))} style={{ width: "100%" }} /></div>
           </div>
         )}
 
@@ -507,6 +507,22 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
                   }} style={{ color: "red", background: "none", border: "none", cursor: "pointer" }}>Delete</button>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* ── JOURNAL TAB ── */}
+        {activeTab === ("JOURNAL_CONFIG" as any) && (
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+            <div>
+              <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Layout Style</label>
+              <select value={norm.journalConfig?.layout || "grid"} onChange={e => updateDeep("journalConfig", "", "layout", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+                <option value="grid">Grid (Standard)</option><option value="list">List</option><option value="featured">Featured (1 Large, Others Small)</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Articles to Display</label>
+              <input type="number" min="1" max="24" value={norm.journalConfig?.articleCount || 3} onChange={e => updateDeep("journalConfig", "", "articleCount", Number(e.target.value))} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }} />
             </div>
           </div>
         )}

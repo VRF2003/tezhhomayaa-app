@@ -46,6 +46,7 @@ function ProtectedLayoutContent({ children }: { children: React.ReactNode }) {
         { name: "Footer", href: "/admin/content/footer" },
         { name: "Menus", href: "/admin/content/menus" },
         { name: "Media Library", href: "/admin/content/media" },
+        { name: "Journal", href: "/admin/content/journal" },
       ]
     },
     { name: "Orders", href: "/admin/orders", req: "Orders" as const },
@@ -59,6 +60,7 @@ function ProtectedLayoutContent({ children }: { children: React.ReactNode }) {
       subItems: [
         { name: "Mobile Layout", href: "/admin/appearance/mobile" },
         { name: "Typography", href: "/admin/appearance/typography" },
+        { name: "Journal Theme", href: "/admin/appearance/journal-theme" },
       ]
     },
     { name: "Settings", href: "/admin/settings", req: "Full Access" as const },

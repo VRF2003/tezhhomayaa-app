@@ -93,6 +93,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const saved = localStorage.getItem("tz_cart");
       if (saved) dispatch({ type: "HYDRATE", items: JSON.parse(saved) });
     } catch {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 
@@ -153,6 +154,7 @@ export function WishlistProvider({ children, allProducts }: { children: ReactNod
       const saved = localStorage.getItem("tz_wishlist");
       if (saved) setWishlist(JSON.parse(saved));
     } catch {}
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 
