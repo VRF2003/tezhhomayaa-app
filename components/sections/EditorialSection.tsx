@@ -42,7 +42,7 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
     luxury: "border-b border-white pb-1 hover:text-gray-200 hover:border-gray-200"
   };
 
-  const hasMedia = !!(norm.media?.desktop?.url || cmsData.desktopImage || cmsData.video || norm.media?.video?.url);
+  const hasMedia = !!(norm.media?.desktop?.url || cmsData.desktopImage || cmsData.video || norm.media?.mobile?.url);
 
   // height: 0 means "auto" (no image, text-only). Otherwise use layout.height as vh.
   const sectionHeight = layout.height ?? 80; // default 80vh
