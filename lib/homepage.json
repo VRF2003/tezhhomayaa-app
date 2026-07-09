@@ -1871,9 +1871,9 @@
             "height": 1080
           },
           "mobile": {
-            "url": "https://res.cloudinary.com/dhezwtyku/video/upload/v1782984667/tezhhomayaa_app/rqmnb4skyb9k7mvzsze9.mp4",
-            "width": 1920,
-            "height": 1080
+            "url": "https://res.cloudinary.com/dhezwtyku/video/upload/v1783580724/tezhhomayaa_app/dbe7chkneh3glw9asmjy.mp4",
+            "width": 1080,
+            "height": 1920
           },
           "videoSettings": {
             "autoplay": true,
@@ -1885,10 +1885,8 @@
           }
         },
         "advanced": {
-          "animation": "slide-up",
-          "duration": 1.2,
-          "delay": 0,
-          "enabled": true
+          "anchorId": "",
+          "customCssClass": ""
         },
         "collectionShowcase": {
           "layoutType": "grid",
@@ -1928,6 +1926,13 @@
         },
         "typographyOverrides": {
           "enabled": false
+        },
+        "animation": {
+          "type": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "easing": "ease",
+          "scrollTrigger": true
         }
       }
     },
