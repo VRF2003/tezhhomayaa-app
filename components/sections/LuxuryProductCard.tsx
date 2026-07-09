@@ -31,9 +31,11 @@ export function LuxuryProductCard({ product }: { product: Product }) {
   return (
     <div 
       className="group relative flex flex-col w-full bg-transparent"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => {
-        setHovered(false);
+      onPointerEnter={(e) => {
+        if (e.pointerType === 'mouse') setHovered(true);
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType === 'mouse') setHovered(false);
         setQuickAdd(false); // reset quick add state on leave
       }}
     >
@@ -65,7 +67,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
           alt={product.name}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className={`object-cover object-top transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${hovered ? "scale-105 opacity-0" : "scale-100 opacity-100"}`}
+          className={`object-cover object-top transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${hovered && hoverImg !== mainImg ? "scale-[1.02] opacity-0" : "scale-100 opacity-100"}`}
         />
 
         {/* Hover Image (Always in DOM for preloading) */}
@@ -75,7 +77,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
-            className={`object-cover object-top absolute inset-0 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)] ${hovered ? "scale-105 opacity-100" : "scale-100 opacity-0"}`}
+            className={`object-cover object-top absolute inset-0 transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${hovered ? "scale-[1.02] opacity-100" : "scale-100 opacity-0"}`}
           />
         )}
 

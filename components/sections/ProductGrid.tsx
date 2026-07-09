@@ -20,11 +20,17 @@ import { getProductPrice } from "@/lib/currency";
  */
 export function ProductCard({ product, presentation }: { product: Product, presentation?: any }) {
   const [hovered, setHovered] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const { formatPrice } = useCurrency();
   
   const thumbIndex = product.merchandising?.gridThumbnail ?? 0;
-  const mainImg = product.gallery?.[thumbIndex] || product.image;
-  const hoverImg = product.gallery?.[thumbIndex + 1] || mainImg;
+  let gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
+  if (!product.gallery || product.gallery.length === 0) {
+    if (product.hoverImage) gallery.push(product.hoverImage);
+  }
+  if (thumbIndex > 0 && thumbIndex < gallery.length) {
+    gallery = [...gallery.slice(thumbIndex), ...gallery.slice(0, thumbIndex)];
+  }
 
   let pb = "133.33%"; // default 3:4
   if (presentation?.imageRatio === "Square" || presentation?.imageRatio === "1:1") pb = "100%";
@@ -32,12 +38,19 @@ export function ProductCard({ product, presentation }: { product: Product, prese
   if (presentation?.imageRatio === "3:4") pb = "133.33%";
   const isOriginal = presentation?.imageRatio === "Original" || presentation?.imageRatio === "original";
 
-  const hoverEffect = presentation?.hoverEffect || "zoom";
-  const isSwap = hoverEffect === "swap";
-  const isZoom = hoverEffect === "zoom";
+  // Always use the luxury crossfade + subtle 1.02 zoom (per user spec)
+  const imgTransform = hovered && gallery.length > 1 ? "scale(1.02)" : "scale(1)";
+  const imgTransition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
+  
+  const handleNext = (e: React.MouseEvent) => {
+    e.preventDefault(); e.stopPropagation();
+    setActiveIndex((prev) => (prev + 1) % gallery.length);
+  };
 
-  let imgTransform = "scale(1)";
-  if (isZoom && hovered) imgTransform = "scale(1.04)";
+  const handlePrev = (e: React.MouseEvent) => {
+    e.preventDefault(); e.stopPropagation();
+    setActiveIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+  };
 
   // The Row / Saint Laurent styling: no borders, no boxes
   const hasBorder = false;
@@ -49,8 +62,18 @@ export function ProductCard({ product, presentation }: { product: Product, prese
       aria-label={product.name}
     >
       <article
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        onPointerEnter={(e) => {
+          if (e.pointerType === 'mouse') {
+            setHovered(true);
+            if (gallery.length > 1 && activeIndex === 0) setActiveIndex(1);
+          }
+        }}
+        onPointerLeave={(e) => {
+          if (e.pointerType === 'mouse') {
+            setHovered(false);
+            setActiveIndex(0);
+          }
+        }}
         style={{ 
           cursor: "pointer", 
           border: "none",
@@ -86,34 +109,68 @@ export function ProductCard({ product, presentation }: { product: Product, prese
             </div>
           )}
 
-          {/* Primary image */}
-          <Image
-            src={mainImg}
-            alt={product.name}
-            {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
-            style={{
-              ...(isOriginal ? { width: "100%", height: "auto" } : { objectFit: "cover" }),
-              objectPosition: "center top",
-              transition: "transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease",
-              transform: imgTransform,
-              opacity: (isSwap && hovered && hoverImg !== mainImg) ? 0 : 1,
-            }}
-          />
-
-          {/* Hover crossfade image */}
-          {hoverImg && hoverImg !== mainImg && (
+          {gallery.map((img, i) => (
             <Image
-              src={hoverImg}
-              alt=""
-              {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 1100px) 50vw, 25vw" })}
-              aria-hidden="true"
+              key={img + i}
+              src={img}
+              alt={`${product.name} - ${i + 1}`}
+              {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
               style={{
-                ...(isOriginal ? { width: "100%", height: "auto", position: "absolute", top: 0, left: 0 } : { objectFit: "cover" }),
+                ...(isOriginal ? { width: "100%", height: "auto", position: i === 0 ? "relative" as any : "absolute" as any, top: 0, left: 0 } : { objectFit: "cover", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }),
                 objectPosition: "center top",
-                transition: "opacity 0.65s ease",
-                opacity: (isSwap && hovered) ? 1 : 0,
+                transition: imgTransition,
+                transform: imgTransform,
+                opacity: i === activeIndex ? 1 : 0,
+                zIndex: i === activeIndex ? 2 : 1,
               }}
             />
+          ))}
+
+          {/* Navigation Arrows (Visible on Hover) */}
+          {hovered && gallery.length > 1 && (
+            <>
+              <button
+                onClick={handlePrev}
+                style={{
+                  position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
+                  zIndex: 10, background: "rgba(255,255,255,0.7)", borderRadius: "50%", width: "28px", height: "28px",
+                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)", backdropFilter: "blur(4px)"
+                }}
+                aria-label="Previous image"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.5">
+                  <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              <button
+                onClick={handleNext}
+                style={{
+                  position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
+                  zIndex: 10, background: "rgba(255,255,255,0.7)", borderRadius: "50%", width: "28px", height: "28px",
+                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)", backdropFilter: "blur(4px)"
+                }}
+                aria-label="Next image"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.5">
+                  <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+              
+              {/* Dots Indicator */}
+              <div style={{
+                position: "absolute", bottom: "1rem", left: "0", right: "0", display: "flex", justifyContent: "center", gap: "6px", zIndex: 10
+              }}>
+                {gallery.map((_, i) => (
+                  <div key={i} style={{
+                    width: "4px", height: "4px", borderRadius: "50%",
+                    background: i === activeIndex ? "#1a1a18" : "rgba(0,0,0,0.2)",
+                    transition: "background 0.3s ease"
+                  }} />
+                ))}
+              </div>
+            </>
           )}
         </div>
 
