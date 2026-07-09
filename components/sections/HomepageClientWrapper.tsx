@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { normalizeSectionData } from "@/lib/types/homepage";
 import HeroFilm from "./HeroFilm";
 import SingleCampaignBanner from "./SingleCampaignBanner";
 import EditorialSection from "./EditorialSection";
@@ -122,6 +123,7 @@ export default function HomepageClientWrapper({ initialSections, articleMetadata
         `}} />
       )}
       {sections.filter((s: any) => !s.hidden).map((section: any) => {
+        const normData = normalizeSectionData(section.data);
         switch (section.type) {
           case "hero-slider":
             return <HeroFilm key={section.id} cmsData={section.data} sectionId={section.id} />;
@@ -212,120 +214,126 @@ export default function HomepageClientWrapper({ initialSections, articleMetadata
           // Editorial Mapping Phase 2A
           case "editorial-hero":
           case "hero-banner":
-            return <EditorialHero key={section.id} section={section.data} />;
+            return <EditorialHero key={section.id} section={normData} />;
           case "editorial-heading":
-            return <EditorialHeading key={section.id} section={section.data} />;
+            return <EditorialHeading key={section.id} section={normData} />;
           case "editorial-paragraph":
           case "rich-text-block": // Map legacy rich-text to here if used in journal, or keep separate. We'll leave rich-text-block above, so this just handles the new paragraph.
-            return <EditorialParagraph key={section.id} section={section.data} />;
+            return <EditorialParagraph key={section.id} section={normData} />;
           case "divider":
-            return <EditorialDivider key={section.id} section={section.data} />;
+            return <EditorialDivider key={section.id} section={normData} />;
           case "spacer":
-            return <EditorialSpacer key={section.id} section={section.data} />;
+            return <EditorialSpacer key={section.id} section={normData} />;
           case "fullscreen-image":
-            return <EditorialSingleImage key={section.id} section={section.data} />;
+            return <EditorialSingleImage key={section.id} section={normData} />;
           case "button-group":
-            return <EditorialButtonGroup key={section.id} section={section.data} />;
+            return <EditorialButtonGroup key={section.id} section={normData} />;
 
           // Editorial Mapping Phase 2B
           case "pull-quote":
-            return <EditorialPullQuote key={section.id} section={section.data} />;
+            return <EditorialPullQuote key={section.id} section={normData} />;
           case "large-quote":
-            return <EditorialLargeQuote key={section.id} section={section.data} />;
+            return <EditorialLargeQuote key={section.id} section={normData} />;
           case "image-text":
-            return <EditorialSplitImageText key={section.id} section={section.data} />;
+            return <EditorialSplitImageText key={section.id} section={normData} />;
           case "two-column-text":
-            return <EditorialTwoColumn key={section.id} section={section.data} />;
+            return <EditorialTwoColumn key={section.id} section={normData} />;
           case "three-column-text":
-            return <EditorialThreeColumn key={section.id} section={section.data} />;
+            return <EditorialThreeColumn key={section.id} section={normData} />;
           case "sticky-image":
-            return <EditorialStickyImage key={section.id} section={section.data} />;
+            return <EditorialStickyImage key={section.id} section={normData} />;
           case "caption":
-            return <EditorialCaption key={section.id} section={section.data} />;
+            return <EditorialCaption key={section.id} section={normData} />;
 
           // Editorial Mapping Phase 2C
           case "image-gallery":
-            return <EditorialImageGallery key={section.id} section={section.data} />;
+            return <EditorialImageGallery key={section.id} section={normData} />;
           case "masonry-gallery":
-            return <EditorialMasonryGallery key={section.id} section={section.data} />;
+            return <EditorialMasonryGallery key={section.id} section={normData} />;
           case "video-block":
-            return <EditorialVideo key={section.id} section={section.data} />;
+            return <EditorialVideo key={section.id} section={normData} />;
           case "youtube-embed":
-            return <EditorialYouTube key={section.id} section={section.data} />;
+            return <EditorialYouTube key={section.id} section={normData} />;
           case "image-hotspots":
-            return <EditorialImageHotspots key={section.id} section={section.data} />;
+            return <EditorialImageHotspots key={section.id} section={normData} />;
 
           // Editorial Commerce Mapping Phase 2D
           case "shop-the-story":
-            return <EditorialShopTheStory key={section.id} section={section.data} />;
+            return <EditorialShopTheStory key={section.id} section={normData} />;
           case "product-carousel":
-            return <EditorialProductCarousel key={section.id} section={section.data} />;
+            return <EditorialProductCarousel key={section.id} section={normData} />;
           case "related-products":
-            return <EditorialRelatedProducts key={section.id} section={section.data} />;
+            return <EditorialRelatedProducts key={section.id} section={normData} />;
           case "complete-the-look":
-            return <EditorialCompleteTheLook key={section.id} section={section.data} />;
+            return <EditorialCompleteTheLook key={section.id} section={normData} />;
           case "featured-collection": // Reusing editorial wrapper
-            return <EditorialFeaturedCollection key={section.id} section={section.data} />;
+            return <EditorialFeaturedCollection key={section.id} section={normData} />;
           case "newsletter-block": // Reusing editorial wrapper
-            return <EditorialNewsletter key={section.id} section={section.data} />;
+            return <EditorialNewsletter key={section.id} section={normData} />;
           case "related-stories":
-            return <EditorialRelatedStories key={section.id} section={section.data} />;
+            return <EditorialRelatedStories key={section.id} section={normData} />;
           case "editorial-cta":
-            return <EditorialCTA key={section.id} section={section.data} />;
+            return <EditorialCTA key={section.id} section={normData} />;
           case "recently-viewed":
-            return <EditorialRecentlyViewed key={section.id} section={section.data} />;
+            return <EditorialRecentlyViewed key={section.id} section={normData} />;
           case "you-may-also-like":
-            return <EditorialYouMayAlsoLike key={section.id} section={section.data} />;
+            return <EditorialYouMayAlsoLike key={section.id} section={normData} />;
           case "sticky-purchase-bar":
-            return <EditorialStickyPurchaseBar key={section.id} section={section.data} />;
+            return <EditorialStickyPurchaseBar key={section.id} section={normData} />;
           case "floating-wishlist":
-            return <EditorialFloatingWishlist key={section.id} section={section.data} />;
+            return <EditorialFloatingWishlist key={section.id} section={normData} />;
 
           // Advanced Blocks Phase 2E.1
           case "adv-rich-text":
-            return <AdvRichTextBlock key={section.id} section={section.data} />;
+            return <AdvRichTextBlock key={section.id} section={normData} />;
+          case "html-block":
           case "adv-raw-html":
-            return <AdvRawHTMLBlock key={section.id} section={section.data} />;
+            return <AdvRawHTMLBlock key={section.id} section={normData} />;
+          case "code-block":
           case "adv-code-block":
-            return <AdvCodeBlock key={section.id} section={section.data} />;
+            return <AdvCodeBlock key={section.id} section={normData} />;
           case "adv-founder-quote":
-            return <AdvFounderQuote key={section.id} section={section.data} />;
+            return <AdvFounderQuote key={section.id} section={normData} />;
           case "adv-download-block":
-            return <AdvDownloadBlock key={section.id} section={section.data} />;
+            return <AdvDownloadBlock key={section.id} section={normData} />;
           case "adv-contact-block":
-            return <AdvContactBlock key={section.id} section={section.data} />;
+            return <AdvContactBlock key={section.id} section={normData} />;
 
           // Advanced Blocks Phase 2E.2
+          case "timeline":
           case "adv-timeline":
-            return <AdvTimeline key={section.id} section={section.data} />;
+            return <AdvTimeline key={section.id} section={normData} />;
+          case "statistics":
           case "adv-statistics":
-            return <AdvStatistics key={section.id} section={section.data} />;
+            return <AdvStatistics key={section.id} section={normData} />;
+          case "faq":
           case "adv-faq":
-            return <AdvFAQ key={section.id} section={section.data} />;
+            return <AdvFAQ key={section.id} section={normData} />;
           case "adv-tabs":
-            return <AdvTabs key={section.id} section={section.data} />;
+            return <AdvTabs key={section.id} section={normData} />;
+          case "table":
           case "adv-table":
-            return <AdvTable key={section.id} section={section.data} />;
+            return <AdvTable key={section.id} section={normData} />;
           case "adv-awards":
-            return <AdvAwards key={section.id} section={section.data} />;
+            return <AdvAwards key={section.id} section={normData} />;
           case "adv-press-logos":
-            return <AdvPressLogos key={section.id} section={section.data} />;
+            return <AdvPressLogos key={section.id} section={normData} />;
           case "adv-sustainability":
-            return <AdvSustainability key={section.id} section={section.data} />;
+            return <AdvSustainability key={section.id} section={normData} />;
           case "adv-brand-values":
-            return <AdvBrandValues key={section.id} section={section.data} />;
+            return <AdvBrandValues key={section.id} section={normData} />;
 
           // Advanced Blocks Phase 2E.3
           case "adv-before-after":
-            return <AdvBeforeAfter key={section.id} section={section.data} />;
+            return <AdvBeforeAfter key={section.id} section={normData} />;
           case "adv-audio-block":
-            return <AdvAudioBlock key={section.id} section={section.data} />;
+            return <AdvAudioBlock key={section.id} section={normData} />;
           case "adv-store-locator":
-            return <AdvStoreLocator key={section.id} section={section.data} />;
+            return <AdvStoreLocator key={section.id} section={normData} />;
           case "adv-event-countdown":
-            return <AdvEventCountdown key={section.id} section={section.data} />;
+            return <AdvEventCountdown key={section.id} section={normData} />;
           case "adv-bento-grid":
-            return <AdvBentoGrid key={section.id} section={section.data} />;
+            return <AdvBentoGrid key={section.id} section={normData} />;
 
           default:
             return null;

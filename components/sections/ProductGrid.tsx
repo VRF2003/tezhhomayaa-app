@@ -68,6 +68,24 @@ export function ProductCard({ product, presentation }: { product: Product, prese
             background: "#f0ede9",
           }}
         >
+          {/* Badges */}
+          {product.badge && (
+            <div style={{ position: "absolute", top: "1rem", left: "1rem", zIndex: 10 }}>
+              <span style={{ 
+                padding: "0.4rem 0.6rem", 
+                background: "rgba(255,255,255,0.9)", 
+                backdropFilter: "blur(4px)",
+                color: "#1a1a18", 
+                fontSize: "0.55rem", 
+                textTransform: "uppercase", 
+                letterSpacing: "0.2em", 
+                boxShadow: "0 1px 3px rgba(0,0,0,0.1)" 
+              }}>
+                {product.badge}
+              </span>
+            </div>
+          )}
+
           {/* Primary image */}
           <Image
             src={mainImg}

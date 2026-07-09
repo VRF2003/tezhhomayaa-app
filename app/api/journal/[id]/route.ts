@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getJournalArticles, saveJournalArticles } from "@/lib/journal";
 
+export const maxDuration = 60; // Allow more time for large JSON payloads
+
 export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
   const articles = getJournalArticles();

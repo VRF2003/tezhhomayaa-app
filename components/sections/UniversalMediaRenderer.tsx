@@ -104,11 +104,12 @@ export default function UniversalMediaRenderer({
         playsInline
         className={`${displayClass} ${className}`}
         style={{
-          objectFit: "cover",
+          objectFit: fill ? "cover" : "contain",
           width: "100%",
-          height: "100%",
+          height: fill ? "100%" : "auto",
           position: fill ? "absolute" : "relative",
           inset: fill ? 0 : "auto",
+          display: fill ? "block" : "block",
           ...style,
         }}
         preload={videoSettings.lazyLoad ? "metadata" : "auto"}
@@ -117,9 +118,15 @@ export default function UniversalMediaRenderer({
   };
 
   const renderImage = (dUrl: string, mUrl: string) => {
-    if (!dUrl && !mUrl) return null;
+    if (!dUrl && !mUrl) {
+      return (
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: fill ? "100%" : "auto", minHeight: fill ? "0" : "400px", backgroundColor: "#f0ece6", position: fill ? "absolute" : "relative", inset: fill ? 0 : "auto" }}>
+          <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Media Placeholder</span>
+        </div>
+      );
+    }
     return (
-      <picture className={className} style={{ position: fill ? "absolute" : "relative", inset: fill ? 0 : "auto", width: "100%", height: "100%", ...style }}>
+      <picture className={className} style={{ display: "block", position: fill ? "absolute" : "relative", inset: fill ? 0 : "auto", width: "100%", height: fill ? "100%" : "auto", ...style }}>
         {mUrl && <source media="(max-width: 768px)" srcSet={mUrl} />}
         <img
           src={dUrl || mUrl}
@@ -127,7 +134,7 @@ export default function UniversalMediaRenderer({
           loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
           decoding={priority ? "sync" : "async"}
-          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          style={{ objectFit: fill ? "cover" : "contain", width: "100%", height: fill ? "100%" : "auto", display: "block" }}
         />
       </picture>
     );
@@ -141,8 +148,10 @@ export default function UniversalMediaRenderer({
         position: fill ? "absolute" : "relative",
         inset: fill ? 0 : "auto",
         width: "100%",
-        height: "100%",
+        height: fill ? "100%" : "auto",
         overflow: "hidden",
+        display: fill ? "block" : "flex",
+        flexDirection: "column"
       }}
     >
       {type === "video" && (

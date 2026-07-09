@@ -356,8 +356,8 @@ export const EditorialCTA = ({ section }: BlockProps) => {
           </h2>
         )}
         {section.content?.primaryButton?.enabled && (
-          <Link href={section.content.primaryButton.url} className="text-xs uppercase tracking-widest border-b border-black pb-2 hover:text-gray-500 hover:border-gray-500 transition-colors">
-            {section.content.primaryButton.label}
+          <Link href={section.content.primaryButton.url || "#"} className="text-xs uppercase tracking-widest border-b border-black pb-2 hover:text-gray-500 hover:border-gray-500 transition-colors inline-block min-w-[120px] min-h-[24px]">
+            {section.content.primaryButton.label || <span style={{ color: "#a0a0a0", textTransform: "none", fontStyle: "italic" }}>CTA Label Placeholder</span>}
           </Link>
         )}
       </div>
@@ -415,17 +415,23 @@ export const EditorialYouMayAlsoLike = ({ section }: BlockProps) => {
 };
 
 export const EditorialStickyPurchaseBar = ({ section }: BlockProps) => {
-  // Usually this would be a fixed overlay tied to scroll position, hidden inside the editor preview
+  const [isAdminPreview, setIsAdminPreview] = useState(false);
+  useEffect(() => {
+    setIsAdminPreview(window.location.search.includes("adminPreview=true"));
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md border-t border-gray-200 p-4 z-50 flex justify-between items-center hidden">
+    <div className={`${isAdminPreview ? 'relative mt-8 mb-8 border' : 'fixed bottom-0 left-0'} w-full bg-white/90 backdrop-blur-md border-t border-gray-200 p-4 z-50 flex justify-between items-center`}>
       <div className="flex items-center gap-4">
-        <img src="https://images.unsplash.com/photo-1515347619362-74917537b03a?w=100" className="w-12 h-16 object-cover" />
+        <div className="w-12 h-16 bg-[#f0ece6] flex items-center justify-center">
+          <span className="text-[8px] text-gray-400">IMG</span>
+        </div>
         <div>
           <p className="text-sm font-medium">Signature Piece</p>
           <p className="text-xs text-gray-500">$1,250</p>
         </div>
       </div>
-      <button className="bg-black text-white px-8 py-3 text-xs uppercase tracking-widest">
+      <button className="bg-black text-white px-8 py-3 text-xs uppercase tracking-widest hover:bg-gray-800 transition-colors">
         Add To Bag
       </button>
     </div>
@@ -433,6 +439,23 @@ export const EditorialStickyPurchaseBar = ({ section }: BlockProps) => {
 };
 
 export const EditorialFloatingWishlist = ({ section }: BlockProps) => {
-  // Usually triggered by state
-  return null;
+  const [isAdminPreview, setIsAdminPreview] = useState(false);
+  useEffect(() => {
+    setIsAdminPreview(window.location.search.includes("adminPreview=true"));
+  }, []);
+
+  if (!isAdminPreview) return null; // Logic is handled natively in storefront
+
+  return (
+    <div className="flex justify-center p-8 bg-[#fcfbf9] border border-dashed border-gray-300 m-8">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center border border-gray-100">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+          </svg>
+        </div>
+        <span className="text-[10px] uppercase tracking-widest text-gray-400">Floating Wishlist Trigger Placeholder</span>
+      </div>
+    </div>
+  );
 };

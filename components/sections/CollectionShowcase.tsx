@@ -54,18 +54,53 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
 }
 
 function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointerDown, isDragging, localPos, isPreviewMode, mounted }: any) {
+  const isMasonry = aspectRatio === "auto";
+  const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
+  const hotspots = norm.hotspots || [];
+
   return (
     <>
       <div className={`w-full relative overflow-hidden ${isEdgeToEdge ? "h-full min-h-[60vh]" : ""}`} style={{ aspectRatio: isEdgeToEdge ? "auto" : aspectRatio, background: "var(--stone)" }}>
           <UniversalMediaRenderer 
             media={norm.media}
-            className="object-cover absolute inset-0 w-full h-full transition-transform duration-1000 ease-out group-hover:scale-105"
+            fill={!isMasonry}
+            className={`object-cover ${isMasonry ? 'block w-full h-auto' : 'absolute inset-0 w-full h-full'} transition-transform duration-1000 ease-out group-hover:scale-105`}
             style={{ filter: "brightness(0.9) contrast(1.02)" }}
           />
           <div className="absolute inset-0 transition-colors duration-1000 ease-out group-hover:bg-black/20" style={{ backgroundColor: `rgba(0,0,0,${(norm.style.darkOverlay || 0) / 100})` }} />
           {norm.style.gradientOverlay && (
             <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20" />
           )}
+
+          {/* Hotspots Overlay */}
+          {hotspots.map((hs: any, idx: number) => (
+            <div 
+              key={idx}
+              className="absolute group/hotspot z-20"
+              style={{ top: `${hs.y}%`, left: `${hs.x}%`, transform: "translate(-50%, -50%)" }}
+              onMouseEnter={(e) => { e.preventDefault(); setHoveredHotspot(idx); }}
+              onMouseLeave={(e) => { e.preventDefault(); setHoveredHotspot(null); }}
+              onClick={(e) => {
+                if (hs.url) {
+                  window.location.href = hs.url;
+                } else {
+                  e.preventDefault();
+                }
+              }}
+            >
+              {/* Luxury Ring Style */}
+              <div className="w-4 h-4 rounded-full bg-white/80 backdrop-blur-sm border border-black/20 flex items-center justify-center cursor-pointer shadow-sm">
+                <div className="w-1.5 h-1.5 bg-black rounded-full" />
+              </div>
+              
+              {/* Tooltip */}
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 bg-white px-4 py-3 shadow-xl border border-gray-100 min-w-[200px] transition-all duration-300 pointer-events-none ${hoveredHotspot === idx ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
+                <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Shop Product</p>
+                <p className="text-sm text-black whitespace-nowrap">{hs.label || "Product Name"}</p>
+                <p className="text-xs text-gray-500 mt-1">{hs.price || "$0"}</p>
+              </div>
+            </div>
+          ))}
         </div>
         
         {/* Draggable Text Container inside the Card */}

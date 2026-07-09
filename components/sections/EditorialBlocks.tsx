@@ -85,8 +85,17 @@ export const EditorialSpacer = ({ section }: BlockProps) => {
 export const EditorialSingleImage = ({ section }: BlockProps) => {
   const style = useEditorialStyle(section);
   const imgSrc = section.media?.desktop?.url || section.desktopImage;
-  if (!imgSrc) return null;
   
+  if (!imgSrc) {
+    return (
+      <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
+        <div style={{ maxWidth: style.maxWidth, width: "100%", height: "60vh", minHeight: "400px", backgroundColor: "#f0ece6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Full Screen Media Placeholder</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: style.maxWidth, width: "100%" }}>
@@ -284,9 +293,13 @@ export const EditorialSplitImageText = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div className={`w-full grid gap-[4rem] items-center ${gridClass}`} style={{ maxWidth: "1600px" }}>
         
-        {imageSide === "left" && imgSrc && (
-          <div style={{ width: "100%", aspectRatio: "3/4", backgroundColor: "#f0ece6" }}>
-            <img src={imgSrc} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {imageSide === "left" && (
+          <div style={{ width: "100%", aspectRatio: "3/4", backgroundColor: "#f0ece6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            {imgSrc ? (
+              <img src={imgSrc} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            ) : (
+              <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Media Placeholder</span>
+            )}
           </div>
         )}
         
@@ -319,9 +332,13 @@ export const EditorialSplitImageText = ({ section }: BlockProps) => {
           )}
         </div>
         
-        {imageSide === "right" && imgSrc && (
-          <div style={{ width: "100%", aspectRatio: "3/4", backgroundColor: "#f0ece6" }}>
-            <img src={imgSrc} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        {imageSide === "right" && (
+          <div style={{ width: "100%", aspectRatio: "3/4", backgroundColor: "#f0ece6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            {imgSrc ? (
+              <img src={imgSrc} alt="" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            ) : (
+              <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Media Placeholder</span>
+            )}
           </div>
         )}
       </div>
@@ -339,16 +356,18 @@ export const EditorialTwoColumn = ({ section }: BlockProps) => {
           letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
           lineHeight: section.style?.description?.lineHeight || 1.8,
           color: section.style?.description?.textColor || style.color, 
-          textAlign: section.style?.description?.align as any 
-        }} dangerouslySetInnerHTML={{ __html: section.content?.description || "" }} />
+          textAlign: section.style?.description?.align as any,
+          minHeight: "100px"
+        }} dangerouslySetInnerHTML={{ __html: section.content?.description || "<span style='color: #a0a0a0; font-style: italic;'>Column 1 Placeholder text...</span>" }} />
         <div style={{ 
           fontSize: `${section.style?.description?.fontSize || 1}rem`,
           fontWeight: section.style?.description?.fontWeight || 300,
           letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
           lineHeight: section.style?.description?.lineHeight || 1.8,
           color: section.style?.description?.textColor || style.color, 
-          textAlign: section.style?.description?.align as any 
-        }} dangerouslySetInnerHTML={{ __html: section.content?.description2 || "" }} />
+          textAlign: section.style?.description?.align as any,
+          minHeight: "100px"
+        }} dangerouslySetInnerHTML={{ __html: section.content?.description2 || "<span style='color: #a0a0a0; font-style: italic;'>Column 2 Placeholder text...</span>" }} />
       </div>
     </div>
   );
@@ -365,24 +384,27 @@ export const EditorialThreeColumn = ({ section }: BlockProps) => {
           letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
           lineHeight: section.style?.description?.lineHeight || 1.8,
           color: section.style?.description?.textColor || style.color, 
-          textAlign: section.style?.description?.align as any 
-        }} dangerouslySetInnerHTML={{ __html: section.content?.description || "" }} />
+          textAlign: section.style?.description?.align as any,
+          minHeight: "100px"
+        }} dangerouslySetInnerHTML={{ __html: section.content?.description || "<span style='color: #a0a0a0; font-style: italic;'>Column 1 Placeholder text...</span>" }} />
         <div style={{ 
           fontSize: `${section.style?.description?.fontSize || 1}rem`,
           fontWeight: section.style?.description?.fontWeight || 300,
           letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
           lineHeight: section.style?.description?.lineHeight || 1.8,
           color: section.style?.description?.textColor || style.color, 
-          textAlign: section.style?.description?.align as any 
-        }} dangerouslySetInnerHTML={{ __html: section.content?.description2 || "" }} />
+          textAlign: section.style?.description?.align as any,
+          minHeight: "100px"
+        }} dangerouslySetInnerHTML={{ __html: section.content?.description2 || "<span style='color: #a0a0a0; font-style: italic;'>Column 2 Placeholder text...</span>" }} />
         <div style={{ 
           fontSize: `${section.style?.description?.fontSize || 1}rem`,
           fontWeight: section.style?.description?.fontWeight || 300,
           letterSpacing: `${section.style?.description?.letterSpacing || 0}em`,
           lineHeight: section.style?.description?.lineHeight || 1.8,
           color: section.style?.description?.textColor || style.color, 
-          textAlign: section.style?.description?.align as any 
-        }} dangerouslySetInnerHTML={{ __html: section.content?.description3 || "" }} />
+          textAlign: section.style?.description?.align as any,
+          minHeight: "100px"
+        }} dangerouslySetInnerHTML={{ __html: section.content?.description3 || "<span style='color: #a0a0a0; font-style: italic;'>Column 3 Placeholder text...</span>" }} />
       </div>
     </div>
   );
@@ -456,7 +478,7 @@ export const EditorialCaption = ({ section }: BlockProps) => {
         textAlign: section.style?.description?.align as any, 
         margin: 0 
       }}>
-        {section.content?.description}
+        {section.content?.description || <span style={{ color: "#a0a0a0", textTransform: "none", fontStyle: "italic" }}>Caption placeholder...</span>}
         {section.content?.subheading && <span style={{ marginLeft: "1rem", color: section.style?.subheading?.textColor || "#6b6865" }}>© {section.content.subheading}</span>}
       </p>
     </div>

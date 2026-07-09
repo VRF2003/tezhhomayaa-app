@@ -20,9 +20,14 @@ export type ProductDetailPageProps = {
   isPreviewMode?: boolean;
 };
 
-function getSizes(category: string): string[] {
-  if (category.includes("ready-to-wear")) return ["XS", "S", "M", "L", "XL"];
-  if (category.includes("fragrances")) return ["50 ml", "100 ml"];
+function getSizes(product: Product): string[] {
+  if (product.variants && product.variants.length > 0) {
+    return product.variants
+      .filter((v) => v.optionName === "Size" && (v.quantity === undefined || v.quantity > 0))
+      .map((v) => v.option);
+  }
+  if (product.category.includes("ready-to-wear")) return ["XS", "S", "M", "L", "XL"];
+  if (product.category.includes("fragrances")) return ["50 ml", "100 ml"];
   return [];
 }
 
@@ -441,8 +446,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
     const t = setTimeout(() => setIntroComplete(true), 1700);
     return () => clearTimeout(t);
   }, []);
-
-  const sizes = getSizes(product.category);
+  const sizes = getSizes(product);
 
   function handleAddToCart() {
     if (sizes.length > 0 && !selectedSize) {

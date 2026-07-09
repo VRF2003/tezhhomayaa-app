@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 
+export const maxDuration = 60; // Allow more time for Cloudinary uploads
+
 // Ensure the environment variable is loaded (Vercel will inject this automatically)
 cloudinary.config({
   secure: true,

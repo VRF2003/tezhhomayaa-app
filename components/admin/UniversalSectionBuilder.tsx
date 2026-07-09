@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import { UniversalMediaBuilder } from "./UniversalMediaBuilder";
 
-type TabType = "CONTENT" | "LAYOUT" | "STYLE" | "TYPOGRAPHY" | "MEDIA" | "MOBILE" | "ADVANCED" | "SHOWCASE" | "SPLIT" | "CONTACT_INFO" | "CONTACT_FORM" | "SOCIAL_LINKS";
+type TabType = "CONTENT" | "LAYOUT" | "STYLE" | "TYPOGRAPHY" | "MEDIA" | "MOBILE" | "ADVANCED" | "SHOWCASE" | "SPLIT" | "CONTACT_INFO" | "CONTACT_FORM" | "SOCIAL_LINKS" | "ITEMS";
 
 interface Props {
   data: any;
@@ -25,6 +25,7 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
   const hasMediaTab = true;
   const hasMobileTab = true;
   const hasAdvancedTab = true;
+  const hasItemsTab = ["adv-timeline", "timeline", "adv-statistics", "statistics", "adv-faq", "faq", "adv-tabs", "adv-table", "table"].includes(sectionType);
 
   const update = (layer1: keyof UniversalSectionData, layer2: string, value: any) => {
     onChange({
@@ -70,13 +71,14 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
       {/* Tabs */}
       <div style={{ display: "flex", borderBottom: "1px solid #e8e4df", background: "#f0ece6", overflowX: "auto" }}>
         <button style={tabStyle("CONTENT")} onClick={() => setActiveTab("CONTENT")}>Content</button>
+        {hasItemsTab && <button style={tabStyle("ITEMS")} onClick={() => setActiveTab("ITEMS")}>Items</button>}
         <button style={tabStyle("LAYOUT")} onClick={() => setActiveTab("LAYOUT")}>Layout</button>
         <button style={tabStyle("STYLE")} onClick={() => setActiveTab("STYLE")}>Style</button>
         <button style={tabStyle("TYPOGRAPHY")} onClick={() => setActiveTab("TYPOGRAPHY")}>Typography</button>
         {hasMediaTab && <button style={tabStyle("MEDIA")} onClick={() => setActiveTab("MEDIA")}>Media</button>}
         {hasMobileTab && <button style={tabStyle("MOBILE")} onClick={() => setActiveTab("MOBILE")}>Mobile</button>}
         {hasAdvancedTab && <button style={tabStyle("ADVANCED")} onClick={() => setActiveTab("ADVANCED")}>Advanced</button>}
-        {sectionType === "collection-showcase" && <button style={tabStyle("SHOWCASE")} onClick={() => setActiveTab("SHOWCASE")}>Showcase Layout</button>}
+        {(sectionType === "collection-showcase" || sectionType === "lookbook-grid") && <button style={tabStyle("SHOWCASE")} onClick={() => setActiveTab("SHOWCASE")}>Showcase Layout</button>}
         {(sectionType === "split-layout" || sectionType === "image-text" || sectionType === "sticky-image") && <button style={tabStyle("SPLIT")} onClick={() => setActiveTab("SPLIT")}>Split Config</button>}
         {(sectionType === "product-carousel" || sectionType === "featured-collection") && <button style={tabStyle("ADVANCED")} onClick={() => setActiveTab("ADVANCED")}>Collection Config</button>}
         {sectionType === "contact-info-block" && <button style={tabStyle("CONTACT_INFO")} onClick={() => setActiveTab("CONTACT_INFO")}>Info Fields</button>}
@@ -141,6 +143,66 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
                 )}
               </div>
             </div>
+          </div>
+        )}
+
+        {/* ── ITEMS TAB ── */}
+        {activeTab === "ITEMS" && (
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <p style={{ fontSize: "0.7rem", color: "#6b6865", marginBottom: "0.5rem" }}>
+              Manage the dynamic list items for this section (e.g. Timeline Events, FAQs, Stats).
+            </p>
+            
+            {(norm.items || []).map((item: any, idx: number) => (
+              <div key={idx} style={{ background: "#fdfdfa", border: "1px solid #e8e4df", padding: "1rem", position: "relative" }}>
+                <button 
+                  onClick={() => {
+                    const newItems = [...(norm.items || [])];
+                    newItems.splice(idx, 1);
+                    onChange({ ...norm, items: newItems });
+                  }}
+                  style={{ position: "absolute", top: "1rem", right: "1rem", background: "none", border: "none", color: "#a55", cursor: "pointer", fontSize: "0.7rem", textTransform: "uppercase" }}
+                >
+                  Remove
+                </button>
+                <div style={{ display: "flex", flexDirection: "column", gap: "1rem", paddingRight: "4rem" }}>
+                  <div>
+                    <label style={{ fontSize: "0.7rem", display: "block", marginBottom: "0.25rem" }}>Title / Question</label>
+                    <input value={item.title || ""} onChange={e => {
+                      const newItems = [...(norm.items || [])];
+                      newItems[idx] = { ...newItems[idx], title: e.target.value };
+                      onChange({ ...norm, items: newItems });
+                    }} style={{ width: "100%", padding: "0.5rem", border: "1px solid #ccc9c4" }} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: "0.7rem", display: "block", marginBottom: "0.25rem" }}>Subtitle (e.g. Year, Stat Value)</label>
+                    <input value={item.subtitle || ""} onChange={e => {
+                      const newItems = [...(norm.items || [])];
+                      newItems[idx] = { ...newItems[idx], subtitle: e.target.value };
+                      onChange({ ...norm, items: newItems });
+                    }} style={{ width: "100%", padding: "0.5rem", border: "1px solid #ccc9c4" }} />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: "0.7rem", display: "block", marginBottom: "0.25rem" }}>Description / Answer</label>
+                    <textarea value={item.description || ""} onChange={e => {
+                      const newItems = [...(norm.items || [])];
+                      newItems[idx] = { ...newItems[idx], description: e.target.value };
+                      onChange({ ...norm, items: newItems });
+                    }} style={{ width: "100%", padding: "0.5rem", border: "1px solid #ccc9c4", minHeight: "80px", fontFamily: "inherit" }} />
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <button 
+              onClick={() => {
+                const newItems = [...(norm.items || []), { title: "New Item", subtitle: "", description: "" }];
+                onChange({ ...norm, items: newItems });
+              }}
+              style={{ padding: "0.75rem", background: "#1a1a18", color: "#fff", textTransform: "uppercase", letterSpacing: "0.1em", fontSize: "0.7rem", cursor: "pointer", border: "none" }}
+            >
+              + Add Item
+            </button>
           </div>
         )}
 
@@ -443,6 +505,27 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
                 </select>
               </div>
             </div>
+            {sectionType === "lookbook-grid" && (
+              <div style={{ marginTop: "1.5rem" }}>
+                <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Hotspots Data (JSON Array)</label>
+                <textarea 
+                  placeholder='[{"x": 50, "y": 50, "label": "Bag", "price": "$1200", "url": "/product/bag"}]'
+                  value={JSON.stringify(norm.collectionShowcase.items[0]?.hotspots || [])} 
+                  onChange={(e) => {
+                    try {
+                      const parsed = JSON.parse(e.target.value);
+                      const newItems = [...(norm.collectionShowcase?.items || [])];
+                      if (newItems[0]) newItems[0].hotspots = parsed;
+                      updateDeep("collectionShowcase", "", "items", newItems);
+                    } catch(err) {
+                      // ignore parse errors while typing
+                    }
+                  }}
+                  style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4", minHeight: "100px", fontFamily: "monospace", fontSize: "0.7rem" }} 
+                />
+                <p style={{ fontSize: "0.65rem", color: "#6b6865", marginTop: "0.25rem" }}>Paste JSON array to add shoppable hotspots to the first Lookbook image. E.g. <code>[{`"x":50, "y":50, "label":"Bag", "price":"$1200", "url":"/product/bag"`}]</code></p>
+              </div>
+            )}
           </div>
         )}
         {/* ── SPLIT LAYOUT OVERRIDES ── */}

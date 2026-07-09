@@ -10281,7 +10281,7 @@
     "slug": "the-astral-dynasty-cuban-collared-shirt-burgundy-_162",
     "handle": "the-astral-dynasty-cuban-collared-shirt-burgundy-_162",
     "name": "The \"Astral Dynasty\" Cuban Collared Shirt - Burgundy",
-    "price": 10800,
+    "price": 113.63,
     "image": "/uploads/1781084841916-AsDyCcBfs253.jpg",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/24_656a46a5-8606-4d6e-9607-f242a1191acc.jpg?v=1763640201",
     "gallery": [
@@ -10302,31 +10302,36 @@
       {
         "optionName": "Size",
         "option": "S",
-        "price": 10800,
+        "price": 113.63,
+        "quantity": 5,
         "sku": ""
       },
       {
         "optionName": "Size",
         "option": "M",
-        "price": 10800,
+        "price": 113.63,
+        "quantity": 3,
         "sku": ""
       },
       {
         "optionName": "Size",
         "option": "L",
-        "price": 10800,
+        "price": 113.63,
+        "quantity": 3,
         "sku": ""
       },
       {
         "optionName": "Size",
         "option": "XL",
-        "price": 10800,
+        "price": 113.63,
+        "quantity": 2,
         "sku": ""
       },
       {
         "optionName": "Size",
         "option": "XXL",
-        "price": 10800,
+        "price": 113.63,
+        "quantity": 1,
         "sku": ""
       }
     ],
@@ -10334,7 +10339,7 @@
     "compareAtPrice": "",
     "sku": "",
     "barcode": "",
-    "quantity": 0,
+    "quantity": 14,
     "gender": "men"
   },
   {
@@ -10906,8 +10911,8 @@
   },
   {
     "id": "imported_171",
-    "slug": "the-orekka-relaxed-pants-carmine",
-    "handle": "the-orekka-relaxed-pants-carmine",
+    "slug": "the-orekka-relaxed-pants-carmine-_171",
+    "handle": "the-orekka-relaxed-pants-carmine-_171",
     "name": "The \"Orekka\" Relaxed Pants - Carmine",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please8_jpg.jpg?v=1744205402",
@@ -10916,11 +10921,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please8_jpg.jpg?v=1744205402",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please9_jpg.jpg?v=1744205402"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-relaxed-pants-carmine",
+    "href": "/men/ready-to-wear/trousers-shorts/the-orekka-relaxed-pants-carmine-_171",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -10947,7 +10955,39 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [
+        0
+      ],
+      "tabletGalleryOrder": [
+        0
+      ],
+      "mobileGalleryOrder": [
+        0
+      ]
+    }
   },
   {
     "id": "imported_176",
@@ -11200,8 +11240,8 @@
   },
   {
     "id": "imported_189",
-    "slug": "the-dots-flared-pants-charcoal",
-    "handle": "the-dots-flared-pants-charcoal",
+    "slug": "the-dots-flared-pants-charcoal-_189",
+    "handle": "the-dots-flared-pants-charcoal-_189",
     "name": "The \"Dots\" Flared Pants - Charcoal",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WPC1.gif?v=1743855683",
@@ -11212,9 +11252,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-flared-pants-charcoal",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-flared-pants-charcoal-_189",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11241,12 +11284,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_191",
-    "slug": "the-dots-flared-pants-white",
-    "handle": "the-dots-flared-pants-white",
+    "slug": "the-dots-flared-pants-white-_191",
+    "handle": "the-dots-flared-pants-white-_191",
     "name": "The \"Dots\" Flared Pants - White",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DotsWhite_4.jpg?v=1743851729",
@@ -11259,9 +11328,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-flared-pants-white",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-flared-pants-white-_191",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11288,12 +11360,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_193",
-    "slug": "the-dots-flared-pants-light-beige",
-    "handle": "the-dots-flared-pants-light-beige",
+    "slug": "the-dots-flared-pants-light-beige-_193",
+    "handle": "the-dots-flared-pants-light-beige-_193",
     "name": "The \"Dots\" Flared Pants - Light Beige",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DotsLightBeige_2.jpg?v=1743078017",
@@ -11304,9 +11402,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-flared-pants-light-beige",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-flared-pants-light-beige-_193",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11339,7 +11440,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_195",
@@ -11389,8 +11516,8 @@
   },
   {
     "id": "imported_198",
-    "slug": "the-volley-vision-sensible-shorts-mixed",
-    "handle": "the-volley-vision-sensible-shorts-mixed",
+    "slug": "the-volley-vision-sensible-shorts-original-_198",
+    "handle": "the-volley-vision-sensible-shorts-original-_198",
     "name": "The \"Volley Vision\" Sensible Shorts - Original",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -11400,9 +11527,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-sensible-shorts-mixed",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-sensible-shorts-original-_198",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11429,7 +11559,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_201",
@@ -11837,8 +11993,8 @@
   },
   {
     "id": "imported_219",
-    "slug": "the-rally-ready-training-shorts-mixed",
-    "handle": "the-rally-ready-training-shorts-mixed",
+    "slug": "the-rally-ready-training-shorts-original-_219",
+    "handle": "the-rally-ready-training-shorts-original-_219",
     "name": "The \"Rally Ready\" Training Shorts - Original",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RR02.jpg?v=1744026372",
@@ -11850,9 +12006,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-rally-ready-training-shorts-mixed",
+    "href": "/women/ready-to-wear/pants-shorts/the-rally-ready-training-shorts-original-_219",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11879,12 +12038,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_221",
-    "slug": "the-volley-vision-training-shorts-mixed-1",
-    "handle": "the-volley-vision-training-shorts-mixed-1",
+    "slug": "the-volley-vision-training-shorts-original-_221",
+    "handle": "the-volley-vision-training-shorts-original-_221",
     "name": "The \"Volley Vision\" Training Shorts - Original",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg7.jpg?v=1745407080",
@@ -11896,9 +12081,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-mixed-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-original-_221",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11919,12 +12107,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_224",
-    "slug": "the-volley-vision-training-shorts-pink-1",
-    "handle": "the-volley-vision-training-shorts-pink-1",
+    "slug": "the-volley-vision-training-shorts-pink-_224",
+    "handle": "the-volley-vision-training-shorts-pink-_224",
     "name": "The \"Volley Vision\" Training Shorts - Pink",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg7.jpg?v=1745407080",
@@ -11934,9 +12148,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-pink-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-pink-_224",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11957,12 +12174,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_226",
-    "slug": "the-volley-vision-training-shorts-blue-1",
-    "handle": "the-volley-vision-training-shorts-blue-1",
+    "slug": "the-volley-vision-training-shorts-blue-_226",
+    "handle": "the-volley-vision-training-shorts-blue-_226",
     "name": "The \"Volley Vision\" Training Shorts - Blue",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg7.jpg?v=1745407080",
@@ -11972,9 +12215,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-blue-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-blue-_226",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -11995,12 +12241,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_228",
-    "slug": "the-volley-vision-training-shorts-white-1",
-    "handle": "the-volley-vision-training-shorts-white-1",
+    "slug": "the-volley-vision-training-shorts-white-_228",
+    "handle": "the-volley-vision-training-shorts-white-_228",
     "name": "The \"Volley Vision\" Training Shorts - White",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00132.jpg?v=1744446387",
@@ -12012,9 +12284,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-white-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-white-_228",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12035,12 +12310,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_230",
-    "slug": "the-dots-training-shorts-charcoal-1",
-    "handle": "the-dots-training-shorts-charcoal-1",
+    "slug": "the-dots-training-shorts-charcoal-_230",
+    "handle": "the-dots-training-shorts-charcoal-_230",
     "name": "The \"Dots\" Training Shorts - Charcoal",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12051,9 +12352,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-charcoal-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-charcoal-_230",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12080,12 +12384,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_233",
-    "slug": "the-dots-training-shorts-white-1",
-    "handle": "the-dots-training-shorts-white-1",
+    "slug": "the-dots-training-shorts-white-_233",
+    "handle": "the-dots-training-shorts-white-_233",
     "name": "The \"Dots\" Training Shorts - White",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DotsWhite02.jpg?v=1743076104",
@@ -12097,9 +12427,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-white-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-white-_233",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12126,12 +12459,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_235",
-    "slug": "the-dots-training-shorts-lavender-2",
-    "handle": "the-dots-training-shorts-lavender-2",
+    "slug": "the-dots-training-shorts-lavender-_235",
+    "handle": "the-dots-training-shorts-lavender-_235",
     "name": "The \"Dots\" Training Shorts - Lavender",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12141,9 +12500,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-lavender-2",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-lavender-_235",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12170,12 +12532,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_237",
-    "slug": "the-dots-training-shorts-red-1",
-    "handle": "the-dots-training-shorts-red-1",
+    "slug": "the-dots-training-shorts-red-_237",
+    "handle": "the-dots-training-shorts-red-_237",
     "name": "The \"Dots\" Training Shorts - Red",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12185,9 +12573,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-red-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-red-_237",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12214,12 +12605,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_239",
-    "slug": "the-dots-training-shorts-pistachio-2",
-    "handle": "the-dots-training-shorts-pistachio-2",
+    "slug": "the-dots-training-shorts-pistachio-_239",
+    "handle": "the-dots-training-shorts-pistachio-_239",
     "name": "The \"Dots\" Training Shorts - Pistachio",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12229,9 +12646,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-pistachio-2",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-pistachio-_239",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12258,7 +12678,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_241",
@@ -12391,8 +12837,8 @@
   },
   {
     "id": "imported_247",
-    "slug": "the-orekka-training-shorts-reversed-red-1",
-    "handle": "the-orekka-training-shorts-reversed-red-1",
+    "slug": "the-orekka-training-shorts-reversed-red-_247",
+    "handle": "the-orekka-training-shorts-reversed-red-_247",
     "name": "The \"Orekka\" Training Shorts - Reversed Red",
     "price": 2499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrekkaCarmine02.jpg?v=1743076159",
@@ -12402,9 +12848,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-training-shorts-reversed-red-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-orekka-training-shorts-reversed-red-_247",
     "editorialDescription": "The “Orekka” shorts feature a striking print that embodies the concept of finding clarity in chaos. Made from soft, breathable, and durable fabric, these are the perfect activewear shorts for intense activity, recreational sports, or even relaxing vacations. It features an elasticated waistband that lends comfort to your every move and convenient pocket details. The “Orekka” is the best training shorts for anyone who’s seeking comfort, performance, and style.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12425,12 +12874,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_249",
-    "slug": "the-orekka-training-shorts-carmine-1",
-    "handle": "the-orekka-training-shorts-carmine-1",
+    "slug": "the-orekka-training-shorts-carmine-_249",
+    "handle": "the-orekka-training-shorts-carmine-_249",
     "name": "The \"Orekka\" Training Shorts - Carmine",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrekkaCarmine02.jpg?v=1743076159",
@@ -12442,9 +12917,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-training-shorts-carmine-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-orekka-training-shorts-carmine-_249",
     "editorialDescription": "The “Orekka” shorts feature a striking print that embodies the concept of finding clarity in chaos. Made from soft, breathable, and durable fabric, these are the perfect activewear shorts for intense activity, recreational sports, or even relaxing vacations. It features an elasticated waistband that lends comfort to your every move and convenient pocket details. The “Orekka” is the best training shorts for anyone who’s seeking comfort, performance, and style.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12465,12 +12943,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_250",
-    "slug": "the-rally-ready-training-shorts",
-    "handle": "the-rally-ready-training-shorts",
+    "slug": "the-rally-ready-training-shorts-white-_250",
+    "handle": "the-rally-ready-training-shorts-white-_250",
     "name": "The \"Rally Ready\" Training Shorts - White",
     "price": 2699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RR02.jpg?v=1744026372",
@@ -12480,9 +12984,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-rally-ready-training-shorts",
+    "href": "/women/ready-to-wear/pants-shorts/the-rally-ready-training-shorts-white-_250",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12509,12 +13016,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_252",
-    "slug": "the-volley-vision-flared-pants-mixed",
-    "handle": "the-volley-vision-flared-pants-mixed",
+    "slug": "the-volley-vision-flared-pants-mixed-_252",
+    "handle": "the-volley-vision-flared-pants-mixed-_252",
     "name": "The \"Volley Vision\" Flared Pants - Mixed",
     "price": 3999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -12524,9 +13057,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-flared-pants-mixed",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-flared-pants-mixed-_252",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12553,12 +13089,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_255",
-    "slug": "the-volley-vision-relaxed-pants-blue",
-    "handle": "the-volley-vision-relaxed-pants-blue",
+    "slug": "the-volley-vision-relaxed-pants-blue-_255",
+    "handle": "the-volley-vision-relaxed-pants-blue-_255",
     "name": "The \"Volley Vision\" Relaxed Pants - Blue",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please14_jpg.jpg?v=1744204519",
@@ -12567,11 +13129,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please14_jpg.jpg?v=1744204519",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please15_jpg_57096827-8127-4b8e-9fb7-2efc5e043252.jpg?v=1744205090"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-relaxed-pants-blue",
+    "href": "/men/ready-to-wear/trousers-shorts/the-volley-vision-relaxed-pants-blue-_255",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12598,12 +13163,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_257",
-    "slug": "the-volley-vision-relaxed-pants-mixed",
-    "handle": "the-volley-vision-relaxed-pants-mixed",
+    "slug": "the-volley-vision-relaxed-pants-mixed-_257",
+    "handle": "the-volley-vision-relaxed-pants-mixed-_257",
     "name": "The \"Volley Vision\" Relaxed Pants - Mixed",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please5_jpg.jpg?v=1744203754",
@@ -12612,11 +13203,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please5_jpg.jpg?v=1744203754",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please6_jpg.jpg?v=1744203754"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-relaxed-pants-mixed",
+    "href": "/men/ready-to-wear/trousers-shorts/the-volley-vision-relaxed-pants-mixed-_257",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12643,12 +13237,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_259",
-    "slug": "the-volley-vision-relaxed-pants-white",
-    "handle": "the-volley-vision-relaxed-pants-white",
+    "slug": "the-volley-vision-relaxed-pants-white-_259",
+    "handle": "the-volley-vision-relaxed-pants-white-_259",
     "name": "The \"Volley Vision\" Relaxed Pants - White",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00135.jpg?v=1744446437",
@@ -12658,11 +13278,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00137.jpg?v=1744446434",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00138.jpg?v=1744446434"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "women/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-relaxed-pants-white",
+    "href": "/women/ready-to-wear/trousers-shorts/the-volley-vision-relaxed-pants-white-_259",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12689,12 +13312,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_261",
-    "slug": "the-volley-vision-relaxed-pants-pink",
-    "handle": "the-volley-vision-relaxed-pants-pink",
+    "slug": "the-volley-vision-relaxed-pants-pink-_261",
+    "handle": "the-volley-vision-relaxed-pants-pink-_261",
     "name": "The \"Volley Vision\" Relaxed Pants - Pink",
     "price": 1699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please10_jpg.jpg?v=1744205161",
@@ -12703,11 +13352,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please10_jpg.jpg?v=1744205161",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Thinkgoodthings_please12_jpg.jpg?v=1744205150"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-relaxed-pants-pink",
+    "href": "/men/ready-to-wear/trousers-shorts/the-volley-vision-relaxed-pants-pink-_261",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12734,12 +13386,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_263",
-    "slug": "the-volley-vision-flared-pants-pink",
-    "handle": "the-volley-vision-flared-pants-pink",
+    "slug": "the-volley-vision-flared-pants-pink-_263",
+    "handle": "the-volley-vision-flared-pants-pink-_263",
     "name": "The \"Volley Vision\" Flared Pants - Pink",
     "price": 3999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -12749,9 +13427,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-flared-pants-pink",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-flared-pants-pink-_263",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12778,12 +13459,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_265",
-    "slug": "the-volley-vision-flared-pants-blue",
-    "handle": "the-volley-vision-flared-pants-blue",
+    "slug": "the-volley-vision-flared-pants-blue-_265",
+    "handle": "the-volley-vision-flared-pants-blue-_265",
     "name": "The \"Volley Vision\" Flared Pants - Blue",
     "price": 3999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -12793,9 +13500,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-flared-pants-blue",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-flared-pants-blue-_265",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12822,12 +13532,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_267",
-    "slug": "the-volley-vision-flared-pants-white",
-    "handle": "the-volley-vision-flared-pants-white",
+    "slug": "the-volley-vision-flared-pants-white-_267",
+    "handle": "the-volley-vision-flared-pants-white-_267",
     "name": "The \"Volley Vision\" Flared Pants - White",
     "price": 3999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -12837,9 +13573,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-flared-pants-white",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-flared-pants-white-_267",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12866,12 +13605,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_269",
-    "slug": "the-dots-sensible-shorts-white",
-    "handle": "the-dots-sensible-shorts-white",
+    "slug": "the-dots-sensible-shorts-white-_269",
+    "handle": "the-dots-sensible-shorts-white-_269",
     "name": "The \"Dots\" Sensible Shorts - White",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -12881,9 +13646,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-sensible-shorts-white",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-sensible-shorts-white-_269",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12910,12 +13678,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_271",
-    "slug": "the-dots-training-shorts-navy",
-    "handle": "the-dots-training-shorts-navy",
+    "slug": "the-dots-training-shorts-navy-_271",
+    "handle": "the-dots-training-shorts-navy-_271",
     "name": "The \"Dots\" Training Shorts - Navy",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12925,9 +13719,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-navy",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-navy-_271",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12954,12 +13751,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_274",
-    "slug": "the-dots-training-shorts-charcoal",
-    "handle": "the-dots-training-shorts-charcoal",
+    "slug": "the-dots-training-shorts-charcoal-_274",
+    "handle": "the-dots-training-shorts-charcoal-_274",
     "name": "The \"Dots\" Training Shorts - Charcoal",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -12969,9 +13792,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-charcoal",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-charcoal-_274",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -12998,12 +13824,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_276",
-    "slug": "the-dots-training-shorts-white",
-    "handle": "the-dots-training-shorts-white",
+    "slug": "the-dots-training-shorts-white-_276",
+    "handle": "the-dots-training-shorts-white-_276",
     "name": "The \"Dots\" Training Shorts - White",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/image00002_10edcc96-ca6d-4f1c-a8b2-10fea7150eba.jpg?v=1744452798",
@@ -13013,9 +13865,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-training-shorts-white",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-training-shorts-white-_276",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13042,12 +13897,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_277",
-    "slug": "the-dots-sensible-shorts-navy",
-    "handle": "the-dots-sensible-shorts-navy",
+    "slug": "the-dots-sensible-shorts-navy-_277",
+    "handle": "the-dots-sensible-shorts-navy-_277",
     "name": "The \"Dots\" Sensible Shorts - Navy",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -13057,9 +13938,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-sensible-shorts-navy",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-sensible-shorts-navy-_277",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13086,12 +13970,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_278",
-    "slug": "the-dots-sensible-shorts-charcoal",
-    "handle": "the-dots-sensible-shorts-charcoal",
+    "slug": "the-dots-sensible-shorts-charcoal-_278",
+    "handle": "the-dots-sensible-shorts-charcoal-_278",
     "name": "The \"Dots\" Sensible Shorts - Charcoal",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -13101,9 +14011,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-dots-sensible-shorts-charcoal",
+    "href": "/women/ready-to-wear/pants-shorts/the-dots-sensible-shorts-charcoal-_278",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13130,12 +14043,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_279",
-    "slug": "the-volley-vision-sensible-shorts-pink",
-    "handle": "the-volley-vision-sensible-shorts-pink",
+    "slug": "the-volley-vision-sensible-shorts-pink-_279",
+    "handle": "the-volley-vision-sensible-shorts-pink-_279",
     "name": "The \"Volley Vision\" Sensible Shorts - Pink",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -13145,9 +14084,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-sensible-shorts-pink",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-sensible-shorts-pink-_279",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13174,12 +14116,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_281",
-    "slug": "the-volley-vision-sensible-shorts-blue",
-    "handle": "the-volley-vision-sensible-shorts-blue",
+    "slug": "the-volley-vision-sensible-shorts-blue-_281",
+    "handle": "the-volley-vision-sensible-shorts-blue-_281",
     "name": "The \"Volley Vision\" Sensible Shorts - Blue",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -13189,9 +14157,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-sensible-shorts-blue",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-sensible-shorts-blue-_281",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13218,7 +14189,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_283",
@@ -13235,7 +14232,10 @@
     "categoryLabel": "Pants & Shorts",
     "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-sensible-shorts-white-_283",
     "editorialDescription": "",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13262,17 +14262,38 @@
         "sku": ""
       }
     ],
-    "status": "active",
+    "status": "draft",
     "compareAtPrice": "",
     "sku": "",
     "barcode": "",
     "quantity": 0,
-    "gender": "women"
+    "gender": "women",
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_285",
-    "slug": "the-volley-vision-training-shorts-blue",
-    "handle": "the-volley-vision-training-shorts-blue",
+    "slug": "the-volley-vision-training-shorts-blue-_285",
+    "handle": "the-volley-vision-training-shorts-blue-_285",
     "name": "The \"Volley Vision\" Training Shorts - Blue",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg7.jpg?v=1745407080",
@@ -13282,9 +14303,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-blue",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-blue-_285",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13311,12 +14335,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_286",
-    "slug": "the-volley-vision-training-shorts-mixed",
-    "handle": "the-volley-vision-training-shorts-mixed",
+    "slug": "the-volley-vision-training-shorts-original-_286",
+    "handle": "the-volley-vision-training-shorts-original-_286",
     "name": "The \"Volley Vision\" Training Shorts - Original",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg11.jpg?v=1745408291",
@@ -13326,11 +14376,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg12.jpg?v=1745408291",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg13.jpg?v=1745408291"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-mixed",
+    "href": "/men/ready-to-wear/trousers-shorts/the-volley-vision-training-shorts-original-_286",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13357,12 +14410,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_287",
-    "slug": "the-volley-vision-training-shorts-pink",
-    "handle": "the-volley-vision-training-shorts-pink",
+    "slug": "the-volley-vision-training-shorts-pink-_287",
+    "handle": "the-volley-vision-training-shorts-pink-_287",
     "name": "The \"Volley Vision\" Training Shorts - Pink",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Untitleddesign.jpg7.jpg?v=1745407080",
@@ -13372,9 +14451,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-pink",
+    "href": "/women/ready-to-wear/pants-shorts/the-volley-vision-training-shorts-pink-_287",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13401,12 +14483,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_288",
-    "slug": "the-volley-vision-training-shorts-white",
-    "handle": "the-volley-vision-training-shorts-white",
+    "slug": "the-volley-vision-training-shorts-white-_288",
+    "handle": "the-volley-vision-training-shorts-white-_288",
     "name": "The \"Volley Vision\" Training Shorts - White",
     "price": 3799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WhiteVV04.jpg?v=1744362593",
@@ -13416,11 +14524,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WhiteVV03.jpg?v=1744362593",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WhiteVV02.jpg?v=1744362592"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-volley-vision-training-shorts-white",
+    "href": "/men/ready-to-wear/trousers-shorts/the-volley-vision-training-shorts-white-_288",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -13447,7 +14558,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_289",
@@ -14417,8 +15554,8 @@
   },
   {
     "id": "imported_330",
-    "slug": "the-by-invitation-only-shorts-copy",
-    "handle": "the-by-invitation-only-shorts-copy",
+    "slug": "the-g5-men-s-shorts-maroon-_330",
+    "handle": "the-g5-men-s-shorts-maroon-_330",
     "name": "The “G5” Men's Shorts – Maroon",
     "price": 7699,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/G5SSH07-2_3a0c3fa0-6a91-4a3e-8325-7d870c6d5134.jpg?v=1729601032",
@@ -14428,11 +15565,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/G5SSH07-3_a5d4f167-167e-4389-9601-6c62e7c64c07.jpg?v=1729601032",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/G5SSH07-4_ce71702c-300d-4e12-9a18-2c2e3369e48d.jpg?v=1729601032"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-by-invitation-only-shorts-copy",
+    "href": "/men/ready-to-wear/trousers-shorts/the-g5-men-s-shorts-maroon-_330",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14465,7 +15605,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_333",
@@ -14521,8 +15687,8 @@
   },
   {
     "id": "imported_335",
-    "slug": "the-path-of-least-resistance-trousers-apricot-3",
-    "handle": "the-path-of-least-resistance-trousers-apricot-3",
+    "slug": "the-path-of-least-resistance-women-s-trousers-apricot-_335",
+    "handle": "the-path-of-least-resistance-women-s-trousers-apricot-_335",
     "name": "“The Path of Least Resistance” Women's Trousers – Apricot",
     "price": 14500,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15W-2.jpg?v=1729509408",
@@ -14534,9 +15700,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-path-of-least-resistance-trousers-apricot-3",
+    "href": "/women/ready-to-wear/pants-shorts/the-path-of-least-resistance-women-s-trousers-apricot-_335",
     "editorialDescription": "These easy-fitting, woven trousers let you bring star presence anywhere you go. The entire body is finished off with “The Path of least resistance” detail for an unmistakable look. Plus, thanks to the crisp, lightweight outer fabric and soft crepe lining, they keep you comfortable in various conditions.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14569,12 +15738,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "archived",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_337",
-    "slug": "the-path-of-least-resistance-trousers-apricot-2",
-    "handle": "the-path-of-least-resistance-trousers-apricot-2",
+    "slug": "the-path-of-least-resistance-men-s-lounge-trousers-apricot-_337",
+    "handle": "the-path-of-least-resistance-men-s-lounge-trousers-apricot-_337",
     "name": "“The Path of Least Resistance” Men's Lounge Trousers – Apricot",
     "price": 18999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15-2_0f07c283-4f20-4fc0-b0cc-dcbc23ab7058.jpg?v=1729509414",
@@ -14584,11 +15779,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15-3.jpg?v=1729509414",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15-4_a858e1bb-dc1f-48f1-9e78-59e10ea13006.jpg?v=1729509415"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/shirts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-path-of-least-resistance-trousers-apricot-2",
+    "href": "/men/ready-to-wear/shirts/the-path-of-least-resistance-men-s-lounge-trousers-apricot-_337",
     "editorialDescription": "These easy-fitting, woven trousers let you bring star presence anywhere you go. The entire body is finished off with “The Path of least resistance” detail for an unmistakable look. Plus, thanks to the crisp, lightweight outer fabric and soft crepe lining, they keep you comfortable in various conditions.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14621,12 +15819,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_339",
-    "slug": "the-empty-frame-satin-lounge-trouser-red",
-    "handle": "the-empty-frame-satin-lounge-trouser-red",
+    "slug": "the-empty-frame-women-s-lounge-trouser-red-_339",
+    "handle": "the-empty-frame-women-s-lounge-trouser-red-_339",
     "name": "“The Empty Frame” Women's Lounge Trouser – Red",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO01W-2.jpg?v=1729509176",
@@ -14638,9 +15862,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-satin-lounge-trouser-red",
+    "href": "/women/ready-to-wear/pants-shorts/the-empty-frame-women-s-lounge-trouser-red-_339",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14673,12 +15900,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_342",
-    "slug": "the-empty-frame-trousers-mint-1",
-    "handle": "the-empty-frame-trousers-mint-1",
+    "slug": "the-empty-frame-men-s-lounge-trousers-mint-_342",
+    "handle": "the-empty-frame-men-s-lounge-trousers-mint-_342",
     "name": "The “Empty Frame” Men's Lounge Trousers – Mint",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO02-2.jpg?v=1729509035",
@@ -14688,11 +15941,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO02-3.jpg?v=1729509035",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO02-4.jpg?v=1729509035"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-trousers-mint-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-empty-frame-men-s-lounge-trousers-mint-_342",
     "editorialDescription": "Express your subtle style with “The Empty Frame” trousers, featuring clean strokes, minimal contrasts, and statement text borders at the side seams. The elasticated waistband and functional pockets offer ultimate comfort, making these the perfect streetwear trousers for travel or leisure. Pair them with a matching jacket or your own wardrobe pieces to create versatile looks. Elevate your style with these men's streetwear pants that effortlessly combine luxury and comfort.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14725,12 +15981,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_345",
-    "slug": "the-empty-frame-trousers-white",
-    "handle": "the-empty-frame-trousers-white",
+    "slug": "the-empty-frame-men-s-lounge-trousers-white-_345",
+    "handle": "the-empty-frame-men-s-lounge-trousers-white-_345",
     "name": "The “Empty Frame” Men's Lounge Trousers – White",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO10-2_cdcf9b85-49ef-4caf-8d7a-edbcf90970b3.jpg?v=1729508999",
@@ -14740,11 +16022,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO10-3_b833b189-072e-494f-ad73-f0d3c92cc60f.jpg?v=1729508999",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO10-4_3a2183c9-b187-4cab-91c7-82027a2609e4.jpg?v=1729508999"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-trousers-white",
+    "href": "/men/ready-to-wear/trousers-shorts/the-empty-frame-men-s-lounge-trousers-white-_345",
     "editorialDescription": "Express your subtle style with “The Empty Frame” trousers, featuring clean strokes, minimal contrasts, and statement text borders at the side seams. With an elasticated waistband and practical pockets, these men’s streetwear trousers offer both comfort and unique style. Perfect for pairing with a coordinated jacket or anything else from your wardrobe, these pants easily translate as urban casual wear. They are perfect for everything from travel to leisure.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14777,27 +16062,56 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_347",
-    "slug": "the-orekka-satin-lounge-trousers-grey-2",
-    "handle": "the-orekka-satin-lounge-trousers-grey-2",
+    "slug": "the-orekka-women-s-lounge-trousers-grey-_347",
+    "handle": "the-orekka-women-s-lounge-trousers-grey-_347",
     "name": "The “Orekka” Women's Lounge Trousers – Grey",
     "price": 5899,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-2.jpg?v=1729508814",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-4.jpg?v=1729508815",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-3.jpg?v=1729508814",
     "gallery": [
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-4.jpg?v=1729508815",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-2.jpg?v=1729508814",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-3.jpg?v=1729508814",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-4.jpg?v=1729508815",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03W-6.jpg?v=1729508814"
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trousers-grey-2",
+    "href": "/women/ready-to-wear/pants-shorts/the-orekka-women-s-lounge-trousers-grey-_347",
     "editorialDescription": "The “Orekka” lounge trousers feature a striking print, capturing the harmony between chaos and clarity. With an elasticated waistband and practical pockets, these streetwear trousers offer both comfort and unique style. Whether you're dressing for a laid-back day or stepping out in an elevated streetwear style, these versatile pants transition effortlessly, matching your varied mood. Make a bold fashion statement with the luxurious “Orekka” trousers, perfect for those who value both fashion and function.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14830,12 +16144,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_349",
-    "slug": "the-orekka-satin-lounge-trousers-orange-1",
-    "handle": "the-orekka-satin-lounge-trousers-orange-1",
+    "slug": "the-orekka-women-s-lounge-trousers-orange-_349",
+    "handle": "the-orekka-women-s-lounge-trousers-orange-_349",
     "name": "The “Orekka” Women's Lounge Trousers – Orange",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO05W-2.jpg?v=1729508785",
@@ -14847,9 +16187,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trousers-orange-1",
+    "href": "/women/ready-to-wear/pants-shorts/the-orekka-women-s-lounge-trousers-orange-_349",
     "editorialDescription": "The “Orekka” lounge trousers feature a striking print, capturing the harmony between chaos and clarity. Designed with an elasticated waistband and practical pockets, these women's streetwear pants seamlessly merge style and comfort. Ideal for travel, leisure, or simply unwinding, these versatile trousers can easily transition from a relaxed day look to an elevated evening ensemble. Make a bold statement and elevate your streetwear clothing collection with the luxurious and distinctive “Orekka” lounge trousers.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14882,12 +16225,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_351",
-    "slug": "the-orekka-satin-lounge-trouser-orange",
-    "handle": "the-orekka-satin-lounge-trouser-orange",
+    "slug": "the-orekka-men-s-lounge-trouser-orange-_351",
+    "handle": "the-orekka-men-s-lounge-trouser-orange-_351",
     "name": "The \"Orekka\" Men's Lounge Trouser - Orange",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO05-1_0e60a6ef-56b1-4e71-b71a-b12538b3443d.jpg?v=1729508522",
@@ -14897,11 +16266,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO05-2_99c51c32-f365-4f63-94fc-186cab909e1f.jpg?v=1729508522",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO05-3_af3c044a-8b55-464d-8f25-9d643b503b73.jpg?v=1729508522"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trouser-orange",
+    "href": "/men/ready-to-wear/trousers-shorts/the-orekka-men-s-lounge-trouser-orange-_351",
     "editorialDescription": "The “Orekka” lounge trousers feature a striking print, capturing the harmony between chaos and clarity. Designed with an elasticated waistband and practical pockets, these men's streetwear pants seamlessly merge style and comfort. Ideal for travel, leisure, or simply unwinding, these versatile trousers can easily transition from a relaxed day look to an elevated evening ensemble. Make a bold statement and elevate your streetwear clothing collection with the luxurious and distinctive “Orekka” lounge trousers.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14934,12 +16306,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_353",
-    "slug": "the-orekka-satin-lounge-trouser-grey",
-    "handle": "the-orekka-satin-lounge-trouser-grey",
+    "slug": "the-orekka-men-s-lounge-trouser-grey-_353",
+    "handle": "the-orekka-men-s-lounge-trouser-grey-_353",
     "name": "The \"Orekka\" Men's Lounge Trouser - Grey",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03-2_35aa09b2-9b83-4ce6-8a50-a478f9bc6467.jpg?v=1729508474",
@@ -14950,11 +16348,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03-4_28360369-2252-4169-ad1d-7479c4c4ee16.jpg?v=1729508474",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO03-6.jpg?v=1729508474"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trouser-grey",
+    "href": "/men/ready-to-wear/trousers-shorts/the-orekka-men-s-lounge-trouser-grey-_353",
     "editorialDescription": "The “Orekka” lounge trousers feature a striking print, capturing the harmony between chaos and clarity. With an elasticated waistband and practical pockets, these streetwear trousers offer both comfort and unique style. Whether you're dressing for a laid-back day or stepping out in an elevated streetwear style, these versatile pants transition effortlessly, matching your varied mood. Make a bold fashion statement with the luxurious “Orekka” trousers, perfect for those who value both fashion and function.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -14987,27 +16388,56 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_355",
-    "slug": "the-first-strand-satin-lounge-trouser",
-    "handle": "the-first-strand-satin-lounge-trouser",
+    "slug": "the-first-strand-men-s-lounge-trouser-_355",
+    "handle": "the-first-strand-men-s-lounge-trouser-_355",
     "name": "\"The First Strand\" Men's Lounge Trouser",
     "price": 15999,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-2.jpg?v=1729508159",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-3_46ddcfb0-c435-4a33-977c-9f83122c9b4e.jpg?v=1729508159",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-3_46ddcfb0-c435-4a33-977c-9f83122c9b4e.jpg?v=1729508159",
     "gallery": [
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-2.jpg?v=1729508159",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-3_46ddcfb0-c435-4a33-977c-9f83122c9b4e.jpg?v=1729508159",
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-2.jpg?v=1729508159",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-4_498e68ab-ac1c-4b96-a96c-e381519134d3.jpg?v=1729508159",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14-5_61aaab30-c5a2-438a-9e9c-8e3d1d07e255.jpg?v=1729508159"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trouser",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-men-s-lounge-trouser-_355",
     "editorialDescription": "“The first strand” detail – the lifeblood of Tezhhomayaa. With more versions of the artwork on the way, this collection has the perfect balance of symmetry and abstract art. Available in four colours, this piece makes for a powerful visual that attracts attention wherever you go.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -15040,12 +16470,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_357",
-    "slug": "the-first-strand-satin-lounge-trouser-blue",
-    "handle": "the-first-strand-satin-lounge-trouser-blue",
+    "slug": "the-first-strand-men-s-lounge-trouser-blue-_357",
+    "handle": "the-first-strand-men-s-lounge-trouser-blue-_357",
     "name": "\"The First Strand\" Men's Lounge Trouser – Blue",
     "price": 11999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-2_dd6c0256-e7d0-4f44-8f43-e858a3fd62d9.jpg?v=1729508058",
@@ -15055,11 +16511,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-3_4db63ee3-9d7a-43da-8e06-12f896eaff44.jpg?v=1729508058",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-4_9e3f3c42-90ad-4a35-96e1-f845c9212dc7.jpg?v=1729508058"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trouser-blue",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-men-s-lounge-trouser-blue-_357",
     "editorialDescription": "\"The First Strand\" trousers are designed to exude confidence, blending symmetry and abstraction with a high-energy print that motivates you to push your limits. Featuring an elasticated waistband and practical pockets, these men's streetwear trousers offer both comfort and sleek style. Perfect for those who want to up their streetwear style game, the bold print and functional design seamlessly combines fashion with practicality, ensuring you make a statement wherever you go.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -15092,7 +16551,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_359",
@@ -15164,8 +16649,8 @@
   },
   {
     "id": "imported_360",
-    "slug": "the-first-strand-satin-lounge-trouser-grey",
-    "handle": "the-first-strand-satin-lounge-trouser-grey",
+    "slug": "the-first-strand-men-s-lounge-trouser-grey-_360",
+    "handle": "the-first-strand-men-s-lounge-trouser-grey-_360",
     "name": "\"The First Strand\" Men's Lounge Trouser – Grey",
     "price": 11999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-2_9e8afe1d-8d68-4c7b-bc09-063edbe3b508.jpg?v=1729507939",
@@ -15176,11 +16661,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-4_fe35a139-8247-47dd-bdde-b39f061c2aa0.jpg?v=1729507939",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO03-5.jpg?v=1729507939"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trouser-grey",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-men-s-lounge-trouser-grey-_360",
     "editorialDescription": "\"The First Strand\" trousers strike the ideal balance between symmetry and abstraction, featuring a high-energy print that motivates you to push your limits. Designed with an elasticated waistband and practical pockets, these men's streetwear pants combine comfort with style. The bold print and functional design make them perfect for everyday wear, blending effortlessly into your urban casual wear wardrobe. Whether you're dressing for leisure or travel, these trousers offer a seamless mix of fashion and practicality for any occasion.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -15213,12 +16701,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_362",
-    "slug": "the-first-strand-lounge-trousers",
-    "handle": "the-first-strand-lounge-trousers",
+    "slug": "the-first-strand-women-s-lounge-trousers-_362",
+    "handle": "the-first-strand-women-s-lounge-trousers-_362",
     "name": "\"The First Strand\" Women's Lounge Trousers",
     "price": 15999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkSJO14W-1_ed1b9eb9-034d-401d-ade8-205c43b6a2d0.jpg?v=1729507796",
@@ -15231,9 +16745,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-lounge-trousers",
+    "href": "/women/ready-to-wear/pants-shorts/the-first-strand-women-s-lounge-trousers-_362",
     "editorialDescription": "“The first strand” detail – the lifeblood of Tezhhomayaa. With more versions of the artwork on the way, this collection has the perfect balance of symmetry and abstract art. Available in four colours, this piece makes for a powerful visual that attracts attention wherever you go.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -15266,7 +16783,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_364",
@@ -15428,15 +16971,15 @@
   },
   {
     "id": "imported_370",
-    "slug": "the-by-invitation-only-shorts",
-    "handle": "the-by-invitation-only-shorts",
+    "slug": "the-by-invitation-only-women-s-shorts-_370",
+    "handle": "the-by-invitation-only-women-s-shorts-_370",
     "name": "The “By Invitation Only” Women's Shorts",
     "price": 6699,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-2.jpg?v=1729506997",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-3.jpg?v=1729506997",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-3.jpg?v=1729506997",
     "gallery": [
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-2.jpg?v=1729506997",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-3.jpg?v=1729506997",
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-2.jpg?v=1729506997",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-4.jpg?v=1729506997",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-5.jpg?v=1729506997",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/4clrSSHW-6.jpg?v=1729506997",
@@ -15444,9 +16987,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-by-invitation-only-shorts",
+    "href": "/women/ready-to-wear/pants-shorts/the-by-invitation-only-women-s-shorts-_370",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -15479,7 +17025,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_373",
@@ -19043,24 +20615,27 @@
   },
   {
     "id": "imported_524",
-    "slug": "the-15-0-jogging-pants-orange-2",
-    "handle": "the-15-0-jogging-pants-orange-2",
+    "slug": "the-15-0-relaxed-fit-pants-_524",
+    "handle": "the-15-0-relaxed-fit-pants-_524",
     "name": "The “15-0” Relaxed Fit Pants",
     "price": 3999,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09404-copy.jpg?v=1729496600",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09488-copy.jpg?v=1729496600",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09488-copy.jpg?v=1729496600",
     "gallery": [
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09404-copy.jpg?v=1729496600",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09488-copy.jpg?v=1729496600",
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09404-copy.jpg?v=1729496600",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09509-copy.jpg?v=1729496600",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09515-copy.jpg?v=1729496600",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/RAH09529-copy.jpg?v=1729496600"
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-15-0-jogging-pants-orange-2",
+    "href": "/women/ready-to-wear/pants-shorts/the-15-0-relaxed-fit-pants-_524",
     "editorialDescription": "The “15-0\" sportswear pants redefine the perceived dichotomy between effortlessness and intensity. Inspired by the decisive tennis score, this dynamic design blends symmetry with energy, making it as striking as it is comfortable. The high-performance fabric, elasticated waistband, and convenient pocket details make these jogging pants a comfortable and stylish addition to men’s gym wear. Alternatively, these versatile pants are equally comfortable for travel and leisure.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19093,7 +20668,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_526",
@@ -19208,8 +20809,8 @@
   },
   {
     "id": "imported_535",
-    "slug": "the-empty-frame-training-shorts-mint-1",
-    "handle": "the-empty-frame-training-shorts-mint-1",
+    "slug": "the-empty-frame-training-shorts-mint-_535",
+    "handle": "the-empty-frame-training-shorts-mint-_535",
     "name": "The \"Empty Frame\" Training Shorts - Mint",
     "price": 2499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotKSH02-2.jpg?v=1729497933",
@@ -19217,11 +20818,14 @@
     "gallery": [
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotKSH02-2.jpg?v=1729497933"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-training-shorts-mint-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-empty-frame-training-shorts-mint-_535",
     "editorialDescription": "For those with a reputation for subtlety. Clean strokes, minimal contrast and text logo borders on the sides make for a peak performance piece.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19254,7 +20858,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_537",
@@ -19570,8 +21200,8 @@
   },
   {
     "id": "imported_549",
-    "slug": "the-first-strand-training-shorts-ruby-2",
-    "handle": "the-first-strand-training-shorts-ruby-2",
+    "slug": "the-first-strand-training-shorts-ruby-_549",
+    "handle": "the-first-strand-training-shorts-ruby-_549",
     "name": "\"The First Strand\" Training Shorts - Ruby",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH01-2.jpg?v=1729495689",
@@ -19581,11 +21211,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH01-3.jpg?v=1729495689",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH01-4_3da1eda6-b2c9-4c4f-be0b-702a5bebf026.jpg?v=1729495689"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-training-shorts-ruby-2",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-training-shorts-ruby-_549",
     "editorialDescription": "“The First Strand” shorts feature a bold, high-energy print that captures the perfect blend of symmetry and abstraction, motivating you to push your limits. Crafted from breathable, durable, and stretchable fabric, they deliver both comfort and performance. These activewear shorts are a stylish addition to your gym outfits with an elastic waistband for a snug fit and practical pocket detail. They are designed for athletes who want to perform their best while looking and feeling great.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19618,12 +21251,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_551",
-    "slug": "the-first-strand-training-shorts-mint-1",
-    "handle": "the-first-strand-training-shorts-mint-1",
+    "slug": "the-first-strand-training-shorts-mint-_551",
+    "handle": "the-first-strand-training-shorts-mint-_551",
     "name": "\"The First Strand\" Training Shorts - Mint",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH02-2_679c38d5-0343-46f0-aca6-e39148056bb2.jpg?v=1729495664",
@@ -19633,11 +21292,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH02-3_240463dd-9b38-40f9-9639-4ac159c5784f.jpg?v=1729495664",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH02-4_dbddbdb7-bcd6-4019-9b7f-0626909b1693.jpg?v=1729495664"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-training-shorts-mint-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-training-shorts-mint-_551",
     "editorialDescription": "“The First Strand” shorts are designed to inspire you to push your limits, featuring a perfect balance of symmetry and abstraction with a high-energy print. Made from breathable, durable, and stretchable fabric, these men's training shorts offer both comfort and performance. The elasticated waistband ensures a snug fit, while the pockets make it practical. A stylish addition to your gym outfits, these shorts are perfect for athletes looking to play well, feel good, and look outstanding.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19670,26 +21332,55 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_553",
-    "slug": "the-first-strand-training-shorts-blue-2",
-    "handle": "the-first-strand-training-shorts-blue-2",
+    "slug": "the-first-strand-training-shorts-blue-_553",
+    "handle": "the-first-strand-training-shorts-blue-_553",
     "name": "\"The First Strand\" Training Shorts - Blue",
     "price": 2199,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-2.jpg?v=1729495601",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-3_68c348f9-845a-4076-8887-bb91c1c52589.jpg?v=1729495601",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-3_68c348f9-845a-4076-8887-bb91c1c52589.jpg?v=1729495601",
     "gallery": [
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-2.jpg?v=1729495601",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-3_68c348f9-845a-4076-8887-bb91c1c52589.jpg?v=1729495601",
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-2.jpg?v=1729495601",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH03-4.jpg?v=1729495601"
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-training-shorts-blue-2",
+    "href": "/women/ready-to-wear/pants-shorts/the-first-strand-training-shorts-blue-_553",
     "editorialDescription": "“The First Strand” shorts showcase the perfect blend of symmetry and abstraction with a high-energy print, designed to inspire you to push your limits. They’re a great addition to men's sportswear clothing, featuring breathable, durable, and comfortably stretchy fabric. The elasticated waistband ensures maximum comfort, while the pockets provide added functionality. Combining style and performance, these tennis shorts look as good as they feel and are perfect for athletes aiming to excel on and off the court.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19722,12 +21413,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_555",
-    "slug": "the-first-strand-training-shorts-grey",
-    "handle": "the-first-strand-training-shorts-grey",
+    "slug": "the-first-strand-training-shorts-grey-_555",
+    "handle": "the-first-strand-training-shorts-grey-_555",
     "name": "\"The First Strand\" Training Shorts - Grey",
     "price": 2199,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH04-2_31b34197-3a3d-4ee2-a668-2d6abff2c019.jpg?v=1729495645",
@@ -19737,11 +21454,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH04-3_e3433247-b15f-4e11-a086-e575a436aedf.jpg?v=1729495645",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/SrkKSH04-4_b5b7956b-6b6d-4dac-affa-93a51c3d0e46.jpg?v=1729495645"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-training-shorts-grey",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-training-shorts-grey-_555",
     "editorialDescription": "“The First Strand” shorts capture the perfect balance of symmetry and abstraction with a high-energy print designed to inspire you to push your limits. With fabric qualities like breathability, durability, and stretch, they’re an ideal addition to any men’s active sportswear collection. The elasticated waistband ensures a comfortable fit, while convenient pocket details add practicality. Combining style and function, these are easily the best running shorts for athletes looking to perform at their peak.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19774,26 +21494,55 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_557",
-    "slug": "orekka-training-shorts-grey",
-    "handle": "orekka-training-shorts-grey",
+    "slug": "orekka-training-shorts-grey-_557",
+    "handle": "orekka-training-shorts-grey-_557",
     "name": "\"Orekka\" Training Shorts - Grey",
     "price": 1499,
-    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-2.jpg?v=1729495423",
+    "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-4_4b218952-ffbb-4307-a0cb-73584953b5b0.jpg?v=1729495423",
     "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-3_38b281db-f624-410c-acd3-572b1fb15c72.jpg?v=1729495423",
     "gallery": [
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-4_4b218952-ffbb-4307-a0cb-73584953b5b0.jpg?v=1729495423",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-2.jpg?v=1729495423",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-3_38b281db-f624-410c-acd3-572b1fb15c72.jpg?v=1729495423",
-      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-4_4b218952-ffbb-4307-a0cb-73584953b5b0.jpg?v=1729495423"
+      "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH04-3_38b281db-f624-410c-acd3-572b1fb15c72.jpg?v=1729495423"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/orekka-training-shorts-grey",
+    "href": "/men/ready-to-wear/trousers-shorts/orekka-training-shorts-grey-_557",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19826,12 +21575,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_560",
-    "slug": "orekka-training-shorts-red",
-    "handle": "orekka-training-shorts-red",
+    "slug": "orekka-training-shorts-carmine-_560",
+    "handle": "orekka-training-shorts-carmine-_560",
     "name": "\"Orekka\" Training Shorts - Carmine",
     "price": 1499,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH01-2.jpg?v=1729495459",
@@ -19841,11 +21616,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH01-1_6f6c2f0e-9c81-4707-871a-840ec7f89234.jpg?v=1729495458",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrKSH01-3_2da91edb-1f56-4afe-881e-42bb63472c15.jpg?v=1729495459"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/orekka-training-shorts-red",
+    "href": "/men/ready-to-wear/trousers-shorts/orekka-training-shorts-carmine-_560",
     "editorialDescription": "<!--",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -19878,7 +21656,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_563",
@@ -24052,8 +25856,8 @@
   },
   {
     "id": "imported_727",
-    "slug": "the-orekka-satin-lounge-trouser-carmine",
-    "handle": "the-orekka-satin-lounge-trouser-carmine",
+    "slug": "the-orekka-men-s-lounge-trouser-carmine-_727",
+    "handle": "the-orekka-men-s-lounge-trouser-carmine-_727",
     "name": "The \"Orekka\" Men's Lounge Trouser - Carmine",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO01-1_4cbcfa48-350e-46d0-8cc4-404093f11b02.jpg?v=1729508420",
@@ -24064,11 +25868,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO01-3_a85c2d05-8fcd-4615-9842-a532f1370ccb.jpg?v=1729508420",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/OrSJO01-4_5cbc3fb0-9435-4652-a823-8860a77d8cd0.jpg?v=1729508420"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trouser-carmine",
+    "href": "/men/ready-to-wear/trousers-shorts/the-orekka-men-s-lounge-trouser-carmine-_727",
     "editorialDescription": "The “Orekka” lounge trousers feature a striking print that embodies the concept of finding clarity in chaos. These streetwear trousers feature an elasticated waistband and practical pockets, blending fashion and function. Perfect for travel, leisure, and simply relaxing, these versatile and cool streetwear pants can easily take you from a casual day to a dressy evening look. Express your personality with the bold and luxurious “Orekka” lounge trousers.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -24101,7 +25908,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_729",
@@ -24636,8 +26469,8 @@
   },
   {
     "id": "imported_748",
-    "slug": "the-empty-frame-trouser-white",
-    "handle": "the-empty-frame-trouser-white",
+    "slug": "the-empty-frame-men-s-lounge-trousers-red-_748",
+    "handle": "the-empty-frame-men-s-lounge-trousers-red-_748",
     "name": "The “Empty Frame” Men's Lounge Trousers – Red",
     "price": 5899,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO01-2.jpg?v=1729508928",
@@ -24647,11 +26480,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO01-3.jpg?v=1729508928",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJO01-4.jpg?v=1729508928"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-trouser-white",
+    "href": "/men/ready-to-wear/trousers-shorts/the-empty-frame-men-s-lounge-trousers-red-_748",
     "editorialDescription": "Express your subtle style with “The Empty Frame” trousers, featuring clean strokes, minimal contrasts, and statement text borders at the side seams. The elasticated waistband and practical pockets make for ultra-comfortable elements, making these trousers an integral part of your streetwear clothing collection, ideal for travel and leisure. Pair them with a coordinated jacket as a part of an urban clothing set, or style them with something from your own wardrobe. Exude a luxuriously comfortable vibe, no matter where you are!",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -24684,7 +26520,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_750",
@@ -24734,8 +26596,8 @@
   },
   {
     "id": "imported_752",
-    "slug": "the-empty-frame-trouser-mint",
-    "handle": "the-empty-frame-trouser-mint",
+    "slug": "the-empty-frame-trouser-mint-_752",
+    "handle": "the-empty-frame-trouser-mint-_752",
     "name": "The \"Empty Frame\" Trouser - Mint",
     "price": 2799,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH095141-copy.jpg?v=1681374364",
@@ -24745,11 +26607,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH095271-copy.jpg?v=1681374365",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH094701-copy-1.jpg?v=1681374365"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-empty-frame-trouser-mint",
+    "href": "/men/ready-to-wear/trousers-shorts/the-empty-frame-trouser-mint-_752",
     "editorialDescription": "For those with a reputation for subtlety. Simplicity, texture and just the right amount of pop through the text logo borders. The deliberate absence of side seams ensures the artwork is not disturbed.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -24782,7 +26647,33 @@
         "sku": "MotSJO07"
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_754",
@@ -24955,8 +26846,8 @@
   },
   {
     "id": "imported_759",
-    "slug": "the-cosmic-chaos-satin-lounge-trouser",
-    "handle": "the-cosmic-chaos-satin-lounge-trouser",
+    "slug": "the-cosmic-chaos-men-s-lounge-trouser-_759",
+    "handle": "the-cosmic-chaos-men-s-lounge-trouser-_759",
     "name": "The \"Cosmic Chaos\" Men's Lounge Trouser",
     "price": 15999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/NsrkSJO14-2_8d241a32-a2cf-4792-81b4-7d446ddb1c17.jpg?v=1729509723",
@@ -24966,11 +26857,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/NsrkSJO14-3_6c0c3b44-499f-4b34-b555-5a92c2a41674.jpg?v=1729509723",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/NsrkSJO14-4_9b5af5f9-a3b4-4d04-9f27-a243f7c91314.jpg?v=1729509723"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-cosmic-chaos-satin-lounge-trouser",
+    "href": "/men/ready-to-wear/trousers-shorts/the-cosmic-chaos-men-s-lounge-trouser-_759",
     "editorialDescription": "This exhilarating piece features high intensity, high-detail artwork, a relaxed fit and a super soft satin weave. Exuding confidence and power, the “Cosmic Chaos” bottom leaves vou stimulated.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25003,12 +26897,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_761",
-    "slug": "the-first-strand-satin-lounge-trousers-grey-1",
-    "handle": "the-first-strand-satin-lounge-trousers-grey-1",
+    "slug": "the-first-strand-satin-lounge-trousers-grey-_761",
+    "handle": "the-first-strand-satin-lounge-trousers-grey-_761",
     "name": "\"The First Strand\" Satin Lounge Trousers – Grey",
     "price": 5999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH01759-copy.jpg?v=1681373333",
@@ -25018,11 +26938,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH01790-copy.jpg?v=1681373333",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH01767-copy.jpg?v=1681373333"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trousers-grey-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-satin-lounge-trousers-grey-_761",
     "editorialDescription": "“The first strand” detail - the lifeblood of Tezhomaya. With more versions of the artwork on the way, this collection has the perfect balance of symmetry and abstract art. Available in four colours, this piece makes for a powerful visual that attracts attention wherever you go.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25055,12 +26978,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_763",
-    "slug": "the-path-of-least-resistance-trousers-black-1",
-    "handle": "the-path-of-least-resistance-trousers-black-1",
+    "slug": "the-path-of-least-resistance-men-s-lounge-trousers-black-_763",
+    "handle": "the-path-of-least-resistance-men-s-lounge-trousers-black-_763",
     "name": "“The Path of Least Resistance” Men's Lounge Trousers – Black",
     "price": 18999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO09-2.jpg?v=1729509302",
@@ -25070,11 +27019,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO09-3_63aba329-71d6-4a3a-bbef-351b04898498.jpg?v=1729509302",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO09-4_0582c567-c046-40cd-9f40-ea34ce93d068.jpg?v=1729509302"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-path-of-least-resistance-trousers-black-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-path-of-least-resistance-men-s-lounge-trousers-black-_763",
     "editorialDescription": "These easy-fitting, woven trousers let you bring star presence anywhere you go. The entire body is finished off with “The Path of least resistance” detail for an unmistakable look. Plus, thanks to the crisp, lightweight outer fabric and soft crepe lining, they keep you comfortable in various conditions.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25107,7 +27059,33 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_765",
@@ -25164,8 +27142,8 @@
   },
   {
     "id": "imported_767",
-    "slug": "the-first-strand-satin-lounge-trouser-ruby",
-    "handle": "the-first-strand-satin-lounge-trouser-ruby",
+    "slug": "the-first-strand-men-s-lounge-trouser-ruby-_767",
+    "handle": "the-first-strand-men-s-lounge-trouser-ruby-_767",
     "name": "\"The First Strand\" Men's Lounge Trouser – Ruby",
     "price": 11999,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH00569-copy.jpg?v=1681370925",
@@ -25175,11 +27153,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH00623-copy.jpg?v=1681370925",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH00570-copy.jpg?v=1681370925"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trouser-ruby",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-men-s-lounge-trouser-ruby-_767",
     "editorialDescription": "\"The First Strand\" trousers exude confidence with their bold blend of symmetry and abstraction, to inspiring you to push your limits. Featuring an elasticated waistband and practical pockets, they offer both sleek style and comfort. A standout in streetwear fashion, these trousers are perfect for leisure or travel. Pair them with a coordinated jacket or something from your own wardrobe to style these trousers as a part of a smart urban clothing set.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25212,12 +27193,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_769",
-    "slug": "the-first-strand-satin-lounge-trousers-gold-earth-1",
-    "handle": "the-first-strand-satin-lounge-trousers-gold-earth-1",
+    "slug": "the-first-strand-satin-lounge-trousers-_769",
+    "handle": "the-first-strand-satin-lounge-trousers-_769",
     "name": "\"The First Strand\" Satin Lounge Trousers",
     "price": 9000,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH01759-copy.jpg?v=1681373333",
@@ -25225,11 +27232,14 @@
     "gallery": [
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH01759-copy.jpg?v=1681373333"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-first-strand-satin-lounge-trousers-gold-earth-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-first-strand-satin-lounge-trousers-_769",
     "editorialDescription": "“The first strand” detail - the lifeblood of Tezhomaya. With more versions of the artwork on the way, this collection has the perfect balance of symmetry and abstract art. Available in four colours, this piece makes for a powerful visual that attracts attention wherever you go.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25406,12 +27416,38 @@
         "sku": ""
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_771",
-    "slug": "the-orekka-satin-lounge-trousers-grey-1",
-    "handle": "the-orekka-satin-lounge-trousers-grey-1",
+    "slug": "the-orekka-satin-lounge-trousers-grey-_771",
+    "handle": "the-orekka-satin-lounge-trousers-grey-_771",
     "name": "The \"Orekka\" Satin Lounge Trousers – Grey",
     "price": 3399,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH02012-copy.jpg?v=1681370309",
@@ -25421,11 +27457,14 @@
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH02019-copy.jpg?v=1681370309",
       "https://cdn.shopify.com/s/files/1/0746/1850/3459/products/RAH02040-copy.jpg?v=1681370309"
     ],
-    "category": "women/ready-to-wear/pants-shorts",
+    "category": "men/ready-to-wear/trousers-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-orekka-satin-lounge-trousers-grey-1",
+    "href": "/men/ready-to-wear/trousers-shorts/the-orekka-satin-lounge-trousers-grey-_771",
     "editorialDescription": "Effortlessness can be unnerving but it's time to de-program. Sometimes great things come to you with minimal effort, and your only obligation is to enjoy them. Built for effortless transition from the track to the city, the \"Orekka\" pattern detail keeps things simple.",
-    "tags": [],
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -25458,7 +27497,33 @@
         "sku": "OrSJO09"
       }
     ],
-    "status": "active"
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "men",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_773",
@@ -26549,8 +28614,8 @@
   },
   {
     "id": "imported_802",
-    "slug": "the-limitless-possibilities-jogging-pants-light-green",
-    "handle": "the-limitless-possibilities-jogging-pants-light-green",
+    "slug": "the-limitless-possibilities-jogging-pants-_802",
+    "handle": "the-limitless-possibilities-jogging-pants-_802",
     "name": "The \"Limitless Possibilities\" Jogging Pants",
     "price": 1299,
     "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WP-06-01..jpg?v=1773926355",
@@ -26560,9 +28625,12 @@
     ],
     "category": "women/ready-to-wear/pants-shorts",
     "categoryLabel": "Pants & Shorts",
-    "href": "/products/the-limitless-possibilities-jogging-pants-light-green",
+    "href": "/women/ready-to-wear/pants-shorts/the-limitless-possibilities-jogging-pants-_802",
     "editorialDescription": "For the creative individual, the possibilities are limitless. With functional fabric and features that support action, it’ll keep pace, no matter how long you’re on the move. Four way stretch and artwork that is easy on the eye both make for the perfect combination of subtlety and excitement.",
-    "tags": [],
+    "tags": [
+      "gender_women",
+      "category_ready-to-wear"
+    ],
     "variants": [
       {
         "optionName": "Size",
@@ -26595,7 +28663,33 @@
         "sku": "PosKJO02W-6"
       }
     ],
-    "status": "active"
+    "status": "draft",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "gender": "women",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   },
   {
     "id": "imported_804",
@@ -28592,5 +30686,84 @@
     "href": "/women/bags/tote-bags/cosmic-chaos-tote-bag-6ck0",
     "id": "prod_1782908033724_3f3eakv",
     "categoryLabel": "women/bags/tote-bags"
+  },
+  {
+    "slug": "the-cosmic-chaos-men-s-jacket-8tfz",
+    "handle": "the-cosmic-chaos-men-s-jacket-8tfz",
+    "name": "The \"Cosmic Chaos\" Men's Jacket",
+    "price": 9599,
+    "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783498425/tezhhomayaa_app/bi4xyiptvg3jsd8wd2dj.jpg",
+    "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MotSJA10-3_ef07ed93-2773-4b38-9951-b124a195a6a8.jpg?v=1729503817",
+    "gallery": [
+      "https://res.cloudinary.com/dhezwtyku/image/upload/v1783498425/tezhhomayaa_app/bi4xyiptvg3jsd8wd2dj.jpg"
+    ],
+    "category": "men/ready-to-wear/coats-jackets",
+    "categoryLabel": "Women — Ready To Wear",
+    "href": "/men/ready-to-wear/coats-jackets/the-cosmic-chaos-men-s-jacket-8tfz",
+    "editorialDescription": "Express your subtle style with \"The Empty Frame\" streetwear jacket. Featuring clean lines, minimal contrasts, and bold text detailing along the side seams, this jacket lends an effortless edge to your style. The full zipper closure, elasticated sleeves, and smart collar ensure both comfort and style. A super versatile piece, it transitions seamlessly from streetwear to a party outfit, letting your look speak for itself, whether you're dressing it up or keeping it casual.",
+    "tags": [
+      "gender_men",
+      "category_ready-to-wear"
+    ],
+    "variants": [
+      {
+        "optionName": "Size",
+        "option": "M",
+        "price": 9599,
+        "sku": ""
+      },
+      {
+        "optionName": "Size",
+        "option": "L",
+        "price": 9599,
+        "sku": ""
+      },
+      {
+        "optionName": "Size",
+        "option": "XL",
+        "price": 9599,
+        "sku": ""
+      },
+      {
+        "optionName": "Size",
+        "option": "XXL",
+        "price": 9599,
+        "sku": ""
+      },
+      {
+        "optionName": "Size",
+        "option": "XXXL",
+        "price": 9599,
+        "sku": ""
+      }
+    ],
+    "status": "active",
+    "compareAtPrice": "",
+    "sku": "",
+    "barcode": "",
+    "quantity": 0,
+    "gender": "men",
+    "id": "prod_1783498194811_5vv8tfz",
+    "designStory": "",
+    "inspirationStory": "",
+    "fabricDetails": "",
+    "craftsmanshipDetails": "",
+    "productStory": "",
+    "sizeGuide": "",
+    "fabricCare": "",
+    "shippingReturns": "",
+    "season": "",
+    "color": "",
+    "material": "",
+    "fit": "",
+    "collectionName": "",
+    "enableStickyCheckout": true,
+    "relatedProductIds": [],
+    "merchandising": {
+      "gridThumbnail": 0,
+      "desktopGalleryOrder": [],
+      "tabletGalleryOrder": [],
+      "mobileGalleryOrder": []
+    }
   }
 ]

@@ -1,19 +1,15 @@
-const fs = require('fs');
-const path = require('path');
+const cloudinary = require('cloudinary').v2;
+require('dotenv').config({ path: '.env.local' });
+cloudinary.config({ secure: true });
 
-async function test() {
-  const formData = new FormData();
-  // Creating a tiny valid GIF for testing
-  const gifBytes = Buffer.from("R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7", "base64");
-  formData.append("file", new Blob([gifBytes], { type: "image/gif" }), "test.gif");
-
-  const res = await fetch("http://localhost:3000/api/upload", {
-    method: "POST",
-    body: formData
-  });
-  
-  const text = await res.text();
-  console.log("Status:", res.status);
-  console.log("Response:", text);
+async function run() {
+  try {
+    const res = await cloudinary.uploader.upload("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=", {
+      folder: "tezhhomayaa_app"
+    });
+    console.log("Success:", res.secure_url);
+  } catch (err) {
+    console.error("Error:", err);
+  }
 }
-test();
+run();

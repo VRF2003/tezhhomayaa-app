@@ -153,6 +153,10 @@
     "bottomBarFontSize": "clamp(0.55rem, 0.8vw, 0.9rem)",
     "bottomBarLinks": [
       {
+        "label": "Journal",
+        "url": "/journal"
+      },
+      {
         "label": "PRIVACY",
         "url": "/privacy-policy"
       },

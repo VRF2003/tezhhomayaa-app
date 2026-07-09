@@ -42,14 +42,18 @@ export const EditorialImageGallery = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%" }} className={gridClass}>
         {items.map((item: any, idx: number) => (
-          <div key={idx} className="group relative cursor-zoom-in" onClick={() => openLightbox(item.overrideImage || "")}>
-            <div className="aspect-[4/5] bg-[#f0ece6] overflow-hidden">
-              <img 
-                src={item.overrideImage} 
-                alt="" 
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-              />
+          <div key={idx} className="group relative cursor-zoom-in" onClick={() => item.overrideImage && openLightbox(item.overrideImage)}>
+            <div className="aspect-[4/5] bg-[#f0ece6] overflow-hidden flex items-center justify-center">
+              {item.overrideImage ? (
+                <img 
+                  src={item.overrideImage} 
+                  alt="" 
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <span style={{ color: "#a0a0a0", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Gallery Image</span>
+              )}
             </div>
             {item.overrideHeading && (
               <div className="mt-4 text-xs uppercase tracking-[0.15em] text-gray-500">
@@ -72,14 +76,18 @@ export const EditorialMasonryGallery = ({ section }: BlockProps) => {
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
       <div style={{ maxWidth: "1600px", width: "100%", columns: "1 300px", columnGap: "2rem" }}>
         {items.map((item: any, idx: number) => (
-          <div key={idx} className="mb-8 inline-block w-full group relative cursor-zoom-in" onClick={() => openLightbox(item.overrideImage || "")}>
-            <div className="bg-[#f0ece6] overflow-hidden">
-              <img 
-                src={item.overrideImage} 
-                alt="" 
-                className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
-                loading="lazy"
-              />
+          <div key={idx} className="mb-8 inline-block w-full group relative cursor-zoom-in" onClick={() => item.overrideImage && openLightbox(item.overrideImage)}>
+            <div className="bg-[#f0ece6] overflow-hidden min-h-[300px] flex items-center justify-center">
+              {item.overrideImage ? (
+                <img 
+                  src={item.overrideImage} 
+                  alt="" 
+                  className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <span style={{ color: "#a0a0a0", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Masonry Image</span>
+              )}
             </div>
             {item.overrideHeading && (
               <div className="mt-4 text-xs uppercase tracking-[0.15em] text-gray-500">
@@ -98,7 +106,15 @@ export const EditorialVideo = ({ section }: BlockProps) => {
   const videoSrc = section.video;
   const poster = section.desktopImage;
 
-  if (!videoSrc) return null;
+  if (!videoSrc) {
+    return (
+      <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
+        <div style={{ maxWidth: style.maxWidth || "1600px", width: "100%", position: "relative", minHeight: "400px", backgroundColor: "#f0ece6", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Video Placeholder</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
@@ -130,7 +146,17 @@ export const EditorialYouTube = ({ section }: BlockProps) => {
   if (url.includes("v=")) videoId = url.split("v=")[1]?.split("&")[0];
   else if (url.includes("youtu.be/")) videoId = url.split("youtu.be/")[1]?.split("?")[0];
 
-  if (!videoId) return null;
+  if (!videoId) {
+    return (
+      <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
+        <div style={{ maxWidth: style.maxWidth || "1200px", width: "100%" }}>
+          <div className="relative w-full aspect-video bg-[#f0ece6] flex items-center justify-center">
+            <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>YouTube Embed Placeholder</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ backgroundColor: style.backgroundColor, padding: style.padding, margin: style.margin, display: "flex", justifyContent: "center" }}>
@@ -167,14 +193,16 @@ export const EditorialImageHotspots = ({ section }: BlockProps) => {
       <div style={{ maxWidth: "1600px", width: "100%", position: "relative" }}>
         
         {/* Base Image */}
-        <div className="bg-[#f0ece6] overflow-hidden relative cursor-zoom-in" onClick={() => openLightbox(section.desktopImage || "")}>
-          {section.desktopImage && (
+        <div className="bg-[#f0ece6] overflow-hidden relative cursor-zoom-in min-h-[400px] flex items-center justify-center" onClick={() => section.desktopImage && openLightbox(section.desktopImage)}>
+          {section.desktopImage ? (
             <img 
               src={section.desktopImage} 
               alt="Shoppable Image" 
-              className="w-full h-auto block"
+              className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
+          ) : (
+            <span style={{ color: "#a0a0a0", fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>Hotspots Base Image Placeholder</span>
           )}
 
           {/* Hotspots Overlay */}

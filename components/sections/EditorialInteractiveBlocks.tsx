@@ -69,7 +69,13 @@ export const AdvBeforeAfter = ({ section }: BlockProps) => {
   return (
     <div style={style.wrapper} id={style.id} className={`flex justify-center ${style.className || ""}`}>
       <div style={style.content} className="w-full max-w-5xl text-center">
-        {section.content?.heading && <h2 className="text-2xl font-light mb-8">{section.content.heading}</h2>}
+        {section.content?.heading && <h2 className="mb-8" style={{ 
+          fontSize: `${section.style?.heading?.fontSize}rem`,
+          fontWeight: section.style?.heading?.fontWeight,
+          color: section.style?.heading?.textColor,
+          letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+          textAlign: section.style?.heading?.align as any
+        }}>{section.content.heading}</h2>}
         
         <div 
           ref={containerRef}
@@ -138,7 +144,13 @@ export const AdvStoreLocator = ({ section }: BlockProps) => {
     <div style={style.wrapper} id={style.id} className={`flex justify-center ${style.className || ""}`}>
       <div style={style.content} className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16">
         <div>
-          <h2 className="text-3xl font-light mb-8">{section.content?.heading || "Flagship Boutiques"}</h2>
+          <h2 className="mb-8" style={{ 
+            fontSize: `${section.style?.heading?.fontSize}rem`,
+            fontWeight: section.style?.heading?.fontWeight,
+            color: section.style?.heading?.textColor,
+            letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+            textAlign: section.style?.heading?.align as any
+          }}>{section.content?.heading || "Flagship Boutiques"}</h2>
           <div className="space-y-6">
             {stores.map((s, i) => (
               <div key={i} className="border-b border-gray-200 pb-6 group cursor-pointer">
@@ -167,7 +179,13 @@ export const AdvEventCountdown = ({ section }: BlockProps) => {
     <div style={style.wrapper} id={style.id} className={`flex justify-center ${style.className || ""}`}>
       <div style={style.content} className="w-full max-w-4xl text-center">
         <p className="text-xs uppercase tracking-[0.2em] text-gray-500 mb-6">{section.content?.subheading || "Upcoming Event"}</p>
-        <h2 className="text-4xl md:text-5xl font-light mb-12">{section.content?.heading || "The FW26 Runway Show"}</h2>
+        <h2 className="mb-12" style={{ 
+          fontSize: `${section.style?.heading?.fontSize}rem`,
+          fontWeight: section.style?.heading?.fontWeight,
+          color: section.style?.heading?.textColor,
+          letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+          textAlign: section.style?.heading?.align as any
+        }}>{section.content?.heading || "The FW26 Runway Show"}</h2>
         
         <div className="flex justify-center gap-8 md:gap-16 text-center">
           {[

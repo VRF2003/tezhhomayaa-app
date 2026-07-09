@@ -2458,7 +2458,7 @@
             "heading": "",
             "italicHeading": "",
             "subheading": "",
-            "description": "\"Luxury is not created by adding more. It is created by knowing exactly what to leave behind.\"",
+            "description": "Luxury is not created by adding more. It is created by knowing exactly what to leave behind.",
             "primaryButton": {
               "enabled": true,
               "label": "Explore",
@@ -2516,7 +2516,7 @@
               "fontWeight": 300,
               "letterSpacing": 0.05,
               "lineHeight": 1.1,
-              "textColor": "#1a1a18",
+              "textColor": "#7b2031",
               "textShadow": "none",
               "align": "center"
             },
@@ -2534,7 +2534,7 @@
               "fontWeight": 300,
               "letterSpacing": 0.02,
               "lineHeight": 1.6,
-              "textColor": "#1a1a18",
+              "textColor": "#7b2031",
               "textShadow": "none",
               "align": "center",
               "maxWidth": 800
@@ -2631,6 +2631,15 @@
           "typographyOverrides": {
             "enabled": false
           }
+        }
+      },
+      {
+        "id": "sec_1783490796882",
+        "type": "spacer",
+        "hidden": false,
+        "data": {
+          "heightMobile": 64,
+          "heightDesktop": 120
         }
       },
       {
@@ -2826,11 +2835,216 @@
             "enabled": false
           }
         }
+      },
+      {
+        "id": "sec_1783497722511",
+        "type": "spacer",
+        "hidden": false,
+        "data": {
+          "heightMobile": 64,
+          "heightDesktop": 120
+        }
+      },
+      {
+        "id": "sec_1783497503115",
+        "type": "fullscreen-image",
+        "hidden": false,
+        "data": {
+          "desktopImage": "",
+          "content": {
+            "heading": "",
+            "italicHeading": "",
+            "subheading": "",
+            "description": "",
+            "primaryButton": {
+              "enabled": false,
+              "label": "Look",
+              "url": "/men/ready-to-wear/coats-jackets",
+              "style": "filled"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "tablet": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18"
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#1a1a18",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783497646/tezhhomayaa_app/autudthuvjpbizxf984w.jpg",
+              "width": 6336,
+              "height": 2688
+            },
+            "mobile": {
+              "url": ""
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "animation": {
+            "type": "slide-up",
+            "duration": 1.2,
+            "delay": 0,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "collectionShowcase": {
+            "layoutType": "grid",
+            "maxWidth": "boxed",
+            "items": []
+          },
+          "splitLayout": {
+            "ratio": "50-50",
+            "layout": "image-left"
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          }
+        }
+      },
+      {
+        "id": "sec_1783498066606",
+        "type": "spacer",
+        "hidden": false,
+        "data": {
+          "heightMobile": 64,
+          "heightDesktop": 120
+        }
       }
     ],
     "order": 1,
     "createdAt": "2026-07-07T09:08:35.420Z",
-    "updatedAt": "2026-07-07T14:43:25.367Z",
+    "updatedAt": "2026-07-08T08:51:37.465Z",
     "articleType": "editorial",
     "useGlobalTheme": true,
     "thumbnailImage": {

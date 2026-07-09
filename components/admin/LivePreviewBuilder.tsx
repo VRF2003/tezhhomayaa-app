@@ -232,7 +232,11 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
       case "split-layout": defaultData = { layout: "image-left", ratio: "50-50", desktopImage:"", mobileImage:"", heading: "Split Content", description: "Text goes here...", button: { enabled:true, label:"Read More", url:"#", style:"luxury" } }; break;
       case "product-carousel": defaultData = { heading: "Featured Products", collectionId: "women", itemsCount: 8 }; break;
       case "featured-collection": defaultData = { heading: "Curated Selection", collectionId: "men" }; break;
-      case "lookbook-grid": defaultData = { collectionShowcase: { layoutType: "masonry", maxWidth: "full", items: [] } }; break;
+      case "lookbook-grid": defaultData = { collectionShowcase: { layoutType: "masonry", maxWidth: "full", items: [
+        { id: "item_look1", image: "https://images.unsplash.com/photo-1515347619362-74917537b03a", content: { heading: "Look 1", primaryButton: { label: "Shop Look" } } },
+        { id: "item_look2", image: "https://images.unsplash.com/photo-1509631179647-0177331693ae", content: { heading: "Look 2", primaryButton: { label: "Shop Look" } } },
+        { id: "item_look3", image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d", content: { heading: "Look 3", primaryButton: { label: "Shop Look" } } }
+      ] } }; break;
       case "quote-block": defaultData = { content: { heading: "A luxury statement", subheading: "— Founder", description: "" } }; break;
       case "newsletter-block": defaultData = { content: { heading: "Join the Club", description: "Sign up for exclusive offers." } }; break;
       case "instagram-feed": defaultData = { content: { heading: "Follow Us" }, primaryButton: { enabled: true, label: "View on Instagram", url: "https://instagram.com" } }; break;

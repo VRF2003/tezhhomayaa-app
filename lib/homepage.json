@@ -34,7 +34,13 @@
             "gradientOverlay": false,
             "overlayStrength": 20,
             "buttonStyle": "outline",
-            "animation": "slide-right",
+            "animation": {
+              "type": "slide-right",
+              "duration": 1.2,
+              "delay": 0,
+              "easing": "ease",
+              "scrollTrigger": true
+            },
             "media": {
               "type": "image",
               "desktop": {
@@ -167,10 +173,8 @@
               "textShadow": "soft"
             },
             "advanced": {
-              "animation": "slide-right",
-              "duration": 1.2,
-              "delay": 0,
-              "enabled": true
+              "anchorId": "",
+              "customCssClass": ""
             },
             "collectionShowcase": {
               "layoutType": "grid",
@@ -371,10 +375,8 @@
           "textShadow": "none"
         },
         "advanced": {
-          "animation": "slide-up",
-          "duration": 1.2,
-          "delay": 0,
-          "enabled": true
+          "anchorId": "",
+          "customCssClass": ""
         },
         "collectionShowcase": {
           "layoutType": "grid",
@@ -415,6 +417,13 @@
         },
         "typographyOverrides": {
           "enabled": false
+        },
+        "animation": {
+          "type": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "easing": "ease",
+          "scrollTrigger": true
         }
       }
     },
@@ -490,11 +499,11 @@
         },
         "style": {
           "heading": {
-            "fontSize": 10,
+            "fontSize": 4,
             "fontWeight": 100,
             "letterSpacing": 0.05,
             "lineHeight": 1.7,
-            "textColor": "#1a1a18",
+            "textColor": "#791e2f",
             "textShadow": "none",
             "align": "center"
           },
@@ -560,10 +569,8 @@
           }
         },
         "advanced": {
-          "animation": "slide-up",
-          "duration": 1.2,
-          "delay": 0,
-          "enabled": true
+          "anchorId": "",
+          "customCssClass": ""
         },
         "collectionShowcase": {
           "layoutType": {
@@ -615,6 +622,13 @@
         },
         "typographyOverrides": {
           "enabled": false
+        },
+        "animation": {
+          "type": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "easing": "ease",
+          "scrollTrigger": true
         }
       }
     },
@@ -760,11 +774,11 @@
         },
         "style": {
           "heading": {
-            "fontSize": 7.5,
-            "fontWeight": 300,
-            "letterSpacing": 0.3,
-            "lineHeight": 1.5,
-            "textColor": "#7c2a00",
+            "fontSize": 3,
+            "fontWeight": 400,
+            "letterSpacing": 0,
+            "lineHeight": 1.7,
+            "textColor": "#000000",
             "textShadow": "none",
             "align": "left"
           },
@@ -792,7 +806,7 @@
             "fontWeight": 400,
             "padding": "0.6rem 1.4rem",
             "borderRadius": 0,
-            "textColor": "#ffffff",
+            "textColor": "#000000",
             "backgroundColor": "#1a1a18"
           },
           "fontFamily": "var(--font-cormorant, serif)",
@@ -832,10 +846,8 @@
           }
         },
         "advanced": {
-          "animation": "slide-up",
-          "duration": 1.2,
-          "delay": 0,
-          "enabled": true
+          "anchorId": "",
+          "customCssClass": ""
         },
         "collectionShowcase": {
           "layoutType": "full-width-tiles",
@@ -906,7 +918,7 @@
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
-                  "textColor": "#ffffff",
+                  "textColor": "#000000",
                   "textShadow": "none",
                   "align": "center"
                 },
@@ -976,10 +988,8 @@
                 }
               },
               "advanced": {
-                "animation": "slide-up",
-                "duration": 1.2,
-                "delay": 0,
-                "enabled": true
+                "anchorId": "",
+                "customCssClass": ""
               },
               "collectionShowcase": {
                 "layoutType": "grid",
@@ -1019,6 +1029,13 @@
               },
               "typographyOverrides": {
                 "enabled": false
+              },
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
               }
             },
             {
@@ -1086,7 +1103,7 @@
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
-                  "textColor": "#ffffff",
+                  "textColor": "#000000",
                   "textShadow": "none",
                   "align": "center"
                 },
@@ -1114,8 +1131,8 @@
                   "fontWeight": 400,
                   "padding": "0.6rem 1.4rem",
                   "borderRadius": 0,
-                  "textColor": "#ffffff",
-                  "backgroundColor": "#1a1a18"
+                  "textColor": "#000000",
+                  "backgroundColor": "#000000"
                 },
                 "fontFamily": "var(--font-cormorant, serif)",
                 "backgroundColor": "transparent",
@@ -1156,10 +1173,8 @@
                 }
               },
               "advanced": {
-                "animation": "slide-up",
-                "duration": 1.2,
-                "delay": 0,
-                "enabled": true
+                "anchorId": "",
+                "customCssClass": ""
               },
               "collectionShowcase": {
                 "layoutType": "grid",
@@ -1199,6 +1214,13 @@
               },
               "typographyOverrides": {
                 "enabled": false
+              },
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
               }
             },
             {
@@ -1266,7 +1288,7 @@
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
-                  "textColor": "#ffffff",
+                  "textColor": "#000000",
                   "textShadow": "none",
                   "align": "center"
                 },
@@ -1294,7 +1316,7 @@
                   "fontWeight": 400,
                   "padding": "0.6rem 1.4rem",
                   "borderRadius": 0,
-                  "textColor": "#ffffff",
+                  "textColor": "#000000",
                   "backgroundColor": "#1a1a18"
                 },
                 "fontFamily": "var(--font-cormorant, serif)",
@@ -1336,10 +1358,8 @@
                 }
               },
               "advanced": {
-                "animation": "slide-up",
-                "duration": 1.2,
-                "delay": 0,
-                "enabled": true
+                "anchorId": "",
+                "customCssClass": ""
               },
               "collectionShowcase": {
                 "layoutType": "grid",
@@ -1379,6 +1399,13 @@
               },
               "typographyOverrides": {
                 "enabled": false
+              },
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
               }
             }
           ],
@@ -1478,6 +1505,16 @@
               "url": "#"
             }
           ]
+        },
+        "animation": {
+          "type": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "easing": "ease",
+          "scrollTrigger": true
+        },
+        "typographyOverrides": {
+          "enabled": false
         }
       }
     },
@@ -1892,6 +1929,15 @@
         "typographyOverrides": {
           "enabled": false
         }
+      }
+    },
+    {
+      "id": "sec_1783510085477",
+      "type": "spacer",
+      "hidden": false,
+      "data": {
+        "heightMobile": 64,
+        "heightDesktop": 120
       }
     }
   ]

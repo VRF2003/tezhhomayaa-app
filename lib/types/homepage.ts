@@ -223,6 +223,62 @@ export type UniversalSectionData = {
 // A helper to initialize missing fields securely
 export function normalizeSectionData(data: any): UniversalSectionData {
   const d = data || {};
+  const computedStyle = {
+    heading: {
+      fontSize: d.style?.heading?.fontSize ?? d.style?.fontSize ?? d.fontSize ?? 4,
+      fontWeight: d.style?.heading?.fontWeight ?? d.style?.fontWeight ?? d.fontWeight ?? 300,
+      letterSpacing: d.style?.heading?.letterSpacing ?? d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
+      lineHeight: d.style?.heading?.lineHeight ?? d.style?.lineHeight ?? d.lineHeight ?? 1.1,
+      textColor: d.style?.heading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
+      textShadow: d.style?.heading?.textShadow ?? d.style?.textShadow ?? d.shadow ?? "none",
+      align: d.style?.heading?.align ?? d.layout?.desktop?.align ?? "center"
+    },
+    subheading: {
+      fontSize: d.style?.subheading?.fontSize ?? d.style?.subheadingFontSize ?? 1,
+      fontWeight: d.style?.subheading?.fontWeight ?? 400,
+      letterSpacing: d.style?.subheading?.letterSpacing ?? 0.2,
+      lineHeight: d.style?.subheading?.lineHeight ?? 1.2,
+      textColor: d.style?.subheading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
+      textShadow: d.style?.subheading?.textShadow ?? "none",
+      align: d.style?.subheading?.align ?? d.layout?.desktop?.align ?? "center"
+    },
+    description: {
+      fontSize: d.style?.description?.fontSize ?? d.style?.descriptionFontSize ?? 1.1,
+      fontWeight: d.style?.description?.fontWeight ?? 300,
+      letterSpacing: d.style?.description?.letterSpacing ?? 0.02,
+      lineHeight: d.style?.description?.lineHeight ?? 1.6,
+      textColor: d.style?.description?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
+      textShadow: d.style?.description?.textShadow ?? "none",
+      align: d.style?.description?.align ?? d.layout?.desktop?.align ?? "center",
+      maxWidth: d.style?.description?.maxWidth ?? 800
+    },
+    button: {
+      fontSize: d.style?.button?.fontSize ?? 0.75,
+      fontWeight: d.style?.button?.fontWeight ?? 400,
+      padding: d.style?.button?.padding ?? "0.6rem 1.4rem",
+      borderRadius: d.style?.button?.borderRadius ?? 0,
+      textColor: d.style?.button?.textColor ?? "#ffffff",
+      backgroundColor: d.style?.button?.backgroundColor ?? "#1a1a18"
+    },
+    fontFamily: d.style?.fontFamily ?? "var(--font-cormorant, serif)",
+    backgroundColor: d.style?.backgroundColor ?? "transparent",
+    borderColor: d.style?.borderColor ?? "transparent",
+    borderWidth: d.style?.borderWidth ?? 0,
+    borderRadius: d.style?.borderRadius ?? 0,
+    darkOverlay: d.style?.darkOverlay ?? d.overlayStrength ?? 0,
+    lightOverlay: d.style?.lightOverlay ?? 0,
+    gradientOverlay: d.style?.gradientOverlay ?? d.gradientOverlay ?? false,
+    // Legacy passthroughs
+    fontSize: d.style?.fontSize ?? d.fontSize ?? 4,
+    subheadingFontSize: d.style?.subheadingFontSize ?? 1,
+    descriptionFontSize: d.style?.descriptionFontSize ?? 1.1,
+    fontWeight: d.style?.fontWeight ?? d.fontWeight ?? 300,
+    letterSpacing: d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
+    lineHeight: d.style?.lineHeight ?? d.lineHeight ?? 1.1,
+    textColor: d.style?.textColor ?? d.textColor ?? "#1a1a18",
+    textShadow: d.style?.textShadow ?? d.shadow ?? "none",
+  };
+
   return {
     ...d,
     content: {
@@ -281,61 +337,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         textWidth: d.layout?.mobile?.textWidth ?? 90,
       }
     },
-    style: {
-      heading: {
-        fontSize: d.style?.heading?.fontSize ?? d.style?.fontSize ?? d.fontSize ?? 4,
-        fontWeight: d.style?.heading?.fontWeight ?? d.style?.fontWeight ?? d.fontWeight ?? 300,
-        letterSpacing: d.style?.heading?.letterSpacing ?? d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
-        lineHeight: d.style?.heading?.lineHeight ?? d.style?.lineHeight ?? d.lineHeight ?? 1.1,
-        textColor: d.style?.heading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
-        textShadow: d.style?.heading?.textShadow ?? d.style?.textShadow ?? d.shadow ?? "none",
-        align: d.style?.heading?.align ?? d.layout?.desktop?.align ?? "center"
-      },
-      subheading: {
-        fontSize: d.style?.subheading?.fontSize ?? d.style?.subheadingFontSize ?? 1,
-        fontWeight: d.style?.subheading?.fontWeight ?? 400,
-        letterSpacing: d.style?.subheading?.letterSpacing ?? 0.2,
-        lineHeight: d.style?.subheading?.lineHeight ?? 1.2,
-        textColor: d.style?.subheading?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
-        textShadow: d.style?.subheading?.textShadow ?? "none",
-        align: d.style?.subheading?.align ?? d.layout?.desktop?.align ?? "center"
-      },
-      description: {
-        fontSize: d.style?.description?.fontSize ?? d.style?.descriptionFontSize ?? 1.1,
-        fontWeight: d.style?.description?.fontWeight ?? 300,
-        letterSpacing: d.style?.description?.letterSpacing ?? 0.02,
-        lineHeight: d.style?.description?.lineHeight ?? 1.6,
-        textColor: d.style?.description?.textColor ?? d.style?.textColor ?? d.textColor ?? "#1a1a18",
-        textShadow: d.style?.description?.textShadow ?? "none",
-        align: d.style?.description?.align ?? d.layout?.desktop?.align ?? "center",
-        maxWidth: d.style?.description?.maxWidth ?? 800
-      },
-      button: {
-        fontSize: d.style?.button?.fontSize ?? 0.75,
-        fontWeight: d.style?.button?.fontWeight ?? 400,
-        padding: d.style?.button?.padding ?? "0.6rem 1.4rem",
-        borderRadius: d.style?.button?.borderRadius ?? 0,
-        textColor: d.style?.button?.textColor ?? "#ffffff",
-        backgroundColor: d.style?.button?.backgroundColor ?? "#1a1a18"
-      },
-      fontFamily: d.style?.fontFamily ?? "var(--font-cormorant, serif)",
-      backgroundColor: d.style?.backgroundColor ?? "transparent",
-      borderColor: d.style?.borderColor ?? "transparent",
-      borderWidth: d.style?.borderWidth ?? 0,
-      borderRadius: d.style?.borderRadius ?? 0,
-      darkOverlay: d.style?.darkOverlay ?? d.overlayStrength ?? 0,
-      lightOverlay: d.style?.lightOverlay ?? 0,
-      gradientOverlay: d.style?.gradientOverlay ?? d.gradientOverlay ?? false,
-      // Legacy passthroughs to avoid breaking generic checks
-      fontSize: d.style?.fontSize ?? d.fontSize ?? 4,
-      subheadingFontSize: d.style?.subheadingFontSize ?? 1,
-      descriptionFontSize: d.style?.descriptionFontSize ?? 1.1,
-      fontWeight: d.style?.fontWeight ?? d.fontWeight ?? 300,
-      letterSpacing: d.style?.letterSpacing ?? d.letterSpacing ?? 0.05,
-      lineHeight: d.style?.lineHeight ?? d.lineHeight ?? 1.1,
-      textColor: d.style?.textColor ?? d.textColor ?? "#1a1a18",
-      textShadow: d.style?.textShadow ?? d.shadow ?? "none",
-    },
+    style: computedStyle,
     media: d.media ? {
       ...d.media,
       desktop: d.media.desktop || { url: "" },
@@ -370,6 +372,16 @@ export function normalizeSectionData(data: any): UniversalSectionData {
       layoutType: d.layout || "grid",
       maxWidth: d.maxWidth || "boxed",
       items: (d.items || []).map((item: any) => {
+        const itemStyle = item.style || {};
+        const cascadedStyle = {
+          ...computedStyle,
+          ...itemStyle,
+          heading: { ...computedStyle.heading, ...itemStyle.heading },
+          subheading: { ...computedStyle.subheading, ...itemStyle.subheading },
+          description: { ...computedStyle.description, ...itemStyle.description },
+          button: { ...computedStyle.button, ...itemStyle.button }
+        };
+
         // Recursively normalize so items get the full suite of UniversalSectionData
         const normalizedItem = normalizeSectionData({
           ...item,
@@ -379,9 +391,7 @@ export function normalizeSectionData(data: any): UniversalSectionData {
             description: item.overrideDescription || "",
             primaryButton: { enabled: !!item.overrideButton, label: item.overrideButton || "Explore", url: item.url || item.collectionId || "#", style: "luxury" }
           },
-          style: item.style || {
-            darkOverlay: item.overlayStrength ?? 0
-          }
+          style: cascadedStyle
         });
         // Preserve collection specific fields that aren't part of standard universal data
         return {

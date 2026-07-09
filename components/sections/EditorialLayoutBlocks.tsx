@@ -62,7 +62,13 @@ export const AdvAwards = ({ section }: BlockProps) => {
   return (
     <div style={style.wrapper} id={style.id} className={`flex justify-center ${style.className || ""}`}>
       <div style={style.content} className="w-full max-w-5xl text-center">
-        <h2 className="text-xl font-light tracking-wide mb-12 uppercase text-gray-500">{section.content?.heading || "Awards & Recognition"}</h2>
+        <h2 className="mb-12 uppercase" style={{ 
+          fontSize: `${section.style?.heading?.fontSize}rem`,
+          fontWeight: section.style?.heading?.fontWeight,
+          color: section.style?.heading?.textColor,
+          letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+          textAlign: section.style?.heading?.align as any
+        }}>{section.content?.heading || "Awards & Recognition"}</h2>
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           {awards.map((a, i) => (
             <p key={i} className="text-sm font-medium tracking-[0.1em] uppercase whitespace-nowrap">{a}</p>
@@ -103,7 +109,13 @@ export const AdvSustainability = ({ section }: BlockProps) => {
           </div>
           <div className="p-4 md:p-8">
             <p className="text-xs uppercase tracking-[0.2em] text-gray-400 mb-4">{section.content?.subheading || "Conscious Craftsmanship"}</p>
-            <h2 className="text-3xl font-light mb-8 leading-tight">{section.content?.heading || "Designing for Tomorrow"}</h2>
+            <h2 className="mb-8 leading-tight" style={{ 
+              fontSize: `${section.style?.heading?.fontSize}rem`,
+              fontWeight: section.style?.heading?.fontWeight,
+              color: section.style?.heading?.textColor,
+              letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+              textAlign: section.style?.heading?.align as any
+            }}>{section.content?.heading || "Designing for Tomorrow"}</h2>
             <p className="text-sm text-gray-600 font-light leading-relaxed mb-8">
               {section.content?.description || "We are committed to reducing our environmental impact without compromising the structural integrity and aesthetic purity of our garments. By 2030, all our collections will be crafted entirely from circular materials."}
             </p>
@@ -138,7 +150,13 @@ export const AdvBrandValues = ({ section }: BlockProps) => {
   return (
     <div style={style.wrapper} id={style.id} className={`flex justify-center ${style.className || ""}`}>
       <div style={style.content} className="w-full max-w-6xl text-center">
-        <h2 className="text-3xl font-light mb-16">{section.content?.heading || "The Philosophy"}</h2>
+        <h2 className="mb-16" style={{ 
+          fontSize: `${section.style?.heading?.fontSize}rem`,
+          fontWeight: section.style?.heading?.fontWeight,
+          color: section.style?.heading?.textColor,
+          letterSpacing: `${section.style?.heading?.letterSpacing}em`,
+          textAlign: section.style?.heading?.align as any
+        }}>{section.content?.heading || "The Philosophy"}</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {values.map((v, i) => (
             <div key={i} className="p-8 border border-gray-100 bg-[#fcfbf9] hover:bg-white transition-colors duration-500 shadow-sm">
