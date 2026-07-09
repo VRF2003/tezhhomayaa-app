@@ -5,8 +5,8 @@ export type Product = {
   slug: string;
   handle?: string;
   name: string;
-  price: string;
-  compareAtPrice?: string;
+  price: string | number;
+  compareAtPrice?: string | number;
   image: string;
   hoverImage?: string;
   gallery: string[];
@@ -14,8 +14,9 @@ export type Product = {
   categoryLabel: string;
   href: string;
   editorialDescription: string;
+  badge?: string;
   tags?: string[];
-  variants?: { optionName: string; option: string; price: string; sku: string }[];
+  variants?: { optionName: string; option: string; price: string | number; sku: string; quantity?: number }[];
   status?: "active" | "draft" | "archived" | string;
   sku?: string;
   barcode?: string;
