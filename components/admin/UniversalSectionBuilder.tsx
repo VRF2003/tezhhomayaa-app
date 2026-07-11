@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import { UniversalMediaBuilder } from "./UniversalMediaBuilder";
+import { UniversalRichEditor } from "./UniversalRichEditor";
 
 type TabType = "CONTENT" | "LAYOUT" | "STYLE" | "TYPOGRAPHY" | "MEDIA" | "MOBILE" | "ADVANCED" | "SHOWCASE" | "SPLIT" | "CONTACT_INFO" | "CONTACT_FORM" | "SOCIAL_LINKS" | "ITEMS";
 
@@ -94,7 +95,23 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
             <div><label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Heading</label><input value={norm.content.heading} onChange={e => update("content", "heading", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }} /></div>
             <div><label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Italic Heading / Highlight</label><input value={norm.content.italicHeading || ""} onChange={e => update("content", "italicHeading", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }} placeholder="Optional italicized text" /></div>
             <div><label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Subheading (Pre-label)</label><input value={norm.content.subheading} onChange={e => update("content", "subheading", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }} /></div>
-            <div><label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Description</label><textarea value={norm.content.description} onChange={e => update("content", "description", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4", minHeight: "150px", fontFamily: "inherit" }} /></div>
+            <div>
+              <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Description</label>
+              {sectionType === "split-layout" ? (
+                <div style={{ background: "#fff" }}>
+                  <UniversalRichEditor 
+                    value={norm.content.description} 
+                    onChange={val => update("content", "description", val)} 
+                  />
+                </div>
+              ) : (
+                <textarea 
+                  value={norm.content.description} 
+                  onChange={e => update("content", "description", e.target.value)} 
+                  style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4", minHeight: "150px", fontFamily: "inherit" }} 
+                />
+              )}
+            </div>
             
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "1.5rem" }}>
               <div style={{ border: "1px solid #e8e4df", padding: "1rem", background: "#fff" }}>

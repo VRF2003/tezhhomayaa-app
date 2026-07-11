@@ -43,18 +43,58 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
     luxury: "border-b border-black pb-1 hover:text-brand hover:border-brand"
   };
 
+  const mAuto = norm.layout.mobile.height === 0;
+  const dAuto = norm.layout.desktop.height === 0;
+  const safeId = sectionId || `banner-${Math.random().toString(36).slice(2, 9)}`;
+
   return (
     <section 
       ref={containerRef}
-      className={`relative w-full h-[60dvh] min-h-[500px] bg-[#1a1a18] ${isMobile ? 'flex flex-col' : 'overflow-hidden'}`}
+      id={`banner-${safeId}`}
+      className="relative w-full bg-[#1a1a18] flex flex-col overflow-hidden"
       style={injectTypographyOverrides(norm.typographyOverrides)}
     >
-      <UniversalMediaRenderer 
-        media={norm.media}
-        fallbackDesktopUrl={cmsData.image || ""}
-        fallbackMobileUrl={cmsData.image || ""}
-        className="object-cover object-center absolute inset-0 w-full h-full"
-      />
+      <style>{`
+        #banner-${safeId} {
+          height: ${mAuto ? 'auto' : `${norm.layout.mobile.height}dvh`};
+          min-height: ${mAuto ? 'auto' : '300px'};
+        }
+        #banner-${safeId} .banner-media-container > div {
+          position: ${mAuto ? 'relative' : 'absolute'} !important;
+          height: ${mAuto ? 'auto' : '100%'} !important;
+        }
+        #banner-${safeId} .banner-media-container video, 
+        #banner-${safeId} .banner-media-container img {
+          object-fit: ${mAuto ? 'contain' : 'cover'} !important;
+          height: ${mAuto ? 'auto' : '100%'} !important;
+          position: ${mAuto ? 'relative' : 'absolute'} !important;
+        }
+        @media (min-width: 768px) {
+          #banner-${safeId} {
+            height: ${dAuto ? 'auto' : `${norm.layout.desktop.height}dvh`};
+            min-height: ${dAuto ? 'auto' : '500px'};
+          }
+          #banner-${safeId} .banner-media-container > div {
+            position: ${dAuto ? 'relative' : 'absolute'} !important;
+            height: ${dAuto ? 'auto' : '100%'} !important;
+          }
+          #banner-${safeId} .banner-media-container video, 
+          #banner-${safeId} .banner-media-container img {
+            object-fit: ${dAuto ? 'contain' : 'cover'} !important;
+            height: ${dAuto ? 'auto' : '100%'} !important;
+            position: ${dAuto ? 'relative' : 'absolute'} !important;
+          }
+        }
+      `}</style>
+
+      <div className="banner-media-container w-full h-full absolute inset-0">
+        <UniversalMediaRenderer 
+          media={norm.media}
+          fallbackDesktopUrl={cmsData.image || ""}
+          fallbackMobileUrl={cmsData.image || ""}
+          fill={true}
+        />
+      </div>
       
       {/* Overlays */}
       <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: `rgba(0,0,0,${norm.style.darkOverlay / 100})` }} />

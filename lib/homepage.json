@@ -1799,10 +1799,10 @@
             "textWidth": 80
           },
           "mobile": {
-            "x": 50,
-            "y": 49,
+            "x": 55,
+            "y": 45,
             "width": 80,
-            "height": 60,
+            "height": 0,
             "align": "center",
             "padding": "0",
             "margin": "0",
@@ -1871,9 +1871,9 @@
             "height": 1080
           },
           "mobile": {
-            "url": "https://res.cloudinary.com/dhezwtyku/video/upload/v1783580724/tezhhomayaa_app/dbe7chkneh3glw9asmjy.mp4",
+            "url": "https://res.cloudinary.com/dhezwtyku/video/upload/v1783775162/tezhhomayaa_app/k61on0njx7tpiy8fxv6j.mp4",
             "width": 1080,
-            "height": 1920
+            "height": 1350
           },
           "videoSettings": {
             "autoplay": true,

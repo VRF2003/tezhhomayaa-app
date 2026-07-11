@@ -136,8 +136,8 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
               </h3>
             )}
             {norm.content.description && (
-              <p 
-                className="font-light opacity-80 whitespace-pre-wrap"
+              <div 
+                className="font-light opacity-80"
                 style={{ 
                   fontSize: `${norm.style.description.fontSize}rem`,
                   fontWeight: norm.style.description.fontWeight,
@@ -151,8 +151,12 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
                   textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.1)"
                 }}
               >
-                {norm.content.description}
-              </p>
+                {norm.content.description.includes("<") && norm.content.description.includes(">") ? (
+                  <div dangerouslySetInnerHTML={{ __html: norm.content.description }} className="prose prose-sm prose-p:my-2 prose-table:my-4 prose-th:bg-gray-100 prose-td:border prose-th:border prose-th:p-2 prose-td:p-2 w-full max-w-none" />
+                ) : (
+                  <p className="whitespace-pre-wrap m-0">{norm.content.description}</p>
+                )}
+              </div>
             )}
             
             <div className={`flex flex-wrap gap-4 ${layout.align === "left" ? "justify-start" : layout.align === "right" ? "justify-end" : "justify-center"}`}>
