@@ -46,6 +46,7 @@ function ProtectedLayoutContent({ children }: { children: React.ReactNode }) {
         { name: "Footer", href: "/admin/content/footer" },
         { name: "Menus", href: "/admin/content/menus" },
         { name: "Media Library", href: "/admin/content/media" },
+        { name: "Global Size Guide", href: "/admin/content/size-guide" },
         { name: "Journal", href: "/admin/content/journal" },
       ]
     },

@@ -13,6 +13,7 @@ import type { Product } from "@/lib/collections";
 import { useCart, useWishlist } from "@/lib/store";
 import { useCommerce } from "@/lib/commerce-context";
 import HomepageClientWrapper from "@/components/sections/HomepageClientWrapper";
+import sizeGuideData from "@/lib/size-guide.json";
 
 export type ProductDetailPageProps = {
   product: Product;
@@ -512,15 +513,15 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             </h1>
             <p style={{
               fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "clamp(0.88rem, 1.2vw, 1rem)",
+              fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
               fontWeight: 300, fontStyle: "italic", letterSpacing: "0.07em",
-              color: "#9a9690", margin: "0 0 1.5rem",
+              color: "#4a4845", margin: "0 0 1.5rem",
             }}>
               SS 2026 Collection
             </p>
             <p style={{
               fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "clamp(1.1rem, 1.5vw, 1.3rem)",
+              fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)",
               fontWeight: 300, letterSpacing: "0.04em", color: "#1a1a18", margin: "0 0 2rem",
             }}>
               {formatPrice(getProductPrice(product))}
@@ -541,8 +542,8 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             {sizes.length > 0 && (
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
                 <span style={{
-                  fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
-                  letterSpacing: "0.14em", color: sizeError ? "#7c2a00" : "#6b6865", textTransform: "uppercase",
+                  fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.65rem",
+                  letterSpacing: "0.14em", color: sizeError ? "#c0392b" : "#1a1a18", textTransform: "uppercase", fontWeight: 500,
                 }}>
                   {sizeError ? "Please select a size" : commerce.addToBag.selectSizeLabel}
                 </span>
@@ -558,7 +559,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                         border: "1px solid",
                         borderColor: sizeError && !selectedSize ? "#c0392b" : selectedSize === s ? "#1a1a18" : "#ccc9c4",
                         fontFamily: "var(--font-dm-mono, monospace)",
-                        fontSize: "0.57rem", letterSpacing: "0.13em",
+                        fontSize: "0.7rem", letterSpacing: "0.13em", fontWeight: 500,
                         cursor: "pointer", transition: "all 0.3s ease", borderRadius: 0,
                       }}
                     >
@@ -572,8 +573,8 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             {/* ── Quantity Selector ── */}
             <div style={{ marginBottom: "1.2rem" }}>
               <p style={{
-                fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.52rem",
-                letterSpacing: "0.18em", textTransform: "uppercase", color: "#9a9690",
+                fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.65rem",
+                letterSpacing: "0.18em", textTransform: "uppercase", color: "#1a1a18", fontWeight: 500,
                 margin: "0 0 0.75rem",
               }}>
                 Quantity
@@ -593,7 +594,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                 </button>
                 <span style={{
                   width: "44px", textAlign: "center",
-                  fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem",
+                  fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.85rem",
                   letterSpacing: "0.12em", color: "#1a1a18",
                 }}>
                   {quantity}
@@ -622,8 +623,8 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                 display: "block", width: "100%", padding: "1.2rem",
                 background: commerce.style.addToBagBg || "#1a1a18", color: commerce.style.addToBagColor || "#f7f5f2",
                 fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)",
-                fontSize: commerce.style.addToBagFontSize || "0.58rem",
-                letterSpacing: commerce.style.addToBagLetterSpacing || "0.2em", textTransform: "uppercase",
+                fontSize: commerce.style.addToBagFontSize || "0.7rem",
+                letterSpacing: commerce.style.addToBagLetterSpacing || "0.2em", textTransform: "uppercase", fontWeight: 500,
                 textDecoration: "none", textAlign: "center",
                 borderRadius: commerce.style.addToBagBorderRadius || "0px",
                 border: "none", cursor: "pointer",
@@ -640,11 +641,11 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               className="tz-cta-secondary"
               style={{
                 display: "block", width: "100%", padding: "1.2rem",
-                background: "transparent", color: "#3a3835",
-                fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.58rem",
-                letterSpacing: "0.2em", textTransform: "uppercase",
-                border: "1px solid #ccc9c4", borderRadius: 0, cursor: "pointer",
-                transition: "border-color 0.4s ease, color 0.4s ease",
+                background: "transparent", color: "#1a1a18",
+                fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.7rem",
+                letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 500,
+                border: "1px solid #1a1a18", borderRadius: 0, cursor: "pointer",
+                transition: "background 0.4s ease, color 0.4s ease",
                 boxSizing: "border-box", marginBottom: "0.75rem",
               }}
             >
@@ -659,9 +660,9 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                 display: "flex", alignItems: "center", justifyContent: "center",
                 gap: "0.5rem", width: "100%", padding: "0.85rem",
                 background: "transparent", border: "none", cursor: "pointer",
-                fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
-                letterSpacing: "0.16em", textTransform: "uppercase",
-                color: wishlisted ? "#1a1a18" : "#9a9690",
+                fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.65rem",
+                letterSpacing: "0.16em", textTransform: "uppercase", fontWeight: 500,
+                color: wishlisted ? "#1a1a18" : "#4a4845",
                 transition: "color 0.3s",
               }}
             >
@@ -672,8 +673,8 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             </button>
 
             <p style={{
-              fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
-              letterSpacing: "0.1em", color: "#9a9690",
+              fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.6rem",
+              letterSpacing: "0.1em", color: "#4a4845",
               margin: "1.8rem 0 0", lineHeight: 2, textTransform: "uppercase", textAlign: "center",
             }}>
               Made to order &nbsp;·&nbsp; 3–5 weeks delivery
@@ -682,10 +683,10 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             </p>
 
             {/* ── Information Accordions ── */}
-            {(product.editorialDescription || product.sizeGuide || product.fabricCare || product.shippingReturns) && (
+            {(product.editorialDescription || sizes.length > 0 || product.fabricCare || product.shippingReturns) && (
               <div style={{ marginTop: "2.5rem", width: "100%", borderBottom: "1px solid #ccc9c4" }}>
                 {product.editorialDescription && <LuxuryAccordion title="Description" content={product.editorialDescription} />}
-                {product.sizeGuide && <LuxuryAccordion title="Size Guide" content={product.sizeGuide} />}
+                {sizes.length > 0 && <LuxuryAccordion title="Size Guide" content={product.sizeGuide || (sizeGuideData as any)[(product.gender || product.category?.split("/")[0] || "women").toLowerCase()] || sizeGuideData.women} />}
                 {product.fabricCare && <LuxuryAccordion title="Fabric & Care" content={product.fabricCare} />}
                 {product.shippingReturns && <LuxuryAccordion title="Shipping & Returns" content={product.shippingReturns} />}
               </div>
@@ -979,9 +980,10 @@ function LuxuryAccordion({ title, content }: { title: string, content: string })
       >
         <span style={{
           fontFamily: "var(--font-dm-mono, monospace)",
-          fontSize: "0.55rem",
+          fontSize: "0.7rem",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
+          fontWeight: 500,
         }}>
           {title}
         </span>
@@ -1008,10 +1010,10 @@ function LuxuryAccordion({ title, content }: { title: string, content: string })
               style={{
                 paddingBottom: "1.5rem",
                 fontFamily: "var(--font-cormorant, serif)",
-                fontSize: "clamp(1rem, 1.2vw, 1.1rem)",
+                fontSize: "clamp(1.1rem, 1.35vw, 1.25rem)",
                 fontWeight: 300,
                 lineHeight: 1.6,
-                color: "#6b6865",
+                color: "#1a1a18",
               }}
             />
           </motion.div>

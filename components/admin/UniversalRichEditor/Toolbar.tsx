@@ -214,6 +214,24 @@ export function Toolbar({ editor }: ToolbarProps) {
         />
       </Dropdown>
 
+      {/* ── Table Tools Dropdown (Conditional) ── */}
+      {editor.isActive("table") && (
+        <>
+          <div className="w-px h-4 bg-[#e8e4df] mx-1" />
+          <Dropdown icon={<TableIcon size={14} />} label="Table Tools">
+            <DropdownItem label="Add Column Before" onClick={() => editor.chain().focus().addColumnBefore().run()} />
+            <DropdownItem label="Add Column After" onClick={() => editor.chain().focus().addColumnAfter().run()} />
+            <DropdownItem label="Delete Column" onClick={() => editor.chain().focus().deleteColumn().run()} />
+            <div className="h-px bg-[#e8e4df] my-1 mx-1" />
+            <DropdownItem label="Add Row Before" onClick={() => editor.chain().focus().addRowBefore().run()} />
+            <DropdownItem label="Add Row After" onClick={() => editor.chain().focus().addRowAfter().run()} />
+            <DropdownItem label="Delete Row" onClick={() => editor.chain().focus().deleteRow().run()} />
+            <div className="h-px bg-[#e8e4df] my-1 mx-1" />
+            <DropdownItem label="Delete Table" onClick={() => editor.chain().focus().deleteTable().run()} />
+          </Dropdown>
+        </>
+      )}
+
       <div className="flex flex-1 items-center justify-end gap-0.5">
         <button
           onClick={() => editor.chain().focus().undo().run()}
