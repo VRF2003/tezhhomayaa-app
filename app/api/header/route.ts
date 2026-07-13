@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 const HEADER_PATH = path.join(process.cwd(), "lib", "header.json");
 
 const defaultHeaderSettings = {
-  logoImage: "/branding/tezhhomayaa-logo-v2.png",
+  logoImage: "/branding/tezhhomayaa-logo-v3.png",
   desktopLogoWidth: 420,
   mobileLogoWidth: 280,
   logoLinkUrl: "/",

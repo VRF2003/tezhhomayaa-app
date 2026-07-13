@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Mono } from "next/font/google";
+import { Cormorant_Garamond, DM_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import StoreProviders from "@/components/ecommerce/StoreProviders";
 import { getAllProducts } from "@/lib/collections";
@@ -19,6 +19,13 @@ const dmMono = DM_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
   variable: "--font-dm-mono",
+  display: "swap",
+});
+
+const jost = Jost({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-jost",
   display: "swap",
 });
 
@@ -45,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   } catch(e) {}
 
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${jost.variable}`}>
       <head>
         <link rel="preconnect" href="https://cdn.shopify.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />

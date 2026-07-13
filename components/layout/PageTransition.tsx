@@ -50,7 +50,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             >
               <Image
-                src="/branding/tezhhomayaa-logo-v2.png"
+                src="/branding/tezhhomayaa-logo-v3.png"
                 alt="Tezhhomayaa"
                 width={320}
                 height={119}

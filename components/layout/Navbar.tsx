@@ -34,10 +34,10 @@ const WishlistIcon = () => (
 import { MainNavEntry } from "@/lib/types/menus";
 
 // ─── Shared Styles ────────────────────────────────────────────
-const serif: React.CSSProperties = {
-  fontFamily: "var(--font-cormorant, 'Cormorant Garamond', Georgia, serif)",
-  fontWeight: 300,
-  letterSpacing: "0.04em",
+const sansMenu: React.CSSProperties = {
+  fontFamily: "var(--font-cormorant, serif)",
+  fontWeight: 400,
+  letterSpacing: "0.02em",
 };
 
 // ─── Luxury Underline Link ─────────────────────────────────────
@@ -94,7 +94,7 @@ export default function Navbar() {
   const [panelOpen, setPanelOpen] = useState(false);
 
   const [headerSettings, setHeaderSettings] = useState<any>({
-    logoImage: "/branding/tezhhomayaa-logo-v2.png",
+    logoImage: "/branding/tezhhomayaa-logo-v3.png",
     desktopLogoWidth: 420,
     mobileLogoWidth: 280,
     logoLinkUrl: "/",
@@ -288,7 +288,7 @@ export default function Navbar() {
         <div className="flex items-center justify-center">
           <Link href={headerSettings.logoLinkUrl || "/"} aria-label="Tezhhomayaa — home" className="pointer-events-auto" style={{ display: "block", paddingTop: "0.4rem", zIndex: 50, cursor: "pointer" }}>
             <Image
-              src={headerSettings.logoImage || "/branding/tezhhomayaa-logo-v2.png"}
+              src={headerSettings.logoImage || "/branding/tezhhomayaa-logo-v3.png"}
               alt="Tezhhomayaa"
               width={headerSettings.desktopLogoWidth || 420} height={156} priority
               className="navbar-logo-img"
@@ -436,7 +436,7 @@ export default function Navbar() {
                   borderBottom: "1px solid var(--border-soft)",
                 }}>
                   <Image
-                    src="/branding/tezhhomayaa-logo-v2.png" alt="Tezhhomayaa"
+                    src="/branding/tezhhomayaa-logo-v3.png" alt="Tezhhomayaa"
                     width={240} height={89}
                     style={{ width: "auto", height: "26px", objectFit: "contain" }}
                   />
@@ -497,9 +497,9 @@ export default function Navbar() {
                           >
                             {isExpandable ? (
                               <span style={{
-                                ...serif,
-                                fontSize: "clamp(1.7rem, 3.2vw, 2.2rem)",
-                                color: isActive ? "var(--obsidian)" : "var(--stone)",
+                                ...sansMenu,
+                                fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                                color: "var(--obsidian)",
                                 transition: "color 0.3s ease",
                                 display: "inline-block",
                                 position: "relative",
@@ -521,9 +521,9 @@ export default function Navbar() {
                                 href={entry.href || "/"}
                                 onClick={closePanel}
                                 style={{
-                                  ...serif,
-                                  fontSize: "clamp(1.7rem, 3.2vw, 2.2rem)",
-                                  color: "var(--stone)",
+                                  ...sansMenu,
+                                  fontSize: "clamp(1.4rem, 2.5vw, 1.8rem)",
+                                  color: "var(--obsidian)",
                                 }}
                               >
                                 {entry.label}
@@ -532,7 +532,7 @@ export default function Navbar() {
                             {isExpandable && (
                               <span style={{
                                 fontSize: "1.1rem",
-                                color: isActive ? "var(--obsidian)" : "var(--stone)",
+                                color: "var(--obsidian)",
                                 transition: "color 0.3s ease, transform 0.3s ease",
                                 transform: isActive ? (isMobile ? "rotate(90deg)" : "translateX(4px)") : (isMobile ? "rotate(0deg)" : "translateX(0)"),
                                 display: "block",
@@ -571,18 +571,18 @@ export default function Navbar() {
                                           }}
                                         >
                                           {hasSubItems ? (
-                                            <span style={{ fontSize: "1.3rem", color: isSubActive ? "var(--obsidian)" : "var(--stone)", fontFamily: "var(--font-cormorant, serif)", display: "block", transition: "color 0.3s ease" }}>
+                                            <span style={{ fontSize: "1.1rem", color: "var(--obsidian)", fontFamily: "var(--font-cormorant, serif)", display: "block", transition: "color 0.3s ease" }}>
                                               {cat.label}
                                             </span>
                                           ) : (
-                                            <LuxLink href={cat.href || "/"} onClick={closePanel} style={{ fontSize: "1.3rem", color: "var(--stone)", fontFamily: "var(--font-cormorant, serif)", display: "block" }}>
+                                            <LuxLink href={cat.href || "/"} onClick={closePanel} style={{ fontSize: "1.1rem", color: "var(--obsidian)", fontFamily: "var(--font-cormorant, serif)", display: "block" }}>
                                               {cat.label}
                                             </LuxLink>
                                           )}
                                           {hasSubItems && (
                                             <span style={{
                                               fontSize: "1.1rem",
-                                              color: isSubActive ? "var(--obsidian)" : "var(--stone)",
+                                              color: "var(--obsidian)",
                                               transform: isSubActive ? "rotate(90deg)" : "rotate(0deg)",
                                               transition: "transform 0.3s ease, color 0.3s ease"
                                             }}>
@@ -608,7 +608,7 @@ export default function Navbar() {
                                                       onClick={closePanel} 
                                                       style={{ 
                                                         fontSize: "0.75rem", 
-                                                        color: "var(--stone)", 
+                                                        color: "var(--obsidian)", 
                                                         fontFamily: "var(--font-dm-mono, monospace)",
                                                         textTransform: "uppercase",
                                                         letterSpacing: "0.12em",
@@ -657,10 +657,10 @@ export default function Navbar() {
                         style={{
                           fontFamily: "var(--font-cormorant, serif)",
                           fontSize: "0.75rem",
-                          fontWeight: 400,
+                          fontWeight: 500,
                           letterSpacing: "0.12em",
                           textTransform: "uppercase" as const,
-                          color: "var(--stone)",
+                          color: "var(--obsidian)",
                         }}
                       >
                         {item.label}
@@ -705,11 +705,11 @@ export default function Navbar() {
                         flexShrink: 0,
                       }}>
                         <span style={{
-                          ...serif,
+                          ...sansMenu,
                           fontSize: "0.65rem",
-                          letterSpacing: "0.18em",
+                          letterSpacing: "0.15em",
                           textTransform: "uppercase" as const,
-                          color: "var(--stone)",
+                          color: "var(--obsidian)",
                           opacity: 0.65,
                         }}>
                           {activeMain}
@@ -746,10 +746,10 @@ export default function Navbar() {
                               }}>
                                 {hasItems ? (
                                   <span style={{
-                                    ...serif,
-                                    fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)",
-                                    color: isSubActive ? "var(--obsidian)" : "var(--stone)",
-                                    transition: "color 0.3s ease",
+                                      ...sansMenu,
+                                      fontSize: "clamp(1.1rem, 1.8vw, 1.3rem)",
+                                      color: "var(--obsidian)",
+                                      transition: "color 0.3s ease",
                                     display: "inline-block",
                                     position: "relative",
                                   }}>
@@ -770,9 +770,9 @@ export default function Navbar() {
                                     href={cat.href}
                                     onClick={closePanel}
                                     style={{
-                                      ...serif,
-                                      fontSize: "clamp(1.3rem, 2.2vw, 1.6rem)",
-                                      color: "var(--stone)",
+                                      ...sansMenu,
+                                      fontSize: "clamp(1.1rem, 1.8vw, 1.3rem)",
+                                      color: "var(--obsidian)",
                                     }}
                                   >
                                     {cat.label}
@@ -781,7 +781,7 @@ export default function Navbar() {
                                 {hasItems && (
                                   <span style={{
                                     fontSize: "1rem",
-                                    color: isSubActive ? "var(--obsidian)" : "var(--stone)",
+                                    color: "var(--obsidian)",
                                     transition: "color 0.3s ease, transform 0.3s ease",
                                     transform: isSubActive ? "translateX(4px)" : "translateX(0)",
                                     lineHeight: 1,
@@ -826,11 +826,11 @@ export default function Navbar() {
                         flexShrink: 0,
                       }}>
                         <span style={{
-                          ...serif,
+                          ...sansMenu,
                           fontSize: "0.65rem",
-                          letterSpacing: "0.18em",
+                          letterSpacing: "0.15em",
                           textTransform: "uppercase" as const,
-                          color: "var(--stone)",
+                          color: "var(--obsidian)",
                           opacity: 0.65,
                         }}>
                           {activeSub}
@@ -852,11 +852,11 @@ export default function Navbar() {
                             onClick={closePanel}
                             style={{
                               fontFamily: "var(--font-cormorant, serif)",
-                              fontStyle: "italic",
-                              fontWeight: 300,
-                              fontSize: "0.92rem",
-                              color: "var(--stone)",
-                              letterSpacing: "0.06em",
+                              fontStyle: "normal",
+                              fontWeight: 400,
+                              fontSize: "0.85rem",
+                              color: "var(--obsidian)",
+                              letterSpacing: "0.04em",
                               opacity: 0.7,
                             }}
                           >
@@ -878,10 +878,10 @@ export default function Navbar() {
                                 onClick={closePanel}
                                 style={{
                                   fontFamily: "var(--font-cormorant, serif)",
-                                  fontWeight: 300,
-                                  fontSize: "clamp(1.05rem, 1.7vw, 1.25rem)",
-                                  color: "var(--stone)",
-                                  letterSpacing: "0.04em",
+                                  fontWeight: 400,
+                                  fontSize: "clamp(1rem, 1.4vw, 1.1rem)",
+                                  color: "var(--obsidian)",
+                                  letterSpacing: "0.02em",
                                 }}
                               >
                                 {item.label}

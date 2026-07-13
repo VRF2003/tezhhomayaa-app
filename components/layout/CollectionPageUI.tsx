@@ -1,7 +1,12 @@
+"use client";
+
+import { useState, useMemo } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CollectionBanner from "@/components/sections/CollectionBanner";
 import ProductGrid from "@/components/sections/ProductGrid";
+import FilterSortOverlay, { FilterState, FilterGroup } from "@/components/ecommerce/FilterSortOverlay";
+import { getProductPrice } from "@/lib/currency";
 
 type CollectionPageUIProps = {
   categoryKey: string;
@@ -32,6 +37,120 @@ export default function CollectionPageUI({
     description: ""
   } : null);
 
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState<FilterState>({});
+  const [sortMethod, setSortMethod] = useState("recommended");
+
+  // Helper to normalize sizes and distinguish them from colors incorrectly labeled as sizes
+  const normalizeSize = (raw: string): string | null => {
+    if (!raw) return null;
+    const s = raw.trim().toUpperCase();
+    if (["XXS", "XS", "S", "M", "L", "XL"].includes(s)) return s;
+    if (s === "XXL" || s === "2XL") return "XXL";
+    if (s === "XXXL" || s === "3XL") return "3XL";
+    if (s === "XXXXL" || s === "4XL") return "4XL";
+    if (/^\d{2}$/.test(s) || /^W\d{2}$/.test(s)) return s;
+    if (s === "ONE SIZE" || s === "OS" || s === "FREE SIZE") return "One Size";
+    if (/^\d{1,2}(\.5)?$/.test(s)) return s;
+    return null;
+  };
+
+  const formatColorName = (raw: string): string => {
+    return raw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+  };
+
+  // Extract available filters dynamically from products
+  const filterGroups = useMemo<FilterGroup[]>(() => {
+    const categories = new Set<string>();
+    const colors = new Set<string>();
+    const materials = new Set<string>();
+    const sizes = new Set<string>();
+
+    finalProducts.forEach(p => {
+      if (p.categoryLabel) categories.add(p.categoryLabel);
+      if (p.color) colors.add(formatColorName(p.color));
+      if (p.material) materials.add(p.material);
+      if (p.variants) {
+        p.variants.forEach((v: any) => {
+          if (v.optionName?.toLowerCase() === "size" || v.optionName?.toLowerCase() === "color") {
+            const normSize = normalizeSize(v.option);
+            if (normSize) {
+              sizes.add(normSize);
+            } else {
+              // If it doesn't match a size format, it's very likely a color incorrectly entered as a size.
+              colors.add(formatColorName(v.option));
+            }
+          }
+        });
+      }
+    });
+
+    return [
+      { id: "category", label: "Categories", options: Array.from(categories).sort() },
+      { id: "color", label: "Colours", options: Array.from(colors).sort() },
+      { id: "material", label: "Materials", options: Array.from(materials).sort() },
+      { id: "size", label: "Sizes", options: Array.from(sizes).sort() }
+    ];
+  }, [finalProducts]);
+
+  // Apply filters and sorting
+  const filteredAndSortedProducts = useMemo(() => {
+    let result = [...finalProducts];
+
+    // Filter
+    if (Object.keys(selectedFilters).some(k => selectedFilters[k].length > 0)) {
+      result = result.filter(p => {
+        let matches = true;
+        if (selectedFilters.category?.length > 0) {
+          matches = matches && selectedFilters.category.includes(p.categoryLabel);
+        }
+        if (selectedFilters.color?.length > 0) {
+          const productColors = [
+            p.color ? formatColorName(p.color) : null,
+            ...(p.variants?.map((v: any) => {
+              const normSize = normalizeSize(v.option);
+              return normSize ? null : formatColorName(v.option);
+            }) || [])
+          ].filter(Boolean) as string[];
+          matches = matches && selectedFilters.color.some((c: string) => productColors.includes(c));
+        }
+        if (selectedFilters.material?.length > 0) {
+          matches = matches && selectedFilters.material.includes(p.material);
+        }
+        if (selectedFilters.size?.length > 0) {
+          const productSizes = p.variants?.map((v: any) => normalizeSize(v.option)).filter(Boolean) || [];
+          matches = matches && selectedFilters.size.some((s: string) => productSizes.includes(s));
+        }
+        return matches;
+      });
+    }
+
+    // Sort
+    if (sortMethod === "price-low") {
+      result.sort((a, b) => getProductPrice(a) - getProductPrice(b));
+    } else if (sortMethod === "price-high") {
+      result.sort((a, b) => getProductPrice(b) - getProductPrice(a));
+    } else if (sortMethod === "newest") {
+      // Assuming original array is roughly chronological or we don't have a created_at field yet.
+      // We can reverse it as a proxy for newest.
+      result.reverse();
+    }
+
+    return result;
+  }, [finalProducts, selectedFilters, sortMethod]);
+
+  const handleFilterChange = (groupId: string, option: string) => {
+    setSelectedFilters(prev => {
+      const current = prev[groupId] || [];
+      const updated = current.includes(option)
+        ? current.filter(o => o !== option)
+        : [...current, option];
+      return { ...prev, [groupId]: updated };
+    });
+  };
+
+  const handleClearAll = () => setSelectedFilters({});
+
   if (!pageMeta && finalProducts.length === 0) {
     return (
       <main>
@@ -61,10 +180,54 @@ export default function CollectionPageUI({
           presentation={smartCollection?.presentation}
         />
 
+        {/* Filter Bar */}
+        <div style={{ 
+          padding: "1rem clamp(1rem, 5vw, 4rem)", 
+          display: "flex", 
+          justifyContent: "flex-end",
+          background: "#ffffff",
+          borderTop: "1px solid #e8e4df"
+        }}>
+          <button 
+            onClick={() => setIsFilterOpen(true)}
+            style={{
+              background: "none", border: "1px solid #ccc9c4", borderRadius: "2px",
+              padding: "0.5rem 1rem", cursor: "pointer",
+              fontFamily: "var(--font-jost, sans-serif)", fontSize: "0.75rem",
+              letterSpacing: "0.1em", textTransform: "uppercase",
+              display: "flex", alignItems: "center", gap: "0.5rem"
+            }}
+          >
+            Filter and Sort
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <line x1="4" y1="21" x2="4" y2="14" />
+              <line x1="4" y1="10" x2="4" y2="3" />
+              <line x1="12" y1="21" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12" y2="3" />
+              <line x1="20" y1="21" x2="20" y2="16" />
+              <line x1="20" y1="12" x2="20" y2="3" />
+              <line x1="1" y1="14" x2="7" y2="14" />
+              <line x1="9" y1="8" x2="15" y2="8" />
+              <line x1="17" y1="16" x2="23" y2="16" />
+            </svg>
+          </button>
+        </div>
+
+        <FilterSortOverlay
+          isOpen={isFilterOpen}
+          onClose={() => setIsFilterOpen(false)}
+          filterGroups={filterGroups}
+          selectedFilters={selectedFilters}
+          onFilterChange={handleFilterChange}
+          sortMethod={sortMethod}
+          onSortChange={setSortMethod}
+          totalItems={filteredAndSortedProducts.length}
+          onClearAll={handleClearAll}
+        />
 
         {/* Product Grid */}
         <ProductGrid 
-          products={finalProducts} 
+          products={filteredAndSortedProducts} 
           presentation={smartCollection?.presentation}
         />
 

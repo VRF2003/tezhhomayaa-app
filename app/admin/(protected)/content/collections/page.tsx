@@ -6,6 +6,138 @@ import { UniversalSectionBuilder } from "@/components/admin/UniversalSectionBuil
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import CollectionBanner from "@/components/sections/CollectionBanner";
 
+function ProductSequenceBuilder({
+  activeCategory,
+  productSequence,
+  includeProducts,
+  excludeProducts,
+  onChange,
+}: {
+  activeCategory: string;
+  productSequence: string[];
+  includeProducts: string[];
+  excludeProducts: string[];
+  onChange: (updates: { productSequence: string[], includeProducts: string[], excludeProducts: string[] }) => void;
+}) {
+  const [allProducts, setAllProducts] = useState<any[]>([]);
+  const [baseProducts, setBaseProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
+
+  useEffect(() => {
+    async function fetchAll() {
+      if (!activeCategory) return;
+      setLoading(true);
+      try {
+        const [allRes, baseRes] = await Promise.all([
+          fetch(`/api/products`).then(r => r.json()),
+          fetch(`/api/collection-products?category=${activeCategory}`).then(r => r.json())
+        ]);
+        if (allRes.success) setAllProducts(allRes.data);
+        if (baseRes.success) setBaseProducts(baseRes.data);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchAll();
+  }, [activeCategory]);
+
+  if (loading) return <div style={{ padding: "2rem", color: "#6b6865" }}>Loading products...</div>;
+
+  const included = allProducts.filter(p => includeProducts.includes(p.id) && !baseProducts.some(b => b.id === p.id));
+  const currentProducts = [...baseProducts, ...included].filter(p => !excludeProducts.includes(p.id));
+
+  const sortedProducts = [...currentProducts].sort((a, b) => {
+    const idxA = productSequence.indexOf(a.id);
+    const idxB = productSequence.indexOf(b.id);
+    if (idxA === -1 && idxB === -1) return 0;
+    if (idxA === -1) return 1;
+    if (idxB === -1) return -1;
+    return idxA - idxB;
+  });
+
+  const currentSequence = productSequence.length > 0 ? productSequence : sortedProducts.map(p => p.id);
+
+  const moveUp = (index: number) => {
+    if (index === 0) return;
+    const newSeq = [...currentSequence];
+    [newSeq[index - 1], newSeq[index]] = [newSeq[index], newSeq[index - 1]];
+    onChange({ productSequence: newSeq, includeProducts, excludeProducts });
+  };
+
+  const moveDown = (index: number) => {
+    if (index === currentSequence.length - 1) return;
+    const newSeq = [...currentSequence];
+    [newSeq[index], newSeq[index + 1]] = [newSeq[index + 1], newSeq[index]];
+    onChange({ productSequence: newSeq, includeProducts, excludeProducts });
+  };
+
+  const handleRemove = (id: string) => {
+    const newSeq = currentSequence.filter(x => x !== id);
+    const newInc = includeProducts.filter(x => x !== id);
+    const newExc = Array.from(new Set([...excludeProducts, id]));
+    onChange({ productSequence: newSeq, includeProducts: newInc, excludeProducts: newExc });
+  };
+
+  const handleAdd = (id: string) => {
+    const newExc = excludeProducts.filter(x => x !== id);
+    const newInc = Array.from(new Set([...includeProducts, id]));
+    // Wait to avoid duplicates in sequence
+    const newSeq = currentSequence.includes(id) ? currentSequence : [...currentSequence, id];
+    onChange({ productSequence: newSeq, includeProducts: newInc, excludeProducts: newExc });
+    setShowAddModal(false);
+  };
+
+  return (
+    <div style={{ background: "#fdfdfa", padding: "1.5rem", borderRadius: "4px", border: "1px solid #e8e4df" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+        <h3 style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.1em", margin: 0, color: "#1a1a18" }}>Product Sequence</h3>
+        <button onClick={() => setShowAddModal(!showAddModal)} style={{ fontSize: "0.75rem", padding: "0.4rem 0.8rem", background: "#1a1a18", color: "#fff", border: "none", cursor: "pointer", borderRadius: "2px" }}>
+          {showAddModal ? "Cancel" : "Add Product"}
+        </button>
+      </div>
+      
+      {showAddModal && (
+        <div style={{ padding: "1rem", background: "#fff", border: "1px solid #e8e4df", marginBottom: "1rem", borderRadius: "4px", maxHeight: "300px", overflowY: "auto" }}>
+          <p style={{ fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>Select a product to add to this collection:</p>
+          {allProducts.filter(p => !currentProducts.some(cp => cp.id === p.id)).map(p => (
+            <div key={p.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.5rem 0", borderBottom: "1px solid #f0ece6" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                <img src={p.image} alt="" style={{ width: "24px", height: "24px", objectFit: "cover" }} />
+                <span style={{ fontSize: "0.8rem" }}>{p.name}</span>
+              </div>
+              <button onClick={() => handleAdd(p.id)} style={{ fontSize: "0.7rem", padding: "0.2rem 0.5rem", background: "#e8e4df", border: "none", cursor: "pointer" }}>Add</button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <p style={{ fontSize: "0.8rem", color: "#6b6865", marginBottom: "1.5rem" }}>Manually order how products appear in this collection on the storefront.</p>
+      
+      {!sortedProducts.length && <p style={{ fontSize: "0.8rem", color: "#6b6865" }}>No products in this collection.</p>}
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+        {sortedProducts.map((product, idx) => (
+          <div key={product.id} style={{ display: "flex", alignItems: "center", gap: "1rem", padding: "0.5rem", background: "#fff", border: "1px solid #e8e4df", borderRadius: "4px" }}>
+            <img src={product.image} alt={product.name} style={{ width: "40px", height: "40px", objectFit: "cover", borderRadius: "2px" }} />
+            <div style={{ flex: 1 }}>
+              <p style={{ fontSize: "0.85rem", margin: 0, fontWeight: 500, color: "#1a1a18" }}>{product.name}</p>
+              <p style={{ fontSize: "0.75rem", margin: 0, color: "#9a9690" }}>{product.price}</p>
+            </div>
+            <button onClick={() => handleRemove(product.id)} style={{ background: "transparent", border: "none", cursor: "pointer", color: "#d9534f", fontSize: "1rem", marginRight: "0.5rem" }} title="Remove from collection">×</button>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <button onClick={() => moveUp(idx)} disabled={idx === 0} style={{ background: "transparent", border: "none", cursor: idx === 0 ? "not-allowed" : "pointer", opacity: idx === 0 ? 0.3 : 1, padding: "2px" }}>▲</button>
+              <button onClick={() => moveDown(idx)} disabled={idx === sortedProducts.length - 1} style={{ background: "transparent", border: "none", cursor: idx === sortedProducts.length - 1 ? "not-allowed" : "pointer", opacity: idx === sortedProducts.length - 1 ? 0.3 : 1, padding: "2px" }}>▼</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function CollectionsBuilderPage() {
   const [categories, setCategories] = useState<{ key: string; title: string; subtitle?: string }[]>([]);
   const [banners, setBanners] = useState<{ [key: string]: UniversalSectionData }>({});
@@ -197,6 +329,13 @@ export default function CollectionsBuilderPage() {
               mediaFiles={mediaFiles}
               mediaPrefix={`collection_${activeCategory.replace(/[^a-zA-Z0-9]/g, '_')}`}
               sectionType="image-section"
+            />
+            <ProductSequenceBuilder
+              activeCategory={activeCategory}
+              productSequence={currentBanner.productSequence || []}
+              includeProducts={currentBanner.includeProducts || []}
+              excludeProducts={currentBanner.excludeProducts || []}
+              onChange={(updates) => handleDataChange({ ...currentBanner, ...updates })}
             />
           </div>
         )}

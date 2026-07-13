@@ -251,9 +251,9 @@
             "height": 2688
           },
           "mobile": {
-            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782849507/tezhhomayaa_app/e7kzf2vwvkh9qn0shkaj.jpg",
-            "width": 1152,
-            "height": 1536
+            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783930517/tezhhomayaa_app/flxntziirutbl20p1svd.jpg",
+            "width": 1536,
+            "height": 2752
           },
           "videoSettings": {
             "autoplay": true,
@@ -449,7 +449,7 @@
           "primaryButton": {
             "enabled": true,
             "label": "Discover the Collections",
-            "url": "#",
+            "url": "/lookbook",
             "style": "luxury"
           },
           "secondaryButton": {

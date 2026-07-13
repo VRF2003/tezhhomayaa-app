@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/collections";
@@ -38,22 +38,37 @@ export function ProductCard({ product, presentation }: { product: Product, prese
   if (presentation?.imageRatio === "3:4") pb = "133.33%";
   const isOriginal = presentation?.imageRatio === "Original" || presentation?.imageRatio === "original";
 
-  // Always use the luxury crossfade + subtle 1.02 zoom (per user spec)
-  const imgTransform = hovered && gallery.length > 1 ? "scale(1.02)" : "scale(1)";
-  const imgTransition = "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1)";
-  
+  const touchStartX = useRef<number | null>(null);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.touches[0].clientX;
+    if (Math.abs(diff) > 40) { // swipe sensitivity
+      if (diff > 0 && activeIndex < gallery.length - 1) {
+        setActiveIndex(prev => prev + 1);
+        touchStartX.current = null;
+      } else if (diff < 0 && activeIndex > 0) {
+        setActiveIndex(prev => prev - 1);
+        touchStartX.current = null;
+      }
+    }
+  };
+  const handleTouchEnd = () => {
+    touchStartX.current = null;
+  };
+
   const handleNext = (e: React.MouseEvent) => {
     e.preventDefault(); e.stopPropagation();
-    setActiveIndex((prev) => (prev + 1) % gallery.length);
+    if (activeIndex < gallery.length - 1) setActiveIndex(prev => prev + 1);
   };
 
   const handlePrev = (e: React.MouseEvent) => {
     e.preventDefault(); e.stopPropagation();
-    setActiveIndex((prev) => (prev - 1 + gallery.length) % gallery.length);
+    if (activeIndex > 0) setActiveIndex(prev => prev - 1);
   };
-
-  // The Row / Saint Laurent styling: no borders, no boxes
-  const hasBorder = false;
 
   return (
     <Link
@@ -78,17 +93,23 @@ export function ProductCard({ product, presentation }: { product: Product, prese
           cursor: "pointer", 
           border: "none",
           padding: "0",
-          background: "transparent"
+          background: "#ffffff",
+          display: "flex",
+          flexDirection: "column",
+          height: "100%"
         }}
       >
         {/* ── Image Container ── */}
         <div
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
           style={{
             position: "relative",
             width: "100%",
             paddingBottom: isOriginal ? "0" : pb,
             overflow: "hidden",
-            background: "#f0ede9",
+            background: "#ffffff",
           }}
         >
           {/* Badges */}
@@ -109,73 +130,76 @@ export function ProductCard({ product, presentation }: { product: Product, prese
             </div>
           )}
 
-          {gallery.map((img, i) => (
-            <Image
-              key={img + i}
-              src={img}
-              alt={`${product.name} - ${i + 1}`}
-              {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
-              style={{
-                ...(isOriginal ? { width: "100%", height: "auto", position: i === 0 ? "relative" as any : "absolute" as any, top: 0, left: 0 } : { objectFit: "cover", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }),
-                objectPosition: "center top",
-                transition: imgTransition,
-                transform: imgTransform,
-                opacity: i === activeIndex ? 1 : 0,
-                zIndex: i === activeIndex ? 2 : 1,
-              }}
-            />
-          ))}
+          {gallery.map((img, i) => {
+            return (
+              <Image
+                key={img + i}
+                src={img}
+                alt={`${product.name} - ${i + 1}`}
+                {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
+                style={{
+                  ...(isOriginal ? { width: "100%", height: "auto", position: i === 0 ? "relative" as any : "absolute" as any, top: 0, left: 0 } : { objectFit: "cover", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }),
+                  objectPosition: "center top",
+                  transition: "opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1), transform 1000ms cubic-bezier(0.25, 1, 0.5, 1)",
+                  opacity: i === activeIndex ? 1 : 0,
+                  transform: i === activeIndex && hovered ? "scale(1.02)" : "scale(1)",
+                  zIndex: i === activeIndex ? 2 : 1,
+                }}
+              />
+            );
+          })}
 
-          {/* Navigation Arrows (Visible on Hover) */}
-          {hovered && gallery.length > 1 && (
+          {/* Navigation Arrows */}
+          {gallery.length > 1 && (
             <>
-              <button
-                onClick={handlePrev}
-                style={{
-                  position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
-                  zIndex: 10, background: "rgba(255,255,255,0.7)", borderRadius: "50%", width: "28px", height: "28px",
-                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)", backdropFilter: "blur(4px)"
-                }}
-                aria-label="Previous image"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.5">
-                  <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                onClick={handleNext}
-                style={{
-                  position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
-                  zIndex: 10, background: "rgba(255,255,255,0.7)", borderRadius: "50%", width: "28px", height: "28px",
-                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
-                  boxShadow: "0 2px 4px rgba(0,0,0,0.1)", backdropFilter: "blur(4px)"
-                }}
-                aria-label="Next image"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.5">
-                  <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              
-              {/* Dots Indicator */}
-              <div style={{
-                position: "absolute", bottom: "1rem", left: "0", right: "0", display: "flex", justifyContent: "center", gap: "6px", zIndex: 10
-              }}>
-                {gallery.map((_, i) => (
-                  <div key={i} style={{
-                    width: "4px", height: "4px", borderRadius: "50%",
-                    background: i === activeIndex ? "#1a1a18" : "rgba(0,0,0,0.2)",
-                    transition: "background 0.3s ease"
-                  }} />
-                ))}
-              </div>
+              {activeIndex > 0 && (
+                <button
+                  onClick={handlePrev}
+                  style={{
+                    position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%) scale(1)",
+                    zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
+                    display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
+                    transition: "opacity 300ms ease, transform 300ms ease",
+                    opacity: hovered ? 1 : 0,
+                    pointerEvents: hovered ? "auto" : "none"
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1.05)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1)")}
+                  aria-label="Previous image"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
+                    <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              )}
+              {activeIndex < gallery.length - 1 && (
+                <button
+                  onClick={handleNext}
+                  style={{
+                    position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%) scale(1)",
+                    zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
+                    display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
+                    transition: "opacity 300ms ease, transform 300ms ease",
+                    opacity: hovered ? 1 : 0,
+                    pointerEvents: hovered ? "auto" : "none"
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1.05)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1)")}
+                  aria-label="Next image"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
+                    <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              )}
             </>
           )}
         </div>
 
         {/* ── Caption ── */}
-        <div style={{ paddingTop: "0.85rem", paddingBottom: `${presentation?.cardBottomSpacing ?? 10}px`, paddingLeft: "0", paddingRight: "0" }}>
+        <div style={{ paddingTop: "1.2rem", paddingBottom: `${presentation?.cardBottomSpacing ?? 24}px`, paddingLeft: "1rem", paddingRight: "1rem", flex: 1, display: "flex", flexDirection: "column" }}>
           {(presentation?.showCategory) && (
              <p style={{
               fontFamily: "var(--font-dm-mono, monospace)",
@@ -260,19 +284,19 @@ export default function ProductGrid({ products, presentation }: { products: Prod
 
   const deskCols = presentation?.desktopColumns ?? 4;
   const mobCols = presentation?.mobileColumns ?? 2;
-  const deskGap = presentation?.desktopGap ?? 32;
-  const mobGap = presentation?.mobileGap ?? 12;
+  const deskGap = presentation?.desktopGap ?? 1;
+  const mobGap = presentation?.mobileGap ?? 1;
   
   const density = presentation?.density || 10; // 0 (Dense) -> 100 (Spacious)
-  const paddingH = 0.5 + (density / 100) * 3; // 0.5rem to 3.5rem
-  const paddingV = 1 + (density / 100) * 3; // 1rem to 4rem
+  const paddingH = 0; // Gucci style typically stretches to the edges or has minimal padding
+  const paddingV = 0;
 
   return (
     <section
       aria-label="Product collection"
       style={{ 
-        padding: `clamp(1rem, ${paddingV}vw, 4rem) clamp(0.5rem, ${paddingH}vw, 3rem)`,
-        background: "#F7F5F2", // Ivory background per luxury requirements
+        padding: `clamp(0rem, ${paddingV}vw, 2rem) clamp(0rem, ${paddingH}vw, 0rem)`,
+        background: "#ffffff",
       }}
       className="mobile-product-section"
     >
@@ -280,9 +304,12 @@ export default function ProductGrid({ products, presentation }: { products: Prod
         className="dynamic-tezh-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: `repeat(auto-fill, minmax(calc(100% / ${deskCols} - ${deskGap}px), 1fr))`,
+          gridTemplateColumns: `repeat(${deskCols}, 1fr)`,
           columnGap: `${deskGap}px`,
-          rowGap: `${deskGap}px`
+          rowGap: `${deskGap}px`,
+          backgroundColor: "#e8e4df", // Hairline border color
+          borderTop: "1px solid #e8e4df",
+          borderBottom: "1px solid #e8e4df",
         }}
       >
         {products.map((product) => (

@@ -134,25 +134,23 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
     : { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const };
 
   function getFrameSize(i: number, cur: number) {
-    if (isMobile) return { width: "100%", height: "100%" };
+    if (isMobile) return { width: "100vw", height: "100%" };
     if (cur === 0) {
-      if (i === 0) return { width: "100%", height: "100%" };
-      return { width: "50%", height: "100%" };
+      if (i === 0) return { width: "100vw", height: "100%" };
+      return { width: "50vw", height: "100%" };
     }
-    return { width: "50%", height: "100%" };
+    return { width: "50vw", height: "100%" };
   }
 
   function getFrameX(i: number, cur: number) {
     if (isMobile) {
-      const offset = i - cur;
-      return `${offset * 100}vw`;
+      return `${(i - cur) * 100 - 50}vw`;
     }
     if (cur === 0) {
-      if (i === 0) return "0vw";
-      return `${(i - 1) * 50 + 75}vw`;
+      if (i === 0) return "-50vw";
+      return `${(i - 1) * 50 + 50}vw`;
     }
-    const offset = i - cur;
-    return `${offset * 50 + 25}vw`;
+    return `${(i - cur) * 50}vw`;
   }
 
   const navigate = (direction: number) => {
@@ -259,8 +257,8 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
           return (
             <motion.div
               key={src}
-              initial={{ width, height, x: `calc(-50% + ${xOffset})`, y: "-50%", opacity: 1 }}
-              animate={{ width, height, x: `calc(-50% + ${xOffset})`, y: "-50%", opacity: 1 }}
+              initial={{ width, height, x: xOffset, y: "-50%", opacity: 1 }}
+              animate={{ width, height, x: xOffset, y: "-50%", opacity: 1 }}
               transition={spring}
               style={{
                 position: "absolute",
@@ -505,49 +503,80 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
           <div style={{ maxWidth: "440px" }}>
             <h1 style={{
               fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "clamp(2.4rem, 4.5vw, 3.6rem)",
-              fontWeight: 300, letterSpacing: "0.01em", lineHeight: 1.07,
-              color: "#1a1a18", margin: "0 0 0.2rem",
+              fontSize: "clamp(1.05rem, 1.3vw, 1.15rem)",
+              fontWeight: 400, letterSpacing: "0.01em", lineHeight: 1.4,
+              color: "#1a1a18", margin: "0 0 1.2rem",
             }}>
               {product.name}
             </h1>
             <p style={{
               fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "clamp(1rem, 1.3vw, 1.2rem)",
-              fontWeight: 300, fontStyle: "italic", letterSpacing: "0.07em",
-              color: "#4a4845", margin: "0 0 1.5rem",
-            }}>
-              SS 2026 Collection
-            </p>
-            <p style={{
-              fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "clamp(1.25rem, 1.6vw, 1.5rem)",
-              fontWeight: 300, letterSpacing: "0.04em", color: "#1a1a18", margin: "0 0 2rem",
+              fontSize: "0.95rem",
+              fontWeight: 500, letterSpacing: "0.03em", color: "#1a1a18", margin: "0 0 2rem",
             }}>
               {formatPrice(getProductPrice(product))}
             </p>
-            {product.productStory && (
-              <p style={{
-                fontFamily: "var(--font-cormorant, serif)",
-                fontSize: "clamp(1rem, 1.35vw, 1.12rem)",
-                fontWeight: 300, fontStyle: "italic", lineHeight: 1.85,
-                letterSpacing: "0.015em", color: "#6b6865", margin: 0,
-              }}>
-                {product.productStory}
-              </p>
+
+            {/* PRODUCT DESCRIPTION - Open by default */}
+            {product.editorialDescription && (
+              <div style={{ marginTop: "3.5rem", marginBottom: "2rem" }}>
+                <h2 style={{
+                  fontFamily: "var(--font-cormorant, serif)",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#1a1a18",
+                  marginBottom: "1rem"
+                }}>
+                  Product Description
+                </h2>
+                
+                {product.productStory && (
+                  <p style={{
+                    fontFamily: "var(--font-cormorant, serif)",
+                    fontSize: "0.95rem",
+                    fontWeight: 300, fontStyle: "italic", lineHeight: 1.6,
+                    letterSpacing: "0.015em", color: "#6b6865", margin: "0 0 1.5rem",
+                  }}>
+                    {product.productStory}
+                  </p>
+                )}
+
+                <div
+                  dangerouslySetInnerHTML={{ __html: product.editorialDescription }}
+                  style={{
+                    fontFamily: "var(--font-cormorant, serif)",
+                    fontSize: "0.95rem",
+                    fontWeight: 300,
+                    lineHeight: 1.6,
+                    color: "#1a1a18",
+                  }}
+                />
+              </div>
+            )}
+
+            {/* Accordions */}
+            {(sizes.length > 0 || product.fabricCare || product.shippingReturns) && (
+              <div style={{ marginTop: product.editorialDescription ? "0" : "3.5rem", width: "100%", borderBottom: "1px solid #ccc9c4" }}>
+                {sizes.length > 0 && <LuxuryAccordion title="Size Guide" content={product.sizeGuide || (sizeGuideData as any)[(product.gender || product.category?.split("/")[0] || "women").toLowerCase()] || sizeGuideData.women} />}
+                {product.fabricCare && <LuxuryAccordion title="Fabric & Care" content={product.fabricCare} />}
+                {product.shippingReturns && <LuxuryAccordion title="Shipping & Returns" content={product.shippingReturns} />}
+              </div>
             )}
           </div>
 
           <div className="tz-desktop-sticky" style={{ width: "100%", maxWidth: "340px", position: "sticky", top: "120px" }}>
             {sizes.length > 0 && (
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
-                <span style={{
+              <div style={{ marginBottom: "1.2rem" }}>
+                <p style={{
                   fontFamily: commerce.style.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.65rem",
-                  letterSpacing: "0.14em", color: sizeError ? "#c0392b" : "#1a1a18", textTransform: "uppercase", fontWeight: 500,
+                  letterSpacing: "0.18em", textTransform: "uppercase", color: sizeError ? "#c0392b" : "#1a1a18", fontWeight: 500,
+                  margin: "0 0 0.75rem",
                 }}>
                   {sizeError ? "Please select a size" : commerce.addToBag.selectSizeLabel}
-                </span>
-                <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+                </p>
+                <div style={{ display: "flex", gap: "0.4rem", flexWrap: "nowrap", overflowX: "auto", scrollbarWidth: "none" }}>
                   {sizes.map((s) => (
                     <button
                       key={s}
@@ -682,15 +711,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               Complimentary packaging with every piece
             </p>
 
-            {/* ── Information Accordions ── */}
-            {(product.editorialDescription || sizes.length > 0 || product.fabricCare || product.shippingReturns) && (
-              <div style={{ marginTop: "2.5rem", width: "100%", borderBottom: "1px solid #ccc9c4" }}>
-                {product.editorialDescription && <LuxuryAccordion title="Description" content={product.editorialDescription} />}
-                {sizes.length > 0 && <LuxuryAccordion title="Size Guide" content={product.sizeGuide || (sizeGuideData as any)[(product.gender || product.category?.split("/")[0] || "women").toLowerCase()] || sizeGuideData.women} />}
-                {product.fabricCare && <LuxuryAccordion title="Fabric & Care" content={product.fabricCare} />}
-                {product.shippingReturns && <LuxuryAccordion title="Shipping & Returns" content={product.shippingReturns} />}
-              </div>
-            )}
+
           </div>
         </footer>
 

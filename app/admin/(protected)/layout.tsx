@@ -33,6 +33,7 @@ function ProtectedLayoutContent({ children }: { children: React.ReactNode }) {
     },
     { name: "Categories", href: "/admin/categories", req: "Products" as const },
     { name: "Pages", href: "/admin/pages", req: "Full Access" as const },
+    { name: "Lookbook", href: "/admin/lookbook", req: "Full Access" as const },
     { 
       name: "Content", 
       href: "/admin/content", 

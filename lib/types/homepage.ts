@@ -175,6 +175,9 @@ export type UniversalSectionData = {
     layout: string;
     articleCount: number;
   };
+  productSequence?: string[];
+  includeProducts?: string[];
+  excludeProducts?: string[];
   // Legacy fallback fields for backwards compatibility
   heading?: string;
   description?: string;
@@ -421,6 +424,9 @@ export function normalizeSectionData(data: any): UniversalSectionData {
     },
     typographyOverrides: d.typographyOverrides ?? {
       enabled: false
-    }
+    },
+    productSequence: d.productSequence ?? [],
+    includeProducts: d.includeProducts ?? [],
+    excludeProducts: d.excludeProducts ?? []
   };
 }

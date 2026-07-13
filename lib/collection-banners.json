@@ -130,10 +130,8 @@
       }
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -170,7 +168,292 @@
           "url": "#"
         }
       ]
-    }
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "typographyOverrides": {
+      "enabled": false
+    },
+    "productSequence": [
+      "imported_0",
+      "imported_1",
+      "imported_2",
+      "imported_3",
+      "imported_4",
+      "imported_5",
+      "imported_6",
+      "imported_7",
+      "imported_8",
+      "imported_9",
+      "imported_10",
+      "imported_11",
+      "imported_12",
+      "imported_13",
+      "imported_14",
+      "imported_15",
+      "imported_16",
+      "imported_17",
+      "imported_18",
+      "imported_19",
+      "imported_20",
+      "imported_21",
+      "imported_22",
+      "imported_23",
+      "imported_24",
+      "imported_25",
+      "imported_26",
+      "imported_27",
+      "imported_28",
+      "imported_29",
+      "imported_30",
+      "imported_31",
+      "imported_32",
+      "imported_33",
+      "imported_34",
+      "imported_35",
+      "imported_36",
+      "imported_37",
+      "imported_38",
+      "imported_39",
+      "imported_40",
+      "imported_41",
+      "imported_42",
+      "imported_43",
+      "imported_44",
+      "imported_45",
+      "imported_46",
+      "imported_47",
+      "imported_48",
+      "imported_49",
+      "imported_50",
+      "imported_51",
+      "imported_52",
+      "imported_53",
+      "imported_54",
+      "imported_55",
+      "imported_56",
+      "imported_57",
+      "imported_58",
+      "imported_59",
+      "imported_60",
+      "imported_61",
+      "imported_62",
+      "imported_63",
+      "imported_64",
+      "imported_65",
+      "imported_66",
+      "imported_67",
+      "imported_68",
+      "imported_69",
+      "imported_70",
+      "imported_71",
+      "imported_72",
+      "imported_73",
+      "imported_74",
+      "imported_75",
+      "imported_76",
+      "imported_93",
+      "imported_95",
+      "imported_97",
+      "imported_123",
+      "imported_126",
+      "imported_128",
+      "imported_129",
+      "imported_132",
+      "imported_135",
+      "imported_137",
+      "imported_146",
+      "imported_148",
+      "imported_149",
+      "imported_152",
+      "imported_155",
+      "imported_156",
+      "imported_159",
+      "imported_176",
+      "imported_179",
+      "imported_195",
+      "imported_201",
+      "imported_214",
+      "imported_216",
+      "imported_217",
+      "imported_289",
+      "imported_291",
+      "imported_293",
+      "imported_295",
+      "imported_298",
+      "imported_300",
+      "imported_302",
+      "imported_304",
+      "imported_306",
+      "imported_309",
+      "imported_311",
+      "imported_313",
+      "imported_315",
+      "imported_316",
+      "imported_318",
+      "imported_319",
+      "imported_321",
+      "imported_322",
+      "imported_323",
+      "imported_324",
+      "imported_325",
+      "imported_333",
+      "imported_362",
+      "imported_364",
+      "imported_366",
+      "imported_368",
+      "imported_370",
+      "imported_373",
+      "imported_375",
+      "imported_379",
+      "imported_385",
+      "imported_394",
+      "imported_396",
+      "imported_398",
+      "imported_399",
+      "imported_401",
+      "imported_407",
+      "imported_410",
+      "imported_412",
+      "imported_414",
+      "imported_416",
+      "imported_419",
+      "imported_435",
+      "imported_438",
+      "imported_447",
+      "imported_449",
+      "imported_453",
+      "imported_455",
+      "imported_458",
+      "imported_477",
+      "imported_479",
+      "imported_481",
+      "imported_490",
+      "imported_493",
+      "imported_495",
+      "imported_497",
+      "imported_500",
+      "imported_502",
+      "imported_505",
+      "imported_507",
+      "imported_533",
+      "imported_537",
+      "imported_539",
+      "imported_541",
+      "imported_543",
+      "imported_545",
+      "imported_547",
+      "imported_553",
+      "imported_578",
+      "imported_580",
+      "imported_582",
+      "imported_584",
+      "imported_586",
+      "imported_588",
+      "imported_590",
+      "imported_593",
+      "imported_596",
+      "imported_599",
+      "imported_602",
+      "imported_606",
+      "imported_609",
+      "imported_612",
+      "imported_615",
+      "imported_618",
+      "imported_623",
+      "imported_624",
+      "imported_627",
+      "imported_629",
+      "imported_630",
+      "imported_632",
+      "imported_634",
+      "imported_636",
+      "imported_638",
+      "imported_641",
+      "imported_642",
+      "imported_645",
+      "imported_652",
+      "imported_656",
+      "imported_658",
+      "imported_659",
+      "imported_660",
+      "imported_661",
+      "imported_662",
+      "imported_668",
+      "imported_671",
+      "imported_675",
+      "imported_677",
+      "imported_680",
+      "imported_683",
+      "imported_685",
+      "imported_687",
+      "imported_689",
+      "imported_692",
+      "imported_695",
+      "imported_696",
+      "imported_697",
+      "imported_701",
+      "imported_706",
+      "imported_709",
+      "imported_714",
+      "imported_717",
+      "imported_719",
+      "imported_721",
+      "imported_729",
+      "imported_730",
+      "imported_734",
+      "imported_736",
+      "imported_746",
+      "imported_750",
+      "imported_754",
+      "imported_758",
+      "imported_765",
+      "imported_775",
+      "imported_779",
+      "imported_783",
+      "imported_785",
+      "imported_787",
+      "imported_789",
+      "imported_791",
+      "imported_793",
+      "imported_795",
+      "imported_797",
+      "imported_799",
+      "imported_804",
+      "imported_806",
+      "imported_808",
+      "imported_810",
+      "imported_814",
+      "imported_816",
+      "imported_818",
+      "imported_820",
+      "imported_822",
+      "imported_824",
+      "imported_826",
+      "imported_828",
+      "imported_830",
+      "imported_832",
+      "imported_834",
+      "imported_836",
+      "imported_838",
+      "imported_840",
+      "imported_842",
+      "imported_844",
+      "imported_848",
+      "imported_850",
+      "imported_852",
+      "imported_854",
+      "imported_856",
+      "prod_1782906043645_7gzlmzg",
+      "prod_1782908033724_3f3eakv"
+    ],
+    "includeProducts": [],
+    "excludeProducts": []
   },
   "women/new-in": {
     "content": {
@@ -305,10 +588,8 @@
       "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -345,7 +626,24 @@
           "url": "#"
         }
       ]
-    }
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "typographyOverrides": {
+      "enabled": false
+    },
+    "productSequence": [
+      "imported_0"
+    ],
+    "includeProducts": [
+      "imported_0"
+    ],
+    "excludeProducts": []
   },
   "women/bags": {
     "content": {
@@ -480,10 +778,8 @@
       "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -520,6 +816,16 @@
           "url": "#"
         }
       ]
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "women/ready-to-wear": {
@@ -655,10 +961,8 @@
       "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -695,11 +999,22 @@
           "url": "#"
         }
       ]
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "women/ready-to-wear/tops-shirts": {
     "content": {
       "heading": "Tops & Shirts",
+      "italicHeading": "",
       "subheading": "Women",
       "description": "From the precise collar to the open hem — tops designed to be worn, not just seen.",
       "primaryButton": {
@@ -713,6 +1028,12 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
@@ -769,26 +1090,62 @@
       }
     },
     "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
       "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderWidth": 0,
       "borderRadius": 0,
-      "textShadow": "none",
       "darkOverlay": 0,
       "lightOverlay": 0,
-      "gradientOverlay": false
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -798,11 +1155,49 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "women/ready-to-wear/dresses-jumpsuits": {
     "content": {
       "heading": "Dresses & Jumpsuits",
+      "italicHeading": "",
       "subheading": "Women",
       "description": "A single garment that holds everything. Form and movement in complete resolution.",
       "primaryButton": {
@@ -816,17 +1211,25 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
       "type": "image",
       "desktop": {
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783932925/tezhhomayaa_app/yb3n9tf5cimpwyhykqah.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      "mobile": {
         "url": "/images/category-women.jpg",
         "width": 1792,
         "height": 2400
-      },
-      "mobile": {
-        "url": "/images/category-women.jpg"
       },
       "videoSettings": {
         "autoplay": true,
@@ -870,26 +1273,62 @@
       }
     },
     "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
       "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderWidth": 0,
       "borderRadius": 0,
-      "textShadow": "none",
       "darkOverlay": 0,
       "lightOverlay": 0,
-      "gradientOverlay": false
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -899,11 +1338,49 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "women/ready-to-wear/pants-shorts": {
     "content": {
       "heading": "Pants & Shorts",
+      "italicHeading": "",
       "subheading": "Women",
       "description": "Cut for ease and precision. Every silhouette rests correctly on the body.",
       "primaryButton": {
@@ -917,15 +1394,25 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
       "type": "image",
       "desktop": {
-        "url": "/images/collection-banner.jpg"
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783930047/tezhhomayaa_app/yhfzvlbwykd3dvmsshfp.jpg",
+        "width": 1920,
+        "height": 1080
       },
       "mobile": {
-        "url": "/images/collection-banner.jpg"
+        "url": "/images/collection-banner.jpg",
+        "width": 5504,
+        "height": 3072
       },
       "videoSettings": {
         "autoplay": true,
@@ -969,26 +1456,62 @@
       }
     },
     "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
       "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderWidth": 0,
       "borderRadius": 0,
-      "textShadow": "none",
       "darkOverlay": 0,
       "lightOverlay": 0,
-      "gradientOverlay": false
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -998,6 +1521,43 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "women/ready-to-wear/skirts": {
@@ -1401,6 +1961,7 @@
   "men/new-in": {
     "content": {
       "heading": "New In",
+      "italicHeading": "",
       "subheading": "Men",
       "description": "The newest arrivals. Considered additions to the Tezhhomayaa wardrobe.",
       "primaryButton": {
@@ -1414,6 +1975,12 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
@@ -1468,26 +2035,62 @@
       }
     },
     "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
       "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderWidth": 0,
       "borderRadius": 0,
-      "textShadow": "none",
       "darkOverlay": 0,
       "lightOverlay": 0,
-      "gradientOverlay": false
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -1497,7 +2100,45 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
-    }
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
+    },
+    "productSequence": []
   },
   "men/bags": {
     "content": {
@@ -1601,6 +2242,7 @@
   "men/ready-to-wear": {
     "content": {
       "heading": "Ready To Wear",
+      "italicHeading": "",
       "subheading": "Men",
       "description": "Unhurried garments for those who dress with intention.",
       "primaryButton": {
@@ -1614,19 +2256,340 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
       "type": "image",
       "desktop": {
-        "url": "/uploads/1781505313794-hf_20260526_070003_2ef0bdab-6bc7-49ac-91d1-c4e955679343.png",
-        "width": 1696,
-        "height": 2528
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783933654/tezhhomayaa_app/enz3eii6hnawseyp0d1d.jpg",
+        "width": 1920,
+        "height": 1080
       },
       "mobile": {
-        "url": "/uploads/1781505323385-hf_20260526_070003_2ef0bdab-6bc7-49ac-91d1-c4e955679343.png",
-        "width": 1696,
-        "height": 2528
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783933656/tezhhomayaa_app/il64ickwywcqtgfs3fbc.jpg",
+        "width": 2700,
+        "height": 4800
+      },
+      "videoSettings": {
+        "autoplay": true,
+        "loop": true,
+        "muted": true,
+        "controls": false,
+        "lazyLoad": true,
+        "playOnHover": false
+      }
+    },
+    "layout": {
+      "desktop": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "tablet": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 80
+      },
+      "mobile": {
+        "x": 50,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "align": "center",
+        "padding": "0",
+        "margin": "0",
+        "textWidth": 90
+      }
+    },
+    "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 400,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#919191",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#919191",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
+      "fontFamily": "var(--font-cormorant, serif)",
+      "backgroundColor": "transparent",
+      "borderColor": "transparent",
+      "borderWidth": 0,
+      "borderRadius": 0,
+      "darkOverlay": 0,
+      "lightOverlay": 0,
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
+    },
+    "advanced": {
+      "anchorId": "",
+      "customCssClass": ""
+    },
+    "collectionShowcase": {
+      "layoutType": "grid",
+      "maxWidth": "boxed",
+      "items": []
+    },
+    "splitLayout": {
+      "ratio": "50-50",
+      "layout": "image-left"
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
+    },
+    "productSequence": [
+      "imported_78",
+      "imported_77",
+      "imported_79",
+      "imported_80",
+      "imported_81",
+      "imported_82",
+      "imported_83",
+      "imported_84",
+      "imported_85",
+      "imported_86",
+      "imported_87",
+      "imported_88",
+      "imported_89",
+      "imported_90",
+      "imported_91",
+      "imported_100",
+      "imported_102",
+      "imported_103",
+      "imported_104",
+      "imported_105",
+      "imported_107",
+      "imported_108",
+      "imported_109",
+      "imported_110",
+      "imported_111",
+      "imported_112",
+      "imported_113",
+      "imported_114",
+      "imported_115",
+      "imported_116",
+      "imported_117",
+      "imported_118",
+      "imported_120",
+      "imported_121",
+      "imported_140",
+      "imported_141",
+      "imported_142",
+      "imported_143",
+      "imported_144",
+      "imported_145",
+      "imported_161",
+      "imported_162",
+      "imported_164",
+      "imported_165",
+      "imported_166",
+      "imported_167",
+      "imported_168",
+      "imported_169",
+      "imported_170",
+      "imported_171",
+      "imported_182",
+      "imported_185",
+      "imported_187",
+      "imported_241",
+      "imported_243",
+      "imported_245",
+      "imported_330",
+      "imported_337",
+      "imported_353",
+      "imported_355",
+      "imported_359",
+      "imported_377",
+      "imported_382",
+      "imported_387",
+      "imported_389",
+      "imported_391",
+      "imported_393",
+      "imported_403",
+      "imported_405",
+      "imported_421",
+      "imported_423",
+      "imported_425",
+      "imported_427",
+      "imported_430",
+      "imported_433",
+      "imported_436",
+      "imported_461",
+      "imported_464",
+      "imported_467",
+      "imported_470",
+      "imported_472",
+      "imported_474",
+      "imported_484",
+      "imported_487",
+      "imported_509",
+      "imported_511",
+      "imported_514",
+      "imported_516",
+      "imported_519",
+      "imported_521",
+      "imported_526",
+      "imported_549",
+      "imported_551",
+      "imported_555",
+      "imported_560",
+      "imported_563",
+      "imported_566",
+      "imported_568",
+      "imported_570",
+      "imported_572",
+      "imported_574",
+      "imported_576",
+      "imported_646",
+      "imported_649",
+      "imported_665",
+      "imported_672",
+      "imported_678",
+      "imported_704",
+      "imported_711",
+      "imported_715",
+      "imported_723",
+      "imported_725",
+      "imported_727",
+      "imported_738",
+      "imported_740",
+      "imported_742",
+      "imported_744",
+      "imported_756",
+      "imported_761",
+      "imported_763",
+      "imported_767",
+      "imported_769",
+      "imported_771",
+      "imported_773",
+      "imported_777",
+      "imported_781",
+      "imported_800",
+      "imported_812",
+      "imported_846",
+      "prod_1783498194811_5vv8tfz"
+    ]
+  },
+  "men/ready-to-wear/shirts": {
+    "content": {
+      "heading": "Shirts",
+      "italicHeading": "",
+      "subheading": "Men",
+      "description": "Woven with the same precision as the house's architecture. Shirts that hold form.",
+      "primaryButton": {
+        "enabled": false,
+        "label": "Explore",
+        "url": "#",
+        "style": "luxury"
+      },
+      "secondaryButton": {
+        "enabled": false,
+        "label": "Learn More",
+        "url": "#",
+        "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
+      }
+    },
+    "media": {
+      "type": "image",
+      "desktop": {
+        "url": "/uploads/1781353406698-Shirt_Banner.jpg",
+        "width": 3121,
+        "height": 2330
+      },
+      "mobile": {
+        "url": "/uploads/1781353406811-Shirt_Banner.jpg",
+        "width": 3121,
+        "height": 2330
       },
       "videoSettings": {
         "autoplay": true,
@@ -1724,10 +2687,8 @@
       "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -1737,110 +2698,98 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
-    }
-  },
-  "men/ready-to-wear/shirts": {
-    "content": {
-      "heading": "Shirts",
-      "subheading": "Men",
-      "description": "Woven with the same precision as the house's architecture. Shirts that hold form.",
-      "primaryButton": {
-        "enabled": false,
-        "label": "Explore",
-        "url": "#",
-        "style": "luxury"
-      },
-      "secondaryButton": {
-        "enabled": false,
-        "label": "Learn More",
-        "url": "#",
-        "style": "outline"
-      }
     },
-    "media": {
-      "type": "image",
-      "desktop": {
-        "url": "/uploads/1781353406698-Shirt_Banner.jpg",
-        "width": 3121,
-        "height": 2330
-      },
-      "mobile": {
-        "url": "/uploads/1781353406811-Shirt_Banner.jpg",
-        "width": 3121,
-        "height": 2330
-      },
-      "videoSettings": {
-        "autoplay": true,
-        "loop": true,
-        "muted": true,
-        "controls": false,
-        "lazyLoad": true,
-        "playOnHover": false
-      }
-    },
-    "layout": {
-      "desktop": {
-        "x": 50,
-        "y": 50,
-        "width": 100,
-        "height": 100,
-        "align": "center",
-        "padding": "0",
-        "margin": "0",
-        "textWidth": 80
-      },
-      "tablet": {
-        "x": 50,
-        "y": 50,
-        "width": 100,
-        "height": 100,
-        "align": "center",
-        "padding": "0",
-        "margin": "0",
-        "textWidth": 80
-      },
-      "mobile": {
-        "x": 50,
-        "y": 50,
-        "width": 100,
-        "height": 100,
-        "align": "center",
-        "padding": "0",
-        "margin": "0",
-        "textWidth": 90
-      }
-    },
-    "style": {
-      "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
-      "backgroundColor": "transparent",
-      "borderColor": "transparent",
-      "borderWidth": 0,
-      "borderRadius": 0,
-      "textShadow": "none",
-      "darkOverlay": 0,
-      "lightOverlay": 0,
-      "gradientOverlay": false
-    },
-    "advanced": {
-      "animation": "slide-up",
+    "animation": {
+      "type": "slide-up",
       "duration": 1.2,
       "delay": 0,
-      "enabled": true
+      "easing": "ease",
+      "scrollTrigger": true
     },
-    "collectionShowcase": {
-      "layoutType": "grid",
-      "maxWidth": "boxed",
-      "items": []
+    "contactInfo": {
+      "fields": []
     },
-    "splitLayout": {
-      "ratio": "50-50",
-      "layout": "image-left"
-    }
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
+    },
+    "productSequence": [
+      "imported_77",
+      "imported_78",
+      "imported_80",
+      "imported_81",
+      "imported_79",
+      "imported_82",
+      "imported_85",
+      "imported_84",
+      "imported_86",
+      "imported_83",
+      "imported_87",
+      "imported_88",
+      "imported_89",
+      "imported_90",
+      "imported_91",
+      "imported_100",
+      "imported_102",
+      "imported_103",
+      "imported_104",
+      "imported_105",
+      "imported_107",
+      "imported_108",
+      "imported_109",
+      "imported_110",
+      "imported_111",
+      "imported_112",
+      "imported_113",
+      "imported_114",
+      "imported_115",
+      "imported_116",
+      "imported_117",
+      "imported_118",
+      "imported_120",
+      "imported_121",
+      "imported_140",
+      "imported_141",
+      "imported_142",
+      "imported_143",
+      "imported_144",
+      "imported_145",
+      "imported_161",
+      "imported_162",
+      "imported_164",
+      "imported_165",
+      "imported_166",
+      "imported_167",
+      "imported_168",
+      "imported_169",
+      "imported_170",
+      "imported_337"
+    ],
+    "includeProducts": [],
+    "excludeProducts": []
   },
   "men/ready-to-wear/t-shirts-polos": {
     "content": {
@@ -2146,6 +3095,7 @@
   "men/ready-to-wear/coats-jackets": {
     "content": {
       "heading": "Coats & Jackets",
+      "italicHeading": "",
       "subheading": "Men",
       "description": "Outerwear as statement. The garment that precedes all others.",
       "primaryButton": {
@@ -2159,15 +3109,25 @@
         "label": "Learn More",
         "url": "#",
         "style": "outline"
+      },
+      "tertiaryButton": {
+        "enabled": false,
+        "label": "Contact Us",
+        "url": "#",
+        "style": "ghost"
       }
     },
     "media": {
       "type": "image",
       "desktop": {
-        "url": "/images/hero-slide-3.jpg"
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783777074/tezhhomayaa_app/usv8idk1n0cnxua3f8l6.jpg",
+        "width": 3000,
+        "height": 1500
       },
       "mobile": {
-        "url": "/images/hero-slide-3.jpg"
+        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783777075/tezhhomayaa_app/r7f5zcfkt7sbkwiqdlmv.jpg",
+        "width": 2700,
+        "height": 4800
       },
       "videoSettings": {
         "autoplay": true,
@@ -2211,26 +3171,62 @@
       }
     },
     "style": {
+      "heading": {
+        "fontSize": 4,
+        "fontWeight": 300,
+        "letterSpacing": 0.05,
+        "lineHeight": 1.1,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "subheading": {
+        "fontSize": 1,
+        "fontWeight": 400,
+        "letterSpacing": 0.2,
+        "lineHeight": 1.2,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center"
+      },
+      "description": {
+        "fontSize": 1.1,
+        "fontWeight": 300,
+        "letterSpacing": 0.02,
+        "lineHeight": 1.6,
+        "textColor": "#ffffff",
+        "textShadow": "none",
+        "align": "center",
+        "maxWidth": 800
+      },
+      "button": {
+        "fontSize": 0.75,
+        "fontWeight": 400,
+        "padding": "0.6rem 1.4rem",
+        "borderRadius": 0,
+        "textColor": "#ffffff",
+        "backgroundColor": "#1a1a18"
+      },
       "fontFamily": "var(--font-cormorant, serif)",
-      "fontSize": 4,
-      "fontWeight": 300,
-      "letterSpacing": 0.05,
-      "lineHeight": 1.1,
-      "textColor": "#ffffff",
       "backgroundColor": "transparent",
       "borderColor": "transparent",
       "borderWidth": 0,
       "borderRadius": 0,
-      "textShadow": "none",
       "darkOverlay": 0,
       "lightOverlay": 0,
-      "gradientOverlay": false
+      "gradientOverlay": false,
+      "fontSize": 4,
+      "subheadingFontSize": 1,
+      "descriptionFontSize": 1.1,
+      "fontWeight": 300,
+      "letterSpacing": 0.05,
+      "lineHeight": 1.1,
+      "textColor": "#ffffff",
+      "textShadow": "none"
     },
     "advanced": {
-      "animation": "slide-up",
-      "duration": 1.2,
-      "delay": 0,
-      "enabled": true
+      "anchorId": "",
+      "customCssClass": ""
     },
     "collectionShowcase": {
       "layoutType": "grid",
@@ -2240,6 +3236,43 @@
     "splitLayout": {
       "ratio": "50-50",
       "layout": "image-left"
+    },
+    "animation": {
+      "type": "slide-up",
+      "duration": 1.2,
+      "delay": 0,
+      "easing": "ease",
+      "scrollTrigger": true
+    },
+    "contactInfo": {
+      "fields": []
+    },
+    "contactForm": {
+      "successMessage": "Thank you for your message. We will be in touch shortly.",
+      "destinationEmail": "care@tezhhomayaa.com",
+      "subjects": [
+        "Client Services",
+        "Order Support",
+        "Wholesale",
+        "Press",
+        "Collaboration",
+        "Other"
+      ]
+    },
+    "socialPresence": {
+      "links": [
+        {
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "platform": "Facebook",
+          "url": "#"
+        }
+      ]
+    },
+    "typographyOverrides": {
+      "enabled": false
     }
   },
   "men/accessories": {

@@ -24,6 +24,8 @@
   --charcoal:    #1E1A16;
   --obsidian:    #0C0A08;
 
+  /* Force global sans-serif override for legacy serif and mono classes */
+
   /* Brand accent — CMYK 31, 100, 83, 47 */
   --brand:       #5D0017;
   --brand-light: #7A1028;
@@ -106,9 +108,10 @@
   --color-brand:      #5D0017;
   --color-gold:       #A07840;
 
+  --font-family-sans:  var(--font-jost, sans-serif);
   --font-family-serif: var(--font-cormorant, 'Cormorant Garamond'), 'Times New Roman', Georgia, serif;
   --font-family-mono:  var(--font-dm-mono, 'DM Mono'), 'Courier New', monospace;
-  --font-family-devasia: 'Devasia', var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  --font-family-devasia: 'Devasia', var(--font-jost, sans-serif);
 }
 
 /* ─── Base Reset ─────────────────────────────────────────────── */
@@ -124,7 +127,7 @@ html {
 body {
   background-color: var(--white);
   color: var(--obsidian);
-  font-family: var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  font-family: var(--font-cormorant, 'Cormorant Garamond');
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────── */
@@ -147,9 +150,10 @@ body {
 }
 
 /* ─── Typography ─────────────────────────────────────────────── */
+.font-sans    { font-family: var(--font-jost, sans-serif); }
 .font-serif   { font-family: var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif; }
 .font-mono    { font-family: var(--font-dm-mono, 'DM Mono'), monospace; }
-.font-devasia { font-family: 'Devasia', var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif; }
+.font-devasia { font-family: 'Devasia', var(--font-jost, sans-serif); }
 
 /* ─── Typography Utility Classes ───────────────────────────────── */
 .fluid-hero {
@@ -225,7 +229,7 @@ body {
 }
 
 .text-display {
-  font-family: var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  font-family: var(--font-cormorant, serif);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 0.92;
@@ -240,7 +244,7 @@ body {
 }
 
 .text-editorial {
-  font-family: var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  font-family: var(--font-cormorant, 'Cormorant Garamond');
   font-weight: 300;
   line-height: 1.75;
   letter-spacing: 0.01em;
@@ -265,7 +269,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, button, li, .text-editorial {
 
 /* ─── Logo — Devasia style ───────────────────────────────────── */
 .logo-devasia {
-  font-family: 'Devasia', var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  font-family: 'Devasia', var(--font-cormorant, serif);
   font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: 0.32em;
