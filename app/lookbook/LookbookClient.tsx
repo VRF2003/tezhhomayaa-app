@@ -10,7 +10,77 @@ type Slide = {
   name: string;
   image: string;
   subtitle: string;
+  video?: string;
+  mobileImage?: string;
+  mobileVideo?: string;
 };
+
+// Sub-component to handle responsive media and video playback state
+function SlideMedia({ slide, isActive }: { slide: Slide, isActive: boolean }) {
+  const [isMobile, setIsMobile] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      if (isActive) {
+        video.currentTime = 0;
+        video.play().catch(console.error);
+      } else {
+        video.pause();
+      }
+    }
+  }, [isActive]);
+
+  const activeVideo = isMobile && slide.mobileVideo ? slide.mobileVideo : slide.video;
+  const activeImage = isMobile && slide.mobileImage ? slide.mobileImage : slide.image;
+
+  return (
+    <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
+      {activeVideo ? (
+        <video 
+          ref={videoRef}
+          src={activeVideo}
+          muted
+          loop
+          playsInline
+          style={{ 
+            width: "100%", 
+            height: "100%", 
+            objectFit: "cover",
+            transform: isActive ? "scale(1)" : "scale(1.1)",
+            transition: "transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)",
+          }}
+        />
+      ) : (
+        <Image 
+          src={activeImage || "/images/collection-banner.jpg"}
+          alt={slide.name}
+          fill
+          style={{ 
+            objectFit: "cover",
+            transform: isActive ? "scale(1)" : "scale(1.1)",
+            transition: "transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)",
+          }}
+          priority
+        />
+      )}
+      {/* Gradient Overlay for Text Readability */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%)",
+      }} />
+    </div>
+  );
+}
 
 interface LookbookClientProps {
   initialSlides: Slide[];
@@ -125,26 +195,8 @@ export default function LookbookClient({ initialSlides }: LookbookClientProps) {
               justifyContent: "center"
             }}
           >
-            {/* Background Image */}
-            <div style={{ position: "absolute", inset: 0, zIndex: 1 }}>
-              <Image 
-                src={slide.image}
-                alt={slide.name}
-                fill
-                style={{ 
-                  objectFit: "cover",
-                  transform: isActive ? "scale(1)" : "scale(1.1)",
-                  transition: "transform 1.2s cubic-bezier(0.25, 1, 0.5, 1)",
-                }}
-                priority={idx === 0}
-              />
-              {/* Gradient Overlay for Text Readability */}
-              <div style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%)",
-              }} />
-            </div>
+            {/* Media handled by subcomponent to manage refs and resizing cleanly */}
+            <SlideMedia slide={slide} isActive={isActive} />
 
             {/* Content */}
             <div style={{

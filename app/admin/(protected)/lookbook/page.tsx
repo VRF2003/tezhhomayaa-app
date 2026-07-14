@@ -8,13 +8,16 @@ type Slide = {
   name: string;
   image: string;
   subtitle: string;
+  video?: string;
+  mobileImage?: string;
+  mobileVideo?: string;
 };
 
 export default function LookbookAdminPage() {
   const [slides, setSlides] = useState<Slide[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
-  const [uploadingImage, setUploadingImage] = useState<string | null>(null);
+  const [uploadingMedia, setUploadingMedia] = useState<{ id: string, field: string } | null>(null);
 
   useEffect(() => {
     fetch("/api/lookbook")
@@ -52,6 +55,9 @@ export default function LookbookAdminPage() {
       name: "New Collection",
       subtitle: "Subtitle here",
       image: "",
+      video: "",
+      mobileImage: "",
+      mobileVideo: "",
     };
     saveSlides([...slides, newSlide]);
   };
@@ -71,8 +77,8 @@ export default function LookbookAdminPage() {
     }
   };
 
-  const handleImageUpload = async (id: string, file: File) => {
-    setUploadingImage(id);
+  const handleMediaUpload = async (id: string, field: keyof Slide, file: File) => {
+    setUploadingMedia({ id, field });
     const formData = new FormData();
     formData.append("file", file);
 
@@ -83,7 +89,7 @@ export default function LookbookAdminPage() {
       });
       const data = await res.json();
       if (data.success && data.url) {
-        const newSlides = slides.map(s => (s.id === id ? { ...s, image: data.url } : s));
+        const newSlides = slides.map(s => (s.id === id ? { ...s, [field]: data.url } : s));
         await saveSlides(newSlides);
       } else {
         alert("Upload failed: " + data.error);
@@ -91,7 +97,7 @@ export default function LookbookAdminPage() {
     } catch (err) {
       alert("Upload error.");
     } finally {
-      setUploadingImage(null);
+      setUploadingMedia(null);
     }
   };
 
@@ -122,28 +128,73 @@ export default function LookbookAdminPage() {
         {slides.map((slide, index) => (
           <div key={slide.id} style={{ background: "#f9f9f9", padding: "1.5rem", borderRadius: "8px", display: "flex", gap: "2rem" }}>
             
-            {/* Image Section */}
-            <div style={{ width: "250px", display: "flex", flexDirection: "column", gap: "1rem" }}>
-              <div style={{ width: "250px", height: "350px", background: "#eee", position: "relative", overflow: "hidden" }}>
-                {slide.image ? (
-                  <Image src={slide.image} alt={slide.name} fill style={{ objectFit: "cover" }} />
-                ) : (
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#999" }}>No Image</div>
-                )}
-                {uploadingImage === slide.id && (
-                  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    Uploading...
-                  </div>
-                )}
+            {/* Media Section */}
+            <div style={{ width: "350px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              
+              {/* Desktop Image */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 600 }}>Desktop Image</span>
+                <div style={{ width: "100%", aspectRatio: "3/4", background: "#eee", position: "relative", overflow: "hidden" }}>
+                  {slide.image ? (
+                    <Image src={slide.image} alt="Desktop" fill style={{ objectFit: "cover" }} />
+                  ) : (
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#999", fontSize: "0.8rem" }}>No Image</div>
+                  )}
+                  {uploadingMedia?.id === slide.id && uploadingMedia?.field === "image" && (
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem" }}>Uploading...</div>
+                  )}
+                </div>
+                <input type="file" accept="image/*" onChange={(e) => e.target.files?.[0] && handleMediaUpload(slide.id, "image", e.target.files[0])} style={{ fontSize: "0.7rem" }} />
               </div>
-              <input 
-                type="file" 
-                accept="image/*"
-                onChange={(e) => {
-                  if (e.target.files?.[0]) handleImageUpload(slide.id, e.target.files[0]);
-                }}
-                style={{ fontSize: "0.8rem" }}
-              />
+
+              {/* Desktop Video */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 600 }}>Desktop Video</span>
+                <div style={{ width: "100%", aspectRatio: "3/4", background: "#eee", position: "relative", overflow: "hidden" }}>
+                  {slide.video ? (
+                    <video src={slide.video} style={{ width: "100%", height: "100%", objectFit: "cover" }} muted />
+                  ) : (
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#999", fontSize: "0.8rem" }}>No Video</div>
+                  )}
+                  {uploadingMedia?.id === slide.id && uploadingMedia?.field === "video" && (
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem" }}>Uploading...</div>
+                  )}
+                </div>
+                <input type="file" accept="video/*" onChange={(e) => e.target.files?.[0] && handleMediaUpload(slide.id, "video", e.target.files[0])} style={{ fontSize: "0.7rem" }} />
+              </div>
+
+              {/* Mobile Image */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 600 }}>Mobile Image</span>
+                <div style={{ width: "100%", aspectRatio: "9/16", background: "#eee", position: "relative", overflow: "hidden" }}>
+                  {slide.mobileImage ? (
+                    <Image src={slide.mobileImage} alt="Mobile" fill style={{ objectFit: "cover" }} />
+                  ) : (
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#999", fontSize: "0.8rem" }}>No Image</div>
+                  )}
+                  {uploadingMedia?.id === slide.id && uploadingMedia?.field === "mobileImage" && (
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem" }}>Uploading...</div>
+                  )}
+                </div>
+                <input type="file" accept="image/*" onChange={(e) => e.target.files?.[0] && handleMediaUpload(slide.id, "mobileImage", e.target.files[0])} style={{ fontSize: "0.7rem" }} />
+              </div>
+
+              {/* Mobile Video */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <span style={{ fontSize: "0.75rem", fontWeight: 600 }}>Mobile Video</span>
+                <div style={{ width: "100%", aspectRatio: "9/16", background: "#eee", position: "relative", overflow: "hidden" }}>
+                  {slide.mobileVideo ? (
+                    <video src={slide.mobileVideo} style={{ width: "100%", height: "100%", objectFit: "cover" }} muted />
+                  ) : (
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", color: "#999", fontSize: "0.8rem" }}>No Video</div>
+                  )}
+                  {uploadingMedia?.id === slide.id && uploadingMedia?.field === "mobileVideo" && (
+                    <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)", color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8rem" }}>Uploading...</div>
+                  )}
+                </div>
+                <input type="file" accept="video/*" onChange={(e) => e.target.files?.[0] && handleMediaUpload(slide.id, "mobileVideo", e.target.files[0])} style={{ fontSize: "0.7rem" }} />
+              </div>
+
             </div>
 
             {/* Form Section */}
