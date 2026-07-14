@@ -29,6 +29,7 @@ function Dropdown({ icon, label, children, isActive, className = "" }: { icon?: 
   return (
     <div className="relative" ref={ref}>
       <button 
+        type="button"
         onClick={() => setOpen(!open)} 
         className={`flex items-center gap-1.5 p-1.5 px-2.5 rounded transition-colors text-xs uppercase tracking-widest ${isActive ? "bg-white text-black shadow-sm" : "text-gray-500 hover:bg-white hover:text-black"} ${className}`}
       >
@@ -47,6 +48,7 @@ function Dropdown({ icon, label, children, isActive, className = "" }: { icon?: 
 function DropdownItem({ icon, label, isActive, onClick }: { icon?: React.ReactNode, label: string, isActive?: boolean, onClick: () => void }) {
   return (
     <button 
+      type="button"
       onClick={onClick}
       className={`flex items-center gap-2 w-full text-left p-1.5 px-2 rounded text-xs transition-colors ${isActive ? "bg-[#fafaf8] text-black font-medium" : "text-gray-600 hover:bg-[#fafaf8] hover:text-black"}`}
     >
@@ -122,6 +124,7 @@ export function Toolbar({ editor }: ToolbarProps) {
       {/* ── Basic Formatting (Inline) ── */}
       <div className="flex items-center gap-0.5">
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleBold().run()}
           className={`p-1.5 rounded transition-colors ${editor.isActive("bold") ? "bg-white shadow-sm text-black" : "text-gray-500 hover:bg-white hover:text-black"}`}
           title="Bold"
@@ -129,6 +132,7 @@ export function Toolbar({ editor }: ToolbarProps) {
           <Bold size={14} />
         </button>
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={`p-1.5 rounded transition-colors ${editor.isActive("italic") ? "bg-white shadow-sm text-black" : "text-gray-500 hover:bg-white hover:text-black"}`}
           title="Italic"
@@ -136,6 +140,7 @@ export function Toolbar({ editor }: ToolbarProps) {
           <Italic size={14} />
         </button>
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleUnderline().run()}
           className={`p-1.5 rounded transition-colors ${editor.isActive("underline") ? "bg-white shadow-sm text-black" : "text-gray-500 hover:bg-white hover:text-black"}`}
           title="Underline"
@@ -143,6 +148,7 @@ export function Toolbar({ editor }: ToolbarProps) {
           <Underline size={14} />
         </button>
         <button
+          type="button"
           onClick={() => editor.chain().focus().toggleStrike().run()}
           className={`p-1.5 rounded transition-colors ${editor.isActive("strike") ? "bg-white shadow-sm text-black" : "text-gray-500 hover:bg-white hover:text-black"}`}
           title="Strikethrough"
@@ -234,6 +240,7 @@ export function Toolbar({ editor }: ToolbarProps) {
 
       <div className="flex flex-1 items-center justify-end gap-0.5">
         <button
+          type="button"
           onClick={() => editor.chain().focus().undo().run()}
           disabled={!editor.can().undo()}
           className="p-1.5 rounded transition-colors text-gray-500 hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent"
@@ -242,6 +249,7 @@ export function Toolbar({ editor }: ToolbarProps) {
           <Undo size={14} />
         </button>
         <button
+          type="button"
           onClick={() => editor.chain().focus().redo().run()}
           disabled={!editor.can().redo()}
           className="p-1.5 rounded transition-colors text-gray-500 hover:bg-white disabled:opacity-30 disabled:hover:bg-transparent"

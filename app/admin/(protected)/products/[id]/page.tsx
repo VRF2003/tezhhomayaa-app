@@ -14,6 +14,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
   const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
   const [error, setError] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
   
   // Basic
   const [name, setName] = useState("");
@@ -362,6 +363,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSuccessMsg("");
 
     try {
       if (mediaItems.length === 0) throw new Error("At least one media item is required (the first item will be the Main Media)");
@@ -450,7 +452,9 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       
       console.log("Product ID on save:", data.data.id);
       
-      router.push("/admin/products");
+      setSuccessMsg("Product saved successfully.");
+      setTimeout(() => setSuccessMsg(""), 3000);
+      setLoading(false);
     } catch (err: any) {
       setError(err.message);
       setLoading(false);
@@ -514,6 +518,11 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
           {error && (
             <div style={{ background: "#fdf0f0", border: "1px solid #e0b8b8", padding: "1rem", color: "#6b3a3a", fontSize: "0.85rem", marginBottom: "2rem" }}>
               {error}
+            </div>
+          )}
+          {successMsg && (
+            <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", padding: "1rem", color: "#166534", fontSize: "0.85rem", marginBottom: "2rem" }}>
+              {successMsg}
             </div>
           )}
 
