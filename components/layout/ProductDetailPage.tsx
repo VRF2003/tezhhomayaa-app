@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCurrency } from "@/components/CurrencyProvider";
@@ -410,6 +410,77 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
   const [globalData, setGlobalData] = useState<{ sections: any[] }>({ sections: [] });
 
   const triggerRef = useRef<HTMLElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const isScrolling = useRef(false);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(related.length > 4);
+
+  const checkScroll = useCallback(() => {
+    if (carouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      setCanScrollLeft(scrollLeft > 10);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkScroll();
+  }, [related, checkScroll]);
+
+  const smoothScroll = (direction: "left" | "right") => {
+    if (!carouselRef.current || isScrolling.current) return;
+    
+    const el = carouselRef.current;
+    const items = Array.from(el.children) as HTMLElement[];
+    if (items.length === 0) return;
+    
+    // Find current snapped item based on scroll position
+    let currentIdx = 0;
+    for (let i = 0; i < items.length; i++) {
+        // Subtract a small buffer in case of tiny subpixel differences
+        if (items[i].offsetLeft >= el.scrollLeft - 10) {
+            currentIdx = i;
+            break;
+        }
+    }
+    
+    // Scroll 1 item at a time to prevent skipping/jumping
+    const targetIdx = direction === "right" 
+        ? Math.min(currentIdx + 1, items.length - 1)
+        : Math.max(currentIdx - 1, 0);
+
+    if (targetIdx === currentIdx) return;
+    
+    const start = el.scrollLeft;
+    // Calculate the exact offset so the browser doesn't snap abruptly
+    const change = items[targetIdx].offsetLeft - start;
+    
+    el.style.scrollSnapType = "none";
+    isScrolling.current = true;
+
+    const duration = 750; // 750ms faster elegant luxury scroll
+    const startTime = performance.now();
+
+    const animateScroll = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Linear easing for perfectly even speed in the You May Also Consider carousel
+      const ease = progress;
+
+      el.scrollLeft = start + change * ease;
+
+      if (elapsed < duration) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        el.style.scrollSnapType = "x mandatory";
+        isScrolling.current = false;
+        checkScroll();
+      }
+    };
+    
+    requestAnimationFrame(animateScroll);
+  };
 
   const { addToCart, openMiniCart } = useCart();
   const { formatPrice } = useCurrency();
@@ -782,35 +853,99 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
         {/* ── Related Pieces ── */}
         {related.length > 0 && (
           <section style={{
-            padding: "clamp(5rem, 8vw, 9rem) clamp(2.5rem, 6vw, 9rem) clamp(6rem, 10vw, 10rem)",
             borderTop: "1px solid #ddd9d4",
             background: "#ffffff",
+            paddingTop: "clamp(3rem, 5vw, 5rem)",
+            paddingBottom: "clamp(6rem, 10vw, 10rem)",
           }}>
             <div style={{
-              display: "flex", alignItems: "baseline", justifyContent: "space-between",
-              marginBottom: "clamp(3rem, 5vw, 5rem)",
+              display: "flex", alignItems: "center", justifyContent: "space-between",
+              marginBottom: "clamp(2rem, 3vw, 3rem)",
+              padding: "0 clamp(1rem, 5vw, 5rem)",
             }}>
               <h2 style={{
-                fontFamily: "var(--font-cormorant, serif)", fontSize: "clamp(1.3rem, 2vw, 1.7rem)",
-                fontWeight: 300, letterSpacing: "0.04em", color: "#1a1a18", margin: 0,
+                fontFamily: "var(--font-cormorant, serif)", fontSize: "clamp(1.1rem, 1.3vw, 1.3rem)",
+                fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#1a1a18", margin: 0,
               }}>
                 You May Also Consider
               </h2>
-              <Link href={`/${product.category}`} style={{
-                fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.52rem",
-                letterSpacing: "0.14em", textTransform: "uppercase",
-                color: "#9a9690", textDecoration: "none",
-                borderBottom: "1px solid #ccc9c4", paddingBottom: "2px",
-              }}>
-                View Collection
-              </Link>
             </div>
 
-            <div className="tz-related-grid" style={{
-              display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "clamp(1.5rem, 3vw, 3.5rem)",
-            }}>
-              {related.map((p) => <RelatedCard key={p.id} product={p} />)}
+            <div style={{ position: "relative" }}>
+              <div 
+                ref={carouselRef}
+                onScroll={checkScroll}
+                className="tz-carousel-hide-scrollbar"
+                style={{
+                  display: "flex",
+                  overflowX: "auto",
+                  scrollSnapType: "x mandatory",
+                }}
+              >
+                {related.slice(0, 10).map((p) => (
+                  <div key={p.id} className="tz-carousel-item">
+                    <RelatedCard product={p} />
+                  </div>
+                ))}
+              </div>
+              
+              {canScrollLeft && (
+                <button 
+                  onClick={() => smoothScroll("left")}
+                  aria-label="Scroll left"
+                  style={{
+                    position: "absolute",
+                    left: "1.5rem",
+                    top: "calc(50% - 20px)",
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "rgba(0,0,0,0.25)",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "none",
+                    cursor: "pointer",
+                    zIndex: 10,
+                    backdropFilter: "blur(4px)",
+                    transition: "background 0.3s"
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.5)"}
+                  onMouseLeave={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.25)"}
+                >
+                  <ChevronLeft />
+                </button>
+              )}
+
+              {canScrollRight && related.length > 4 && (
+                <button 
+                  onClick={() => smoothScroll("right")}
+                  aria-label="Scroll right"
+                  style={{
+                    position: "absolute",
+                    right: "1.5rem",
+                    top: "calc(50% - 20px)",
+                    width: "40px",
+                    height: "40px",
+                    borderRadius: "50%",
+                    background: "rgba(0,0,0,0.25)",
+                    color: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "none",
+                    cursor: "pointer",
+                    zIndex: 10,
+                    backdropFilter: "blur(4px)",
+                    transition: "background 0.3s"
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.5)"}
+                  onMouseLeave={(e) => e.currentTarget.style.background = "rgba(0,0,0,0.25)"}
+                >
+                  <ChevronRight />
+                </button>
+              )}
             </div>
           </section>
         )}
@@ -918,15 +1053,20 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
         .tz-stage-arrow-right { right: clamp(0.75rem, 4vw, 5rem); }
         .tz-stage-arrow:hover { opacity: 0.9; }
         .tz-stage-arrow-right:hover { transform: translateY(-50%) translateX(4px); }
+        
+        .tz-carousel-item { flex: 0 0 22.222%; padding-right: 0px; scroll-snap-align: start; }
+        .tz-carousel-hide-scrollbar::-webkit-scrollbar { display: none; }
 
         @media (max-width: 1024px) { 
           .tz-related-grid { grid-template-columns: repeat(2, 1fr) !important; } 
           .tz-desktop-sticky { position: relative !important; top: 0 !important; }
+          .tz-carousel-item { flex: 0 0 28.571%; }
         }
         @media (max-width: 520px)  { 
           .tz-related-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.25rem !important; } 
           .tz-sticky-qty { display: none !important; }
           .tz-sticky-info { display: none !important; }
+          .tz-carousel-item { flex: 0 0 85%; }
         }
       `}</style>
     </main>
@@ -937,15 +1077,15 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
 function RelatedCard({ product }: { product: Product }) {
   const [hovered, setHovered] = useState(false);
   return (
-    <Link href={product.href} style={{ textDecoration: "none", display: "block" }}>
+    <Link href={product.href} style={{ textDecoration: "none", display: "block", height: "100%", background: "transparent" }}>
       <article
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", height: "100%", display: "flex", flexDirection: "column" }}
       >
         <div style={{
           position: "relative", width: "100%", aspectRatio: "3/4",
-          background: "#edeae5", marginBottom: "1rem", overflow: "hidden",
+          background: "#f8f8f8", overflow: "hidden",
         }}>
           <motion.div
             animate={{ scale: hovered ? 1.03 : 1 }}
@@ -959,18 +1099,20 @@ function RelatedCard({ product }: { product: Product }) {
             />
           </motion.div>
         </div>
-        <h3 style={{
-          fontFamily: "var(--font-cormorant, serif)", fontSize: "1.1rem",
-          fontWeight: 300, color: "#1a1a18", margin: "0 0 0.3rem", letterSpacing: "0.02em",
-        }}>
-          {product.name}
-        </h3>
-        <p style={{
-          fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem",
-          letterSpacing: "0.14em", color: "#9a9690", margin: 0,
-        }}>
-          {getProductPrice(product)}
-        </p>
+        <div style={{ paddingTop: "1rem", paddingBottom: "1rem", flex: 1, display: "flex", flexDirection: "column" }}>
+          <h3 style={{
+            fontFamily: "var(--font-cormorant, serif)", fontSize: "0.95rem",
+            fontWeight: 400, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em",
+          }}>
+            {product.name}
+          </h3>
+          <p style={{
+            fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem",
+            letterSpacing: "0.14em", color: "#1a1a18", margin: "auto 0 0",
+          }}>
+            {getProductPrice(product)}
+          </p>
+        </div>
       </article>
     </Link>
   );

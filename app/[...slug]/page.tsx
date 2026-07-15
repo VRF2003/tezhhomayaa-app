@@ -106,7 +106,7 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
   // 2. Is it a Product?
   const product = getProductBySlug(lastSegment);
   if (product) {
-    const related = getRelatedProducts(product, 4);
+    const related = getRelatedProducts(product, 10);
     return <ProductDetailPage product={product} related={related} />;
   }
 

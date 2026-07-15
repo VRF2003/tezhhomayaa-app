@@ -45,7 +45,7 @@ export default async function ProductPage({
     notFound();
   }
 
-  const related = getRelatedProducts(product, 4);
+  const related = getRelatedProducts(product, 10);
 
   return <ProductDetailPage product={product} related={related} />;
 }

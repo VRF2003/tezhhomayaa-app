@@ -80,13 +80,11 @@ export function ProductCard({ product, presentation }: { product: Product, prese
         onPointerEnter={(e) => {
           if (e.pointerType === 'mouse') {
             setHovered(true);
-            if (gallery.length > 1 && activeIndex === 0) setActiveIndex(1);
           }
         }}
         onPointerLeave={(e) => {
           if (e.pointerType === 'mouse') {
             setHovered(false);
-            setActiveIndex(0);
           }
         }}
         style={{ 
@@ -130,24 +128,34 @@ export function ProductCard({ product, presentation }: { product: Product, prese
             </div>
           )}
 
-          {gallery.map((img, i) => {
-            return (
-              <Image
-                key={img + i}
-                src={img}
-                alt={`${product.name} - ${i + 1}`}
-                {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
-                style={{
-                  ...(isOriginal ? { width: "100%", height: "auto", position: i === 0 ? "relative" as any : "absolute" as any, top: 0, left: 0 } : { objectFit: "cover", position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }),
-                  objectPosition: "center top",
-                  transition: "opacity 1000ms cubic-bezier(0.25, 1, 0.5, 1), transform 1000ms cubic-bezier(0.25, 1, 0.5, 1)",
-                  opacity: i === activeIndex ? 1 : 0,
-                  transform: i === activeIndex && hovered ? "scale(1.02)" : "scale(1)",
-                  zIndex: i === activeIndex ? 2 : 1,
-                }}
-              />
-            );
-          })}
+          <div
+            style={{
+              position: isOriginal ? "relative" : "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: isOriginal ? "auto" : "100%",
+              display: "flex",
+              transition: "transform 850ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+              transform: `translate3d(-${activeIndex * 100}%, 0, 0)`,
+              willChange: "transform",
+            }}
+          >
+            {gallery.map((img, i) => (
+              <div key={img + i} style={{ flex: "0 0 100%", position: "relative", width: "100%", height: isOriginal ? "auto" : "100%" }}>
+                <Image
+                  src={img}
+                  alt={`${product.name} - ${i + 1}`}
+                  {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
+                  style={{
+                    ...(isOriginal ? { width: "100%", height: "auto" } : { objectFit: "cover" }),
+                    objectPosition: "center top",
+                  }}
+                  priority={i === 0 || i === 1}
+                />
+              </div>
+            ))}
+          </div>
 
           {/* Navigation Arrows */}
           {gallery.length > 1 && (
@@ -156,16 +164,14 @@ export function ProductCard({ product, presentation }: { product: Product, prese
                 <button
                   onClick={handlePrev}
                   style={{
-                    position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%) scale(1)",
+                    position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
                     zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
                     display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
-                    transition: "opacity 300ms ease, transform 300ms ease",
+                    transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
                     opacity: hovered ? 1 : 0,
                     pointerEvents: hovered ? "auto" : "none"
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1.05)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1)")}
                   aria-label="Previous image"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
@@ -177,16 +183,14 @@ export function ProductCard({ product, presentation }: { product: Product, prese
                 <button
                   onClick={handleNext}
                   style={{
-                    position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%) scale(1)",
+                    position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
                     zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
                     display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
-                    transition: "opacity 300ms ease, transform 300ms ease",
+                    transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
                     opacity: hovered ? 1 : 0,
                     pointerEvents: hovered ? "auto" : "none"
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1.05)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(-50%) scale(1)")}
                   aria-label="Next image"
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">

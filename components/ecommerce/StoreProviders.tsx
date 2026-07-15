@@ -1,6 +1,6 @@
 "use client";
 
-import { CartProvider, WishlistProvider, SearchProvider } from "@/lib/store";
+import { CartProvider, WishlistProvider, SearchProvider, AuthProvider } from "@/lib/store";
 import MiniCart from "@/components/ecommerce/MiniCart";
 import SearchOverlay from "@/components/ecommerce/SearchOverlay";
 import type { Product } from "@/lib/collections";
@@ -11,15 +11,17 @@ export default function StoreProviders({ children, allProducts }: { children: Re
   return (
     <CommerceProvider>
       <CurrencyProvider>
-        <CartProvider>
-          <WishlistProvider allProducts={allProducts}>
-            <SearchProvider allProducts={allProducts}>
-              {children}
-              <MiniCart />
-              <SearchOverlay />
-            </SearchProvider>
-          </WishlistProvider>
-        </CartProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider allProducts={allProducts}>
+              <SearchProvider allProducts={allProducts}>
+                {children}
+                <MiniCart />
+                <SearchOverlay />
+              </SearchProvider>
+            </WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
       </CurrencyProvider>
     </CommerceProvider>
   );

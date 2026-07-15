@@ -252,3 +252,48 @@ export function useSearch() {
   if (!ctx) throw new Error("useSearch must be inside SearchProvider");
   return ctx;
 }
+
+// ─── Auth Context ─────────────────────────────────────────────
+import { auth } from "@/lib/firebase";
+import { onAuthStateChanged, signOut, type User } from "firebase/auth";
+
+type AuthCtx = {
+  isLoggedIn: boolean;
+  user: User | null;
+  loading: boolean;
+  login: () => void;
+  logout: () => void;
+};
+
+const AuthContext = createContext<AuthCtx | null>(null);
+
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // login is now handled by the pages directly calling Firebase auth methods
+  const login = useCallback(() => {}, []);
+  const logout = useCallback(() => {
+    signOut(auth).catch(console.error);
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ isLoggedIn: !!user, user, loading, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  const ctx = useContext(AuthContext);
+  if (!ctx) throw new Error("useAuth must be inside AuthProvider");
+  return ctx;
+}

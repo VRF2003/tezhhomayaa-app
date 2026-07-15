@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import AccountLayout from "@/components/account/AccountLayout";
 import { useWishlist, useCart } from "@/lib/store";
 import { getProductPrice } from "@/lib/currency";
 import { useCurrency } from "@/components/CurrencyProvider";
@@ -26,7 +25,6 @@ function WishlistCard({ product }: { product: Product }) {
 
   return (
     <article style={{ position: "relative" }}>
-      {/* Remove from wishlist */}
       <button
         onClick={() => toggleWishlist(product)}
         aria-label={`Remove ${product.name} from wishlist`}
@@ -96,74 +94,51 @@ export default function WishlistPage() {
   if (!hydrated) return null;
 
   return (
-    <main style={{ minHeight: "100vh", background: "#faf9f7" }}>
-      <Navbar />
-      <div style={{ height: "80px" }} />
-
-      <div style={{ padding: "clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 6rem)" }}>
-        {/* Header */}
-        <div style={{
-          display: "flex", alignItems: "baseline", justifyContent: "space-between",
-          marginBottom: "clamp(2.5rem, 5vw, 4rem)",
-          paddingBottom: "1.5rem", borderBottom: "1px solid #ddd9d4",
-        }}>
-          <h1 style={{
+    <AccountLayout 
+      title="Wishlist" 
+      headerAction={
+        wishlist.length > 0 && (
+          <span style={{
+            fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
+            letterSpacing: "0.14em", color: "#9a9690", textTransform: "uppercase",
+          }}>
+            {wishlist.length} {wishlist.length === 1 ? "piece" : "pieces"} saved
+          </span>
+        )
+      }
+    >
+      {wishlistProducts.length === 0 ? (
+        <div style={{ textAlign: "center", paddingTop: "4rem", paddingBottom: "6rem" }}>
+          <p style={{
             fontFamily: "var(--font-cormorant, serif)", fontWeight: 300,
-            fontSize: "clamp(2rem, 4vw, 3rem)", letterSpacing: "0.02em",
-            color: "#1a1a18", margin: 0,
+            fontStyle: "italic", fontSize: "1.4rem", color: "#9a9690",
+            letterSpacing: "0.04em", marginBottom: "2rem",
           }}>
-            Wishlist
-          </h1>
-          {wishlist.length > 0 && (
-            <span style={{
-              fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
-              letterSpacing: "0.14em", color: "#9a9690", textTransform: "uppercase",
-            }}>
-              {wishlist.length} {wishlist.length === 1 ? "piece" : "pieces"} saved
-            </span>
-          )}
+            Your wishlist is empty.
+          </p>
+          <Link href="/women" style={{
+            fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.52rem",
+            letterSpacing: "0.2em", textTransform: "uppercase", color: "#1a1a18",
+            textDecoration: "none", padding: "1rem 2.5rem",
+            border: "1px solid #1a1a18", display: "inline-block",
+            transition: "background 0.3s, color 0.3s",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = "#1a1a18"; e.currentTarget.style.color = "#f7f5f2"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#1a1a18"; }}>
+            Explore the Collection
+          </Link>
         </div>
-
-        {wishlistProducts.length === 0 ? (
-          <div style={{ textAlign: "center", paddingTop: "6rem", paddingBottom: "6rem" }}>
-            <p style={{
-              fontFamily: "var(--font-cormorant, serif)", fontWeight: 300,
-              fontStyle: "italic", fontSize: "1.4rem", color: "#9a9690",
-              letterSpacing: "0.04em", marginBottom: "2rem",
-            }}>
-              Your wishlist is empty.
-            </p>
-            <p style={{
-              fontFamily: "var(--font-cormorant, serif)", fontWeight: 300,
-              fontSize: "1rem", color: "#9a9690", marginBottom: "2.5rem",
-              letterSpacing: "0.03em",
-            }}>
-              Visit a product page and tap the heart to save pieces you love.
-            </p>
-            <Link href="/women" style={{
-              fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.52rem",
-              letterSpacing: "0.2em", textTransform: "uppercase", color: "#1a1a18",
-              textDecoration: "none", padding: "1rem 2.5rem",
-              border: "1px solid #1a1a18", display: "inline-block",
-              transition: "background 0.3s, color 0.3s",
-            }}>
-              Explore the Collection
-            </Link>
-          </div>
-        ) : (
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
-            gap: "clamp(1.5rem, 3vw, 3rem)",
-          }}>
-            {wishlistProducts.map((product) => (
-              <WishlistCard key={product.slug} product={product} />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <Footer />
-    </main>
+      ) : (
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+          gap: "clamp(1.5rem, 3vw, 3rem)",
+        }}>
+          {wishlistProducts.map((product) => (
+            <WishlistCard key={product.slug} product={product} />
+          ))}
+        </div>
+      )}
+    </AccountLayout>
   );
 }
