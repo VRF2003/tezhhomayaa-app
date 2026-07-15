@@ -914,7 +914,7 @@
               },
               "style": {
                 "heading": {
-                  "fontSize": 4,
+                  "fontSize": 2,
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
@@ -1036,7 +1036,10 @@
                 "delay": 0,
                 "easing": "ease",
                 "scrollTrigger": true
-              }
+              },
+              "productSequence": [],
+              "includeProducts": [],
+              "excludeProducts": []
             },
             {
               "id": "item_8r68o36",
@@ -1099,7 +1102,7 @@
               },
               "style": {
                 "heading": {
-                  "fontSize": 4,
+                  "fontSize": 2,
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
@@ -1221,7 +1224,10 @@
                 "delay": 0,
                 "easing": "ease",
                 "scrollTrigger": true
-              }
+              },
+              "productSequence": [],
+              "includeProducts": [],
+              "excludeProducts": []
             },
             {
               "id": "item_2e8vusk",
@@ -1284,7 +1290,7 @@
               },
               "style": {
                 "heading": {
-                  "fontSize": 4,
+                  "fontSize": 2,
                   "fontWeight": 300,
                   "letterSpacing": 0.05,
                   "lineHeight": 1.1,
@@ -1406,7 +1412,10 @@
                 "delay": 0,
                 "easing": "ease",
                 "scrollTrigger": true
-              }
+              },
+              "productSequence": [],
+              "includeProducts": [],
+              "excludeProducts": []
             }
           ],
           "": {
@@ -1616,7 +1625,7 @@
             "fontWeight": 300,
             "letterSpacing": 0.02,
             "lineHeight": 1.6,
-            "textColor": "#ffffff",
+            "textColor": "#1a1a18",
             "textShadow": "none",
             "align": "center",
             "maxWidth": 800

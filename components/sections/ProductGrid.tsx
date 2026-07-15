@@ -80,11 +80,13 @@ export function ProductCard({ product, presentation }: { product: Product, prese
         onPointerEnter={(e) => {
           if (e.pointerType === 'mouse') {
             setHovered(true);
+            if (gallery.length > 1 && activeIndex === 0) setActiveIndex(1);
           }
         }}
         onPointerLeave={(e) => {
           if (e.pointerType === 'mouse') {
             setHovered(false);
+            setActiveIndex(0);
           }
         }}
         style={{ 
@@ -135,14 +137,18 @@ export function ProductCard({ product, presentation }: { product: Product, prese
               left: 0,
               width: "100%",
               height: isOriginal ? "auto" : "100%",
-              display: "flex",
-              transition: "transform 850ms cubic-bezier(0.2, 0.8, 0.2, 1)",
-              transform: `translate3d(-${activeIndex * 100}%, 0, 0)`,
-              willChange: "transform",
             }}
           >
             {gallery.map((img, i) => (
-              <div key={img + i} style={{ flex: "0 0 100%", position: "relative", width: "100%", height: isOriginal ? "auto" : "100%" }}>
+              <div key={img + i} style={{ 
+                position: (isOriginal && i === 0) ? "relative" : "absolute",
+                top: 0, left: 0,
+                width: "100%", 
+                height: isOriginal ? "auto" : "100%",
+                opacity: i === activeIndex ? 1 : 0,
+                transition: "opacity 850ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+                zIndex: i === activeIndex ? 2 : 1
+              }}>
                 <Image
                   src={img}
                   alt={`${product.name} - ${i + 1}`}

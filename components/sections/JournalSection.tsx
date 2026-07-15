@@ -57,7 +57,7 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
           <div className="text-center mb-16 md:mb-24 flex flex-col items-center max-w-2xl">
             {norm.content.heading && (
               <h2 
-                className="uppercase tracking-[0.2em] mb-4"
+                className="uppercase tracking-[0.2em] mb-4 ml-[0.2em]"
                 style={{ 
                   color: norm.style.heading.textColor,
                   fontSize: `${norm.style.heading.fontSize}rem`
@@ -81,7 +81,11 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
 
         {/* Layouts */}
         {layout === "magazine-grid" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full">
+          <div className={`grid grid-cols-1 gap-8 md:gap-12 w-full ${
+            displayArticles.length === 1 ? "md:grid-cols-1 max-w-2xl" : 
+            displayArticles.length === 2 ? "md:grid-cols-2 max-w-4xl" : 
+            "md:grid-cols-3"
+          }`}>
             {displayArticles.map(article => {
               const cardImg = article.thumbnailImage?.url || article.heroImage?.url;
               return (

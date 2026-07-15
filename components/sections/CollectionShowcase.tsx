@@ -40,12 +40,12 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
       {href ? (
         <Link 
           href={href} 
-          className={`block w-full h-full ${isEdgeToEdge ? "absolute inset-0" : ""} cursor-pointer`}
+          className={`block w-full h-full cursor-pointer flex flex-col`}
         >
           <CardInner norm={norm} isEdgeToEdge={isEdgeToEdge} aspectRatio={aspectRatio} containerRef={containerRef} handlePointerDown={handlePointerDown} isDragging={isDragging} localPos={localPos} isPreviewMode={isPreviewMode} mounted={mounted} />
         </Link>
       ) : (
-        <div className={`block w-full h-full ${isEdgeToEdge ? "absolute inset-0" : ""}`}>
+        <div className={`block w-full h-full flex flex-col`}>
           <CardInner norm={norm} isEdgeToEdge={isEdgeToEdge} aspectRatio={aspectRatio} containerRef={containerRef} handlePointerDown={handlePointerDown} isDragging={isDragging} localPos={localPos} isPreviewMode={isPreviewMode} mounted={mounted} />
         </div>
       )}
@@ -60,7 +60,7 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
 
   return (
     <>
-      <div className={`w-full relative overflow-hidden ${isEdgeToEdge ? "h-full min-h-[60vh]" : ""}`} style={{ aspectRatio: isEdgeToEdge ? "auto" : aspectRatio, background: "var(--stone)" }}>
+      <div className={`w-full relative overflow-hidden flex-none ${isEdgeToEdge ? "h-[60vh] md:h-[75vh]" : ""}`} style={{ aspectRatio: isEdgeToEdge ? "auto" : aspectRatio, background: "var(--stone)" }}>
           <UniversalMediaRenderer 
             media={norm.media}
             fill={!isMasonry}
@@ -103,39 +103,13 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
           ))}
         </div>
         
-        {/* Draggable Text Container inside the Card */}
+        {/* Text Container Below the Card */}
         <div 
-          ref={containerRef}
-          onPointerDown={handlePointerDown}
-          className={`hero-text-pos absolute flex flex-col justify-center text-center`}
-          style={(isDragging ? {
-            left: `${localPos.x}%`,
-            top: `${localPos.y}%`,
-            width: `calc(${norm.layout.desktop.textWidth}% - 2rem)`,
-            color: norm.style.textColor,
-            textShadow: shadowMap[norm.style.textShadow || "none"],
-            cursor: "move",
-            border: "1px dashed rgba(255,255,255,0.8)",
-            padding: "20px",
-            touchAction: "none",
-            transform: "translate(-50%, -50%)",
+          className="flex flex-col mt-5 w-full"
+          style={{
             alignItems: norm.layout.desktop.align === "left" ? "flex-start" : norm.layout.desktop.align === "right" ? "flex-end" : "center",
             textAlign: norm.layout.desktop.align as any,
-            zIndex: 10,
-          } : {
-            "--desktop-x": `${norm.layout.desktop.x}%`,
-            "--desktop-y": `${norm.layout.desktop.y}%`,
-            "--mobile-x": `${norm.layout.mobile.x}%`,
-            "--mobile-y": `${norm.layout.mobile.y}%`,
-            width: `calc(${norm.layout.desktop.textWidth}% - 2rem)`,
-            color: norm.style.textColor,
-            textShadow: shadowMap[norm.style.textShadow || "none"],
-            cursor: (mounted && isPreviewMode) ? "move" : "default",
-            transform: "translate(-50%, -50%)",
-            alignItems: norm.layout.desktop.align === "left" ? "flex-start" : norm.layout.desktop.align === "right" ? "flex-end" : "center",
-            textAlign: norm.layout.desktop.align as any,
-            zIndex: 10,
-          }) as React.CSSProperties}
+          }}
         >
           {norm.content.heading && (
             <span
@@ -145,9 +119,8 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
                 fontWeight: norm.style.heading.fontWeight,
                 letterSpacing: `${norm.style.heading.letterSpacing}em`,
                 lineHeight: norm.style.heading.lineHeight,
-                color: norm.style.heading.textColor,
+                color: "var(--obsidian)",
                 textAlign: norm.style.heading.align as any,
-                textShadow: norm.style.heading.textShadow === "none" ? "none" : "0 2px 10px rgba(0,0,0,0.5)",
                 width: "100%",
                 position: "relative",
                 display: "inline-block",
@@ -173,10 +146,9 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
               fontWeight: norm.style.subheading.fontWeight,
               letterSpacing: `${norm.style.subheading.letterSpacing}em`,
               lineHeight: norm.style.subheading.lineHeight,
-              color: norm.style.subheading.textColor,
+              color: "var(--obsidian)",
               textAlign: norm.style.subheading.align as any,
-              textShadow: norm.style.subheading.textShadow === "none" ? "none" : "0 4px 20px rgba(0,0,0,0.3)",
-              marginTop: "1rem",
+              marginTop: "0.5rem",
               textTransform: "uppercase" 
             }}>
               {norm.content.subheading}
@@ -188,13 +160,12 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
                 style={{ 
                   fontSize: `${norm.style.description.fontSize}rem`,
                   fontWeight: norm.style.description.fontWeight,
-                  color: norm.style.description.textColor,
+                  color: "var(--obsidian)",
                   textAlign: norm.style.description.align as any,
                   maxWidth: `${norm.style.description.maxWidth}px`,
                   marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
                   marginRight: norm.style.description.align === "center" ? "auto" : "0",
-                  textShadow: norm.style.description.textShadow === "none" ? "none" : "0 2px 4px rgba(0,0,0,0.8)",
-                  marginTop: "1rem"
+                  marginTop: "0.5rem"
                 }}
               >
                 {norm.content.description}
@@ -205,6 +176,7 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
               style={{
                 fontSize: `${norm.style.button.fontSize}rem`,
                 fontWeight: norm.style.button.fontWeight,
+                color: "var(--obsidian)",
                 borderBottom: "1px solid currentColor",
                 paddingBottom: "2px"
               }}
@@ -261,9 +233,9 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderFullWidthTiles = () => {
     return (
-      <div className="flex flex-col md:flex-row w-full h-[80vh] min-h-[600px]">
+      <div className="flex flex-col md:flex-row w-full mb-16">
         {items.map((item: any, i: number) => (
-          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={true} className="flex-1 h-full hover:flex-[1.2] transition-all duration-700" />
+          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={true} className="flex-1 hover:flex-[1.2] transition-all duration-700" />
         ))}
       </div>
     );
