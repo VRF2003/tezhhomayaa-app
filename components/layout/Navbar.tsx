@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useCart, useSearch, useWishlist, useAuth } from "@/lib/store";
 import AccountPanel from "@/components/layout/AccountPanel";
@@ -96,6 +97,7 @@ function FadeContent({ id, children }: { id: string; children: React.ReactNode }
 
 // ─── Main Navbar ──────────────────────────────────────────────
 export default function Navbar() {
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
   const [accountPanelOpen, setAccountPanelOpen] = useState(false);
@@ -321,33 +323,17 @@ export default function Navbar() {
             <SearchIcon />
           </button>
 
-          {/* Wishlist */}
-          <Link
-            href="/account/wishlist"
-            className="icon-btn header-icon-btn wishlist-btn"
-            aria-label={`Wishlist — ${wishlist.length} saved`}
-            id="nav-wishlist"
-          >
-            <WishlistIcon />
-            {wishlist.length > 0 && (
-              <span style={{
-                position: "absolute", top: "-5px", right: "-5px",
-                width: "14px", height: "14px",
-                background: "#1a1a18", color: "#f7f5f2",
-                borderRadius: "50%", fontSize: "8px",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontFamily: "var(--font-dm-mono, monospace)", letterSpacing: 0,
-              }}>
-                {wishlist.length > 9 ? "9+" : wishlist.length}
-              </span>
-            )}
-          </Link>
-
           {/* My Account */}
           <div style={{ position: "relative" }}>
             <button
               className="icon-btn header-icon-btn"
-              onClick={() => setAccountPanelOpen(!accountPanelOpen)}
+              onClick={() => {
+                if (isMobile) {
+                  router.push(isLoggedIn ? "/account/orders" : "/account/login");
+                } else {
+                  setAccountPanelOpen(!accountPanelOpen);
+                }
+              }}
               aria-label="My Account"
               id="nav-account"
             >
