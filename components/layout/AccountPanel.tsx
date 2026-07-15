@@ -52,13 +52,13 @@ export default function AccountPanel({ isOpen, onClose }: { isOpen: boolean; onC
             style={{
               position: "absolute",
               top: "100%", // Just below the icon
-              right: "-2rem", // Slightly offset to center visually under the icon area
-              marginTop: "2rem",
+              right: "clamp(-1rem, -2vw, -2rem)", // Scale offset for mobile to prevent overflow
+              marginTop: "clamp(1.5rem, 3vw, 2rem)",
               background: "#ffffff",
-              border: "1px solid #e8e6e1", // Thin separator border, no shadow
-              padding: "3rem 4rem", // Generous editorial whitespace
+              border: "1px solid #e8e6e1",
+              padding: "clamp(2rem, 5vw, 3rem) clamp(2rem, 6vw, 4rem)", // Responsive padding
               zIndex: 150,
-              minWidth: "340px",
+              minWidth: "clamp(260px, 80vw, 340px)", // Responsive width
               display: "flex",
               flexDirection: "column",
             }}

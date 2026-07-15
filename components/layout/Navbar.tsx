@@ -327,24 +327,16 @@ export default function Navbar() {
           <div style={{ position: "relative" }}>
             <button
               className="icon-btn header-icon-btn"
-              onClick={() => {
-                if (isMobile) {
-                  router.push(isLoggedIn ? "/account/orders" : "/account/login");
-                } else {
-                  setAccountPanelOpen(!accountPanelOpen);
-                }
-              }}
+              onClick={() => setAccountPanelOpen(!accountPanelOpen)}
               aria-label="My Account"
               id="nav-account"
             >
               <UserIcon />
             </button>
-            {!isMobile && (
-              <AccountPanel 
-                isOpen={accountPanelOpen} 
-                onClose={() => setAccountPanelOpen(false)} 
-              />
-            )}
+            <AccountPanel 
+              isOpen={accountPanelOpen} 
+              onClose={() => setAccountPanelOpen(false)} 
+            />
           </div>
 
           {/* Cart */}
