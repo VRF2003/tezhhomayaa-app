@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useMarket } from "@/lib/market/MarketContext";
 import { MarketService } from "@/lib/market/MarketService";
 import { useMarketSelector } from "@/hooks/useMarketSelector";
@@ -69,13 +69,13 @@ export function MarketDialog() {
   }, [allMarkets, searchQuery]);
 
   // Animation variants
-  const overlayVariants = {
+  const overlayVariants: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
     exit: { opacity: 0, transition: { duration: 0.4, delay: 0.1 } }
   };
 
-  const modalVariants = {
+  const modalVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut", delay: 0.1 } },
     exit: { y: 10, opacity: 0, transition: { duration: 0.3, ease: "easeOut" } }

@@ -16,7 +16,8 @@ export async function setMarketCookie(marketCode: string) {
   }
 
   // Set the cookie for 1 year
-  cookies().set(MARKET_COOKIE_NAME, market.marketCode, {
+  const cookieStore = await cookies();
+  cookieStore.set(MARKET_COOKIE_NAME, market.marketCode, {
     maxAge: 60 * 60 * 24 * 365,
     path: "/",
     httpOnly: false, // Allows reading from client if necessary, though server is preferred
