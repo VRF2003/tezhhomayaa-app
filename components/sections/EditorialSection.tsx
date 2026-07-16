@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
 import { normalizeSectionData } from "@/lib/types/homepage";
+import { getButtonStyles } from "@/lib/typography";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
 
 export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any, sectionId?: string }) {
@@ -160,17 +161,7 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
               <Link 
                 href={href} 
                 className="hover:opacity-80 transition-opacity"
-                style={{
-                  fontSize: `${norm.style.button.fontSize}rem`,
-                  fontWeight: norm.style.button.fontWeight,
-                  padding: norm.style.button.padding,
-                  borderRadius: `${norm.style.button.borderRadius}px`,
-                  color: norm.style.button.textColor,
-                  backgroundColor: norm.style.button.backgroundColor,
-                  display: "inline-block",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase"
-                }}
+                style={getButtonStyles(norm.content.primaryButton, norm.style.button)}
                 draggable={false}
               >
                 {norm.content.primaryButton.label}
@@ -189,17 +180,7 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
               <Link 
                 href={href} 
                 className="hover:opacity-80 transition-opacity"
-                style={{
-                  fontSize: `${norm.style.button.fontSize}rem`,
-                  fontWeight: norm.style.button.fontWeight,
-                  padding: norm.style.button.padding,
-                  borderRadius: `${norm.style.button.borderRadius}px`,
-                  color: norm.style.button.textColor,
-                  backgroundColor: norm.style.button.backgroundColor,
-                  display: "inline-block",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase"
-                }}
+                style={getButtonStyles(norm.content.secondaryButton, norm.style.button)}
                 draggable={false}
               >
                 {norm.content.secondaryButton.label}
@@ -218,17 +199,7 @@ export default function EditorialSection({ cmsData, sectionId }: { cmsData?: any
               <Link 
                 href={href} 
                 className="hover:opacity-80 transition-opacity"
-                style={{
-                  fontSize: `${norm.style.button.fontSize}rem`,
-                  fontWeight: norm.style.button.fontWeight,
-                  padding: norm.style.button.padding,
-                  borderRadius: `${norm.style.button.borderRadius}px`,
-                  color: norm.style.button.textColor,
-                  backgroundColor: norm.style.button.backgroundColor,
-                  display: "inline-block",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase"
-                }}
+                style={getButtonStyles(norm.content.tertiaryButton, norm.style.button)}
                 draggable={false}
               >
                 {norm.content.tertiaryButton.label}

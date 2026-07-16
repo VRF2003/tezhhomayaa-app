@@ -413,6 +413,10 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
 
             {activeStyleTab === "EFFECTS" && (
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
+                <div>
+                  <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Background Color (Section & Content)</label>
+                  <div style={{ display: "flex", gap: "0.5rem" }}><input type="color" value={/^#[0-9A-Fa-f]{6}$/i.test(norm.style.backgroundColor || "") ? norm.style.backgroundColor : "#fafaf8"} onChange={e => update("style", "backgroundColor", e.target.value)} style={{ width: "40px", height: "40px", padding: 0, border: "none" }} /><input type="text" value={norm.style.backgroundColor || ""} onChange={e => update("style", "backgroundColor", e.target.value)} style={{ padding: "0.4rem", flex: 1, border: "1px solid #ccc9c4" }} placeholder="#fafaf8" /></div>
+                </div>
                 <div style={{ gridColumn: "span 2" }}>
                   <label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Dark Overlay (%)</span><span>{norm.style.darkOverlay}</span></label><input type="range" min="0" max="100" value={norm.style.darkOverlay} onChange={e => update("style", "darkOverlay", Number(e.target.value))} style={{ width: "100%", marginBottom: "1rem" }} />
                   <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.75rem" }}><input type="checkbox" checked={norm.style.gradientOverlay} onChange={e => update("style", "gradientOverlay", e.target.checked)} /> Enable Bottom Gradient Overlay</label>

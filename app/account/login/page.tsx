@@ -6,33 +6,41 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { auth } from "@/lib/firebase";
-import { signInWithRedirect, getRedirectResult, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, getAdditionalUserInfo } from "firebase/auth";
+import { useAuth } from "@/lib/store";
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Handle the redirect result when the page reloads after Google Login
+  // If the user is already logged in (e.g. from a successful auth state change), push them to orders
+  const { isLoggedIn, loading } = useAuth();
   useEffect(() => {
-    getRedirectResult(auth).then((result) => {
-      if (result) {
-        router.push("/account/orders");
-      }
-    }).catch((error) => {
-      console.error(error);
-      alert("Failed to login with Google.");
-    });
-  }, [router]);
+    if (!loading && isLoggedIn) {
+      router.push("/account/orders");
+    }
+  }, [isLoggedIn, loading, router]);
 
   const handleGoogleLogin = async () => {
     try {
       const provider = new GoogleAuthProvider();
-      // Using Redirect instead of Popup. Popup is often blocked by Safari's strict privacy features!
-      await signInWithRedirect(auth, provider);
+      const result = await signInWithPopup(auth, provider);
+      if (result.user) {
+        const additionalInfo = getAdditionalUserInfo(result);
+        if (additionalInfo?.isNewUser) {
+          // Trigger Welcome Email
+          fetch("/api/auth/welcome", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: result.user.email, name: result.user.displayName })
+          }).catch(console.error);
+        }
+
+        router.push("/account/orders");
+      }
     } catch (error: any) {
-      console.error(error);
-      alert(`Failed to initiate Google login: ${error?.message || error}`);
+      alert(`Failed to initiate Google login: ${error?.message || "Unknown error"}`);
     }
   };
 
@@ -41,8 +49,7 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/account/orders");
-    } catch (error) {
-      console.error(error);
+    } catch (error: any) {
       alert("Failed to login. Please check your credentials.");
     }
   };

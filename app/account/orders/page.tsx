@@ -8,28 +8,8 @@ import { useAuth } from "@/lib/store";
 export default function OrdersPage() {
   const { isLoggedIn } = useAuth();
 
-  // Mock data for orders using existing Unsplash images from the project
-  const orders = isLoggedIn ? [
-    {
-      id: "ORD-293847",
-      date: "Oct 12, 2026",
-      status: "Delivered",
-      total: "$1,850.00",
-      items: [
-        { name: "The Sculptural Obsidian Coat", image: "https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?auto=format&fit=crop&q=80&w=800" }
-      ]
-    },
-    {
-      id: "ORD-184759",
-      date: "Sep 04, 2026",
-      status: "Processing",
-      total: "$940.00",
-      items: [
-        { name: "Silk Draped Blouse", image: "https://images.unsplash.com/photo-1550614000-4b95d4ebf5e9?auto=format&fit=crop&q=80&w=800" },
-        { name: "Minimalist Leather Belt", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&q=80&w=800" }
-      ]
-    }
-  ] : [];
+  // For now, no mock orders are shown
+  const orders: any[] = [];
 
   return (
     <AccountLayout title="Order History">

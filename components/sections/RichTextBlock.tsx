@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { normalizeSectionData } from "@/lib/types/homepage";
-import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
+import { getResponsiveTypographyClass, injectTypographyOverrides, getButtonStyles } from "@/lib/typography";
 
 export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const norm = normalizeSectionData(cmsData);
@@ -86,17 +86,7 @@ export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; se
             <Link 
               href={norm.content.primaryButton.url || "#"}
               className="hover:opacity-70 transition-opacity fluid-button"
-              style={{
-                fontWeight: norm.style.button.fontWeight,
-                fontSize: `${norm.style.button.fontSize}rem`,
-                padding: norm.style.button.padding,
-                borderRadius: `${norm.style.button.borderRadius}px`,
-                color: norm.style.button.textColor,
-                backgroundColor: norm.style.button.backgroundColor,
-                display: "inline-block",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase"
-              }}
+              style={getButtonStyles(norm.content.primaryButton, norm.style.button)}
             >
               {norm.content.primaryButton.label}
             </Link>
@@ -104,11 +94,8 @@ export default function RichTextBlock({ cmsData, sectionId }: { cmsData: any; se
           {norm.content.secondaryButton.enabled && norm.content.secondaryButton.label && (
             <Link 
               href={norm.content.secondaryButton.url || "#"}
-              className="text-[0.75rem] tracking-[0.1em] uppercase hover:opacity-70 transition-opacity"
-              style={{
-                borderBottom: "1px solid currentColor",
-                paddingBottom: "0.2rem"
-              }}
+              className="hover:opacity-70 transition-opacity fluid-button"
+              style={getButtonStyles(norm.content.secondaryButton, norm.style.button)}
             >
               {norm.content.secondaryButton.label}
             </Link>

@@ -36,7 +36,7 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
   const href = buttonUrl && buttonUrl !== "#" ? buttonUrl.startsWith('/') || buttonUrl.startsWith('http') ? buttonUrl : `/${buttonUrl}` : "";
 
   return (
-    <ScrollReveal delay={delay} className={`w-full relative group block overflow-hidden ${className}`}>
+    <ScrollReveal delay={delay} className={`w-full relative group/card block overflow-hidden transition-all duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/list:brightness-95 hover:!brightness-100 ${className}`}>
       {href ? (
         <Link 
           href={href} 
@@ -64,12 +64,19 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
           <UniversalMediaRenderer 
             media={norm.media}
             fill={!isMasonry}
-            className={`object-cover ${isMasonry ? 'block w-full h-auto' : 'absolute inset-0 w-full h-full'} transition-transform duration-1000 ease-out group-hover:scale-105`}
-            style={{ filter: "brightness(0.9) contrast(1.02)" }}
+            // Use scale-[1.03] statically so translate3d doesn't reveal edges, and apply translation on hover. 
+            // motion-safe uses translate3d(0, -2px, 0) for luxury film feel (reduced by 50%).
+            // default duration is 1000ms for slow return.
+            className={`object-cover ${isMasonry ? 'block w-full h-auto' : 'absolute inset-0 w-full h-full'} scale-[1.03] transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] motion-safe:group-hover/card:-translate-y-0.5 group-hover/card:delay-[75ms]`}
+            style={{ filter: "brightness(0.92) contrast(1.02)" }}
           />
-          <div className="absolute inset-0 transition-colors duration-1000 ease-out group-hover:bg-black/20" style={{ backgroundColor: `rgba(0,0,0,${(norm.style.darkOverlay || 0) / 100})` }} />
+          {/* Overlay reduction on hover */}
+          <div 
+            className="absolute inset-0 transition-opacity duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-100 group-hover/card:opacity-40 group-hover/card:delay-[75ms]" 
+            style={{ backgroundColor: `rgba(0,0,0,${(norm.style.darkOverlay || 0) / 100})` }} 
+          />
           {norm.style.gradientOverlay && (
-            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-100 transition-opacity duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/card:opacity-40 group-hover/card:delay-[75ms]" />
           )}
 
           {/* Hotspots Overlay */}
@@ -126,17 +133,19 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
                 display: "inline-block",
                 paddingBottom: "4px",
                 textTransform: "capitalize",
-                transition: "opacity 0.5s ease",
               }}
-              className="group-hover:opacity-80"
+              className="transition-transform duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] motion-safe:group-hover/card:-translate-y-1 group-hover/card:delay-[75ms]"
             >
               {norm.content.heading}
-              {(!isEdgeToEdge && norm.style.heading.textColor === "#1a1a18") && (
-                <span
-                  style={{ position: "absolute", bottom: 0, left: norm.layout.desktop.align === 'left' ? 0 : norm.layout.desktop.align === 'right' ? 'auto' : "50%", right: norm.layout.desktop.align === 'right' ? 0 : 'auto', transform: norm.layout.desktop.align === 'center' ? "translateX(-50%)" : "none", height: "1px", width: "0%", background: "currentColor", transition: "width 0.65s cubic-bezier(0.22, 1, 0.36, 1)" }}
-                  className="group-hover:w-full"
-                />
-              )}
+              <span
+                style={{ 
+                  position: "absolute", bottom: 0, left: norm.layout.desktop.align === 'left' ? 0 : norm.layout.desktop.align === 'right' ? 'auto' : "50%", 
+                  right: norm.layout.desktop.align === 'right' ? 0 : 'auto', 
+                  transform: norm.layout.desktop.align === 'center' ? "translateX(-50%)" : "none", 
+                  height: "1px", background: "currentColor" 
+                }}
+                className="w-0 transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/card:w-full group-hover/card:delay-[75ms]"
+              />
             </span>
           )}
           {norm.content.subheading && (
@@ -172,7 +181,8 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
               </p>
           )}
           {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
-            <span className={`inline-block mt-4 tracking-[0.1em] uppercase transition-colors opacity-80 hover:opacity-100`}
+            <span 
+              className="inline-block mt-2 tracking-[0.1em] uppercase opacity-0 translate-y-1.5 transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/card:opacity-100 group-hover/card:translate-y-0 group-hover/card:delay-[75ms]"
               style={{
                 fontSize: `${norm.style.button.fontSize}rem`,
                 fontWeight: norm.style.button.fontWeight,
@@ -207,7 +217,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderGrid = (colsClass: string, isEdgeToEdge: boolean = false) => {
     return (
-      <div className={`grid grid-cols-1 md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-0" : "gap-x-6 gap-y-16"} w-full`}>
+      <div className={`grid grid-cols-1 md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-0" : "gap-x-6 gap-y-16"} w-full group/list`}>
         {items.map((item: any, i: number) => (
           <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={isEdgeToEdge} delay={i * 0.15} aspectRatio={isEdgeToEdge ? "auto" : "3/4"} className={isEdgeToEdge ? "h-[60vh] md:h-[80vh]" : "h-full"} />
         ))}
@@ -217,7 +227,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderEditorialGrid = () => {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center group/list">
         {items.map((item: any, i: number) => {
           const isLarge = i % 4 === 0 || i % 4 === 3;
           const colSpan = isLarge ? "md:col-span-8" : "md:col-span-4";
@@ -233,9 +243,9 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderFullWidthTiles = () => {
     return (
-      <div className="flex flex-col md:flex-row w-full mb-16">
+      <div className="flex flex-col md:flex-row w-full mb-16 group/list">
         {items.map((item: any, i: number) => (
-          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={true} className="flex-1 hover:flex-[1.2] transition-all duration-700" />
+          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={true} className="flex-1" />
         ))}
       </div>
     );
@@ -243,7 +253,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderMasonry = () => {
     return (
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 w-full">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 w-full group/list">
         {items.map((item: any, i: number) => (
           <CollectionCard key={item.id || i} item={item} sectionId={sectionId} delay={i * 0.1} className="mb-8 break-inside-avoid" aspectRatio="auto" />
         ))}
@@ -253,7 +263,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderCarousel = () => {
     return (
-      <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 w-full hide-scrollbar" style={{ scrollBehavior: "smooth" }}>
+      <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 w-full hide-scrollbar group/list" style={{ scrollBehavior: "smooth" }}>
         {items.map((item: any, i: number) => (
           <CollectionCard key={item.id || i} item={item} sectionId={sectionId} delay={i * 0.1} className="flex-none w-[85vw] md:w-[40vw] lg:w-[30vw] snap-center" />
         ))}

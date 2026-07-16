@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { v2 as cloudinary } from "cloudinary";
+import { writeFileSync, mkdirSync, existsSync } from "fs";
+import { join } from "path";
 
-export const maxDuration = 60; // Allow more time for Cloudinary uploads
-
-// Ensure the environment variable is loaded (Vercel will inject this automatically)
-cloudinary.config({
-  secure: true,
-});
+export const maxDuration = 60; 
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,23 +16,25 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Upload to Cloudinary using a stream
-    const uploadResult = await new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: "tezhhomayaa_app", resource_type: "auto" },
-        (error, result) => {
-          if (error) reject(error);
-          else resolve(result);
-        }
-      );
-      uploadStream.end(buffer);
-    });
+    // Save locally
+    const uploadsDir = join(process.cwd(), "public", "uploads");
+    if (!existsSync(uploadsDir)) {
+      mkdirSync(uploadsDir, { recursive: true });
+    }
 
-    const url = (uploadResult as any).secure_url;
+    const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
+    const originalName = file.name || "upload.png";
+    const extension = originalName.split('.').pop() || 'png';
+    const filename = `media-${uniqueSuffix}.${extension}`;
+    
+    const filePath = join(uploadsDir, filename);
+    writeFileSync(filePath, buffer);
+
+    const url = `/uploads/${filename}`;
 
     return NextResponse.json({ success: true, url });
   } catch (err: any) {
-    console.error("Cloudinary Upload Error:", err);
+    console.error("Local Upload Error:", err);
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }

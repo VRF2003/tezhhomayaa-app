@@ -55,7 +55,7 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
   };
 
   return (
-    <section aria-label={norm.content.heading || ""} className="w-full bg-[#fafaf8]">
+    <section aria-label={norm.content.heading || ""} className="w-full" style={{ backgroundColor: norm.style.backgroundColor || "#fafaf8" }}>
       <div className={`grid grid-cols-1 ${getGridClasses()} min-h-[600px] lg:min-h-[80vh]`}>
         
         {/* Media Block */}
@@ -70,7 +70,7 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
         </div>
 
         {/* Text Block - Absolute positioning bounds */}
-        <div ref={containerRef as any} className="relative w-full h-[50vh] lg:h-full bg-[#fafaf8] overflow-hidden">
+        <div ref={containerRef as any} className="relative w-full h-[50vh] lg:h-full overflow-hidden" style={{ backgroundColor: norm.style.backgroundColor || "#fafaf8" }}>
           <div 
             onPointerDown={handlePointerDown}
             style={{

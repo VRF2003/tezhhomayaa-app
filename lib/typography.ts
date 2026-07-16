@@ -52,3 +52,55 @@ export function getResponsiveTypographyClass(fontSize: number): string {
   if (fontSize >= 1) return 'fluid-body';
   return 'fluid-caption';
 }
+
+/**
+ * Computes inline styles for a CMS button given its structure and the selected style.
+ * This ensures "Outline", "Ghost", and "Luxury" styles are respected regardless of the 
+ * global backgroundColor set in the CMS style tab.
+ */
+export function getButtonStyles(buttonContent: any, buttonStyle: any): React.CSSProperties {
+  if (!buttonContent || !buttonStyle) return {};
+
+  const base: React.CSSProperties = {
+    fontWeight: buttonStyle.fontWeight,
+    fontSize: `${buttonStyle.fontSize}rem`,
+    padding: buttonStyle.padding,
+    borderRadius: `${buttonStyle.borderRadius}px`,
+    display: "inline-block",
+    letterSpacing: "0.1em",
+    textTransform: "uppercase" as any,
+    transition: "all 0.3s ease"
+  };
+
+  switch (buttonContent.style) {
+    case 'outline':
+      return {
+        ...base,
+        color: buttonStyle.textColor,
+        backgroundColor: "transparent",
+        border: `1px solid ${buttonStyle.textColor || buttonStyle.backgroundColor || '#000'}`
+      };
+    case 'ghost':
+      return {
+        ...base,
+        color: buttonStyle.textColor,
+        backgroundColor: "transparent"
+      };
+    case 'luxury':
+      return {
+        ...base,
+        color: buttonStyle.textColor,
+        backgroundColor: "transparent",
+        borderBottom: `1px solid ${buttonStyle.textColor || '#000'}`,
+        paddingBottom: "2px",
+        borderRadius: "0px"
+      };
+    case 'filled':
+    default:
+      return {
+        ...base,
+        color: buttonStyle.textColor,
+        backgroundColor: buttonStyle.backgroundColor || '#000'
+      };
+  }
+}

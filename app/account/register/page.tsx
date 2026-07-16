@@ -25,9 +25,18 @@ export default function RegisterPage() {
     }
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const fullName = `${firstName} ${lastName}`;
       await updateProfile(userCredential.user, {
-        displayName: `${firstName} ${lastName}`
+        displayName: fullName
       });
+      
+      // Trigger Welcome Email
+      fetch("/api/auth/welcome", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: userCredential.user.email, name: fullName })
+      }).catch(console.error);
+
       router.push("/account/orders");
     } catch (error) {
       console.error(error);

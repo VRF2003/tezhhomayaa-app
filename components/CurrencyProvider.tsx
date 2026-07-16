@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { CurrencyCode, COUNTRY_TO_CURRENCY, parsePrice, formatPriceForCurrency, SUPPORTED_CURRENCIES } from "@/lib/currency";
+import { useMarket } from "@/lib/market/MarketContext";
 
 interface CurrencyContextType {
   currency: CurrencyCode;
@@ -17,6 +18,14 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const [currency, setCurrencyState] = useState<CurrencyCode>("INR");
   const [rates, setRates] = useState<Record<string, number>>({});
   const [isReady, setIsReady] = useState(false);
+  const { market } = useMarket();
+
+  // Sync with Global Market Engine
+  useEffect(() => {
+    if (market && market.currencyCode) {
+      setCurrencyState(market.currencyCode as CurrencyCode);
+    }
+  }, [market]);
 
   // Initialize currency and rates
   useEffect(() => {

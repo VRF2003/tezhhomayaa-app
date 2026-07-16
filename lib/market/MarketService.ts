@@ -1,0 +1,431 @@
+import { Market } from "./types";
+
+export const MARKETS: Market[] = [
+  // --- ASIA PACIFIC ---
+  {
+    id: "mkt_in",
+    marketCode: "IN",
+    marketName: "India",
+    country: "India",
+    countryCode: "IN",
+    region: "Asia Pacific",
+    currencyCode: "INR",
+    currencySymbol: "₹",
+    language: "English",
+    locale: "en-IN",
+    timezone: "Asia/Kolkata",
+    taxProfileId: "tax_in_gst",
+    taxProfile: "India GST",
+    shippingProfile: "Domestic India",
+    shippingZones: ["domestic"],
+    shippingOrigin: "Ships from India",
+    estimatedDelivery: "Estimated Delivery: 2–5 Business Days",
+    description: "For all deliveries within India.",
+    warehouseId: "wh_mumbai",
+    warehouse: "Mumbai Hub",
+    priceListId: "pl_inr_default",
+    paymentMethods: ["stripe", "razorpay", "cod"],
+    status: "active",
+    enabled: true,
+    defaultMarket: true,
+    displayOrder: 1,
+  },
+  {
+    id: "mkt_sg",
+    marketCode: "SG",
+    marketName: "Singapore",
+    country: "Singapore",
+    countryCode: "SG",
+    region: "Asia Pacific",
+    currencyCode: "SGD",
+    currencySymbol: "S$",
+    language: "English",
+    locale: "en-SG",
+    timezone: "Asia/Singapore",
+    taxProfileId: "tax_sg_gst",
+    taxProfile: "Singapore GST",
+    shippingProfile: "Southeast Asia Standard",
+    shippingZones: ["southeast_asia"],
+    shippingOrigin: "Ships from Singapore",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    description: "For deliveries across Southeast Asia.",
+    warehouseId: "wh_singapore",
+    warehouse: "Singapore Hub",
+    priceListId: "pl_sgd_default",
+    paymentMethods: ["stripe", "paypal"],
+    status: "active",
+    enabled: true,
+    defaultMarket: false,
+    displayOrder: 2,
+  },
+  {
+    id: "mkt_jp",
+    marketCode: "JP",
+    marketName: "Japan",
+    country: "Japan",
+    countryCode: "JP",
+    region: "Asia Pacific",
+    currencyCode: "JPY",
+    currencySymbol: "¥",
+    language: "Japanese",
+    locale: "ja-JP",
+    timezone: "Asia/Tokyo",
+    taxProfileId: "tax_jp_consumption",
+    taxProfile: "Japan Consumption Tax",
+    shippingProfile: "Asia Standard",
+    shippingZones: ["asia"],
+    shippingOrigin: "Ships from Tokyo",
+    estimatedDelivery: "Estimated Delivery: 2–3 Business Days",
+    warehouseId: "wh_tokyo",
+    warehouse: "Tokyo Hub",
+    priceListId: "pl_jpy_default",
+    paymentMethods: ["stripe"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 10,
+  },
+  {
+    id: "mkt_au",
+    marketCode: "AU",
+    marketName: "Australia",
+    country: "Australia",
+    countryCode: "AU",
+    region: "Asia Pacific",
+    currencyCode: "AUD",
+    currencySymbol: "A$",
+    language: "English",
+    locale: "en-AU",
+    timezone: "Australia/Sydney",
+    taxProfileId: "tax_au_gst",
+    taxProfile: "Australia GST",
+    shippingProfile: "Oceania Standard",
+    shippingZones: ["oceania"],
+    shippingOrigin: "Ships from Sydney",
+    estimatedDelivery: "Estimated Delivery: 3–6 Business Days",
+    warehouseId: "wh_sydney",
+    warehouse: "Sydney Hub",
+    priceListId: "pl_aud_default",
+    paymentMethods: ["stripe"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 11,
+  },
+
+  // --- MIDDLE EAST ---
+  {
+    id: "mkt_ae",
+    marketCode: "AE",
+    marketName: "United Arab Emirates",
+    country: "United Arab Emirates",
+    countryCode: "AE",
+    region: "Middle East",
+    currencyCode: "AED",
+    currencySymbol: "د.إ",
+    language: "English",
+    locale: "en-AE",
+    timezone: "Asia/Dubai",
+    taxProfileId: "tax_ae_vat",
+    taxProfile: "UAE VAT",
+    shippingProfile: "Middle East Standard",
+    shippingZones: ["middle_east"],
+    shippingOrigin: "Ships from Dubai",
+    estimatedDelivery: "Estimated Delivery: 1–3 Business Days",
+    description: "For all deliveries across the Middle East.",
+    warehouseId: "wh_dubai",
+    warehouse: "Dubai Hub",
+    priceListId: "pl_aed_default",
+    paymentMethods: ["stripe", "checkout", "cod"],
+    status: "active",
+    enabled: true,
+    defaultMarket: false,
+    displayOrder: 3,
+  },
+  {
+    id: "mkt_sa",
+    marketCode: "SA",
+    marketName: "Saudi Arabia",
+    country: "Saudi Arabia",
+    countryCode: "SA",
+    region: "Middle East",
+    currencyCode: "SAR",
+    currencySymbol: "ر.س",
+    language: "Arabic",
+    locale: "ar-SA",
+    timezone: "Asia/Riyadh",
+    taxProfileId: "tax_sa_vat",
+    taxProfile: "Saudi VAT",
+    shippingProfile: "Middle East Standard",
+    shippingZones: ["middle_east"],
+    shippingOrigin: "Ships from Riyadh",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    warehouseId: "wh_riyadh",
+    warehouse: "Riyadh Hub",
+    priceListId: "pl_sar_default",
+    paymentMethods: ["stripe", "checkout"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 12,
+  },
+  {
+    id: "mkt_qa",
+    marketCode: "QA",
+    marketName: "Qatar",
+    country: "Qatar",
+    countryCode: "QA",
+    region: "Middle East",
+    currencyCode: "QAR",
+    currencySymbol: "ر.ق",
+    language: "English",
+    locale: "en-QA",
+    timezone: "Asia/Qatar",
+    taxProfileId: "tax_qa_vat",
+    taxProfile: "Qatar VAT",
+    shippingProfile: "Middle East Standard",
+    shippingZones: ["middle_east"],
+    shippingOrigin: "Ships from Dubai",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    warehouseId: "wh_dubai",
+    warehouse: "Dubai Hub",
+    priceListId: "pl_qar_default",
+    paymentMethods: ["stripe", "checkout"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 13,
+  },
+
+  // --- NORTH AMERICA ---
+  {
+    id: "mkt_us",
+    marketCode: "US",
+    marketName: "United States",
+    country: "United States",
+    countryCode: "US",
+    region: "North America",
+    currencyCode: "USD",
+    currencySymbol: "$",
+    language: "English",
+    locale: "en-US",
+    timezone: "America/New_York",
+    taxProfileId: "tax_us_sales",
+    taxProfile: "US Sales Tax",
+    shippingProfile: "North America Standard",
+    shippingZones: ["north_america"],
+    shippingOrigin: "Ships from New York",
+    estimatedDelivery: "Estimated Delivery: 3–5 Business Days",
+    description: "For deliveries across North America.",
+    warehouseId: "wh_ny",
+    warehouse: "New York Hub",
+    priceListId: "pl_usd_default",
+    paymentMethods: ["stripe", "paypal", "klarna"],
+    status: "active",
+    enabled: true,
+    defaultMarket: false,
+    displayOrder: 4,
+  },
+  {
+    id: "mkt_ca",
+    marketCode: "CA",
+    marketName: "Canada",
+    country: "Canada",
+    countryCode: "CA",
+    region: "North America",
+    currencyCode: "CAD",
+    currencySymbol: "CA$",
+    language: "English",
+    locale: "en-CA",
+    timezone: "America/Toronto",
+    taxProfileId: "tax_ca_gst",
+    taxProfile: "Canada GST/HST",
+    shippingProfile: "North America Standard",
+    shippingZones: ["north_america"],
+    shippingOrigin: "Ships from Toronto",
+    estimatedDelivery: "Estimated Delivery: 3–6 Business Days",
+    warehouseId: "wh_toronto",
+    warehouse: "Toronto Hub",
+    priceListId: "pl_cad_default",
+    paymentMethods: ["stripe", "paypal"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 14,
+  },
+
+  // --- EUROPE ---
+  {
+    id: "mkt_uk",
+    marketCode: "GB",
+    marketName: "United Kingdom",
+    country: "United Kingdom",
+    countryCode: "GB",
+    region: "Europe",
+    currencyCode: "GBP",
+    currencySymbol: "£",
+    language: "English",
+    locale: "en-GB",
+    timezone: "Europe/London",
+    taxProfileId: "tax_uk_vat",
+    taxProfile: "UK VAT",
+    shippingProfile: "Europe Standard",
+    shippingZones: ["europe"],
+    shippingOrigin: "Ships from London",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    description: "For all deliveries within the UK.",
+    warehouseId: "wh_london",
+    warehouse: "London Hub",
+    priceListId: "pl_gbp_default",
+    paymentMethods: ["stripe", "paypal", "clearpay"],
+    status: "active",
+    enabled: true,
+    defaultMarket: false,
+    displayOrder: 5,
+  },
+  {
+    id: "mkt_fr",
+    marketCode: "FR",
+    marketName: "France",
+    country: "France",
+    countryCode: "FR",
+    region: "Europe",
+    currencyCode: "EUR",
+    currencySymbol: "€",
+    language: "French",
+    locale: "fr-FR",
+    timezone: "Europe/Paris",
+    taxProfileId: "tax_eu_vat",
+    taxProfile: "EU VAT",
+    shippingProfile: "Europe Standard",
+    shippingZones: ["europe"],
+    shippingOrigin: "Ships from Paris",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    warehouseId: "wh_paris",
+    warehouse: "Paris Hub",
+    priceListId: "pl_eur_default",
+    paymentMethods: ["stripe", "paypal"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 15,
+  },
+  {
+    id: "mkt_it",
+    marketCode: "IT",
+    marketName: "Italy",
+    country: "Italy",
+    countryCode: "IT",
+    region: "Europe",
+    currencyCode: "EUR",
+    currencySymbol: "€",
+    language: "Italian",
+    locale: "it-IT",
+    timezone: "Europe/Rome",
+    taxProfileId: "tax_eu_vat",
+    taxProfile: "EU VAT",
+    shippingProfile: "Europe Standard",
+    shippingZones: ["europe"],
+    shippingOrigin: "Ships from Milan",
+    estimatedDelivery: "Estimated Delivery: 1–3 Business Days",
+    warehouseId: "wh_milan",
+    warehouse: "Milan Hub",
+    priceListId: "pl_eur_default",
+    paymentMethods: ["stripe", "paypal"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 16,
+  },
+  {
+    id: "mkt_de",
+    marketCode: "DE",
+    marketName: "Germany",
+    country: "Germany",
+    countryCode: "DE",
+    region: "Europe",
+    currencyCode: "EUR",
+    currencySymbol: "€",
+    language: "German",
+    locale: "de-DE",
+    timezone: "Europe/Berlin",
+    taxProfileId: "tax_eu_vat",
+    taxProfile: "EU VAT",
+    shippingProfile: "Europe Standard",
+    shippingZones: ["europe"],
+    shippingOrigin: "Ships from Berlin",
+    estimatedDelivery: "Estimated Delivery: 2–4 Business Days",
+    warehouseId: "wh_berlin",
+    warehouse: "Berlin Hub",
+    priceListId: "pl_eur_default",
+    paymentMethods: ["stripe", "paypal"],
+    status: "coming_soon",
+    enabled: false,
+    defaultMarket: false,
+    displayOrder: 17,
+  }
+];
+
+export const MARKET_COOKIE_NAME = "tz_market_code";
+
+export class MarketService {
+  /**
+   * Retrieves ALL markets (both active and coming_soon) for the UI selector.
+   */
+  static getAllMarkets(): Market[] {
+    return MARKETS.sort((a, b) => a.displayOrder - b.displayOrder);
+  }
+
+  /**
+   * Retrieves all active/enabled markets.
+   */
+  static getActiveMarkets(): Market[] {
+    return MARKETS.filter((m) => m.enabled && m.status === "active").sort((a, b) => a.displayOrder - b.displayOrder);
+  }
+
+  /**
+   * Gets the default market defined in the seed data.
+   */
+  static getDefaultMarket(): Market {
+    return MARKETS.find((m) => m.defaultMarket) || MARKETS[0];
+  }
+
+  /**
+   * Resolves a market by its country code or market code.
+   */
+  static getMarketByCode(code: string | null | undefined): Market | null {
+    if (!code) return null;
+    const normalized = code.toUpperCase();
+    return MARKETS.find((m) => m.marketCode === normalized || m.countryCode === normalized) || null;
+  }
+
+  /**
+   * Resolves the current market based on priority:
+   * 1. User Profile (Passed explicitly if available)
+   * 2. Cookie (Saved user preference)
+   * 3. Geolocation (IP-based fallback via headers)
+   * 4. Default Market
+   */
+  static resolveMarket(
+    userMarketCode?: string | null,
+    cookieMarketCode?: string | null,
+    geoMarketCode?: string | null
+  ): Market {
+    if (userMarketCode) {
+      const m = this.getMarketByCode(userMarketCode);
+      if (m && m.enabled) return m;
+    }
+
+    if (cookieMarketCode) {
+      const m = this.getMarketByCode(cookieMarketCode);
+      if (m && m.enabled) return m;
+    }
+
+    if (geoMarketCode) {
+      const m = this.getMarketByCode(geoMarketCode);
+      if (m && m.enabled) return m;
+    }
+
+    return this.getDefaultMarket();
+  }
+}

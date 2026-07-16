@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useCart, useSearch, useWishlist, useAuth } from "@/lib/store";
 import AccountPanel from "@/components/layout/AccountPanel";
-import CurrencySelector from "@/components/layout/CurrencySelector";
+import { MarketHeader } from "@/components/market/MarketHeader";
 
 
 // ─── Icons ────────────────────────────────────────────────────
@@ -112,7 +112,6 @@ export default function Navbar() {
     transparentHeader: true
   });
   const [mainNav, setMainNav] = useState<MainNavEntry[]>([]);
-  const [secondaryNav, setSecondaryNav] = useState<{label: string, url: string}[]>([]);
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -137,22 +136,7 @@ export default function Navbar() {
       })
       .catch(console.error);
 
-    fetch("/api/footer")
-      .then(res => res.json())
-      .then(json => {
-        if (json.success && json.data?.settings?.bottomBarLinks) {
-          setSecondaryNav(json.data.settings.bottomBarLinks);
-        } else {
-          // Fallback if no footer data yet
-          setSecondaryNav([
-            { label: "Sign In", url: "#signin" },
-            { label: "My Orders", url: "#orders" },
-            { label: "Contact Us", url: "#contact" },
-            { label: "Privacy Policy", url: "/privacy-policy" },
-          ]);
-        }
-      })
-      .catch(console.error);
+
   }, []);
 
   // Ecommerce hooks
@@ -310,7 +294,7 @@ export default function Navbar() {
         <div className="flex items-center justify-end" style={{ zIndex: 10, gap: "clamp(1rem, 4vw, 1.8rem)" }}>
           {/* Currency */}
           <div className="hidden md:flex items-center">
-            <CurrencySelector />
+            <MarketHeader />
           </div>
 
           {/* Search */}
@@ -639,8 +623,15 @@ export default function Navbar() {
                     })}
                   </ul>
 
+                  {/* Catch hover events in the empty space below the menu items */}
+                  <div 
+                    style={{ flex: 1 }} 
+                    onMouseEnter={() => { if (!isMobile) handleMainNonExpandable(); }} 
+                  />
+
                   {/* Secondary Nav */}
                   <motion.div
+                    onMouseEnter={() => { if (!isMobile) handleMainNonExpandable(); }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.55, duration: 0.5 }}
@@ -653,52 +644,70 @@ export default function Navbar() {
                       borderTop: "1px solid var(--border-soft)",
                     }}
                   >
-                    {secondaryNav.map((item) => (
+                    {!isLoggedIn ? (
                       <LuxLink
-                        key={item.label}
-                        href={item.url}
+                        href="/account/login"
                         onClick={closePanel}
                         style={{
                           fontFamily: "var(--font-cormorant, serif)",
                           fontSize: "0.75rem",
                           fontWeight: 500,
                           letterSpacing: "0.12em",
-                          textTransform: "uppercase" as const,
+                          textTransform: "uppercase",
                           color: "var(--obsidian)",
                         }}
                       >
-                        {item.label}
+                        Sign In
                       </LuxLink>
-                    ))}
-
-                    {/* Mobile Only: My Account Dashboard Links */}
-                    <div className="md:hidden" style={{ paddingTop: "1.5rem", marginTop: "1rem", borderTop: "1px solid var(--border-soft)", display: "flex", flexDirection: "column", gap: "0.8rem" }}>
-                      <p style={{ fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", marginBottom: "0.2rem" }}>My Account</p>
-                      
-                      {!isLoggedIn ? (
-                        <>
-                          <LuxLink href="/account/login" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Sign In</LuxLink>
-                          <LuxLink href="/account/register" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Create Account</LuxLink>
-                          <LuxLink href="/account/orders" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Orders</LuxLink>
-                          <LuxLink href="/account/wishlist" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Wishlist</LuxLink>
-                          <LuxLink href="/account/addresses" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Addresses</LuxLink>
-                          <LuxLink href="/account/profile" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Profile</LuxLink>
-                        </>
-                      ) : (
-                        <>
-                          <LuxLink href="/account/orders" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Orders</LuxLink>
-                          <LuxLink href="/account/wishlist" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Wishlist</LuxLink>
-                          <LuxLink href="/account/addresses" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Addresses</LuxLink>
-                          <LuxLink href="/account/profile" onClick={closePanel} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)" }}>Profile</LuxLink>
-                          <LuxLink href="#" onClick={() => { logout(); closePanel(); }} style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.85rem", fontWeight: 500, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--obsidian)", opacity: 0.7 }}>Logout</LuxLink>
-                        </>
-                      )}
-                    </div>
+                    ) : (
+                      <div 
+                        onClick={(e) => { e.preventDefault(); logout(); closePanel(); }}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <span style={{
+                          fontFamily: "var(--font-cormorant, serif)",
+                          fontSize: "0.75rem",
+                          fontWeight: 500,
+                          letterSpacing: "0.12em",
+                          textTransform: "uppercase",
+                          color: "var(--obsidian)",
+                        }}>
+                          Logout
+                        </span>
+                      </div>
+                    )}
+                    <LuxLink
+                      href="/account/orders"
+                      onClick={closePanel}
+                      style={{
+                        fontFamily: "var(--font-cormorant, serif)",
+                        fontSize: "0.75rem",
+                        fontWeight: 500,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "var(--obsidian)",
+                      }}
+                    >
+                      My Order
+                    </LuxLink>
+                    <LuxLink
+                      href="/contact"
+                      onClick={closePanel}
+                      style={{
+                        fontFamily: "var(--font-cormorant, serif)",
+                        fontSize: "0.75rem",
+                        fontWeight: 500,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "var(--obsidian)",
+                      }}
+                    >
+                      Contact Us
+                    </LuxLink>
                     
-                    {/* Mobile Currency Selector inside the Menu Drawer */}
                     <div className="md:hidden" style={{ paddingTop: "1rem", marginTop: "0.5rem", borderTop: "1px solid var(--border-soft)" }}>
-                      <p style={{ fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", marginBottom: "0.5rem" }}>Display Currency</p>
-                      <CurrencySelector />
+                      <p style={{ fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", marginBottom: "0.5rem" }}>Market</p>
+                      <MarketHeader />
                     </div>
                   </motion.div>
                 </nav>

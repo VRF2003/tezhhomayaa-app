@@ -221,79 +221,16 @@
       }
     },
     {
-      "id": "sec_spacer_1",
-      "type": "spacer",
+      "id": "sec_1784189750167",
+      "type": "split-layout",
       "hidden": false,
       "data": {
-        "heightMobile": 128,
-        "heightDesktop": 128
-      }
-    },
-    {
-      "id": "sec_shop_banner",
-      "type": "image-section",
-      "hidden": false,
-      "data": {
-        "title": "Evening Collection",
-        "subtitle": "Discover the SS26 Evening Edit",
-        "image": "/uploads/1781167226335-hf_20260611_083158_7268033c-afc7-437d-abca-43383fa243b6.png",
-        "button": {
-          "enabled": true,
-          "label": "Shop Now",
-          "url": "/women/ready-to-wear/dresses-jumpsuits",
-          "style": "luxury"
-        },
-        "media": {
-          "type": "image",
-          "desktop": {
-            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782849469/tezhhomayaa_app/khpznmz6vcl8inszsszx.jpg",
-            "width": 6336,
-            "height": 2688
-          },
-          "mobile": {
-            "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783930517/tezhhomayaa_app/flxntziirutbl20p1svd.jpg",
-            "width": 1536,
-            "height": 2752
-          },
-          "videoSettings": {
-            "autoplay": true,
-            "loop": true,
-            "muted": true,
-            "controls": false,
-            "lazyLoad": true,
-            "playOnHover": false
-          }
-        },
-        "content": {
-          "heading": "",
-          "italicHeading": "",
-          "subheading": "",
-          "description": "",
-          "primaryButton": {
-            "enabled": true,
-            "label": "Shop Bag",
-            "url": "women/bags/tote-bags/cosmic-chaos-tote-bag-6ck0",
-            "style": "filled"
-          },
-          "secondaryButton": {
-            "enabled": true,
-            "label": "Shop Dress",
-            "url": "/women/ready-to-wear/dresses-jumpsuits/the-rough-notes-dress-with-elasticated-waistband-ed_3",
-            "style": "luxury"
-          },
-          "tertiaryButton": {
-            "enabled": false,
-            "label": "Contact Us",
-            "url": "#",
-            "style": "ghost"
-          }
-        },
         "layout": {
           "desktop": {
             "x": 50,
             "y": 50,
             "width": 100,
-            "height": 100,
+            "height": 80,
             "align": "center",
             "padding": "0",
             "margin": "0",
@@ -303,7 +240,7 @@
             "x": 50,
             "y": 50,
             "width": 100,
-            "height": 100,
+            "height": 80,
             "align": "center",
             "padding": "0",
             "margin": "0",
@@ -313,38 +250,73 @@
             "x": 50,
             "y": 50,
             "width": 100,
-            "height": 100,
+            "height": 80,
             "align": "center",
             "padding": "0",
             "margin": "0",
             "textWidth": 90
           }
         },
+        "ratio": "50-50",
+        "desktopImage": "",
+        "mobileImage": "",
+        "heading": "Split Content",
+        "description": "Text goes here...",
+        "button": {
+          "enabled": true,
+          "label": "Read More",
+          "url": "#",
+          "style": "luxury"
+        },
+        "content": {
+          "heading": "",
+          "italicHeading": "",
+          "subheading": "featured collections",
+          "description": "<p><br>Redefining the boundaries of the canvas. This is wearable architecture. <br><br><br><br><br><br><br></p>",
+          "primaryButton": {
+            "enabled": true,
+            "label": "explore collection",
+            "url": "/lookbook",
+            "style": "luxury"
+          },
+          "secondaryButton": {
+            "enabled": false,
+            "label": "Learn More",
+            "url": "#",
+            "style": "outline"
+          },
+          "tertiaryButton": {
+            "enabled": false,
+            "label": "Contact Us",
+            "url": "#",
+            "style": "ghost"
+          }
+        },
         "style": {
           "heading": {
-            "fontSize": 4,
+            "fontSize": 3,
             "fontWeight": 300,
             "letterSpacing": 0.05,
             "lineHeight": 1.1,
-            "textColor": "#ffffff",
+            "textColor": "#1a1a18",
             "textShadow": "none",
-            "align": "center"
+            "align": "right"
           },
           "subheading": {
-            "fontSize": 1,
-            "fontWeight": 400,
+            "fontSize": 1.3,
+            "fontWeight": 800,
             "letterSpacing": 0.2,
-            "lineHeight": 1.2,
-            "textColor": "#ffffff",
+            "lineHeight": 1.8,
+            "textColor": "#1a1a18",
             "textShadow": "none",
             "align": "center"
           },
           "description": {
-            "fontSize": 2,
-            "fontWeight": 300,
-            "letterSpacing": 0.02,
-            "lineHeight": 1.6,
-            "textColor": "#ffffff",
+            "fontSize": 1.8,
+            "fontWeight": 500,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#1a1a18",
             "textShadow": "none",
             "align": "center",
             "maxWidth": 800
@@ -354,11 +326,11 @@
             "fontWeight": 400,
             "padding": "0.6rem 1.4rem",
             "borderRadius": 0,
-            "textColor": "#49171b",
-            "backgroundColor": "#ffffff"
+            "textColor": "#ffffff",
+            "backgroundColor": "#1a1a18"
           },
           "fontFamily": "var(--font-cormorant, serif)",
-          "backgroundColor": "transparent",
+          "backgroundColor": "#eae9e6",
           "borderColor": "transparent",
           "borderWidth": 0,
           "borderRadius": 0,
@@ -371,15 +343,41 @@
           "fontWeight": 300,
           "letterSpacing": 0.05,
           "lineHeight": 1.1,
-          "textColor": "#ffffff",
+          "textColor": "#1a1a18",
           "textShadow": "none"
+        },
+        "media": {
+          "type": "image",
+          "desktop": {
+            "url": "/uploads/media-1784191753721-255966828.png",
+            "width": 2752,
+            "height": 1536
+          },
+          "mobile": {
+            "url": ""
+          },
+          "videoSettings": {
+            "autoplay": true,
+            "loop": true,
+            "muted": true,
+            "controls": false,
+            "lazyLoad": true,
+            "playOnHover": false
+          }
+        },
+        "animation": {
+          "type": "slide-up",
+          "duration": 1.2,
+          "delay": 0,
+          "easing": "ease",
+          "scrollTrigger": true
         },
         "advanced": {
           "anchorId": "",
           "customCssClass": ""
         },
         "collectionShowcase": {
-          "layoutType": "grid",
+          "layoutType": "image-left",
           "maxWidth": "boxed",
           "items": []
         },
@@ -391,7 +389,6 @@
           "fields": []
         },
         "contactForm": {
-          "enabled": true,
           "successMessage": "Thank you for your message. We will be in touch shortly.",
           "destinationEmail": "care@tezhhomayaa.com",
           "subjects": [
@@ -418,22 +415,18 @@
         "typographyOverrides": {
           "enabled": false
         },
-        "animation": {
-          "type": "slide-up",
-          "duration": 1.2,
-          "delay": 0,
-          "easing": "ease",
-          "scrollTrigger": true
-        }
+        "productSequence": [],
+        "includeProducts": [],
+        "excludeProducts": []
       }
     },
     {
-      "id": "sec_spacer_4",
+      "id": "sec_1784188589282",
       "type": "spacer",
       "hidden": false,
       "data": {
-        "heightMobile": 96,
-        "heightDesktop": 128
+        "heightMobile": 64,
+        "heightDesktop": 40
       }
     },
     {
@@ -442,14 +435,14 @@
       "hidden": false,
       "data": {
         "content": {
-          "heading": "Collection",
+          "heading": "Shop by category",
           "italicHeading": "",
-          "subheading": "",
-          "description": "",
+          "subheading": "Explore",
+          "description": "Discover our would of unbridal artistry",
           "primaryButton": {
-            "enabled": true,
+            "enabled": false,
             "label": "Discover the Collections",
-            "url": "/lookbook",
+            "url": "#",
             "style": "luxury"
           },
           "secondaryButton": {
@@ -499,11 +492,11 @@
         },
         "style": {
           "heading": {
-            "fontSize": 4,
+            "fontSize": 3,
             "fontWeight": 100,
             "letterSpacing": 0.05,
             "lineHeight": 1.7,
-            "textColor": "#791e2f",
+            "textColor": "#000000",
             "textShadow": "none",
             "align": "center"
           },
@@ -512,7 +505,7 @@
             "fontWeight": 400,
             "letterSpacing": 0.2,
             "lineHeight": 1.2,
-            "textColor": "#1a1a18",
+            "textColor": "#7a272e",
             "textShadow": "none",
             "align": "center"
           },
@@ -531,7 +524,7 @@
             "fontWeight": 400,
             "padding": "0.6rem 1.4rem",
             "borderRadius": 0,
-            "textColor": "#ffffff",
+            "textColor": "#000000",
             "backgroundColor": "#1a1a18"
           },
           "fontFamily": "var(--font-cormorant, serif)",
@@ -629,7 +622,10 @@
           "delay": 0,
           "easing": "ease",
           "scrollTrigger": true
-        }
+        },
+        "productSequence": [],
+        "includeProducts": [],
+        "excludeProducts": []
       }
     },
     {
@@ -638,7 +634,7 @@
       "hidden": false,
       "data": {
         "heightMobile": 64,
-        "heightDesktop": 120
+        "heightDesktop": 40
       }
     },
     {
@@ -757,7 +753,7 @@
             "enabled": true,
             "label": "Explore",
             "url": "#",
-            "style": "luxury"
+            "style": "outline"
           },
           "secondaryButton": {
             "enabled": false,
@@ -1524,7 +1520,10 @@
         },
         "typographyOverrides": {
           "enabled": false
-        }
+        },
+        "productSequence": [],
+        "includeProducts": [],
+        "excludeProducts": []
       }
     },
     {
