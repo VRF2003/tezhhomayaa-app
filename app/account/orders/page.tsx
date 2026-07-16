@@ -64,7 +64,7 @@ export default function OrdersPage() {
 
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "2rem" }}>
                 <div style={{ display: "flex", gap: "1.5rem" }}>
-                  {order.items.map((item, idx) => (
+                  {order.items.map((item: any, idx: number) => (
                     <div key={idx} style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
                       <div style={{ width: "60px", height: "80px", position: "relative", background: "#edeae5" }}>
                         <Image src={item.image} alt={item.name} fill sizes="60px" style={{ objectFit: "cover" }} />
