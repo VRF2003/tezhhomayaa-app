@@ -71,14 +71,14 @@ export function MarketDialog() {
   // Animation variants
   const overlayVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, transition: { duration: 0.6 } },
     exit: { opacity: 0, transition: { duration: 0.4, delay: 0.1 } }
   };
 
   const modalVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.7, ease: "easeOut", delay: 0.1 } },
-    exit: { y: 10, opacity: 0, transition: { duration: 0.3, ease: "easeOut" } }
+    visible: { y: 0, opacity: 1, transition: { duration: 0.7, delay: 0.1 } },
+    exit: { y: 10, opacity: 0, transition: { duration: 0.3 } }
   };
 
   return (
