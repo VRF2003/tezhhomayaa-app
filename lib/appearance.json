@@ -4,7 +4,7 @@
     "logoSize": 1.1,
     "iconSize": 21,
     "sectionSpacing": 3,
-    "productGap": 1.3,
+    "productGap": 0.5,
     "headingScale": 50,
     "buttonHeight": 46,
     "collectionGap": 1.4

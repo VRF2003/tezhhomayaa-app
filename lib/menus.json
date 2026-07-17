@@ -1,7 +1,15 @@
 [
   {
-    "label": "New In",
-    "href": "/new-in"
+    "label": "Bags",
+    "href": "",
+    "expandable": true,
+    "categories": [
+      {
+        "label": "Tote Bags",
+        "href": "/women/bags/tote-bags",
+        "items": []
+      }
+    ]
   },
   {
     "label": "Women",
