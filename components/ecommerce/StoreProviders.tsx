@@ -8,29 +8,35 @@ import { CurrencyProvider } from "@/components/CurrencyProvider";
 import { CommerceProvider } from "@/lib/commerce-context";
 import { MarketProvider } from "@/lib/market/MarketContext";
 import { MarketUIProvider } from "@/components/market/MarketUIProvider";
-import { MarketDialog } from "@/components/market/MarketDialog";
+import { MaisonArrival } from "@/components/arrival/MaisonArrival";
+import { GlobalExperienceProvider } from "@/lib/global-experience/context/GlobalExperienceContext";
 
 export default function StoreProviders({ children, allProducts }: { children: React.ReactNode, allProducts: Product[] }) {
   return (
-    <CommerceProvider>
-      <MarketProvider>
-        <MarketUIProvider>
-          <CurrencyProvider>
-            <AuthProvider>
-              <CartProvider>
-                <WishlistProvider allProducts={allProducts}>
-                  <SearchProvider allProducts={allProducts}>
-                    {children}
-                    <MiniCart />
-                    <SearchOverlay />
-                    <MarketDialog />
-                  </SearchProvider>
-                </WishlistProvider>
-              </CartProvider>
-            </AuthProvider>
-          </CurrencyProvider>
-        </MarketUIProvider>
-      </MarketProvider>
-    </CommerceProvider>
+    // GlobalExperienceProvider is the outermost wrapper.
+    // This ensures the GEE context is initialized before any other system,
+    // and is available to both the Maison Arrival Platform and the Homepage.
+    <GlobalExperienceProvider>
+      <CommerceProvider>
+        <MarketProvider>
+          <MarketUIProvider>
+            <CurrencyProvider>
+              <AuthProvider>
+                <CartProvider>
+                  <WishlistProvider allProducts={allProducts}>
+                    <SearchProvider allProducts={allProducts}>
+                      {children}
+                      <MiniCart />
+                      <SearchOverlay />
+                      <MaisonArrival />
+                    </SearchProvider>
+                  </WishlistProvider>
+                </CartProvider>
+              </AuthProvider>
+            </CurrencyProvider>
+          </MarketUIProvider>
+        </MarketProvider>
+      </CommerceProvider>
+    </GlobalExperienceProvider>
   );
 }
