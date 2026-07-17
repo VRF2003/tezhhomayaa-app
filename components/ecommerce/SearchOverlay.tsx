@@ -74,6 +74,7 @@ export default function SearchOverlay() {
               <Image
                 src="/branding/tezhhomayaa-logo-v3.png" alt="Tezhhomayaa"
                 width={240} height={89}
+                unoptimized
                 style={{ width: "auto", height: "clamp(28px, 3.5vw, 38px)", objectFit: "contain" }}
               />
             </Link>

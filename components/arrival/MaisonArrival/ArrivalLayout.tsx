@@ -54,6 +54,7 @@ export function ArrivalLayout({ children }: { children: ReactNode }) {
                   fill
                   className="object-contain"
                   priority
+                  unoptimized
                 />
               </div>
             </div>

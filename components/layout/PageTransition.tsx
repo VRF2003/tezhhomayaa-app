@@ -55,6 +55,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
                 width={320}
                 height={119}
                 priority
+                unoptimized
                 style={{
                   width: "clamp(160px, 22vw, 260px)",
                   height: "auto",

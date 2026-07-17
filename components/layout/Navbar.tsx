@@ -285,6 +285,7 @@ export default function Navbar() {
               src={headerSettings.logoImage || "/branding/tezhhomayaa-logo-v3.png"}
               alt="Tezhhomayaa"
               width={headerSettings.desktopLogoWidth || 420} height={156} priority
+              unoptimized
               className="navbar-logo-img"
               style={{ width: "auto", objectFit: "contain" }}
             />
@@ -426,6 +427,7 @@ export default function Navbar() {
                   <Image
                     src="/branding/tezhhomayaa-logo-v3.png" alt="Tezhhomayaa"
                     width={240} height={89}
+                    unoptimized
                     style={{ width: "auto", height: "26px", objectFit: "contain" }}
                   />
                   <button className="icon-btn" onClick={closePanel} aria-label="Close navigation menu" id="nav-panel-close">
