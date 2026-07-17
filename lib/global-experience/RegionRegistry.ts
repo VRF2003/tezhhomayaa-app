@@ -9,6 +9,8 @@ export const REGIONS: Region[] = [
       { id: "sg", code: "SG", label: "Singapore" },
       { id: "jp", code: "JP", label: "Japan" },
       { id: "cn", code: "CN", label: "China" },
+      { id: "kr", code: "KR", label: "South Korea" },
+      { id: "au", code: "AU", label: "Australia" },
     ],
   },
   {
@@ -32,6 +34,7 @@ export const REGIONS: Region[] = [
       { id: "de", code: "DE", label: "Germany" },
       { id: "es", code: "ES", label: "Spain" },
       { id: "it", code: "IT", label: "Italy" },
+      { id: "ch", code: "CH", label: "Switzerland" },
     ],
   },
   {
@@ -40,6 +43,20 @@ export const REGIONS: Region[] = [
     countries: [
       { id: "us", code: "US", label: "United States" },
       { id: "ca", code: "CA", label: "Canada" },
+    ],
+  },
+  {
+    id: "south-america",
+    label: "South America",
+    countries: [
+      { id: "br", code: "BR", label: "Brazil" },
+    ],
+  },
+  {
+    id: "africa",
+    label: "Africa",
+    countries: [
+      { id: "za", code: "ZA", label: "South Africa" },
     ],
   },
 ];

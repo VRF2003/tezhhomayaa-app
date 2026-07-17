@@ -126,6 +126,53 @@ export const MARKETS: Market[] = [
     defaultLanguage: false,
     isDefault: false,
   },
+  // South Korea
+  {
+    id: "kr-ko",
+    region: "asia-pacific",
+    country: "South Korea",
+    countryCode: "KR",
+    language: "Korean",
+    locale: "ko-KR",
+    currency: "KRW",
+    currencySymbol: "₩",
+    timezone: "Asia/Seoul",
+    numberFormat: "ko-KR",
+    dateFormat: "ko-KR",
+    defaultLanguage: true,
+    isDefault: false,
+  },
+  {
+    id: "kr-en",
+    region: "asia-pacific",
+    country: "South Korea",
+    countryCode: "KR",
+    language: "English",
+    locale: "en-KR",
+    currency: "KRW",
+    currencySymbol: "₩",
+    timezone: "Asia/Seoul",
+    numberFormat: "en-KR",
+    dateFormat: "en-KR",
+    defaultLanguage: false,
+    isDefault: false,
+  },
+  // Australia
+  {
+    id: "au-en",
+    region: "asia-pacific",
+    country: "Australia",
+    countryCode: "AU",
+    language: "English",
+    locale: "en-AU",
+    currency: "AUD",
+    currencySymbol: "A$",
+    timezone: "Australia/Sydney",
+    numberFormat: "en-AU",
+    dateFormat: "en-AU",
+    defaultLanguage: true,
+    isDefault: false,
+  },
   // MIDDLE EAST
   // United Arab Emirates
   {
@@ -454,6 +501,22 @@ export const MARKETS: Market[] = [
     defaultLanguage: true,
     isDefault: false,
   },
+  // Switzerland
+  {
+    id: "ch-en",
+    region: "europe",
+    country: "Switzerland",
+    countryCode: "CH",
+    language: "English",
+    locale: "en-CH",
+    currency: "CHF",
+    currencySymbol: "CHF",
+    timezone: "Europe/Zurich",
+    numberFormat: "en-CH",
+    dateFormat: "en-CH",
+    defaultLanguage: true,
+    isDefault: false,
+  },
   // NORTH AMERICA
   // United States
   {
@@ -500,6 +563,40 @@ export const MARKETS: Market[] = [
     numberFormat: "fr-CA",
     dateFormat: "fr-CA",
     defaultLanguage: false,
+    isDefault: false,
+  },
+  // SOUTH AMERICA
+  // Brazil
+  {
+    id: "br-en",
+    region: "south-america",
+    country: "Brazil",
+    countryCode: "BR",
+    language: "English",
+    locale: "en-BR",
+    currency: "BRL",
+    currencySymbol: "R$",
+    timezone: "America/Sao_Paulo",
+    numberFormat: "en-BR",
+    dateFormat: "en-BR",
+    defaultLanguage: true,
+    isDefault: false,
+  },
+  // AFRICA
+  // South Africa
+  {
+    id: "za-en",
+    region: "africa",
+    country: "South Africa",
+    countryCode: "ZA",
+    language: "English",
+    locale: "en-ZA",
+    currency: "ZAR",
+    currencySymbol: "R",
+    timezone: "Africa/Johannesburg",
+    numberFormat: "en-ZA",
+    dateFormat: "en-ZA",
+    defaultLanguage: true,
     isDefault: false,
   },
 ];

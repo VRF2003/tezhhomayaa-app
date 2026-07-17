@@ -2,7 +2,9 @@ export type RegionId =
   | "asia-pacific" 
   | "middle-east" 
   | "europe" 
-  | "north-america";
+  | "north-america"
+  | "south-america"
+  | "africa";
 
 export interface Country {
   id: string; // e.g., "in", "us", "ae"
