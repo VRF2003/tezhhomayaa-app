@@ -65,6 +65,11 @@ export function useArrivalOrchestrator() {
 
       // ── STEP 4: Close the MarketUI Selector ────────────────────────────────
       closeSelector();
+
+      // Scroll to top after changing market
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   };
 

@@ -110,7 +110,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
 
   const slide = displaySlides.length > 0 ? (displaySlides[current] || displaySlides[0]) : null;
 
-  if (!slide) return null;
+  if (!slide) { console.log("HEROFILM SLIDE IS NULL. cmsData:", cmsData); return null; }
 
   const variants = {
     enter: { opacity: 0 },

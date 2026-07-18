@@ -20,13 +20,19 @@ interface LocalizedSectionProps {
  */
 export default async function LocalizedSection({ slug, market, type, fallbackData }: LocalizedSectionProps) {
   const Component = SectionRegistry[type];
+  
+  // Read the GEE market ID from the cookie to enable language-aware content targeting
+  const { cookies } = await import("next/headers");
+  const cookieStore = await cookies();
+  const geeMarketId = cookieStore.get("tz_gee_market_id")?.value;
 
   try {
     const runtime = await RuntimeContextBuilder.build();
-    const variant = await ContentService.resolveContent(slug, market, runtime);
+    const variant = await ContentService.resolveContent(slug, market, runtime, geeMarketId);
     
     if (!variant) {
-       if (fallbackData && Component) {
+       if (fallbackData && Component) { 
+         console.log("LocalizedSection fallbackData:", fallbackData);
          return <Component cmsData={fallbackData} sectionId={slug} />;
        }
        return <SectionEmptyState slug={slug} type={type} />;
@@ -53,6 +59,7 @@ export default async function LocalizedSection({ slug, market, type, fallbackDat
   } catch (error) {
     console.error(`LEP Resolution Error for ${slug}:`, error);
     if (fallbackData && Component) {
+      console.log("LocalizedSection fallbackData:", fallbackData);
       return <Component cmsData={fallbackData} sectionId={slug} />;
     }
     return <SectionErrorState slug={slug} error={error as Error} />;

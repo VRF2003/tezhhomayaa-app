@@ -11,12 +11,12 @@ import { MarketUIProvider } from "@/components/market/MarketUIProvider";
 import { MaisonArrival } from "@/components/arrival/MaisonArrival";
 import { GlobalExperienceProvider } from "@/lib/global-experience/context/GlobalExperienceContext";
 
-export default function StoreProviders({ children, allProducts }: { children: React.ReactNode, allProducts: Product[] }) {
+export default function StoreProviders({ children, allProducts, initialGeeMarketId }: { children: React.ReactNode, allProducts: Product[], initialGeeMarketId?: string }) {
   return (
     // GlobalExperienceProvider is the outermost wrapper.
     // This ensures the GEE context is initialized before any other system,
     // and is available to both the Maison Arrival Platform and the Homepage.
-    <GlobalExperienceProvider>
+    <GlobalExperienceProvider initialMarketId={initialGeeMarketId}>
       <CommerceProvider>
         <MarketProvider>
           <MarketUIProvider>

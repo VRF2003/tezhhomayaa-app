@@ -12,7 +12,7 @@ export class ContentService {
    * Orchestrates the resolution of content for a specific market.
    * Handles future caching and data fetching via the Repository.
    */
-  static async resolveContent(slug: string, market: Market, runtime: RuntimeContext = new ProductionRuntimeContext()): Promise<ContentVariant | null> {
+  static async resolveContent(slug: string, market: Market, runtime: RuntimeContext = new ProductionRuntimeContext(), geeMarketId?: string): Promise<ContentVariant | null> {
     // 1. Fetch all mapped variants for the slug via Campaign Engine
     const campaignService = new CampaignService(
       new FirestoreCampaignRepository(),
@@ -25,7 +25,7 @@ export class ContentService {
     }
 
     // 2. Resolve best variant for the active market
-    const resolvedVariant = ContentResolver.resolve(market, variants, runtime);
+    const resolvedVariant = ContentResolver.resolve(market, variants, runtime, geeMarketId);
 
     if (!resolvedVariant) {
       return null;

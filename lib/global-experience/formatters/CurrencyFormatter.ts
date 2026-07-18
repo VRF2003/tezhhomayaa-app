@@ -6,8 +6,18 @@ export class CurrencyFormatter {
   constructor(private readonly utilities: ExperienceUtilities) {}
 
   private getFormatter(currencyCode: string, compact: boolean): Intl.NumberFormat {
-    const locale = this.utilities.locale.getLocale();
-    const cacheKey = `${locale}-${currencyCode}-${compact}`;
+    let locale = this.utilities.locale.getLocale();
+    
+    // Force Indian numbering system for INR
+    if (currencyCode === "INR") {
+      locale = "en-IN";
+    }
+
+    // Determine the correct number of decimal places based on currency
+    const zeroDecimalCurrencies = ["VND", "INR", "JPY", "KRW"];
+    const fractionDigits = zeroDecimalCurrencies.includes(currencyCode) ? 0 : 2;
+
+    const cacheKey = `${locale}-${currencyCode}-${compact}-${fractionDigits}`;
 
     if (!this.formatters.has(cacheKey)) {
       this.formatters.set(
@@ -16,6 +26,9 @@ export class CurrencyFormatter {
           style: "currency",
           currency: currencyCode,
           notation: compact ? "compact" : "standard",
+          numberingSystem: "latn",
+          minimumFractionDigits: fractionDigits,
+          maximumFractionDigits: fractionDigits,
         })
       );
     }

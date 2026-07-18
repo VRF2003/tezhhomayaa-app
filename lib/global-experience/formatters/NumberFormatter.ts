@@ -10,7 +10,10 @@ export class NumberFormatter {
     const cacheKey = `${locale}-${optionsKey}`;
 
     if (!this.formatters.has(cacheKey)) {
-      this.formatters.set(cacheKey, new Intl.NumberFormat(locale, options));
+      this.formatters.set(cacheKey, new Intl.NumberFormat(locale, {
+        ...options,
+        numberingSystem: "latn",
+      }));
     }
     return this.formatters.get(cacheKey)!;
   }

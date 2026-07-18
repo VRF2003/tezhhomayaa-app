@@ -83,7 +83,7 @@ export default async function HomePage() {
 
   // We map LEP generic sections. For Phase 2.8.2, we target the Hero component explicitly.
   // IMPORTANT: The slug 'home-hero-banner' must match the slot name used in Campaign sections.
-  const defaultHeroSection = sections.find((s: any) => s.type === "hero-slider");
+  console.log("APP PAGE SECTIONS LENGTH:", sections.length); const defaultHeroSection = sections.find((s: any) => s.type === "hero-slider");
   
   const lepSlots = {
     "hero-slider": (

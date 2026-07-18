@@ -20,21 +20,30 @@ interface GlobalExperienceContextType {
 
 const GlobalExperienceContext = createContext<GlobalExperienceContextType | undefined>(undefined);
 
-export function GlobalExperienceProvider({ children }: { children: React.ReactNode }) {
-  // Initialize with the global default market — no persistence, memory only.
+export function GlobalExperienceProvider({ children, initialMarketId }: { children: React.ReactNode, initialMarketId?: string }) {
+  // Initialize with the global default market, overridden by initialMarketId if provided by server
   const [activeMarket, setActiveMarket] = useState<Market>(
-    () => GlobalExperienceRegistry.getGlobalDefaultMarket()
+    () => {
+      if (initialMarketId) {
+        const m = GlobalExperienceRegistry.getMarketById(initialMarketId);
+        if (m) return m;
+      }
+      return GlobalExperienceRegistry.getGlobalDefaultMarket();
+    }
   );
 
   /**
    * setMarket — stable function reference via useCallback.
    * Validates the Market ID against the registry before committing state.
-   * Silently warns and ignores invalid IDs rather than crashing.
    */
   const setMarket = useCallback((marketId: string) => {
     const market = GlobalExperienceRegistry.getMarketById(marketId);
     if (market) {
       setActiveMarket(market);
+      // Persist the GEE market ID in a cookie so the server knows about the language selection
+      if (typeof document !== "undefined") {
+        document.cookie = `tz_gee_market_id=${marketId}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+      }
     } else {
       console.warn(
         `[GlobalExperienceProvider] Ignored invalid market ID: "${marketId}". ` +

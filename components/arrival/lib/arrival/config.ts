@@ -37,6 +37,7 @@ export const ARRIVAL_CONFIG: ArrivalConfig = {
       { id: "CH", label: "Switzerland", currency: "CHF" },
     ],
     asia_pacific: [
+      { id: "IN", label: "India", currency: "INR" },
       { id: "JP", label: "Japan", currency: "JPY" },
       { id: "KR", label: "South Korea", currency: "KRW" },
       { id: "CN", label: "China", currency: "CNY" },
@@ -58,6 +59,26 @@ export const ARRIVAL_CONFIG: ArrivalConfig = {
       { id: "en", label: "English", localLabel: "English" },
       { id: "ar", label: "العربية", localLabel: "العربية" },
     ],
+    SA: [
+      { id: "en", label: "English", localLabel: "English" },
+      { id: "ar", label: "العربية", localLabel: "العربية" },
+    ],
+    QA: [
+      { id: "en", label: "English", localLabel: "English" },
+      { id: "ar", label: "العربية", localLabel: "العربية" },
+    ],
+    BH: [
+      { id: "en", label: "English", localLabel: "English" },
+      { id: "ar", label: "العربية", localLabel: "العربية" },
+    ],
+    KW: [
+      { id: "en", label: "English", localLabel: "English" },
+      { id: "ar", label: "العربية", localLabel: "العربية" },
+    ],
+    OM: [
+      { id: "en", label: "English", localLabel: "English" },
+      { id: "ar", label: "العربية", localLabel: "العربية" },
+    ],
     SG: [
       { id: "en", label: "English", localLabel: "English" },
       { id: "zh", label: "Chinese", localLabel: "中文" },
@@ -66,7 +87,6 @@ export const ARRIVAL_CONFIG: ArrivalConfig = {
     ],
     IN: [
       { id: "en", label: "English", localLabel: "English" },
-      { id: "hi", label: "Hindi", localLabel: "हिन्दी" },
     ],
     FR: [
       { id: "fr", label: "French", localLabel: "Français" },

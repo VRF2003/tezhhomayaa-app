@@ -42,7 +42,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+import { cookies } from "next/headers";
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const allProducts = getAllProducts();
   let appearanceConfig = null;
   try {
@@ -51,6 +53,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       appearanceConfig = JSON.parse(readFileSync(p, "utf-8"));
     }
   } catch(e) {}
+
+  const cookieStore = await cookies();
+  const geeMarketId = cookieStore.get("tz_gee_market_id")?.value;
 
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${jost.variable}`}>
@@ -63,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />
         <AppearanceProvider initialConfig={appearanceConfig}>
-          <StoreProviders allProducts={allProducts}>
+          <StoreProviders allProducts={allProducts} initialGeeMarketId={geeMarketId}>
             {children}
             <PreviewBanner />
           </StoreProviders>

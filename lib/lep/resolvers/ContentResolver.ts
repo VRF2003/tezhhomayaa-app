@@ -16,7 +16,8 @@ export class ContentResolver {
   static resolve(
     currentMarket: Market,
     variants: ContentVariant[],
-    runtime: RuntimeContext
+    runtime: RuntimeContext,
+    geeMarketId?: string
   ): ContentVariant | null {
     const now = runtime.currentDate.toISOString();
 
@@ -32,13 +33,17 @@ export class ContentResolver {
     if (validVariants.length === 0) return null;
 
     // Step 2: Bucket by scope — a variant belongs to exactly ONE bucket
+    const geeMatches: ContentVariant[] = [];
     const countryMatches: ContentVariant[] = [];
     const regionMatches: ContentVariant[] = [];
     const globalMatches: ContentVariant[] = [];
 
     validVariants.forEach(v => {
-      if (v.marketId === currentMarket.id) {
-        // COUNTRY: exact match — bound to this country only
+      if (geeMarketId && v.marketId === geeMarketId) {
+        // GEE: Exact match for the specific language/locale (e.g., "ae-ar")
+        geeMatches.push(v);
+      } else if (v.marketId === currentMarket.id) {
+        // COUNTRY: exact match (legacy commerce market, e.g., "mkt_ae")
         countryMatches.push(v);
       } else if (
         v.marketId === "REGION" &&
@@ -62,7 +67,13 @@ export class ContentResolver {
     };
 
     // Step 3: Return in strict hierarchy order
-    // Country-specific banner ALWAYS wins — even if a regional or global banner exists
+    
+    // GEE match ALWAYS wins (this represents the specific language selection)
+    if (geeMatches.length > 0) {
+      return geeMatches.sort(newestFirst)[0];
+    }
+
+    // Country-specific banner (legacy commerce market) wins next
     if (countryMatches.length > 0) {
       return countryMatches.sort(newestFirst)[0];
     }
