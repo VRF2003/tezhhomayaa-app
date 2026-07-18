@@ -15,7 +15,6 @@ export async function GET(request: Request) {
       marketId: "REGION",
       regionId: "Middle East",
       status: "PUBLISHED",
-      priority: 50,
       publishedAt: "2026-07-02T00:00:00Z",
       validFrom: null,
       validUntil: null,

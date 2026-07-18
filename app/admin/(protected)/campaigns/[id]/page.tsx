@@ -1,7 +1,6 @@
 import React from "react";
 import { CampaignService } from "@/lib/lep/services/CampaignService";
-import { InMemoryCampaignRepository } from "@/lib/lep/repositories/InMemoryCampaignRepository";
-import { InMemoryContentItemRepository } from "@/lib/lep/repositories/InMemoryContentItemRepository";
+import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCampaignRepository";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Campaign } from "@/lib/lep/campaigns/types";
@@ -14,7 +13,7 @@ export const dynamic = "force-dynamic";
 export default async function CampaignEditPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   
-  const repo = new InMemoryCampaignRepository();
+  const repo = new FirestoreCampaignRepository();
   const campaign = await repo.findById(id);
 
   if (!campaign) {

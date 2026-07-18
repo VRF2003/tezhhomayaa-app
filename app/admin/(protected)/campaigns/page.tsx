@@ -1,7 +1,7 @@
 import React from "react";
 import { CampaignService } from "@/lib/lep/services/CampaignService";
-import { InMemoryCampaignRepository } from "@/lib/lep/repositories/InMemoryCampaignRepository";
-import { InMemoryContentItemRepository } from "@/lib/lep/repositories/InMemoryContentItemRepository";
+import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCampaignRepository";
+import { FirestoreContentItemRepository } from "@/lib/lep/repositories/FirestoreContentItemRepository";
 import { MARKETS } from "@/lib/market/MarketService";
 import Link from "next/link";
 import { createCampaignAction } from "./actions";
@@ -10,13 +10,13 @@ export const dynamic = "force-dynamic";
 
 export default async function CampaignListAdminPage() {
   const campaignService = new CampaignService(
-    new InMemoryCampaignRepository(),
-    new InMemoryContentItemRepository()
+    new FirestoreCampaignRepository(),
+    new FirestoreContentItemRepository()
   );
 
   // In a real app we would use campaignService.getAll() which we should add, 
   // but for now let's just fetch them via repo for the admin dashboard listing
-  const repo = new InMemoryCampaignRepository();
+  const repo = new FirestoreCampaignRepository();
   const rawCampaigns = await repo.findAll();
 
   // Evaluate health for all to display badges

@@ -1,8 +1,8 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { InMemoryCampaignRepository } from "@/lib/lep/repositories/InMemoryCampaignRepository";
-import { InMemoryContentItemRepository } from "@/lib/lep/repositories/InMemoryContentItemRepository";
+import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCampaignRepository";
+import { FirestoreContentItemRepository } from "@/lib/lep/repositories/FirestoreContentItemRepository";
 import { ContentItem } from "@/lib/lep/core/types";
 
 export async function saveCampaignAction(formData: FormData) {
@@ -19,7 +19,7 @@ export async function saveCampaignAction(formData: FormData) {
   const validUntil = validUntilStr ? new Date(validUntilStr).toISOString() : null;
   
   
-  const repo = new InMemoryCampaignRepository();
+  const repo = new FirestoreCampaignRepository();
   const campaign = await repo.findById(id);
   
   if (campaign) {
@@ -34,7 +34,7 @@ export async function saveCampaignAction(formData: FormData) {
     // Parse dynamic sections array
     const newSections = [];
     let i = 0;
-    const contentRepo = new InMemoryContentItemRepository();
+    const contentRepo = new FirestoreContentItemRepository();
     
     while (formData.has(`sections[${i}].id`)) {
       const secId = formData.get(`sections[${i}].id`) as string;
@@ -106,7 +106,7 @@ export async function saveCampaignAction(formData: FormData) {
 
 export async function deleteCampaignAction(formData: FormData) {
   const id = formData.get("id") as string;
-  const repo = new InMemoryCampaignRepository();
+  const repo = new FirestoreCampaignRepository();
   
   // Soft delete
   await repo.softDelete(id, "admin");

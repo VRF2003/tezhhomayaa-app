@@ -1,12 +1,12 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { InMemoryCampaignRepository } from "@/lib/lep/repositories/InMemoryCampaignRepository";
+import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCampaignRepository";
 import { Campaign } from "@/lib/lep/campaigns/types";
 import { randomUUID } from "crypto";
 
 export async function createCampaignAction() {
-  const repo = new InMemoryCampaignRepository();
+  const repo = new FirestoreCampaignRepository();
   
   const id = `camp-${Date.now()}`;
   

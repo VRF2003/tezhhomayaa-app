@@ -3,8 +3,8 @@ import { ContentResolver } from "../resolvers/ContentResolver";
 import { ContentVariant } from "../core/types";
 import { ContentResolutionError } from "../core/errors";
 import { CampaignService } from "./CampaignService";
-import { InMemoryCampaignRepository } from "../repositories/InMemoryCampaignRepository";
-import { InMemoryContentItemRepository } from "../repositories/InMemoryContentItemRepository";
+import { FirestoreCampaignRepository } from "../repositories/FirestoreCampaignRepository";
+import { FirestoreContentItemRepository } from "../repositories/FirestoreContentItemRepository";
 import { RuntimeContext, ProductionRuntimeContext } from "@/lib/preview/core/types";
 
 export class ContentService {
@@ -15,8 +15,8 @@ export class ContentService {
   static async resolveContent(slug: string, market: Market, runtime: RuntimeContext = new ProductionRuntimeContext()): Promise<ContentVariant | null> {
     // 1. Fetch all mapped variants for the slug via Campaign Engine
     const campaignService = new CampaignService(
-      new InMemoryCampaignRepository(),
-      new InMemoryContentItemRepository()
+      new FirestoreCampaignRepository(),
+      new FirestoreContentItemRepository()
     );
     const variants = await campaignService.getMappedVariantsForSlug(slug);
 
