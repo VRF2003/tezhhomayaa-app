@@ -7,6 +7,8 @@ import { useMarketSelector } from "@/hooks/useMarketSelector";
 import { useGlobalExperience } from "@/lib/global-experience/hooks/useGlobalExperience";
 import { MarketBridge } from "@/lib/global-experience/MarketBridge";
 
+import { startTransition } from "react";
+
 /**
  * ArrivalOrchestrator
  *
@@ -28,49 +30,42 @@ export function useArrivalOrchestrator() {
   const { closeSelector } = useMarketSelector();
   const { setMarket: setGlobalExperienceMarket } = useGlobalExperience();
 
-  const handleCeremonyComplete = async () => {
-    // ── STEP 1: Bridge to Global Experience Engine ─────────────────────────
-    // The GEE MarketBridge receives raw Arrival selections and resolves a
-    // validated Market from the Global Experience Registry.
-    // It never throws — any failure returns a structured error object.
-    const bridgeResult = MarketBridge.resolve(
-      selectedRegion,
-      selectedCountry,
-      selectedLanguage
-    );
-
-    if (bridgeResult.success) {
-      // Commit the validated Market to the Global Experience Context.
-      // This initializes the active experience (locale, currency, timezone, etc.)
-      // before the Homepage renders.
-      setGlobalExperienceMarket(bridgeResult.market.id);
-    } else {
-      // Log the structured error but do NOT crash or block navigation.
-      // The GEE will gracefully remain on its global default market.
-      console.error(
-        `[ArrivalOrchestrator] GEE MarketBridge failed (${bridgeResult.code}): ${bridgeResult.error}`
+  const handleCeremonyComplete = () => {
+    // Wrap the state updates in a React Transition.
+    // This allows Next.js to suspend the unmounting of the Arrival modal
+    // until the new Server Components (the updated banner) have been fetched.
+    // This entirely prevents the "flicker" of the old market banner.
+    startTransition(() => {
+      // ── STEP 1: Bridge to Global Experience Engine ─────────────────────────
+      const bridgeResult = MarketBridge.resolve(
+        selectedRegion,
+        selectedCountry,
+        selectedLanguage
       );
-    }
 
-    // ── STEP 2: Bridge to existing Commerce Market Engine ──────────────────
-    // The legacy MarketBridge continues to handle the commerce layer
-    // (currency context, pricing, etc.) exactly as before.
-    // No changes were made to this system.
-    const commerceMarketCode = createMarketFromArrival(
-      selectedRegion,
-      selectedCountry,
-      selectedLanguage
-    );
-    await setCommerceMarket(commerceMarketCode);
+      if (bridgeResult.success) {
+        setGlobalExperienceMarket(bridgeResult.market.id);
+      } else {
+        console.error(
+          `[ArrivalOrchestrator] GEE MarketBridge failed (${bridgeResult.code}): ${bridgeResult.error}`
+        );
+      }
 
-    // ── STEP 3: Finalize the Arrival Platform ──────────────────────────────
-    // Signal the Arrival Platform that selection is complete.
-    // This unmounts the MAP overlay and reveals the Homepage.
-    completeArrival();
+      // ── STEP 2: Bridge to existing Commerce Market Engine ──────────────────
+      const commerceMarketCode = createMarketFromArrival(
+        selectedRegion,
+        selectedCountry,
+        selectedLanguage
+      );
+      
+      setCommerceMarket(commerceMarketCode);
 
-    // ── STEP 4: Close the MarketUI Selector ────────────────────────────────
-    // Ensures the market selector overlay does not re-mount after dismissal.
-    closeSelector();
+      // ── STEP 3: Finalize the Arrival Platform ──────────────────────────────
+      completeArrival();
+
+      // ── STEP 4: Close the MarketUI Selector ────────────────────────────────
+      closeSelector();
+    });
   };
 
   return {

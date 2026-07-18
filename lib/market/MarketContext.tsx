@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 type MarketContextType = {
   market: Market;
-  setMarket: (marketCode: string) => Promise<void>;
+  setMarket: (marketCode: string) => void;
   isLoading: boolean;
 };
 
@@ -44,7 +44,7 @@ export function MarketProvider({ children, initialMarket }: { children: ReactNod
     }
   }, [market, isLoading]);
 
-  const setMarket = async (marketCode: string) => {
+  const setMarket = (marketCode: string) => {
     // 1. Resolve and validate locally
     const newMarket = MarketService.getMarketByCode(marketCode);
     if (!newMarket) throw new Error("Invalid market code");
