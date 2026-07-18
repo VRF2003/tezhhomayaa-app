@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useDateFormatter } from "@/lib/global-experience/formatters";
 
 type PageMetadata = {
   id: string;
@@ -25,6 +26,7 @@ export default function PagesDashboard() {
   const [isCreating, setIsCreating] = useState(false);
 
   const router = useRouter();
+  const dateFormatter = useDateFormatter();
 
   useEffect(() => {
     fetchPages();
@@ -209,7 +211,7 @@ export default function PagesDashboard() {
                     )}
                   </td>
                   <td style={{ padding: "1.2rem 1.5rem", color: "#6b6865" }}>
-                    {new Date(page.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    {dateFormatter.formatShortDate(page.lastUpdated)}
                   </td>
                   <td style={{ padding: "1.2rem 1.5rem", textAlign: "right" }}>
                     <Link href={`/admin/pages/${page.slug}${page.mode === 'motion' ? '?mode=motion' : ''}`}>

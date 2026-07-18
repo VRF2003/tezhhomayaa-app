@@ -3,6 +3,7 @@ import { Cormorant_Garamond, DM_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import StoreProviders from "@/components/ecommerce/StoreProviders";
 import { getAllProducts } from "@/lib/collections";
+import { PreviewBanner } from "@/components/preview/PreviewBanner";
 import { AppearanceProvider } from "@/components/admin/AppearanceProvider";
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
@@ -62,7 +63,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />
         <AppearanceProvider initialConfig={appearanceConfig}>
-          <StoreProviders allProducts={allProducts}>{children}</StoreProviders>
+          <StoreProviders allProducts={allProducts}>
+            {children}
+            <PreviewBanner />
+          </StoreProviders>
         </AppearanceProvider>
       </body>
     </html>

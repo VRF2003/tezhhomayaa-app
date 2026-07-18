@@ -33,7 +33,7 @@ export const ARRIVAL_CONFIG: ArrivalConfig = {
     europe: [
       { id: "FR", label: "France", currency: "EUR" },
       { id: "IT", label: "Italy", currency: "EUR" },
-      { id: "UK", label: "United Kingdom", currency: "GBP" },
+      { id: "GB", label: "United Kingdom", currency: "GBP" },
       { id: "CH", label: "Switzerland", currency: "CHF" },
     ],
     asia_pacific: [

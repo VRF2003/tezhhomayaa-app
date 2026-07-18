@@ -3,7 +3,7 @@
 import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 
 // Mock Product Type
 export interface Product {
@@ -25,7 +25,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
   const [quickAdd, setQuickAdd] = useState(false);
   const [wishlist, setWishlist] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
 
   let gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
   if (!product.gallery || product.gallery.length === 0) {
@@ -206,7 +206,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
       {/* ── Metadata ── */}
       <Link href={`/product/${product.slug}`} className="mt-6 flex flex-col items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-black focus:ring-offset-8">
         <h3 className="text-sm font-light text-black tracking-wide leading-tight">{product.name}</h3>
-        <p className="text-xs text-gray-500 tracking-wider mt-2">{formatPrice(product.price)}</p>
+        <p className="text-xs text-gray-500 tracking-wider mt-2">{formatter.formatCurrency(product.price)}</p>
         
         {/* Color Swatches */}
         <div className={`flex justify-center gap-3 mt-4 transition-opacity duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] ${product.colors && product.colors.length > 0 && hovered ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>

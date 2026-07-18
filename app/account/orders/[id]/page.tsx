@@ -3,8 +3,10 @@
 import AccountLayout from "@/components/account/AccountLayout";
 import Link from "next/link";
 import Image from "next/image";
+import { useDateFormatter } from "@/lib/global-experience/formatters";
 
 export default function OrderDetailsPage({ params }: { params: { id: string } }) {
+  const dateFormatter = useDateFormatter();
   // Mock data for order details
   const order = {
     id: params.id || "ORD-293847",
@@ -61,7 +63,7 @@ export default function OrderDetailsPage({ params }: { params: { id: string } })
             fontFamily: "var(--font-cormorant, serif)", fontSize: "1.4rem",
             color: "#1a1a18", margin: 0
           }}>
-            {order.status} on {order.date}
+            {order.status} on {dateFormatter.formatDate(order.date)}
           </p>
         </div>
 

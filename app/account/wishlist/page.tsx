@@ -6,7 +6,7 @@ import Link from "next/link";
 import AccountLayout from "@/components/account/AccountLayout";
 import { useWishlist, useCart } from "@/lib/store";
 import { getProductPrice } from "@/lib/currency";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import type { Product } from "@/lib/collections";
 
 function HeartIcon({ filled }: { filled: boolean }) {
@@ -20,7 +20,7 @@ function HeartIcon({ filled }: { filled: boolean }) {
 function WishlistCard({ product }: { product: Product }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
   const { addToCart } = useCart();
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   const wishlisted = isWishlisted(product.slug);
 
   return (
@@ -61,7 +61,7 @@ function WishlistCard({ product }: { product: Product }) {
           fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
           letterSpacing: "0.14em", color: "#9a9690", margin: "0 0 1rem",
         }}>
-          {formatPrice(getProductPrice(product))}
+          {formatter.formatCurrency(getProductPrice(product))}
         </p>
       </Link>
 

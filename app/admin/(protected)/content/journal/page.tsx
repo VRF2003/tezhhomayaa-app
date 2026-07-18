@@ -3,11 +3,13 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { JournalArticle } from "@/lib/types/journal";
+import { useDateFormatter } from "@/lib/global-experience/formatters";
 
 export default function JournalDashboard() {
   const [articles, setArticles] = useState<JournalArticle[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const dateFormatter = useDateFormatter();
 
   useEffect(() => {
     fetch("/api/journal")
@@ -138,7 +140,7 @@ export default function JournalDashboard() {
                   </span>
                 </div>
                 <div>{article.category || "—"}</div>
-                <div className="text-gray-500">{new Date(article.publishDate).toLocaleDateString()}</div>
+                <div className="text-gray-500">{dateFormatter.formatDate(article.publishDate)}</div>
                 <div className="flex justify-end gap-3 text-xs uppercase tracking-wider">
                   <Link href={`/admin/content/journal/${article.id}`} className="text-blue-600 hover:underline">Edit</Link>
                   <button onClick={() => handleDelete(article.id)} className="text-red-600 hover:underline">Delete</button>

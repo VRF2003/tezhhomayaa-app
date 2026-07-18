@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearch, useCart } from "@/lib/store";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 
 const SearchIcon = () => (
@@ -22,7 +22,7 @@ const CloseIcon = () => (
 export default function SearchOverlay() {
   const { searchOpen, closeSearch, query, setQuery, results } = useSearch();
   const { addToCart } = useCart();
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Focus input when overlay opens
@@ -195,7 +195,7 @@ export default function SearchOverlay() {
                         fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.5rem",
                         letterSpacing: "0.14em", color: "#9a9690", margin: 0,
                       }}>
-                        {formatPrice(getProductPrice(product))}
+                        {formatter.formatCurrency(getProductPrice(product))}
                       </p>
                     </Link>
                   ))}

@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/collections";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 
 /**
@@ -21,7 +21,7 @@ import { getProductPrice } from "@/lib/currency";
 export function ProductCard({ product, presentation }: { product: Product, presentation?: any }) {
   const [hovered, setHovered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   
   const thumbIndex = product.merchandising?.gridThumbnail ?? 0;
   let gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
@@ -255,7 +255,7 @@ export function ProductCard({ product, presentation }: { product: Product, prese
                 textTransform: "uppercase",
               }}
             >
-              {formatPrice(getProductPrice(product))}
+              {formatter.formatCurrency(getProductPrice(product))}
             </p>
           )}
         </div>

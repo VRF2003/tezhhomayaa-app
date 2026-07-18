@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useDateFormatter, useTimeFormatter } from "@/lib/global-experience/formatters";
 
 interface Subscriber {
   email: string;
@@ -13,6 +14,8 @@ export default function SubscribersPage() {
   const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
+  const dateFormatter = useDateFormatter();
+  const timeFormatter = useTimeFormatter();
 
   const load = () => {
     setLoading(true);
@@ -40,7 +43,7 @@ export default function SubscribersPage() {
     const csv = [
       "Email,Subscribed At,Source",
       ...subscribers.map(
-        (s) => `${s.email},${new Date(s.subscribedAt).toLocaleString()},${s.source}`
+        (s) => `${s.email},${timeFormatter.formatDateTime(s.subscribedAt)},${s.source}`
       ),
     ].join("\n");
     const blob = new Blob([csv], { type: "text/csv" });
@@ -136,9 +139,7 @@ export default function SubscribersPage() {
             >
               <span style={{ fontSize: "0.9rem", color: "#1a1a18" }}>{sub.email}</span>
               <span style={{ fontSize: "0.8rem", color: "#7a7874", textAlign: "right", minWidth: "160px" }}>
-                {new Date(sub.subscribedAt).toLocaleDateString("en-GB", {
-                  day: "2-digit", month: "short", year: "numeric",
-                })}
+                {dateFormatter.formatShortDate(sub.subscribedAt)}
               </span>
               <div style={{ minWidth: "60px", display: "flex", justifyContent: "flex-end" }}>
                 <button

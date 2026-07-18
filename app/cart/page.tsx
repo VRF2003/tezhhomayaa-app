@@ -6,7 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useCart } from "@/lib/store";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 import { useCommerce } from "@/lib/commerce-context";
 
@@ -18,7 +18,7 @@ const TrashIcon = () => (
 
 export default function CartPage() {
   const { items, cartCount, updateQty, removeFromCart, clearCart, cartTotalRaw } = useCart();
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   const commerce = useCommerce();
   const c = commerce.cart;
   const sh = commerce.shipping;
@@ -31,7 +31,7 @@ export default function CartPage() {
 
   const shippingMsg = cartTotalRaw >= sh.freeShippingThreshold
     ? sh.freeShippingUnlocked
-    : (c.shippingMessage || sh.freeShippingMessage).replace("{threshold}", formatPrice(sh.freeShippingThreshold));
+    : (c.shippingMessage || sh.freeShippingMessage).replace("{threshold}", formatter.formatCurrency(sh.freeShippingThreshold));
 
   return (
     <main style={{ minHeight: "100vh", background: st.cartBg || "#faf9f7" }}>
@@ -153,7 +153,7 @@ export default function CartPage() {
                             </p>
                           )}
                           <p style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.52rem", letterSpacing: "0.1em", color: "#3a3835", margin: 0 }}>
-                            {formatPrice(getProductPrice(item.product))}
+                            {formatter.formatCurrency(getProductPrice(item.product))}
                           </p>
                         </div>
 
@@ -192,7 +192,7 @@ export default function CartPage() {
                       {item.quantity} × {item.product.name} {item.selectedSize ? `(${item.selectedSize})` : ""}
                     </span>
                     <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.48rem", letterSpacing: "0.1em", color: st.cartTextColor || "#1a1a18", whiteSpace: "nowrap" }}>
-                      {formatPrice(getProductPrice(item.product) * item.quantity)}
+                      {formatter.formatCurrency(getProductPrice(item.product) * item.quantity)}
                     </span>
                   </div>
                 ))}
@@ -201,7 +201,7 @@ export default function CartPage() {
               {/* Subtotal */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.75rem" }}>
                 <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#9a9690" }}>{c.subtotalLabel}</span>
-                <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1.3rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.02em" }}>{formatPrice(cartTotalRaw)}</span>
+                <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1.3rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.02em" }}>{formatter.formatCurrency(cartTotalRaw)}</span>
               </div>
 
               {/* Shipping row */}

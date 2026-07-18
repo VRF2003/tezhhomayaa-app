@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -483,7 +483,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
   };
 
   const { addToCart, openMiniCart } = useCart();
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   const { isWishlisted, toggleWishlist } = useWishlist();
   const commerce = useCommerce();
   const router = useRouter();
@@ -585,7 +585,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               fontSize: "0.95rem",
               fontWeight: 500, letterSpacing: "0.03em", color: "#1a1a18", margin: "0 0 2rem",
             }}>
-              {formatPrice(getProductPrice(product))}
+              {formatter.formatCurrency(getProductPrice(product))}
             </p>
 
             {/* PRODUCT DESCRIPTION - Open by default */}
@@ -994,7 +994,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                   {product.name}
                 </span>
                 <span style={{ fontSize: "1.1rem", letterSpacing: "0.06em", color: "var(--obsidian)" }}>
-                  {formatPrice(getProductPrice(product))}
+                  {formatter.formatCurrency(getProductPrice(product))}
                 </span>
               </div>
             </div>

@@ -4,9 +4,11 @@ import AccountLayout from "@/components/account/AccountLayout";
 import Link from "next/link";
 import Image from "next/image";
 import { useAuth } from "@/lib/store";
+import { useDateFormatter } from "@/lib/global-experience/formatters";
 
 export default function OrdersPage() {
   const { isLoggedIn } = useAuth();
+  const dateFormatter = useDateFormatter();
 
   // For now, no mock orders are shown
   const orders: any[] = [];
@@ -42,7 +44,7 @@ export default function OrdersPage() {
                     fontFamily: "var(--font-cormorant, serif)", fontSize: "1.2rem",
                     color: "#9a9690", margin: 0
                   }}>
-                    {order.date}
+                    {dateFormatter.formatDate(order.date)}
                   </p>
                 </div>
                 <div style={{ textAlign: "right" }}>

@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Market } from "./types";
 import { MarketService, MARKET_COOKIE_NAME } from "./MarketService";
+import { useRouter } from "next/navigation";
 
 type MarketContextType = {
   market: Market;
@@ -24,6 +25,7 @@ export function MarketProvider({ children, initialMarket }: { children: ReactNod
   // Otherwise resolve it on client mount using cookie.
   const [market, setMarketState] = useState<Market>(initialMarket || MarketService.getDefaultMarket());
   const [isLoading, setIsLoading] = useState(!initialMarket);
+  const router = useRouter();
 
   useEffect(() => {
     if (!initialMarket) {
@@ -51,12 +53,14 @@ export function MarketProvider({ children, initialMarket }: { children: ReactNod
     setMarketState(newMarket);
 
     // 3. Update cookie on client
+    // 3. Update cookie on client and explicitly clear any active preview overrides
     if (typeof document !== "undefined") {
       document.cookie = `${MARKET_COOKIE_NAME}=${marketCode}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+      document.cookie = `tezhhomayaa-preview=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
     }
     
-    // In a full implementation, you might want to router.refresh() here 
-    // to update server components with the new market context.
+    // 4. Force Next.js server components to re-render with the newly active market
+    router.refresh();
   };
 
   return (

@@ -84,7 +84,7 @@ import {
   EditorialHero
 } from "./DynamicBlocks";
 
-export default function HomepageClientWrapper({ initialSections, articleMetadata }: { initialSections: any[], articleMetadata?: any }) {
+export default function HomepageClientWrapper({ initialSections, articleMetadata, lepSlots }: { initialSections: any[], articleMetadata?: any, lepSlots?: Record<string, React.ReactNode> }) {
   const [sections, setSections] = useState(initialSections);
 
   const [isAdminPreview, setIsAdminPreview] = useState(false);
@@ -124,6 +124,12 @@ export default function HomepageClientWrapper({ initialSections, articleMetadata
       )}
       {sections.filter((s: any) => !s.hidden).map((section: any) => {
         const normData = normalizeSectionData(section.data);
+        
+        // LEP Integration: Override rendering if a Server Component slot is provided for this type
+        if (lepSlots && lepSlots[section.type]) {
+          return <React.Fragment key={section.id}>{lepSlots[section.type]}</React.Fragment>;
+        }
+
         switch (section.type) {
           case "hero-slider":
             return <HeroFilm key={section.id} cmsData={section.data} sectionId={section.id} />;

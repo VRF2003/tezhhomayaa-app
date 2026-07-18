@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/lib/store";
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 import { useCommerce } from "@/lib/commerce-context";
 
@@ -22,7 +22,7 @@ const TrashIcon = () => (
 
 export default function MiniCart() {
   const { miniCartOpen, closeMiniCart, items, cartCount, cartTotalRaw, removeFromCart, updateQty } = useCart();
-  const { formatPrice } = useCurrency();
+  const formatter = useCurrencyFormatter();
   const commerce = useCommerce();
   const mc = commerce.miniCart;
   const sh = commerce.shipping;
@@ -41,7 +41,7 @@ export default function MiniCart() {
 
   const shippingMsg = cartTotalRaw >= sh.freeShippingThreshold
     ? sh.freeShippingUnlocked
-    : sh.freeShippingMessage.replace("{threshold}", formatPrice(sh.freeShippingThreshold));
+    : sh.freeShippingMessage.replace("{threshold}", formatter.formatCurrency(sh.freeShippingThreshold));
 
   return (
     <AnimatePresence>
@@ -159,7 +159,7 @@ export default function MiniCart() {
                             </p>
                           )}
                           <p style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem", letterSpacing: "0.1em", color: "#3a3835", margin: 0 }}>
-                            {formatPrice(getProductPrice(item.product))}
+                            {formatter.formatCurrency(getProductPrice(item.product))}
                           </p>
 
                           {/* Qty + Remove */}
@@ -189,7 +189,7 @@ export default function MiniCart() {
                     {mc.subtotalLabel}
                   </span>
                   <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1.15rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.03em" }}>
-                    {formatPrice(cartTotalRaw)}
+                    {formatter.formatCurrency(cartTotalRaw)}
                   </span>
                 </div>
                 <Link

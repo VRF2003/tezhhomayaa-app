@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMarket } from "@/lib/market/MarketContext";
 import { useMarketSelector } from "@/hooks/useMarketSelector";
+import { useExperienceServices } from "@/lib/global-experience/services";
 
 function getFlagEmoji(countryCode: string) {
   const codePoints = countryCode
@@ -14,8 +15,9 @@ function getFlagEmoji(countryCode: string) {
 }
 
 export function MarketHeader() {
-  const { market, isLoading } = useMarket();
+  const { isLoading } = useMarket();
   const { openSelector } = useMarketSelector();
+  const services = useExperienceServices();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -32,7 +34,7 @@ export function MarketHeader() {
 
   if (isLoading) return null; 
 
-  const flag = getFlagEmoji(market.countryCode);
+  const flag = getFlagEmoji(services.getCountryCode());
 
   return (
     <div ref={dropdownRef} className="relative z-50 flex items-center">
@@ -43,7 +45,7 @@ export function MarketHeader() {
         aria-label="Market Settings"
       >
         <span className="text-[1.1rem] leading-none" style={{ fontFamily: "apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol" }}>{flag}</span>
-        <span>{market.currencyCode}</span>
+        <span>{services.getCountry()}</span>
       </button>
 
       <AnimatePresence>
@@ -53,15 +55,39 @@ export function MarketHeader() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full right-0 mt-3 bg-[#fafaf8]/98 backdrop-blur-md border border-[var(--border-soft)] py-2 min-w-[220px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col"
+            className="absolute top-full right-0 mt-3 bg-[#fafaf8]/98 backdrop-blur-md border border-[var(--border-soft)] py-2 min-w-[240px] shadow-[0_4px_24px_rgba(0,0,0,0.06)] flex flex-col"
           >
             {/* Current Market Display */}
             <div className="px-5 py-3 border-b border-[var(--border-soft)]">
               <span className="block text-[10px] uppercase tracking-widest text-[var(--slate)] mb-1" style={{ fontFamily: "var(--font-dm-mono, monospace)" }}>
                 Current Market
               </span>
+              <span className="flex items-center gap-2 text-base text-[var(--obsidian)]" style={{ fontFamily: "var(--font-cormorant, serif)" }}>
+                <span style={{ fontFamily: "apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol" }}>{flag}</span>
+                <span>{services.getCountry()}</span>
+              </span>
+            </div>
+
+            <div className="px-5 py-3 border-b border-[var(--border-soft)]">
+              <span className="block text-[10px] uppercase tracking-widest text-[var(--slate)] mb-1" style={{ fontFamily: "var(--font-dm-mono, monospace)" }}>
+                Language
+              </span>
               <span className="block text-base text-[var(--obsidian)]" style={{ fontFamily: "var(--font-cormorant, serif)" }}>
-                {market.marketName} ({market.currencyCode})
+                {services.getLanguage()}
+              </span>
+            </div>
+
+            <div className="px-5 py-3 border-b border-[var(--border-soft)]">
+              <div className="flex justify-between items-center mb-1">
+                <span className="block text-[10px] uppercase tracking-widest text-[var(--slate)]" style={{ fontFamily: "var(--font-dm-mono, monospace)" }}>
+                  Product Prices
+                </span>
+                <span className="block text-sm text-[var(--obsidian)] font-medium">
+                  {services.getCurrencyCode()}
+                </span>
+              </div>
+              <span className="block text-xs text-[var(--slate)] leading-tight italic mt-1" style={{ fontFamily: "var(--font-cormorant, serif)" }}>
+                Prices are currently displayed in {services.getCurrencyCode()}.
               </span>
             </div>
 
@@ -83,14 +109,6 @@ export function MarketHeader() {
               style={{ fontFamily: "var(--font-cormorant, serif)" }}
             >
               Shipping Information
-            </button>
-
-            <button
-              disabled
-              className="w-full text-left px-5 py-3 text-[1.05rem] text-[var(--slate)] opacity-50 cursor-not-allowed flex justify-between items-center"
-              style={{ fontFamily: "var(--font-cormorant, serif)" }}
-            >
-              Language (Coming Soon)
             </button>
           </motion.div>
         )}
