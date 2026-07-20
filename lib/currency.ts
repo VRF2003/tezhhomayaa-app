@@ -95,7 +95,7 @@ export function formatPriceForCurrency(amount: number, currencyCode: CurrencyCod
 
 export function getProductPrice(product: { id: string; price?: string | number }): number {
   if (product.price === undefined || product.price === null || product.price === "") {
-    Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Invalid product price", product.id, product.price);
+    Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Invalid product price", { id: product.id, price: product.price });
     return 0;
   }
   const priceValue = typeof product.price === "number"

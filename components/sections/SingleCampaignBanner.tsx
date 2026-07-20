@@ -170,7 +170,7 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
         <div className={`flex flex-wrap gap-4 ${layout.align === "left" ? "justify-start" : layout.align === "right" ? "justify-end" : "justify-center"}`}>
           {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (() => {
             const btnUrl = norm.content.primaryButton.url;
-            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SingleCampaignBanner Primary URL", norm.content.heading, btnUrl);
+            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SingleCampaignBanner Primary URL", { heading: norm.content.heading, btnUrl });
             const href = btnUrl && btnUrl !== "#" ? btnUrl.startsWith('/') || btnUrl.startsWith('http') ? btnUrl : `/${btnUrl}` : "";
             
             if (!href) return null;
@@ -198,7 +198,7 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
           })()}
           {norm.content.secondaryButton.enabled && norm.content.secondaryButton.label && (() => {
             const btnUrl = norm.content.secondaryButton.url;
-            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SingleCampaignBanner Secondary URL", norm.content.heading, btnUrl);
+            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SingleCampaignBanner Secondary URL", { heading: norm.content.heading, btnUrl });
             const href = btnUrl && btnUrl !== "#" ? btnUrl.startsWith('/') || btnUrl.startsWith('http') ? btnUrl : `/${btnUrl}` : "";
             
             if (!href) return null;

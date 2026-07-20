@@ -61,7 +61,7 @@ export class SeoRepository implements ISeoRepository {
   async softDelete(id: string, deletedBy: string): Promise<void> {
     const metadata = await this.findById(id);
     if (metadata) {
-      metadata.status = "Archived";
+      metadata.status = "ARCHIVED";
       await this.update(metadata);
       await InvalidationManager.invalidateTags([CACHE_TAGS.SEO]);
     }

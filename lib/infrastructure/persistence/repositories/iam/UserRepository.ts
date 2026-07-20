@@ -1,4 +1,4 @@
-import { IUserRepository } from "@/lib/iam";
+import { IUserRepository } from "@/lib/iam/repositories/IUserRepository";
 import { User } from "@/lib/iam/core/types";
 import { IDatabaseDriver } from "../../drivers/IDatabaseDriver";
 

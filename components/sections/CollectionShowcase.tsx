@@ -32,7 +32,7 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
   const cardTitle = norm.content?.heading || "";
   const buttonUrl = norm.content?.primaryButton?.url || item.url || item.collectionId || "";
   
-  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Card URL", cardTitle, buttonUrl);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Card URL", { cardTitle, buttonUrl });
 
   const href = buttonUrl && buttonUrl !== "#" ? buttonUrl.startsWith('/') || buttonUrl.startsWith('http') ? buttonUrl : `/${buttonUrl}` : "";
 

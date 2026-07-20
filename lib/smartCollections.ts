@@ -35,6 +35,10 @@ export type SmartCollection = {
   presentation?: CollectionPresentation;
 };
 
+export interface SmartCollectionSettings {
+  enableSmartRouting: boolean;
+}
+
 export async function getSmartCollectionSettings(): Promise<SmartCollectionSettings> {
   try {
     const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");

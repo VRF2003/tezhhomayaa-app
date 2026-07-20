@@ -61,7 +61,7 @@ export class TranslationRepository implements ITranslationRepository {
   async softDelete(id: string, deletedBy: string): Promise<void> {
     const set = await this.findById(id);
     if (set) {
-      set.status = "Archived";
+      set.status = "ARCHIVED";
       await this.update(set);
       await InvalidationManager.invalidateTags([CACHE_TAGS.TRANSLATION]);
     }

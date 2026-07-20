@@ -44,7 +44,11 @@ if (!globalAny.iamRepositories) {
   })();
 }
 
-import { IUserRepository, IRoleRepository, IPermissionRepository, ISessionRepository, IAuditRepository } from "./index";
+import { IUserRepository } from "./repositories/IUserRepository";
+import { IRoleRepository } from "./repositories/IRoleRepository";
+import { IPermissionRepository } from "./repositories/IPermissionRepository";
+import { ISessionRepository } from "./repositories/ISessionRepository";
+import { IAuditRepository } from "./repositories/IAuditRepository";
 import { Observability } from "@/lib/infrastructure/observability";
 
 export const iamUserRepo = globalAny.iamRepositories.userRepo as IUserRepository;

@@ -1,4 +1,4 @@
-import { IPermissionRepository } from "@/lib/iam";
+import { IPermissionRepository } from "@/lib/iam/repositories/IPermissionRepository";
 import { Permission } from "@/lib/iam/core/types";
 import { IDatabaseDriver } from "../../drivers/IDatabaseDriver";
 

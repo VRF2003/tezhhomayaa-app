@@ -1,4 +1,4 @@
-import { ISessionRepository } from "@/lib/iam";
+import { ISessionRepository } from "@/lib/iam/repositories/ISessionRepository";
 import { Session } from "@/lib/iam/core/types";
 import { IDatabaseDriver } from "../../drivers/IDatabaseDriver";
 
@@ -17,6 +17,13 @@ export class SessionRepository implements ISessionRepository {
 
   async findAll(): Promise<Session[]> {
     return this.driver.query(this.collection);
+  }
+
+  async revokeAllForUser(userId: string): Promise<void> {
+    const sessions = await this.findByUserId(userId);
+    for (const session of sessions) {
+      await this.delete(session.id);
+    }
   }
 
   async create(session: Session): Promise<void> {

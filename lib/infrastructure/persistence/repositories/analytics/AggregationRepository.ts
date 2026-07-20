@@ -15,24 +15,35 @@ export class AggregationRepository implements IAggregationRepository {
     if (!report) {
       report = {
         totalViews: 0,
-        totalClicks: 0,
-        totalConversions: 0,
-        conversionRate: 0,
-        topCampaigns: [],
-        topPaths: [],
+        viewsByMarket: {},
+        viewsByLanguage: {},
+        viewsByCampaign: {},
+        viewsBySection: {},
+        viewsByDevice: {},
+        previewActivity: 0,
       };
     }
 
-    if (event.type === "page_view") {
+    if (event.eventType === "PAGE_VIEW") {
       report.totalViews++;
-    } else if (event.type === "click") {
-      report.totalClicks++;
-    } else if (event.type === "conversion") {
-      report.totalConversions++;
+    } else if (event.eventType === "PREVIEW_VIEW") {
+      report.previewActivity++;
     }
 
-    if (report.totalViews > 0) {
-      report.conversionRate = (report.totalConversions / report.totalViews) * 100;
+    if (event.marketId) {
+      report.viewsByMarket[event.marketId] = (report.viewsByMarket[event.marketId] || 0) + 1;
+    }
+    if (event.languageCode) {
+      report.viewsByLanguage[event.languageCode] = (report.viewsByLanguage[event.languageCode] || 0) + 1;
+    }
+    if (event.campaignId) {
+      report.viewsByCampaign[event.campaignId] = (report.viewsByCampaign[event.campaignId] || 0) + 1;
+    }
+    if (event.sectionId) {
+      report.viewsBySection[event.sectionId] = (report.viewsBySection[event.sectionId] || 0) + 1;
+    }
+    if (event.deviceType) {
+      report.viewsByDevice[event.deviceType] = (report.viewsByDevice[event.deviceType] || 0) + 1;
     }
 
     await this.driver.write(this.collection, AggregationRepository.REPORT_ID, report);
@@ -42,11 +53,12 @@ export class AggregationRepository implements IAggregationRepository {
     const report = await this.driver.read(this.collection, AggregationRepository.REPORT_ID) as AnalyticsDashboardReport;
     return report || {
       totalViews: 0,
-      totalClicks: 0,
-      totalConversions: 0,
-      conversionRate: 0,
-      topCampaigns: [],
-      topPaths: [],
+      viewsByMarket: {},
+      viewsByLanguage: {},
+      viewsByCampaign: {},
+      viewsBySection: {},
+      viewsByDevice: {},
+      previewActivity: 0,
     };
   }
 }

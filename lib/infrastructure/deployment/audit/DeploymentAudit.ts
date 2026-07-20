@@ -1,7 +1,7 @@
 import { Observability } from '../../observability';
 import { EnvironmentResolver } from '../environment/EnvironmentResolver';
 
-export type AuditEvent = 'DeploymentStarted' | 'DeploymentCompleted' | 'DeploymentFailed' | 'RollbackStarted' | 'RollbackCompleted';
+export type AuditEvent = 'DeploymentStarted' | 'DeploymentCompleted' | 'DeploymentFailed' | 'RollbackStarted' | 'RollbackCompleted' | 'RollbackFailed';
 
 export class DeploymentAudit {
   static record(event: AuditEvent, metadata: Record<string, any> = {}) {

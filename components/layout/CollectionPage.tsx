@@ -15,11 +15,11 @@ type CollectionPageProps = {
   };
 };
 
-export default function CollectionPage({ categoryKey, smartCollection }: CollectionPageProps) {
+export default async function CollectionPage({ categoryKey, smartCollection }: CollectionPageProps) {
   const meta = categoryMeta[categoryKey];
-  const products = getProductsByCategory(categoryKey);
-  const rawProducts = getRawProducts();
-  const bannerData = getCollectionBanner(categoryKey);
+  const products = await getProductsByCategory(categoryKey);
+  const rawProducts = await getRawProducts();
+  const bannerData = await getCollectionBanner(categoryKey);
   
   let finalProducts = smartCollection ? smartCollection.products : products;
 

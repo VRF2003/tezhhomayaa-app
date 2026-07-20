@@ -49,7 +49,7 @@ export class CampaignRepository implements ICampaignRepository {
   async softDelete(id: string, deletedBy: string): Promise<void> {
     const campaign = await this.findById(id);
     if (campaign) {
-      campaign.status = "Archived";
+      campaign.status = "ARCHIVED";
       await this.update(campaign);
       await InvalidationManager.invalidateTags([CACHE_TAGS.CAMPAIGN]);
     }

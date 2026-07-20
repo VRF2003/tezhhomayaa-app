@@ -163,7 +163,7 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
             <div className={`flex flex-wrap gap-4 ${layout.align === "left" ? "justify-start" : layout.align === "right" ? "justify-end" : "justify-center"}`}>
               {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (() => {
                 const btnUrl = norm.content.primaryButton.url;
-                Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SplitLayout Primary URL", norm.content.heading, btnUrl);
+                Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SplitLayout Primary URL", { heading: norm.content.heading, btnUrl });
                 const href = btnUrl && btnUrl !== "#" ? btnUrl.startsWith('/') || btnUrl.startsWith('http') ? btnUrl : `/${btnUrl}` : "";
                 
                 if (!href) return null;
@@ -180,7 +180,7 @@ export default function SplitLayout({ cmsData, sectionId }: { cmsData?: any, sec
               })()}
               {norm.content.secondaryButton.enabled && norm.content.secondaryButton.label && (() => {
                 const btnUrl = norm.content.secondaryButton.url;
-                Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SplitLayout Secondary URL", norm.content.heading, btnUrl);
+                Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("SplitLayout Secondary URL", { heading: norm.content.heading, btnUrl });
                 const href = btnUrl && btnUrl !== "#" ? btnUrl.startsWith('/') || btnUrl.startsWith('http') ? btnUrl : `/${btnUrl}` : "";
                 
                 if (!href) return null;

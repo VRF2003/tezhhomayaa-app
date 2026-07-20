@@ -1,6 +1,7 @@
 import { IMigration } from "./MigrationRunner";
 import { RepositoryResolver } from "../resolver/RepositoryResolver";
-import { IRoleRepository, IPermissionRepository } from "@/lib/iam";
+import { IRoleRepository } from "@/lib/iam/repositories/IRoleRepository";
+import { IPermissionRepository } from "@/lib/iam/repositories/IPermissionRepository";
 import { BUILT_IN_ROLES, BUILT_IN_PERMISSIONS } from "@/lib/iam/roles/RoleRegistry";
 
 export class SeedIAM_001 implements IMigration {

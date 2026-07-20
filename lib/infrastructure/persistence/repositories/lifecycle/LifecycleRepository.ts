@@ -10,7 +10,7 @@ export class LifecycleRepository implements ILifecycleRepository {
   }
 
   async savePackage(pkg: PublishPackage): Promise<void> {
-    await this.driver.write("lifecycle_packages", pkg.id, pkg);
+    await this.driver.write("lifecycle_packages", pkg.packageId, pkg);
   }
 
   async getPackagesByState(state: string): Promise<PublishPackage[]> {
@@ -18,7 +18,7 @@ export class LifecycleRepository implements ILifecycleRepository {
   }
 
   async saveVersion(version: VersionRecord): Promise<void> {
-    await this.driver.write("lifecycle_versions", version.id, version);
+    await this.driver.write("lifecycle_versions", version.versionId, version);
   }
 
   async getVersions(targetId: string): Promise<VersionRecord[]> {
@@ -30,7 +30,7 @@ export class LifecycleRepository implements ILifecycleRepository {
   }
 
   async appendAuditLog(entry: AuditLogEntry): Promise<void> {
-    await this.driver.write("lifecycle_audit_logs", entry.id, entry);
+    await this.driver.write("lifecycle_audit_logs", entry.auditId, entry);
   }
 
   async getAuditLog(targetId?: string): Promise<AuditLogEntry[]> {

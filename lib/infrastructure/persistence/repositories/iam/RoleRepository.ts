@@ -1,4 +1,4 @@
-import { IRoleRepository } from "@/lib/iam";
+import { IRoleRepository } from "@/lib/iam/repositories/IRoleRepository";
 import { Role } from "@/lib/iam/core/types";
 import { IDatabaseDriver } from "../../drivers/IDatabaseDriver";
 
@@ -13,6 +13,11 @@ export class RoleRepository implements IRoleRepository {
 
   async findAll(): Promise<Role[]> {
     return this.driver.query(this.collection);
+  }
+
+  async findByName(name: string): Promise<Role | null> {
+    const results = await this.driver.query(this.collection, { name });
+    return results.length > 0 ? (results[0] as Role) : null;
   }
 
   async create(role: Role): Promise<void> {

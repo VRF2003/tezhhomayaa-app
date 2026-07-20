@@ -61,7 +61,7 @@ export default async function HomePage() {
     const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
     homepageData = await docRepo.getDocument("homepage");
   } catch (err) {
-    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Could not load homepage data from persistence", { message: err?.message, stack: err?.stack });
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Could not load homepage data from persistence", { message: (err as any)?.message, stack: (err as any)?.stack });
   }
 
   const sections = homepageData?.sections || [];

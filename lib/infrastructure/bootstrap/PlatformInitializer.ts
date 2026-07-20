@@ -20,6 +20,6 @@ export class PlatformInitializer {
     // Register Repositories
     bootstrapPersistence();
 
-    Observability.getLogger("System").info("Enterprise Platform Bootstrapped Successfully.");
+    Observability.getLogger("System").info("Log", "Enterprise Platform Bootstrapped Successfully.");
   }
 }

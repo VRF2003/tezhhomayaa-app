@@ -49,7 +49,8 @@ export class ContentItemRepository implements IContentItemRepository {
   async softDelete(id: string, deletedBy: string): Promise<void> {
     const item = await this.findById(id);
     if (item) {
-      item.lifecycleStatus = "Archived";
+      item.deletedAt = new Date().toISOString();
+      item.deletedBy = deletedBy;
       await this.update(item);
       await InvalidationManager.invalidateTags([CACHE_TAGS.COLLECTION]);
     }
