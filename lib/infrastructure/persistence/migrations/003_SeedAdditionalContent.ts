@@ -13,30 +13,25 @@ export class SeedAdditionalContent_003 implements IMigration {
     const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
     
     const filesToSeed = [
-      { key: "appearance", file: "lib/appearance.json" },
-      { key: "collection_banners", file: "lib/collection-banners.json" },
-      { key: "commerce", file: "lib/commerce.json" },
-      { key: "footer", file: "lib/footer.json" },
-      { key: "newsletter", file: "lib/newsletter.json" },
-      { key: "products", file: "lib/products.json" },
-      { key: "size_guide", file: "lib/size-guide.json" },
-      { key: "tags", file: "lib/tags.json" },
-      { key: "smart_collections_settings", file: "lib/smart-collections-settings.json" },
-      { key: "smart_collections", file: "lib/smart-collections.json" },
-      { key: "collections", file: "lib/collections.json" }
+      { key: "appearance", data: require("@/lib/appearance.json") },
+      { key: "collection_banners", data: require("@/lib/collection-banners.json") },
+      { key: "commerce", data: require("@/lib/commerce.json") },
+      { key: "footer", data: require("@/lib/footer.json") },
+      { key: "newsletter", data: require("@/lib/newsletter.json") },
+      { key: "products", data: require("@/lib/products.json") },
+      { key: "size_guide", data: require("@/lib/size-guide.json") },
+      { key: "tags", data: require("@/lib/tags.json") },
+      { key: "smart_collections_settings", data: require("@/lib/smart-collections-settings.json") },
+      { key: "smart_collections", data: require("@/lib/smart-collections.json") },
+      { key: "collections", data: require("@/lib/collections.json") }
     ];
 
     for (const item of filesToSeed) {
       try {
-        const filePath = process.cwd() + "/" + item.file;
-        if (fs.existsSync(filePath)) {
-          const raw = fs.readFileSync(filePath, "utf-8");
-          const data = JSON.parse(raw);
-          const existing = await docRepo.getDocument(item.key);
-          if (!existing) {
-            await docRepo.saveDocument(item.key, data);
-            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")(`Seeded ${item.key} into DocumentRepository`);
-          }
+        const existing = await docRepo.getDocument(item.key);
+        if (!existing) {
+          await docRepo.saveDocument(item.key, item.data);
+          Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")(`Seeded ${item.key} into DocumentRepository`);
         }
       } catch (e) {
         Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(`Failed to seed ${item.key}`, e);
