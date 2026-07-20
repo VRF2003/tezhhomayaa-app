@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const revalidate = 86400; // Cache for 24 hours
 
@@ -21,7 +22,7 @@ export async function GET() {
       rates: data.rates // Object of currency codes to rates e.g. { "USD": 0.012, "EUR": 0.011 }
     });
   } catch (error) {
-    console.error("Exchange rate fetch error:", error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Exchange rate fetch error:", error);
     // Return empty rates so the client falls back to base INR (1:1)
     return NextResponse.json({ base: "INR", rates: {} }, { status: 500 });
   }

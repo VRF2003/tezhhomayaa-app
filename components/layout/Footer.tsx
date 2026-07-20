@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { FooterData, FooterBlock, defaultFooterData } from "@/lib/types/footer";
+import { Observability } from "@/lib/infrastructure/observability";
 
 // ── Helpers ────────────────────────────────────────────────────
 function colSpanClass(span: number | undefined, def: number) {
@@ -111,7 +112,7 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
 
   useEffect(() => {
     if (!initialData) {
-      fetch("/api/footer").then((r) => r.json()).then((json) => { if (json.success && json.data) setData(json.data); }).catch(console.error);
+      fetch("/api/footer").then((r) => r.json()).then((json) => { if (json.success && json.data) setData(json.data); }).catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
     }
     const handleMsg = (e: MessageEvent) => { if (e.data?.type === "SYNC_FOOTER_PREVIEW") setData(e.data.data); };
     window.addEventListener("message", handleMsg);

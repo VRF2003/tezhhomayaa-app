@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export interface MobileAppearanceConfig {
   heroHeight: number;
@@ -52,7 +53,7 @@ export function AppearanceProvider({ children, initialConfig }: { children: Reac
             setConfig(res.data);
           }
         })
-        .catch(console.error);
+        .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
     }
   }, [initialConfig]);
 

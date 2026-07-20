@@ -39,6 +39,7 @@ const UserIcon = () => (
 
 // ─── Navigation Data ──────────────────────────────────────────
 import { MainNavEntry } from "@/lib/types/menus";
+import { Observability } from "@/lib/infrastructure/observability";
 
 // ─── Shared Styles ────────────────────────────────────────────
 const sansMenu: React.CSSProperties = {
@@ -127,14 +128,14 @@ export default function Navbar() {
       .then(json => {
         if (json.success && json.data) setHeaderSettings(json.data);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
 
     fetch("/api/menus")
       .then(res => res.json())
       .then(json => {
         if (json.success && json.data) setMainNav(json.data);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
 
 
   }, []);

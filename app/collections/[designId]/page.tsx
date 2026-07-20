@@ -18,7 +18,7 @@ export default async function DesignCollectionPage({ params }: { params: Promise
   const designName = designId.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   // Get all active products
-  const allProducts = getAllProducts();
+  const allProducts = await getAllProducts();
 
   // Filter products by checking if the design name exists in their tags or editorialDescription
   const filteredProducts = allProducts.filter(p => {

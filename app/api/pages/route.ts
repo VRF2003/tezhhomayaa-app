@@ -1,23 +1,18 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
-const REGISTRY_PATH = path.join(process.cwd(), "lib", "pages.json");
-const PAGES_DIR = path.join(process.cwd(), "lib", "pages");
-
-function getRegistry() {
-  if (!fs.existsSync(REGISTRY_PATH)) return [];
-  try {
-    return JSON.parse(fs.readFileSync(REGISTRY_PATH, "utf-8"));
-  } catch (err) {
-    return [];
-  }
+async function getRegistry() {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  const registry = await docRepo.getDocument("pages_registry");
+  return registry || [];
 }
 
 export async function GET() {
-  const pages = getRegistry();
+  const pages = await getRegistry();
   return NextResponse.json({ success: true, data: pages });
 }
 
@@ -30,7 +25,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: "Title and slug are required" }, { status: 400 });
     }
 
-    const pages = getRegistry();
+    const pages: any = await getRegistry();
     if (pages.some((p: any) => p.slug === slug)) {
       return NextResponse.json({ success: false, error: "Slug already exists" }, { status: 400 });
     }
@@ -45,21 +40,16 @@ export async function POST(request: Request) {
     };
 
     pages.push(newPage);
-    fs.writeFileSync(REGISTRY_PATH, JSON.stringify(pages, null, 2));
-
-    if (!fs.existsSync(PAGES_DIR)) {
-      fs.mkdirSync(PAGES_DIR, { recursive: true });
-    }
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("pages_registry", pages);
     
     // Create an empty JSON object for the new page builder content
-    const pageDataPath = path.join(PAGES_DIR, `${slug}.json`);
-    if (!fs.existsSync(pageDataPath)) {
-      fs.writeFileSync(pageDataPath, JSON.stringify({ sections: [] }));
-    }
+    const pageKey = `page_${slug}`;
+    await docRepo.saveDocument(pageKey, { sections: [] });
 
     return NextResponse.json({ success: true, data: newPage });
   } catch (err) {
-    console.error("Error creating page:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error creating page:", err);
     return NextResponse.json({ success: false, error: "Failed to create page" }, { status: 500 });
   }
 }
@@ -73,7 +63,7 @@ export async function PATCH(request: Request) {
       return NextResponse.json({ success: false, error: "Slug is required" }, { status: 400 });
     }
 
-    const pages = getRegistry();
+    const pages: any = await getRegistry();
     const pageIndex = pages.findIndex((p: any) => p.slug === slug);
     
     if (pageIndex === -1) {
@@ -84,11 +74,12 @@ export async function PATCH(request: Request) {
     if (mode !== undefined) pages[pageIndex].mode = mode;
     
     pages[pageIndex].lastUpdated = new Date().toISOString();
-    fs.writeFileSync(REGISTRY_PATH, JSON.stringify(pages, null, 2));
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("pages_registry", pages);
 
     return NextResponse.json({ success: true, data: pages[pageIndex] });
   } catch (err) {
-    console.error("Error updating page status:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error updating page status:", err);
     return NextResponse.json({ success: false, error: "Failed to update page status" }, { status: 500 });
   }
 }

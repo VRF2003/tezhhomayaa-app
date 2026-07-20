@@ -4,8 +4,8 @@ import { getAllProducts } from "@/lib/collections";
 
 export async function GET() {
   try {
-    const tags = getTags();
-    const products = getAllProducts();
+    const tags = await getTags();
+    const products = await getAllProducts();
     
     // Calculate product counts
     const tagsWithCounts = tags.map(tag => {
@@ -21,11 +21,13 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json();
-    if (!body.name) return NextResponse.json({ success: false, error: "Name required" }, { status: 400 });
+    const { name } = await req.json();
+    if (!name || typeof name !== "string") {
+      return NextResponse.json({ success: false, error: "Invalid tag name" }, { status: 400 });
+    }
     
-    const tag = addTag(body.name);
-    return NextResponse.json({ success: true, data: tag });
+    const newTag = await addTag(name);
+    return NextResponse.json({ success: true, tag: newTag });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }

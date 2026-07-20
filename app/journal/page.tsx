@@ -6,8 +6,9 @@ import { getJournalArticles } from "@/lib/journal";
 
 export const dynamic = "force-dynamic";
 
-export default function JournalIndexPage() {
-  const allArticles = getJournalArticles().filter(a => a.status === "Published");
+export default async function JournalPage() {
+  const articles = await getJournalArticles();
+  const allArticles = articles.filter(a => a.status === "Published");
   
   // Sort by manual order first
   allArticles.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));

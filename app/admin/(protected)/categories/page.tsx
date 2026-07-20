@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Reorder } from "framer-motion";
 import { GripVertical, Plus, Trash2, ChevronDown, ChevronRight, Save } from "lucide-react";
 import { MainNavEntry, Category, SubItem } from "@/lib/types/menus";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function UnifiedNavigationPage() {
   const [menus, setMenus] = useState<MainNavEntry[]>([]);
@@ -36,7 +37,7 @@ export default function UnifiedNavigationPage() {
           setExpandedNodes(initialExpanded);
         }
       })
-      .catch((err) => console.error(err))
+      .catch((err) => Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -70,7 +71,7 @@ export default function UnifiedNavigationPage() {
         alert("Failed to save.");
       }
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       alert("Error saving.");
     } finally {
       setSaving(false);

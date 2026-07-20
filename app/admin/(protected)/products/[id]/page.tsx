@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Product } from "@/lib/collections";
 import TagEditor from "@/components/admin/TagEditor";
 import { UniversalRichEditor } from "@/components/admin/UniversalRichEditor";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -176,7 +177,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       .then(json => {
         if (json.success && json.data) setCatData(json.data);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
 
     fetch(`/api/products?t=${Date.now()}`)
       .then(res => res.json())
@@ -185,7 +186,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
           setAllProducts(data.data);
           const product = data.data.find((p: Product) => p.id === id);
           if (product) {
-            console.log("Product ID on edit:", product.id);
+            Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Product ID on edit:", product.id);
             setName(product.name);
             setDescription(product.editorialDescription || "");
             setPrice(product.price);
@@ -450,7 +451,7 @@ export default function EditProductPage({ params }: { params: Promise<{ id: stri
       const data = await res.json();
       if (!data.success) throw new Error(data.error);
       
-      console.log("Product ID on save:", data.data.id);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Product ID on save:", data.data.id);
       
       setSuccessMsg("Product saved successfully.");
       setTimeout(() => setSuccessMsg(""), 3000);

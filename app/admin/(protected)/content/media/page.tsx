@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type MediaFile = {
   name: string;
@@ -26,7 +27,7 @@ export default function MediaLibraryPage() {
         setFiles(data.files);
       }
     } catch (e) {
-      console.error(e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(e);
     }
     setLoading(false);
   };
@@ -53,7 +54,7 @@ export default function MediaLibraryPage() {
       // reload media
       await loadMedia();
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       alert("Failed to upload");
     } finally {
       setUploading(false);

@@ -3,7 +3,7 @@ import { getJournalTheme, saveJournalTheme } from "@/lib/journal-theme";
 
 export async function GET() {
   try {
-    const config = getJournalTheme();
+    const config = await getJournalTheme();
     return NextResponse.json({ success: true, data: config });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
@@ -13,7 +13,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    saveJournalTheme(body);
+    await saveJournalTheme(body);
     return NextResponse.json({ success: true, data: body });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });

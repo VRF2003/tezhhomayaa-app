@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { CampaignSection } from "@/lib/lep/campaigns/types";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface Props {
   campaignId: string;
@@ -54,7 +55,7 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
         alert("Upload failed: " + (data.error || "Unknown error"));
       }
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       alert("Failed to upload file.");
     } finally {
       setIsUploading(false);

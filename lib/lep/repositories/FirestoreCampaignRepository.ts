@@ -2,6 +2,7 @@ import { Campaign } from "../campaigns/types";
 import { ICampaignRepository } from "./ICampaignRepository";
 import { db } from "@/lib/firebase";
 import { collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
+import { Observability } from "@/lib/infrastructure/observability";
 
 const COLLECTION_NAME = "lep_campaigns";
 
@@ -18,7 +19,7 @@ export class FirestoreCampaignRepository implements ICampaignRepository {
       }
       return null;
     } catch (e) {
-      console.error("Error finding campaign by ID:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error finding campaign by ID:", e);
       return null;
     }
   }
@@ -35,7 +36,7 @@ export class FirestoreCampaignRepository implements ICampaignRepository {
       });
       return campaigns;
     } catch (e) {
-      console.error("Error finding all campaigns:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error finding all campaigns:", e);
       return [];
     }
   }
@@ -45,7 +46,7 @@ export class FirestoreCampaignRepository implements ICampaignRepository {
       const docRef = doc(db, COLLECTION_NAME, campaign.id);
       await setDoc(docRef, campaign);
     } catch (e) {
-      console.error("Error creating campaign:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error creating campaign:", e);
       throw e;
     }
   }
@@ -55,7 +56,7 @@ export class FirestoreCampaignRepository implements ICampaignRepository {
       const docRef = doc(db, COLLECTION_NAME, campaign.id);
       await setDoc(docRef, campaign, { merge: true });
     } catch (e) {
-      console.error("Error updating campaign:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error updating campaign:", e);
       throw e;
     }
   }
@@ -68,7 +69,7 @@ export class FirestoreCampaignRepository implements ICampaignRepository {
         deletedBy: deletedBy
       });
     } catch (e) {
-      console.error("Error soft deleting campaign:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error soft deleting campaign:", e);
       throw e;
     }
   }

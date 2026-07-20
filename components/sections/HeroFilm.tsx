@@ -8,6 +8,7 @@ import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer
 import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
 import { normalizeSectionData } from "@/lib/types/homepage";
+import { Observability } from "@/lib/infrastructure/observability";
 
 const slides: any[] = [];
 
@@ -110,7 +111,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
 
   const slide = displaySlides.length > 0 ? (displaySlides[current] || displaySlides[0]) : null;
 
-  if (!slide) { console.log("HEROFILM SLIDE IS NULL. cmsData:", cmsData); return null; }
+  if (!slide) { Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("HEROFILM SLIDE IS NULL. cmsData:", cmsData); return null; }
 
   const variants = {
     enter: { opacity: 0 },

@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { BreakpointConfig, TypographyConfig } from "./AppearanceProvider";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function TypographyBuilder() {
   const [config, setConfig] = useState<TypographyConfig>({
@@ -30,7 +31,7 @@ export default function TypographyBuilder() {
         }
         setLoading(false);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
 
   // Sync to iframe whenever config changes

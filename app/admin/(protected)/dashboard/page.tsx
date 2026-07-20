@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useAdminUser, hasPermission } from "@/lib/admin-auth";
+import { useIdentity, PermissionService } from "@/lib/iam";
 
 export default function AdminDashboard() {
-  const user = useAdminUser();
-  if (!user) return null;
+  const { identity } = useIdentity();
+  if (!identity) return null;
 
   return (
     <div>
@@ -23,7 +23,7 @@ export default function AdminDashboard() {
         gap: "2rem",
       }}>
         {/* Import Tool */}
-        {hasPermission(user.role, "Products") && (
+        {PermissionService.can(identity.role, "Manage", "Product") && (
           <Link href="/admin/import" style={{ textDecoration: "none" }}>
             <div style={{
               background: "#ffffff",

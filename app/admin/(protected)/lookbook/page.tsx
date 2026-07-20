@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type Slide = {
   id: string;
@@ -34,7 +35,7 @@ export default function LookbookAdminPage() {
         setLoading(false);
       })
       .catch(err => {
-        console.error(err);
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
         setLoading(false);
       });
   }, []);

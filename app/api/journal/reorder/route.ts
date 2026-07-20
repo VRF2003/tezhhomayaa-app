@@ -8,7 +8,7 @@ export async function PUT(req: Request) {
       return NextResponse.json({ success: false, error: "Invalid data" }, { status: 400 });
     }
 
-    const articles = getJournalArticles();
+    const articles = await getJournalArticles();
     
     // Map of ID to article for quick lookup
     const articleMap = new Map(articles.map(a => [a.id, a]));
@@ -32,7 +32,7 @@ export async function PUT(req: Request) {
       reordered.push(article);
     }
     
-    saveJournalArticles(reordered);
+    await saveJournalArticles(reordered);
     return NextResponse.json({ success: true, articles: reordered });
   } catch (error: any) {
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });

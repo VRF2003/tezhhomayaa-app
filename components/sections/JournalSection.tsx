@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import { JournalArticle } from "@/lib/types/journal";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface Props {
   cmsData: any;
@@ -27,7 +28,7 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
           setArticles(visible);
         }
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
 
   const layout = norm.journalConfig?.layout || "magazine-grid";

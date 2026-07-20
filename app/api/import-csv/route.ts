@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { writeFileSync } from "fs";
 import { join } from "path";
 import { inferCategory, categoryLabel } from "@/lib/categoryEngine";
+import { Observability } from "@/lib/infrastructure/observability";
 
 // ─── Types ────────────────────────────────────────────────────
 type ImportedProduct = {
@@ -206,7 +207,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, count: products.length, categories });
   } catch (err) {
-    console.error("[import-csv] error:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("[import-csv] error:", err);
     return NextResponse.json({ success: false, error: "Server error during import." }, { status: 500 });
   }
 }

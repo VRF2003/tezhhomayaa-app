@@ -1,34 +1,35 @@
-import fs from "fs";
-import path from "path";
 import { JournalArticle } from "./types/journal";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
-const journalPath = path.join(process.cwd(), "lib", "journal.json");
-
-export function getJournalArticles(): JournalArticle[] {
+export async function getJournalArticles(): Promise<JournalArticle[]> {
   try {
-    if (!fs.existsSync(journalPath)) {
-      return [];
-    }
-    const data = fs.readFileSync(journalPath, "utf-8");
-    return JSON.parse(data) as JournalArticle[];
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("journal");
+    if (!data) return [];
+    return data as JournalArticle[];
   } catch (error) {
-    console.error("Error reading journal.json", error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error reading journal from persistence", error);
     return [];
   }
 }
 
-export function saveJournalArticles(articles: JournalArticle[]) {
+export async function saveJournalArticles(articles: JournalArticle[]): Promise<void> {
   try {
-    fs.writeFileSync(journalPath, JSON.stringify(articles, null, 2), "utf-8");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("journal", articles);
   } catch (error) {
-    console.error("Error writing journal.json", error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error writing journal to persistence", error);
   }
 }
 
-export function getJournalArticleById(id: string): JournalArticle | undefined {
-  return getJournalArticles().find((a) => a.id === id);
+export async function getJournalArticleById(id: string): Promise<JournalArticle | undefined> {
+  const articles = await getJournalArticles();
+  return articles.find((a) => a.id === id);
 }
 
-export function getJournalArticleBySlug(slug: string): JournalArticle | undefined {
-  return getJournalArticles().find((a) => a.slug === slug);
+export async function getJournalArticleBySlug(slug: string): Promise<JournalArticle | undefined> {
+  const articles = await getJournalArticles();
+  return articles.find((a) => a.slug === slug);
 }

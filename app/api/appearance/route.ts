@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
-
-const filePath = join(process.cwd(), "lib", "appearance.json");
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
 export const dynamic = "force-dynamic";
 
@@ -55,11 +53,11 @@ const DEFAULT_APPEARANCE = {
 
 export async function GET() {
   try {
-    if (!existsSync(filePath)) {
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data: any = await docRepo.getDocument("appearance");
+    if (!data) {
       return NextResponse.json({ success: true, data: DEFAULT_APPEARANCE });
     }
-    const raw = readFileSync(filePath, "utf-8");
-    const data = JSON.parse(raw);
     
     // Ensure mobile and typography objects exist
     if (!data.mobile) data.mobile = DEFAULT_APPEARANCE.mobile;
@@ -74,17 +72,19 @@ export async function GET() {
 export async function PUT(req: Request) {
   try {
     const body = await req.json();
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
     
     // Merge with existing data so we don't overwrite unrelated keys
     let existing = DEFAULT_APPEARANCE;
     try {
-      if (existsSync(filePath)) {
-        existing = JSON.parse(readFileSync(filePath, "utf-8"));
+      const persisted = await docRepo.getDocument("appearance");
+      if (persisted) {
+        existing = persisted as any;
       }
     } catch(e) {}
     
     const merged = { ...existing, ...body };
-    writeFileSync(filePath, JSON.stringify(merged, null, 2), "utf-8");
+    await docRepo.saveDocument("appearance", merged);
     return NextResponse.json({ success: true, data: merged });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });

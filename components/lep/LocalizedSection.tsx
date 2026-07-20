@@ -6,6 +6,7 @@ import { adaptPayload } from "./PayloadAdapters";
 import { SectionErrorState, SectionEmptyState } from "./SectionErrorState";
 import { RuntimeContextBuilder } from "@/lib/preview/services/RuntimeContextBuilder";
 import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface LocalizedSectionProps {
   slug: string;
@@ -32,7 +33,7 @@ export default async function LocalizedSection({ slug, market, type, fallbackDat
     
     if (!variant) {
        if (fallbackData && Component) { 
-         console.log("LocalizedSection fallbackData:", fallbackData);
+         Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("LocalizedSection fallbackData:", fallbackData);
          return <Component cmsData={fallbackData} sectionId={slug} />;
        }
        return <SectionEmptyState slug={slug} type={type} />;
@@ -57,9 +58,9 @@ export default async function LocalizedSection({ slug, market, type, fallbackDat
       </>
     );
   } catch (error) {
-    console.error(`LEP Resolution Error for ${slug}:`, error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(`LEP Resolution Error for ${slug}:`, error);
     if (fallbackData && Component) {
-      console.log("LocalizedSection fallbackData:", fallbackData);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("LocalizedSection fallbackData:", fallbackData);
       return <Component cmsData={fallbackData} sectionId={slug} />;
     }
     return <SectionErrorState slug={slug} error={error as Error} />;

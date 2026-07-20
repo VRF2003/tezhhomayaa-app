@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { CurrencyCode, COUNTRY_TO_CURRENCY, parsePrice, formatPriceForCurrency, SUPPORTED_CURRENCIES } from "@/lib/currency";
 import { useMarket } from "@/lib/market/MarketContext";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface CurrencyContextType {
   currency: CurrencyCode;
@@ -40,7 +41,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
           }
         }
       } catch (err) {
-        console.warn("Failed to fetch rates, falling back to INR only.", err);
+        Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Failed to fetch rates, falling back to INR only.", err);
       }
 
       // 2. Determine currency
@@ -64,7 +65,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
           }
         }
       } catch (err) {
-        console.warn("Geolocation failed, defaulting to INR.", err);
+        Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Geolocation failed, defaulting to INR.", err);
       }
 
       setIsReady(true); // Defaulted to INR

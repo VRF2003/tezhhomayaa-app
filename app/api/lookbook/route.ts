@@ -1,16 +1,15 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
-
-const dataFilePath = path.join(process.cwd(), 'lib', 'lookbook.json');
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export async function GET() {
   try {
-    const fileContents = await fs.readFile(dataFilePath, 'utf8');
-    const data = JSON.parse(fileContents);
-    return NextResponse.json(data);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("lookbook");
+    return NextResponse.json(data || []);
   } catch (error) {
-    console.error('Failed to read lookbook data:', error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")('Failed to read lookbook data:', error);
     // Return empty array if file doesn't exist or is invalid
     return NextResponse.json([]);
   }
@@ -26,11 +25,12 @@ export async function POST(request: Request) {
     }
 
     // Write back to file
-    await fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf8');
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("lookbook", data);
     
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    console.error('Failed to update lookbook data:', error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")('Failed to update lookbook data:', error);
     return NextResponse.json({ error: 'Failed to update lookbook data' }, { status: 500 });
   }
 }

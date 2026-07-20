@@ -2,33 +2,36 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ADMIN_USERS } from "@/lib/admin-auth";
+import { loginAction } from "@/lib/iam/actions";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  // If already logged in, redirect to dashboard
-  useEffect(() => {
-    if (localStorage.getItem("tz_admin_user")) {
-      router.push("/admin/dashboard");
-    }
-  }, [router]);
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
 
-    const dbUser = ADMIN_USERS[email.toLowerCase()];
+    try {
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("password", password);
 
-    if (dbUser && dbUser.passwordHash === password) {
-      const { passwordHash, ...safeUser } = dbUser;
-      localStorage.setItem("tz_admin_user", JSON.stringify(safeUser));
-      router.push("/admin/dashboard");
-    } else {
-      setError("Invalid Credentials");
+      const result = await loginAction(formData);
+
+      if (result.success) {
+        router.push("/admin/dashboard");
+      } else {
+        setError(result.error || "Invalid Credentials");
+      }
+    } catch (err) {
+      setError("An unexpected error occurred.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -88,6 +91,7 @@ export default function AdminLogin() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            disabled={isLoading}
             style={{
               padding: "0.85rem",
               border: "1px solid #ccc9c4",
@@ -109,6 +113,7 @@ export default function AdminLogin() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            disabled={isLoading}
             style={{
               padding: "0.85rem",
               border: "1px solid #ccc9c4",
@@ -122,20 +127,22 @@ export default function AdminLogin() {
 
         <button
           type="submit"
+          disabled={isLoading}
           style={{
             marginTop: "1rem",
             padding: "1rem",
             background: "#1a1a18",
             color: "#f7f5f2",
             border: "none",
-            cursor: "pointer",
+            cursor: isLoading ? "not-allowed" : "pointer",
             fontSize: "0.65rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
             transition: "background 0.3s",
+            opacity: isLoading ? 0.7 : 1,
           }}
         >
-          Sign In
+          {isLoading ? "Signing In..." : "Sign In"}
         </button>
       </form>
     </div>

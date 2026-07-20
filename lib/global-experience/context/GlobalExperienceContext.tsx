@@ -3,6 +3,7 @@
 import React, { createContext, useCallback, useMemo, useState } from "react";
 import { Market } from "../types/market";
 import { GlobalExperienceRegistry } from "../GlobalExperienceRegistry";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface GlobalExperienceContextType {
   activeMarket: Market;
@@ -45,7 +46,7 @@ export function GlobalExperienceProvider({ children, initialMarketId }: { childr
         document.cookie = `tz_gee_market_id=${marketId}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
       }
     } else {
-      console.warn(
+      Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")(
         `[GlobalExperienceProvider] Ignored invalid market ID: "${marketId}". ` +
         `No matching market found in GlobalExperienceRegistry.`
       );

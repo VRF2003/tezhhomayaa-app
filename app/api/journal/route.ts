@@ -3,7 +3,7 @@ import { getJournalArticles, saveJournalArticles } from "@/lib/journal";
 import { JournalArticle } from "@/lib/types/journal";
 
 export async function GET() {
-  const articles = getJournalArticles();
+  const articles = await getJournalArticles();
   // Sort by order ascending
   articles.sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999));
   return NextResponse.json({ success: true, articles });
@@ -12,7 +12,7 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    const articles = getJournalArticles();
+    const articles = await getJournalArticles();
     
     const newArticle: JournalArticle = {
       id: `article_${Date.now()}`,
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
     };
 
     articles.push(newArticle);
-    saveJournalArticles(articles);
+    await saveJournalArticles(articles);
 
     return NextResponse.json({ success: true, article: newArticle });
   } catch (error: any) {

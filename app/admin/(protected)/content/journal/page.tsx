@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { JournalArticle } from "@/lib/types/journal";
 import { useDateFormatter } from "@/lib/global-experience/formatters";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function JournalDashboard() {
   const [articles, setArticles] = useState<JournalArticle[]>([]);
@@ -86,7 +87,7 @@ export default function JournalDashboard() {
         body: JSON.stringify({ orderedIds })
       });
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
     }
   };
 

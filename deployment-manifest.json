@@ -1,0 +1,13 @@
+{
+  "build": {
+    "version": "0.1.0",
+    "commitHash": "local-dev",
+    "buildTimestamp": "2026-07-19T10:04:45.035Z",
+    "buildNumber": "local"
+  },
+  "releaseVersion": "rel-0.1.0-local",
+  "configVersion": "v1.0",
+  "migrationVersion": "003",
+  "environment": "development",
+  "enabledFeatures": []
+}

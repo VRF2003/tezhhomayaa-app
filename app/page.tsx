@@ -1,18 +1,19 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HomepageClientWrapper from "@/components/sections/HomepageClientWrapper";
-import fs from "fs";
-import path from "path";
 import { cookies } from "next/headers";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 import { MARKET_COOKIE_NAME, MarketService } from "@/lib/market/MarketService";
 import LocalizedSection from "@/components/lep/LocalizedSection";
 import { SectionSkeleton } from "@/components/lep/SectionSkeleton";
 import { Suspense } from "react";
 import { Metadata, ResolvingMetadata } from "next";
 import { SeoService } from "@/lib/seo/services/SeoService";
-import { InMemorySeoRepository } from "@/lib/seo/repositories/InMemorySeoRepository";
+import { ISeoRepository } from "@/lib/seo/repositories/ISeoRepository";
 import { RuntimeContextBuilder } from "@/lib/preview/services/RuntimeContextBuilder";
 import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
@@ -30,7 +31,7 @@ export async function generateMetadata(
     currentMarket = MarketService.resolveMarket(null, previewPayload.marketId, null);
   }
 
-  const seoService = new SeoService(new InMemorySeoRepository());
+  const seoService = new SeoService(RepositoryResolver.resolve<ISeoRepository>("ISeoRepository"));
   const resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
 
   if (!resolvedSeo) return {}; // Fallback to Next.js defaults if nothing resolves
@@ -55,14 +56,12 @@ export async function generateMetadata(
 }
 
 export default async function HomePage() {
-  let homepageData = null;
+  let homepageData: any = null;
   try {
-    const filePath = path.join(process.cwd(), "lib", "homepage.json");
-    if (fs.existsSync(filePath)) {
-      homepageData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    }
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    homepageData = await docRepo.getDocument("homepage");
   } catch (err) {
-    console.error("Could not load homepage data", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Could not load homepage data from persistence", { message: err?.message, stack: err?.stack });
   }
 
   const sections = homepageData?.sections || [];
@@ -78,12 +77,12 @@ export default async function HomePage() {
   }
 
   // Structured Data component from LSE
-  const seoService = new SeoService(new InMemorySeoRepository());
+  const seoService = new SeoService(RepositoryResolver.resolve<ISeoRepository>("ISeoRepository"));
   const resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
 
   // We map LEP generic sections. For Phase 2.8.2, we target the Hero component explicitly.
   // IMPORTANT: The slug 'home-hero-banner' must match the slot name used in Campaign sections.
-  console.log("APP PAGE SECTIONS LENGTH:", sections.length); const defaultHeroSection = sections.find((s: any) => s.type === "hero-slider");
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("APP PAGE SECTIONS LENGTH:", sections.length); const defaultHeroSection = sections.find((s: any) => s.type === "hero-slider");
   
   const lepSlots = {
     "hero-slider": (

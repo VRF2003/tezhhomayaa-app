@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function MobileLayoutBuilder() {
   const [config, setConfig] = useState({
@@ -26,7 +27,7 @@ export default function MobileLayoutBuilder() {
         }
         setLoading(false);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
 
   // Sync to iframe whenever config changes

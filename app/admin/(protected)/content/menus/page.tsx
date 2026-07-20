@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { MainNavEntry, Category, SubItem } from "@/lib/types/menus";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function MenusContentPage() {
   const [menus, setMenus] = useState<MainNavEntry[]>([]);
@@ -16,7 +17,7 @@ export default function MenusContentPage() {
           setMenus(json.data);
         }
       })
-      .catch((err) => console.error(err))
+      .catch((err) => Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err))
       .finally(() => setLoading(false));
   }, []);
 
@@ -35,7 +36,7 @@ export default function MenusContentPage() {
         alert("Failed to save menus.");
       }
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       alert("Error saving menus.");
     } finally {
       setSaving(false);

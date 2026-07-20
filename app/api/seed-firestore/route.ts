@@ -3,6 +3,7 @@ import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCam
 import { FirestoreContentItemRepository } from "@/lib/lep/repositories/FirestoreContentItemRepository";
 import { Campaign } from "@/lib/lep/campaigns/types";
 import { ContentItem } from "@/lib/lep/core/types";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
@@ -81,7 +82,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ success: true, message: "Firestore seeded with Indian Summer campaign data." });
   } catch (error: any) {
-    console.error("Seed error:", error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Seed error:", error);
     return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

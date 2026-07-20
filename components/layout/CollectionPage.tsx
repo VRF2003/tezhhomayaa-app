@@ -1,5 +1,6 @@
 import { categoryMeta, getProductsByCategory, getRawProducts, getCollectionBanner } from "@/lib/collections";
 import CollectionPageUI from "@/components/layout/CollectionPageUI";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = 'force-dynamic';
 
@@ -37,8 +38,8 @@ export default function CollectionPage({ categoryKey, smartCollection }: Collect
   const totalActive = rawProducts.filter(p => p.status !== "draft" && p.status !== "archived").length;
   const totalDraft = rawProducts.filter(p => p.status === "draft").length;
 
-  console.log("Current Page CategoryKey:", categoryKey);
-  console.log("Total Loaded on Page:", products.length);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Current Page CategoryKey:", categoryKey);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Total Loaded on Page:", products.length);
 
   if (bannerData?.productSequence && bannerData.productSequence.length > 0) {
     finalProducts = [...finalProducts].sort((a: any, b: any) => {

@@ -2,6 +2,7 @@ import { AnalyticsEvent } from "../core/types";
 import { IEventBus } from "../events/EventBus";
 import { IAnalyticsRepository } from "../repositories/IAnalyticsRepository";
 import { IAggregationRepository } from "../repositories/IAggregationRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export class AnalyticsService {
   constructor(
@@ -25,7 +26,7 @@ export class AnalyticsService {
     try {
       // 1. Validate Schema version
       if (!event.eventVersion || !event.eventId) {
-        console.warn("[AnalyticsService] Invalid event schema:", event);
+        Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("[AnalyticsService] Invalid event schema:", event);
         return;
       }
 
@@ -36,7 +37,7 @@ export class AnalyticsService {
       await this.aggRepo.incrementAggregates(event);
       
     } catch (e) {
-      console.error("[AnalyticsService] Failed to process event:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("[AnalyticsService] Failed to process event:", e);
     }
   }
 }

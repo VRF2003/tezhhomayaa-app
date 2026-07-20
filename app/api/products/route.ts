@@ -1,31 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
 import { Product } from "@/lib/collections";
 import { categoryLabel } from "@/lib/categoryEngine";
 import { computeSmartCollections } from "@/lib/smartCollections";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
 export const dynamic = 'force-dynamic';
 
-const filePath = join(process.cwd(), "lib", "products.json");
-
-function getProducts(): Product[] {
-  if (!existsSync(filePath)) return [];
+async function getProducts(): Promise<Product[]> {
   try {
-    return JSON.parse(readFileSync(filePath, "utf-8"));
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("products");
+    return (data as Product[]) || [];
   } catch {
     return [];
   }
 }
 
 export async function GET(req: NextRequest) {
-  return NextResponse.json({ success: true, data: getProducts() });
+  return NextResponse.json({ success: true, data: await getProducts() });
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const products = getProducts();
+    const products = await getProducts();
     
     // Generate defaults
     const slug = body.slug || body.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -40,10 +39,11 @@ export async function POST(req: NextRequest) {
     };
     
     products.push(newProduct);
-    writeFileSync(filePath, JSON.stringify(products, null, 2), "utf-8");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("products", products);
     
     // Update smart collections cache
-    computeSmartCollections();
+    await computeSmartCollections();
     
     return NextResponse.json({ success: true, data: newProduct });
   } catch (err: any) {

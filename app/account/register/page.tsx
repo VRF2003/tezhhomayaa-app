@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -35,11 +36,11 @@ export default function RegisterPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: userCredential.user.email, name: fullName })
-      }).catch(console.error);
+      }).catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
 
       router.push("/account/orders");
     } catch (error) {
-      console.error(error);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(error);
       alert("Failed to create account. Check console for details.");
     }
   };

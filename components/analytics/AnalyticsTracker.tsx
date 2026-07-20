@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { EventType } from "@/lib/analytics/core/types";
 import { Market } from "@/lib/market/types";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface AnalyticsTrackerProps {
   type: EventType;
@@ -56,7 +57,7 @@ export function AnalyticsTracker({
         });
       }
     } catch (e) {
-      console.warn("AnalyticsTracker failed to send beacon", e);
+      Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("AnalyticsTracker failed to send beacon", e);
     }
   }, [type, market, pageId, sectionId, campaignId]);
 

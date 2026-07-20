@@ -1,5 +1,6 @@
 import { GlobalExperienceRegistry } from "./GlobalExperienceRegistry";
 import { Market } from "./types/market";
+import { Observability } from "@/lib/infrastructure/observability";
 
 /**
  * MarketBridgeResult
@@ -86,7 +87,7 @@ export class MarketBridge {
           );
 
         if (fallbackMarket) {
-          console.warn(
+          Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")(
             `MarketBridge: Market "${marketId}" not found. Falling back to default market "${fallbackMarket.id}" for country "${country}".`
           );
           return { success: true, market: fallbackMarket };

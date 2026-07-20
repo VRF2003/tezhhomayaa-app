@@ -1,11 +1,12 @@
 import React from "react";
-import { InMemoryTranslationRepository } from "@/lib/translations/repositories/InMemoryTranslationRepository";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { ITranslationRepository } from "@/lib/translations/repositories/ITranslationRepository";
 import { TranslationService } from "@/lib/translations/services/TranslationService";
 
 export const dynamic = "force-dynamic";
 
 export default async function TranslationsAdminDashboard() {
-  const repo = new InMemoryTranslationRepository();
+  const repo = RepositoryResolver.resolve<ITranslationRepository>("ITranslationRepository");
   const service = new TranslationService(repo);
   const sets = await repo.findAll();
 

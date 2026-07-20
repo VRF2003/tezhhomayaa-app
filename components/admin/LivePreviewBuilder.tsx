@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { UniversalSectionBuilder } from "@/components/admin/UniversalSectionBuilder";
 import { SectionType } from "@/lib/types/homepage";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type Section = {
   id: string;
@@ -292,7 +293,7 @@ export function LivePreviewBuilder({ apiEndpoint, pageTitle, backUrl, previewUrl
       // Advanced Blocks (Phase 2E.1)
       case "adv-rich-text": defaultData = { content: { description: "<p>Advanced Rich Text</p>" } }; break;
       case "adv-raw-html": defaultData = { content: { description: "<div>Raw HTML</div>" } }; break;
-      case "adv-code-block": defaultData = { content: { description: "console.log('Hello');" } }; break;
+      case "adv-code-block": defaultData = { content: { description: "Observability.getLogger('System').info('Hello');" } }; break;
       case "adv-founder-quote": defaultData = { content: { heading: "Founder", subheading: "CEO" } }; break;
       case "adv-download-block": defaultData = { content: { heading: "Press Kit", primaryButton: { enabled: true, label: "Download", url: "#" } } }; break;
       case "adv-contact-block": defaultData = { content: { heading: "Contact Us" } }; break;

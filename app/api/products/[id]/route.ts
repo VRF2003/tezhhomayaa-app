@@ -1,17 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
 import { Product } from "@/lib/collections";
 import { computeSmartCollections } from "@/lib/smartCollections";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
 export const dynamic = 'force-dynamic';
 
-const filePath = join(process.cwd(), "lib", "products.json");
-
-function getProducts(): Product[] {
-  if (!existsSync(filePath)) return [];
+async function getProducts(): Promise<Product[]> {
   try {
-    return JSON.parse(readFileSync(filePath, "utf-8"));
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("products");
+    return (data as Product[]) || [];
   } catch {
     return [];
   }
@@ -21,7 +20,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   try {
     const { id } = await params;
     const body = await req.json();
-    const products = getProducts();
+    const products = await getProducts();
     
     const index = products.findIndex(p => p.id === id);
     if (index === -1) {
@@ -29,10 +28,11 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     }
     
     products[index] = { ...products[index], ...body };
-    writeFileSync(filePath, JSON.stringify(products, null, 2), "utf-8");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("products", products);
     
     // Update smart collections cache
-    computeSmartCollections();
+    await computeSmartCollections();
     
     return NextResponse.json({ success: true, data: products[index] });
   } catch (err: any) {
@@ -43,17 +43,18 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const products = getProducts();
+    const products = await getProducts();
     
     const filtered = products.filter(p => p.id !== id);
     if (filtered.length === products.length) {
       return NextResponse.json({ success: false, error: "Product not found" }, { status: 404 });
     }
     
-    writeFileSync(filePath, JSON.stringify(filtered, null, 2), "utf-8");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("products", filtered);
     
     // Update smart collections cache
-    computeSmartCollections();
+    await computeSmartCollections();
     
     return NextResponse.json({ success: true });
   } catch (err: any) {

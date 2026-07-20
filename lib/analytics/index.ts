@@ -1,11 +1,12 @@
 import { GlobalEventBus } from "./events/EventBus";
-import { InMemoryAnalyticsRepository } from "./repositories/InMemoryAnalyticsRepository";
-import { InMemoryAggregationRepository } from "./repositories/InMemoryAggregationRepository";
+import { RepositoryResolver } from "../infrastructure/persistence/resolver/RepositoryResolver";
+import { IAnalyticsRepository } from "./repositories/IAnalyticsRepository";
+import { IAggregationRepository } from "./repositories/IAggregationRepository";
 import { AnalyticsService } from "./services/AnalyticsService";
 
 // Instantiate singletons
-export const rawAnalyticsRepo = new InMemoryAnalyticsRepository();
-export const aggAnalyticsRepo = new InMemoryAggregationRepository();
+export const rawAnalyticsRepo = RepositoryResolver.resolve<IAnalyticsRepository>("IAnalyticsRepository");
+export const aggAnalyticsRepo = RepositoryResolver.resolve<IAggregationRepository>("IAggregationRepository");
 
 export const GlobalAnalyticsService = new AnalyticsService(
   GlobalEventBus,

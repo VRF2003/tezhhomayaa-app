@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: ["argon2"],
   experimental: {
     serverActions: {
-      bodySizeLimit: "10mb", // Allow image uploads up to ~7MB (base64 adds ~33% overhead)
+      bodySizeLimit: "10mb",
     },
   },
   images: {

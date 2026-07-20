@@ -1,3 +1,4 @@
+import { Observability } from "@/lib/infrastructure/observability";
 export type LifecycleEventType =
   | "PACKAGE_SUBMITTED_FOR_REVIEW"
   | "PACKAGE_APPROVED"
@@ -31,7 +32,7 @@ export class InMemoryLifecycleEventBus implements ILifecycleEventBus {
         try {
           handler(event);
         } catch (e) {
-          console.error("[LifecycleEventBus] Handler failed:", e);
+          Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("[LifecycleEventBus] Handler failed:", e);
         }
       }
     }, 0);

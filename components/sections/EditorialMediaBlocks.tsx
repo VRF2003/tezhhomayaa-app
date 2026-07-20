@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 import { UniversalSectionData } from "@/lib/types/homepage";
+import { Observability } from "@/lib/infrastructure/observability";
 
 // Placeholder for a Luxury Lightbox Context that would wrap the app.
 // For now, we simulate the lightbox trigger.
 const useLightbox = () => {
   return (src: string) => {
-    console.log("Opening Lightbox for:", src);
+    Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Opening Lightbox for:", src);
     // In full implementation, this opens a global cinematic lightbox overlay.
   };
 };

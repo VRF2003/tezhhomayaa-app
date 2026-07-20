@@ -6,7 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "etqp:architecture": "tsx lib/infrastructure/testing/quality/run-quality-gates.ts",
+    "etqp:ci": "npm run test:coverage && npm run etqp:architecture",
+    "deploy:manifest": "tsx lib/infrastructure/deployment/metadata/generate-manifest.ts",
+    "deploy:validate": "tsx lib/infrastructure/deployment/validation/cli.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
@@ -26,15 +33,18 @@
     "@tiptap/react": "^3.27.1",
     "@tiptap/starter-kit": "^3.27.1",
     "@tiptap/suggestion": "^3.27.1",
+    "argon2": "^0.45.0",
     "cloudinary": "^2.10.0",
     "critters": "^0.0.23",
     "dotenv": "^17.4.2",
     "firebase": "^12.16.0",
     "framer-motion": "^12.40.0",
+    "jose": "^6.2.3",
     "lucide-react": "^1.21.0",
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
+    "react-icons": "^5.7.0",
     "resend": "^6.17.2",
     "tippy.js": "^6.3.7",
     "uuid": "^14.0.1"
@@ -45,9 +55,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "ts-morph": "^28.0.0",
+    "tsx": "^4.23.1",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

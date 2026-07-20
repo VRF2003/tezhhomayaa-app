@@ -5,6 +5,7 @@ import { UniversalMediaBuilder } from "@/components/admin/UniversalMediaBuilder"
 import { UniversalSectionBuilder } from "@/components/admin/UniversalSectionBuilder";
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import CollectionBanner from "@/components/sections/CollectionBanner";
+import { Observability } from "@/lib/infrastructure/observability";
 
 function ProductSequenceBuilder({
   activeCategory,
@@ -36,7 +37,7 @@ function ProductSequenceBuilder({
         if (allRes.success) setAllProducts(allRes.data);
         if (baseRes.success) setBaseProducts(baseRes.data);
       } catch (err) {
-        console.error(err);
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       } finally {
         setLoading(false);
       }
@@ -162,7 +163,7 @@ export default function CollectionsBuilderPage() {
           setBanners(banRes.data || {});
         }
       } catch (err) {
-        console.error("Failed to load collections data", err);
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to load collections data", err);
       } finally {
         setLoading(false);
       }

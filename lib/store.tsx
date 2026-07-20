@@ -256,6 +256,7 @@ export function useSearch() {
 // ─── Auth Context ─────────────────────────────────────────────
 import { auth } from "@/lib/firebase";
 import { onAuthStateChanged, signOut, type User } from "firebase/auth";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type AuthCtx = {
   isLoggedIn: boolean;
@@ -282,7 +283,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   // login is now handled by the pages directly calling Firebase auth methods
   const login = useCallback(() => {}, []);
   const logout = useCallback(() => {
-    signOut(auth).catch(console.error);
+    signOut(auth).catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
 
   return (

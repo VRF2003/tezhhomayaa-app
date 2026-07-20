@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { UniversalSectionData } from "@/lib/types/homepage";
 import Link from "next/link";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface BlockProps {
   section: UniversalSectionData;
@@ -104,7 +105,7 @@ export const AdvCodeBlock = ({ section }: BlockProps) => {
           {copied ? "Copied" : "Copy"}
         </button>
         <pre className="overflow-x-auto">
-          <code>{section.content?.description || "console.log('Hello Luxury Code');"}</code>
+          <code>{section.content?.description || "Observability.getLogger('System').info('Hello Luxury Code');"}</code>
         </pre>
       </div>
     </div>

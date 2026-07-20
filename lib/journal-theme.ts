@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
 export interface JournalTypographyPreset {
   h1: number;
@@ -59,21 +59,21 @@ const DEFAULT_THEME: JournalThemeConfig = {
   }
 };
 
-const THEME_FILE = path.join(process.cwd(), "lib", "journal-theme.json");
-
-export function getJournalTheme(): JournalThemeConfig {
-  if (!fs.existsSync(THEME_FILE)) {
-    saveJournalTheme(DEFAULT_THEME);
-    return DEFAULT_THEME;
-  }
+export async function getJournalTheme(): Promise<JournalThemeConfig> {
   try {
-    const raw = fs.readFileSync(THEME_FILE, "utf-8");
-    return JSON.parse(raw);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("journal_theme");
+    if (!data) {
+      await saveJournalTheme(DEFAULT_THEME);
+      return DEFAULT_THEME;
+    }
+    return data as JournalThemeConfig;
   } catch (e) {
     return DEFAULT_THEME;
   }
 }
 
-export function saveJournalTheme(config: JournalThemeConfig): void {
-  fs.writeFileSync(THEME_FILE, JSON.stringify(config, null, 2));
+export async function saveJournalTheme(config: JournalThemeConfig): Promise<void> {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  await docRepo.saveDocument("journal_theme", config);
 }

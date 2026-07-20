@@ -5,8 +5,9 @@ import StoreProviders from "@/components/ecommerce/StoreProviders";
 import { getAllProducts } from "@/lib/collections";
 import { PreviewBanner } from "@/components/preview/PreviewBanner";
 import { AppearanceProvider } from "@/components/admin/AppearanceProvider";
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { PlatformInitializer } from "@/lib/infrastructure/bootstrap/PlatformInitializer";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -44,13 +45,20 @@ export const metadata: Metadata = {
 
 import { cookies } from "next/headers";
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const allProducts = getAllProducts();
+export default async function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  await PlatformInitializer.initialize();
+
+  const allProducts = await getAllProducts();
   let appearanceConfig = null;
   try {
-    const p = join(process.cwd(), "lib", "appearance.json");
-    if (existsSync(p)) {
-      appearanceConfig = JSON.parse(readFileSync(p, "utf-8"));
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("appearance");
+    if (data) {
+      appearanceConfig = data;
     }
   } catch(e) {}
 
@@ -67,7 +75,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="bg-white text-obsidian">
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />
-        <AppearanceProvider initialConfig={appearanceConfig}>
+        <AppearanceProvider initialConfig={(appearanceConfig as any) || undefined}>
           <StoreProviders allProducts={allProducts} initialGeeMarketId={geeMarketId}>
             {children}
             <PreviewBanner />

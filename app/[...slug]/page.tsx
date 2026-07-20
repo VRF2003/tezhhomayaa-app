@@ -1,6 +1,7 @@
-import fs from "fs";
 import path from "path";
 import { notFound } from "next/navigation";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 import HomepageClientWrapper from "@/components/sections/HomepageClientWrapper";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +9,7 @@ import { getProductBySlug, getRelatedProducts, getAllProducts } from "@/lib/coll
 import ProductDetailPage from "@/components/layout/ProductDetailPage";
 import CollectionPage from "@/components/layout/CollectionPage";
 import { getSmartCollectionSettings, getSmartCollections } from "@/lib/smartCollections";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
@@ -17,10 +19,10 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const registryPath = path.join(process.cwd(), "lib", "pages.json");
-  if (fs.existsSync(registryPath)) {
+  const docRepo = RepositoryResolver.resolve("DocumentRepository") as IDocumentRepository;
+  const registry = await docRepo.getDocument<any[]>("pages");
+  if (registry) {
     try {
-      const registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);
       if (pageMeta) {
         return {
@@ -29,12 +31,12 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
         };
       }
     } catch (e) {
-      console.error(e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(e);
     }
   }
 
   // 2. Is it a Product?
-  const product = getProductBySlug(lastSegment);
+  const product = await getProductBySlug(lastSegment);
   if (product) {
     return {
       title: `${product.name} — TEZHHOMAYAA`,
@@ -48,9 +50,9 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
   }
 
   // 3. Smart Collection Override
-  const settings = getSmartCollectionSettings();
+  const settings = await getSmartCollectionSettings();
   if (settings.enableSmartRouting) {
-    const smartCols = getSmartCollections();
+    const smartCols = await getSmartCollections();
     const col = smartCols.find(c => c.slug === fullPath || c.slug === lastSegment);
     if (col) {
       return {
@@ -77,18 +79,16 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const registryPath = path.join(process.cwd(), "lib", "pages.json");
-  if (fs.existsSync(registryPath)) {
-    try {
-      const registry = JSON.parse(fs.readFileSync(registryPath, "utf-8"));
+  const docRepo = RepositoryResolver.resolve("DocumentRepository") as IDocumentRepository;
+  try {
+    const registry = await docRepo.getDocument<any[]>("pages");
+    if (registry) {
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);
       
       if (pageMeta && (pageMeta.status === "Published" || isPreview)) {
-        const targetSlug = pageMeta.mode === "motion" ? `${pageMeta.slug}-motion` : pageMeta.slug;
-        const filePath = path.join(process.cwd(), "lib", "pages", `${targetSlug}.json`);
-        if (fs.existsSync(filePath)) {
-          const rawData = JSON.parse(fs.readFileSync(filePath, "utf-8"));
-          const sections = Array.isArray(rawData) ? rawData : (rawData.sections || []);
+        const pageData: any = await docRepo.getDocument(`page_${pageMeta.id}`);
+        if (pageData) {
+          const sections = pageData.sections || [];
           return (
             <main className="min-h-screen bg-white" id="main-content">
               <Navbar />
@@ -98,40 +98,40 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
           );
         }
       }
-    } catch (e) {
-      console.error(e);
     }
+  } catch (err) {
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error checking custom pages:", err);
   }
 
   // 2. Is it a Product?
-  const product = getProductBySlug(lastSegment);
+  const product = await getProductBySlug(lastSegment);
   if (product) {
-    const related = getRelatedProducts(product, 10);
+    const related = await getRelatedProducts(product, 4);
     return <ProductDetailPage product={product} related={related} />;
   }
 
   // 3. Is it a Smart Collection?
-  const settings = getSmartCollectionSettings();
+  const settings = await getSmartCollectionSettings();
   
-  console.log("=== STOREFRONT ROUTING DEBUG ===");
-  console.log("Current route fullPath:", fullPath);
-  console.log("Smart Routing Enabled:", settings.enableSmartRouting);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("=== STOREFRONT ROUTING DEBUG ===");
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Current route fullPath:", fullPath);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Smart Routing Enabled:", settings.enableSmartRouting);
 
   if (settings.enableSmartRouting) {
-    const smartCols = getSmartCollections();
+    const smartCols = await getSmartCollections();
     const col = smartCols.find(c => c.slug === fullPath || c.slug === lastSegment);
     
-    console.log("Collection found:", col ? "Yes" : "No");
+    Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Collection found:", col ? "Yes" : "No");
     if (col) {
-      console.log("Collection slug:", col.slug);
-      console.log("Collection matching product IDs count:", col.productIds.length);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Collection slug:", col.slug);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Collection matching product IDs count:", col.productIds.length);
       
       // Create a mocked CollectionPage experience using the cached productIds
-      const allProducts = getAllProducts(); // NOTE: getAllProducts filters OUT draft/archived products
+      const allProducts = await getAllProducts(); // NOTE: getAllProducts filters OUT draft/archived products
       const matchedProducts = allProducts.filter(p => col.productIds.includes(p.id));
       
-      console.log("Products returned to page (active only):", matchedProducts.length);
-      console.log("================================");
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Products returned to page (active only):", matchedProducts.length);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("================================");
       
       // Pass dynamic products instead of categoryKey if CollectionPage supported it.
       // But CollectionPage currently uses categoryKey to fetch.
@@ -140,8 +140,8 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
     }
   }
 
-  console.log("Falling back to legacy Category Engine");
-  console.log("================================");
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Falling back to legacy Category Engine");
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("================================");
 
   // 4. Fallback to Category
   return <CollectionPage categoryKey={fullPath} />;

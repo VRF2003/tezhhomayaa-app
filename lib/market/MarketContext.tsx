@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { Market } from "./types";
 import { MarketService, MARKET_COOKIE_NAME } from "./MarketService";
 import { useRouter } from "next/navigation";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type MarketContextType = {
   market: Market;
@@ -40,7 +41,7 @@ export function MarketProvider({ children, initialMarket }: { children: ReactNod
 
   useEffect(() => {
     if (!isLoading) {
-      console.log(`[Global Market Engine] Active Market: ${market.marketName} (${market.currencyCode})`);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")(`[Global Market Engine] Active Market: ${market.marketName} (${market.currencyCode})`);
     }
   }, [market, isLoading]);
 

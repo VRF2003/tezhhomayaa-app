@@ -2,6 +2,7 @@ import { ContentItem } from "../core/types";
 import { IContentItemRepository } from "./IContentItemRepository";
 import { db } from "@/lib/firebase";
 import { collection, doc, getDoc, getDocs, setDoc, updateDoc } from "firebase/firestore";
+import { Observability } from "@/lib/infrastructure/observability";
 
 const COLLECTION_NAME = "lep_content_items";
 
@@ -18,7 +19,7 @@ export class FirestoreContentItemRepository implements IContentItemRepository {
       }
       return null;
     } catch (e) {
-      console.error("Error finding content item by ID:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error finding content item by ID:", e);
       return null;
     }
   }
@@ -35,7 +36,7 @@ export class FirestoreContentItemRepository implements IContentItemRepository {
       });
       return items;
     } catch (e) {
-      console.error("Error finding all content items:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error finding all content items:", e);
       return [];
     }
   }
@@ -45,7 +46,7 @@ export class FirestoreContentItemRepository implements IContentItemRepository {
       const docRef = doc(db, COLLECTION_NAME, item.id);
       await setDoc(docRef, item);
     } catch (e) {
-      console.error("Error creating content item:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error creating content item:", e);
       throw e;
     }
   }
@@ -55,7 +56,7 @@ export class FirestoreContentItemRepository implements IContentItemRepository {
       const docRef = doc(db, COLLECTION_NAME, item.id);
       await setDoc(docRef, item, { merge: true });
     } catch (e) {
-      console.error("Error updating content item:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error updating content item:", e);
       throw e;
     }
   }
@@ -68,7 +69,7 @@ export class FirestoreContentItemRepository implements IContentItemRepository {
         deletedBy: deletedBy
       });
     } catch (e) {
-      console.error("Error soft deleting content item:", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error soft deleting content item:", e);
       throw e;
     }
   }

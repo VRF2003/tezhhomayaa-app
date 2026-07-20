@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 import { getAllProducts, Product } from "./collections";
 
 export type Condition = {
@@ -35,48 +35,35 @@ export type SmartCollection = {
   presentation?: CollectionPresentation;
 };
 
-const collectionsPath = join(process.cwd(), "lib", "smart-collections.json");
-const settingsPath = join(process.cwd(), "lib", "smart-collections-settings.json");
-
-export type SmartCollectionSettings = {
-  enableSmartRouting: boolean;
-};
-
-function ensureFile() {
-  if (!existsSync(collectionsPath)) {
-    writeFileSync(collectionsPath, JSON.stringify([], null, 2));
-  }
-  if (!existsSync(settingsPath)) {
-    writeFileSync(settingsPath, JSON.stringify({ enableSmartRouting: false }, null, 2));
-  }
-}
-
-export function getSmartCollectionSettings(): SmartCollectionSettings {
-  ensureFile();
+export async function getSmartCollectionSettings(): Promise<SmartCollectionSettings> {
   try {
-    const raw = readFileSync(settingsPath, "utf-8");
-    return JSON.parse(raw);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("smart_collections_settings");
+    if (!data) return { enableSmartRouting: false };
+    return data as SmartCollectionSettings;
   } catch (err) {
     return { enableSmartRouting: false };
   }
 }
 
-export function saveSmartCollectionSettings(settings: SmartCollectionSettings) {
-  writeFileSync(settingsPath, JSON.stringify(settings, null, 2));
+export async function saveSmartCollectionSettings(settings: SmartCollectionSettings): Promise<void> {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  await docRepo.saveDocument("smart_collections_settings", settings);
 }
 
-export function getSmartCollections(): SmartCollection[] {
-  ensureFile();
+export async function getSmartCollections(): Promise<SmartCollection[]> {
   try {
-    const raw = readFileSync(collectionsPath, "utf-8");
-    return JSON.parse(raw);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("smart_collections");
+    return (data as SmartCollection[]) || [];
   } catch (err) {
     return [];
   }
 }
 
-export function saveSmartCollections(collections: SmartCollection[]) {
-  writeFileSync(collectionsPath, JSON.stringify(collections, null, 2));
+export async function saveSmartCollections(collections: SmartCollection[]): Promise<void> {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  await docRepo.saveDocument("smart_collections", collections);
 }
 
 // ─── Engine ───────────────────────────────────────────────────────
@@ -120,9 +107,9 @@ function evaluateCondition(product: Product, condition: Condition): boolean {
   return false;
 }
 
-export function computeSmartCollections() {
-  const collections = getSmartCollections();
-  const products = getAllProducts();
+export async function computeSmartCollections(): Promise<void> {
+  const collections = await getSmartCollections();
+  const products = await getAllProducts();
   
   const updated = collections.map(col => {
     const matchedProducts = products.filter(product => {
@@ -139,5 +126,5 @@ export function computeSmartCollections() {
     return col;
   });
   
-  saveSmartCollections(updated);
+  await saveSmartCollections(updated);
 }

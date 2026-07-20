@@ -6,6 +6,7 @@ import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer
 import { normalizeSectionData } from "@/lib/types/homepage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { useWysiwygDrag } from "@/components/ui/useWysiwygDrag";
+import { Observability } from "@/lib/infrastructure/observability";
 
 const shadowMap: any = {
   none: "none",
@@ -31,7 +32,7 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
   const cardTitle = norm.content?.heading || "";
   const buttonUrl = norm.content?.primaryButton?.url || item.url || item.collectionId || "";
   
-  console.log("Card URL", cardTitle, buttonUrl);
+  Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Card URL", cardTitle, buttonUrl);
 
   const href = buttonUrl && buttonUrl !== "#" ? buttonUrl.startsWith('/') || buttonUrl.startsWith('http') ? buttonUrl : `/${buttonUrl}` : "";
 

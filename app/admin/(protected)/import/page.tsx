@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useAdminUser } from "@/lib/admin-auth";
+import { useIdentity } from "@/lib/iam";
 
 type ImportResult = {
   success: boolean;
@@ -15,7 +15,7 @@ export default function ImportPage() {
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [result, setResult] = useState<ImportResult | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
-  const user = useAdminUser();
+  const { identity } = useIdentity();
 
   const processFile = useCallback(async (file: File) => {
     if (!file.name.endsWith(".csv")) {
@@ -66,7 +66,7 @@ export default function ImportPage() {
     if (file) processFile(file);
   };
 
-  if (!user) return null;
+  if (!identity) return null;
 
   return (
     <div style={{ maxWidth: "800px" }}>

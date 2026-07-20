@@ -8,6 +8,7 @@ import { useGlobalExperience } from "@/lib/global-experience/hooks/useGlobalExpe
 import { MarketBridge } from "@/lib/global-experience/MarketBridge";
 
 import { startTransition } from "react";
+import { Observability } from "@/lib/infrastructure/observability";
 
 /**
  * ArrivalOrchestrator
@@ -46,7 +47,7 @@ export function useArrivalOrchestrator() {
       if (bridgeResult.success) {
         setGlobalExperienceMarket(bridgeResult.market.id);
       } else {
-        console.error(
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(
           `[ArrivalOrchestrator] GEE MarketBridge failed (${bridgeResult.code}): ${bridgeResult.error}`
         );
       }

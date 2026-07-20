@@ -1,3 +1,4 @@
+import { Observability } from "@/lib/infrastructure/observability";
 export type CurrencyCode = "INR" | "BHD" | "AED" | "SAR" | "KWD" | "QAR" | "OMR" | "SGD" | "THB" | "MYR" | "VND" | "USD" | "CAD" | "GBP" | "EUR" | "CHF" | "JPY" | "KRW" | "CNY" | "AUD" | "BRL" | "ZAR";
 
 export interface CurrencyConfig {
@@ -94,7 +95,7 @@ export function formatPriceForCurrency(amount: number, currencyCode: CurrencyCod
 
 export function getProductPrice(product: { id: string; price?: string | number }): number {
   if (product.price === undefined || product.price === null || product.price === "") {
-    console.warn("Invalid product price", product.id, product.price);
+    Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Invalid product price", product.id, product.price);
     return 0;
   }
   const priceValue = typeof product.price === "number"

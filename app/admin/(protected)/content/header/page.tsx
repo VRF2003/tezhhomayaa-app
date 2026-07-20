@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type HeaderSettings = {
   logoImage: string;
@@ -27,7 +28,7 @@ export default function HeaderContentPage() {
         setLoading(false);
       })
       .catch(err => {
-        console.error("Failed to load header settings", err);
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to load header settings", err);
         setLoading(false);
       });
   }, []);
@@ -58,7 +59,7 @@ export default function HeaderContentPage() {
       }
     } catch (err) {
       setMessage("Error saving settings.");
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
     } finally {
       setSaving(false);
     }

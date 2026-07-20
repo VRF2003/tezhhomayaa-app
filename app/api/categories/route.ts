@@ -1,10 +1,9 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
-
-const MENUS_PATH = path.join(process.cwd(), "lib", "menus.json");
 
 function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -12,10 +11,9 @@ function slugify(text: string) {
 
 export async function GET() {
   try {
-    let menus = [];
-    if (fs.existsSync(MENUS_PATH)) {
-      menus = JSON.parse(fs.readFileSync(MENUS_PATH, "utf-8"));
-    } else {
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    let menus: any = await docRepo.getDocument("menus");
+    if (!menus) {
       // Fallback if no menus exist yet
       menus = require("@/lib/types/menus").defaultMainNav || [];
     }
@@ -54,7 +52,7 @@ export async function GET() {
     const data = { departments, categories, subcategories };
     return NextResponse.json({ success: true, data });
   } catch (err) {
-    console.error("Failed to load categories data from menus", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to load categories data from menus", err);
     return NextResponse.json({ success: false, error: "Failed to parse categories" }, { status: 500 });
   }
 }

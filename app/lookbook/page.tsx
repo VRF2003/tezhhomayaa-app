@@ -1,6 +1,7 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 import LookbookClient from "./LookbookClient";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const metadata = {
   title: "Lookbook | Tezhhomayaa",
@@ -8,13 +9,13 @@ export const metadata = {
 };
 
 export default async function LookbookPage() {
-  const dataFilePath = path.join(process.cwd(), 'lib', 'lookbook.json');
   let slides = [];
   try {
-    const fileContents = await fs.readFile(dataFilePath, 'utf8');
-    slides = JSON.parse(fileContents);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("lookbook");
+    slides = (data as any) || [];
   } catch (error) {
-    console.error('Failed to read lookbook data:', error);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")('Failed to read lookbook data:', error);
   }
 
   return (

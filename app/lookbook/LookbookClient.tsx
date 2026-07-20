@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type Slide = {
   id: string;
@@ -32,7 +33,7 @@ function SlideMedia({ slide, isActive }: { slide: Slide, isActive: boolean }) {
     if (video) {
       if (isActive) {
         video.currentTime = 0;
-        video.play().catch(console.error);
+        video.play().catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
       } else {
         video.pause();
       }

@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 import { getRawProducts, Product } from "./collections";
 
 export type Tag = {
@@ -8,30 +8,23 @@ export type Tag = {
   productCount?: number; // Calculated dynamically
 };
 
-const tagsPath = join(process.cwd(), "lib", "tags.json");
-
-function ensureTagsFile() {
-  if (!existsSync(tagsPath)) {
-    writeFileSync(tagsPath, JSON.stringify([], null, 2));
-  }
-}
-
-export function getTags(): Tag[] {
-  ensureTagsFile();
+export async function getTags(): Promise<Tag[]> {
   try {
-    const raw = readFileSync(tagsPath, "utf-8");
-    return JSON.parse(raw);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("tags");
+    return (data as Tag[]) || [];
   } catch (err) {
     return [];
   }
 }
 
-export function saveTags(tags: Tag[]) {
-  writeFileSync(tagsPath, JSON.stringify(tags, null, 2));
+export async function saveTags(tags: Tag[]): Promise<void> {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  await docRepo.saveDocument("tags", tags);
 }
 
-export function addTag(name: string): Tag {
-  const tags = getTags();
+export async function addTag(name: string): Promise<Tag> {
+  const tags = await getTags();
   const normalized = name.trim().toLowerCase();
   
   let existing = tags.find(t => t.name === normalized);
@@ -43,24 +36,24 @@ export function addTag(name: string): Tag {
   };
   
   tags.push(newTag);
-  saveTags(tags);
+  await saveTags(tags);
   return newTag;
 }
 
-export function deleteTag(id: string) {
-  const tags = getTags();
+export async function deleteTag(id: string): Promise<void> {
+  const tags = await getTags();
   const tagToDelete = tags.find(t => t.id === id);
   if (!tagToDelete) return;
   
   const newTags = tags.filter(t => t.id !== id);
-  saveTags(newTags);
+  await saveTags(newTags);
   
   // Update products to remove this tag
-  removeTagFromProducts(tagToDelete.name);
+  await removeTagFromProducts(tagToDelete.name);
 }
 
-export function renameTag(id: string, newName: string) {
-  const tags = getTags();
+export async function renameTag(id: string, newName: string): Promise<void> {
+  const tags = await getTags();
   const tag = tags.find(t => t.id === id);
   if (!tag) throw new Error("Tag not found");
   
@@ -73,14 +66,14 @@ export function renameTag(id: string, newName: string) {
   
   const oldName = tag.name;
   tag.name = normalized;
-  saveTags(tags);
+  await saveTags(tags);
   
   // Update products
-  renameTagInProducts(oldName, normalized);
+  await renameTagInProducts(oldName, normalized);
 }
 
-export function mergeTags(sourceId: string, targetId: string) {
-  const tags = getTags();
+export async function mergeTags(sourceId: string, targetId: string): Promise<void> {
+  const tags = await getTags();
   const source = tags.find(t => t.id === sourceId);
   const target = tags.find(t => t.id === targetId);
   
@@ -88,21 +81,21 @@ export function mergeTags(sourceId: string, targetId: string) {
   
   // Delete source tag
   const newTags = tags.filter(t => t.id !== sourceId);
-  saveTags(newTags);
+  await saveTags(newTags);
   
   // Update products
-  mergeTagInProducts(source.name, target.name);
+  await mergeTagInProducts(source.name, target.name);
 }
 
 // ─── Product Updates ──────────────────────────────────────────────
 
-function updateProductsFile(products: Product[]) {
-  const productsPath = join(process.cwd(), "lib", "products.json");
-  writeFileSync(productsPath, JSON.stringify(products, null, 2));
+async function updateProductsFile(products: Product[]): Promise<void> {
+  const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+  await docRepo.saveDocument("products", products);
 }
 
-function removeTagFromProducts(tagName: string) {
-  const products = getRawProducts();
+async function removeTagFromProducts(tagName: string): Promise<void> {
+  const products = await getRawProducts();
   let changed = false;
   
   const updated = products.map(p => {
@@ -113,11 +106,11 @@ function removeTagFromProducts(tagName: string) {
     return p;
   });
   
-  if (changed) updateProductsFile(updated);
+  if (changed) await updateProductsFile(updated);
 }
 
-function renameTagInProducts(oldName: string, newName: string) {
-  const products = getRawProducts();
+async function renameTagInProducts(oldName: string, newName: string): Promise<void> {
+  const products = await getRawProducts();
   let changed = false;
   
   const updated = products.map(p => {
@@ -131,10 +124,10 @@ function renameTagInProducts(oldName: string, newName: string) {
     return p;
   });
   
-  if (changed) updateProductsFile(updated);
+  if (changed) await updateProductsFile(updated);
 }
 
-function mergeTagInProducts(sourceName: string, targetName: string) {
+async function mergeTagInProducts(sourceName: string, targetName: string): Promise<void> {
   // Essentially the same as renaming, because it replaces source with target
-  renameTagInProducts(sourceName, targetName);
+  await renameTagInProducts(sourceName, targetName);
 }

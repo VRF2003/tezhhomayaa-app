@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { PreviewService } from "@/lib/preview/services/PreviewService";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function PreviewAdminDashboard() {
   const [market, setMarket] = useState("GLOBAL");
@@ -29,7 +30,7 @@ export default function PreviewAdminDashboard() {
         setGeneratedLink(window.location.origin + data.url);
       }
     } catch (e) {
-      console.error(e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(e);
     }
   };
 

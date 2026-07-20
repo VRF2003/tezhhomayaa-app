@@ -5,16 +5,16 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
   try {
     const { id } = await params;
     const body = await req.json();
-    const collections = getSmartCollections();
+    const collections = await getSmartCollections();
     
     const index = collections.findIndex(c => c.id === id);
     if (index === -1) return NextResponse.json({ success: false, error: "Collection not found" }, { status: 404 });
     
     collections[index] = { ...collections[index], ...body };
-    saveSmartCollections(collections);
-    computeSmartCollections();
+    await saveSmartCollections(collections);
+    await computeSmartCollections();
     
-    const updatedCols = getSmartCollections();
+    const updatedCols = await getSmartCollections();
     return NextResponse.json({ success: true, data: updatedCols.find(c => c.id === id) });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
@@ -24,10 +24,10 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 export async function DELETE(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const collections = getSmartCollections();
+    const collections = await getSmartCollections();
     
     const filtered = collections.filter(c => c.id !== id);
-    saveSmartCollections(filtered);
+    await saveSmartCollections(filtered);
     
     return NextResponse.json({ success: true });
   } catch (err: any) {

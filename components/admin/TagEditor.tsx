@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, KeyboardEvent } from "react";
+import { Observability } from "@/lib/infrastructure/observability";
 
 interface TagEditorProps {
   tags: string[];
@@ -23,7 +24,7 @@ export default function TagEditor({ tags, onChange }: TagEditorProps) {
           setGlobalTags(data.data);
         }
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
       
     // Click outside handler
     const handleClickOutside = (e: MouseEvent) => {

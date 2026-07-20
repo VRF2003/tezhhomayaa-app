@@ -13,10 +13,10 @@ export async function GET() {
 export async function PUT(req: Request) {
   try {
     const body = await req.json();
-    const settings = getSmartCollectionSettings();
+    const settings = await getSmartCollectionSettings();
     
     settings.enableSmartRouting = body.enableSmartRouting ?? settings.enableSmartRouting;
-    saveSmartCollectionSettings(settings);
+    await saveSmartCollectionSettings(settings);
     
     return NextResponse.json({ success: true, data: settings });
   } catch (err: any) {

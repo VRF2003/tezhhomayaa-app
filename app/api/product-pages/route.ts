@@ -1,31 +1,32 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
-const PP_PATH = path.join(process.cwd(), "lib", "product-pages.json");
-
 export async function GET() {
   try {
-    if (!fs.existsSync(PP_PATH)) {
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("product_pages");
+    if (!data) {
       return NextResponse.json({ success: true, data: { sections: [] } });
     }
-    const data = JSON.parse(fs.readFileSync(PP_PATH, "utf-8"));
     return NextResponse.json({ success: true, data });
   } catch (err) {
-    console.error("Failed to load product pages data", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to load product pages data", err);
     return NextResponse.json({ success: false, error: "Failed to load product pages data" }, { status: 500 });
   }
 }
 
-export async function PUT(request: Request) {
+export async function POST(request: Request) {
   try {
     const body = await request.json();
-    fs.writeFileSync(PP_PATH, JSON.stringify(body, null, 2), "utf-8");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("product_pages", body);
     return NextResponse.json({ success: true, data: body });
   } catch (err) {
-    console.error("Failed to save product pages data", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to save product pages data", err);
     return NextResponse.json({ success: false, error: "Failed to save product pages data" }, { status: 500 });
   }
 }

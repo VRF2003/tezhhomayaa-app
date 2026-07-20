@@ -1,10 +1,11 @@
 import React from "react";
-import { InMemorySeoRepository } from "@/lib/seo/repositories/InMemorySeoRepository";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { ISeoRepository } from "@/lib/seo/repositories/ISeoRepository";
 
 export const dynamic = "force-dynamic";
 
 export default async function SeoAdminDashboard() {
-  const repo = new InMemorySeoRepository();
+  const repo = RepositoryResolver.resolve<ISeoRepository>("ISeoRepository");
   const seoItems = await repo.findAll();
 
   // Sort newest first

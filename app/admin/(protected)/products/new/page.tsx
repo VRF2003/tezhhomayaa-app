@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Product } from "@/lib/collections";
 import TagEditor from "@/components/admin/TagEditor";
 import { UniversalRichEditor } from "@/components/admin/UniversalRichEditor";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function AddProductPage() {
   const router = useRouter();
@@ -153,7 +154,7 @@ export default function AddProductPage() {
       .then(json => {
         if (json.success && json.data) setCatData(json.data);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
   
   const uploadImage = async (file: File) => {
@@ -320,7 +321,7 @@ export default function AddProductPage() {
       const data = await res.json();
       if (!data.success) throw new Error(data.error);
       
-      console.log("Product ID on create:", data.data.id);
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Product ID on create:", data.data.id);
       
       router.push("/admin/products");
     } catch (err: any) {

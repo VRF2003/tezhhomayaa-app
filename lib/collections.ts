@@ -97,8 +97,8 @@ export const categoryMeta: Record<string, CategoryMeta> = {
 const allProducts: Product[] = [];
 
 // ─── Helpers ──────────────────────────────────────────────────
-import { readFileSync, existsSync } from "fs";
-import { join } from "path";
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
 /**
  * Reads lib/products.json fresh from disk on every call.
@@ -106,32 +106,31 @@ import { join } from "path";
  * require() caches at module load time and won't reflect
  * newly written JSON without a server restart.
  */
-function loadImportedProducts(): Product[] {
+async function loadImportedProducts(): Promise<Product[]> {
   try {
-    const filePath = join(process.cwd(), "lib", "products.json");
-    if (!existsSync(filePath)) return [];
-    const raw = readFileSync(filePath, "utf-8");
-    const data = JSON.parse(raw);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("products");
     return Array.isArray(data) ? (data as Product[]) : [];
   } catch {
     return [];
   }
 }
 
-function buildMerged(): Product[] {
-  const imported = loadImportedProducts();
+async function buildMerged(): Promise<Product[]> {
+  const imported = await loadImportedProducts();
   if (imported.length === 0) return allProducts;
   const importedSlugs = new Set(imported.map((p) => p.slug));
   const staticFiltered = allProducts.filter((p) => !importedSlugs.has(p.slug));
   return [...staticFiltered, ...imported];
 }
 
-export function getRawProducts(): Product[] {
-  return buildMerged();
+export async function getRawProducts(): Promise<Product[]> {
+  return await buildMerged();
 }
 
-export function getAllProducts(): Product[] {
-  return buildMerged().filter(p => {
+export async function getAllProducts(): Promise<Product[]> {
+  const merged = await buildMerged();
+  return merged.filter(p => {
     const s = String(p.status || "active").toLowerCase();
     return s !== "draft" && s !== "archived" && s !== "false";
   });
@@ -139,24 +138,22 @@ export function getAllProducts(): Product[] {
 
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";
 import { getSmartCollections } from "@/lib/smartCollections";
+import { Observability } from "@/lib/infrastructure/observability";
 
-export function getCollectionBanner(categoryKey: string): UniversalSectionData {
+export async function getCollectionBanner(categoryKey: string): Promise<UniversalSectionData> {
   try {
-    const bannerPath = join(process.cwd(), "lib", "collection-banners.json");
-    if (existsSync(bannerPath)) {
-      const raw = readFileSync(bannerPath, "utf-8");
-      const data = JSON.parse(raw);
-      if (data[categoryKey]) {
-        return normalizeSectionData(data[categoryKey]);
-      }
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data: any = await docRepo.getDocument("collection_banners");
+    if (data && data[categoryKey]) {
+      return normalizeSectionData(data[categoryKey]);
     }
   } catch (err) {
-    console.error("Error loading collection banner:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Error loading collection banner:", err);
   }
 
   // Fallback to legacy static meta or Smart Collection basic data
   const meta = categoryMeta[categoryKey];
-  const smartCols = getSmartCollections();
+  const smartCols = await getSmartCollections();
   const smartCol = smartCols.find(c => c.slug === categoryKey);
   
   const titleFallback = categoryKey.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) || "Collection";
@@ -179,12 +176,14 @@ export function getCollectionBanner(categoryKey: string): UniversalSectionData {
   });
 }
 
-export function getProductBySlug(slug: string): Product | undefined {
-  return buildMerged().find((p) => p.slug === slug);
+export async function getProductBySlug(slug: string): Promise<Product | undefined> {
+  const merged = await buildMerged();
+  return merged.find((p) => p.slug === slug);
 }
 
-export function getRelatedProducts(product: Product, count = 4): Product[] {
-  const allProducts = buildMerged().filter((p) => p.slug !== product.slug && p.status !== "draft");
+export async function getRelatedProducts(product: Product, count = 4): Promise<Product[]> {
+  const merged = await buildMerged();
+  const allProducts = merged.filter((p) => p.slug !== product.slug && p.status !== "draft");
   
   if (product.relatedProductIds && product.relatedProductIds.length > 0) {
     const overridden = allProducts.filter(p => product.relatedProductIds!.includes(p.id));
@@ -221,8 +220,8 @@ export function getRelatedProducts(product: Product, count = 4): Product[] {
   return related.slice(0, count);
 }
 
-export function getProductsByCategory(categoryKey: string): Product[] {
-  const merged = getAllProducts();
+export async function getProductsByCategory(categoryKey: string): Promise<Product[]> {
+  const merged = await getAllProducts();
   
   // Normalize by removing all spaces, hyphens, and special characters (keeping slashes)
   const normalize = (str: string) => (str || "").toLowerCase().replace(/[^a-z0-9\/]+/g, '');
@@ -256,7 +255,7 @@ export function getProductsByCategory(categoryKey: string): Product[] {
 }
 
 // Alias kept for any legacy consumer — delegates to the dynamic function.
-export function productsByCategory(categoryKey: string): Product[] {
-  return getProductsByCategory(categoryKey);
+export async function productsByCategory(categoryKey: string): Promise<Product[]> {
+  return await getProductsByCategory(categoryKey);
 }
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { join } from "path";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const maxDuration = 60; 
 
@@ -34,7 +35,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true, url });
   } catch (err: any) {
-    console.error("Local Upload Error:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Local Upload Error:", err);
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }

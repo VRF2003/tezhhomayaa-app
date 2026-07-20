@@ -1,4 +1,5 @@
 import { AnalyticsEvent } from "../core/types";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export interface IEventBus {
   publish(event: AnalyticsEvent): void;
@@ -19,7 +20,7 @@ export class InMemoryEventBus implements IEventBus {
         try {
           handler(event);
         } catch (e) {
-          console.error("[EventBus] Subscriber failed to process event:", e);
+          Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("[EventBus] Subscriber failed to process event:", e);
         }
       }
     }, 0);

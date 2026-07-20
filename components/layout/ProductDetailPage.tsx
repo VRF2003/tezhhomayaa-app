@@ -14,6 +14,7 @@ import { useCart, useWishlist } from "@/lib/store";
 import { useCommerce } from "@/lib/commerce-context";
 import HomepageClientWrapper from "@/components/sections/HomepageClientWrapper";
 import sizeGuideData from "@/lib/size-guide.json";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export type ProductDetailPageProps = {
   product: Product;
@@ -495,7 +496,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
       .then(json => {
         if (json.success && json.data) setGlobalData(json.data);
       })
-      .catch(console.error);
+      .catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
   }, []);
 
   useEffect(() => {

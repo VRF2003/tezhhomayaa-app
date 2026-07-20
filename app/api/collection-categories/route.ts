@@ -9,7 +9,7 @@ export async function GET() {
     subtitle: categoryMeta[key].subtitle
   }));
   
-  const smartCols = getSmartCollections();
+  const smartCols = await getSmartCollections();
   const smartCategories = smartCols.map(c => ({
     key: c.slug,
     title: `${c.title} (Smart Collection)`,

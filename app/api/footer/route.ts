@@ -1,21 +1,20 @@
 import { NextResponse } from "next/server";
-import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
 import { defaultFooterData } from "@/lib/types/footer";
-
-const filePath = join(process.cwd(), "lib", "footer.json");
+import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
+import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    if (!existsSync(filePath)) {
-      console.log("Loaded Footer Data (Default)");
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    const data = await docRepo.getDocument("footer");
+    if (!data) {
+      Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Loaded Footer Data (Default)");
       return NextResponse.json({ success: true, data: defaultFooterData });
     }
-    const raw = readFileSync(filePath, "utf-8");
-    const data = JSON.parse(raw);
-    console.log("Loaded Footer Data from fs");
+    Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Loaded Footer Data from EPP");
     return NextResponse.json({ success: true, data });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
@@ -25,9 +24,10 @@ export async function GET() {
 export async function PUT(req: Request) {
   try {
     const body = await req.json();
-    console.log("Saving Footer Data", body);
-    writeFileSync(filePath, JSON.stringify(body, null, 2), "utf-8");
-    console.log("Saved Footer Successfully");
+    Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Saving Footer Data", body);
+    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
+    await docRepo.saveDocument("footer", body);
+    Observability.getLogger("System").info.bind(Observability.getLogger("System"), "Log")("Saved Footer Successfully");
     return NextResponse.json({ success: true, data: body });
   } catch (err: any) {
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });

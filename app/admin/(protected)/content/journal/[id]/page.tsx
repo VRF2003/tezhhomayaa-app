@@ -3,6 +3,7 @@
 import { LivePreviewBuilder } from "@/components/admin/LivePreviewBuilder";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
+import { Observability } from "@/lib/infrastructure/observability";
 
 const STATUS_OPTIONS = ["Draft", "Published", "Scheduled", "Archived", "Private", "Members Only"] as const;
 const CATEGORY_OPTIONS = ["Editorial", "Campaign", "Lookbook", "Interview", "Travel Diary", "Fashion Week", "Philosophy", "Collection Launch", "Behind The Scenes", "Product Story", "Visual Essay"];
@@ -75,10 +76,10 @@ export default function JournalEditorPage() {
           [field]: { url: data.url, alt: prev.title || "" }
         }));
       } else {
-        console.error("Upload failed:", data.error);
+        Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Upload failed:", data.error);
       }
     } catch (e) {
-      console.error("Upload exception", e);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Upload exception", e);
     }
   };
 

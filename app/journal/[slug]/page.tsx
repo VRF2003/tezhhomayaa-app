@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(context: { params: Promise<{ slug: string }> }) {
   const { slug } = await context.params;
-  const article = getJournalArticleBySlug(slug);
+  const article = await getJournalArticleBySlug(slug);
   if (!article) return { title: "Not Found" };
   
   return {
@@ -30,8 +30,8 @@ export default async function JournalArticlePage(context: { params: Promise<{ sl
   const searchParams = context.searchParams ? await context.searchParams : {};
   const isPreview = searchParams.preview === "true";
   
-  const article = getJournalArticleBySlug(slug);
-  const theme = getJournalTheme();
+  const article = await getJournalArticleBySlug(slug);
+  const theme = await getJournalTheme();
 
   if (!article || (article.status !== "Published" && !isPreview)) {
     notFound();

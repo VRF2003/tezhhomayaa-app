@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useDateFormatter } from "@/lib/global-experience/formatters";
+import { Observability } from "@/lib/infrastructure/observability";
 
 type PageMetadata = {
   id: string;
@@ -40,7 +41,7 @@ export default function PagesDashboard() {
         setPages(json.data);
       }
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
     } finally {
       setLoading(false);
     }
@@ -59,7 +60,7 @@ export default function PagesDashboard() {
         body: JSON.stringify({ slug, status: newStatus })
       });
     } catch (err) {
-      console.error("Failed to update status", err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to update status", err);
     }
   };
 
@@ -72,7 +73,7 @@ export default function PagesDashboard() {
         body: JSON.stringify({ slug, mode: newMode })
       });
     } catch (err) {
-      console.error("Failed to update mode", err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Failed to update mode", err);
     }
   };
 
@@ -100,7 +101,7 @@ export default function PagesDashboard() {
         setIsCreating(false);
       }
     } catch (err) {
-      console.error(err);
+      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(err);
       setIsCreating(false);
     }
   };

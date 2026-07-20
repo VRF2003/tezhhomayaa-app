@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { auth } from "@/lib/firebase";
 import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, getAdditionalUserInfo } from "firebase/auth";
 import { useAuth } from "@/lib/store";
+import { Observability } from "@/lib/infrastructure/observability";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -34,7 +35,7 @@ export default function LoginPage() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: result.user.email, name: result.user.displayName })
-          }).catch(console.error);
+          }).catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
         }
 
         router.push("/account/orders");

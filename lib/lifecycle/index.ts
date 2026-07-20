@@ -1,10 +1,12 @@
 import { GlobalLifecycleEventBus } from "./events/LifecycleEvents";
-import { InMemoryLifecycleRepository } from "./repositories/InMemoryLifecycleRepository";
+import { RepositoryResolver } from "../infrastructure/persistence/resolver/RepositoryResolver";
+import { ILifecycleRepository } from "./repositories/ILifecycleRepository";
 import { PublishingService } from "./services/PublishingService";
 import { PublishPackage } from "./core/types";
 import { randomUUID } from "crypto";
+import { Observability } from "@/lib/infrastructure/observability";
 
-export const lifecycleRepo = new InMemoryLifecycleRepository();
+export const lifecycleRepo = RepositoryResolver.resolve<ILifecycleRepository>("ILifecycleRepository");
 export const GlobalPublishingService = new PublishingService(lifecycleRepo, GlobalLifecycleEventBus);
 
 // Seeding the InMemory DB for Dashboard demonstration purposes
@@ -49,4 +51,4 @@ async function seedMockData() {
   await GlobalPublishingService.publishPackage(pkg1, "System Seeder", "Initial Seeding");
 }
 
-seedMockData().catch(console.error);
+seedMockData().catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
