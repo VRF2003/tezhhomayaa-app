@@ -1,17 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NavigationRegistry } from "../registry/NavigationRegistry";
+import { WorkspaceRegistry, NavigationSection } from "../registry/WorkspaceRegistry";
 import { useIdentity, PermissionService, PermissionAction, PermissionResource } from "@/lib/iam";
+import { useWorkspaceState } from "../core/useWorkspaceState";
+
+const SECTION_ORDER: NavigationSection[] = ["BUSINESS", "ADMINISTRATION", "PLATFORM"];
 
 export function Sidebar() {
   const pathname = usePathname();
-  const allItems = NavigationRegistry.getAll();
+  const groupedWorkspaces = WorkspaceRegistry.getGrouped();
+  const activeWorkspace = WorkspaceRegistry.getActiveWorkspace(pathname);
   const { identity, isAuthenticated } = useIdentity();
+  const { state, isLoaded, toggleSection } = useWorkspaceState();
   
-  if (!isAuthenticated || !identity) return null;
+  if (!isAuthenticated || !identity || !isLoaded) return null;
 
   return (
     <aside style={{
@@ -34,65 +39,102 @@ export function Sidebar() {
         </p>
       </div>
 
-      <nav style={{ padding: "2rem 1rem", flex: 1, display: "flex", flexDirection: "column", gap: "0.5rem", overflowY: "auto" }}>
-        {allItems.map((item) => {
-          let show = item.always;
-          if (!show && item.requiredPermissions && item.requiredPermissions.length > 0) {
-            show = item.requiredPermissions.some(perm => 
-              PermissionService.can(identity.role, perm.action as PermissionAction, perm.resource as PermissionResource)
-            );
-          } else if (!show) {
-            show = true; // Default to show if no perms specified and not hidden
-          }
+      <nav style={{ padding: "2rem 1rem", flex: 1, display: "flex", flexDirection: "column", gap: "2rem", overflowY: "auto" }}>
+        {SECTION_ORDER.map((section) => {
+          const workspaces = groupedWorkspaces[section];
+          if (!workspaces || workspaces.length === 0) return null;
 
-          if (!show) return null;
-          
-          const active = item.subItems 
-            ? pathname.startsWith(item.href)
-            : pathname === item.href || pathname.startsWith(item.href + "/");
+          const isExpanded = state.expandedSections[section];
 
           return (
-            <div key={item.id} style={{ display: "flex", flexDirection: "column" }}>
-              <Link href={item.href} style={{ textDecoration: "none" }}>
-                <div style={{
-                  padding: "0.85rem 1rem",
-                  borderRadius: "4px",
-                  background: active && (!item.subItems || item.subItems.length === 0) ? "#f7f5f2" : "transparent",
-                  color: active ? "#1a1a18" : "#6b6865",
-                  fontSize: "0.85rem",
-                  fontWeight: active ? 500 : 400,
-                  transition: "all 0.2s ease",
+            <div key={section} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <div 
+                onClick={() => toggleSection(section)}
+                style={{
                   display: "flex",
                   alignItems: "center",
+                  justifyContent: "space-between",
+                  padding: "0 1rem",
+                  cursor: "pointer",
+                  userSelect: "none"
                 }}
-                onMouseEnter={(e) => { if (!active) e.currentTarget.style.background = "#fafaf8"; }}
-                onMouseLeave={(e) => { if (!active) e.currentTarget.style.background = "transparent"; }}
-                >
-                  {item.label}
-                </div>
-              </Link>
+              >
+                <h3 style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", margin: 0, fontWeight: 500 }}>
+                  {section}
+                </h3>
+                <span style={{ fontSize: "0.65rem", color: "#9a9690", transition: "transform 0.2s ease", transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}>
+                  ▼
+                </span>
+              </div>
 
-              {item.subItems && active && (
-                <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem", paddingLeft: "2rem", marginTop: "0.2rem" }}>
-                  {item.subItems.map((sub) => {
-                    const isSubActive = pathname === sub.href;
-                      
+              {isExpanded && (
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                  {workspaces.map((ws) => {
+                    let show = ws.always;
+                    if (!show && ws.requiredPermissions && ws.requiredPermissions.length > 0) {
+                      show = ws.requiredPermissions.some(perm => 
+                        PermissionService.can(identity.role, perm.action as PermissionAction, perm.resource as PermissionResource)
+                      );
+                    } else if (!show) {
+                      show = true;
+                    }
+
+                    if (!show) return null;
+                    
+                    const isWorkspaceActive = activeWorkspace?.id === ws.id;
+
                     return (
-                      <Link key={sub.id} href={sub.href} style={{ textDecoration: "none" }}>
-                        <div style={{
-                          padding: "0.5rem 1rem",
-                          borderRadius: "4px",
-                          color: isSubActive ? "#1a1a18" : "#9a9690",
-                          fontSize: "0.75rem",
-                          fontWeight: isSubActive ? 500 : 400,
-                          transition: "all 0.2s ease",
-                        }}
-                        onMouseEnter={(e) => { if (!isSubActive) e.currentTarget.style.color = "#1a1a18"; }}
-                        onMouseLeave={(e) => { if (!isSubActive) e.currentTarget.style.color = "#9a9690"; }}
-                        >
-                          {sub.label}
-                        </div>
-                      </Link>
+                      <div key={ws.id} style={{ display: "flex", flexDirection: "column" }}>
+                        <Link href={ws.route} style={{ textDecoration: "none" }}>
+                          <div style={{
+                            padding: "0.75rem 1rem",
+                            borderRadius: "4px",
+                            background: isWorkspaceActive ? "#f7f5f2" : "transparent",
+                            color: isWorkspaceActive ? "#1a1a18" : "#6b6865",
+                            fontSize: "0.85rem",
+                            fontWeight: isWorkspaceActive ? 500 : 400,
+                            transition: "all 0.2s ease",
+                            display: "flex",
+                            alignItems: "center",
+                            borderLeft: isWorkspaceActive ? "3px solid #1a1a18" : "3px solid transparent",
+                          }}
+                          onMouseEnter={(e) => { if (!isWorkspaceActive) e.currentTarget.style.background = "#fafaf8"; }}
+                          onMouseLeave={(e) => { if (!isWorkspaceActive) e.currentTarget.style.background = "transparent"; }}
+                          >
+                            <span style={{ marginLeft: isWorkspaceActive ? "-3px" : "0", transition: "margin 0.2s ease" }}>
+                              {ws.name}
+                            </span>
+                          </div>
+                        </Link>
+
+                        {/* Expand SubItems only if this is the active workspace */}
+                        {ws.subItems && isWorkspaceActive && (
+                          <div style={{ display: "flex", flexDirection: "column", gap: "0.15rem", paddingLeft: "1rem", marginTop: "0.25rem" }}>
+                            {ws.subItems.map((sub) => {
+                              const isSubActive = pathname === sub.href;
+                                
+                              return (
+                                <Link key={sub.id} href={sub.href} style={{ textDecoration: "none" }}>
+                                  <div style={{
+                                    padding: "0.5rem 1rem",
+                                    borderRadius: "4px",
+                                    color: isSubActive ? "#1a1a18" : "#9a9690",
+                                    fontSize: "0.75rem",
+                                    fontWeight: isSubActive ? 500 : 400,
+                                    transition: "all 0.2s ease",
+                                    background: isSubActive ? "rgba(247, 245, 242, 0.5)" : "transparent"
+                                  }}
+                                  onMouseEnter={(e) => { if (!isSubActive) e.currentTarget.style.color = "#1a1a18"; }}
+                                  onMouseLeave={(e) => { if (!isSubActive) e.currentTarget.style.color = "#9a9690"; }}
+                                  >
+                                    {sub.label}
+                                  </div>
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
                     );
                   })}
                 </div>

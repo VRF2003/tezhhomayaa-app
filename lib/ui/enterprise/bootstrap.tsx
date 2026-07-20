@@ -1,6 +1,6 @@
 "use client";
 
-import { NavigationRegistry } from "./registry/NavigationRegistry";
+import { WorkspaceRegistry } from "./registry/WorkspaceRegistry";
 import { WidgetRegistry } from "./registry/WidgetRegistry";
 import { CommandRegistry } from "./registry/CommandRegistry";
 import React from "react";
@@ -8,12 +8,34 @@ import Link from "next/link";
 
 export function bootstrapEnterpriseUI() {
   // 1. Dashboard
-  NavigationRegistry.register({ id: "dashboard", label: "Dashboard", href: "/admin/dashboard", always: true, order: 1 });
+  WorkspaceRegistry.register({ 
+    id: "dashboard", 
+    name: "Dashboard", 
+    route: "/admin/dashboard", 
+    navigationSection: "BUSINESS",
+    description: "Overview of your enterprise performance and activity.",
+    breadcrumb: "Business / Dashboard",
+    searchPlaceholder: "Search dashboard...",
+    always: true, 
+    order: 1 
+  });
   
   // 2. Commerce / Products
-  NavigationRegistry.register({ 
-    id: "products", label: "Products", href: "/admin/products", 
-    requiredPermissions: [{ action: "Manage", resource: "Product" }], order: 2,
+  WorkspaceRegistry.register({ 
+    id: "products", 
+    name: "Products", 
+    route: "/admin/products", 
+    navigationSection: "BUSINESS",
+    description: "Manage products, pricing, categories and inventory.",
+    breadcrumb: "Business / Products",
+    searchPlaceholder: "Search products, SKUs and categories...",
+    primaryAction: { label: "+ New Product", href: "/admin/products/new" },
+    quickActions: [
+      { label: "Import Products", href: "/admin/import" },
+      { label: "Bulk Edit", href: "/admin/products/bulk" }
+    ],
+    requiredPermissions: [{ action: "Manage", resource: "Product" }], 
+    order: 2,
     subItems: [
       { id: "products-all", label: "All Products", href: "/admin/products" },
       { id: "products-tags", label: "Tag Library", href: "/admin/products/tags" },
@@ -24,20 +46,128 @@ export function bootstrapEnterpriseUI() {
     ]
   });
 
-  NavigationRegistry.register({ id: "categories", label: "Categories", href: "/admin/categories", requiredPermissions: [{ action: "Manage", resource: "Product" }], order: 3 });
+  WorkspaceRegistry.register({ 
+    id: "categories", 
+    name: "Categories", 
+    route: "/admin/categories", 
+    navigationSection: "BUSINESS",
+    description: "Organize and curate your product categories.",
+    breadcrumb: "Business / Categories",
+    searchPlaceholder: "Search categories...",
+    primaryAction: { label: "+ New Category", href: "/admin/categories/new" },
+    requiredPermissions: [{ action: "Manage", resource: "Product" }], 
+    order: 3 
+  });
   
   // 3. Content
-  NavigationRegistry.register({ id: "pages", label: "Pages", href: "/admin/pages", requiredPermissions: [{ action: "Manage", resource: "Content" }], order: 4 });
-  NavigationRegistry.register({ id: "lookbook", label: "Lookbook", href: "/admin/lookbook", requiredPermissions: [{ action: "Manage", resource: "Content" }], order: 5 });
-  NavigationRegistry.register({ id: "campaigns", label: "Campaigns", href: "/admin/campaigns", requiredPermissions: [{ action: "Publish", resource: "Campaign" }], order: 6 });
-  NavigationRegistry.register({ id: "seo", label: "SEO Rules", href: "/admin/seo", requiredPermissions: [{ action: "Manage", resource: "SEO" }], order: 7 });
-  NavigationRegistry.register({ id: "translations", label: "Translations", href: "/admin/translations", requiredPermissions: [{ action: "Manage", resource: "Translation" }], order: 8 });
-  NavigationRegistry.register({ id: "publishing", label: "Publishing", href: "/admin/publishing", requiredPermissions: [{ action: "Publish", resource: "Campaign" }], order: 9 });
-  NavigationRegistry.register({ id: "preview", label: "Experience Preview", href: "/admin/preview", requiredPermissions: [{ action: "View", resource: "Content" }], order: 10 });
-  NavigationRegistry.register({ id: "analytics", label: "Analytics", href: "/admin/analytics", requiredPermissions: [{ action: "View", resource: "Analytics" }], order: 11 });
+  WorkspaceRegistry.register({ 
+    id: "pages", 
+    name: "Pages", 
+    route: "/admin/pages", 
+    navigationSection: "BUSINESS",
+    description: "Manage standard pages and legal documents.",
+    breadcrumb: "Business / Pages",
+    searchPlaceholder: "Search pages...",
+    primaryAction: { label: "+ New Page", href: "/admin/pages/new" },
+    requiredPermissions: [{ action: "Manage", resource: "Content" }], 
+    order: 4 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "lookbook", 
+    name: "Lookbook", 
+    route: "/admin/lookbook", 
+    navigationSection: "BUSINESS",
+    description: "Curate visual lookbooks for new collections.",
+    breadcrumb: "Business / Lookbook",
+    searchPlaceholder: "Search lookbooks...",
+    requiredPermissions: [{ action: "Manage", resource: "Content" }], 
+    order: 5 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "campaigns", 
+    name: "Campaigns", 
+    route: "/admin/campaigns", 
+    navigationSection: "BUSINESS",
+    description: "Create, schedule and publish luxury campaigns.",
+    breadcrumb: "Business / Campaigns",
+    searchPlaceholder: "Search campaigns...",
+    primaryAction: { label: "+ New Campaign", href: "/admin/campaigns/new" },
+    requiredPermissions: [{ action: "Publish", resource: "Campaign" }], 
+    order: 6 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "seo", 
+    name: "SEO Rules", 
+    route: "/admin/seo", 
+    navigationSection: "BUSINESS",
+    description: "Manage global and page-specific SEO metadata.",
+    breadcrumb: "Business / SEO Rules",
+    searchPlaceholder: "Search SEO rules...",
+    requiredPermissions: [{ action: "Manage", resource: "SEO" }], 
+    order: 7 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "translations", 
+    name: "Translations", 
+    route: "/admin/translations", 
+    navigationSection: "BUSINESS",
+    description: "Manage localized content across all regions.",
+    breadcrumb: "Business / Translations",
+    searchPlaceholder: "Search translations...",
+    requiredPermissions: [{ action: "Manage", resource: "Translation" }], 
+    order: 8 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "publishing", 
+    name: "Publishing", 
+    route: "/admin/publishing", 
+    navigationSection: "BUSINESS",
+    description: "Review and deploy content to production.",
+    breadcrumb: "Business / Publishing",
+    searchPlaceholder: "Search publishing queue...",
+    requiredPermissions: [{ action: "Publish", resource: "Campaign" }], 
+    order: 9 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "preview", 
+    name: "Experience Preview", 
+    route: "/admin/preview", 
+    navigationSection: "BUSINESS",
+    description: "Preview the storefront experience as different customer segments.",
+    breadcrumb: "Business / Experience Preview",
+    searchPlaceholder: "Search preview segments...",
+    requiredPermissions: [{ action: "View", resource: "Content" }], 
+    order: 10 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "analytics", 
+    name: "Analytics", 
+    route: "/admin/analytics", 
+    navigationSection: "BUSINESS",
+    description: "Review performance and business metrics.",
+    breadcrumb: "Business / Analytics",
+    searchPlaceholder: "Search analytics...",
+    requiredPermissions: [{ action: "View", resource: "Analytics" }], 
+    order: 11 
+  });
   
-  NavigationRegistry.register({
-    id: "content", label: "Content", href: "/admin/content", requiredPermissions: [{ action: "Manage", resource: "Content" }], order: 12,
+  WorkspaceRegistry.register({
+    id: "content", 
+    name: "Content", 
+    route: "/admin/content", 
+    navigationSection: "BUSINESS",
+    description: "Manage structured content architectures.",
+    breadcrumb: "Business / Content",
+    searchPlaceholder: "Search content...",
+    requiredPermissions: [{ action: "Manage", resource: "Content" }], 
+    order: 12,
     subItems: [
       { id: "c-home", label: "Homepage", href: "/admin/content/homepage" },
       { id: "c-cols", label: "Collections", href: "/admin/content/collections" },
@@ -53,14 +183,67 @@ export function bootstrapEnterpriseUI() {
   });
 
   // 4. Operations
-  NavigationRegistry.register({ id: "orders", label: "Orders", href: "/admin/orders", requiredPermissions: [{ action: "Manage", resource: "Order" }], order: 13 });
-  NavigationRegistry.register({ id: "customers", label: "Customers", href: "/admin/customers", requiredPermissions: [{ action: "Manage", resource: "Order" }], order: 14 });
-  NavigationRegistry.register({ id: "subscribers", label: "Subscribers", href: "/admin/subscribers", requiredPermissions: [{ action: "Manage", resource: "Order" }], order: 15 });
-  NavigationRegistry.register({ id: "inventory", label: "Inventory", href: "/admin/inventory", requiredPermissions: [{ action: "Manage", resource: "Stock" }], order: 16 });
+  WorkspaceRegistry.register({ 
+    id: "orders", 
+    name: "Orders", 
+    route: "/admin/orders", 
+    navigationSection: "BUSINESS",
+    description: "Monitor and fulfil customer orders.",
+    breadcrumb: "Business / Orders",
+    searchPlaceholder: "Search orders, customers...",
+    primaryAction: { label: "Export Orders", href: "/admin/orders/export" },
+    requiredPermissions: [{ action: "Manage", resource: "Order" }], 
+    order: 13 
+  });
 
-  // 5. System & Settings
-  NavigationRegistry.register({
-    id: "iam", label: "IAM & Security", href: "/admin/users", requiredPermissions: [{ action: "Manage", resource: "User" }], order: 17,
+  WorkspaceRegistry.register({ 
+    id: "customers", 
+    name: "Customers", 
+    route: "/admin/customers", 
+    navigationSection: "BUSINESS",
+    description: "View customer profiles and order history.",
+    breadcrumb: "Business / Customers",
+    searchPlaceholder: "Search customers...",
+    requiredPermissions: [{ action: "Manage", resource: "Order" }], 
+    order: 14 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "subscribers", 
+    name: "Subscribers", 
+    route: "/admin/subscribers", 
+    navigationSection: "BUSINESS",
+    description: "Manage newsletter and marketing subscribers.",
+    breadcrumb: "Business / Subscribers",
+    searchPlaceholder: "Search subscribers...",
+    requiredPermissions: [{ action: "Manage", resource: "Order" }], 
+    order: 15 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "inventory", 
+    name: "Inventory", 
+    route: "/admin/inventory", 
+    navigationSection: "BUSINESS",
+    description: "Track global stock levels across all locations.",
+    breadcrumb: "Business / Inventory",
+    searchPlaceholder: "Search inventory...",
+    requiredPermissions: [{ action: "Manage", resource: "Stock" }], 
+    order: 16 
+  });
+
+  // 5. System & Settings (ADMINISTRATION)
+  WorkspaceRegistry.register({
+    id: "iam", 
+    name: "IAM & Security", 
+    route: "/admin/users", 
+    navigationSection: "ADMINISTRATION",
+    description: "Manage users, permissions and enterprise security.",
+    breadcrumb: "Administration / IAM & Security",
+    searchPlaceholder: "Search users, email, roles...",
+    primaryAction: { label: "+ Invite User", href: "/admin/users/invite" },
+    requiredPermissions: [{ action: "Manage", resource: "User" }], 
+    order: 17,
     subItems: [
       { id: "iam-users", label: "Users", href: "/admin/users" },
       { id: "iam-roles", label: "Roles", href: "/admin/roles" },
@@ -69,8 +252,16 @@ export function bootstrapEnterpriseUI() {
     ]
   });
 
-  NavigationRegistry.register({
-    id: "appearance", label: "Appearance", href: "/admin/appearance", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 18,
+  WorkspaceRegistry.register({
+    id: "appearance", 
+    name: "Appearance", 
+    route: "/admin/appearance", 
+    navigationSection: "ADMINISTRATION",
+    description: "Configure global theme and typography settings.",
+    breadcrumb: "Administration / Appearance",
+    searchPlaceholder: "Search appearance settings...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 18,
     subItems: [
       { id: "app-mob", label: "Mobile Layout", href: "/admin/appearance/mobile" },
       { id: "app-typ", label: "Typography", href: "/admin/appearance/typography" },
@@ -78,18 +269,126 @@ export function bootstrapEnterpriseUI() {
     ]
   });
 
-  NavigationRegistry.register({ id: "settings", label: "Settings", href: "/admin/settings", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 19 });
+  WorkspaceRegistry.register({ 
+    id: "settings", 
+    name: "Settings", 
+    route: "/admin/settings", 
+    navigationSection: "ADMINISTRATION",
+    description: "Manage core platform configurations.",
+    breadcrumb: "Administration / Settings",
+    searchPlaceholder: "Search settings...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 19 
+  });
 
-  // 6. Platform Infrastructure (grouped together visually at the bottom, or just standard links)
-  NavigationRegistry.register({ id: "health", label: "Platform Health", href: "/admin/health", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 20 });
-  NavigationRegistry.register({ id: "activity", label: "Activity Center", href: "/admin/activity", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 21 });
-  NavigationRegistry.register({ id: "database", label: "Database", href: "/admin/database", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 22 });
-  NavigationRegistry.register({ id: "quality", label: "Quality", href: "/admin/quality", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 23 });
-  NavigationRegistry.register({ id: "cache", label: "Cache", href: "/admin/cache", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 24 });
-  NavigationRegistry.register({ id: "deployment", label: "Deployment", href: "/admin/deployment", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 25 });
-  NavigationRegistry.register({ id: "media", label: "Media", href: "/admin/media", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 26 });
-  NavigationRegistry.register({ id: "search", label: "Search", href: "/admin/search", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 27 });
-  NavigationRegistry.register({ id: "observability", label: "Observability", href: "/admin/observability", requiredPermissions: [{ action: "Manage", resource: "Settings" }], order: 28 });
+  // 6. Platform Infrastructure (PLATFORM)
+  WorkspaceRegistry.register({ 
+    id: "health", 
+    name: "Platform Health", 
+    route: "/admin/health", 
+    navigationSection: "PLATFORM",
+    description: "Monitor system health and incident reports.",
+    breadcrumb: "Platform / Platform Health",
+    searchPlaceholder: "Search system health...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 20 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "activity", 
+    name: "Activity Center", 
+    route: "/admin/activity", 
+    navigationSection: "PLATFORM",
+    description: "Global activity and audit logs.",
+    breadcrumb: "Platform / Activity Center",
+    searchPlaceholder: "Search activity logs...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 21 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "database", 
+    name: "Database", 
+    route: "/admin/database", 
+    navigationSection: "PLATFORM",
+    description: "Direct database and persistence monitoring.",
+    breadcrumb: "Platform / Database",
+    searchPlaceholder: "Search databases...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 22 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "quality", 
+    name: "Quality", 
+    route: "/admin/quality", 
+    navigationSection: "PLATFORM",
+    description: "Code quality and testing insights.",
+    breadcrumb: "Platform / Quality",
+    searchPlaceholder: "Search quality metrics...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 23 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "cache", 
+    name: "Cache", 
+    route: "/admin/cache", 
+    navigationSection: "PLATFORM",
+    description: "Manage caching strategies and invalidation.",
+    breadcrumb: "Platform / Cache",
+    searchPlaceholder: "Search cache keys...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 24 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "deployment", 
+    name: "Deployment", 
+    route: "/admin/deployment", 
+    navigationSection: "PLATFORM",
+    description: "Manage Vercel deployments and builds.",
+    breadcrumb: "Platform / Deployment",
+    searchPlaceholder: "Search deployments...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 25 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "media", 
+    name: "Media", 
+    route: "/admin/media", 
+    navigationSection: "PLATFORM",
+    description: "Manage Cloudinary media optimization.",
+    breadcrumb: "Platform / Media",
+    searchPlaceholder: "Search media configurations...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 26 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "search", 
+    name: "Search", 
+    route: "/admin/search", 
+    navigationSection: "PLATFORM",
+    description: "Configure search engines and indexes.",
+    breadcrumb: "Platform / Search",
+    searchPlaceholder: "Search configurations...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 27 
+  });
+
+  WorkspaceRegistry.register({ 
+    id: "observability", 
+    name: "Observability", 
+    route: "/admin/observability", 
+    navigationSection: "PLATFORM",
+    description: "View APM and performance traces.",
+    breadcrumb: "Platform / Observability",
+    searchPlaceholder: "Search observability...",
+    requiredPermissions: [{ action: "Manage", resource: "Settings" }], 
+    order: 28 
+  });
 
   CommandRegistry.register({
     id: "goto-health",
@@ -131,3 +430,4 @@ export function bootstrapEnterpriseUI() {
     )
   });
 }
+
