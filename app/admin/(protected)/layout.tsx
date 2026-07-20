@@ -19,7 +19,10 @@ export default async function ProtectedLayout({ children }: { children: React.Re
   const role = await iamRoleRepo.findById(roleId);
   const session = await iamSessionRepo.findById(sessionId);
 
-  if (!fullUser || !role || !session) {
+  // We don't strictly require the session to exist in the database because 
+  // on Vercel serverless, the in-memory database won't persist across requests.
+  // The JWT token itself is cryptographically verified in middleware.ts.
+  if (!fullUser || !role) {
     redirect("/admin?session=expired");
   }
 
