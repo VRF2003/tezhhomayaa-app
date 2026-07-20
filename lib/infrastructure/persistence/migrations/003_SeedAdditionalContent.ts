@@ -17,13 +17,11 @@ export class SeedAdditionalContent_003 implements IMigration {
       { key: "collection_banners", data: require("@/lib/collection-banners.json") },
       { key: "commerce", data: require("@/lib/commerce.json") },
       { key: "footer", data: require("@/lib/footer.json") },
-      { key: "newsletter", data: require("@/lib/newsletter.json") },
       { key: "products", data: require("@/lib/products.json") },
       { key: "size_guide", data: require("@/lib/size-guide.json") },
       { key: "tags", data: require("@/lib/tags.json") },
       { key: "smart_collections_settings", data: require("@/lib/smart-collections-settings.json") },
-      { key: "smart_collections", data: require("@/lib/smart-collections.json") },
-      { key: "collections", data: require("@/lib/collections.json") }
+      { key: "smart_collections", data: require("@/lib/smart-collections.json") }
     ];
 
     for (const item of filesToSeed) {
