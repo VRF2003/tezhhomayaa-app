@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { TokenService } from "./lib/iam/tokens/TokenService";
 
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const requestHeaders = new Headers(request.headers);
 
