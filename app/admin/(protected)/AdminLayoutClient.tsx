@@ -97,6 +97,7 @@ export default function AdminLayoutClient({ children }: { children: React.ReactN
     { name: "Quality", href: "/admin/quality", show: checkPerm("Manage", "Settings") },
     { name: "Cache", href: "/admin/cache", show: checkPerm("Manage", "Settings") },
     { name: "Deployment", href: "/admin/deployment", show: checkPerm("Manage", "Settings") },
+    { name: "Media", href: "/admin/media", show: checkPerm("Manage", "Settings") },
     { name: "Search", href: "/admin/search", show: checkPerm("Manage", "Settings") },
     { name: "Observability", href: "/admin/observability", show: checkPerm("Manage", "Settings") },
   ];
