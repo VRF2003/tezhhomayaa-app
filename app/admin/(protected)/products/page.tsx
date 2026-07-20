@@ -4,6 +4,8 @@ import { useEffect, useState, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Product } from "@/lib/collections";
+import { SkeletonLoader } from "@/lib/ui/enterprise/components/SkeletonLoader";
+import { EmptyState } from "@/lib/ui/enterprise/components/EmptyState";
 
 export default function ProductsPage() {
   const searchParams = useSearchParams();
@@ -181,32 +183,6 @@ export default function ProductsPage() {
 
   return (
     <div style={{ paddingBottom: "4rem" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem" }}>
-        <div>
-          <h1 style={{ fontSize: "clamp(1.8rem, 2vw, 2.2rem)", fontWeight: 300, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em" }}>
-            Products
-          </h1>
-          <div style={{ fontSize: "0.85rem", color: "#7a7874", fontFamily: "var(--font-dm-mono, monospace)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-            Showing <strong style={{ color: "#1a1a18", fontWeight: 500 }}>{filteredProducts.length}</strong> of {products.length} products
-          </div>
-        </div>
-        <Link href="/admin/products/new" style={{ textDecoration: "none" }}>
-          <button style={{
-            padding: "0.75rem 1.5rem",
-            background: "#1a1a18",
-            color: "#f7f5f2",
-            border: "none",
-            fontSize: "0.65rem",
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            cursor: "pointer",
-            borderRadius: "2px",
-          }}>
-            Add Product
-          </button>
-        </Link>
-      </div>
-
       {/* Control Bar */}
       <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "2px", padding: "1.5rem", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
         {/* Search */}
@@ -265,9 +241,7 @@ export default function ProductsPage() {
       </div>
 
       {loading ? (
-        <div style={{ textAlign: "center", padding: "4rem" }}>
-          <p style={{ color: "#9a9690", fontSize: "0.85rem", letterSpacing: "0.1em", textTransform: "uppercase" }}>Loading...</p>
-        </div>
+        <SkeletonLoader rows={6} columns={6} />
       ) : (
         <div style={{
           background: "#ffffff",
@@ -289,8 +263,28 @@ export default function ProductsPage() {
             <tbody>
               {filteredProducts.length === 0 ? (
                 <tr>
-                  <td colSpan={6} style={{ padding: "3rem", textAlign: "center", color: "#9a9690", fontSize: "0.85rem" }}>
-                    No products match your filters.
+                  <td colSpan={6} style={{ padding: "0" }}>
+                    <EmptyState 
+                      title="No Products Found" 
+                      description="You don't have any products matching these filters, or your catalogue is empty."
+                      action={
+                        <Link href="/admin/products/new" style={{ textDecoration: "none" }}>
+                          <button style={{
+                            padding: "0.75rem 1.5rem",
+                            background: "#1a1a18",
+                            color: "#f7f5f2",
+                            border: "none",
+                            fontSize: "0.65rem",
+                            letterSpacing: "0.15em",
+                            textTransform: "uppercase",
+                            cursor: "pointer",
+                            borderRadius: "2px",
+                          }}>
+                            Create First Product
+                          </button>
+                        </Link>
+                      }
+                    />
                   </td>
                 </tr>
               ) : (
@@ -342,7 +336,7 @@ export default function ProductsPage() {
                         <button onClick={() => handleDuplicate(p)} style={{ background: "none", border: "none", color: "#6b6865", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0 }} className="hover-underline">
                           Duplicate
                         </button>
-                        <button onClick={() => handleDelete(p.id, p.name)} style={{ background: "none", border: "none", color: "#a55", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0 }} className="hover-underline">
+                        <button onClick={() => handleDelete(p.id, p.name)} style={{ background: "none", border: "none", color: "#9a9690", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0, transition: "color 0.2s" }} onMouseEnter={e => e.currentTarget.style.color = "#c5221f"} onMouseLeave={e => e.currentTarget.style.color = "#9a9690"}>
                           Delete
                         </button>
                       </div>

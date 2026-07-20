@@ -21,7 +21,16 @@ export class SeedAdditionalContent_003 implements IMigration {
       { key: "size_guide", data: require("@/lib/size-guide.json") },
       { key: "tags", data: require("@/lib/tags.json") },
       { key: "smart_collections_settings", data: require("@/lib/smart-collections-settings.json") },
-      { key: "smart_collections", data: require("@/lib/smart-collections.json") }
+      { key: "smart_collections", data: require("@/lib/smart-collections.json") },
+      { key: "pages_registry", data: require("@/lib/pages.json") },
+      { key: "page_about-us", data: require("@/lib/pages/about-us.json") },
+      { key: "page_about-us-motion", data: require("@/lib/pages/about-us-motion.json") },
+      { key: "page_privacy-policy", data: require("@/lib/pages/privacy-policy.json") },
+      { key: "page_terms-and-conditions", data: require("@/lib/pages/terms-and-conditions.json") },
+      { key: "page_shipping-policy", data: require("@/lib/pages/shipping-policy.json") },
+      { key: "page_refund-policy", data: require("@/lib/pages/refund-policy.json") },
+      { key: "page_contact-us", data: require("@/lib/pages/contact-us.json") },
+      { key: "page_size-guide", data: require("@/lib/pages/size-guide.json") }
     ];
 
     for (const item of filesToSeed) {
@@ -39,7 +48,7 @@ export class SeedAdditionalContent_003 implements IMigration {
 
   async down(): Promise<void> {
     const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
-    const keys = ["appearance", "collection_banners", "commerce", "footer", "newsletter", "products", "size_guide", "tags", "smart_collections_settings", "smart_collections", "collections"];
+    const keys = ["appearance", "collection_banners", "commerce", "footer", "newsletter", "products", "size_guide", "tags", "smart_collections_settings", "smart_collections", "collections", "pages_registry"];
     for (const key of keys) {
       await docRepo.deleteDocument(key);
     }

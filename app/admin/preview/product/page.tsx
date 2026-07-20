@@ -3,6 +3,12 @@
 import { useState, useEffect } from "react";
 import ProductDetailPage from "@/components/layout/ProductDetailPage";
 import type { Product } from "@/lib/collections";
+import { CartProvider, WishlistProvider, SearchProvider, AuthProvider } from "@/lib/store";
+import { GlobalExperienceProvider } from "@/lib/global-experience/context/GlobalExperienceContext";
+import { CurrencyProvider } from "@/components/CurrencyProvider";
+import { CommerceProvider } from "@/lib/commerce-context";
+import { MarketProvider } from "@/lib/market/MarketContext";
+import { MarketUIProvider } from "@/components/market/MarketUIProvider";
 
 export default function ProductPreviewPage() {
   const [product, setProduct] = useState<Product | null>(null);
@@ -34,7 +40,25 @@ export default function ProductPreviewPage() {
 
   return (
     <div className="w-full bg-white min-h-screen">
-      <ProductDetailPage product={product} related={[]} isPreviewMode={true} />
+      <GlobalExperienceProvider>
+        <CommerceProvider>
+          <MarketProvider>
+            <MarketUIProvider>
+              <CurrencyProvider>
+                <AuthProvider>
+                  <CartProvider>
+                    <WishlistProvider allProducts={[product]}>
+                      <SearchProvider allProducts={[product]}>
+                        <ProductDetailPage product={product} related={[]} isPreviewMode={true} />
+                      </SearchProvider>
+                    </WishlistProvider>
+                  </CartProvider>
+                </AuthProvider>
+              </CurrencyProvider>
+            </MarketUIProvider>
+          </MarketProvider>
+        </CommerceProvider>
+      </GlobalExperienceProvider>
     </div>
   );
 }

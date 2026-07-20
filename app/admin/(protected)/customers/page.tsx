@@ -56,17 +56,7 @@ export default function AdminCustomersPage() {
   };
 
   return (
-    <div style={{ paddingBottom: "4rem" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem" }}>
-        <div>
-          <h1 style={{ fontSize: "clamp(1.8rem, 2vw, 2.2rem)", fontWeight: 300, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em" }}>
-            Customers
-          </h1>
-          <div style={{ fontSize: "0.85rem", color: "#7a7874", fontFamily: "var(--font-dm-mono, monospace)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-            Showing <strong style={{ color: "#1a1a18", fontWeight: 500 }}>{filteredCustomers.length}</strong> of {customers.length} customers
-          </div>
-        </div>
-      </div>
+    <div style={{ paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
 
       {/* Control Bar */}
       <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "2px", padding: "1.5rem", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -86,12 +76,12 @@ export default function AdminCustomersPage() {
         <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", minWidth: "900px" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #e8e4df", background: "#f7f5f2" }}>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Customer ID</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Name & Contact</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Join Date</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Total Orders</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Lifetime Value</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500, textAlign: "right" }}>Actions</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Customer ID</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Name & Contact</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Join Date</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Total Orders</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Lifetime Value</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500, textAlign: "right" }}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -104,31 +94,31 @@ export default function AdminCustomersPage() {
             ) : (
               filteredCustomers.map(customer => (
                 <tr key={customer.id} style={{ borderBottom: "1px solid #e8e4df", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#fafaf8"} onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500, fontFamily: "var(--font-dm-mono, monospace)" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500, fontFamily: "var(--font-dm-mono, monospace)" }}>
                     {customer.id}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
                       <span style={{ fontWeight: 500 }}>{customer.name}</span>
                       <span style={{ fontSize: "0.7rem", color: "#9a9690", fontWeight: 400 }}>{customer.email}</span>
                       <span style={{ fontSize: "0.7rem", color: "#9a9690", fontWeight: 400 }}>{customer.phone}</span>
                     </div>
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#6b6865" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#6b6865" }}>
                     {customer.joinDate}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#6b6865" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#6b6865" }}>
                     {customer.totalOrders}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500 }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500 }}>
                     {customer.lifetimeValue}
                   </td>
-                  <td style={{ padding: "1rem", textAlign: "right" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", textAlign: "right" }}>
                     <div style={{ display: "flex", gap: "1rem", justifyContent: "flex-end", alignItems: "center" }}>
                       <button onClick={() => handleResetPassword(customer.email)} style={{ background: "none", border: "none", color: "#6b6865", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0 }} className="hover-underline">
                         Reset Pass
                       </button>
-                      <button onClick={() => handleDelete(customer.id, customer.name)} style={{ background: "none", border: "none", color: "#a55", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0 }} className="hover-underline">
+                      <button onClick={() => handleDelete(customer.id, customer.name)} style={{ background: "none", border: "none", color: "#9a9690", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0, transition: "color 0.2s" }} onMouseEnter={e => e.currentTarget.style.color = "#c5221f"} onMouseLeave={e => e.currentTarget.style.color = "#9a9690"}>
                         Delete
                       </button>
                     </div>

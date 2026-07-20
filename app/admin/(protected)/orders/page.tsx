@@ -60,17 +60,7 @@ export default function AdminOrdersPage() {
   };
 
   return (
-    <div style={{ paddingBottom: "4rem" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem" }}>
-        <div>
-          <h1 style={{ fontSize: "clamp(1.8rem, 2vw, 2.2rem)", fontWeight: 300, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em" }}>
-            Orders
-          </h1>
-          <div style={{ fontSize: "0.85rem", color: "#7a7874", fontFamily: "var(--font-dm-mono, monospace)", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-            Showing <strong style={{ color: "#1a1a18", fontWeight: 500 }}>{filteredOrders.length}</strong> of {orders.length} orders
-          </div>
-        </div>
-      </div>
+    <div style={{ paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
 
       {/* Control Bar */}
       <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "2px", padding: "1.5rem", marginBottom: "1.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
@@ -103,13 +93,13 @@ export default function AdminOrdersPage() {
         <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", minWidth: "800px" }}>
           <thead>
             <tr style={{ borderBottom: "1px solid #e8e4df", background: "#f7f5f2" }}>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Order ID</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Date</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Customer</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Status</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Items</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Total</th>
-              <th style={{ padding: "1rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500, textAlign: "right" }}>Actions</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Order ID</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Date</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Customer</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Status</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Items</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500 }}>Total</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#6b6865", fontWeight: 500, textAlign: "right" }}>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -122,33 +112,34 @@ export default function AdminOrdersPage() {
             ) : (
               filteredOrders.map(order => (
                 <tr key={order.id} style={{ borderBottom: "1px solid #e8e4df", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#fafaf8"} onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500, fontFamily: "var(--font-dm-mono, monospace)" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500, fontFamily: "var(--font-dm-mono, monospace)" }}>
                     {order.id}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#6b6865" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#6b6865" }}>
                     {order.date}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18" }}>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
                       <span>{order.customer}</span>
                       <span style={{ fontSize: "0.7rem", color: "#9a9690", fontWeight: 400 }}>{order.email}</span>
                     </div>
                   </td>
-                  <td style={{ padding: "1rem" }}>
+                  <td style={{ padding: "1.2rem 1.5rem" }}>
                     <select 
                       value={order.status}
                       onChange={(e) => handleStatusChange(order.id, e.target.value)}
                       style={{
                         padding: "0.2rem 0.5rem",
-                        borderRadius: "2px",
-                        border: "1px solid #e8e4df",
+                        borderRadius: "1rem",
+                        border: "1px solid transparent",
                         fontSize: "0.65rem",
                         letterSpacing: "0.05em",
                         textTransform: "uppercase",
                         background: order.status === "Delivered" ? "#e8f0e8" : (order.status === "Cancelled" ? "#fdf0f0" : "#f0ede8"),
-                        color: order.status === "Delivered" ? "#2a4a2a" : (order.status === "Cancelled" ? "#6b3a3a" : "#6b6865"),
+                        color: order.status === "Delivered" ? "#2a4a2a" : (order.status === "Cancelled" ? "#c5221f" : "#6b6865"),
                         outline: "none",
-                        cursor: "pointer"
+                        cursor: "pointer",
+                        transition: "all 0.2s"
                       }}
                     >
                       <option value="Processing">Processing</option>
@@ -157,15 +148,15 @@ export default function AdminOrdersPage() {
                       <option value="Cancelled">Cancelled</option>
                     </select>
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#6b6865" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#6b6865" }}>
                     {order.itemsCount}
                   </td>
-                  <td style={{ padding: "1rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500 }}>
+                  <td style={{ padding: "1.2rem 1.5rem", fontSize: "0.85rem", color: "#1a1a18", fontWeight: 500 }}>
                     {order.total}
                   </td>
-                  <td style={{ padding: "1rem", textAlign: "right" }}>
+                  <td style={{ padding: "1.2rem 1.5rem", textAlign: "right" }}>
                     <div style={{ display: "flex", gap: "1rem", justifyContent: "flex-end", alignItems: "center" }}>
-                      <button onClick={() => handleDelete(order.id)} style={{ background: "none", border: "none", color: "#a55", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0 }} className="hover-underline">
+                      <button onClick={() => handleDelete(order.id)} style={{ background: "none", border: "none", color: "#9a9690", fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer", padding: 0, transition: "color 0.2s" }} onMouseEnter={e => e.currentTarget.style.color = "#c5221f"} onMouseLeave={e => e.currentTarget.style.color = "#9a9690"}>
                         Delete
                       </button>
                     </div>

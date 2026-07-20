@@ -52,22 +52,14 @@ export default async function CampaignListAdminPage() {
   };
 
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "3rem" }}>
-        <div>
-          <h1 style={{ fontSize: "clamp(1.8rem, 2vw, 2.2rem)", fontWeight: 300, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em" }}>
-            Campaign Management
-          </h1>
-          <p style={{ fontSize: "0.9rem", color: "#7a7874", margin: 0 }}>
-            Orchestrate localized content across global markets.
-          </p>
-        </div>
+    <div style={{ paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
+      <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "2px", padding: "1.5rem", marginBottom: "1.5rem", display: "flex", justifyContent: "flex-end" }}>
         <form action={createCampaignAction}>
           <button type="submit" style={{ 
             background: "#1a1a18", color: "#ffffff", padding: "0.8rem 1.5rem", border: "none", 
-            fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", cursor: "pointer" 
+            fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", cursor: "pointer", borderRadius: "2px"
           }}>
-            + New Campaign
+            Create Campaign
           </button>
         </form>
       </div>
@@ -86,40 +78,40 @@ export default async function CampaignListAdminPage() {
 
         <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left" }}>
           <thead>
-            <tr style={{ borderBottom: "1px solid #e8e4df", background: "#fafaf8" }}>
-              <th style={{ padding: "1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Campaign</th>
-              <th style={{ padding: "1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Status</th>
-              <th style={{ padding: "1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Market Targeting</th>
-              <th style={{ padding: "1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Scheduling</th>
+            <tr style={{ borderBottom: "1px solid #e8e4df", background: "#f7f5f2" }}>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Campaign</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Status</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Market Targeting</th>
+              <th style={{ padding: "1.2rem 1.5rem", fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "#9a9690", fontWeight: 500 }}>Scheduling</th>
             </tr>
           </thead>
           <tbody>
             {campaigns.map(camp => (
-              <tr key={camp.id} style={{ borderBottom: "1px solid #e8e4df" }}>
-                <td style={{ padding: "1.5rem" }}>
+              <tr key={camp.id} style={{ borderBottom: "1px solid #e8e4df", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#fafaf8"} onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
+                <td style={{ padding: "1.2rem 1.5rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
                     <div title={camp.health.messages.join("\n")} style={{ cursor: "help" }}>
                       {getHealthIcon(camp.health.status)}
                     </div>
                     <div>
                       <Link href={`/admin/campaigns/${camp.id}`} style={{ textDecoration: "none" }}>
-                        <div style={{ fontSize: "0.95rem", color: "#1a1a18", fontWeight: 400, marginBottom: "0.2rem", cursor: "pointer", textDecoration: "underline" }}>
+                        <div style={{ fontSize: "0.95rem", color: "#1a1a18", fontWeight: 400, marginBottom: "0.2rem", cursor: "pointer", textDecoration: "none" }}>
                           {camp.name}
                         </div>
                       </Link>
-                      <div style={{ fontSize: "0.7rem", color: "#9a9690", fontFamily: "monospace" }}>{camp.slug}</div>
+                      <div style={{ fontSize: "0.7rem", color: "#9a9690", fontFamily: "var(--font-dm-mono, monospace)" }}>{camp.slug}</div>
                     </div>
                   </div>
                 </td>
-                <td style={{ padding: "1.5rem" }}>
+                <td style={{ padding: "1.2rem 1.5rem" }}>
                   <span style={{ 
                     fontSize: "0.65rem", letterSpacing: "0.1em", padding: "0.3rem 0.6rem", 
-                    textTransform: "uppercase", background: "#f7f5f2", color: "#1a1a18", border: "1px solid #e8e4df" 
+                    textTransform: "uppercase", background: "#f7f5f2", color: "#1a1a18", borderRadius: "1rem" 
                   }}>
                     {camp.status}
                   </span>
                 </td>
-                <td style={{ padding: "1.5rem" }}>
+                <td style={{ padding: "1.2rem 1.5rem" }}>
                   <div style={{ fontSize: "0.85rem", color: "#6b6865" }}>
                     {camp.marketId === "GLOBAL" ? (
                       <span>🌍 Global</span>
@@ -130,7 +122,7 @@ export default async function CampaignListAdminPage() {
                     )}
                   </div>
                 </td>
-                <td style={{ padding: "1.5rem" }}>
+                <td style={{ padding: "1.2rem 1.5rem" }}>
                   <div style={{ fontSize: "0.85rem", color: "#6b6865" }}>
                     {camp.validFrom ? (
                       <>

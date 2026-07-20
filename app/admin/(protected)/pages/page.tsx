@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useDateFormatter } from "@/lib/global-experience/formatters";
 import { Observability } from "@/lib/infrastructure/observability";
+import { SkeletonLoader } from "@/lib/ui/enterprise/components/SkeletonLoader";
+import { EmptyState } from "@/lib/ui/enterprise/components/EmptyState";
 
 type PageMetadata = {
   id: string;
@@ -27,7 +28,6 @@ export default function PagesDashboard() {
   const [isCreating, setIsCreating] = useState(false);
 
   const router = useRouter();
-  const dateFormatter = useDateFormatter();
 
   useEffect(() => {
     fetchPages();
@@ -107,12 +107,9 @@ export default function PagesDashboard() {
   };
 
   return (
-    <div style={{ maxWidth: "1200px", margin: "0 auto", animation: "fadeIn 0.5s ease" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "2rem" }}>
-        <div>
-          <h1 style={{ fontSize: "1.5rem", fontWeight: 500, color: "#1a1a18", margin: "0 0 0.5rem" }}>Pages</h1>
-          <p style={{ color: "#6b6865", margin: 0, fontSize: "0.9rem" }}>Manage dynamic pages across your storefront.</p>
-        </div>
+    <div style={{ paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
+      {/* Control Bar (Toolbar) */}
+      <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "2px", padding: "1.5rem", marginBottom: "1.5rem", display: "flex", justifyContent: "flex-end" }}>
         <button 
           onClick={() => setIsModalOpen(true)}
           style={{
@@ -132,7 +129,7 @@ export default function PagesDashboard() {
       </div>
 
       {loading ? (
-        <div style={{ padding: "4rem", textAlign: "center", color: "#6b6865" }}>Loading pages...</div>
+        <SkeletonLoader rows={4} columns={7} />
       ) : (
         <div style={{ background: "#ffffff", border: "1px solid #e8e4df", borderRadius: "4px", overflow: "hidden" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: "0.85rem" }}>
@@ -212,7 +209,7 @@ export default function PagesDashboard() {
                     )}
                   </td>
                   <td style={{ padding: "1.2rem 1.5rem", color: "#6b6865" }}>
-                    {dateFormatter.formatShortDate(page.lastUpdated)}
+                    {new Date(page.lastUpdated).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </td>
                   <td style={{ padding: "1.2rem 1.5rem", textAlign: "right" }}>
                     <Link href={`/admin/pages/${page.slug}${page.mode === 'motion' ? '?mode=motion' : ''}`}>
@@ -233,8 +230,29 @@ export default function PagesDashboard() {
               ))}
               {pages.length === 0 && (
                 <tr>
-                  <td colSpan={6} style={{ padding: "4rem", textAlign: "center", color: "#6b6865" }}>
-                    No pages found. Create one to get started.
+                  <td colSpan={7} style={{ padding: "0" }}>
+                    <EmptyState 
+                      title="No Pages Found" 
+                      description="Create dynamic content pages like your About Us, Size Guide, or Terms & Conditions."
+                      action={
+                        <button 
+                          onClick={() => setIsModalOpen(true)}
+                          style={{
+                            padding: "0.75rem 1.5rem",
+                            background: "#1a1a18",
+                            color: "#f7f5f2",
+                            border: "none",
+                            fontSize: "0.65rem",
+                            letterSpacing: "0.15em",
+                            textTransform: "uppercase",
+                            cursor: "pointer",
+                            borderRadius: "2px",
+                          }}
+                        >
+                          Create First Page
+                        </button>
+                      }
+                    />
                   </td>
                 </tr>
               )}

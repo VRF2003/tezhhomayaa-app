@@ -195,17 +195,8 @@ export default function UnifiedNavigationPage() {
 
   if (loading) return <div style={{ padding: "4rem", textAlign: "center" }}>Loading...</div>;
 
-  return (
-    <div style={{ maxWidth: "1000px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2rem" }}>
-        <div>
-          <h1 style={{ fontSize: "clamp(1.8rem, 2vw, 2.2rem)", fontWeight: 300, color: "#1a1a18", margin: "0 0 0.5rem", letterSpacing: "0.02em" }}>
-            Navigation & Categories
-          </h1>
-          <p style={{ fontSize: "0.9rem", color: "#7a7874", margin: 0 }}>
-            Drag and drop to structure your website's main menu and product taxonomy.
-          </p>
-        </div>
+    <div style={{ maxWidth: "1000px", paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
+      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1.5rem" }}>
         <button 
           onClick={handleSave} 
           disabled={saving}

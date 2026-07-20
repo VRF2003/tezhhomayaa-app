@@ -10,8 +10,10 @@ export function EnterpriseLayout({ children }: { children: ReactNode }) {
       <Sidebar />
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
         <TopNav />
-        <main style={{ padding: "3rem", flex: 1, overflowY: "auto" }}>
-          {children}
+        <main style={{ padding: "3rem 4rem", flex: 1, overflowY: "auto" }}>
+          <div style={{ maxWidth: "1600px", margin: "0 auto", width: "100%" }}>
+            {children}
+          </div>
         </main>
       </div>
     </div>

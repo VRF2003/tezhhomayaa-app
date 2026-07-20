@@ -21,7 +21,7 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
   // 1. Is it a Custom Page?
   try {
     const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
-    const registry = await docRepo.getDocument<any[]>("pages");
+    const registry = await docRepo.getDocument<any[]>("pages_registry");
     if (registry) {
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);
       if (pageMeta) {
@@ -81,7 +81,7 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
   // 1. Is it a Custom Page?
   try {
     const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
-    const registry = await docRepo.getDocument<any[]>("pages");
+    const registry = await docRepo.getDocument<any[]>("pages_registry");
     if (registry) {
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);
       
