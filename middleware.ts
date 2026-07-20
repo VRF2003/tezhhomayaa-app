@@ -16,8 +16,16 @@ export async function middleware(request: NextRequest) {
 
   // Protect /admin and /admin/*
   if (pathname.startsWith("/admin")) {
+    requestHeaders.set("x-is-admin", "true");
     // Exclude the login page itself
     if (pathname === "/admin") {
+      const isSessionExpired = request.nextUrl.searchParams.get("session") === "expired";
+      if (isSessionExpired) {
+        const response = NextResponse.next({ request: { headers: requestHeaders } });
+        response.cookies.delete("tz_access_token");
+        return response;
+      }
+
       const token = request.cookies.get("tz_access_token")?.value;
       if (token) {
         try {
@@ -27,7 +35,9 @@ export async function middleware(request: NextRequest) {
           return response;
         } catch {
           // Invalid token, allow access to login page
-          return NextResponse.next({ request: { headers: requestHeaders } });
+          const response = NextResponse.next({ request: { headers: requestHeaders } });
+          response.cookies.delete("tz_access_token");
+          return response;
         }
       }
       return NextResponse.next({ request: { headers: requestHeaders } });

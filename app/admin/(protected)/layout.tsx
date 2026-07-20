@@ -11,7 +11,7 @@ export default async function ProtectedLayout({ children }: { children: React.Re
   const sessionId = headersList.get("x-iam-session-id");
 
   if (!userId || !roleId || !sessionId) {
-    redirect("/admin");
+    redirect("/admin?session=expired");
   }
 
   // Fetch identity from repositories using the injected middleware headers
@@ -20,7 +20,7 @@ export default async function ProtectedLayout({ children }: { children: React.Re
   const session = await iamSessionRepo.findById(sessionId);
 
   if (!fullUser || !role || !session) {
-    redirect("/admin");
+    redirect("/admin?session=expired");
   }
 
   const { passwordHash, ...safeUser } = fullUser;

@@ -19,10 +19,10 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
-  const registry = await docRepo.getDocument<any[]>("pages");
-  if (registry) {
-    try {
+  try {
+    const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
+    const registry = await docRepo.getDocument<any[]>("pages");
+    if (registry) {
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);
       if (pageMeta) {
         return {
@@ -30,9 +30,9 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
           description: `Tezhhomayaa ${pageMeta.title}`,
         };
       }
-    } catch (e) {
-      Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(e);
     }
+  } catch (e) {
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")(e);
   }
 
   // 2. Is it a Product?
@@ -79,8 +79,8 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
   try {
+    const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
     const registry = await docRepo.getDocument<any[]>("pages");
     if (registry) {
       const pageMeta = registry.find((p: any) => p.slug === fullPath || p.slug === lastSegment);

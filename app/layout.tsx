@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
 };
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 export default async function RootLayout({
   children,
@@ -64,6 +64,18 @@ export default async function RootLayout({
 
   const cookieStore = await cookies();
   const geeMarketId = cookieStore.get("tz_gee_market_id")?.value;
+
+  const isAdmin = (await headers()).get("x-is-admin") === "true";
+
+  if (isAdmin) {
+    return (
+      <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${jost.variable}`}>
+        <body className="bg-white text-obsidian">
+          {children}
+        </body>
+      </html>
+    );
+  }
 
   return (
     <html lang="en" className={`${cormorant.variable} ${dmMono.variable} ${jost.variable}`}>
