@@ -28,7 +28,7 @@ export class SeedAdditionalContent_003 implements IMigration {
 
     for (const item of filesToSeed) {
       try {
-        const filePath = path.join(process.cwd(), item.file);
+        const filePath = process.cwd() + "/" + item.file;
         if (fs.existsSync(filePath)) {
           const raw = fs.readFileSync(filePath, "utf-8");
           const data = JSON.parse(raw);

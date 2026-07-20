@@ -19,7 +19,7 @@ export async function generateMetadata(context: { params: Promise<{ slug: string
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const docRepo = RepositoryResolver.resolve("DocumentRepository") as IDocumentRepository;
+  const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
   const registry = await docRepo.getDocument<any[]>("pages");
   if (registry) {
     try {
@@ -79,7 +79,7 @@ export default async function UniversalDynamicPage(props: { params: Promise<{ sl
   const lastSegment = slug[slug.length - 1];
 
   // 1. Is it a Custom Page?
-  const docRepo = RepositoryResolver.resolve("DocumentRepository") as IDocumentRepository;
+  const docRepo = RepositoryResolver.resolve("IDocumentRepository") as IDocumentRepository;
   try {
     const registry = await docRepo.getDocument<any[]>("pages");
     if (registry) {

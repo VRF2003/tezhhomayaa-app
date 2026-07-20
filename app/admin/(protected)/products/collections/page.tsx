@@ -375,15 +375,15 @@ export default function SmartCollectionsPage() {
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem", paddingTop: "1rem", borderTop: "1px solid #e8e4df" }}>
                   <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", color: "#1a1a18" }}>
-                    <input type="checkbox" checked={presentation.showPrice} onChange={e => setPresentation({ ...presentation, showPrice: e.target.checked })} />
+                    <input type="checkbox" checked={!!presentation?.showPrice} onChange={e => setPresentation({ ...presentation, showPrice: e.target.checked })} />
                     Show Price
                   </label>
                   <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", color: "#1a1a18" }}>
-                    <input type="checkbox" checked={presentation.showProductName} onChange={e => setPresentation({ ...presentation, showProductName: e.target.checked })} />
+                    <input type="checkbox" checked={!!presentation?.showProductName} onChange={e => setPresentation({ ...presentation, showProductName: e.target.checked })} />
                     Show Product Name
                   </label>
                   <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", color: "#1a1a18" }}>
-                    <input type="checkbox" checked={presentation.showCategory} onChange={e => setPresentation({ ...presentation, showCategory: e.target.checked })} />
+                    <input type="checkbox" checked={!!presentation?.showCategory} onChange={e => setPresentation({ ...presentation, showCategory: e.target.checked })} />
                     Show Category
                   </label>
                 </div>
@@ -432,7 +432,7 @@ export default function SmartCollectionsPage() {
           </h1>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.85rem", color: "#6b6865" }}>
-              <input type="checkbox" checked={routingEnabled} onChange={toggleRouting} />
+              <input type="checkbox" checked={!!routingEnabled} onChange={toggleRouting} />
               Enable Smart Collection Routing
             </label>
             <span style={{ fontSize: "0.75rem", color: "#9a9690", fontStyle: "italic" }}>
