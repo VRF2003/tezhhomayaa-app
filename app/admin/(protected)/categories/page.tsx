@@ -195,6 +195,7 @@ export default function UnifiedNavigationPage() {
 
   if (loading) return <div style={{ padding: "4rem", textAlign: "center" }}>Loading...</div>;
 
+  return (
     <div style={{ maxWidth: "1000px", paddingBottom: "4rem", animation: "fadeIn 0.5s ease" }}>
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: "1.5rem" }}>
         <button 
