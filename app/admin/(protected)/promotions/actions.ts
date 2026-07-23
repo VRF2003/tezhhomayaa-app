@@ -20,9 +20,8 @@ export async function changePromotionStatusAction(formData: FormData) {
 export async function duplicatePromotionAction(formData: FormData) {
   const id = formData.get("id") as string;
   try {
-    const newPromo = await promotionService.duplicatePromotion(id, "admin");
+    await promotionService.duplicatePromotion(id, "admin");
     revalidatePath("/admin/promotions");
-    return newPromo.id;
   } catch (error) {
     console.error(error);
   }
