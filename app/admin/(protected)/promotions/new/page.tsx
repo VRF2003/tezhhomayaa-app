@@ -87,7 +87,7 @@ export default function NewPromotionPage() {
                   <select 
                     name="triggerType"
                     value={triggerType}
-                    onChange={e => setTriggerType(e.target.value)}
+                    onChange={e => setTriggerType(e.target.value as any)}
                     style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px", backgroundColor: "#fff" }}>
                     <option value="MIN_CART_VALUE">Minimum Cart Value</option>
                     <option value="MIN_QUANTITY">Minimum Item Quantity</option>
@@ -117,7 +117,7 @@ export default function NewPromotionPage() {
                   <select 
                     name="rewardType"
                     value={rewardType}
-                    onChange={e => setRewardType(e.target.value)}
+                    onChange={e => setRewardType(e.target.value as any)}
                     style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px", backgroundColor: "#fff" }}>
                     <option value="PERCENTAGE_DISCOUNT">Percentage Discount</option>
                     <option value="FLAT_DISCOUNT">Flat Amount Discount</option>
