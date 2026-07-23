@@ -46424,7 +46424,8 @@
       "isLocked": false,
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-23T09:17:20.790Z",
-      "updatedAt": "2026-07-23T09:17:20.790Z"
+      "updatedAt": "2026-07-23T09:17:20.790Z",
+      "lastLoginAt": "2026-07-23T09:29:59.215Z"
     }
   },
   "iam_sessions": {
@@ -46437,6 +46438,17 @@
       "lastActivityAt": "2026-07-23T08:25:46.937Z",
       "createdAt": "2026-07-23T08:25:46.937Z",
       "expiresAt": "2026-07-30T08:25:46.937Z",
+      "revokedAt": null
+    },
+    "6a1c4b91-0447-4758-9594-9b57101b4c45": {
+      "id": "6a1c4b91-0447-4758-9594-9b57101b4c45",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-23T09:29:59.248Z",
+      "createdAt": "2026-07-23T09:29:59.248Z",
+      "expiresAt": "2026-07-30T09:29:59.248Z",
       "revokedAt": null
     }
   },

@@ -95,7 +95,7 @@ export default async function PromotionDetailsPage({ params }: { params: Promise
               <div style={{ width: "100%", height: "1px", background: "#e8e4df" }} />
               <div>
                 <div style={{ fontSize: "0.65rem", color: "#9a9690", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.2rem" }}>Trigger</div>
-                <div style={{ fontSize: "0.85rem", color: "#1a1a18" }}>{promo.trigger?.type ? promo.trigger.type.replace(/_/g, ' ') : promo.type} {promo.trigger?.value > 0 ? `(${promo.trigger.value})` : ""}</div>
+                <div style={{ fontSize: "0.85rem", color: "#1a1a18" }}>{promo.trigger?.type ? promo.trigger.type.replace(/_/g, ' ') : promo.type} {(promo.trigger?.value ?? 0) > 0 ? `(${promo.trigger?.value})` : ""}</div>
               </div>
               <div style={{ width: "100%", height: "1px", background: "#e8e4df" }} />
               <div>
