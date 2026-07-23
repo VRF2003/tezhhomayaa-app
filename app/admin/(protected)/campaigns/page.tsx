@@ -87,7 +87,7 @@ export default async function CampaignListAdminPage() {
           </thead>
           <tbody>
             {campaigns.map(camp => (
-              <tr key={camp.id} style={{ borderBottom: "1px solid #e8e4df", transition: "background 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#fafaf8"} onMouseLeave={e => e.currentTarget.style.background = "transparent"}>
+              <tr key={camp.id} style={{ borderBottom: "1px solid #e8e4df" }} className="hover:bg-[#fafaf8] transition-colors">
                 <td style={{ padding: "1.2rem 1.5rem" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: "0.8rem" }}>
                     <div title={camp.health.messages.join("\n")} style={{ cursor: "help" }}>

@@ -17,7 +17,14 @@ export class ReadThroughStrategy {
     const provider = CacheResolver.resolve();
     
     try {
-      const cached = await provider.get<T>(key);
+      // In development, Next.js worker threads isolate memory singletons.
+      // We bypass the memory cache to ensure fresh reads from the file-backed driver.
+      const isDev = process.env.NODE_ENV !== "production";
+      let cached = null;
+      if (!isDev) {
+        cached = await provider.get<T>(key);
+      }
+      
       if (cached !== null) {
         CacheMetrics.recordHit();
         CacheMetrics.recordLatency(performance.now() - startTime);

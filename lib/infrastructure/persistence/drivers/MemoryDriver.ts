@@ -1,8 +1,31 @@
 import { IDatabaseDriver } from "./IDatabaseDriver";
+import fs from "fs";
+import path from "path";
 
 export class MemoryDriver implements IDatabaseDriver {
-  private data: Record<string, Record<string, any>> = {};
   private connected = false;
+  private get dbPath() {
+    return path.join(process.cwd(), ".local-db.json");
+  }
+
+  private loadData(): Record<string, Record<string, any>> {
+    try {
+      if (fs.existsSync(this.dbPath)) {
+        return JSON.parse(fs.readFileSync(this.dbPath, "utf-8"));
+      }
+    } catch (e) {
+      console.warn("Failed to read local DB, starting fresh", e);
+    }
+    return {};
+  }
+
+  private saveData(data: Record<string, Record<string, any>>) {
+    try {
+      fs.writeFileSync(this.dbPath, JSON.stringify(data, null, 2), "utf-8");
+    } catch (e) {
+      console.warn("Failed to write to local DB", e);
+    }
+  }
 
   public async connect(): Promise<void> {
     this.connected = true;
@@ -21,36 +44,40 @@ export class MemoryDriver implements IDatabaseDriver {
   }
 
   public async getLatency(): Promise<number> {
-    const start = performance.now();
-    await new Promise(resolve => setTimeout(resolve, 0));
-    return performance.now() - start;
+    return 1;
   }
 
   public getName(): string {
-    return "MemoryDriver";
+    return "MemoryDriver (File-Backed)";
   }
 
   public async read(collection: string, id: string): Promise<any> {
-    if (!this.data[collection]) return null;
-    return this.data[collection][id] || null;
+    const data = this.loadData();
+    if (!data[collection]) return null;
+    return data[collection][id] || null;
   }
 
   public async write(collection: string, id: string, payload: any): Promise<void> {
-    if (!this.data[collection]) {
-      this.data[collection] = {};
+    const data = this.loadData();
+    if (!data[collection]) {
+      data[collection] = {};
     }
-    this.data[collection][id] = payload;
+    data[collection][id] = payload;
+    this.saveData(data);
   }
 
   public async delete(collection: string, id: string): Promise<void> {
-    if (this.data[collection]) {
-      delete this.data[collection][id];
+    const data = this.loadData();
+    if (data[collection]) {
+      delete data[collection][id];
+      this.saveData(data);
     }
   }
 
   public async query(collection: string, filters?: any): Promise<any[]> {
-    if (!this.data[collection]) return [];
-    let results = Object.values(this.data[collection]);
+    const data = this.loadData();
+    if (!data[collection]) return [];
+    let results = Object.values(data[collection]);
     
     if (filters) {
       results = results.filter(item => {

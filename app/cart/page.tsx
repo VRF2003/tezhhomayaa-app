@@ -9,6 +9,7 @@ import { useCart } from "@/lib/store";
 import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
 import { getProductPrice } from "@/lib/currency";
 import { useCommerce } from "@/lib/commerce-context";
+import { validateDiscountCodeAction } from "./actions";
 
 const TrashIcon = () => (
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" aria-hidden="true">
@@ -26,12 +27,49 @@ export default function CartPage() {
   const cf = commerce.cartFooter;
 
   const [hydrated, setHydrated] = useState(false);
+  const [promoCode, setPromoCode] = useState("");
+  const [isApplyingPromo, setIsApplyingPromo] = useState(false);
+  const [discountResult, setDiscountResult] = useState<{ discountTotal: number; appliedPromotionName?: string; message?: string; success?: boolean } | null>(null);
+
   useEffect(() => { setHydrated(true); }, []);
+
+  // Re-evaluate discounts when cart changes
+  useEffect(() => {
+    if (hydrated && items.length > 0) {
+      handleApplyDiscount(promoCode);
+    } else if (items.length === 0) {
+      setDiscountResult(null);
+    }
+  }, [items, hydrated]); // Only run when items change (and hydrated)
+
+  const handleApplyDiscount = async (codeToApply: string = promoCode) => {
+    if (items.length === 0) return;
+    setIsApplyingPromo(true);
+    
+    try {
+      const payload = items.map(item => ({ sku: item.product.slug, quantity: item.quantity, unitPrice: getProductPrice(item.product) }));
+      const result = await validateDiscountCodeAction(codeToApply, payload);
+      
+      // If they typed a code but it failed, show error, otherwise just apply whatever best valid one exists (or 0)
+      if (codeToApply && !result.success) {
+        setDiscountResult({ ...result, discountTotal: 0 }); 
+      } else {
+        setDiscountResult(result);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setIsApplyingPromo(false);
+    }
+  };
+
   if (!hydrated) return null;
 
   const shippingMsg = cartTotalRaw >= sh.freeShippingThreshold
     ? sh.freeShippingUnlocked
     : (c.shippingMessage || sh.freeShippingMessage).replace("{threshold}", formatter.formatCurrency(sh.freeShippingThreshold));
+
+  const finalTotal = Math.max(0, cartTotalRaw - (discountResult?.discountTotal || 0));
 
   return (
     <main style={{ minHeight: "100vh", background: st.cartBg || "#faf9f7" }}>
@@ -198,16 +236,83 @@ export default function CartPage() {
                 ))}
               </div>
 
+              {/* Discount Code Input */}
+              <div style={{ marginBottom: "1.5rem", paddingBottom: "1.5rem", borderBottom: `1px solid ${st.cartBorderColor || "#ddd9d4"}` }}>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <input 
+                    type="text"
+                    value={promoCode}
+                    onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
+                    placeholder="Discount code"
+                    style={{ 
+                      flex: 1, padding: "0.8rem", border: "1px solid #ccc9c4", 
+                      fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.6rem", textTransform: "uppercase" 
+                    }}
+                  />
+                  <button 
+                    onClick={() => handleApplyDiscount(promoCode)}
+                    disabled={!promoCode || isApplyingPromo}
+                    style={{ 
+                      padding: "0 1rem", background: "#3a3835", color: "#fff", border: "none", cursor: "pointer",
+                      fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem", letterSpacing: "0.1em", textTransform: "uppercase",
+                      opacity: (!promoCode || isApplyingPromo) ? 0.5 : 1
+                    }}
+                  >
+                    Apply
+                  </button>
+                </div>
+                {discountResult && !discountResult.success && promoCode && (
+                  <p style={{ color: "#dc2626", fontSize: "0.65rem", marginTop: "0.5rem", fontFamily: "var(--font-geist-sans, sans-serif)" }}>
+                    {discountResult.message}
+                  </p>
+                )}
+              </div>
+
               {/* Subtotal */}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.75rem" }}>
                 <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#9a9690" }}>{c.subtotalLabel}</span>
-                <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1.3rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.02em" }}>{formatter.formatCurrency(cartTotalRaw)}</span>
+                <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.02em" }}>{formatter.formatCurrency(cartTotalRaw)}</span>
               </div>
+              
+              {/* Discount Row */}
+              {discountResult?.discountTotal ? (
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "0.75rem" }}>
+                  <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#166534", display: "flex", alignItems: "center", gap: "0.25rem" }}>
+                    Discount ({discountResult.appliedPromotionName})
+                    {promoCode && (
+                      <button 
+                        onClick={() => {
+                          setPromoCode("");
+                          handleApplyDiscount("");
+                        }}
+                        aria-label="Remove discount code"
+                        style={{ background: "none", border: "none", cursor: "pointer", color: "#166534", padding: "0 0.3rem", display: "flex", alignItems: "center" }}
+                      >
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                          <line x1="18" y1="6" x2="6" y2="18"></line>
+                          <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                      </button>
+                    )}
+                  </span>
+                  <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "1rem", color: "#166534", letterSpacing: "0.02em" }}>
+                    -{formatter.formatCurrency(discountResult.discountTotal)}
+                  </span>
+                </div>
+              ) : null}
 
               {/* Shipping row */}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2rem" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1.5rem", paddingBottom: "1.5rem", borderBottom: `1px solid ${st.cartBorderColor || "#ddd9d4"}` }}>
                 <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#9a9690" }}>{c.shippingLabel}</span>
                 <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.48rem", letterSpacing: "0.08em", color: "#6b6865" }}>{c.shippingValue}</span>
+              </div>
+
+              {/* Total Row */}
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2rem" }}>
+                <span style={{ fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#1a1a18", fontWeight: 500 }}>Total</span>
+                <span style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 400, fontSize: "1.5rem", color: st.cartTextColor || "#1a1a18", letterSpacing: "0.02em" }}>
+                  {formatter.formatCurrency(finalTotal)}
+                </span>
               </div>
 
               <button id="checkout-btn" style={{ display: "block", width: "100%", padding: "1.2rem", background: st.checkoutButtonBg || "#1a1a18", color: st.checkoutButtonColor || "#f7f5f2", border: "none", cursor: "pointer", fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: st.addToBagFontSize || "0.55rem", letterSpacing: st.addToBagLetterSpacing || "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", transition: "background 0.3s", boxSizing: "border-box" }}>

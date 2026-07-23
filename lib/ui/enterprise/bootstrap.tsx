@@ -99,6 +99,19 @@ export function bootstrapEnterpriseUI() {
   });
 
   WorkspaceRegistry.register({ 
+    id: "promotions", 
+    name: "Promotions", 
+    route: "/admin/promotions", 
+    navigationSection: "BUSINESS",
+    description: "Manage discounts, vouchers, influencer codes and promotional campaigns.",
+    breadcrumb: "Business / Promotions",
+    searchPlaceholder: "Search promotions, codes, campaigns...",
+    primaryAction: { label: "+ Create Promotion", href: "/admin/promotions/new" },
+    requiredPermissions: [{ action: "Manage", resource: "Campaign" }], 
+    order: 6.5
+  });
+
+  WorkspaceRegistry.register({ 
     id: "seo", 
     name: "SEO Rules", 
     route: "/admin/seo", 
