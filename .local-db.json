@@ -451,7 +451,8 @@
                       "padding": "0.6rem 1.4rem",
                       "borderRadius": 0,
                       "textColor": "#49171b",
-                      "backgroundColor": "#ffffff"
+                      "backgroundColor": "#ffffff",
+                      "backgroundOpacity": 100
                     },
                     "fontFamily": "var(--font-cormorant, serif)",
                     "backgroundColor": "transparent",
@@ -1879,7 +1880,7 @@
                 }
               },
               "journalConfig": {
-                "layout": "magazine-grid",
+                "layout": "carousel",
                 "articleCount": 3
               },
               "layout": {
@@ -47014,23 +47015,98 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "747f288c-8ab9-42c7-93a3-368d43bec55e": {
+      "eventId": "747f288c-8ab9-42c7-93a3-368d43bec55e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:54:03.202Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "e0f81510-955b-4366-bf5d-b9cdd15faec5": {
+      "eventId": "e0f81510-955b-4366-bf5d-b9cdd15faec5",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:55:44.200Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "758d7f93-18f3-459f-9ea8-ddf50cca0b4e": {
+      "eventId": "758d7f93-18f3-459f-9ea8-ddf50cca0b4e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:55:59.620Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "72e90def-2654-4f96-8c6d-d8207df6ac1f": {
+      "eventId": "72e90def-2654-4f96-8c6d-d8207df6ac1f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T16:24:59.622Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "f180d7c5-9bb6-4872-80f0-cccc80bc1214": {
+      "eventId": "f180d7c5-9bb6-4872-80f0-cccc80bc1214",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T16:25:01.668Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=mobile"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 61,
+      "totalViews": 66,
       "viewsByMarket": {
-        "mkt_bh": 21,
-        "mkt_jp": 40
+        "mkt_bh": 24,
+        "mkt_jp": 42
       },
       "viewsByLanguage": {
-        "Arabic": 21,
-        "Japanese": 40
+        "Arabic": 24,
+        "Japanese": 42
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 61
+        "DESKTOP": 66
       },
       "previewActivity": 0
     }

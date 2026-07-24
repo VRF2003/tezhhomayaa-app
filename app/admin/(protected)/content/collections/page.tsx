@@ -47,8 +47,13 @@ function ProductSequenceBuilder({
 
   if (loading) return <div style={{ padding: "2rem", color: "#6b6865" }}>Loading products...</div>;
 
-  const included = allProducts.filter(p => includeProducts.includes(p.id) && !baseProducts.some(b => b.id === p.id));
-  const currentProducts = [...baseProducts, ...included].filter(p => !excludeProducts.includes(p.id));
+  const safeBaseProducts = Array.isArray(baseProducts) ? baseProducts : [];
+  const safeAllProducts = Array.isArray(allProducts) ? allProducts : [];
+  const safeInclude = Array.isArray(includeProducts) ? includeProducts : [];
+  const safeExclude = Array.isArray(excludeProducts) ? excludeProducts : [];
+
+  const included = safeAllProducts.filter(p => safeInclude.includes(p.id) && !safeBaseProducts.some(b => b.id === p.id));
+  const currentProducts = [...safeBaseProducts, ...included].filter(p => !safeExclude.includes(p.id));
 
   const sortedProducts = [...currentProducts].sort((a, b) => {
     const idxA = productSequence.indexOf(a.id);

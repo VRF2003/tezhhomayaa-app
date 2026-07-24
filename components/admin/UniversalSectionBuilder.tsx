@@ -666,8 +666,11 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             <div>
               <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Layout Style</label>
-              <select value={norm.journalConfig?.layout || "grid"} onChange={e => updateDeep("journalConfig", "", "layout", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
-                <option value="grid">Grid (Standard)</option><option value="list">List</option><option value="featured">Featured (1 Large, Others Small)</option>
+              <select value={norm.journalConfig?.layout || "magazine-grid"} onChange={e => updateDeep("journalConfig", "", "layout", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+                <option value="magazine-grid">Magazine Grid (Vertical)</option>
+                <option value="carousel">Carousel (Swipe Horizontal)</option>
+                <option value="editorial-split">Editorial Split</option>
+                <option value="large-feature">Large Feature</option>
               </select>
             </div>
             <div>
