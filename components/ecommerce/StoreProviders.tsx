@@ -11,7 +11,9 @@ import { MarketUIProvider } from "@/components/market/MarketUIProvider";
 import { MaisonArrival } from "@/components/arrival/MaisonArrival";
 import { GlobalExperienceProvider } from "@/lib/global-experience/context/GlobalExperienceContext";
 
-export default function StoreProviders({ children, allProducts, initialGeeMarketId }: { children: React.ReactNode, allProducts: Product[], initialGeeMarketId?: string }) {
+import { PrivateConciergeToast } from "@/components/ecommerce/PrivateConciergeToast";
+
+export default function StoreProviders({ children, allProducts, initialGeeMarketId, activePromotions = [] }: { children: React.ReactNode, allProducts: Product[], initialGeeMarketId?: string, activePromotions?: any[] }) {
   return (
     // GlobalExperienceProvider is the outermost wrapper.
     // This ensures the GEE context is initialized before any other system,
@@ -29,6 +31,7 @@ export default function StoreProviders({ children, allProducts, initialGeeMarket
                       <MiniCart />
                       <SearchOverlay />
                       <MaisonArrival />
+                      <PrivateConciergeToast activePromotions={activePromotions} />
                     </SearchProvider>
                   </WishlistProvider>
                 </CartProvider>

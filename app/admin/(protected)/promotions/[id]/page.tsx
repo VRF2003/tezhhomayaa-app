@@ -90,7 +90,14 @@ export default async function PromotionDetailsPage({ params }: { params: Promise
             <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
               <div>
                 <div style={{ fontSize: "0.65rem", color: "#9a9690", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "0.2rem" }}>Reward</div>
-                <div style={{ fontSize: "0.85rem", color: "#1a1a18" }}>{formatReward(promo.reward)}</div>
+                <div style={{ fontSize: "0.85rem", color: "#1a1a18" }}>
+                  {formatReward(promo.reward)}
+                  {promo.reward?.targetIds && promo.reward.targetIds.length > 0 && (
+                    <div style={{ marginTop: "0.3rem", fontSize: "0.75rem", color: "#6b6865" }}>
+                      Applies to: {promo.reward.targetIds.join(", ")}
+                    </div>
+                  )}
+                </div>
               </div>
               <div style={{ width: "100%", height: "1px", background: "#e8e4df" }} />
               <div>

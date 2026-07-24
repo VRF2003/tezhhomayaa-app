@@ -65,6 +65,16 @@ export default async function RootLayout({
   const cookieStore = await cookies();
   const geeMarketId = cookieStore.get("tz_gee_market_id")?.value;
 
+  let activePromotions: any[] = [];
+  try {
+    const { PromotionService } = await import("@/lib/promotions/services/PromotionService");
+    const promotionService = new PromotionService();
+    const allPromos = await promotionService.getAllPromotions();
+    activePromotions = allPromos.filter(p => p.status === 'ACTIVE');
+  } catch (e) {
+    console.error("Failed to load active promotions", e);
+  }
+
   const isAdmin = (await headers()).get("x-is-admin") === "true";
 
   if (isAdmin) {
@@ -88,7 +98,7 @@ export default async function RootLayout({
         {/* Devasia font is loaded via @font-face in globals.css */}
         <div className="grain-overlay" aria-hidden="true" />
         <AppearanceProvider initialConfig={(appearanceConfig as any) || undefined}>
-          <StoreProviders allProducts={allProducts} initialGeeMarketId={geeMarketId}>
+          <StoreProviders allProducts={allProducts} initialGeeMarketId={geeMarketId} activePromotions={activePromotions}>
             {children}
             <PreviewBanner />
           </StoreProviders>

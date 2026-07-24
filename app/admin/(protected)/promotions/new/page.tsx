@@ -17,10 +17,18 @@ export default function NewPromotionPage() {
     
     try {
       const formData = new FormData(e.currentTarget);
-      await createPromotionAction(formData);
+      const res = await createPromotionAction(formData);
+      
+      if (typeof res === 'object' && res.success === false) {
+        alert(res.error || "An error occurred while creating the promotion.");
+        setIsSubmitting(false);
+        return;
+      }
+      
       router.push("/admin/promotions");
     } catch (error) {
       console.error("Failed to create promotion:", error);
+      alert("Failed to create promotion. Please try again.");
       setIsSubmitting(false);
     }
   };
@@ -124,14 +132,49 @@ export default function NewPromotionPage() {
                     <option value="FREE_SHIPPING">Free Shipping</option>
                     <option value="CHEAPEST_ITEM_FREE">Cheapest Item Free (BOGO)</option>
                     <option value="CHEAPEST_ITEM_PERCENTAGE">Cheapest Item % Off</option>
+                    <option value="SPECIFIC_ITEM_FREE">Specific Item Free (Buy X Get Y)</option>
                   </select>
                 </div>
-                {(rewardType === 'PERCENTAGE_DISCOUNT' || rewardType === 'FLAT_DISCOUNT' || rewardType === 'CHEAPEST_ITEM_PERCENTAGE') && (
+                {(rewardType === 'PERCENTAGE_DISCOUNT' || rewardType === 'FLAT_DISCOUNT' || rewardType === 'CHEAPEST_ITEM_PERCENTAGE' || rewardType === 'CHEAPEST_ITEM_FREE') && (
                   <div>
-                    <label style={{ display: "block", fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>Discount Value</label>
-                    <input name="rewardValue" required type="number" placeholder={rewardType.includes('PERCENTAGE') ? "e.g. 15 (%)" : "e.g. 500 (₹)"} style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px" }} />
+                    <label style={{ display: "block", fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>
+                      {rewardType === 'CHEAPEST_ITEM_FREE' ? 'Quantity of Free Items (Y)' : 'Discount Value'}
+                    </label>
+                    <input name="rewardValue" required type="number" placeholder={rewardType.includes('PERCENTAGE') ? "e.g. 15 (%)" : rewardType === 'CHEAPEST_ITEM_FREE' ? "e.g. 3 (items)" : "e.g. 500 (₹)"} style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px" }} />
                   </div>
                 )}
+              </div>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginTop: "1.5rem" }}>
+                <div>
+                  <label style={{ display: "block", fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>Applies To</label>
+                  <select
+                    name="appliesTo"
+                    style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px" }}
+                  >
+                    <option value="ENTIRE_ORDER">Entire Order</option>
+                    <option value="SPECIFIC_PRODUCTS">Specific Products</option>
+                    <option value="SPECIFIC_COLLECTIONS">Specific Collections</option>
+                  </select>
+                </div>
+                <div>
+                  <label style={{ display: "block", fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>Minimum Item Price for Discount (Optional)</label>
+                  <input
+                    name="rewardMinItemPrice"
+                    type="number"
+                    placeholder="e.g. 20000"
+                    style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px" }}
+                  />
+                  <p style={{ fontSize: "0.65rem", color: "#9a9690", marginTop: "0.5rem" }}>Discount only applies to items costing at least this amount</p>
+                </div>
+              </div>
+              <div style={{ marginTop: "1.5rem" }}>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "#6b6865", marginBottom: "0.5rem" }}>Target IDs (Comma separated)</label>
+                <input
+                  name="targetIds"
+                  placeholder="e.g. prod_123, prod_456"
+                  style={{ width: "100%", padding: "0.8rem", border: "1px solid #e8e4df", fontSize: "0.85rem", borderRadius: "2px" }}
+                />
+                <p style={{ fontSize: "0.65rem", color: "#9a9690", marginTop: "0.5rem" }}>Leave empty if Applies To is Entire Order</p>
               </div>
             </div>
           </section>

@@ -28,60 +28,99 @@ export async function duplicatePromotionAction(formData: FormData) {
 }
 
 export async function createPromotionAction(formData: FormData) {
-  // ... existing code ...
-  const data = Object.fromEntries(formData);
-  const newPromo = await promotionService.createPromotion({
-    name: data.name as string,
-    code: data.code ? data.code as string : undefined,
-    type: "AUTOMATIC",
-    discountValue: 0,
-    status: "ACTIVE",
-    validFrom: data.validFrom as string || null,
-    validUntil: data.validUntil as string || null,
-    timezone: "UTC",
-    createdBy: "admin",
-    updatedBy: "admin",
-    eligibility: {
-      firstOrderOnly: data.firstOrderOnly === "on"
-    },
-    trigger: {
-      type: (data.triggerType as any) || 'MIN_CART_VALUE',
-      value: parseInt(data.triggerValue as string || "0")
-    },
-    reward: {
-      type: (data.rewardType as any) || 'PERCENTAGE_DISCOUNT',
-      value: parseInt(data.rewardValue as string || "0")
+  try {
+    const data = Object.fromEntries(formData);
+    const appliesTo = data.appliesTo as string;
+    const targetIdsRaw = data.targetIds as string;
+    let rewardTargetIds: string[] | undefined = undefined;
+    if (appliesTo !== 'ENTIRE_ORDER' && targetIdsRaw) {
+      rewardTargetIds = targetIdsRaw.split(',').map(id => id.trim()).filter(id => id.length > 0);
     }
-  });
-  revalidatePath("/admin/promotions");
-  return newPromo.id;
+
+    const rewardMinItemPriceRaw = data.rewardMinItemPrice as string;
+    let rewardMinItemPrice: number | undefined = undefined;
+    if (rewardMinItemPriceRaw) {
+      rewardMinItemPrice = Number(rewardMinItemPriceRaw);
+    }
+
+    const newPromo = await promotionService.createPromotion({
+      name: data.name as string,
+      code: data.code ? data.code as string : undefined,
+      type: "AUTOMATIC",
+      discountValue: 0,
+      status: "ACTIVE",
+      validFrom: data.validFrom as string || null,
+      validUntil: data.validUntil as string || null,
+      timezone: "UTC",
+      createdBy: "admin",
+      updatedBy: "admin",
+      eligibility: {
+        firstOrderOnly: data.firstOrderOnly === "on"
+      },
+      trigger: {
+        type: (data.triggerType as any) || 'MIN_CART_VALUE',
+        value: parseInt(data.triggerValue as string || "0")
+      },
+      reward: {
+        type: (data.rewardType as any) || 'PERCENTAGE_DISCOUNT',
+        value: parseInt(data.rewardValue as string || "0"),
+        targetIds: rewardTargetIds && rewardTargetIds.length > 0 ? rewardTargetIds : undefined,
+        minItemPrice: rewardMinItemPrice
+      }
+    });
+    revalidatePath("/admin/promotions");
+    return { success: true, id: newPromo.id };
+  } catch (error: any) {
+    console.error("Error creating promotion:", error);
+    return { success: false, error: error.message || "Unknown error" };
+  }
 }
 
 export async function updatePromotionAction(formData: FormData) {
-  const id = formData.get("id") as string;
-  const data = Object.fromEntries(formData);
-  
-  await promotionService.updatePromotion(id, {
-    name: data.name as string,
-    code: data.code ? data.code as string : undefined,
-    validFrom: data.validFrom as string || null,
-    validUntil: data.validUntil as string || null,
-    eligibility: {
-      firstOrderOnly: data.firstOrderOnly === "on"
-    },
-    trigger: {
-      type: (data.triggerType as any) || 'MIN_CART_VALUE',
-      value: parseInt(data.triggerValue as string || "0")
-    },
-    reward: {
-      type: (data.rewardType as any) || 'PERCENTAGE_DISCOUNT',
-      value: parseInt(data.rewardValue as string || "0")
+  try {
+    const id = formData.get("id") as string;
+    const data = Object.fromEntries(formData);
+    
+    const appliesTo = data.appliesTo as string;
+    const targetIdsRaw = data.targetIds as string;
+    let rewardTargetIds: string[] | undefined = undefined;
+    if (appliesTo !== 'ENTIRE_ORDER' && targetIdsRaw) {
+      rewardTargetIds = targetIdsRaw.split(',').map(id => id.trim()).filter(id => id.length > 0);
     }
-  });
-  
-  revalidatePath("/admin/promotions");
-  revalidatePath(`/admin/promotions/${id}`);
-  return id;
+
+    const rewardMinItemPriceRaw = data.rewardMinItemPrice as string;
+    let rewardMinItemPrice: number | undefined = undefined;
+    if (rewardMinItemPriceRaw) {
+      rewardMinItemPrice = Number(rewardMinItemPriceRaw);
+    }
+
+    await promotionService.updatePromotion(id, {
+      name: data.name as string,
+      code: data.code ? data.code as string : undefined,
+      validFrom: data.validFrom as string || null,
+      validUntil: data.validUntil as string || null,
+      eligibility: {
+        firstOrderOnly: data.firstOrderOnly === "on"
+      },
+      trigger: {
+        type: (data.triggerType as any) || 'MIN_CART_VALUE',
+        value: parseInt(data.triggerValue as string || "0")
+      },
+      reward: {
+        type: (data.rewardType as any) || 'PERCENTAGE_DISCOUNT',
+        value: parseInt(data.rewardValue as string || "0"),
+        targetIds: rewardTargetIds && rewardTargetIds.length > 0 ? rewardTargetIds : undefined,
+        minItemPrice: rewardMinItemPrice
+      }
+    });
+    
+    revalidatePath("/admin/promotions");
+    revalidatePath(`/admin/promotions/${id}`);
+    return { success: true, id };
+  } catch (error: any) {
+    console.error("Error updating promotion:", error);
+    return { success: false, error: error.message || "Unknown error" };
+  }
 }
 
 export async function deletePromotionAction(formData: FormData) {

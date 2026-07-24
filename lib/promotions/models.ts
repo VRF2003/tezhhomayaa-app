@@ -24,6 +24,7 @@ export interface PromotionReward {
   type: RewardType;
   value?: number; // e.g., 15 (%), 500 (₹), or 50 (%) for cheapest item 50% off
   targetIds?: string[]; // If specific items are rewarded
+  minItemPrice?: number; // Minimum price for an individual item to receive the discount
 }
 
 // -----------------------------------------
