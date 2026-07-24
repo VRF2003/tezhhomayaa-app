@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/collections";
 import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
-import { getProductPrice } from "@/lib/currency";
+import { getProductPrice, getProductComparePrice } from "@/lib/currency";
+import { DiscoverDrawer } from "@/components/ecommerce/DiscoverDrawer";
 
 /**
  * ProductCard
@@ -18,10 +19,32 @@ import { getProductPrice } from "@/lib/currency";
  *  • Uniform height across all cards in the grid
  *  • Subtle scale on hover (0 → 1.04 over 1.1s cubic easing)
  */
-export function ProductCard({ product, presentation }: { product: Product, presentation?: any }) {
+export function ProductCard({ product, presentation, onDiscover }: { product: Product, presentation?: any, onDiscover?: () => void }) {
   const [hovered, setHovered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const formatter = useCurrencyFormatter();
+  
+  const getSignatureDetails = () => {
+    const d: string[] = [];
+    if (product.material) d.push(product.material);
+    else if (product.fabricDetails) {
+      const fd = product.fabricDetails.split(/[,.]/)[0].trim();
+      if (fd.length > 3 && fd.length < 45) d.push(fd);
+    }
+    
+    if (product.fit) {
+      const fit = product.fit.split(/[,.]/)[0].trim();
+      if (fit.length > 3 && fit.length < 45) d.push(fit);
+    }
+    
+    if (d.length < 2 && product.designStory) {
+      const ds = product.designStory.split(/[,.]/)[0].trim();
+      if (ds.length > 5 && ds.length < 45) d.push(ds);
+    }
+    return d.slice(0, 2);
+  };
+  
+  const signatureDetails = getSignatureDetails();
   
   const thumbIndex = product.merchandising?.gridThumbnail ?? 0;
   let gallery = product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
@@ -70,160 +93,207 @@ export function ProductCard({ product, presentation }: { product: Product, prese
     if (activeIndex > 0) setActiveIndex(prev => prev - 1);
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
-    <Link
-      href={product.href}
-      style={{ textDecoration: "none", display: "block" }}
-      aria-label={product.name}
+    <article
+      onPointerEnter={(e) => {
+        if (e.pointerType === 'mouse' && !isMobile) {
+          setHovered(true);
+          if (gallery.length > 1 && activeIndex === 0) setActiveIndex(1);
+        }
+      }}
+      onPointerLeave={(e) => {
+        if (e.pointerType === 'mouse' && !isMobile) {
+          setHovered(false);
+          setActiveIndex(0);
+        }
+      }}
+      style={{ 
+        border: "none",
+        padding: "0",
+        background: "#ffffff",
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        position: "relative"
+      }}
     >
-      <article
-        onPointerEnter={(e) => {
-          if (e.pointerType === 'mouse') {
-            setHovered(true);
-            if (gallery.length > 1 && activeIndex === 0) setActiveIndex(1);
-          }
-        }}
-        onPointerLeave={(e) => {
-          if (e.pointerType === 'mouse') {
-            setHovered(false);
-            setActiveIndex(0);
-          }
-        }}
-        style={{ 
-          cursor: "pointer", 
-          border: "none",
-          padding: "0",
+      {/* ── Image Container ── */}
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          paddingBottom: isOriginal ? "0" : pb,
+          overflow: "hidden",
           background: "#ffffff",
-          display: "flex",
-          flexDirection: "column",
-          height: "100%"
         }}
       >
-        {/* ── Image Container ── */}
+        <Link href={product.href} style={{ display: "block", position: "absolute", inset: 0, zIndex: 5 }} aria-label={product.name} />
+        
+        {/* Badges */}
+        {product.badge && (
+          <div style={{ position: "absolute", top: "1rem", left: "1rem", zIndex: 10 }}>
+            <span style={{ 
+              padding: "0.4rem 0.6rem", 
+              background: "rgba(255,255,255,0.9)", 
+              backdropFilter: "blur(4px)",
+              color: "#1a1a18", 
+              fontSize: "0.55rem", 
+              textTransform: "uppercase", 
+              letterSpacing: "0.2em", 
+              boxShadow: "0 1px 3px rgba(0,0,0,0.1)" 
+            }}>
+              {product.badge}
+            </span>
+          </div>
+        )}
+
         <div
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           style={{
-            position: "relative",
+            position: isOriginal ? "relative" : "absolute",
+            top: 0,
+            left: 0,
             width: "100%",
-            paddingBottom: isOriginal ? "0" : pb,
-            overflow: "hidden",
-            background: "#ffffff",
+            height: isOriginal ? "auto" : "100%",
           }}
         >
-          {/* Badges */}
-          {product.badge && (
-            <div style={{ position: "absolute", top: "1rem", left: "1rem", zIndex: 10 }}>
-              <span style={{ 
-                padding: "0.4rem 0.6rem", 
-                background: "rgba(255,255,255,0.9)", 
-                backdropFilter: "blur(4px)",
-                color: "#1a1a18", 
-                fontSize: "0.55rem", 
-                textTransform: "uppercase", 
-                letterSpacing: "0.2em", 
-                boxShadow: "0 1px 3px rgba(0,0,0,0.1)" 
-              }}>
-                {product.badge}
-              </span>
-            </div>
-          )}
-
-          <div
-            style={{
-              position: isOriginal ? "relative" : "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
+          {gallery.map((img, i) => (
+            <div key={img + i} style={{ 
+              position: (isOriginal && i === 0) ? "relative" : "absolute",
+              top: 0, left: 0,
+              width: "100%", 
               height: isOriginal ? "auto" : "100%",
-            }}
-          >
-            {gallery.map((img, i) => (
-              <div key={img + i} style={{ 
-                position: (isOriginal && i === 0) ? "relative" : "absolute",
-                top: 0, left: 0,
-                width: "100%", 
-                height: isOriginal ? "auto" : "100%",
-                opacity: i === activeIndex ? 1 : 0,
-                transition: "opacity 850ms cubic-bezier(0.2, 0.8, 0.2, 1)",
-                zIndex: i === activeIndex ? 2 : 1
-              }}>
-                <Image
-                  src={img}
-                  alt={`${product.name} - ${i + 1}`}
-                  {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
-                  style={{
-                    ...(isOriginal ? { width: "100%", height: "auto" } : { objectFit: "cover" }),
-                    objectPosition: "center top",
-                  }}
-                  priority={i === 0 || i === 1}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Navigation Arrows */}
-          {gallery.length > 1 && (
-            <>
-              {activeIndex > 0 && (
-                <button
-                  onClick={handlePrev}
-                  style={{
-                    position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
-                    zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
-                    display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
-                    transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
-                    opacity: hovered ? 1 : 0,
-                    pointerEvents: hovered ? "auto" : "none"
-                  }}
-                  aria-label="Previous image"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
-                    <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              )}
-              {activeIndex < gallery.length - 1 && (
-                <button
-                  onClick={handleNext}
-                  style={{
-                    position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
-                    zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
-                    display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
-                    transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
-                    opacity: hovered ? 1 : 0,
-                    pointerEvents: hovered ? "auto" : "none"
-                  }}
-                  aria-label="Next image"
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
-                    <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              )}
-            </>
-          )}
+              opacity: i === activeIndex ? 1 : 0,
+              transition: "opacity 850ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+              zIndex: i === activeIndex ? 2 : 1
+            }}>
+              <Image
+                src={img}
+                alt={`${product.name} - ${i + 1}`}
+                {...(isOriginal ? { width: 0, height: 0, sizes: "100vw" } : { fill: true, sizes: "(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" })}
+                style={{
+                  ...(isOriginal ? { width: "100%", height: "auto" } : { objectFit: "cover" }),
+                  objectPosition: "center top",
+                  transition: "transform 400ms cubic-bezier(0.25, 1, 0.5, 1), filter 400ms ease",
+                  transform: (hovered && !isMobile) ? "scale(1.03)" : "scale(1)",
+                  filter: (hovered && !isMobile) ? "brightness(0.95)" : "brightness(1)"
+                }}
+                priority={i === 0 || i === 1}
+              />
+            </div>
+          ))}
         </div>
 
-        {/* ── Caption ── */}
-        <div style={{ paddingTop: "1.2rem", paddingBottom: `${presentation?.cardBottomSpacing ?? 24}px`, paddingLeft: "1rem", paddingRight: "1rem", flex: 1, display: "flex", flexDirection: "column" }}>
-          {(presentation?.showCategory) && (
-             <p style={{
-              fontFamily: "var(--font-dm-mono, monospace)",
-              fontSize: "0.5rem",
-              letterSpacing: "0.15em",
-              color: "#9a9690",
-              margin: "0 0 0.4rem",
-              textTransform: "uppercase",
+        {/* Editorial Hover Overlay */}
+        {!isMobile && (
+          <div 
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%)",
+              zIndex: 6,
+              opacity: hovered ? 1 : 0,
+              transition: "opacity 300ms ease",
+              pointerEvents: "none",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-end",
+              padding: "1.5rem"
+            }}
+          >
+            <div style={{
+              transform: hovered ? "translateY(0)" : "translateY(10px)",
+              transition: "transform 400ms cubic-bezier(0.25, 1, 0.5, 1)",
             }}>
-              {product.categoryLabel || product.category || "Piece"}
-            </p>
-          )}
+              {signatureDetails.length > 0 ? (
+                <>
+                  <p style={{ fontFamily: "var(--font-dm-mono, monospace)", fontSize: "0.55rem", textTransform: "uppercase", letterSpacing: "0.15em", color: "#f7f5f2", margin: "0 0 0.3rem" }}>
+                    {signatureDetails[0]}
+                  </p>
+                  {signatureDetails[1] && (
+                    <p style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "0.95rem", fontWeight: 300, color: "#f7f5f2", margin: "0 0 0.8rem", fontStyle: "italic" }}>
+                      {signatureDetails[1]}
+                    </p>
+                  )}
+                </>
+              ) : null}
+            </div>
+          </div>
+        )}
 
-          {(presentation?.showProductName ?? true) && (
+        {/* Navigation Arrows */}
+        {!isMobile && gallery.length > 1 && (
+          <>
+            {activeIndex > 0 && (
+              <button
+                onClick={handlePrev}
+                style={{
+                  position: "absolute", left: "0.5rem", top: "50%", transform: "translateY(-50%)",
+                  zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
+                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
+                  transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
+                  opacity: hovered ? 1 : 0,
+                  pointerEvents: hovered ? "auto" : "none"
+                }}
+                aria-label="Previous image"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
+                  <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            )}
+            {activeIndex < gallery.length - 1 && (
+              <button
+                onClick={handleNext}
+                style={{
+                  position: "absolute", right: "0.5rem", top: "50%", transform: "translateY(-50%)",
+                  zIndex: 10, background: "rgba(255,255,255,0.5)", borderRadius: "50%", width: "32px", height: "32px",
+                  display: "flex", alignItems: "center", justifyContent: "center", border: "none", cursor: "pointer",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.05)", backdropFilter: "blur(4px)",
+                  transition: "opacity 450ms cubic-bezier(0.25, 1, 0.5, 1)",
+                  opacity: hovered ? 1 : 0,
+                  pointerEvents: hovered ? "auto" : "none"
+                }}
+                aria-label="Next image"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1a1a18" strokeWidth="1.2">
+                  <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            )}
+          </>
+        )}
+      </div>
+
+      {/* ── Caption ── */}
+      <div style={{ paddingTop: "1.2rem", paddingBottom: `${presentation?.cardBottomSpacing ?? 24}px`, paddingLeft: "1rem", paddingRight: "1rem", flex: 1, display: "flex", flexDirection: "column" }}>
+        {(presentation?.showCategory) && (
+           <p style={{
+            fontFamily: "var(--font-dm-mono, monospace)",
+            fontSize: "0.5rem",
+            letterSpacing: "0.15em",
+            color: "#9a9690",
+            margin: "0 0 0.4rem",
+            textTransform: "uppercase",
+          }}>
+            {product.categoryLabel || product.category || "Piece"}
+          </p>
+        )}
+
+        {(presentation?.showProductName ?? true) && (
+          <Link href={product.href} style={{ textDecoration: "none", outline: "none" }}>
             <p
               style={{
                 fontFamily: "var(--font-cormorant, serif)",
@@ -242,8 +312,10 @@ export function ProductCard({ product, presentation }: { product: Product, prese
             >
               {product.name}
             </p>
-          )}
+          </Link>
+        )}
 
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.45rem" }}>
           {(presentation?.showPrice ?? true) && (
             <p
               style={{
@@ -251,16 +323,56 @@ export function ProductCard({ product, presentation }: { product: Product, prese
                 fontSize: "0.6rem",
                 letterSpacing: "0.14em",
                 color: "#9a9690",
-                margin: "0.45rem 0 0",
+                margin: 0,
                 textTransform: "uppercase",
+                display: "flex",
+                gap: "0.5rem"
               }}
             >
-              {formatter.formatCurrency(getProductPrice(product))}
+              {getProductComparePrice(product) ? (
+                <>
+                  <span style={{ textDecoration: "line-through", opacity: 0.6 }}>
+                    {formatter.formatCurrency(getProductComparePrice(product)!)}
+                  </span>
+                  <span>{formatter.formatCurrency(getProductPrice(product))}</span>
+                </>
+              ) : (
+                formatter.formatCurrency(getProductPrice(product))
+              )}
             </p>
           )}
+
+          {/* Discover Action */}
+          {onDiscover && (
+            <button
+              onClick={(e) => { e.preventDefault(); onDiscover(); }}
+              className={`discover-btn ${isMobile ? 'mobile-discover' : (hovered ? 'desktop-visible' : 'desktop-hidden')}`}
+              style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                padding: "0.2rem 0",
+                fontFamily: "var(--font-dm-mono, monospace)",
+                fontSize: "0.55rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                color: "#1a1a18",
+                borderBottom: "1px solid #1a1a18",
+                transition: "opacity 300ms ease",
+                zIndex: 10
+              }}
+            >
+              Discover &rarr;
+            </button>
+          )}
         </div>
-      </article>
-    </Link>
+      </div>
+      <style>{`
+        .desktop-hidden { opacity: 0; pointer-events: none; }
+        .desktop-visible { opacity: 1; pointer-events: auto; }
+        .mobile-discover { opacity: 1; pointer-events: auto; }
+      `}</style>
+    </article>
   );
 }
 
@@ -290,6 +402,8 @@ function EmptyState() {
 
 // ─── Grid ──────────────────────────────────────────────────────
 export default function ProductGrid({ products, presentation }: { products: Product[], presentation?: any }) {
+  const [discoverProduct, setDiscoverProduct] = useState<Product | null>(null);
+
   if (!products || products.length === 0) return <EmptyState />;
 
   const deskCols = presentation?.desktopColumns ?? 4;
@@ -323,9 +437,11 @@ export default function ProductGrid({ products, presentation }: { products: Prod
         }}
       >
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} presentation={presentation} />
+          <ProductCard key={product.id} product={product} presentation={presentation} onDiscover={() => setDiscoverProduct(product)} />
         ))}
       </div>
+      
+      <DiscoverDrawer product={discoverProduct} onClose={() => setDiscoverProduct(null)} />
 
       <style>{`
         .dynamic-tezh-grid {

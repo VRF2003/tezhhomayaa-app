@@ -29,6 +29,7 @@ if (!globalAny.iamRepositories) {
       await globalAny.iamRepositories.userRepo.create({
         id: "usr_super_admin",
         email: "office@tezhhomayaa.com",
+        username: "admin",
         name: "System Admin",
         roleId: "role_super_admin",
         passwordHash: defaultHash,

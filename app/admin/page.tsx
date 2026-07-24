@@ -83,11 +83,11 @@ export default function AdminLogin() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
           <label htmlFor="email" style={{ fontSize: "0.75rem", letterSpacing: "0.1em", textTransform: "uppercase", color: "#6b6865" }}>
-            Email
+            Email or Username
           </label>
           <input
             id="email"
-            type="email"
+            type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required

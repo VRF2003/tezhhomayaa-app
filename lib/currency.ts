@@ -103,3 +103,14 @@ export function getProductPrice(product: { id: string; price?: string | number }
     : parseFloat(String(product.price).replace(/[^0-9.]/g, ""));
   return isNaN(priceValue) ? 0 : priceValue;
 }
+
+export function getProductComparePrice(product: { id?: string; compareAtPrice?: string | number }): number | null {
+  if (product.compareAtPrice === undefined || product.compareAtPrice === null || product.compareAtPrice === "") {
+    return null;
+  }
+  const priceValue = typeof product.compareAtPrice === "number"
+    ? product.compareAtPrice
+    : parseFloat(String(product.compareAtPrice).replace(/[^0-9.]/g, ""));
+  return isNaN(priceValue) ? null : priceValue;
+}
+

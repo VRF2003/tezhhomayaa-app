@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
-import { getProductPrice } from "@/lib/currency";
+import { getProductPrice, getProductComparePrice } from "@/lib/currency";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -585,8 +585,18 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               fontFamily: "var(--font-cormorant, serif)",
               fontSize: "0.95rem",
               fontWeight: 500, letterSpacing: "0.03em", color: "#1a1a18", margin: "0 0 2rem",
+              display: "flex", gap: "0.75rem", alignItems: "center"
             }}>
-              {formatter.formatCurrency(getProductPrice(product))}
+              {getProductComparePrice(product) ? (
+                <>
+                  <span style={{ textDecoration: "line-through", color: "#9a9690" }}>
+                    {formatter.formatCurrency(getProductComparePrice(product)!)}
+                  </span>
+                  <span>{formatter.formatCurrency(getProductPrice(product))}</span>
+                </>
+              ) : (
+                formatter.formatCurrency(getProductPrice(product))
+              )}
             </p>
 
             {/* PRODUCT DESCRIPTION - Open by default */}

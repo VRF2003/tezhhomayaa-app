@@ -12,10 +12,15 @@ export class InMemoryUserRepository implements IUserRepository {
     return this.users.get(id) || null;
   }
 
-  async findByEmail(email: string): Promise<User | null> {
-    const lowerEmail = email.toLowerCase();
+  async findByEmail(emailOrUsername: string): Promise<User | null> {
+    const lowerEmail = emailOrUsername.toLowerCase();
     for (const user of this.users.values()) {
-      if (user.email.toLowerCase() === lowerEmail) return user;
+      if (
+        user.email.toLowerCase() === lowerEmail || 
+        (user.username && user.username.toLowerCase() === lowerEmail)
+      ) {
+        return user;
+      }
     }
     return null;
   }
