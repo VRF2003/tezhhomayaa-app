@@ -133,6 +133,7 @@ export type UniversalSectionData = {
       borderRadius: number;
       textColor: string;
       backgroundColor: string;
+      backgroundOpacity?: number;
     };
     // Legacy top-level fallbacks kept for safe backward compatibility
     fontFamily: string;
@@ -261,7 +262,8 @@ export function normalizeSectionData(data: any): UniversalSectionData {
       padding: d.style?.button?.padding ?? "0.6rem 1.4rem",
       borderRadius: d.style?.button?.borderRadius ?? 0,
       textColor: d.style?.button?.textColor ?? "#ffffff",
-      backgroundColor: d.style?.button?.backgroundColor ?? "#1a1a18"
+      backgroundColor: d.style?.button?.backgroundColor ?? "#1a1a18",
+      backgroundOpacity: d.style?.button?.backgroundOpacity ?? 100
     },
     fontFamily: d.style?.fontFamily ?? "var(--font-cormorant, serif)",
     backgroundColor: d.style?.backgroundColor ?? "transparent",

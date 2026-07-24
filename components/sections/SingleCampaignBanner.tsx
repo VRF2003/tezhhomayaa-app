@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
@@ -23,6 +24,12 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   const layout = isMobile ? norm.layout.mobile : norm.layout.desktop;
 
@@ -52,7 +59,7 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
     <section 
       ref={containerRef}
       id={`banner-${safeId}`}
-      className="relative w-full bg-[#1a1a18] flex flex-col overflow-hidden"
+      className="relative w-full bg-[#1a1a18] flex flex-col"
       style={injectTypographyOverrides(norm.typographyOverrides)}
     >
       <style>{`
@@ -104,16 +111,22 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
       )}
 
       {/* Content */}
-        <div 
+      <div 
         onPointerDown={handlePointerDown}
         style={{
-          position: "absolute",
-          left: `${displayX}%`,
-          top: `${displayY}%`,
-          transform: `translate(-${displayX}%, -${displayY}%)`,
-          width: `${layout.textWidth}%`
+          position: "sticky",
+          bottom: "2rem", // Sticky to the bottom of the viewport
+          width: `${layout.textWidth}%`,
+          marginTop: "auto", 
+          paddingBottom: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center", // Force contents to be centered
+          textAlign: "center",
+          alignSelf: "center", // Center this container inside the parent flex section
+          zIndex: 10
         }}
-        className="flex flex-col p-6 z-10"
+        className="p-6"
       >
         {norm.content.subheading && (
           <p 
@@ -185,7 +198,19 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                   padding: norm.style.button.padding,
                   borderRadius: `${norm.style.button.borderRadius}px`,
                   color: norm.style.button.textColor,
-                  backgroundColor: norm.style.button.backgroundColor,
+                  backgroundColor: (() => {
+                    const hex = norm.style.button.backgroundColor.replace('#', '');
+                    if (hex.length !== 6 && hex.length !== 3) return norm.style.button.backgroundColor;
+                    const fullHex = hex.length === 3 ? hex.split('').map(x => x + x).join('') : hex;
+                    const r = parseInt(fullHex.substring(0, 2), 16);
+                    const g = parseInt(fullHex.substring(2, 4), 16);
+                    const b = parseInt(fullHex.substring(4, 6), 16);
+                    const opacity = (norm.style.button.backgroundOpacity ?? 100) / 100;
+                    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+                  })(),
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid currentColor",
                   display: "inline-block",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase"
@@ -213,7 +238,19 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                   padding: norm.style.button.padding,
                   borderRadius: `${norm.style.button.borderRadius}px`,
                   color: norm.style.button.textColor,
-                  backgroundColor: norm.style.button.backgroundColor,
+                  backgroundColor: (() => {
+                    const hex = norm.style.button.backgroundColor.replace('#', '');
+                    if (hex.length !== 6 && hex.length !== 3) return norm.style.button.backgroundColor;
+                    const fullHex = hex.length === 3 ? hex.split('').map(x => x + x).join('') : hex;
+                    const r = parseInt(fullHex.substring(0, 2), 16);
+                    const g = parseInt(fullHex.substring(2, 4), 16);
+                    const b = parseInt(fullHex.substring(4, 6), 16);
+                    const opacity = (norm.style.button.backgroundOpacity ?? 100) / 100;
+                    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
+                  })(),
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid currentColor",
                   display: "inline-block",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase"

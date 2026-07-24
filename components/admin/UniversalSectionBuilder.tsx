@@ -408,6 +408,11 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
                   <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Background Color</label>
                   <div style={{ display: "flex", gap: "0.5rem" }}><input type="color" value={/^#[0-9A-Fa-f]{6}$/i.test(norm.style.button.backgroundColor || "") ? norm.style.button.backgroundColor : "#000000"} onChange={e => updateDeep("style", "button", "backgroundColor", e.target.value)} style={{ width: "40px", height: "40px", padding: 0, border: "none" }} /><input type="text" value={norm.style.button.backgroundColor || ""} onChange={e => updateDeep("style", "button", "backgroundColor", e.target.value)} style={{ padding: "0.4rem", flex: 1, border: "1px solid #ccc9c4" }} /></div>
                 </div>
+                <div>
+                  <label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Background Opacity (%)</span><span>{norm.style.button.backgroundOpacity ?? 100}</span></label>
+                  <input type="range" min="0" max="100" value={norm.style.button.backgroundOpacity ?? 100} onChange={e => updateDeep("style", "button", "backgroundOpacity", Number(e.target.value))} style={{ width: "100%" }} />
+                  <p style={{ fontSize: "0.6rem", color: "#666", marginTop: "0.25rem" }}>Lower opacity to 0% to reveal the Gucci glassmorphism blur.</p>
+                </div>
               </div>
             )}
 

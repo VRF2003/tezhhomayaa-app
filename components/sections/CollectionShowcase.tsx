@@ -129,7 +129,6 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
                 lineHeight: norm.style.heading.lineHeight,
                 color: "var(--obsidian)",
                 textAlign: norm.style.heading.align as any,
-                width: "100%",
                 position: "relative",
                 display: "inline-block",
                 paddingBottom: "4px",

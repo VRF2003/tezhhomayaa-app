@@ -522,423 +522,6 @@
             }
           },
           {
-            "id": "sec_1784189750167",
-            "type": "split-layout",
-            "hidden": false,
-            "data": {
-              "layout": {
-                "desktop": {
-                  "x": 50,
-                  "y": 50,
-                  "width": 100,
-                  "height": 80,
-                  "align": "center",
-                  "padding": "0",
-                  "margin": "0",
-                  "textWidth": 80
-                },
-                "tablet": {
-                  "x": 50,
-                  "y": 50,
-                  "width": 100,
-                  "height": 80,
-                  "align": "center",
-                  "padding": "0",
-                  "margin": "0",
-                  "textWidth": 80
-                },
-                "mobile": {
-                  "x": 50,
-                  "y": 50,
-                  "width": 100,
-                  "height": 80,
-                  "align": "center",
-                  "padding": "0",
-                  "margin": "0",
-                  "textWidth": 90
-                }
-              },
-              "ratio": "50-50",
-              "desktopImage": "",
-              "mobileImage": "",
-              "heading": "Split Content",
-              "description": "Text goes here...",
-              "button": {
-                "enabled": true,
-                "label": "Read More",
-                "url": "#",
-                "style": "luxury"
-              },
-              "content": {
-                "heading": "",
-                "italicHeading": "",
-                "subheading": "featured collections",
-                "description": "<p><br>Redefining the boundaries of the canvas. This is wearable architecture. <br><br><br><br><br><br><br></p>",
-                "primaryButton": {
-                  "enabled": true,
-                  "label": "explore collection",
-                  "url": "/lookbook",
-                  "style": "luxury"
-                },
-                "secondaryButton": {
-                  "enabled": false,
-                  "label": "Learn More",
-                  "url": "#",
-                  "style": "outline"
-                },
-                "tertiaryButton": {
-                  "enabled": false,
-                  "label": "Contact Us",
-                  "url": "#",
-                  "style": "ghost"
-                }
-              },
-              "style": {
-                "heading": {
-                  "fontSize": 3,
-                  "fontWeight": 300,
-                  "letterSpacing": 0.05,
-                  "lineHeight": 1.1,
-                  "textColor": "#1a1a18",
-                  "textShadow": "none",
-                  "align": "right"
-                },
-                "subheading": {
-                  "fontSize": 1.3,
-                  "fontWeight": 800,
-                  "letterSpacing": 0.2,
-                  "lineHeight": 1.8,
-                  "textColor": "#1a1a18",
-                  "textShadow": "none",
-                  "align": "center"
-                },
-                "description": {
-                  "fontSize": 1.8,
-                  "fontWeight": 500,
-                  "letterSpacing": 0.05,
-                  "lineHeight": 1.1,
-                  "textColor": "#1a1a18",
-                  "textShadow": "none",
-                  "align": "center",
-                  "maxWidth": 800
-                },
-                "button": {
-                  "fontSize": 0.75,
-                  "fontWeight": 400,
-                  "padding": "0.6rem 1.4rem",
-                  "borderRadius": 0,
-                  "textColor": "#ffffff",
-                  "backgroundColor": "#1a1a18"
-                },
-                "fontFamily": "var(--font-cormorant, serif)",
-                "backgroundColor": "#eae9e6",
-                "borderColor": "transparent",
-                "borderWidth": 0,
-                "borderRadius": 0,
-                "darkOverlay": 0,
-                "lightOverlay": 0,
-                "gradientOverlay": false,
-                "fontSize": 4,
-                "subheadingFontSize": 1,
-                "descriptionFontSize": 1.1,
-                "fontWeight": 300,
-                "letterSpacing": 0.05,
-                "lineHeight": 1.1,
-                "textColor": "#1a1a18",
-                "textShadow": "none"
-              },
-              "media": {
-                "type": "image",
-                "desktop": {
-                  "url": "/uploads/media-1784191753721-255966828.png",
-                  "width": 2752,
-                  "height": 1536
-                },
-                "mobile": {
-                  "url": ""
-                },
-                "videoSettings": {
-                  "autoplay": true,
-                  "loop": true,
-                  "muted": true,
-                  "controls": false,
-                  "lazyLoad": true,
-                  "playOnHover": false
-                }
-              },
-              "animation": {
-                "type": "slide-up",
-                "duration": 1.2,
-                "delay": 0,
-                "easing": "ease",
-                "scrollTrigger": true
-              },
-              "advanced": {
-                "anchorId": "",
-                "customCssClass": ""
-              },
-              "collectionShowcase": {
-                "layoutType": "image-left",
-                "maxWidth": "boxed",
-                "items": []
-              },
-              "splitLayout": {
-                "ratio": "50-50",
-                "layout": "image-left"
-              },
-              "contactInfo": {
-                "fields": []
-              },
-              "contactForm": {
-                "successMessage": "Thank you for your message. We will be in touch shortly.",
-                "destinationEmail": "care@tezhhomayaa.com",
-                "subjects": [
-                  "Client Services",
-                  "Order Support",
-                  "Wholesale",
-                  "Press",
-                  "Collaboration",
-                  "Other"
-                ]
-              },
-              "socialPresence": {
-                "links": [
-                  {
-                    "platform": "Instagram",
-                    "url": "#"
-                  },
-                  {
-                    "platform": "Facebook",
-                    "url": "#"
-                  }
-                ]
-              },
-              "typographyOverrides": {
-                "enabled": false
-              },
-              "productSequence": [],
-              "includeProducts": [],
-              "excludeProducts": []
-            }
-          },
-          {
-            "id": "sec_1784188589282",
-            "type": "spacer",
-            "hidden": false,
-            "data": {
-              "heightMobile": 64,
-              "heightDesktop": 40
-            }
-          },
-          {
-            "id": "sec_1781351265013",
-            "type": "rich-text-block",
-            "hidden": false,
-            "data": {
-              "content": {
-                "heading": "Shop by category",
-                "italicHeading": "",
-                "subheading": "Explore",
-                "description": "Discover our world of unbridled artistry",
-                "primaryButton": {
-                  "enabled": false,
-                  "label": "Discover the Collections",
-                  "url": "#",
-                  "style": "luxury"
-                },
-                "secondaryButton": {
-                  "enabled": false,
-                  "label": "Learn More",
-                  "url": "#",
-                  "style": "outline"
-                },
-                "tertiaryButton": {
-                  "enabled": false,
-                  "label": "Contact Us",
-                  "url": "#",
-                  "style": "ghost"
-                }
-              },
-              "layout": {
-                "desktop": {
-                  "x": 66,
-                  "y": 79,
-                  "width": 100,
-                  "height": 100,
-                  "align": "center",
-                  "padding": "2rem 0",
-                  "margin": "0",
-                  "textWidth": 69
-                },
-                "tablet": {
-                  "x": 50,
-                  "y": 50,
-                  "width": 100,
-                  "height": 100,
-                  "align": "center",
-                  "padding": "0",
-                  "margin": "0",
-                  "textWidth": 80
-                },
-                "mobile": {
-                  "x": 50,
-                  "y": 50,
-                  "width": 100,
-                  "height": 100,
-                  "align": "center",
-                  "padding": "0",
-                  "margin": "0",
-                  "textWidth": 90
-                }
-              },
-              "style": {
-                "heading": {
-                  "fontSize": 3,
-                  "fontWeight": 100,
-                  "letterSpacing": 0.05,
-                  "lineHeight": 1.7,
-                  "textColor": "#000000",
-                  "textShadow": "none",
-                  "align": "center"
-                },
-                "subheading": {
-                  "fontSize": 1,
-                  "fontWeight": 400,
-                  "letterSpacing": 0.2,
-                  "lineHeight": 1.2,
-                  "textColor": "#7a272e",
-                  "textShadow": "none",
-                  "align": "center"
-                },
-                "description": {
-                  "fontSize": 1.1,
-                  "fontWeight": 300,
-                  "letterSpacing": 0.02,
-                  "lineHeight": 1.6,
-                  "textColor": "#1a1a18",
-                  "textShadow": "none",
-                  "align": "center",
-                  "maxWidth": 800
-                },
-                "button": {
-                  "fontSize": 0.75,
-                  "fontWeight": 400,
-                  "padding": "0.6rem 1.4rem",
-                  "borderRadius": 0,
-                  "textColor": "#000000",
-                  "backgroundColor": "#1a1a18"
-                },
-                "fontFamily": "var(--font-cormorant, serif)",
-                "backgroundColor": "transparent",
-                "borderColor": "transparent",
-                "borderWidth": 0,
-                "borderRadius": 0,
-                "darkOverlay": 0,
-                "lightOverlay": 0,
-                "gradientOverlay": false,
-                "fontSize": 4,
-                "subheadingFontSize": 1,
-                "descriptionFontSize": 1.1,
-                "fontWeight": 300,
-                "letterSpacing": 0.05,
-                "lineHeight": 1.1,
-                "textColor": "#1a1a18",
-                "textShadow": "soft"
-              },
-              "media": {
-                "type": "image",
-                "desktop": {
-                  "url": ""
-                },
-                "mobile": {
-                  "url": ""
-                },
-                "videoSettings": {
-                  "autoplay": true,
-                  "loop": true,
-                  "muted": true,
-                  "controls": false,
-                  "lazyLoad": true,
-                  "playOnHover": false
-                }
-              },
-              "advanced": {
-                "anchorId": "",
-                "customCssClass": ""
-              },
-              "collectionShowcase": {
-                "layoutType": {
-                  "desktop": {
-                    "textWidth": 60,
-                    "align": "center",
-                    "padding": "6rem 0"
-                  }
-                },
-                "maxWidth": "boxed",
-                "items": []
-              },
-              "splitLayout": {
-                "ratio": "50-50",
-                "layout": {
-                  "desktop": {
-                    "textWidth": 60,
-                    "align": "center",
-                    "padding": "6rem 0"
-                  }
-                }
-              },
-              "contactInfo": {
-                "fields": []
-              },
-              "contactForm": {
-                "successMessage": "Thank you for your message. We will be in touch shortly.",
-                "destinationEmail": "care@tezhhomayaa.com",
-                "subjects": [
-                  "Client Services",
-                  "Order Support",
-                  "Wholesale",
-                  "Press",
-                  "Collaboration",
-                  "Other"
-                ]
-              },
-              "socialPresence": {
-                "links": [
-                  {
-                    "platform": "Instagram",
-                    "url": "#"
-                  },
-                  {
-                    "platform": "Facebook",
-                    "url": "#"
-                  }
-                ]
-              },
-              "typographyOverrides": {
-                "enabled": false
-              },
-              "animation": {
-                "type": "slide-up",
-                "duration": 1.2,
-                "delay": 0,
-                "easing": "ease",
-                "scrollTrigger": true
-              },
-              "productSequence": [],
-              "includeProducts": [],
-              "excludeProducts": []
-            }
-          },
-          {
-            "id": "sec_1782848195786",
-            "type": "spacer",
-            "hidden": false,
-            "data": {
-              "heightMobile": 64,
-              "heightDesktop": 40
-            }
-          },
-          {
             "id": "sec_feat_showcase_1",
             "type": "collection-showcase",
             "hidden": false,
@@ -1074,7 +657,7 @@
                   "fontSize": 3,
                   "fontWeight": 400,
                   "letterSpacing": 0,
-                  "lineHeight": 1.7,
+                  "lineHeight": 1.5,
                   "textColor": "#000000",
                   "textShadow": "none",
                   "align": "left"
@@ -1154,15 +737,15 @@
                     "id": "item_lixbp95",
                     "url": "/new-collection",
                     "content": {
-                      "heading": "Women",
+                      "heading": "Women's Clothing",
                       "italicHeading": "",
                       "subheading": "",
                       "description": "",
                       "primaryButton": {
                         "enabled": true,
-                        "label": "Shop now",
+                        "label": "",
                         "url": "/women/ready-to-wear",
-                        "style": "luxury"
+                        "style": "filled"
                       },
                       "secondaryButton": {
                         "enabled": false,
@@ -1211,10 +794,10 @@
                     },
                     "style": {
                       "heading": {
-                        "fontSize": 2,
+                        "fontSize": 1,
                         "fontWeight": 300,
                         "letterSpacing": 0.05,
-                        "lineHeight": 1.1,
+                        "lineHeight": 1.9,
                         "textColor": "#000000",
                         "textShadow": "none",
                         "align": "center"
@@ -1342,15 +925,15 @@
                     "id": "item_8r68o36",
                     "url": "/new-collection",
                     "content": {
-                      "heading": "Men",
+                      "heading": "Men's Clothing",
                       "italicHeading": "",
                       "subheading": "",
                       "description": "",
                       "primaryButton": {
                         "enabled": true,
-                        "label": "shop now",
+                        "label": "",
                         "url": "/men/ready-to-wear",
-                        "style": "luxury"
+                        "style": "filled"
                       },
                       "secondaryButton": {
                         "enabled": false,
@@ -1399,10 +982,10 @@
                     },
                     "style": {
                       "heading": {
-                        "fontSize": 2,
+                        "fontSize": 1,
                         "fontWeight": 300,
                         "letterSpacing": 0.05,
-                        "lineHeight": 1.1,
+                        "lineHeight": 1.9,
                         "textColor": "#000000",
                         "textShadow": "none",
                         "align": "center"
@@ -1530,15 +1113,15 @@
                     "id": "item_2e8vusk",
                     "url": "/new-collection",
                     "content": {
-                      "heading": "Bags",
+                      "heading": "Women's Bags",
                       "italicHeading": "",
                       "subheading": "",
                       "description": "",
                       "primaryButton": {
                         "enabled": true,
-                        "label": "shop now",
+                        "label": "",
                         "url": "/women/bags",
-                        "style": "luxury"
+                        "style": "filled"
                       },
                       "secondaryButton": {
                         "enabled": false,
@@ -1587,10 +1170,10 @@
                     },
                     "style": {
                       "heading": {
-                        "fontSize": 2,
+                        "fontSize": 1,
                         "fontWeight": 300,
                         "letterSpacing": 0.05,
-                        "lineHeight": 1.1,
+                        "lineHeight": 1.9,
                         "textColor": "#000000",
                         "textShadow": "none",
                         "align": "center"
@@ -1620,7 +1203,8 @@
                         "padding": "0.6rem 1.4rem",
                         "borderRadius": 0,
                         "textColor": "#000000",
-                        "backgroundColor": "#1a1a18"
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
                       },
                       "fontFamily": "var(--font-cormorant, serif)",
                       "backgroundColor": "transparent",
@@ -1642,14 +1226,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782908193/tezhhomayaa_app/wz7pavb5ybvbrp2kyzcc.jpg",
-                        "width": 1612,
-                        "height": 2160
+                        "url": "/uploads/media-1784907722025-666919014.jpg",
+                        "width": 1792,
+                        "height": 2400
                       },
                       "mobile": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782914617/tezhhomayaa_app/edsihzlypjypbu8fk0pb.jpg",
-                        "width": 1400,
-                        "height": 640
+                        "url": "/uploads/media-1784907722049-703925743.jpg",
+                        "width": 1792,
+                        "height": 2400
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -1828,28 +1412,37 @@
             }
           },
           {
-            "id": "sec_1782848259718",
+            "id": "sec_1784903889308",
             "type": "spacer",
             "hidden": false,
             "data": {
               "heightMobile": 64,
-              "heightDesktop": 120
+              "heightDesktop": 10
             }
           },
           {
-            "id": "sec_1783407003383",
-            "type": "journal-section",
+            "id": "sec_1784905129752",
+            "type": "image-section",
             "hidden": false,
             "data": {
+              "title": "Campaign",
+              "subtitle": "",
+              "image": "",
+              "button": {
+                "enabled": true,
+                "label": "Shop",
+                "url": "#",
+                "style": "luxury"
+              },
               "content": {
-                "heading": "JOURNAL",
+                "heading": "Artistic Statement",
                 "italicHeading": "",
                 "subheading": "",
-                "description": "Discover the latest stories.",
+                "description": "",
                 "primaryButton": {
                   "enabled": true,
-                  "label": "Explore",
-                  "url": "#",
+                  "label": "Explore Collections",
+                  "url": "/lookbook",
                   "style": "luxury"
                 },
                 "secondaryButton": {
@@ -1865,16 +1458,12 @@
                   "style": "ghost"
                 }
               },
-              "journalConfig": {
-                "layout": "magazine-grid",
-                "articleCount": 3
-              },
               "layout": {
                 "desktop": {
                   "x": 50,
                   "y": 50,
                   "width": 100,
-                  "height": 100,
+                  "height": 80,
                   "align": "center",
                   "padding": "0",
                   "margin": "0",
@@ -1884,7 +1473,7 @@
                   "x": 50,
                   "y": 50,
                   "width": 100,
-                  "height": 100,
+                  "height": 80,
                   "align": "center",
                   "padding": "0",
                   "margin": "0",
@@ -1894,7 +1483,7 @@
                   "x": 50,
                   "y": 50,
                   "width": 100,
-                  "height": 100,
+                  "height": 80,
                   "align": "center",
                   "padding": "0",
                   "margin": "0",
@@ -1903,10 +1492,10 @@
               },
               "style": {
                 "heading": {
-                  "fontSize": 4,
-                  "fontWeight": 300,
+                  "fontSize": 1.5,
+                  "fontWeight": 600,
                   "letterSpacing": 0.05,
-                  "lineHeight": 1.1,
+                  "lineHeight": 1.7,
                   "textColor": "#000000",
                   "textShadow": "none",
                   "align": "center"
@@ -1916,7 +1505,7 @@
                   "fontWeight": 400,
                   "letterSpacing": 0.2,
                   "lineHeight": 1.2,
-                  "textColor": "#ffffff",
+                  "textColor": "#1a1a18",
                   "textShadow": "none",
                   "align": "center"
                 },
@@ -1932,11 +1521,12 @@
                 },
                 "button": {
                   "fontSize": 0.75,
-                  "fontWeight": 400,
-                  "padding": "0.6rem 1.4rem",
+                  "fontWeight": 600,
+                  "padding": "0.6rem 2.5rem",
                   "borderRadius": 0,
-                  "textColor": "#ffffff",
-                  "backgroundColor": "#1a1a18"
+                  "textColor": "#000000",
+                  "backgroundColor": "#ffffff",
+                  "backgroundOpacity": 0
                 },
                 "fontFamily": "var(--font-cormorant, serif)",
                 "backgroundColor": "transparent",
@@ -1952,13 +1542,15 @@
                 "fontWeight": 300,
                 "letterSpacing": 0.05,
                 "lineHeight": 1.1,
-                "textColor": "#ffffff",
+                "textColor": "#1a1a18",
                 "textShadow": "none"
               },
               "media": {
                 "type": "image",
                 "desktop": {
-                  "url": ""
+                  "url": "/uploads/media-1784907552586-2467220.jpg",
+                  "width": 2752,
+                  "height": 1536
                 },
                 "mobile": {
                   "url": ""
@@ -2021,16 +1613,19 @@
               },
               "typographyOverrides": {
                 "enabled": false
-              }
+              },
+              "productSequence": [],
+              "includeProducts": [],
+              "excludeProducts": []
             }
           },
           {
-            "id": "sec_spacer_5",
+            "id": "sec_1784903767509",
             "type": "spacer",
             "hidden": false,
             "data": {
-              "heightMobile": 96,
-              "heightDesktop": 128
+              "heightMobile": 64,
+              "heightDesktop": 120
             }
           },
           {
@@ -2242,6 +1837,203 @@
                 "delay": 0,
                 "easing": "ease",
                 "scrollTrigger": true
+              }
+            }
+          },
+          {
+            "id": "sec_spacer_5",
+            "type": "spacer",
+            "hidden": false,
+            "data": {
+              "heightMobile": 96,
+              "heightDesktop": 128
+            }
+          },
+          {
+            "id": "sec_1783407003383",
+            "type": "journal-section",
+            "hidden": false,
+            "data": {
+              "content": {
+                "heading": "JOURNAL",
+                "italicHeading": "",
+                "subheading": "",
+                "description": "Discover the latest stories.",
+                "primaryButton": {
+                  "enabled": true,
+                  "label": "Explore",
+                  "url": "#",
+                  "style": "luxury"
+                },
+                "secondaryButton": {
+                  "enabled": false,
+                  "label": "Learn More",
+                  "url": "#",
+                  "style": "outline"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
+                }
+              },
+              "journalConfig": {
+                "layout": "magazine-grid",
+                "articleCount": 3
+              },
+              "layout": {
+                "desktop": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "tablet": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "mobile": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 100,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 90
+                }
+              },
+              "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#000000",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#ffffff",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18"
+                },
+                "fontFamily": "var(--font-cormorant, serif)",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderWidth": 0,
+                "borderRadius": 0,
+                "darkOverlay": 0,
+                "lightOverlay": 0,
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#ffffff",
+                "textShadow": "none"
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": ""
+                },
+                "mobile": {
+                  "url": ""
+                },
+                "videoSettings": {
+                  "autoplay": true,
+                  "loop": true,
+                  "muted": true,
+                  "controls": false,
+                  "lazyLoad": true,
+                  "playOnHover": false
+                }
+              },
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
+              },
+              "advanced": {
+                "anchorId": "",
+                "customCssClass": ""
+              },
+              "collectionShowcase": {
+                "layoutType": "grid",
+                "maxWidth": "boxed",
+                "items": []
+              },
+              "splitLayout": {
+                "ratio": "50-50",
+                "layout": "image-left"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
               }
             }
           },
@@ -46697,23 +46489,548 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "a97fe7de-5de5-4bb8-aa28-dd3a8af7759b": {
+      "eventId": "a97fe7de-5de5-4bb8-aa28-dd3a8af7759b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T13:52:38.416Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "f91a43fc-502d-47eb-9770-2588357db34f": {
+      "eventId": "f91a43fc-502d-47eb-9770-2588357db34f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:35:21.724Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "1069baa2-14ab-4740-be2c-dee2ad37c800": {
+      "eventId": "1069baa2-14ab-4740-be2c-dee2ad37c800",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:36:23.271Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "6c5222c3-184a-4179-8126-fd6ea0847f91": {
+      "eventId": "6c5222c3-184a-4179-8126-fd6ea0847f91",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:36:46.781Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "e67cca41-3805-46ac-9fcd-bda9351ddbce": {
+      "eventId": "e67cca41-3805-46ac-9fcd-bda9351ddbce",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:37:26.215Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a28c303c-24cb-435f-ae83-dc4c4424b0ad": {
+      "eventId": "a28c303c-24cb-435f-ae83-dc4c4424b0ad",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:37:45.245Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "1bd6bf1a-aa47-4888-a8d7-5384c065b2bd": {
+      "eventId": "1bd6bf1a-aa47-4888-a8d7-5384c065b2bd",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:37:58.362Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "fa6dbe9f-ee68-4847-a4f8-3f4c199f668f": {
+      "eventId": "fa6dbe9f-ee68-4847-a4f8-3f4c199f668f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:38:23.623Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c0c1f471-1886-4625-b0e2-99ea9d944c87": {
+      "eventId": "c0c1f471-1886-4625-b0e2-99ea9d944c87",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:39:16.246Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "f528e4ef-aa8a-4524-98a0-8a42b04610b6": {
+      "eventId": "f528e4ef-aa8a-4524-98a0-8a42b04610b6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:39:35.779Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "e40bb422-0ae0-4031-b73a-d06d9260df75": {
+      "eventId": "e40bb422-0ae0-4031-b73a-d06d9260df75",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:40:08.011Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "0084ed21-4494-4bd9-a326-205c15a693f6": {
+      "eventId": "0084ed21-4494-4bd9-a326-205c15a693f6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:41:17.783Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a18161c5-010e-4652-84eb-d23537e2bd0b": {
+      "eventId": "a18161c5-010e-4652-84eb-d23537e2bd0b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:42:18.743Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "350631dd-a07d-4794-9cad-0b3348bdafc1": {
+      "eventId": "350631dd-a07d-4794-9cad-0b3348bdafc1",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:43:15.533Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "945ed8fe-8f9b-411f-9afa-4fc6bcd6583a": {
+      "eventId": "945ed8fe-8f9b-411f-9afa-4fc6bcd6583a",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:43:44.951Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b1a9a3b3-8043-40ec-b09e-0cf3586218d8": {
+      "eventId": "b1a9a3b3-8043-40ec-b09e-0cf3586218d8",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:43:50.095Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "43fcabdf-ef2c-4458-94a3-bf7ca1d1b120": {
+      "eventId": "43fcabdf-ef2c-4458-94a3-bf7ca1d1b120",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:44:24.205Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "abe6db82-b6d5-465c-9eef-51d2c133825e": {
+      "eventId": "abe6db82-b6d5-465c-9eef-51d2c133825e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:44:47.140Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "fa4890fa-1c52-4fac-85d1-8b03780505a8": {
+      "eventId": "fa4890fa-1c52-4fac-85d1-8b03780505a8",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:45:19.206Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "04413848-2cca-4406-98f4-609ce1e53663": {
+      "eventId": "04413848-2cca-4406-98f4-609ce1e53663",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:47:26.540Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "7dd26503-3ff1-4ac3-8137-cbcd3df4a6c8": {
+      "eventId": "7dd26503-3ff1-4ac3-8137-cbcd3df4a6c8",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:49:44.451Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "49dde3af-2766-46ee-8377-e43679ccf14e": {
+      "eventId": "49dde3af-2766-46ee-8377-e43679ccf14e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:49:51.957Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "fdaf2af3-25ce-4b97-a7d8-cf5d38d3856b": {
+      "eventId": "fdaf2af3-25ce-4b97-a7d8-cf5d38d3856b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T14:55:04.189Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "a5d37a4f-11a6-448b-a611-d438c93a68fd": {
+      "eventId": "a5d37a4f-11a6-448b-a611-d438c93a68fd",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:00:00.174Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c10f4961-3da8-412a-b3c2-33cf0040effd": {
+      "eventId": "c10f4961-3da8-412a-b3c2-33cf0040effd",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:02:12.413Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "edabc589-86dc-45bc-bb12-700b82af5cec": {
+      "eventId": "edabc589-86dc-45bc-bb12-700b82af5cec",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:16:14.374Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "edc52616-d905-4a0b-b112-bbb43ef5957f": {
+      "eventId": "edc52616-d905-4a0b-b112-bbb43ef5957f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:18:55.943Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "7ed0b937-353d-4b16-b8dc-602144ba1aad": {
+      "eventId": "7ed0b937-353d-4b16-b8dc-602144ba1aad",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:24:00.972Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "dd8952f8-22b0-4389-ae46-37c1e2f6fbb8": {
+      "eventId": "dd8952f8-22b0-4389-ae46-37c1e2f6fbb8",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:24:07.982Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "39c90aae-b0b9-4e8b-b50b-4da63d0dcc8d": {
+      "eventId": "39c90aae-b0b9-4e8b-b50b-4da63d0dcc8d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:24:35.690Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "511e3dc5-60cc-440a-b675-59b14d20f32a": {
+      "eventId": "511e3dc5-60cc-440a-b675-59b14d20f32a",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:39:18.439Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "d332a663-51a8-421d-83bb-b75360a64c06": {
+      "eventId": "d332a663-51a8-421d-83bb-b75360a64c06",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:40:42.386Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "156c8dd0-968f-4d20-8bec-6003d0462990": {
+      "eventId": "156c8dd0-968f-4d20-8bec-6003d0462990",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:41:09.991Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "61fd9947-e145-45b9-90c8-c90e10612467": {
+      "eventId": "61fd9947-e145-45b9-90c8-c90e10612467",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:42:05.906Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=mobile"
+    },
+    "4e753676-65ff-4016-a46e-ebdf09e05f64": {
+      "eventId": "4e753676-65ff-4016-a46e-ebdf09e05f64",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-24T15:42:25.768Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 26,
+      "totalViews": 61,
       "viewsByMarket": {
-        "mkt_bh": 16,
-        "mkt_jp": 10
+        "mkt_bh": 21,
+        "mkt_jp": 40
       },
       "viewsByLanguage": {
-        "Arabic": 16,
-        "Japanese": 10
+        "Arabic": 21,
+        "Japanese": 40
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 26
+        "DESKTOP": 61
       },
       "previewActivity": 0
     }
@@ -46730,7 +47047,8 @@
       "isLocked": false,
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-24T13:47:52.724Z",
-      "updatedAt": "2026-07-24T13:47:52.724Z"
+      "updatedAt": "2026-07-24T13:47:52.724Z",
+      "lastLoginAt": "2026-07-24T15:41:03.261Z"
     }
   },
   "iam_sessions": {
@@ -46820,6 +47138,50 @@
       "lastActivityAt": "2026-07-24T13:15:48.120Z",
       "createdAt": "2026-07-24T13:15:48.120Z",
       "expiresAt": "2026-07-31T13:15:48.120Z",
+      "revokedAt": null
+    },
+    "56f90661-742a-49d7-8227-b5f6e713fef1": {
+      "id": "56f90661-742a-49d7-8227-b5f6e713fef1",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-24T14:09:38.745Z",
+      "createdAt": "2026-07-24T14:09:38.745Z",
+      "expiresAt": "2026-07-31T14:09:38.745Z",
+      "revokedAt": null
+    },
+    "ea9f1c5c-a64f-40e7-8a76-201096ab20d6": {
+      "id": "ea9f1c5c-a64f-40e7-8a76-201096ab20d6",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-24T14:35:06.087Z",
+      "createdAt": "2026-07-24T14:35:06.087Z",
+      "expiresAt": "2026-07-31T14:35:06.087Z",
+      "revokedAt": null
+    },
+    "4459fc62-834a-4163-8b3a-16e5075b255b": {
+      "id": "4459fc62-834a-4163-8b3a-16e5075b255b",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-24T15:24:23.442Z",
+      "createdAt": "2026-07-24T15:24:23.442Z",
+      "expiresAt": "2026-07-31T15:24:23.442Z",
+      "revokedAt": null
+    },
+    "f9233c53-5e1c-47ef-bdc5-c71bbc8aa3b5": {
+      "id": "f9233c53-5e1c-47ef-bdc5-c71bbc8aa3b5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-24T15:41:03.274Z",
+      "createdAt": "2026-07-24T15:41:03.274Z",
+      "expiresAt": "2026-07-31T15:41:03.274Z",
       "revokedAt": null
     }
   },
@@ -46963,6 +47325,99 @@
       "id": "promo_8ead7ba7ad",
       "createdAt": "2026-07-23T13:31:59.222Z",
       "updatedAt": "2026-07-23T13:31:59.222Z"
+    }
+  },
+  "lifecycle_packages": {
+    "pkg-1002": {
+      "packageId": "pkg-1002",
+      "name": "Black Friday Pre-Sale",
+      "state": "IN_REVIEW",
+      "versionNumber": 1,
+      "entities": [
+        {
+          "entityId": "camp-bf-presale",
+          "entityType": "CAMPAIGN",
+          "versionNumber": 1,
+          "payload": {}
+        },
+        {
+          "entityId": "lep-bf-hero",
+          "entityType": "LEP_CONTENT",
+          "versionNumber": 1,
+          "payload": {}
+        }
+      ]
+    },
+    "pkg-1003": {
+      "packageId": "pkg-1003",
+      "name": "Global Terms of Service Update",
+      "state": "SCHEDULED",
+      "versionNumber": 1,
+      "scheduledPublishAt": "2026-08-01T00:00:00Z",
+      "entities": [
+        {
+          "entityId": "lep-tos",
+          "entityType": "LEP_CONTENT",
+          "versionNumber": 1,
+          "payload": {}
+        }
+      ]
+    },
+    "pkg-1001": {
+      "packageId": "pkg-1001",
+      "name": "Summer 2026 Collection Launch",
+      "state": "PUBLISHED",
+      "versionNumber": 3,
+      "entities": [
+        {
+          "entityId": "camp-summer-26",
+          "entityType": "CAMPAIGN",
+          "versionNumber": 2,
+          "payload": {}
+        },
+        {
+          "entityId": "seo-summer-26",
+          "entityType": "SEO",
+          "versionNumber": 2,
+          "payload": {}
+        }
+      ]
+    }
+  },
+  "lifecycle_versions": {
+    "e5f1aa9a-0a00-4d5b-8584-d6b1415652e9": {
+      "versionId": "e5f1aa9a-0a00-4d5b-8584-d6b1415652e9",
+      "targetId": "pkg-1001",
+      "targetType": "PACKAGE",
+      "versionNumber": 3,
+      "payload": [
+        {
+          "entityId": "camp-summer-26",
+          "entityType": "CAMPAIGN",
+          "versionNumber": 2,
+          "payload": {}
+        },
+        {
+          "entityId": "seo-summer-26",
+          "entityType": "SEO",
+          "versionNumber": 2,
+          "payload": {}
+        }
+      ],
+      "createdAt": "2026-07-24T14:35:14.562Z",
+      "createdBy": "System Seeder"
+    }
+  },
+  "lifecycle_audit_logs": {
+    "d33a7c3e-6161-4d26-8f23-5c6ea202ba73": {
+      "auditId": "d33a7c3e-6161-4d26-8f23-5c6ea202ba73",
+      "targetId": "pkg-1001",
+      "targetType": "PACKAGE",
+      "timestamp": "2026-07-24T14:35:14.575Z",
+      "actor": "System Seeder",
+      "previousState": "PUBLISHED",
+      "newState": "PUBLISHED",
+      "reason": "Initial Seeding"
     }
   }
 }
