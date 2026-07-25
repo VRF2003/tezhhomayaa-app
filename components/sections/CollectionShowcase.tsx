@@ -148,53 +148,53 @@ function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointe
               />
             </span>
           )}
-          {norm.content.subheading && (
-            <span style={{ 
-              display: "block", 
-              fontSize: `${norm.style.subheading.fontSize}rem`,
-              fontWeight: norm.style.subheading.fontWeight,
-              letterSpacing: `${norm.style.subheading.letterSpacing}em`,
-              lineHeight: norm.style.subheading.lineHeight,
-              color: "var(--obsidian)",
-              textAlign: norm.style.subheading.align as any,
-              marginTop: "0.5rem",
-              textTransform: "uppercase" 
-            }}>
-              {norm.content.subheading}
-            </span>
-          )}
-          {norm.content.description && (
-              <p 
-                className="font-light opacity-80 whitespace-pre-wrap"
-                style={{ 
-                  fontSize: `${norm.style.description.fontSize}rem`,
-                  fontWeight: norm.style.description.fontWeight,
+            {norm.content.subheading && (
+              <span style={{ 
+                display: "block", 
+                fontSize: `${norm.style.subheading.fontSize}rem`,
+                fontWeight: norm.style.subheading.fontWeight,
+                letterSpacing: `${norm.style.subheading.letterSpacing}em`,
+                lineHeight: norm.style.subheading.lineHeight,
+                color: "var(--obsidian)",
+                textAlign: norm.style.subheading.align as any,
+                marginTop: "0.5rem",
+                textTransform: "uppercase" 
+              }}>
+                {norm.content.subheading}
+              </span>
+            )}
+            {norm.content.description && (
+                <p 
+                  className="font-light opacity-80 whitespace-pre-wrap"
+                  style={{ 
+                    fontSize: `${norm.style.description.fontSize}rem`,
+                    fontWeight: norm.style.description.fontWeight,
+                    color: "var(--obsidian)",
+                    textAlign: norm.style.description.align as any,
+                    maxWidth: `${norm.style.description.maxWidth}px`,
+                    marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
+                    marginRight: norm.style.description.align === "center" ? "auto" : "0",
+                    marginTop: "0.5rem"
+                  }}
+                >
+                  {norm.content.description}
+                </p>
+            )}
+            {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
+              <span 
+                className="inline-block mt-2 tracking-[0.1em] uppercase opacity-0 translate-y-1.5 transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/card:opacity-100 group-hover/card:translate-y-0 group-hover/card:delay-[75ms]"
+                style={{
+                  fontSize: `${norm.style.button.fontSize}rem`,
+                  fontWeight: norm.style.button.fontWeight,
                   color: "var(--obsidian)",
-                  textAlign: norm.style.description.align as any,
-                  maxWidth: `${norm.style.description.maxWidth}px`,
-                  marginLeft: norm.style.description.align === "center" ? "auto" : "0", 
-                  marginRight: norm.style.description.align === "center" ? "auto" : "0",
-                  marginTop: "0.5rem"
+                  borderBottom: "1px solid currentColor",
+                  paddingBottom: "2px"
                 }}
               >
-                {norm.content.description}
-              </p>
-          )}
-          {norm.content.primaryButton.enabled && norm.content.primaryButton.label && (
-            <span 
-              className="inline-block mt-2 tracking-[0.1em] uppercase opacity-0 translate-y-1.5 transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover/card:opacity-100 group-hover/card:translate-y-0 group-hover/card:delay-[75ms]"
-              style={{
-                fontSize: `${norm.style.button.fontSize}rem`,
-                fontWeight: norm.style.button.fontWeight,
-                color: "var(--obsidian)",
-                borderBottom: "1px solid currentColor",
-                paddingBottom: "2px"
-              }}
-            >
-              {norm.content.primaryButton.label}
-            </span>
-          )}
-        </div>
+                {norm.content.primaryButton.label}
+              </span>
+            )}
+          </div>
     </>
   );
 }

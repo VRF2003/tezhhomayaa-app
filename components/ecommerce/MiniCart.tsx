@@ -140,7 +140,7 @@ export default function MiniCart() {
                     return (
                       <li key={key} style={{ display: "flex", gap: "1rem", paddingBottom: "1.5rem", borderBottom: `1px solid ${st.cartBorderColor || "#edeae5"}` }}>
                         {/* Thumbnail */}
-                        <Link href={item.product.href} onClick={closeMiniCart} style={{ flexShrink: 0, display: "block" }}>
+                        <Link href={item.product.href || `/products/${item.product.slug}`} onClick={closeMiniCart} style={{ flexShrink: 0, display: "block" }}>
                           <div style={{ position: "relative", width: "80px", height: "107px", background: "#edeae5", overflow: "hidden" }}>
                             <Image src={item.product.image} alt={item.product.name} fill sizes="80px" style={{ objectFit: "cover" }} />
                           </div>
@@ -148,7 +148,7 @@ export default function MiniCart() {
 
                         {/* Info */}
                         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                          <Link href={item.product.href} onClick={closeMiniCart} style={{ textDecoration: "none" }}>
+                          <Link href={item.product.href || `/products/${item.product.slug}`} onClick={closeMiniCart} style={{ textDecoration: "none" }}>
                             <p style={{ fontFamily: st.headingFont || "var(--font-cormorant, serif)", fontWeight: 300, fontSize: "0.98rem", color: st.cartTextColor || "#1a1a18", margin: 0, letterSpacing: "0.01em" }}>
                               {item.product.name}
                             </p>

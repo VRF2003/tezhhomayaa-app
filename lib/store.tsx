@@ -6,6 +6,7 @@ import {
 } from "react";
 import type { Product } from "@/lib/collections";
 import { getProductPrice } from "@/lib/currency";
+import { shopifyFetch, createCartMutation } from "@/lib/shopify";
 
 // ─── Types ────────────────────────────────────────────────────
 export type CartItem = {
@@ -78,6 +79,7 @@ type CartCtx = {
   removeFromCart: (slug: string, size: string | null) => void;
   updateQty: (slug: string, size: string | null, qty: number) => void;
   clearCart: () => void;
+  createShopifyCheckout: () => Promise<string | null>;
 };
 
 const CartContext = createContext<CartCtx | null>(null);
@@ -122,8 +124,39 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const openMiniCart = useCallback(() => setMiniCartOpen(true), []);
   const closeMiniCart = useCallback(() => setMiniCartOpen(false), []);
 
+  const createShopifyCheckout = useCallback(async () => {
+    if (state.items.length === 0) return null;
+    
+    // Map local cart items to Shopify CartLineInput
+    const lineItems = state.items.map(item => {
+      // Find the specific variant ID based on selected size, or fallback to the first variant/product id
+      const variantId = item.product.variants?.find(v => v.option === item.selectedSize)?.id 
+        || item.product.variants?.[0]?.id 
+        || item.product.id;
+        
+      return {
+        merchandiseId: variantId,
+        quantity: item.quantity
+      };
+    });
+
+    try {
+      const data = await shopifyFetch({
+        query: createCartMutation,
+        variables: { lineItems }
+      });
+      
+      if (data?.cartCreate?.cart?.checkoutUrl) {
+        return data.cartCreate.cart.checkoutUrl;
+      }
+    } catch (err) {
+      console.error("Failed to create Shopify checkout", err);
+    }
+    return null;
+  }, [state.items]);
+
   return (
-    <CartContext.Provider value={{ items: state.items, cartCount, cartTotal, cartTotalRaw, miniCartOpen, openMiniCart, closeMiniCart, addToCart, removeFromCart, updateQty, clearCart }}>
+    <CartContext.Provider value={{ items: state.items, cartCount, cartTotal, cartTotalRaw, miniCartOpen, openMiniCart, closeMiniCart, addToCart, removeFromCart, updateQty, clearCart, createShopifyCheckout }}>
       {children}
     </CartContext.Provider>
   );

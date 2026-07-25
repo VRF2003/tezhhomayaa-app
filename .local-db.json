@@ -1418,7 +1418,970 @@
             "hidden": false,
             "data": {
               "heightMobile": 64,
-              "heightDesktop": 10
+              "heightDesktop": 90
+            }
+          },
+          {
+            "id": "sec_1784975948213",
+            "type": "collection-showcase",
+            "hidden": false,
+            "data": {
+              "layout": {
+                "desktop": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 80,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "tablet": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 80,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 80
+                },
+                "mobile": {
+                  "x": 50,
+                  "y": 50,
+                  "width": 100,
+                  "height": 80,
+                  "align": "center",
+                  "padding": "0",
+                  "margin": "0",
+                  "textWidth": 90
+                }
+              },
+              "maxWidth": "boxed",
+              "items": [
+                {
+                  "collectionId": "women",
+                  "overrideImage": "",
+                  "overrideHeading": "",
+                  "overrideDescription": "",
+                  "overrideButton": ""
+                }
+              ],
+              "content": {
+                "heading": "Cosmic Chaos",
+                "italicHeading": "",
+                "subheading": "",
+                "description": "",
+                "primaryButton": {
+                  "enabled": true,
+                  "label": "Explore",
+                  "url": "",
+                  "style": "luxury"
+                },
+                "secondaryButton": {
+                  "enabled": false,
+                  "label": "Learn More",
+                  "url": "#",
+                  "style": "outline"
+                },
+                "tertiaryButton": {
+                  "enabled": false,
+                  "label": "Contact Us",
+                  "url": "#",
+                  "style": "ghost"
+                }
+              },
+              "style": {
+                "heading": {
+                  "fontSize": 4,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "subheading": {
+                  "fontSize": 1,
+                  "fontWeight": 400,
+                  "letterSpacing": 0.2,
+                  "lineHeight": 1.2,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none",
+                  "align": "center"
+                },
+                "description": {
+                  "fontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.02,
+                  "lineHeight": 1.6,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none",
+                  "align": "center",
+                  "maxWidth": 800
+                },
+                "button": {
+                  "fontSize": 0.75,
+                  "fontWeight": 400,
+                  "padding": "0.6rem 1.4rem",
+                  "borderRadius": 0,
+                  "textColor": "#ffffff",
+                  "backgroundColor": "#1a1a18",
+                  "backgroundOpacity": 100
+                },
+                "fontFamily": "var(--font-cormorant, serif)",
+                "backgroundColor": "transparent",
+                "borderColor": "transparent",
+                "borderWidth": 0,
+                "borderRadius": 0,
+                "darkOverlay": 0,
+                "lightOverlay": 0,
+                "gradientOverlay": false,
+                "fontSize": 4,
+                "subheadingFontSize": 1,
+                "descriptionFontSize": 1.1,
+                "fontWeight": 300,
+                "letterSpacing": 0.05,
+                "lineHeight": 1.1,
+                "textColor": "#1a1a18",
+                "textShadow": "none"
+              },
+              "media": {
+                "type": "image",
+                "desktop": {
+                  "url": "/uploads/media-1784976346164-984446021.jpg",
+                  "width": 2700,
+                  "height": 4800
+                },
+                "mobile": {
+                  "url": ""
+                },
+                "videoSettings": {
+                  "autoplay": true,
+                  "loop": true,
+                  "muted": true,
+                  "controls": false,
+                  "lazyLoad": true,
+                  "playOnHover": false
+                }
+              },
+              "animation": {
+                "type": "slide-up",
+                "duration": 1.2,
+                "delay": 0,
+                "easing": "ease",
+                "scrollTrigger": true
+              },
+              "advanced": {
+                "anchorId": "",
+                "customCssClass": ""
+              },
+              "collectionShowcase": {
+                "layoutType": "full-width-tiles",
+                "maxWidth": "full",
+                "items": [
+                  {
+                    "id": "item_3tt6gr2",
+                    "url": "/new-collection",
+                    "content": {
+                      "heading": "Cosmic Chaos",
+                      "italicHeading": "",
+                      "subheading": "",
+                      "description": "",
+                      "primaryButton": {
+                        "enabled": true,
+                        "label": "Explore",
+                        "url": "collections/cosmic-chaos",
+                        "style": "luxury"
+                      },
+                      "secondaryButton": {
+                        "enabled": false,
+                        "label": "Learn More",
+                        "url": "#",
+                        "style": "outline"
+                      },
+                      "tertiaryButton": {
+                        "enabled": false,
+                        "label": "Contact Us",
+                        "url": "#",
+                        "style": "ghost"
+                      }
+                    },
+                    "layout": {
+                      "desktop": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "tablet": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "mobile": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 90
+                      }
+                    },
+                    "style": {
+                      "heading": {
+                        "fontSize": 1.5,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.05,
+                        "lineHeight": 1.1,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "subheading": {
+                        "fontSize": 1,
+                        "fontWeight": 400,
+                        "letterSpacing": 0.2,
+                        "lineHeight": 1.2,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "description": {
+                        "fontSize": 1.1,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.02,
+                        "lineHeight": 1.6,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center",
+                        "maxWidth": 800
+                      },
+                      "button": {
+                        "fontSize": 0.75,
+                        "fontWeight": 400,
+                        "padding": "0.6rem 1.4rem",
+                        "borderRadius": 0,
+                        "textColor": "#ffffff",
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
+                      },
+                      "fontFamily": "var(--font-cormorant, serif)",
+                      "backgroundColor": "transparent",
+                      "borderColor": "transparent",
+                      "borderWidth": 0,
+                      "borderRadius": 0,
+                      "darkOverlay": 0,
+                      "lightOverlay": 0,
+                      "gradientOverlay": false,
+                      "fontSize": 4,
+                      "subheadingFontSize": 1,
+                      "descriptionFontSize": 1.1,
+                      "fontWeight": 300,
+                      "letterSpacing": 0.05,
+                      "lineHeight": 1.1,
+                      "textColor": "#1a1a18",
+                      "textShadow": "none"
+                    },
+                    "media": {
+                      "type": "image",
+                      "desktop": {
+                        "url": "/uploads/media-1784976346039-41121464.jpg",
+                        "width": 1920,
+                        "height": 1080
+                      },
+                      "mobile": {
+                        "url": ""
+                      },
+                      "videoSettings": {
+                        "autoplay": true,
+                        "loop": true,
+                        "muted": true,
+                        "controls": false,
+                        "lazyLoad": true,
+                        "playOnHover": false
+                      }
+                    },
+                    "animation": {
+                      "type": "slide-up",
+                      "duration": 1.2,
+                      "delay": 0,
+                      "easing": "ease",
+                      "scrollTrigger": true
+                    },
+                    "advanced": {
+                      "anchorId": "",
+                      "customCssClass": ""
+                    },
+                    "collectionShowcase": {
+                      "layoutType": "grid",
+                      "maxWidth": "boxed",
+                      "items": []
+                    },
+                    "splitLayout": {
+                      "ratio": "50-50",
+                      "layout": "image-left"
+                    },
+                    "contactInfo": {
+                      "fields": []
+                    },
+                    "contactForm": {
+                      "successMessage": "Thank you for your message. We will be in touch shortly.",
+                      "destinationEmail": "care@tezhhomayaa.com",
+                      "subjects": [
+                        "Client Services",
+                        "Order Support",
+                        "Wholesale",
+                        "Press",
+                        "Collaboration",
+                        "Other"
+                      ]
+                    },
+                    "socialPresence": {
+                      "links": [
+                        {
+                          "platform": "Instagram",
+                          "url": "#"
+                        },
+                        {
+                          "platform": "Facebook",
+                          "url": "#"
+                        }
+                      ]
+                    },
+                    "typographyOverrides": {
+                      "enabled": false
+                    },
+                    "productSequence": [],
+                    "includeProducts": [],
+                    "excludeProducts": []
+                  },
+                  {
+                    "collectionId": "women",
+                    "overrideImage": "",
+                    "overrideHeading": "",
+                    "overrideDescription": "",
+                    "overrideButton": "",
+                    "id": "item_bkc4quy",
+                    "content": {
+                      "heading": "Rough Notes",
+                      "italicHeading": "",
+                      "subheading": "",
+                      "description": "",
+                      "primaryButton": {
+                        "enabled": true,
+                        "label": "Explore",
+                        "url": "/collections/rough-notes",
+                        "style": "luxury"
+                      },
+                      "secondaryButton": {
+                        "enabled": false,
+                        "label": "Learn More",
+                        "url": "#",
+                        "style": "outline"
+                      },
+                      "tertiaryButton": {
+                        "enabled": false,
+                        "label": "Contact Us",
+                        "url": "#",
+                        "style": "ghost"
+                      }
+                    },
+                    "style": {
+                      "heading": {
+                        "fontSize": 1.5,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.05,
+                        "lineHeight": 1.1,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "subheading": {
+                        "fontSize": 1,
+                        "fontWeight": 400,
+                        "letterSpacing": 0.2,
+                        "lineHeight": 1.2,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "description": {
+                        "fontSize": 1.1,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.02,
+                        "lineHeight": 1.6,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center",
+                        "maxWidth": 800
+                      },
+                      "button": {
+                        "fontSize": 0.75,
+                        "fontWeight": 400,
+                        "padding": "0.6rem 1.4rem",
+                        "borderRadius": 0,
+                        "textColor": "#ffffff",
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
+                      },
+                      "fontFamily": "var(--font-cormorant, serif)",
+                      "backgroundColor": "transparent",
+                      "borderColor": "transparent",
+                      "borderWidth": 0,
+                      "borderRadius": 0,
+                      "darkOverlay": 0,
+                      "lightOverlay": 0,
+                      "gradientOverlay": false,
+                      "fontSize": 4,
+                      "subheadingFontSize": 1,
+                      "descriptionFontSize": 1.1,
+                      "fontWeight": 300,
+                      "letterSpacing": 0.05,
+                      "lineHeight": 1.1,
+                      "textColor": "#1a1a18",
+                      "textShadow": "none"
+                    },
+                    "layout": {
+                      "desktop": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "tablet": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "mobile": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 90
+                      }
+                    },
+                    "media": {
+                      "type": "image",
+                      "desktop": {
+                        "url": "/uploads/media-1784976346025-618908583.jpg",
+                        "width": 1920,
+                        "height": 1080
+                      },
+                      "mobile": {
+                        "url": ""
+                      },
+                      "videoSettings": {
+                        "autoplay": true,
+                        "loop": true,
+                        "muted": true,
+                        "controls": false,
+                        "lazyLoad": true,
+                        "playOnHover": false
+                      }
+                    },
+                    "animation": {
+                      "type": "slide-up",
+                      "duration": 1.2,
+                      "delay": 0,
+                      "easing": "ease",
+                      "scrollTrigger": true
+                    },
+                    "advanced": {
+                      "anchorId": "",
+                      "customCssClass": ""
+                    },
+                    "collectionShowcase": {
+                      "layoutType": "grid",
+                      "maxWidth": "boxed",
+                      "items": []
+                    },
+                    "splitLayout": {
+                      "ratio": "50-50",
+                      "layout": "image-left"
+                    },
+                    "contactInfo": {
+                      "fields": []
+                    },
+                    "contactForm": {
+                      "successMessage": "Thank you for your message. We will be in touch shortly.",
+                      "destinationEmail": "care@tezhhomayaa.com",
+                      "subjects": [
+                        "Client Services",
+                        "Order Support",
+                        "Wholesale",
+                        "Press",
+                        "Collaboration",
+                        "Other"
+                      ]
+                    },
+                    "socialPresence": {
+                      "links": [
+                        {
+                          "platform": "Instagram",
+                          "url": "#"
+                        },
+                        {
+                          "platform": "Facebook",
+                          "url": "#"
+                        }
+                      ]
+                    },
+                    "typographyOverrides": {
+                      "enabled": false
+                    },
+                    "productSequence": [],
+                    "includeProducts": [],
+                    "excludeProducts": [],
+                    "url": "Rough Notes"
+                  },
+                  {
+                    "id": "item_x5wvs34",
+                    "url": "/new-collection",
+                    "content": {
+                      "heading": "Auralith",
+                      "italicHeading": "",
+                      "subheading": "",
+                      "description": "",
+                      "primaryButton": {
+                        "enabled": true,
+                        "label": "Explore",
+                        "url": "/collections/auralith",
+                        "style": "luxury"
+                      },
+                      "secondaryButton": {
+                        "enabled": false,
+                        "label": "Learn More",
+                        "url": "#",
+                        "style": "outline"
+                      },
+                      "tertiaryButton": {
+                        "enabled": false,
+                        "label": "Contact Us",
+                        "url": "#",
+                        "style": "ghost"
+                      }
+                    },
+                    "layout": {
+                      "desktop": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "tablet": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "mobile": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 90
+                      }
+                    },
+                    "style": {
+                      "heading": {
+                        "fontSize": 1.5,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.05,
+                        "lineHeight": 1.1,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "subheading": {
+                        "fontSize": 1,
+                        "fontWeight": 400,
+                        "letterSpacing": 0.2,
+                        "lineHeight": 1.2,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "description": {
+                        "fontSize": 1.1,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.02,
+                        "lineHeight": 1.6,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center",
+                        "maxWidth": 800
+                      },
+                      "button": {
+                        "fontSize": 0.75,
+                        "fontWeight": 400,
+                        "padding": "0.6rem 1.4rem",
+                        "borderRadius": 0,
+                        "textColor": "#ffffff",
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
+                      },
+                      "fontFamily": "var(--font-cormorant, serif)",
+                      "backgroundColor": "transparent",
+                      "borderColor": "transparent",
+                      "borderWidth": 0,
+                      "borderRadius": 0,
+                      "darkOverlay": 0,
+                      "lightOverlay": 0,
+                      "gradientOverlay": false,
+                      "fontSize": 4,
+                      "subheadingFontSize": 1,
+                      "descriptionFontSize": 1.1,
+                      "fontWeight": 300,
+                      "letterSpacing": 0.05,
+                      "lineHeight": 1.1,
+                      "textColor": "#1a1a18",
+                      "textShadow": "none"
+                    },
+                    "media": {
+                      "type": "image",
+                      "desktop": {
+                        "url": "/uploads/media-1784976346049-66638771.jpg",
+                        "width": 1920,
+                        "height": 1080
+                      },
+                      "mobile": {
+                        "url": ""
+                      },
+                      "videoSettings": {
+                        "autoplay": true,
+                        "loop": true,
+                        "muted": true,
+                        "controls": false,
+                        "lazyLoad": true,
+                        "playOnHover": false
+                      }
+                    },
+                    "animation": {
+                      "type": "slide-up",
+                      "duration": 1.2,
+                      "delay": 0,
+                      "easing": "ease",
+                      "scrollTrigger": true
+                    },
+                    "advanced": {
+                      "anchorId": "",
+                      "customCssClass": ""
+                    },
+                    "collectionShowcase": {
+                      "layoutType": "grid",
+                      "maxWidth": "boxed",
+                      "items": []
+                    },
+                    "splitLayout": {
+                      "ratio": "50-50",
+                      "layout": "image-left"
+                    },
+                    "contactInfo": {
+                      "fields": []
+                    },
+                    "contactForm": {
+                      "successMessage": "Thank you for your message. We will be in touch shortly.",
+                      "destinationEmail": "care@tezhhomayaa.com",
+                      "subjects": [
+                        "Client Services",
+                        "Order Support",
+                        "Wholesale",
+                        "Press",
+                        "Collaboration",
+                        "Other"
+                      ]
+                    },
+                    "socialPresence": {
+                      "links": [
+                        {
+                          "platform": "Instagram",
+                          "url": "#"
+                        },
+                        {
+                          "platform": "Facebook",
+                          "url": "#"
+                        }
+                      ]
+                    },
+                    "typographyOverrides": {
+                      "enabled": false
+                    },
+                    "productSequence": [],
+                    "includeProducts": [],
+                    "excludeProducts": []
+                  },
+                  {
+                    "id": "item_xuf1xet",
+                    "url": "/new-collection",
+                    "content": {
+                      "heading": "Timeless Impressions",
+                      "italicHeading": "",
+                      "subheading": "",
+                      "description": "",
+                      "primaryButton": {
+                        "enabled": true,
+                        "label": "Explore",
+                        "url": "/collections/timeless-impressions",
+                        "style": "luxury"
+                      },
+                      "secondaryButton": {
+                        "enabled": false,
+                        "label": "Learn More",
+                        "url": "#",
+                        "style": "outline"
+                      },
+                      "tertiaryButton": {
+                        "enabled": false,
+                        "label": "Contact Us",
+                        "url": "#",
+                        "style": "ghost"
+                      }
+                    },
+                    "layout": {
+                      "desktop": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "tablet": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 80
+                      },
+                      "mobile": {
+                        "x": 50,
+                        "y": 50,
+                        "width": 100,
+                        "height": 80,
+                        "align": "center",
+                        "padding": "0",
+                        "margin": "0",
+                        "textWidth": 90
+                      }
+                    },
+                    "style": {
+                      "heading": {
+                        "fontSize": 1.5,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.05,
+                        "lineHeight": 1.1,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "subheading": {
+                        "fontSize": 1,
+                        "fontWeight": 400,
+                        "letterSpacing": 0.2,
+                        "lineHeight": 1.2,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center"
+                      },
+                      "description": {
+                        "fontSize": 1.1,
+                        "fontWeight": 300,
+                        "letterSpacing": 0.02,
+                        "lineHeight": 1.6,
+                        "textColor": "#1a1a18",
+                        "textShadow": "none",
+                        "align": "center",
+                        "maxWidth": 800
+                      },
+                      "button": {
+                        "fontSize": 0.75,
+                        "fontWeight": 400,
+                        "padding": "0.6rem 1.4rem",
+                        "borderRadius": 0,
+                        "textColor": "#ffffff",
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
+                      },
+                      "fontFamily": "var(--font-cormorant, serif)",
+                      "backgroundColor": "transparent",
+                      "borderColor": "transparent",
+                      "borderWidth": 0,
+                      "borderRadius": 0,
+                      "darkOverlay": 0,
+                      "lightOverlay": 0,
+                      "gradientOverlay": false,
+                      "fontSize": 4,
+                      "subheadingFontSize": 1,
+                      "descriptionFontSize": 1.1,
+                      "fontWeight": 300,
+                      "letterSpacing": 0.05,
+                      "lineHeight": 1.1,
+                      "textColor": "#1a1a18",
+                      "textShadow": "none"
+                    },
+                    "media": {
+                      "type": "image",
+                      "desktop": {
+                        "url": "/uploads/media-1784976346084-162996435.jpg",
+                        "width": 1920,
+                        "height": 1080
+                      },
+                      "mobile": {
+                        "url": ""
+                      },
+                      "videoSettings": {
+                        "autoplay": true,
+                        "loop": true,
+                        "muted": true,
+                        "controls": false,
+                        "lazyLoad": true,
+                        "playOnHover": false
+                      }
+                    },
+                    "animation": {
+                      "type": "slide-up",
+                      "duration": 1.2,
+                      "delay": 0,
+                      "easing": "ease",
+                      "scrollTrigger": true
+                    },
+                    "advanced": {
+                      "anchorId": "",
+                      "customCssClass": ""
+                    },
+                    "collectionShowcase": {
+                      "layoutType": "grid",
+                      "maxWidth": "boxed",
+                      "items": []
+                    },
+                    "splitLayout": {
+                      "ratio": "50-50",
+                      "layout": "image-left"
+                    },
+                    "contactInfo": {
+                      "fields": []
+                    },
+                    "contactForm": {
+                      "successMessage": "Thank you for your message. We will be in touch shortly.",
+                      "destinationEmail": "care@tezhhomayaa.com",
+                      "subjects": [
+                        "Client Services",
+                        "Order Support",
+                        "Wholesale",
+                        "Press",
+                        "Collaboration",
+                        "Other"
+                      ]
+                    },
+                    "socialPresence": {
+                      "links": [
+                        {
+                          "platform": "Instagram",
+                          "url": "#"
+                        },
+                        {
+                          "platform": "Facebook",
+                          "url": "#"
+                        }
+                      ]
+                    },
+                    "typographyOverrides": {
+                      "enabled": false
+                    },
+                    "productSequence": [],
+                    "includeProducts": [],
+                    "excludeProducts": []
+                  }
+                ]
+              },
+              "splitLayout": {
+                "ratio": "50-50",
+                "layout": "4-columns"
+              },
+              "contactInfo": {
+                "fields": []
+              },
+              "contactForm": {
+                "successMessage": "Thank you for your message. We will be in touch shortly.",
+                "destinationEmail": "care@tezhhomayaa.com",
+                "subjects": [
+                  "Client Services",
+                  "Order Support",
+                  "Wholesale",
+                  "Press",
+                  "Collaboration",
+                  "Other"
+                ]
+              },
+              "socialPresence": {
+                "links": [
+                  {
+                    "platform": "Instagram",
+                    "url": "#"
+                  },
+                  {
+                    "platform": "Facebook",
+                    "url": "#"
+                  }
+                ]
+              },
+              "typographyOverrides": {
+                "enabled": false
+              },
+              "productSequence": [],
+              "includeProducts": [],
+              "excludeProducts": []
+            }
+          },
+          {
+            "id": "sec_1784975904463",
+            "type": "spacer",
+            "hidden": false,
+            "data": {
+              "heightMobile": 64,
+              "heightDesktop": 90
             }
           },
           {
@@ -1626,7 +2589,7 @@
             "hidden": false,
             "data": {
               "heightMobile": 64,
-              "heightDesktop": 120
+              "heightDesktop": 90
             }
           },
           {
@@ -1847,7 +2810,7 @@
             "hidden": false,
             "data": {
               "heightMobile": 96,
-              "heightDesktop": 128
+              "heightDesktop": 90
             }
           },
           {
@@ -2044,7 +3007,7 @@
             "hidden": false,
             "data": {
               "heightMobile": 64,
-              "heightDesktop": 120
+              "heightDesktop": 90
             }
           }
         ]
@@ -41867,7 +42830,7 @@
           "slug": "about-us",
           "status": "Published",
           "template": "Editorial Page",
-          "lastUpdated": "2026-07-01T14:09:31.926Z",
+          "lastUpdated": "2026-07-25T10:04:32.787Z",
           "mode": "classic"
         },
         {
@@ -47180,23 +48143,641 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "9db7571f-9962-4259-b1df-6d12d0610fd1": {
+      "eventId": "9db7571f-9962-4259-b1df-6d12d0610fd1",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:09:36.158Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "8a866590-89f6-48ec-b7a5-78e679c2d1b3": {
+      "eventId": "8a866590-89f6-48ec-b7a5-78e679c2d1b3",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:09:48.207Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a9afafcd-4f50-40e8-8141-7123c8bc1732": {
+      "eventId": "a9afafcd-4f50-40e8-8141-7123c8bc1732",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:12:39.665Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "9233eeb1-bc46-45f9-adfc-385141e294fa": {
+      "eventId": "9233eeb1-bc46-45f9-adfc-385141e294fa",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:44:37.903Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "f8c8b9c8-bd94-4c10-be9b-ec03944a651e": {
+      "eventId": "f8c8b9c8-bd94-4c10-be9b-ec03944a651e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:45:17.438Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "4e2f9ee8-bc93-434a-8961-c32978c54dfe": {
+      "eventId": "4e2f9ee8-bc93-434a-8961-c32978c54dfe",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:46:55.482Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b08cd40e-873b-49db-a83e-b0bdbdbe79f6": {
+      "eventId": "b08cd40e-873b-49db-a83e-b0bdbdbe79f6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:48:55.033Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "d45ff590-a672-424e-86f1-04024f9f024b": {
+      "eventId": "d45ff590-a672-424e-86f1-04024f9f024b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:50:48.367Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "2cce88da-43a7-4689-a697-6c07b8fbc62a": {
+      "eventId": "2cce88da-43a7-4689-a697-6c07b8fbc62a",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T09:59:25.805Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "4f931036-7621-4d2c-ae50-7d3d08517def": {
+      "eventId": "4f931036-7621-4d2c-ae50-7d3d08517def",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:00:32.927Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "ad534580-2d5f-4393-9856-95cd0456a0d9": {
+      "eventId": "ad534580-2d5f-4393-9856-95cd0456a0d9",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:00:44.043Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "927ab593-035f-458c-a859-e069decd18da": {
+      "eventId": "927ab593-035f-458c-a859-e069decd18da",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:02:14.437Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b115a9f9-8bb4-4605-bfc0-cd67d9406cc2": {
+      "eventId": "b115a9f9-8bb4-4605-bfc0-cd67d9406cc2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:04:56.276Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "9a7c69d4-9842-4c3d-8dda-4928679cc5f2": {
+      "eventId": "9a7c69d4-9842-4c3d-8dda-4928679cc5f2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:07:01.959Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "85780879-cffc-46b0-a757-39e8c16dbf70": {
+      "eventId": "85780879-cffc-46b0-a757-39e8c16dbf70",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:08:42.980Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "6f234ef0-9229-48ec-a9ef-03f01816a7d2": {
+      "eventId": "6f234ef0-9229-48ec-a9ef-03f01816a7d2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:08:55.449Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "e2983fb7-0eaa-4208-bcab-c34a4b22b9d4": {
+      "eventId": "e2983fb7-0eaa-4208-bcab-c34a4b22b9d4",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:09:34.623Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "bca84735-ecbe-478a-bfb2-22461c652054": {
+      "eventId": "bca84735-ecbe-478a-bfb2-22461c652054",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:13:32.694Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "0eaad3a4-61ce-4c78-a6e6-e88fc2761cc9": {
+      "eventId": "0eaad3a4-61ce-4c78-a6e6-e88fc2761cc9",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:13:42.380Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "9727e173-95ee-4e5d-9bda-58593659bfbf": {
+      "eventId": "9727e173-95ee-4e5d-9bda-58593659bfbf",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:35:32.295Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "2939e918-e268-4e58-a9e8-8adfd06e19ca": {
+      "eventId": "2939e918-e268-4e58-a9e8-8adfd06e19ca",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:35:50.329Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "3477dcfb-23c6-486c-85df-c25b2f176641": {
+      "eventId": "3477dcfb-23c6-486c-85df-c25b2f176641",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:36:27.962Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "1d540bf3-be49-4b2c-af5d-26688fee026d": {
+      "eventId": "1d540bf3-be49-4b2c-af5d-26688fee026d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:36:47.869Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a74e77fd-489a-4e4d-8780-3b9b861198b6": {
+      "eventId": "a74e77fd-489a-4e4d-8780-3b9b861198b6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:37:21.366Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "52e08914-bb7c-4490-a609-4501186f0fc9": {
+      "eventId": "52e08914-bb7c-4490-a609-4501186f0fc9",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:38:48.004Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "aaeb3db8-2ee4-430f-801d-4220c5f0f401": {
+      "eventId": "aaeb3db8-2ee4-430f-801d-4220c5f0f401",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:45:49.673Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "6554215d-1e94-4f6f-8e2d-f7440657b3b9": {
+      "eventId": "6554215d-1e94-4f6f-8e2d-f7440657b3b9",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:46:03.481Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "2747b38a-0161-4613-b160-39419771eefd": {
+      "eventId": "2747b38a-0161-4613-b160-39419771eefd",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:46:46.197Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "5846da4c-e9b7-41e0-883c-ed27f52d5e9a": {
+      "eventId": "5846da4c-e9b7-41e0-883c-ed27f52d5e9a",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T10:47:37.090Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "83bd587d-4fc2-4071-af6f-097dae056cbf": {
+      "eventId": "83bd587d-4fc2-4071-af6f-097dae056cbf",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T11:04:44.239Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c2dfdef0-ccd7-42c8-9a42-bd0e95171d0f": {
+      "eventId": "c2dfdef0-ccd7-42c8-9a42-bd0e95171d0f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T11:10:51.262Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "40e3d2d1-1856-48a2-99bb-6378e9c2ea1d": {
+      "eventId": "40e3d2d1-1856-48a2-99bb-6378e9c2ea1d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T11:11:00.823Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "1d1c0b22-6f4d-4a6d-bb5d-f9e1c25952db": {
+      "eventId": "1d1c0b22-6f4d-4a6d-bb5d-f9e1c25952db",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T11:39:41.639Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "09d38748-a2b6-46a8-a217-9931b3727bf0": {
+      "eventId": "09d38748-a2b6-46a8-a217-9931b3727bf0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:02:42.626Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "ad24f000-b1f0-4388-9771-9b0be2ace520": {
+      "eventId": "ad24f000-b1f0-4388-9771-9b0be2ace520",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:02:54.961Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "e5396da1-dd6f-40ba-9234-cff3a2442a43": {
+      "eventId": "e5396da1-dd6f-40ba-9234-cff3a2442a43",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:03:45.562Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "00bdd93a-a8c9-443a-b797-e2636c960c78": {
+      "eventId": "00bdd93a-a8c9-443a-b797-e2636c960c78",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:03:52.769Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "f1dff012-5672-46ed-bc4f-22403ad6a05c": {
+      "eventId": "f1dff012-5672-46ed-bc4f-22403ad6a05c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:03:58.619Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "22be590b-e46d-4e28-b4cc-3467aa1a7de1": {
+      "eventId": "22be590b-e46d-4e28-b4cc-3467aa1a7de1",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:20:13.134Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b8995b14-2d5f-4e18-b67e-ffd06f27d197": {
+      "eventId": "b8995b14-2d5f-4e18-b67e-ffd06f27d197",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:20:28.237Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "2039802c-94e0-4038-97ca-3713d5dc71a0": {
+      "eventId": "2039802c-94e0-4038-97ca-3713d5dc71a0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:20:29.558Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 68,
+      "totalViews": 109,
       "viewsByMarket": {
-        "mkt_bh": 25,
-        "mkt_jp": 43
+        "mkt_bh": 27,
+        "mkt_jp": 43,
+        "mkt_ae": 30,
+        "mkt_in": 9
       },
       "viewsByLanguage": {
-        "Arabic": 25,
-        "Japanese": 43
+        "Arabic": 27,
+        "Japanese": 43,
+        "English": 39
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 68
+        "DESKTOP": 109
       },
       "previewActivity": 0
     }
@@ -47208,12 +48789,13 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$/6msACJBapLgkwKazeP22w$iQtNEPhisvwOZT2SncxStz+Bg3dNmibESThyYOqrMi4",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$bGyBTlZNuS7V6dbhSIYy1g$s4lupfjjDxk4rFxvOn22pwrcKgl3V5oSXKikaGpzzN0",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-25T07:49:43.211Z",
-      "updatedAt": "2026-07-25T07:49:43.211Z"
+      "createdAt": "2026-07-25T10:04:32.551Z",
+      "updatedAt": "2026-07-25T10:04:32.551Z",
+      "lastLoginAt": "2026-07-25T11:04:34.776Z"
     }
   },
   "iam_sessions": {
@@ -47380,6 +48962,39 @@
       "lastActivityAt": "2026-07-25T07:25:49.716Z",
       "createdAt": "2026-07-25T07:25:49.716Z",
       "expiresAt": "2026-08-01T07:25:49.716Z",
+      "revokedAt": null
+    },
+    "4d97c383-77ee-4490-8778-f19ddeae6eab": {
+      "id": "4d97c383-77ee-4490-8778-f19ddeae6eab",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T09:44:43.236Z",
+      "createdAt": "2026-07-25T09:44:43.236Z",
+      "expiresAt": "2026-08-01T09:44:43.236Z",
+      "revokedAt": null
+    },
+    "f0dc7273-b7c8-45a5-9b56-2028820a118c": {
+      "id": "f0dc7273-b7c8-45a5-9b56-2028820a118c",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T09:48:42.014Z",
+      "createdAt": "2026-07-25T09:48:42.014Z",
+      "expiresAt": "2026-08-01T09:48:42.014Z",
+      "revokedAt": null
+    },
+    "14da4021-fb9c-49f8-9504-0eb5f7dd9ba5": {
+      "id": "14da4021-fb9c-49f8-9504-0eb5f7dd9ba5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T11:04:34.796Z",
+      "createdAt": "2026-07-25T11:04:34.796Z",
+      "expiresAt": "2026-08-01T11:04:34.796Z",
       "revokedAt": null
     }
   },

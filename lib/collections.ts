@@ -16,7 +16,7 @@ export type Product = {
   editorialDescription: string;
   badge?: string;
   tags?: string[];
-  variants?: { optionName: string; option: string; price: string | number; sku: string; quantity?: number }[];
+  variants?: { id?: string; optionName: string; option: string; price: string | number; sku: string; quantity?: number }[];
   status?: "active" | "draft" | "archived" | string;
   sku?: string;
   barcode?: string;
@@ -92,36 +92,39 @@ export const categoryMeta: Record<string, CategoryMeta> = {
   bags: { title: "Bags", subtitle: "The Signature Collection", bannerImage: "/images/category-bags.jpg", description: "Architecturally precise. Every bag is a study in proportion and restraint." },
 };
 
-// Storefront uses imported Shopify products exclusively (lib/products.json).
-// No demo/fallback data — if products.json is missing, pages show empty state.
-const allProducts: Product[] = [];
-
-// ─── Helpers ──────────────────────────────────────────────────
+import { shopifyFetch, getProductsQuery, getProductByHandleQuery } from '@/lib/shopify';
+import { adaptShopifyProducts, adaptShopifyProduct } from '@/lib/shopifyAdapter';
 import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
 import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
 
-/**
- * Reads lib/products.json fresh from disk on every call.
- * This ensures imported products are always up to date —
- * require() caches at module load time and won't reflect
- * newly written JSON without a server restart.
- */
-async function loadImportedProducts(): Promise<Product[]> {
-  try {
-    const docRepo = RepositoryResolver.resolve<IDocumentRepository>("IDocumentRepository");
-    const data = await docRepo.getDocument("products");
-    return Array.isArray(data) ? (data as Product[]) : [];
-  } catch {
-    return [];
-  }
-}
-
 async function buildMerged(): Promise<Product[]> {
-  const imported = await loadImportedProducts();
-  if (imported.length === 0) return allProducts;
-  const importedSlugs = new Set(imported.map((p) => p.slug));
-  const staticFiltered = allProducts.filter((p) => !importedSlugs.has(p.slug));
-  return [...staticFiltered, ...imported];
+  try {
+    let allEdges: any[] = [];
+    let hasNextPage = true;
+    let cursor: string | null = null;
+
+    while (hasNextPage) {
+      const data = await shopifyFetch({
+        query: getProductsQuery,
+        variables: { first: 250, cursor }
+      });
+
+      if (data?.products?.edges) {
+        allEdges = allEdges.concat(data.products.edges);
+        hasNextPage = data.products.pageInfo?.hasNextPage || false;
+        cursor = data.products.pageInfo?.endCursor || null;
+      } else {
+        hasNextPage = false;
+      }
+    }
+
+    if (allEdges.length > 0) {
+      return adaptShopifyProducts(allEdges);
+    }
+  } catch (err) {
+    console.error("Error fetching from Shopify", err);
+  }
+  return [];
 }
 
 export async function getRawProducts(): Promise<Product[]> {
@@ -130,10 +133,7 @@ export async function getRawProducts(): Promise<Product[]> {
 
 export async function getAllProducts(): Promise<Product[]> {
   const merged = await buildMerged();
-  return merged.filter(p => {
-    const s = String(p.status || "active").toLowerCase();
-    return s !== "draft" && s !== "archived" && s !== "false";
-  });
+  return merged.filter(p => p.status !== "draft" && p.status !== "archived");
 }
 
 import { UniversalSectionData, normalizeSectionData } from "@/lib/types/homepage";

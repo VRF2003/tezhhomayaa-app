@@ -18,7 +18,7 @@ const TrashIcon = () => (
 );
 
 export default function CartPage() {
-  const { items, cartCount, updateQty, removeFromCart, clearCart, cartTotalRaw } = useCart();
+  const { items, cartCount, updateQty, removeFromCart, clearCart, cartTotalRaw, createShopifyCheckout } = useCart();
   const formatter = useCurrencyFormatter();
   const commerce = useCommerce();
   const c = commerce.cart;
@@ -30,6 +30,7 @@ export default function CartPage() {
   const [promoCode, setPromoCode] = useState("");
   const [isApplyingPromo, setIsApplyingPromo] = useState(false);
   const [discountResult, setDiscountResult] = useState<{ discountTotal: number; appliedPromotionName?: string; message?: string; success?: boolean } | null>(null);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
 
   useEffect(() => { setHydrated(true); }, []);
 
@@ -60,6 +61,26 @@ export default function CartPage() {
       console.error(e);
     } finally {
       setIsApplyingPromo(false);
+    }
+  };
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    try {
+      let url = await createShopifyCheckout();
+      if (url) {
+        if (discountResult?.success && promoCode) {
+           url += (url.includes('?') ? '&' : '?') + 'discount=' + encodeURIComponent(promoCode);
+        }
+        window.location.href = url;
+      } else {
+        alert("Failed to initiate checkout. Please try again.");
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Failed to initiate checkout. Please try again.");
+    } finally {
+      setIsCheckingOut(false);
     }
   };
 
@@ -315,8 +336,8 @@ export default function CartPage() {
                 </span>
               </div>
 
-              <button id="checkout-btn" style={{ display: "block", width: "100%", padding: "1.2rem", background: st.checkoutButtonBg || "#1a1a18", color: st.checkoutButtonColor || "#f7f5f2", border: "none", cursor: "pointer", fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: st.addToBagFontSize || "0.55rem", letterSpacing: st.addToBagLetterSpacing || "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", transition: "background 0.3s", boxSizing: "border-box" }}>
-                {c.checkoutButtonLabel}
+              <button onClick={handleCheckout} disabled={isCheckingOut} id="checkout-btn" style={{ display: "block", width: "100%", padding: "1.2rem", background: st.checkoutButtonBg || "#1a1a18", color: st.checkoutButtonColor || "#f7f5f2", border: "none", cursor: isCheckingOut ? "not-allowed" : "pointer", fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: st.addToBagFontSize || "0.55rem", letterSpacing: st.addToBagLetterSpacing || "0.2em", textTransform: "uppercase", marginBottom: "0.75rem", transition: "background 0.3s", boxSizing: "border-box", opacity: isCheckingOut ? 0.7 : 1 }}>
+                {isCheckingOut ? "Loading..." : c.checkoutButtonLabel}
               </button>
 
               <Link href={c.continueBrowsingUrl || "/"} style={{ display: "block", width: "100%", padding: "1.1rem", background: "transparent", color: "#3a3835", fontFamily: st.bodyFont || "var(--font-dm-mono, monospace)", fontSize: st.addToBagFontSize || "0.55rem", letterSpacing: st.addToBagLetterSpacing || "0.2em", textTransform: "uppercase", textDecoration: "none", border: `1px solid ${st.cartBorderColor || "#ccc9c4"}`, textAlign: "center", boxSizing: "border-box", transition: "border-color 0.3s" }}>

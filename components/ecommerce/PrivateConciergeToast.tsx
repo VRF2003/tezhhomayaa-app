@@ -131,9 +131,6 @@ export function PrivateConciergeToast({ activePromotions }: { activePromotions: 
           }}>
             {toastMessage}
           </p>
-          <p className="text-[0.65rem] tracking-wider text-gray-500 font-dm-mono uppercase mt-2 mb-4">
-            Unlock at {formatPrice(activePromotions[0].conditions.cartMinimum)}
-          </p>
         </motion.div>
       )}
     </AnimatePresence>
