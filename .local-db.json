@@ -41622,9 +41622,10 @@
           "handle": "the-timeless-impressions-full-sleeve-shirt-2b11",
           "name": "The \"Timeless Impressions\" Full Sleeve Shirt",
           "price": "7200",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948223/tezhhomayaa_app/nzncm7lw2hfnrlxvdmy7.jpg",
+          "image": "/uploads/media-1784960674805-556129496.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_074713_e440d776-8274-4bea-990f-2bf191143225.png?v=1775642160",
           "gallery": [
+            "/uploads/media-1784960674805-556129496.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948223/tezhhomayaa_app/nzncm7lw2hfnrlxvdmy7.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948223/tezhhomayaa_app/v25osb0qfpqd5chmftrh.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948223/tezhhomayaa_app/ttj1m9nnfw0qhtwzxrhd.jpg"
@@ -41697,7 +41698,7 @@
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
             "mobileGalleryOrder": [
-              3
+              1
             ]
           },
           "id": "prod_1783948189685_pzu2b11"
@@ -47118,13 +47119,12 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$UKrXhfvET3Xs8RcEIX3upA$yBwL8TYiZRtH4UkbG+H5eS7qshDF4ZRFWvUxIBkmLP0",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$YzCSMT5QgvHEh9mb5Ev19w$NQ+KfuhR1VkILtfIiU3IN59EovcvLftJZT72dHkrbF0",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-24T13:47:52.724Z",
-      "updatedAt": "2026-07-24T13:47:52.724Z",
-      "lastLoginAt": "2026-07-24T15:41:03.261Z"
+      "createdAt": "2026-07-25T06:23:05.097Z",
+      "updatedAt": "2026-07-25T06:23:05.097Z"
     }
   },
   "iam_sessions": {
@@ -47258,6 +47258,17 @@
       "lastActivityAt": "2026-07-24T15:41:03.274Z",
       "createdAt": "2026-07-24T15:41:03.274Z",
       "expiresAt": "2026-07-31T15:41:03.274Z",
+      "revokedAt": null
+    },
+    "1c1a7e38-94ec-4488-83b7-e38787e8ea3b": {
+      "id": "1c1a7e38-94ec-4488-83b7-e38787e8ea3b",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T06:10:54.380Z",
+      "createdAt": "2026-07-25T06:10:54.380Z",
+      "expiresAt": "2026-08-01T06:10:54.380Z",
       "revokedAt": null
     }
   },
