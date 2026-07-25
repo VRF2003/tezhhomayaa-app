@@ -16769,10 +16769,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_83",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL01.jpg?v=1772191857",
+          "image": "/uploads/media-1784960944078-136394987.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL03.jpg?v=1772191857",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL01.jpg?v=1772191857",
+            "/uploads/media-1784960944078-136394987.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL05.jpg?v=1772191857",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL03.jpg?v=1772191857",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/DYL04.jpg?v=1772191857",
@@ -16854,10 +16854,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_84",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL01.jpg?v=1772191855",
+          "image": "/uploads/media-1784960961653-774174648.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL04.jpg?v=1772191855",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL01.jpg?v=1772191855",
+            "/uploads/media-1784960961653-774174648.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL02.jpg?v=1772191855",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL04.jpg?v=1772191855",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/YL06.jpg?v=1772191856",
@@ -16930,7 +16930,9 @@
             "gridThumbnail": 0,
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
-            "mobileGalleryOrder": []
+            "mobileGalleryOrder": [
+              1
+            ]
           }
         },
         {
@@ -16939,10 +16941,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_85",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry01.jpg?v=1772191854",
+          "image": "/uploads/media-1784960981698-807766457.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry05.jpg?v=1772191854",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry01.jpg?v=1772191854",
+            "/uploads/media-1784960981698-807766457.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry02.jpg?v=1772191853",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry05.jpg?v=1772191854",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Gry04.jpg?v=1772191853",
@@ -17024,10 +17026,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_86",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint01.jpg?v=1772191852",
+          "image": "/uploads/media-1784960998963-469489389.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint03.jpg?v=1772191852",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint01.jpg?v=1772191852",
+            "/uploads/media-1784960998963-469489389.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint02.jpg?v=1772191852",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint03.jpg?v=1772191852",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Mint05.jpg?v=1772191852",
@@ -17109,10 +17111,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_87",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH01.jpg?v=1772191851",
+          "image": "/uploads/media-1784961017696-590218917.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH04.jpg?v=1772191851",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH01.jpg?v=1772191851",
+            "/uploads/media-1784961017696-590218917.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH02.jpg?v=1772191851",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH04.jpg?v=1772191851",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/WH05.jpg?v=1772191851",
@@ -17185,7 +17187,9 @@
             "gridThumbnail": 0,
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
-            "mobileGalleryOrder": []
+            "mobileGalleryOrder": [
+              1
+            ]
           }
         },
         {
@@ -17194,10 +17198,10 @@
           "handle": "the-rough-notes-full-sleeve-shirt-d_88",
           "name": "The \"Rough Notes\" Full Sleeve Shirt",
           "price": 6400,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink01.jpg?v=1772191849",
+          "image": "/uploads/media-1784961035492-408027950.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink03.jpg?v=1772191849",
           "gallery": [
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink01.jpg?v=1772191849",
+            "/uploads/media-1784961035492-408027950.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink02.jpg?v=1772191849",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink03.jpg?v=1772191849",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/Pink04.jpg?v=1772191849",
@@ -17280,9 +17284,10 @@
           "handle": "the-cosmic-chaos-full-sleeve-shirt-d_89",
           "name": "The \"Cosmic Chaos\" Full Sleeve Shirt",
           "price": 19700,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_100323_b21505c2-ed7d-451f-9bbb-70937c805c98.png?v=1775643178",
+          "image": "/uploads/media-1784961052298-195005751.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_100014_13c329ee-b732-49f0-abd6-e05cf3934cd5.png?v=1775643178",
           "gallery": [
+            "/uploads/media-1784961052298-195005751.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_100323_b21505c2-ed7d-451f-9bbb-70937c805c98.png?v=1775643178",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_100014_13c329ee-b732-49f0-abd6-e05cf3934cd5.png?v=1775643178",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/0054_Cl-ed-3-sel_0018_Layer-2_3653b357-cd18-41c7-8cc3-284706d80954.jpg?v=1775643178"
@@ -17364,9 +17369,10 @@
           "handle": "the-cosmic-chaos-full-sleeve-shirt-d_90",
           "name": "The \"Cosmic Chaos\" Full Sleeve Shirt",
           "price": 19700,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_073954_7a69d906-522e-423f-9549-5a98a5c7b71c.png?v=1775642160",
+          "image": "/uploads/media-1784961068299-584407663.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_074713_e440d776-8274-4bea-990f-2bf191143225.png?v=1775642160",
           "gallery": [
+            "/uploads/media-1784961068299-584407663.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_073954_7a69d906-522e-423f-9549-5a98a5c7b71c.png?v=1775642160",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_074713_e440d776-8274-4bea-990f-2bf191143225.png?v=1775642160",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/0045__0042__DSC8828_copy_e914d291-aa4d-454d-ba86-a0b6cde5b1b2.jpg?v=1773926329"
@@ -17438,7 +17444,9 @@
             "gridThumbnail": 0,
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
-            "mobileGalleryOrder": []
+            "mobileGalleryOrder": [
+              1
+            ]
           }
         },
         {
@@ -17497,7 +17505,7 @@
               "sku": ""
             }
           ],
-          "status": "active",
+          "status": "draft",
           "compareAtPrice": "",
           "sku": "",
           "barcode": "",
@@ -17671,10 +17679,10 @@
           "handle": "the-celestial-descent-cuban-collared-shirt-_100",
           "name": "The \"Celestial Descent\" Cuban Collared Shirt",
           "price": 7800,
-          "image": "/uploads/media-1784881987292-749912173.jpg",
+          "image": "/uploads/media-1784961180497-154266538.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/261.jpg?v=1766827593",
           "gallery": [
-            "/uploads/media-1784881987292-749912173.jpg",
+            "/uploads/media-1784961180497-154266538.jpg",
             "/uploads/1781084532300-CelDscCcBfs023.jpg",
             "/uploads/1781084532328-CelDscCcBfs022.png"
           ],
@@ -17844,9 +17852,10 @@
           "handle": "the-rough-notes-cuban-collared-shirt-_102",
           "name": "The “Rough Notes\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506103082-RghNtsCcBfs072.jpg",
+          "image": "/uploads/media-1784963423027-734941847.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/49_5bf8c537-7951-4cde-9d6e-ba9f3ac1d5fd.jpg?v=1763469434",
           "gallery": [
+            "/uploads/media-1784963423027-734941847.jpg",
             "/uploads/1781506103082-RghNtsCcBfs072.jpg",
             "/uploads/1781506103089-RghNtsCcBfs071.jpg"
           ],
@@ -17919,7 +17928,9 @@
             "gridThumbnail": 0,
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
-            "mobileGalleryOrder": []
+            "mobileGalleryOrder": [
+              1
+            ]
           }
         },
         {
@@ -17928,9 +17939,10 @@
           "handle": "the-rough-notes-cuban-collared-shirt-_103",
           "name": "The “Rough Notes\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506171675-RghNtsCcBfs052.jpg",
+          "image": "/uploads/media-1784963445080-880388436.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/21_bc1546cc-2891-4bca-aca1-f28d8ebb5f57.jpg?v=1763469517",
           "gallery": [
+            "/uploads/media-1784963445080-880388436.jpg",
             "/uploads/1781506171675-RghNtsCcBfs052.jpg",
             "/uploads/1781506171678-RghNtsCcBfs051.jpg"
           ],
@@ -17941,7 +17953,8 @@
           "tags": [
             "category_shirts",
             "gender_men",
-            "The Crossing"
+            "The Crossing",
+            "category_ready-to-wear"
           ],
           "variants": [
             {
@@ -17990,7 +18003,18 @@
           "shippingReturns": "",
           "gender": "men",
           "enableStickyCheckout": true,
-          "relatedProductIds": []
+          "relatedProductIds": [],
+          "season": "",
+          "color": "",
+          "material": "",
+          "fit": "",
+          "collectionName": "",
+          "merchandising": {
+            "gridThumbnail": 0,
+            "desktopGalleryOrder": [],
+            "tabletGalleryOrder": [],
+            "mobileGalleryOrder": []
+          }
         },
         {
           "id": "imported_104",
@@ -17998,9 +18022,10 @@
           "handle": "the-rough-notes-cuban-collared-shirt-_104",
           "name": "The “Rough Notes\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506198255-RghNtsCcBfs232.jpg",
+          "image": "/uploads/media-1784963494205-961511215.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/33_60985a99-8186-4ccb-bb18-6babda68f052.jpg?v=1763469583",
           "gallery": [
+            "/uploads/media-1784963494205-961511215.jpg",
             "/uploads/1781506198255-RghNtsCcBfs232.jpg",
             "/uploads/1781506198260-RghNtsCcBfs231.jpg"
           ],
@@ -18080,9 +18105,10 @@
           "handle": "the-falling-halves-cuban-collared-shirt-_105",
           "name": "The \"Falling Halves\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781506229264-FlHvsCcBfs09163.jpg",
+          "image": "/uploads/media-1784963513282-579547228.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/95_eb353699-4733-4cec-8415-30fe473b0d26.jpg?v=1763623374",
           "gallery": [
+            "/uploads/media-1784963513282-579547228.jpg",
             "/uploads/1781506229264-FlHvsCcBfs09163.jpg",
             "/uploads/1781506229273-FlHvsCcBfs09162.jpg",
             "/uploads/1781506229276-FlHvsCcBfs09161.jpg"
@@ -18165,9 +18191,10 @@
           "handle": "the-victory-pattern-cuban-collared-shirt-_106",
           "name": "The “Victory Pattern” Cuban Collared Shirt",
           "price": 3600,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/409.jpg?v=1763623448",
+          "image": "/uploads/media-1784963540406-675424553.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/395.jpg?v=1766827456",
           "gallery": [
+            "/uploads/media-1784963540406-675424553.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/409.jpg?v=1763623448",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/395.jpg?v=1766827456",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/408.jpg?v=1766827456",
@@ -18260,9 +18287,10 @@
           "handle": "the-mythikaya-droplets-cuban-collared-shirt-_107",
           "name": "The \"Mythikaya droplets\" Cuban Collared Shirt",
           "price": 6000,
-          "image": "/uploads/1781506349600-MytDrlCcBfs163.jpg",
+          "image": "/uploads/media-1784963563276-116136091.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/50_cf4b39ab-5fae-436d-989e-9e7e398d364c.jpg?v=1763647735",
           "gallery": [
+            "/uploads/media-1784963563276-116136091.jpg",
             "/uploads/1781506349600-MytDrlCcBfs163.jpg",
             "/uploads/1781506349612-MytDrlCcBfs162.jpg",
             "/uploads/1781506349614-MytDrlCcBfs161.jpg"
@@ -18343,9 +18371,10 @@
           "handle": "the-victory-pattern-cuban-collared-shirt-_108",
           "name": "The “Victory Pattern” Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506368694-VcPtnCcBfs052.jpg",
+          "image": "/uploads/media-1784963582907-517990972.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/410.jpg?v=1766827512",
           "gallery": [
+            "/uploads/media-1784963582907-517990972.jpg",
             "/uploads/1781506368694-VcPtnCcBfs052.jpg",
             "/uploads/1781506368702-VcPtnCcBfs051.jpg"
           ],
@@ -18425,9 +18454,10 @@
           "handle": "the-victory-pattern-cuban-collared-shirt-_109",
           "name": "The “Victory Pattern” Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506390243-VcPtnCcBfs152.jpg",
+          "image": "/uploads/media-1784963596933-993486453.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/109_f721a05d-0338-4910-81bc-e54d7c64101f.jpg?v=1763648012",
           "gallery": [
+            "/uploads/media-1784963596933-993486453.jpg",
             "/uploads/1781506390243-VcPtnCcBfs152.jpg",
             "/uploads/1781506390254-VcPtnCcBfs151.png"
           ],
@@ -18509,9 +18539,10 @@
           "handle": "the-timeless-impressions-cuban-collared-shirt-_110",
           "name": "The “Timeless Impressions” Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506408267-TmIprCcBfs253.jpg",
+          "image": "/uploads/media-1784963612290-570547331.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/85_1af3a757-20da-4667-b7ef-d6dcae4b50e9.jpg?v=1763648089",
           "gallery": [
+            "/uploads/media-1784963612290-570547331.jpg",
             "/uploads/1781506408267-TmIprCcBfs253.jpg",
             "/uploads/1781506408276-TmIprCcBfs252.jpg",
             "/uploads/1781506408279-TmIprCcBfs251.jpg"
@@ -18592,9 +18623,10 @@
           "handle": "the-echoes-in-order-cuban-collared-shirt-_111",
           "name": "The \"Echoes in Order\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781085080829-EcsOrCcBfs093.jpg",
+          "image": "/uploads/media-1784963635464-222752968.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/299.jpg?v=1763817525",
           "gallery": [
+            "/uploads/media-1784963635464-222752968.jpg",
             "/uploads/1781085080829-EcsOrCcBfs093.jpg",
             "/uploads/1781085080835-EcsOrCcBfs092.jpg",
             "/uploads/1781085080840-EcsOrCcBfs091.jpg"
@@ -18676,9 +18708,10 @@
           "handle": "the-rough-notes-cuban-collared-shirt-_112",
           "name": "The “Rough Notes\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506435829-RghNtsCcBfs092.jpg",
+          "image": "/uploads/media-1784963661212-281860696.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/307.jpg?v=1763627180",
           "gallery": [
+            "/uploads/media-1784963661212-281860696.jpg",
             "/uploads/1781506435829-RghNtsCcBfs092.jpg",
             "/uploads/1781506435833-RghNtsCcBfs091.jpg"
           ],
@@ -18758,9 +18791,10 @@
           "handle": "the-rough-notes-cuban-collared-shirt-_113",
           "name": "The “Rough Notes\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506456436-RghNtsCcBfs02.jpg",
+          "image": "/uploads/media-1784963680244-644402961.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/12_2564b3b4-feca-4dbb-85bd-7f51066df437.jpg?v=1763469600",
           "gallery": [
+            "/uploads/media-1784963680244-644402961.jpg",
             "/uploads/1781506456436-RghNtsCcBfs02.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
@@ -18839,9 +18873,10 @@
           "handle": "the-inferno-veil-cuban-collared-shirt-_114",
           "name": "The “Inferno Veil\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506482361-InfvlCcBfs051.jpg",
+          "image": "/uploads/media-1784963699070-370548570.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/131_1d4085d6-90ca-4272-ac3a-6827270a713f.jpg?v=1763625649",
           "gallery": [
+            "/uploads/media-1784963699070-370548570.jpg",
             "/uploads/1781506482361-InfvlCcBfs051.jpg",
             "/uploads/1781506482365-InfvlCcBfs052.jpg"
           ],
@@ -18921,9 +18956,10 @@
           "handle": "the-inferno-veil-cuban-collared-shirt-_115",
           "name": "The “Inferno Veil\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506495444-InfvlCcBfs023.jpg",
+          "image": "/uploads/media-1784963718177-463619774.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/121.jpg?v=1763625538",
           "gallery": [
+            "/uploads/media-1784963718177-463619774.jpg",
             "/uploads/1781506495444-InfvlCcBfs023.jpg",
             "/uploads/1781506495456-InfvlCcBfs022.jpg",
             "/uploads/1781506495459-InfvlCcBfs021.jpg"
@@ -19006,9 +19042,10 @@
           "handle": "the-inferno-veil-cuban-collared-shirt-_116",
           "name": "The “Inferno Veil\" Cuban Collared Shirt",
           "price": 3600,
-          "image": "/uploads/1781506517592-InfvlCcBfs102.jpg",
+          "image": "/uploads/media-1784963737754-459712072.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/149.jpg?v=1763626163",
           "gallery": [
+            "/uploads/media-1784963737754-459712072.jpg",
             "/uploads/1781506517592-InfvlCcBfs102.jpg",
             "/uploads/1781506517603-InfvlCcBfs101.jpg"
           ],
@@ -19089,9 +19126,10 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_117",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781507073143-ShrFrmCcBfs153.jpg",
+          "image": "/uploads/media-1784963757072-939999575.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/355.jpg?v=1763629888",
           "gallery": [
+            "/uploads/media-1784963757072-939999575.jpg",
             "/uploads/1781507073143-ShrFrmCcBfs153.jpg",
             "/uploads/1781507073149-ShrFrmCcBfs152.jpg",
             "/uploads/1781507073151-ShrFrmCcBfs151.jpg"
@@ -19173,9 +19211,10 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_118",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781506534344-ShrFrmCcBfs501.jpg",
+          "image": "/uploads/media-1784963772848-796922837.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/346.jpg?v=1763627509",
           "gallery": [
+            "/uploads/media-1784963772848-796922837.jpg",
             "/uploads/1781506534344-ShrFrmCcBfs501.jpg",
             "/uploads/1781506534358-ShrFrmCcBfs502.jpg"
           ],
@@ -19255,9 +19294,10 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_119",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/343.jpg?v=1763627350",
+          "image": "/uploads/media-1784963797281-49453400.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/331.jpg?v=1763627350",
           "gallery": [
+            "/uploads/media-1784963797281-49453400.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/343.jpg?v=1763627350",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/331.jpg?v=1763627350",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/341.jpg?v=1763627350",
@@ -19350,9 +19390,10 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_120",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781506560511-ShrFrmCcBfs073.jpg",
+          "image": "/uploads/media-1784963819427-666703750.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/370.jpg?v=1763629949",
           "gallery": [
+            "/uploads/media-1784963819427-666703750.jpg",
             "/uploads/1781506560511-ShrFrmCcBfs073.jpg",
             "/uploads/1781506560525-ShrFrmCcBfs072.jpg",
             "/uploads/1781506560527-ShrFrmCcBfs071.jpg"
@@ -19434,9 +19475,10 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_121",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "/uploads/1781506585899-ShrFrmCcBfs102.jpg",
+          "image": "/uploads/media-1784963838136-921079433.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/393.jpg?v=1763630056",
           "gallery": [
+            "/uploads/media-1784963838136-921079433.jpg",
             "/uploads/1781506585899-ShrFrmCcBfs102.jpg",
             "/uploads/1781506585912-ShrFrmCcBfs101.png"
           ],
@@ -19516,13 +19558,15 @@
           "handle": "the-shower-of-forms-cuban-collared-shirt-_122",
           "name": "The \"Shower of Forms\" Cuban Collared Shirt",
           "price": 7200,
-          "image": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/329.jpg?v=1763627265",
+          "image": "/uploads/media-1784963865950-572111347.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/317.jpg?v=1763627265",
           "gallery": [
+            "/uploads/media-1784963865950-572111347.jpg",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/329.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/317.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/315.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/321.jpg?v=1763627265",
+            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/318.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/326.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/316.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/319.jpg?v=1763627265",
@@ -19532,8 +19576,7 @@
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/322.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/323.jpg?v=1763627265",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/328.jpg?v=1763627265",
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/324.jpg?v=1763627265",
-            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/318.jpg?v=1763627265"
+            "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/324.jpg?v=1763627265"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
@@ -20019,9 +20062,10 @@
           "handle": "the-mireaux-ii-cuban-collared-shirt-red-_141",
           "name": "The \"Mireaux II\" Cuban Collared Shirt - Red",
           "price": 9600,
-          "image": "/uploads/1781506746861-MirIICcBfs013.jpg",
+          "image": "/uploads/media-1784963887086-343324921.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/176.jpg?v=1763626366",
           "gallery": [
+            "/uploads/media-1784963887086-343324921.jpg",
             "/uploads/1781506746861-MirIICcBfs013.jpg",
             "/uploads/1781506746873-MirIICcBfs012.jpg",
             "/uploads/1781506746875-MirIICcBfs011.jpg"
@@ -20098,20 +20142,21 @@
         },
         {
           "id": "imported_142",
-          "slug": "the-dynarche-cuban-collared-shirt-seavara-_142",
-          "handle": "the-dynarche-cuban-collared-shirt-seavara-_142",
-          "name": "The \"Dynarche\" Cuban Collared Shirt - Seavara",
+          "slug": "the-dynarche-cuban-collared-shirt-_142",
+          "handle": "the-dynarche-cuban-collared-shirt-_142",
+          "name": "The \"Dynarche\" Cuban Collared Shirt",
           "price": 10800,
-          "image": "/uploads/1781506760694-DynCcBfs02103.jpg",
+          "image": "/uploads/media-1784963917445-601315065.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/34_3fad2fcc-9592-4b0c-8967-a10f9a203788.jpg?v=1763640277",
           "gallery": [
+            "/uploads/media-1784963917445-601315065.jpg",
             "/uploads/1781506760694-DynCcBfs02103.jpg",
             "/uploads/1781506760709-DynCcBfs02102.jpg",
             "/uploads/1781506760711-DynCcBfs02101.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-dynarche-cuban-collared-shirt-seavara-_142",
+          "href": "/men/ready-to-wear/shirts/the-dynarche-cuban-collared-shirt-_142",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Dynarche Cuban Collared Shirt carries a fluid drape and breathable ease, balancing refinement with comfort. The Cuban collar frames the neckline with quiet sharpness, while the fabric lends the shirt a natural, understated depth. It bears the artwork Dynarche—a force of beginnings and becoming. Geometric precision collides with flowing transitions, evoking structures that rise, collapse, and re-form in an endless cycle. Deep gradients and sharp motifs create a sense of motion within stillness, a rhythm that is both architectural and elemental. Dynarche is not just worn—it unfolds on the body like an act of emergence. Artwork : Dynarche Colour : Seavara Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M.",
           "tags": [
             "category_shirts",
@@ -20185,9 +20230,10 @@
           "handle": "the-nurazaa-cuban-collared-shirt-_143",
           "name": "The \"Nurazaa\" Cuban Collared Shirt",
           "price": 5000,
-          "image": "/uploads/1781506776208-NrzCcBfs24231.png",
+          "image": "/uploads/media-1784963939922-352600644.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/73_d6cdb6a7-565b-42b5-bccf-48aa1c11965b.jpg?v=1763647934",
           "gallery": [
+            "/uploads/media-1784963939922-352600644.jpg",
             "/uploads/1781506776208-NrzCcBfs24231.png",
             "/uploads/1781506776202-NrzCcBfs24232.jpg"
           ],
@@ -20267,9 +20313,10 @@
           "handle": "the-opal-reign-cuban-collared-shirt-_144",
           "name": "The \"Opal Reign\" Cuban Collared Shirt",
           "price": 8400,
-          "image": "/uploads/1781506806211-OpRnCcBfs24232.jpg",
+          "image": "/uploads/media-1784963956526-644467998.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/206.jpg?v=1763626589",
           "gallery": [
+            "/uploads/media-1784963956526-644467998.jpg",
             "/uploads/1781506806211-OpRnCcBfs24232.jpg",
             "/uploads/1781506806223-OpRnCcBfs24231.jpg"
           ],
@@ -20345,20 +20392,21 @@
         },
         {
           "id": "imported_145",
-          "slug": "the-mythikaya-cuban-collared-shirt-white-_145",
-          "handle": "the-mythikaya-cuban-collared-shirt-white-_145",
-          "name": "The \"Mythikaya\" Cuban Collared Shirt - White",
+          "slug": "the-mythikaya-cuban-collared-shirt-_145",
+          "handle": "the-mythikaya-cuban-collared-shirt-_145",
+          "name": "The \"Mythikaya\" Cuban Collared Shirt",
           "price": 9600,
-          "image": "/uploads/1781506822962-MytCcBfs103.jpg",
+          "image": "/uploads/media-1784963987707-225128863.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/191.jpg?v=1763626501",
           "gallery": [
+            "/uploads/media-1784963987707-225128863.jpg",
             "/uploads/1781506822962-MytCcBfs103.jpg",
             "/uploads/1781506822973-MytCcBfs102.jpg",
             "/uploads/1781506822976-MytCcBfs101.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-mythikaya-cuban-collared-shirt-white-_145",
+          "href": "/men/ready-to-wear/shirts/the-mythikaya-cuban-collared-shirt-_145",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Mythikaya Cuban Collared Shirt flows with ease and breathes with natural comfort. The Cuban collar frames the neckline with quiet sharpness, while the fabric lends understated luxury through its light drape and movement. It bears the artwork Mythikaya—a vision steeped in mystery and resonance. Forms emerge like fragments of forgotten lore, layered with intricate detailing and shifting depth. At once fluid and precise, Mythikaya carries the weight of myth while remaining alive in the present, a tapestry of memory, dream, and revelation. Artwork : Mythikaya Color : White Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M",
           "tags": [
             "category_shirts",
@@ -20762,20 +20810,21 @@
         },
         {
           "id": "imported_161",
-          "slug": "the-astral-dynasty-cuban-collared-shirt-charcoal-_161",
-          "handle": "the-astral-dynasty-cuban-collared-shirt-charcoal-_161",
-          "name": "The \"Astral Dynasty\" Cuban Collared Shirt - Charcoal",
+          "slug": "the-astral-dynasty-cuban-collared-shirt-_161",
+          "handle": "the-astral-dynasty-cuban-collared-shirt-_161",
+          "name": "The \"Astral Dynasty\" Cuban Collared Shirt",
           "price": 10800,
-          "image": "/uploads/1781506838561-AsDyCcBfs043.jpg",
+          "image": "/uploads/media-1784964013168-322425581.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/64_c223ed43-25de-413a-aed9-0f89e8947de8.jpg?v=1763639926",
           "gallery": [
+            "/uploads/media-1784964013168-322425581.jpg",
             "/uploads/1781506838561-AsDyCcBfs043.jpg",
             "/uploads/1781506838571-AsDyCcBfs042.jpg",
             "/uploads/1781506838574-AsDyCcBfs041.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-astral-dynasty-cuban-collared-shirt-charcoal-_161",
+          "href": "/men/ready-to-wear/shirts/the-astral-dynasty-cuban-collared-shirt-_161",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Astral Dynasty Cuban Collared Shirt drapes with ease while retaining a subtle structure. The Cuban collar opens the neckline with quiet confidence, while the fabric lends breathability and refined movement. It carries the artwork Astral Dynasty—a textured checkered field, constant in its white, alive in its shifting tones of blue, burgundy, and charcoal. Across this canvas, intricate gold motifs unfurl like emblems of an unseen empire: sharp, luxurious, and commanding. The artwork is at once ornamental and architectural, weaving opulence into structure, and structure into rhythm. Astral Dynasty embodies multiplicity within one vision, a dynasty of forms rendered across shifting realms. Astral Dynasty is not just worn—it reigns. Artwork : Astral Dynasty Colour : Charcoal Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M",
           "tags": [
             "category_shirts",
@@ -20845,20 +20894,21 @@
         },
         {
           "id": "imported_162",
-          "slug": "the-astral-dynasty-cuban-collared-shirt-burgundy-_162",
-          "handle": "the-astral-dynasty-cuban-collared-shirt-burgundy-_162",
-          "name": "The \"Astral Dynasty\" Cuban Collared Shirt - Burgundy",
+          "slug": "the-astral-dynasty-cuban-collared-shirt-_162",
+          "handle": "the-astral-dynasty-cuban-collared-shirt-_162",
+          "name": "The \"Astral Dynasty\" Cuban Collared Shirt",
           "price": 113.63,
-          "image": "/uploads/1781084841916-AsDyCcBfs253.jpg",
+          "image": "/uploads/media-1784964032390-533171521.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/24_656a46a5-8606-4d6e-9607-f242a1191acc.jpg?v=1763640201",
           "gallery": [
+            "/uploads/media-1784964032390-533171521.jpg",
             "/uploads/1781084841916-AsDyCcBfs253.jpg",
             "/uploads/1781084841934-AsDyCcBfs252.jpg",
             "/uploads/1781084841938-AsDyCcBfs251.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-astral-dynasty-cuban-collared-shirt-burgundy-_162",
+          "href": "/men/ready-to-wear/shirts/the-astral-dynasty-cuban-collared-shirt-_162",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Astral Dynasty Cuban Collared Shirt drapes with ease while retaining a subtle structure. The Cuban collar opens the neckline with quiet confidence, while the fabric lends breathability and refined movement. It carries the artwork Astral Dynasty—a textured checkered field, constant in its white, alive in its shifting tones of blue, burgundy, and charcoal. Across this canvas, intricate gold motifs unfurl like emblems of an unseen empire: sharp, luxurious, and commanding. The artwork is at once ornamental and architectural, weaving opulence into structure, and structure into rhythm. Astral Dynasty embodies multiplicity within one vision, a dynasty of forms rendered across shifting realms. Astral Dynasty is not just worn—it reigns. Artwork : Astral Dynasty Colour : Burgundy Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M",
           "tags": [
             "category_shirts",
@@ -21181,19 +21231,20 @@
         },
         {
           "id": "imported_166",
-          "slug": "the-lutheinn-cuban-collared-shirt-verdara-_166",
-          "handle": "the-lutheinn-cuban-collared-shirt-verdara-_166",
-          "name": "The \"Lutheinn\" Cuban Collared Shirt - Verdara",
+          "slug": "the-lutheinn-cuban-collared-shirt-_166",
+          "handle": "the-lutheinn-cuban-collared-shirt-_166",
+          "name": "The \"Lutheinn\" Cuban Collared Shirt",
           "price": 6000,
-          "image": "/uploads/1781084692082-LthnCcBfs022.jpg",
+          "image": "/uploads/media-1784964051679-555424372.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/162.jpg?v=1763626279",
           "gallery": [
+            "/uploads/media-1784964051679-555424372.jpg",
             "/uploads/1781084692082-LthnCcBfs022.jpg",
             "/uploads/1781084692078-LthnCcBfs021.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-lutheinn-cuban-collared-shirt-verdara-_166",
+          "href": "/men/ready-to-wear/shirts/the-lutheinn-cuban-collared-shirt-_166",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Lutheinn Cuban Collared Shirt flows with a natural drape and breathable ease. The Cuban collar frames the neckline with quiet sharpness, while the fabric’s subtle texture adds depth and presence. It bears the artwork Lutheinn—a convergence of light and shadow, where radiant motifs rise against vast expanses of depth. Lutheinn moves between brilliance and obscurity, its forms emerging like fragments of memory, luminous yet elusive. There is a sense of passage within it—of thresholds crossed, of veils lifted—where clarity is never static, but always in becoming. Artwork : Lutheinn Colour : Verdara Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M.",
           "tags": [
             "category_shirts",
@@ -21267,9 +21318,10 @@
           "handle": "the-auralith-cuban-collared-shirt-_167",
           "name": "The \"Auralith\" Cuban Collared Shirt",
           "price": 9600,
-          "image": "/uploads/1781506868025-AurCcBfs091.jpg",
+          "image": "/uploads/media-1784964072997-163111590.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/AR02_96bd51ff-f58b-419f-9629-e998e7e43498.jpg?v=1757080782",
           "gallery": [
+            "/uploads/media-1784964072997-163111590.jpg",
             "/uploads/1781506868025-AurCcBfs091.jpg",
             "/uploads/1781506868033-AurCcBfs093.jpg",
             "/uploads/1781506868037-AurCcBfs092.jpg"
@@ -21346,20 +21398,21 @@
         },
         {
           "id": "imported_168",
-          "slug": "the-mythikaya-cuban-collared-shirt-peach-_168",
-          "handle": "the-mythikaya-cuban-collared-shirt-peach-_168",
-          "name": "The \"Mythikaya\" Cuban Collared Shirt - Peach",
+          "slug": "the-mythikaya-cuban-collared-shirt-_168",
+          "handle": "the-mythikaya-cuban-collared-shirt-_168",
+          "name": "The \"Mythikaya\" Cuban Collared Shirt",
           "price": 9600,
-          "image": "/uploads/1781506880981-MytCcBfs153.jpg",
+          "image": "/uploads/media-1784964091363-537295840.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/60_0750a905-0091-4030-b977-70cd9b363471.jpg?v=1763647818",
           "gallery": [
+            "/uploads/media-1784964091363-537295840.jpg",
             "/uploads/1781506880981-MytCcBfs153.jpg",
             "/uploads/1781506880990-MytCcBfs152.jpg",
             "/uploads/1781506880995-MytCcBfs151.jpg"
           ],
           "category": "men/ready-to-wear/shirts",
           "categoryLabel": "Shirts",
-          "href": "/men/ready-to-wear/shirts/the-mythikaya-cuban-collared-shirt-peach-_168",
+          "href": "/men/ready-to-wear/shirts/the-mythikaya-cuban-collared-shirt-_168",
           "editorialDescription": "Cut in a mildly textured viscose blend, the Mythikaya Cuban Collared Shirt flows with ease and breathes with natural comfort. The Cuban collar frames the neckline with quiet sharpness, while the fabric lends understated luxury through its light drape and movement. It bears the artwork Mythikaya—a vision steeped in mystery and resonance. Forms emerge like fragments of forgotten lore, layered with intricate detailing and shifting depth. At once fluid and precise, Mythikaya carries the weight of myth while remaining alive in the present, a tapestry of memory, dream, and revelation. Artwork : Mythikaya Color : Peach Fabric : Viscose Blend Printed using certified eco-friendly inks. The model is 6'0 and is wearing size M",
           "tags": [
             "category_shirts",
@@ -21433,9 +21486,10 @@
           "handle": "the-first-strand-cuban-collared-shirt-_169",
           "name": "\"The First Strand\" Cuban Collared Shirt",
           "price": 8400,
-          "image": "/uploads/1781506895886-SrkCcBfs162.jpg",
+          "image": "/uploads/media-1784964107729-486355169.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/230.jpg?v=1763626897",
           "gallery": [
+            "/uploads/media-1784964107729-486355169.jpg",
             "/uploads/1781506895886-SrkCcBfs162.jpg",
             "/uploads/1781506895896-SrkCcBfs161.png"
           ],
@@ -21515,9 +21569,10 @@
           "handle": "the-astral-dynasty-cuban-collared-shirt-_170",
           "name": "The \"Astral Dynasty\" Cuban Collared Shirt",
           "price": 10800,
-          "image": "/uploads/1781506911302-AsDyCcBfs033.jpg",
+          "image": "/uploads/media-1784964123952-952406648.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/1_de3cb785-6ed8-4ba7-bafe-d56a99a71cfa.jpg?v=1763640109",
           "gallery": [
+            "/uploads/media-1784964123952-952406648.jpg",
             "/uploads/1781506911302-AsDyCcBfs033.jpg",
             "/uploads/1781506911316-AsDyCcBfs032.jpg",
             "/uploads/1781506911318-AsDyCcBfs031.jpg"
@@ -26462,9 +26517,9 @@
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15-3.jpg?v=1729509414",
             "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/MoSJO15-4_a858e1bb-dc1f-48f1-9e78-59e10ea13006.jpg?v=1729509415"
           ],
-          "category": "men/ready-to-wear/shirts",
+          "category": "men/ready-to-wear/trousers-shorts",
           "categoryLabel": "Pants & Shorts",
-          "href": "/men/ready-to-wear/shirts/the-path-of-least-resistance-men-s-lounge-trousers-apricot-_337",
+          "href": "/men/ready-to-wear/trousers-shorts/the-path-of-least-resistance-men-s-lounge-trousers-apricot-_337",
           "editorialDescription": "These easy-fitting, woven trousers let you bring star presence anywhere you go. The entire body is finished off with “The Path of least resistance” detail for an unmistakable look. Plus, thanks to the crisp, lightweight outer fabric and soft crepe lining, they keep you comfortable in various conditions.",
           "tags": [
             "gender_men",
@@ -41454,9 +41509,10 @@
           "handle": "the-timeless-impressions-full-sleeve-shirt-vcx8",
           "name": "The \"Timeless Impressions\" Full Sleeve Shirt",
           "price": "7800",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948117/tezhhomayaa_app/zpoq4zgwjkzintwgm4yd.jpg",
+          "image": "/uploads/media-1784960893864-260850039.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_074713_e440d776-8274-4bea-990f-2bf191143225.png?v=1775642160",
           "gallery": [
+            "/uploads/media-1784960893864-260850039.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948117/tezhhomayaa_app/zpoq4zgwjkzintwgm4yd.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948117/tezhhomayaa_app/qpuikfjxu3otocmu84qy.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948117/tezhhomayaa_app/enxoskpppds2o1fscgkt.jpg",
@@ -41538,9 +41594,10 @@
           "handle": "the-timeless-impressions-full-sleeve-shirt-5mnn",
           "name": "The \"Timeless Impressions\" Full Sleeve Shirt",
           "price": "7800",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948164/tezhhomayaa_app/wyocq0vilxbpnkubz6oi.jpg",
+          "image": "/uploads/media-1784960852516-453973681.jpg",
           "hoverImage": "https://cdn.shopify.com/s/files/1/0746/1850/3459/files/hf_20260408_074713_e440d776-8274-4bea-990f-2bf191143225.png?v=1775642160",
           "gallery": [
+            "/uploads/media-1784960852516-453973681.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948164/tezhhomayaa_app/wyocq0vilxbpnkubz6oi.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948164/tezhhomayaa_app/knsw2ffpwsqeb4efwaka.jpg",
             "https://res.cloudinary.com/dhezwtyku/image/upload/v1783948165/tezhhomayaa_app/ltdeuchtqvl2g3iya6av.jpg",
@@ -41613,7 +41670,9 @@
             "gridThumbnail": 0,
             "desktopGalleryOrder": [],
             "tabletGalleryOrder": [],
-            "mobileGalleryOrder": []
+            "mobileGalleryOrder": [
+              1
+            ]
           },
           "id": "prod_1783948121099_tcl5mnn"
         },
@@ -47091,23 +47150,53 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=mobile"
+    },
+    "e2360abd-b1da-401c-aaad-db4b47fea36d": {
+      "eventId": "e2360abd-b1da-401c-aaad-db4b47fea36d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T06:27:00.373Z",
+      "experienceId": "mkt_jp_Japanese_NONE",
+      "marketId": "mkt_jp",
+      "regionId": "Asia Pacific",
+      "languageCode": "Japanese",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "11c486ba-464e-4449-9565-6ec86395a513": {
+      "eventId": "11c486ba-464e-4449-9565-6ec86395a513",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T07:26:15.515Z",
+      "experienceId": "mkt_bh_Arabic_NONE",
+      "marketId": "mkt_bh",
+      "regionId": "Middle East",
+      "languageCode": "Arabic",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 66,
+      "totalViews": 68,
       "viewsByMarket": {
-        "mkt_bh": 24,
-        "mkt_jp": 42
+        "mkt_bh": 25,
+        "mkt_jp": 43
       },
       "viewsByLanguage": {
-        "Arabic": 24,
-        "Japanese": 42
+        "Arabic": 25,
+        "Japanese": 43
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 66
+        "DESKTOP": 68
       },
       "previewActivity": 0
     }
@@ -47119,12 +47208,12 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$YzCSMT5QgvHEh9mb5Ev19w$NQ+KfuhR1VkILtfIiU3IN59EovcvLftJZT72dHkrbF0",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$3uNB9iu/4L01SF5Y5KsCAw$so/1w1Gzh+4pDi4/rdMbOxBjkzsV64A5qX/xgbh4nYA",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-25T06:23:05.097Z",
-      "updatedAt": "2026-07-25T06:23:05.097Z"
+      "createdAt": "2026-07-25T07:26:50.384Z",
+      "updatedAt": "2026-07-25T07:26:50.384Z"
     }
   },
   "iam_sessions": {
@@ -47269,6 +47358,28 @@
       "lastActivityAt": "2026-07-25T06:10:54.380Z",
       "createdAt": "2026-07-25T06:10:54.380Z",
       "expiresAt": "2026-08-01T06:10:54.380Z",
+      "revokedAt": null
+    },
+    "1a37b520-b895-4938-bcc0-a7f9d73c00af": {
+      "id": "1a37b520-b895-4938-bcc0-a7f9d73c00af",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T07:11:20.221Z",
+      "createdAt": "2026-07-25T07:11:20.221Z",
+      "expiresAt": "2026-08-01T07:11:20.221Z",
+      "revokedAt": null
+    },
+    "750bc5eb-6ca7-46ae-a023-73a41989a283": {
+      "id": "750bc5eb-6ca7-46ae-a023-73a41989a283",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-25T07:25:49.716Z",
+      "createdAt": "2026-07-25T07:25:49.716Z",
+      "expiresAt": "2026-08-01T07:25:49.716Z",
       "revokedAt": null
     }
   },
