@@ -28,10 +28,9 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     }
   }, [market]);
 
-  // Initialize currency and rates
+  // Fetch exchange rates
   useEffect(() => {
     async function init() {
-      // 1. Fetch rates
       try {
         const res = await fetch("/api/exchange-rates");
         if (res.ok) {
@@ -43,32 +42,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
       } catch (err) {
         Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Failed to fetch rates, falling back to INR only.", err);
       }
-
-      // 2. Determine currency
-      const saved = localStorage.getItem("tz_currency") as CurrencyCode;
-      if (saved && SUPPORTED_CURRENCIES.find(c => c.code === saved)) {
-        setCurrencyState(saved);
-        setIsReady(true);
-        return;
-      }
-
-      // 3. Fallback to IP geolocation
-      try {
-        const geoRes = await fetch("/api/geolocation");
-        if (geoRes.ok) {
-          const geoData = await geoRes.json();
-          const detected = COUNTRY_TO_CURRENCY[geoData.country];
-          if (detected) {
-            setCurrencyState(detected);
-            setIsReady(true);
-            return;
-          }
-        }
-      } catch (err) {
-        Observability.getLogger("System").warn.bind(Observability.getLogger("System"), "Warn")("Geolocation failed, defaulting to INR.", err);
-      }
-
-      setIsReady(true); // Defaulted to INR
+      setIsReady(true);
     }
     
     init();
@@ -76,7 +50,6 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   const setCurrency = (code: CurrencyCode) => {
     setCurrencyState(code);
-    localStorage.setItem("tz_currency", code);
   };
 
   const formatPrice = (rawPrice: string | number) => {

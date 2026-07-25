@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { Product } from "@/lib/collections";
-import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { getProductPrice, getProductComparePrice } from "@/lib/currency";
 import { DiscoverDrawer } from "@/components/ecommerce/DiscoverDrawer";
 
@@ -22,7 +22,7 @@ import { DiscoverDrawer } from "@/components/ecommerce/DiscoverDrawer";
 export function ProductCard({ product, presentation, onDiscover }: { product: Product, presentation?: any, onDiscover?: () => void }) {
   const [hovered, setHovered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
-  const formatter = useCurrencyFormatter();
+  const { formatPrice } = useCurrency();
   
   const getSignatureDetails = () => {
     const d: string[] = [];
@@ -317,29 +317,28 @@ export function ProductCard({ product, presentation, onDiscover }: { product: Pr
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "0.45rem" }}>
           {(presentation?.showPrice ?? true) && (
-            <p
-              style={{
+            <div className="flex gap-2 items-baseline" style={{
                 fontFamily: "var(--font-dm-mono, monospace)",
                 fontSize: "0.6rem",
                 letterSpacing: "0.14em",
-                color: "#9a9690",
                 margin: 0,
                 textTransform: "uppercase",
-                display: "flex",
-                gap: "0.5rem"
-              }}
-            >
+            }}>
               {getProductComparePrice(product) ? (
                 <>
-                  <span style={{ textDecoration: "line-through", opacity: 0.6 }}>
-                    {formatter.formatCurrency(getProductComparePrice(product)!)}
+                  <span className="text-[0.65rem] text-gray-400 line-through tracking-wider">
+                    {formatPrice(getProductComparePrice(product)!)}
                   </span>
-                  <span>{formatter.formatCurrency(getProductPrice(product))}</span>
+                  <span className="text-[0.65rem] text-[#1a1a18] tracking-wider">
+                    {formatPrice(getProductPrice(product))}
+                  </span>
                 </>
               ) : (
-                formatter.formatCurrency(getProductPrice(product))
+                <span className="text-[0.65rem] text-gray-500 tracking-wider">
+                  {formatPrice(getProductPrice(product))}
+                </span>
               )}
-            </p>
+            </div>
           )}
 
           {/* Discover Action */}

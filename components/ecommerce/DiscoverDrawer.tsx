@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { Product } from "@/lib/collections";
-import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { getProductPrice, getProductComparePrice } from "@/lib/currency";
 import { useCart, useWishlist } from "@/lib/store";
 
@@ -25,7 +25,7 @@ export function DiscoverDrawer({ product, onClose }: { product: Product | null; 
   const [quantity, setQuantity] = useState(1);
   const [sizeError, setSizeError] = useState(false);
   
-  const formatter = useCurrencyFormatter();
+  const { formatPrice } = useCurrency();
   const { addToCart, openMiniCart } = useCart();
   const { isWishlisted, toggleWishlist } = useWishlist();
   const router = useRouter();
@@ -153,7 +153,7 @@ export function DiscoverDrawer({ product, onClose }: { product: Product | null; 
               <div className="p-6">
                 <h2 className="font-cormorant text-2xl font-light text-black leading-tight">{product.name}</h2>
                 <p className="font-dm-mono text-[0.7rem] uppercase tracking-[0.15em] text-gray-500 mt-2 mb-6">
-                  {formatter.formatCurrency(getProductPrice(product))}
+                  {formatPrice(getProductPrice(product))}
                 </p>
                 
                 {(product as any).colors && (product as any).colors.length > 0 && (
@@ -246,13 +246,15 @@ export function DiscoverDrawer({ product, onClose }: { product: Product | null; 
                   <p className="font-sans text-[1rem] font-semibold text-[#1a1a18] mt-2 mb-10 flex justify-center items-center gap-3">
                     {getProductComparePrice(product) ? (
                       <>
-                        <span className="line-through text-gray-400 font-normal">
-                          {formatter.formatCurrency(getProductComparePrice(product)!)}
+                        <span className="text-[0.65rem] text-gray-400 line-through tracking-wider">
+                          {formatPrice(getProductComparePrice(product)!)}
                         </span>
-                        <span>{formatter.formatCurrency(getProductPrice(product))}</span>
+                        <span className="text-[0.65rem] text-[#1a1a18] tracking-wider">
+                          {formatPrice(getProductPrice(product))}
+                        </span>
                       </>
                     ) : (
-                      formatter.formatCurrency(getProductPrice(product))
+                      formatPrice(getProductPrice(product))
                     )}
                   </p>
                 </div>

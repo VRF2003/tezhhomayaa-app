@@ -47208,12 +47208,12 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$3uNB9iu/4L01SF5Y5KsCAw$so/1w1Gzh+4pDi4/rdMbOxBjkzsV64A5qX/xgbh4nYA",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$/6msACJBapLgkwKazeP22w$iQtNEPhisvwOZT2SncxStz+Bg3dNmibESThyYOqrMi4",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-25T07:26:50.384Z",
-      "updatedAt": "2026-07-25T07:26:50.384Z"
+      "createdAt": "2026-07-25T07:49:43.211Z",
+      "updatedAt": "2026-07-25T07:49:43.211Z"
     }
   },
   "iam_sessions": {

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { getProductPrice, getProductComparePrice } from "@/lib/currency";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -484,7 +484,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
   };
 
   const { addToCart, openMiniCart } = useCart();
-  const formatter = useCurrencyFormatter();
+  const { formatPrice } = useCurrency();
   const { isWishlisted, toggleWishlist } = useWishlist();
   const commerce = useCommerce();
   const router = useRouter();
@@ -589,13 +589,13 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
             }}>
               {getProductComparePrice(product) ? (
                 <>
-                  <span style={{ textDecoration: "line-through", color: "#9a9690" }}>
-                    {formatter.formatCurrency(getProductComparePrice(product)!)}
+                  <span className="text-[0.9rem] text-gray-400 line-through tracking-wider mr-2">
+                    {formatPrice(getProductComparePrice(product)!)}
                   </span>
-                  <span>{formatter.formatCurrency(getProductPrice(product))}</span>
+                  <span>{formatPrice(getProductPrice(product))}</span>
                 </>
               ) : (
-                formatter.formatCurrency(getProductPrice(product))
+                formatPrice(getProductPrice(product))
               )}
             </p>
 
@@ -1005,7 +1005,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                   {product.name}
                 </span>
                 <span style={{ fontSize: "1.1rem", letterSpacing: "0.06em", color: "var(--obsidian)" }}>
-                  {formatter.formatCurrency(getProductPrice(product))}
+                  {formatPrice(getProductPrice(product))}
                 </span>
               </div>
             </div>

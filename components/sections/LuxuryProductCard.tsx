@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
+import { useCurrency } from "@/components/CurrencyProvider";
 import { DiscoverDrawer } from "@/components/ecommerce/DiscoverDrawer";
 
 // Mock Product Type
@@ -32,7 +32,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
   const [isMobile, setIsMobile] = useState(false);
   const [showDiscover, setShowDiscover] = useState(false);
   
-  const formatter = useCurrencyFormatter();
+  const { formatPrice } = useCurrency();
 
   const getSignatureDetails = () => {
     const d: string[] = [];
@@ -252,7 +252,7 @@ export function LuxuryProductCard({ product }: { product: Product }) {
         
         <div className="flex w-full justify-between items-center mt-3 px-1">
           <p className="text-xs text-gray-500 tracking-wider font-dm-mono uppercase">
-            {formatter.formatCurrency(product.price)}
+            {formatPrice(product.price)}
           </p>
           
           <button

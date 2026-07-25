@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/lib/store";
 import { PromotionRuleEngine } from "@/lib/promotions/services/PromotionRuleEngine";
-import { useCurrencyFormatter } from "@/lib/global-experience/formatters";
+import { useCurrency } from "@/components/CurrencyProvider";
 
 export function PrivateConciergeToast({ activePromotions }: { activePromotions: any[] }) {
   const { items } = useCart();
-  const formatter = useCurrencyFormatter();
+  const { formatPrice } = useCurrency();
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [lastCartCount, setLastCartCount] = useState(0);
@@ -64,7 +64,7 @@ export function PrivateConciergeToast({ activePromotions }: { activePromotions: 
       request as any, 
       context as any, 
       activePromotions,
-      (val) => formatter.formatCurrency(val)
+      (val) => formatPrice(val)
     );
 
     // Find the closest promotion that is nearly unlocked
@@ -96,7 +96,7 @@ export function PrivateConciergeToast({ activePromotions }: { activePromotions: 
         return () => clearTimeout(timer);
       }
     }
-  }, [items, activePromotions, formatter, lastCartCount]);
+  }, [items, activePromotions, formatPrice, lastCartCount]);
 
   return (
     <AnimatePresence>
@@ -130,6 +130,9 @@ export function PrivateConciergeToast({ activePromotions }: { activePromotions: 
             letterSpacing: "0.02em"
           }}>
             {toastMessage}
+          </p>
+          <p className="text-[0.65rem] tracking-wider text-gray-500 font-dm-mono uppercase mt-2 mb-4">
+            Unlock at {formatPrice(activePromotions[0].conditions.cartMinimum)}
           </p>
         </motion.div>
       )}
