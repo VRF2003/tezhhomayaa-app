@@ -23,12 +23,21 @@ const emptyCtaFields = (): [CtaField, CtaField, CtaField] => [
 export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
   const [sections, setSections] = useState<CampaignSection[]>(initialSections);
   const [isAdding, setIsAdding] = useState(false);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [slot, setSlot] = useState("home-hero-banner");
   const [type, setType] = useState("HERO_BANNER");
   const [imageUrl, setImageUrl] = useState("");
   const [imagePreview, setImagePreview] = useState("");
   const [title, setTitle] = useState("");
   const [ctas, setCtas] = useState<[CtaField, CtaField, CtaField]>(emptyCtaFields());
+  const [buttonStyle, setButtonStyle] = useState("luxury");
+  const [buttonBgColor, setButtonBgColor] = useState("");
+  const [buttonTextColor, setButtonTextColor] = useState("");
+  const [bannerTextColor, setBannerTextColor] = useState("#ffffff");
+  const [desktopX, setDesktopX] = useState<number | "">(50);
+  const [desktopY, setDesktopY] = useState<number | "">(50);
+  const [mobileX, setMobileX] = useState<number | "">(50);
+  const [mobileY, setMobileY] = useState<number | "">(50);
   const [isUploading, setIsUploading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -76,13 +85,57 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
     });
   };
 
+  const cancelForm = () => {
+    setIsAdding(false);
+    setEditingIndex(null);
+    setSlot("home-hero-banner");
+    setType("HERO_BANNER");
+    setImageUrl("");
+    setImagePreview("");
+    setTitle("");
+    setCtas(emptyCtaFields());
+    setButtonStyle("luxury");
+    setButtonBgColor("");
+    setButtonTextColor("");
+    setBannerTextColor("#ffffff");
+    setDesktopX(50);
+    setDesktopY(50);
+    setMobileX(50);
+    setMobileY(50);
+    if (fileRef.current) fileRef.current.value = "";
+  };
+
+  const handleEdit = (index: number) => {
+    const sec = sections[index] as any;
+    const payload = sec._payload || {};
+    setSlot(sec.slug || "");
+    setType(sec.sectionType || "HERO_BANNER");
+    setTitle(payload.title || sec._newContentTitle || "");
+    setImageUrl(payload.desktopImage || sec._newContentImageUrl || "");
+    setImagePreview(payload.desktopImage || sec._newContentImageUrl || "");
+    setCtas([
+      { label: payload.cta1Label || sec._newContentCta1Label || "", url: payload.cta1Url || sec._newContentCta1Url || "" },
+      { label: payload.cta2Label || sec._newContentCta2Label || "", url: payload.cta2Url || sec._newContentCta2Url || "" },
+      { label: payload.cta3Label || sec._newContentCta3Label || "", url: payload.cta3Url || sec._newContentCta3Url || "" },
+    ]);
+    setButtonStyle(payload.buttonStyle || sec._newContentButtonStyle || "luxury");
+    setButtonBgColor(payload.buttonBgColor || sec._newContentButtonBgColor || "");
+    setButtonTextColor(payload.buttonTextColor || sec._newContentButtonTextColor || "");
+    setBannerTextColor(payload.textColor || sec._newContentTextColor || "#ffffff");
+    setDesktopX(payload.desktopX ?? sec._newContentDesktopX ?? 50);
+    setDesktopY(payload.desktopY ?? sec._newContentDesktopY ?? 50);
+    setMobileX(payload.mobileX ?? sec._newContentMobileX ?? 50);
+    setMobileY(payload.mobileY ?? sec._newContentMobileY ?? 50);
+    setEditingIndex(index);
+    setIsAdding(true);
+  };
+
   const handleSave = () => {
     const newSection: any = {
-      id: `sec-${Date.now()}`,
-      campaignId,
+      ...(editingIndex !== null ? sections[editingIndex] : { id: `sec-${Date.now()}`, campaignId }),
       slug: slot,
       sectionType: type,
-      contentItemId: `new-content-${Date.now()}`,
+      contentItemId: editingIndex !== null ? sections[editingIndex].contentItemId : `new-content-${Date.now()}`,
       _newContentTitle: title,
       _newContentImageUrl: imageUrl,
       _newContentCta1Label: ctas[0].label,
@@ -91,16 +144,23 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
       _newContentCta2Url: ctas[1].url,
       _newContentCta3Label: ctas[2].label,
       _newContentCta3Url: ctas[2].url,
+      _newContentButtonStyle: buttonStyle,
+      _newContentButtonBgColor: buttonBgColor,
+      _newContentButtonTextColor: buttonTextColor,
+      _newContentTextColor: bannerTextColor,
+      _newContentDesktopX: desktopX,
+      _newContentDesktopY: desktopY,
+      _newContentMobileX: mobileX,
+      _newContentMobileY: mobileY,
     };
-    setSections([...sections, newSection]);
-    setIsAdding(false);
-    setSlot("home-hero-banner");
-    setType("HERO_BANNER");
-    setImageUrl("");
-    setImagePreview("");
-    setTitle("");
-    setCtas(emptyCtaFields());
-    if (fileRef.current) fileRef.current.value = "";
+    if (editingIndex !== null) {
+      const updated = [...sections];
+      updated[editingIndex] = newSection;
+      setSections(updated);
+    } else {
+      setSections([...sections, newSection]);
+    }
+    cancelForm();
   };
 
   const handleDelete = (id: string) => {
@@ -159,12 +219,24 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
                   {(sec as any)._newContentCta2Url && <input type="hidden" name={`sections[${index}].newContentCta2Url`} value={(sec as any)._newContentCta2Url} />}
                   {(sec as any)._newContentCta3Label && <input type="hidden" name={`sections[${index}].newContentCta3Label`} value={(sec as any)._newContentCta3Label} />}
                   {(sec as any)._newContentCta3Url && <input type="hidden" name={`sections[${index}].newContentCta3Url`} value={(sec as any)._newContentCta3Url} />}
+                  {(sec as any)._newContentButtonStyle && <input type="hidden" name={`sections[${index}].newContentButtonStyle`} value={(sec as any)._newContentButtonStyle} />}
+                  {(sec as any)._newContentButtonBgColor && <input type="hidden" name={`sections[${index}].newContentButtonBgColor`} value={(sec as any)._newContentButtonBgColor} />}
+                  {(sec as any)._newContentButtonTextColor && <input type="hidden" name={`sections[${index}].newContentButtonTextColor`} value={(sec as any)._newContentButtonTextColor} />}
+                  {(sec as any)._newContentTextColor && <input type="hidden" name={`sections[${index}].newContentTextColor`} value={(sec as any)._newContentTextColor} />}
+                  {((sec as any)._newContentDesktopX !== undefined) && <input type="hidden" name={`sections[${index}].newContentDesktopX`} value={(sec as any)._newContentDesktopX} />}
+                  {((sec as any)._newContentDesktopY !== undefined) && <input type="hidden" name={`sections[${index}].newContentDesktopY`} value={(sec as any)._newContentDesktopY} />}
+                  {((sec as any)._newContentMobileX !== undefined) && <input type="hidden" name={`sections[${index}].newContentMobileX`} value={(sec as any)._newContentMobileX} />}
+                  {((sec as any)._newContentMobileY !== undefined) && <input type="hidden" name={`sections[${index}].newContentMobileY`} value={(sec as any)._newContentMobileY} />}
                 </td>
                 <td style={{ padding: "1rem 0", fontSize: "0.85rem", color: "#6b6865" }}>{sec.sectionType}</td>
                 <td style={{ padding: "1rem 0", fontSize: "0.85rem", color: "#6b6865", fontFamily: "monospace" }}>
                   {sec.contentItemId.substring(0, 22)}…
                 </td>
-                <td style={{ padding: "1rem 0", textAlign: "right" }}>
+                <td style={{ padding: "1rem 0", textAlign: "right", display: "flex", gap: "0.5rem", justifyContent: "flex-end" }}>
+                  <button type="button" onClick={() => handleEdit(index)}
+                    style={{ background: "transparent", border: "1px solid #e8e4df", color: "#1a1a18", cursor: "pointer", fontSize: "0.75rem", padding: "0.3rem 0.6rem" }}>
+                    Edit
+                  </button>
                   <button type="button" onClick={() => handleDelete(sec.id)}
                     style={{ background: "transparent", border: "1px solid #e8e4df", color: "#c0392b", cursor: "pointer", fontSize: "0.75rem", padding: "0.3rem 0.6rem" }}>
                     Remove
@@ -243,6 +315,61 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
             />
           </div>
 
+          {/* Styling & Positioning */}
+          <div style={{ marginBottom: "1.5rem", padding: "1.5rem", background: "#fcfaf8", border: "1px solid #e8e4df" }}>
+            <h4 style={{ fontSize: "0.85rem", margin: "0 0 1rem", fontWeight: 500, color: "#1a1a18" }}>Styling & Positioning</h4>
+            
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+              <div>
+                <label style={LabelStyle}>Button Style</label>
+                <select value={buttonStyle} onChange={e => setButtonStyle(e.target.value)} style={InputStyle}>
+                  <option value="luxury">Luxury (Underline)</option>
+                  <option value="filled">Filled Solid</option>
+                  <option value="outline">Outline</option>
+                  <option value="ghost">Ghost (Text Only)</option>
+                </select>
+              </div>
+              <div>
+                <label style={LabelStyle}>Banner Text Color</label>
+                <input type="color" value={bannerTextColor} onChange={e => setBannerTextColor(e.target.value)} style={{ ...InputStyle, padding: "0.2rem", height: "42px" }} />
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+              <div>
+                <label style={LabelStyle}>Button Bg Color</label>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <input type="color" value={buttonBgColor || "#ffffff"} onChange={e => setButtonBgColor(e.target.value)} style={{ width: "42px", height: "42px", padding: "0.2rem", border: "1px solid #e8e4df" }} />
+                  <input type="text" placeholder="#ffffff or transparent" value={buttonBgColor} onChange={e => setButtonBgColor(e.target.value)} style={{ ...InputStyle, flex: 1 }} />
+                </div>
+              </div>
+              <div>
+                <label style={LabelStyle}>Button Text Color</label>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <input type="color" value={buttonTextColor || "#000000"} onChange={e => setButtonTextColor(e.target.value)} style={{ width: "42px", height: "42px", padding: "0.2rem", border: "1px solid #e8e4df" }} />
+                  <input type="text" placeholder="#000000" value={buttonTextColor} onChange={e => setButtonTextColor(e.target.value)} style={{ ...InputStyle, flex: 1 }} />
+                </div>
+              </div>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div>
+                <label style={LabelStyle}>Desktop Position (X%, Y%)</label>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <input type="number" min="0" max="100" placeholder="X (0-100)" value={desktopX} onChange={e => setDesktopX(e.target.value ? Number(e.target.value) : "")} style={InputStyle} />
+                  <input type="number" min="0" max="100" placeholder="Y (0-100)" value={desktopY} onChange={e => setDesktopY(e.target.value ? Number(e.target.value) : "")} style={InputStyle} />
+                </div>
+              </div>
+              <div>
+                <label style={LabelStyle}>Mobile Position (X%, Y%)</label>
+                <div style={{ display: "flex", gap: "0.5rem" }}>
+                  <input type="number" min="0" max="100" placeholder="X (0-100)" value={mobileX} onChange={e => setMobileX(e.target.value ? Number(e.target.value) : "")} style={InputStyle} />
+                  <input type="number" min="0" max="100" placeholder="Y (0-100)" value={mobileY} onChange={e => setMobileY(e.target.value ? Number(e.target.value) : "")} style={InputStyle} />
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
           <div style={{ marginBottom: "1.5rem" }}>
             <label style={{ ...LabelStyle, marginBottom: "1rem" }}>
@@ -289,7 +416,7 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
             }}>
               {isUploading ? "Reading Image…" : "Save & Link"}
             </button>
-            <button type="button" onClick={() => { setIsAdding(false); setImagePreview(""); setImageUrl(""); setCtas(emptyCtaFields()); }}
+            <button type="button" onClick={cancelForm}
               style={{ background: "transparent", color: "#1a1a18", padding: "0.8rem 1.5rem", border: "1px solid #e8e4df", fontSize: "0.75rem", letterSpacing: "0.15em", textTransform: "uppercase", cursor: "pointer" }}>
               Cancel
             </button>

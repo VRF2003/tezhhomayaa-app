@@ -49276,26 +49276,116 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "95ca39de-d457-4962-a550-acb34d211de7": {
+      "eventId": "95ca39de-d457-4962-a550-acb34d211de7",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T11:57:52.915Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "1fa3d392-931c-48c4-a271-684fe5743a19": {
+      "eventId": "1fa3d392-931c-48c4-a271-684fe5743a19",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:07:00.751Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a5af720c-6ec7-45d4-a205-8280d594f61f": {
+      "eventId": "a5af720c-6ec7-45d4-a205-8280d594f61f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:12:50.268Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "afde8ff3-8ade-4365-863c-7c6fbfff49cb": {
+      "eventId": "afde8ff3-8ade-4365-863c-7c6fbfff49cb",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:18:45.862Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "871b1a98-3c5c-4932-aba5-e8532a92e018": {
+      "eventId": "871b1a98-3c5c-4932-aba5-e8532a92e018",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:19:18.493Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "4b9396b2-b2c6-4029-a54e-04b206223ebf": {
+      "eventId": "4b9396b2-b2c6-4029-a54e-04b206223ebf",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:19:43.712Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 130,
+      "totalViews": 136,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
-        "mkt_ae": 32,
-        "mkt_in": 28
+        "mkt_ae": 34,
+        "mkt_in": 32
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 60
+        "English": 66
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 130
+        "DESKTOP": 136
       },
       "previewActivity": 0
     }
@@ -49307,13 +49397,13 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$v27KMnq1mckPcU4AAeXj1Q$sRbJbRlZURw6a8m3J1IkZNzY/+pg9Z162Q9j3IGGXFU",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$GKJjHApPTnjYcVSMdEGieA$HCMpPb3AES3pErN6rjeKTuSDitgxCEiffrBMH5EDDQg",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-27T09:58:39.698Z",
-      "updatedAt": "2026-07-27T09:58:39.698Z",
-      "lastLoginAt": "2026-07-27T10:40:37.467Z"
+      "createdAt": "2026-07-27T12:25:02.480Z",
+      "updatedAt": "2026-07-27T12:25:02.480Z",
+      "lastLoginAt": "2026-07-27T13:51:03.938Z"
     }
   },
   "iam_sessions": {
@@ -49557,6 +49647,39 @@
       "lastActivityAt": "2026-07-27T10:40:37.486Z",
       "createdAt": "2026-07-27T10:40:37.486Z",
       "expiresAt": "2026-08-03T10:40:37.486Z",
+      "revokedAt": null
+    },
+    "380457f5-5e47-4a74-ac2f-7ecb3103a737": {
+      "id": "380457f5-5e47-4a74-ac2f-7ecb3103a737",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T11:22:43.911Z",
+      "createdAt": "2026-07-27T11:22:43.911Z",
+      "expiresAt": "2026-08-03T11:22:43.911Z",
+      "revokedAt": null
+    },
+    "2054b1cb-9f19-44e4-8b9b-55a7956d8735": {
+      "id": "2054b1cb-9f19-44e4-8b9b-55a7956d8735",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T11:57:46.482Z",
+      "createdAt": "2026-07-27T11:57:46.482Z",
+      "expiresAt": "2026-08-03T11:57:46.482Z",
+      "revokedAt": null
+    },
+    "d31a4d8a-c5d1-425c-be63-299fe39aa8b8": {
+      "id": "d31a4d8a-c5d1-425c-be63-299fe39aa8b8",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T13:51:03.966Z",
+      "createdAt": "2026-07-27T13:51:03.966Z",
+      "expiresAt": "2026-08-03T13:51:03.966Z",
       "revokedAt": null
     }
   },

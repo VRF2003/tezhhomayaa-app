@@ -20,7 +20,7 @@ export interface Campaign extends AuditTrail, Partial<PublishAudit>, SoftDelete 
   
   // Targeting
   marketId: string;
-  regionId?: string;
+  regionId?: string | null;
   languageId?: string;
   
   // Scheduling

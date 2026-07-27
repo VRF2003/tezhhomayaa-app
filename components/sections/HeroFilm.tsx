@@ -86,6 +86,8 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
           gradientOverlay: norm.style.gradientOverlay,
           overlayStrength: norm.style.darkOverlay || norm.style.lightOverlay || (s.overlayStrength ?? 15),
           buttonStyle: norm.content.primaryButton.style || "luxury",
+          buttonBgColor: norm.content.primaryButton.bgColor,
+          buttonTextColor: norm.content.primaryButton.textColor,
           animation: norm.animation?.type || s.animation || "slide-up"
         };
       });
@@ -132,16 +134,19 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
 
   const textVariants = getTextVariants(slide.animation);
 
-  const getButtonStyle = (styleType: string, color: string) => {
+  const getButtonStyle = (styleType: string, color: string, customBg?: string, customText?: string) => {
     const isWhiteText = color === "#ffffff" || color.toLowerCase() === "#fff";
     const contrastColor = isWhiteText ? "#1a1a18" : "#ffffff";
     
+    const bg = customBg || (styleType === "filled" ? color : "transparent");
+    const text = customText || (styleType === "filled" ? contrastColor : color);
+    
     switch(styleType) {
-      case "filled": return { background: color, color: contrastColor, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
-      case "outline": return { background: "transparent", color: color, border: `1px solid ${color}`, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
-      case "ghost": return { background: "transparent", color: color, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "filled": return { background: bg, color: text, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "outline": return { background: bg, color: text, border: `1px solid ${text}`, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "ghost": return { background: bg, color: text, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
       case "luxury":
-      default: return { borderBottom: `1px solid ${color}`, paddingBottom: "3px", textDecoration: "none", color: color, transition: "opacity 0.2s ease" };
+      default: return { borderBottom: `1px solid ${text}`, paddingBottom: "3px", textDecoration: "none", color: text, transition: "opacity 0.2s ease" };
     }
   };
 
@@ -318,7 +323,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                   <Link 
                     href={href}
                     className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70`}
-                    style={{ fontSize: `${norm.style.button.fontSize}rem`, ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor), pointerEvents: "auto" }}
+                    style={{ fontSize: `${norm.style.button.fontSize}rem`, ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor, slide.buttonBgColor, slide.buttonTextColor), pointerEvents: "auto" }}
                     draggable={false}
                     onClick={e => isPreviewMode && e.preventDefault()}
                   >
@@ -337,7 +342,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                     className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70`}
                     style={{ 
                       fontSize: `${norm.style.button.fontSize}rem`,
-                      ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor), 
+                      ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor, slide.buttonBgColor, slide.buttonTextColor), 
                       pointerEvents: "auto",
                       opacity: slide.buttonStyle === "luxury" ? 0.6 : 1 
                     }}

@@ -1,6 +1,10 @@
 import { IExporter } from "../exporters/IExporter";
 import { AuditRecord } from "../types";
-import { randomUUID } from "crypto";
+
+function generateId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+  return `audit-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+}
 
 export class AuditService {
   private exporters: IExporter[];
@@ -22,7 +26,7 @@ export class AuditService {
     }
   ) {
     const audit: AuditRecord = {
-      id: randomUUID(),
+      id: generateId(),
       timestamp: new Date().toISOString(),
       actorId,
       action,

@@ -217,18 +217,40 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderGrid = (colsClass: string, isEdgeToEdge: boolean = false) => {
     return (
-      <div className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-4 md:gap-0" : "gap-4 md:gap-x-6 md:gap-y-16"} w-full group/list pb-8 md:pb-0`}>
-        {items.map((item: any, i: number) => (
-          <CollectionCard 
-            key={item.id || i} 
-            item={item} 
-            sectionId={sectionId} 
-            isEdgeToEdge={isEdgeToEdge} 
-            delay={i * 0.15} 
-            aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
-            className={`w-[85vw] flex-shrink-0 snap-center md:w-auto md:flex-shrink ${isEdgeToEdge ? "h-[60vh] md:h-[80vh]" : "h-full"}`} 
-          />
-        ))}
+      <div className="flex flex-col group/list w-full">
+        {/* Mobile View: Swipeable flex row */}
+        <div className="md:hidden flex items-center justify-end w-full mb-4 px-6 gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">
+          <span>Swipe to explore</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </div>
+        <div className={`md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-8 w-full`}>
+          {items.map((item: any, i: number) => (
+            <CollectionCard 
+              key={item.id || i} 
+              item={item} 
+              sectionId={sectionId} 
+              isEdgeToEdge={isEdgeToEdge} 
+              delay={i * 0.15} 
+              aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
+              className={`w-[85vw] flex-shrink-0 snap-center ${isEdgeToEdge ? "h-[60vh]" : "h-full"}`} 
+            />
+          ))}
+        </div>
+
+        {/* Desktop View: Original Grid (Hidden on mobile) */}
+        <div className={`hidden md:grid grid-cols-1 md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-0" : "gap-x-6 gap-y-16"} w-full`}>
+          {items.map((item: any, i: number) => (
+            <CollectionCard 
+              key={item.id || i} 
+              item={item} 
+              sectionId={sectionId} 
+              isEdgeToEdge={isEdgeToEdge} 
+              delay={i * 0.15} 
+              aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
+              className={isEdgeToEdge ? "md:h-[80vh]" : "h-full"} 
+            />
+          ))}
+        </div>
       </div>
     );
   };
@@ -251,16 +273,36 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderFullWidthTiles = () => {
     return (
-      <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:flex-row w-full mb-16 group/list pb-8 md:pb-0">
-        {items.map((item: any, i: number) => (
-          <CollectionCard 
-            key={item.id || i} 
-            item={item} 
-            sectionId={sectionId} 
-            isEdgeToEdge={true} 
-            className="w-[85vw] flex-shrink-0 snap-center md:flex-1 md:w-auto md:flex-shrink" 
-          />
-        ))}
+      <div className="flex flex-col group/list w-full mb-16">
+        {/* Mobile View: Swipeable flex row */}
+        <div className="md:hidden flex items-center justify-end w-full mb-4 px-6 gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">
+          <span>Swipe to explore</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </div>
+        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 w-full gap-4">
+          {items.map((item: any, i: number) => (
+            <CollectionCard 
+              key={item.id || i} 
+              item={item} 
+              sectionId={sectionId} 
+              isEdgeToEdge={true} 
+              className="w-[85vw] flex-shrink-0 snap-center" 
+            />
+          ))}
+        </div>
+
+        {/* Desktop View: Original Full Width Row (Hidden on mobile) */}
+        <div className="hidden md:flex md:flex-row w-full">
+          {items.map((item: any, i: number) => (
+            <CollectionCard 
+              key={item.id || i} 
+              item={item} 
+              sectionId={sectionId} 
+              isEdgeToEdge={true} 
+              className="flex-1" 
+            />
+          ))}
+        </div>
       </div>
     );
   };

@@ -1,7 +1,11 @@
 import { IExporter } from "../exporters/IExporter";
 import { AlertRule, Alert } from "../types";
-import { randomUUID } from "crypto";
 import { HealthService } from "./HealthService";
+
+function generateId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+  return `alert-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+}
 
 export class AlertManager {
   private exporters: IExporter[];
@@ -24,7 +28,7 @@ export class AlertManager {
       
       if (triggered && !this.activeAlerts.has(rule.id)) {
         const alert: Alert = {
-          id: randomUUID(),
+          id: generateId(),
           ruleId: rule.id,
           timestamp: new Date().toISOString(),
           severity: rule.severity,
