@@ -303,7 +303,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
                     loop
                     muted
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", pointerEvents: "none", backgroundColor: "#ffffff" }}
                   />
                 ) : (
                   <Image
@@ -312,7 +312,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
                     fill
                     priority={i === 0}
                     sizes="(max-width: 900px) 100vw, 78vw"
-                    style={{ objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+                    style={{ objectFit: "contain", objectPosition: "center", pointerEvents: "none", backgroundColor: "#ffffff" }}
                     draggable={false}
                   />
                 )}
@@ -1104,9 +1104,9 @@ function RelatedCard({ product }: { product: Product }) {
             style={{ width: "100%", height: "100%" }}
           >
             <Image
-              src={product.gallery?.[0] || product.image} alt={product.name} fill
+              src={product.image || product.gallery?.[0]} alt={product.name} fill
               sizes="(max-width: 768px) 50vw, 25vw"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain", backgroundColor: "#f8f8f8" }}
             />
           </motion.div>
         </div>

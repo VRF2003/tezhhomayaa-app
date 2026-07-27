@@ -3264,28 +3264,31 @@
     "lookbook": {
       "data": [
         {
-          "id": "cosmic-chaos",
-          "name": "Cosmic Chaos",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783947396/tezhhomayaa_app/tkcrecz1eitlq3r6w6yf.jpg",
-          "subtitle": "The Collision of Form and Void"
+          "id": "easy-is-right",
+          "name": "Easy Is Right",
+          "image": "/uploads/media-1785139450295-160877858.jpg",
+          "subtitle": "The Collision of Form and Void",
+          "description": ""
         },
         {
-          "id": "rough-notes",
-          "name": "Rough Notes",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783950091/tezhhomayaa_app/ywjbcnearxmylnsuk3xn.jpg",
-          "subtitle": "Drafting the Silhouette"
+          "id": "luminous-reign",
+          "name": "Luminous Reign",
+          "image": "/uploads/media-1785140688328-926092522.jpg",
+          "subtitle": "Drafting the Silhouette",
+          "description": ""
         },
         {
           "id": "auralith",
           "name": "Auralith",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783949683/tezhhomayaa_app/yowhn9iqjqzcjqykbxnq.jpg",
+          "image": "/uploads/media-1785141851484-452486481.jpg",
           "subtitle": "Structured Serenity"
         },
         {
-          "id": "timeless-impressions",
-          "name": "Timeless Impressions",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783949923/tezhhomayaa_app/retblkwojji0yrdcyqqj.jpg",
-          "subtitle": "Enduring Proportions"
+          "id": "astral-dynasty",
+          "name": "Astral Dynasty",
+          "image": "/uploads/media-1785143330166-517828238.jpg",
+          "subtitle": "Enduring Proportions",
+          "description": ""
         }
       ]
     },
@@ -48758,26 +48761,236 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "55e234ef-744d-48e9-94c6-42c51f4573d2": {
+      "eventId": "55e234ef-744d-48e9-94c6-42c51f4573d2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:49:22.348Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "62c61700-12d8-49d5-ac35-2c09a94de139": {
+      "eventId": "62c61700-12d8-49d5-ac35-2c09a94de139",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:00:21.159Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "de6a53ca-bba8-4193-819d-6cd815fa5662": {
+      "eventId": "de6a53ca-bba8-4193-819d-6cd815fa5662",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:10:59.242Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "bf9bd321-f8bd-4123-b168-fb97d341187d": {
+      "eventId": "bf9bd321-f8bd-4123-b168-fb97d341187d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:19:16.436Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "586fddaf-29d4-4d79-9788-5345e7ab1f4e": {
+      "eventId": "586fddaf-29d4-4d79-9788-5345e7ab1f4e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:21:13.198Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "9c1a3d18-4570-42e0-9039-6630b560cace": {
+      "eventId": "9c1a3d18-4570-42e0-9039-6630b560cace",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:21:15.894Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "d11f8625-4163-419c-8f4a-6f951ee008e2": {
+      "eventId": "d11f8625-4163-419c-8f4a-6f951ee008e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:23:21.038Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "09a8cd02-bb34-4cae-95d3-ab0075c5ce9c": {
+      "eventId": "09a8cd02-bb34-4cae-95d3-ab0075c5ce9c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:23:21.129Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "8ba2021b-d0d8-4a73-ade5-93fbc0e52222": {
+      "eventId": "8ba2021b-d0d8-4a73-ade5-93fbc0e52222",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:24:33.509Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "ad39f000-7ebb-461f-9a51-947880076811": {
+      "eventId": "ad39f000-7ebb-461f-9a51-947880076811",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T07:38:27.172Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c0eb35e8-a518-4ef7-8c9b-5e5e2e98e307": {
+      "eventId": "c0eb35e8-a518-4ef7-8c9b-5e5e2e98e307",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T07:50:32.303Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "54aaf2af-a3ae-4e04-a76e-fb1e29bd7978": {
+      "eventId": "54aaf2af-a3ae-4e04-a76e-fb1e29bd7978",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T08:05:57.862Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "7efce7f3-07d0-4777-be0b-1309bd24308f": {
+      "eventId": "7efce7f3-07d0-4777-be0b-1309bd24308f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T08:06:09.090Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "8cbcb73b-89c7-497a-87f0-2ac4075b2491": {
+      "eventId": "8cbcb73b-89c7-497a-87f0-2ac4075b2491",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:09:09.336Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 109,
+      "totalViews": 123,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
-        "mkt_ae": 30,
-        "mkt_in": 9
+        "mkt_ae": 32,
+        "mkt_in": 21
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 39
+        "English": 53
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 109
+        "DESKTOP": 123
       },
       "previewActivity": 0
     }
@@ -48795,7 +49008,7 @@
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-25T10:04:32.551Z",
       "updatedAt": "2026-07-25T10:04:32.551Z",
-      "lastLoginAt": "2026-07-25T11:04:34.776Z"
+      "lastLoginAt": "2026-07-27T07:38:56.922Z"
     }
   },
   "iam_sessions": {
@@ -48995,6 +49208,17 @@
       "lastActivityAt": "2026-07-25T11:04:34.796Z",
       "createdAt": "2026-07-25T11:04:34.796Z",
       "expiresAt": "2026-08-01T11:04:34.796Z",
+      "revokedAt": null
+    },
+    "113aa24d-b66f-4987-b7a3-cd16dfb309a7": {
+      "id": "113aa24d-b66f-4987-b7a3-cd16dfb309a7",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T07:38:56.946Z",
+      "createdAt": "2026-07-27T07:38:56.946Z",
+      "expiresAt": "2026-08-03T07:38:56.946Z",
       "revokedAt": null
     }
   },
