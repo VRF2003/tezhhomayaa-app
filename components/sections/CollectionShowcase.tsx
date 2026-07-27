@@ -251,9 +251,15 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderFullWidthTiles = () => {
     return (
-      <div className="flex flex-col md:flex-row w-full mb-16 group/list">
+      <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:flex-row w-full mb-16 group/list pb-8 md:pb-0">
         {items.map((item: any, i: number) => (
-          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={true} className="flex-1" />
+          <CollectionCard 
+            key={item.id || i} 
+            item={item} 
+            sectionId={sectionId} 
+            isEdgeToEdge={true} 
+            className="w-[85vw] flex-shrink-0 snap-center md:flex-1 md:w-auto md:flex-shrink" 
+          />
         ))}
       </div>
     );
