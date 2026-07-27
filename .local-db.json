@@ -3269,7 +3269,7 @@
           "image": "/uploads/media-1785139450295-160877858.jpg",
           "subtitle": "The Collision of Form and Void",
           "description": "",
-          "mobileImage": "/uploads/media-1785144515609-57762262.jpg"
+          "mobileImage": "/uploads/media-1785148856411-300688454.jpg"
         },
         {
           "id": "luminous-reign",
@@ -49312,7 +49312,8 @@
       "isLocked": false,
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-27T09:58:39.698Z",
-      "updatedAt": "2026-07-27T09:58:39.698Z"
+      "updatedAt": "2026-07-27T09:58:39.698Z",
+      "lastLoginAt": "2026-07-27T10:40:37.467Z"
     }
   },
   "iam_sessions": {
@@ -49545,6 +49546,17 @@
       "lastActivityAt": "2026-07-27T09:55:01.400Z",
       "createdAt": "2026-07-27T09:55:01.400Z",
       "expiresAt": "2026-08-03T09:55:01.400Z",
+      "revokedAt": null
+    },
+    "cb097440-d280-4f8b-8937-49e04834bdc5": {
+      "id": "cb097440-d280-4f8b-8937-49e04834bdc5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T10:40:37.486Z",
+      "createdAt": "2026-07-27T10:40:37.486Z",
+      "expiresAt": "2026-08-03T10:40:37.486Z",
       "revokedAt": null
     }
   },
