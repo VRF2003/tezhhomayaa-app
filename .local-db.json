@@ -3268,27 +3268,31 @@
           "name": "Easy Is Right",
           "image": "/uploads/media-1785139450295-160877858.jpg",
           "subtitle": "The Collision of Form and Void",
-          "description": ""
+          "description": "",
+          "mobileImage": "/uploads/media-1785144515609-57762262.jpg"
         },
         {
           "id": "luminous-reign",
           "name": "Luminous Reign",
           "image": "/uploads/media-1785140688328-926092522.jpg",
           "subtitle": "Drafting the Silhouette",
-          "description": ""
+          "description": "",
+          "mobileImage": "/uploads/media-1785144521714-345637896.jpg"
         },
         {
           "id": "auralith",
           "name": "Auralith",
           "image": "/uploads/media-1785141851484-452486481.jpg",
-          "subtitle": "Structured Serenity"
+          "subtitle": "Structured Serenity",
+          "mobileImage": "/uploads/media-1785144526312-477390429.jpg"
         },
         {
           "id": "astral-dynasty",
           "name": "Astral Dynasty",
           "image": "/uploads/media-1785143330166-517828238.jpg",
           "subtitle": "Enduring Proportions",
-          "description": ""
+          "description": "",
+          "mobileImage": "/uploads/media-1785144530082-770135630.jpg"
         }
       ]
     },
