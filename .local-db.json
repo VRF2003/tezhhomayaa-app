@@ -3567,6 +3567,15 @@
               }
             },
             {
+              "id": "sec_1785146429579",
+              "type": "spacer",
+              "hidden": false,
+              "data": {
+                "heightMobile": 64,
+                "heightDesktop": 120
+              }
+            },
+            {
               "id": "sec_17834149312142",
               "type": "editorial-heading",
               "hidden": false,
@@ -4351,19 +4360,206 @@
               }
             },
             {
+              "id": "sec_1785146373929",
+              "type": "spacer",
+              "hidden": false,
+              "data": {
+                "heightMobile": 64,
+                "heightDesktop": 120
+              }
+            },
+            {
               "id": "sec_17834149312148",
               "type": "image-text",
               "hidden": false,
               "data": {
                 "content": {
                   "heading": "TRANSLUCENCY AND WEIGHT",
-                  "description": "To balance the heavy, protective outerwear that defines the season, we introduced elements of extreme fragility. Silk organza, woven so finely it resembles spun glass, acts as a counterpoint to the dense Melton wools. It is a study in contrasts—vulnerability shielded by armor."
+                  "italicHeading": "",
+                  "subheading": "",
+                  "description": "To balance the heavy, protective outerwear that defines the season, we introduced elements of extreme fragility. Silk organza, woven so finely it resembles spun glass, acts as a counterpoint to the dense Melton wools. It is a study in contrasts—vulnerability shielded by armor.",
+                  "primaryButton": {
+                    "enabled": true,
+                    "label": "Explore",
+                    "url": "#",
+                    "style": "luxury"
+                  },
+                  "secondaryButton": {
+                    "enabled": false,
+                    "label": "Learn More",
+                    "url": "#",
+                    "style": "outline"
+                  },
+                  "tertiaryButton": {
+                    "enabled": false,
+                    "label": "Contact Us",
+                    "url": "#",
+                    "style": "ghost"
+                  }
                 },
                 "layout": {
                   "desktop": {
-                    "align": "right"
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 80
+                  },
+                  "tablet": {
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 80
+                  },
+                  "mobile": {
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 90
                   }
-                }
+                },
+                "style": {
+                  "heading": {
+                    "fontSize": 4,
+                    "fontWeight": 300,
+                    "letterSpacing": 0.05,
+                    "lineHeight": 1.1,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "center"
+                  },
+                  "subheading": {
+                    "fontSize": 1,
+                    "fontWeight": 400,
+                    "letterSpacing": 0.2,
+                    "lineHeight": 1.2,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "right"
+                  },
+                  "description": {
+                    "fontSize": 1.1,
+                    "fontWeight": 300,
+                    "letterSpacing": 0.02,
+                    "lineHeight": 1.6,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "center",
+                    "maxWidth": 800
+                  },
+                  "button": {
+                    "fontSize": 0.75,
+                    "fontWeight": 400,
+                    "padding": "0.6rem 1.4rem",
+                    "borderRadius": 0,
+                    "textColor": "#ffffff",
+                    "backgroundColor": "#1a1a18",
+                    "backgroundOpacity": 100
+                  },
+                  "fontFamily": "var(--font-cormorant, serif)",
+                  "backgroundColor": "transparent",
+                  "borderColor": "transparent",
+                  "borderWidth": 0,
+                  "borderRadius": 0,
+                  "darkOverlay": 0,
+                  "lightOverlay": 0,
+                  "gradientOverlay": false,
+                  "fontSize": 4,
+                  "subheadingFontSize": 1,
+                  "descriptionFontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none"
+                },
+                "media": {
+                  "type": "image",
+                  "desktop": {
+                    "url": "/uploads/media-1785146355623-833265156.jpg",
+                    "width": 1152,
+                    "height": 1536
+                  },
+                  "mobile": {
+                    "url": ""
+                  },
+                  "videoSettings": {
+                    "autoplay": true,
+                    "loop": true,
+                    "muted": true,
+                    "controls": false,
+                    "lazyLoad": true,
+                    "playOnHover": false
+                  }
+                },
+                "animation": {
+                  "type": "slide-up",
+                  "duration": 1.2,
+                  "delay": 0,
+                  "easing": "ease",
+                  "scrollTrigger": true
+                },
+                "advanced": {
+                  "anchorId": "",
+                  "customCssClass": ""
+                },
+                "collectionShowcase": {
+                  "layoutType": {
+                    "desktop": {
+                      "align": "right"
+                    }
+                  },
+                  "maxWidth": "boxed",
+                  "items": []
+                },
+                "splitLayout": {
+                  "ratio": "50-50",
+                  "layout": "image-right"
+                },
+                "contactInfo": {
+                  "fields": []
+                },
+                "contactForm": {
+                  "successMessage": "Thank you for your message. We will be in touch shortly.",
+                  "destinationEmail": "care@tezhhomayaa.com",
+                  "subjects": [
+                    "Client Services",
+                    "Order Support",
+                    "Wholesale",
+                    "Press",
+                    "Collaboration",
+                    "Other"
+                  ]
+                },
+                "socialPresence": {
+                  "links": [
+                    {
+                      "platform": "Instagram",
+                      "url": "#"
+                    },
+                    {
+                      "platform": "Facebook",
+                      "url": "#"
+                    }
+                  ]
+                },
+                "typographyOverrides": {
+                  "enabled": false
+                },
+                "productSequence": [],
+                "includeProducts": [],
+                "excludeProducts": []
               }
             },
             {
@@ -4376,7 +4572,7 @@
               }
             }
           ],
-          "updatedAt": "2026-07-07T14:03:17.922Z"
+          "updatedAt": "2026-07-27T10:01:43.264Z"
         },
         {
           "id": "article_1783415315420",
@@ -48975,26 +49171,131 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "65d6d788-db83-496d-94a1-c9ef115c7ff5": {
+      "eventId": "65d6d788-db83-496d-94a1-c9ef115c7ff5",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:52:36.278Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "09c24e0c-6816-4114-a2f8-3d326e2f65d6": {
+      "eventId": "09c24e0c-6816-4114-a2f8-3d326e2f65d6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:52:49.015Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c5d98639-e882-47c1-a2e0-c22e33ee6179": {
+      "eventId": "c5d98639-e882-47c1-a2e0-c22e33ee6179",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:54:27.258Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b856134c-f1d9-4049-a7d3-f9b1a6a763e2": {
+      "eventId": "b856134c-f1d9-4049-a7d3-f9b1a6a763e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:54:37.881Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "6c8c8de2-f5dd-4195-81f5-2b8b43003e6b": {
+      "eventId": "6c8c8de2-f5dd-4195-81f5-2b8b43003e6b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:58:57.546Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "36a98da9-66c1-41e6-910c-0bac6da824e2": {
+      "eventId": "36a98da9-66c1-41e6-910c-0bac6da824e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T10:01:56.088Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "91c05918-a8e4-499e-80f1-ed8ccca8f5d2": {
+      "eventId": "91c05918-a8e4-499e-80f1-ed8ccca8f5d2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T10:16:33.121Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 123,
+      "totalViews": 130,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
         "mkt_ae": 32,
-        "mkt_in": 21
+        "mkt_in": 28
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 53
+        "English": 60
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 123
+        "DESKTOP": 130
       },
       "previewActivity": 0
     }
@@ -49006,13 +49307,12 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$bGyBTlZNuS7V6dbhSIYy1g$s4lupfjjDxk4rFxvOn22pwrcKgl3V5oSXKikaGpzzN0",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$v27KMnq1mckPcU4AAeXj1Q$sRbJbRlZURw6a8m3J1IkZNzY/+pg9Z162Q9j3IGGXFU",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-25T10:04:32.551Z",
-      "updatedAt": "2026-07-25T10:04:32.551Z",
-      "lastLoginAt": "2026-07-27T07:38:56.922Z"
+      "createdAt": "2026-07-27T09:58:39.698Z",
+      "updatedAt": "2026-07-27T09:58:39.698Z"
     }
   },
   "iam_sessions": {
@@ -49223,6 +49523,28 @@
       "lastActivityAt": "2026-07-27T07:38:56.946Z",
       "createdAt": "2026-07-27T07:38:56.946Z",
       "expiresAt": "2026-08-03T07:38:56.946Z",
+      "revokedAt": null
+    },
+    "9df99da5-e22a-4a40-92bd-fb1e672e6852": {
+      "id": "9df99da5-e22a-4a40-92bd-fb1e672e6852",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T09:40:21.521Z",
+      "createdAt": "2026-07-27T09:40:21.521Z",
+      "expiresAt": "2026-08-03T09:40:21.521Z",
+      "revokedAt": null
+    },
+    "55fc6079-a2cf-4197-ae65-0a9706219c30": {
+      "id": "55fc6079-a2cf-4197-ae65-0a9706219c30",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T09:55:01.400Z",
+      "createdAt": "2026-07-27T09:55:01.400Z",
+      "expiresAt": "2026-08-03T09:55:01.400Z",
       "revokedAt": null
     }
   },

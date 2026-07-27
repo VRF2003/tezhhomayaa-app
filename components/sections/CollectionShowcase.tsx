@@ -217,9 +217,17 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
 
   const renderGrid = (colsClass: string, isEdgeToEdge: boolean = false) => {
     return (
-      <div className={`grid grid-cols-1 md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-0" : "gap-x-6 gap-y-16"} w-full group/list`}>
+      <div className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-2 ${colsClass} ${isEdgeToEdge ? "gap-4 md:gap-0" : "gap-4 md:gap-x-6 md:gap-y-16"} w-full group/list pb-8 md:pb-0`}>
         {items.map((item: any, i: number) => (
-          <CollectionCard key={item.id || i} item={item} sectionId={sectionId} isEdgeToEdge={isEdgeToEdge} delay={i * 0.15} aspectRatio={isEdgeToEdge ? "auto" : "3/4"} className={isEdgeToEdge ? "h-[60vh] md:h-[80vh]" : "h-full"} />
+          <CollectionCard 
+            key={item.id || i} 
+            item={item} 
+            sectionId={sectionId} 
+            isEdgeToEdge={isEdgeToEdge} 
+            delay={i * 0.15} 
+            aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
+            className={`w-[85vw] flex-shrink-0 snap-center md:w-auto md:flex-shrink ${isEdgeToEdge ? "h-[60vh] md:h-[80vh]" : "h-full"}`} 
+          />
         ))}
       </div>
     );

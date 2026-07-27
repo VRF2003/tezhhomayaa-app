@@ -152,7 +152,7 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
         )}
 
         {layout === "carousel" && (
-          <div className="flex overflow-x-auto gap-8 w-full snap-x snap-mandatory pb-8 hide-scrollbar">
+          <div className={`flex overflow-x-auto gap-8 w-full snap-x snap-mandatory pb-8 hide-scrollbar ${displayArticles.length <= 3 ? "md:justify-center" : ""}`}>
             {displayArticles.map(article => {
               const cardImg = article.thumbnailImage?.url || article.heroImage?.url;
               return (
