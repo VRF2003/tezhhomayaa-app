@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import UniversalMediaRenderer from "@/components/sections/UniversalMediaRenderer";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -207,6 +207,14 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
   const maxWidth = norm.collectionShowcase?.maxWidth || "boxed";
   const items = norm.collectionShowcase?.items || [];
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth * 0.8;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: "smooth" });
+    }
+  };
+
   if (items.length === 0) return null;
 
   const containerClass = maxWidth === "boxed" 
@@ -218,23 +226,36 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
   const renderGrid = (colsClass: string, isEdgeToEdge: boolean = false) => {
     return (
       <div className="flex flex-col group/list w-full">
-        {/* Mobile View: Swipeable flex row */}
-        <div className="md:hidden flex items-center justify-end w-full mb-4 px-6 gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">
-          <span>Swipe to explore</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </div>
-        <div className={`md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-8 w-full`}>
-          {items.map((item: any, i: number) => (
-            <CollectionCard 
-              key={item.id || i} 
-              item={item} 
-              sectionId={sectionId} 
-              isEdgeToEdge={isEdgeToEdge} 
-              delay={i * 0.15} 
-              aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
-              className={`w-[85vw] flex-shrink-0 snap-center ${isEdgeToEdge ? "h-[60vh]" : "h-full"}`} 
-            />
-          ))}
+        {/* Mobile View: Swipeable flex row with side arrows instead of text */}
+        <div className="md:hidden relative w-full mt-4">
+          <button 
+            onClick={() => scroll('left')} 
+            className="absolute left-2 top-[40%] -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm text-black opacity-90 hover:opacity-100"
+            aria-label="Scroll left"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button 
+            onClick={() => scroll('right')} 
+            className="absolute right-2 top-[40%] -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm text-black opacity-90 hover:opacity-100"
+            aria-label="Scroll right"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          
+          <div ref={scrollRef} className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 pb-8 px-4 w-full`}>
+            {items.map((item: any, i: number) => (
+              <CollectionCard 
+                key={item.id || i} 
+                item={item} 
+                sectionId={sectionId} 
+                isEdgeToEdge={isEdgeToEdge} 
+                delay={i * 0.15} 
+                aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
+                className={`w-[85vw] flex-shrink-0 snap-center ${isEdgeToEdge ? "h-[60vh]" : "h-full"}`} 
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop View: Original Grid (Hidden on mobile) */}
@@ -274,21 +295,34 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
   const renderFullWidthTiles = () => {
     return (
       <div className="flex flex-col group/list w-full mb-16">
-        {/* Mobile View: Swipeable flex row */}
-        <div className="md:hidden flex items-center justify-end w-full mb-4 px-6 gap-2 text-[10px] uppercase tracking-[0.2em] text-gray-400">
-          <span>Swipe to explore</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </div>
-        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 w-full gap-4">
-          {items.map((item: any, i: number) => (
-            <CollectionCard 
-              key={item.id || i} 
-              item={item} 
-              sectionId={sectionId} 
-              isEdgeToEdge={true} 
-              className="w-[85vw] flex-shrink-0 snap-center" 
-            />
-          ))}
+        {/* Mobile View: Swipeable flex row with side arrows instead of text */}
+        <div className="md:hidden relative w-full mt-4">
+          <button 
+            onClick={() => scroll('left')} 
+            className="absolute left-2 top-[40%] -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm text-black opacity-90 hover:opacity-100"
+            aria-label="Scroll left"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button 
+            onClick={() => scroll('right')} 
+            className="absolute right-2 top-[40%] -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-sm text-black opacity-90 hover:opacity-100"
+            aria-label="Scroll right"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+          
+          <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 w-full gap-4">
+            {items.map((item: any, i: number) => (
+              <CollectionCard 
+                key={item.id || i} 
+                item={item} 
+                sectionId={sectionId} 
+                isEdgeToEdge={true} 
+                className="w-[85vw] flex-shrink-0 snap-center" 
+              />
+            ))}
+          </div>
         </div>
 
         {/* Desktop View: Original Full Width Row (Hidden on mobile) */}

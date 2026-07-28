@@ -1229,14 +1229,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1785212622609-290068118.jpg",
-                        "width": 1548,
-                        "height": 2065
+                        "url": "/uploads/media-1785228588345-526453253.jpg",
+                        "width": 1380,
+                        "height": 1840
                       },
                       "mobile": {
-                        "url": "/uploads/media-1785212551754-797703435.jpg",
-                        "width": 1792,
-                        "height": 2400
+                        "url": "/uploads/media-1785228468366-707425253.jpg",
+                        "width": 1380,
+                        "height": 1840
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -2079,12 +2079,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784976346049-66638771.jpg",
-                        "width": 1920,
-                        "height": 1080
+                        "url": "/uploads/media-1785231245400-803602696.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": ""
+                        "url": "/uploads/media-1785231245412-449456336.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -2266,12 +2268,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784976346084-162996435.jpg",
-                        "width": 1920,
-                        "height": 1080
+                        "url": "/uploads/media-1785232258010-98347090.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": ""
+                        "url": "/uploads/media-1785232258026-593756021.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -7300,14 +7304,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/uploads/media-1785219601323-817563068.jpg",
+              "url": "/uploads/media-1785228633239-28402622.jpg",
               "width": 2752,
               "height": 1536
             },
             "mobile": {
-              "url": "/uploads/media-1785221579476-534078700.jpg",
-              "width": 1548,
-              "height": 2065
+              "url": "/uploads/media-1785228633273-983078993.jpg",
+              "width": 1380,
+              "height": 1840
             },
             "videoSettings": {
               "autoplay": true,
@@ -7353,11 +7357,11 @@
           "style": {
             "heading": {
               "fontSize": 4,
-              "fontWeight": 300,
+              "fontWeight": 500,
               "letterSpacing": 0.05,
               "lineHeight": 1.1,
               "textColor": "#ffffff",
-              "textShadow": "soft",
+              "textShadow": "none",
               "align": "center"
             },
             "subheading": {
@@ -7674,14 +7678,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/uploads/1781355206265-Top___Shirt_W.jpg",
-              "width": 3121,
-              "height": 2330
+              "url": "/uploads/media-1785225964384-725392075.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/uploads/1781355206310-Top___Shirt_W.jpg",
-              "width": 3121,
-              "height": 2330
+              "url": "/uploads/media-1785225805363-700863699.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -8044,14 +8048,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783930047/tezhhomayaa_app/yhfzvlbwykd3dvmsshfp.jpg",
-              "width": 1920,
-              "height": 1080
+              "url": "/uploads/media-1785227300054-435447939.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/images/collection-banner.jpg",
-              "width": 5504,
-              "height": 3072
+              "url": "/uploads/media-1785226543476-528029265.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -8129,7 +8133,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -8197,7 +8202,10 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/skirts": {
           "content": {
@@ -49766,26 +49774,176 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "78696166-f6de-4e8f-992d-7f65f3fa6d75": {
+      "eventId": "78696166-f6de-4e8f-992d-7f65f3fa6d75",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:29:09.291Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "7f794e82-bcd2-44aa-9f1f-cc220257a0a0": {
+      "eventId": "7f794e82-bcd2-44aa-9f1f-cc220257a0a0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:47:21.117Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "1165c709-46b9-497f-b9b3-ad05f6bbe99b": {
+      "eventId": "1165c709-46b9-497f-b9b3-ad05f6bbe99b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:49:36.134Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "c2c76fdc-22dd-400d-bbad-923a2c83a6f7": {
+      "eventId": "c2c76fdc-22dd-400d-bbad-923a2c83a6f7",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:49:51.041Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "f3ab4e67-6ff2-46da-a326-dc4c200f4ce2": {
+      "eventId": "f3ab4e67-6ff2-46da-a326-dc4c200f4ce2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:24:53.401Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "8663f173-17da-40fa-b554-7cd25febc15f": {
+      "eventId": "8663f173-17da-40fa-b554-7cd25febc15f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:33:49.142Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "5399346e-5348-458d-81f1-e6f9319a91e3": {
+      "eventId": "5399346e-5348-458d-81f1-e6f9319a91e3",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:34:10.101Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "081188ca-d850-4fef-9d00-0b2b5d599a2f": {
+      "eventId": "081188ca-d850-4fef-9d00-0b2b5d599a2f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:34:27.672Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "16af69e8-5dc2-4183-9999-c35ec9e23deb": {
+      "eventId": "16af69e8-5dc2-4183-9999-c35ec9e23deb",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:51:03.401Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "08583282-1e3f-46db-b327-56dd2c7abbe0": {
+      "eventId": "08583282-1e3f-46db-b327-56dd2c7abbe0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T10:35:54.698Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 149,
+      "totalViews": 159,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
-        "mkt_ae": 47,
+        "mkt_ae": 57,
         "mkt_in": 32
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 79
+        "English": 89
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 149
+        "DESKTOP": 159
       },
       "previewActivity": 0
     }
@@ -49803,7 +49961,7 @@
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-28T07:11:44.150Z",
       "updatedAt": "2026-07-28T07:11:44.150Z",
-      "lastLoginAt": "2026-07-28T07:21:58.544Z"
+      "lastLoginAt": "2026-07-28T08:47:17.541Z"
     }
   },
   "iam_sessions": {
@@ -50113,6 +50271,17 @@
       "lastActivityAt": "2026-07-28T07:21:58.569Z",
       "createdAt": "2026-07-28T07:21:58.569Z",
       "expiresAt": "2026-08-04T07:21:58.569Z",
+      "revokedAt": null
+    },
+    "4922d0c7-0e44-4563-80f8-7dd91c89152c": {
+      "id": "4922d0c7-0e44-4563-80f8-7dd91c89152c",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T08:47:17.568Z",
+      "createdAt": "2026-07-28T08:47:17.568Z",
+      "expiresAt": "2026-08-04T08:47:17.568Z",
       "revokedAt": null
     }
   },
