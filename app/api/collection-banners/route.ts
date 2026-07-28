@@ -17,12 +17,12 @@ export async function GET() {
       savedData = data;
     }
     
-    // Merge saved data with fallbacks for ALL categories
-    const mergedData: any = {};
+    // Keep all saved data
+    const mergedData: any = { ...savedData };
+    
+    // Merge fallbacks for legacy static categories ONLY if they don't exist in saved data
     for (const key of Object.keys(categoryMeta)) {
-      if (savedData[key]) {
-        mergedData[key] = savedData[key];
-      } else {
+      if (!mergedData[key]) {
         const meta = categoryMeta[key];
         mergedData[key] = normalizeSectionData({
           content: {
