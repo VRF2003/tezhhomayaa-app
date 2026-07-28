@@ -828,7 +828,8 @@
                         "padding": "0.6rem 1.4rem",
                         "borderRadius": 0,
                         "textColor": "#ffffff",
-                        "backgroundColor": "#1a1a18"
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
                       },
                       "fontFamily": "var(--font-cormorant, serif)",
                       "backgroundColor": "transparent",
@@ -850,14 +851,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783404516/tezhhomayaa_app/zjdvjugekuykn4cosixb.jpg",
+                        "url": "/uploads/media-1785212551602-907062392.jpg",
                         "width": 2752,
                         "height": 1536
                       },
                       "mobile": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912303/tezhhomayaa_app/in5xc40u37omosvkcmci.jpg",
-                        "width": 1400,
-                        "height": 640
+                        "url": "/uploads/media-1785212551634-87894521.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -1016,7 +1017,8 @@
                         "padding": "0.6rem 1.4rem",
                         "borderRadius": 0,
                         "textColor": "#000000",
-                        "backgroundColor": "#000000"
+                        "backgroundColor": "#000000",
+                        "backgroundOpacity": 100
                       },
                       "fontFamily": "var(--font-cormorant, serif)",
                       "backgroundColor": "transparent",
@@ -1038,14 +1040,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907228/tezhhomayaa_app/yblekeb5rup4uidwyiie.jpg",
-                        "width": 1612,
-                        "height": 2160
+                        "url": "/uploads/media-1785212551675-576519302.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912305/tezhhomayaa_app/dqxmtfydvwayptcj8gmq.jpg",
-                        "width": 1400,
-                        "height": 640
+                        "url": "/uploads/media-1785212551706-613566529.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -1227,12 +1229,12 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784907722025-666919014.jpg",
-                        "width": 1792,
-                        "height": 2400
+                        "url": "/uploads/media-1785212622609-290068118.jpg",
+                        "width": 1548,
+                        "height": 2065
                       },
                       "mobile": {
-                        "url": "/uploads/media-1784907722049-703925743.jpg",
+                        "url": "/uploads/media-1785212551754-797703435.jpg",
                         "width": 1792,
                         "height": 2400
                       },
@@ -49366,26 +49368,86 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "62bb16d8-464b-4a7d-98e1-70bcce1dfe7c": {
+      "eventId": "62bb16d8-464b-4a7d-98e1-70bcce1dfe7c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:04:20.109Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "97368719-87ea-406c-8c60-9dc6de3d8cad": {
+      "eventId": "97368719-87ea-406c-8c60-9dc6de3d8cad",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:04:42.769Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "2d2745b4-190b-4047-9dd7-d8fd2827197d": {
+      "eventId": "2d2745b4-190b-4047-9dd7-d8fd2827197d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:22:37.748Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "c54d1249-397f-4622-9201-fa0b238edd3f": {
+      "eventId": "c54d1249-397f-4622-9201-fa0b238edd3f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:23:45.348Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 136,
+      "totalViews": 140,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
-        "mkt_ae": 34,
+        "mkt_ae": 38,
         "mkt_in": 32
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 66
+        "English": 70
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 136
+        "DESKTOP": 140
       },
       "previewActivity": 0
     }
@@ -49403,7 +49465,7 @@
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-27T12:25:02.480Z",
       "updatedAt": "2026-07-27T12:25:02.480Z",
-      "lastLoginAt": "2026-07-27T13:51:03.938Z"
+      "lastLoginAt": "2026-07-28T04:03:58.224Z"
     }
   },
   "iam_sessions": {
@@ -49680,6 +49742,17 @@
       "lastActivityAt": "2026-07-27T13:51:03.966Z",
       "createdAt": "2026-07-27T13:51:03.966Z",
       "expiresAt": "2026-08-03T13:51:03.966Z",
+      "revokedAt": null
+    },
+    "8be2c4ec-e187-4b81-9f36-998354dc0aa5": {
+      "id": "8be2c4ec-e187-4b81-9f36-998354dc0aa5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T04:03:58.237Z",
+      "createdAt": "2026-07-28T04:03:58.237Z",
+      "expiresAt": "2026-08-04T04:03:58.237Z",
       "revokedAt": null
     }
   },
