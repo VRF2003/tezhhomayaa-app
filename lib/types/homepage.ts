@@ -88,9 +88,9 @@ export type UniversalSectionData = {
     description: string;
     description2?: string;
     description3?: string;
-    primaryButton: { enabled: boolean; label: string; url: string; style: string };
-    secondaryButton: { enabled: boolean; label: string; url: string; style: string };
-    tertiaryButton: { enabled: boolean; label: string; url: string; style: string };
+    primaryButton: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
+    secondaryButton: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
+    tertiaryButton: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
   };
   layout: {
     desktop: { x: number; y: number; width: number; height: number; align: string; padding: string; margin: string; textWidth: number };
@@ -195,9 +195,9 @@ export type UniversalSectionData = {
   width?: number;
   overlayStrength?: number;
   gradientOverlay?: boolean;
-  button?: { enabled: boolean; label: string; url: string; style: string };
-  primaryButton?: { enabled: boolean; label: string; url: string; style: string };
-  secondaryButton?: { enabled: boolean; label: string; url: string; style: string };
+  button?: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
+  primaryButton?: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
+  secondaryButton?: { enabled: boolean; label: string; url: string; style: string; bgColor?: string; textColor?: string };
   buttonStyle?: string;
 
   // Specific extensions
@@ -295,7 +295,9 @@ export function normalizeSectionData(data: any): UniversalSectionData {
         enabled: d.content?.primaryButton?.enabled ?? d.button?.enabled ?? d.primaryButton?.enabled ?? true,
         label: d.content?.primaryButton?.label ?? d.button?.label ?? d.primaryButton?.label ?? "Explore",
         url: (d.content?.primaryButton?.url && d.content?.primaryButton?.url !== "#" ? d.content.primaryButton.url : null) ?? (d.button?.url && d.button?.url !== "#" ? d.button.url : null) ?? (d.primaryButton?.url && d.primaryButton?.url !== "#" ? d.primaryButton.url : null) ?? d.url ?? "#",
-        style: d.content?.primaryButton?.style ?? d.button?.style ?? d.primaryButton?.style ?? d.buttonStyle ?? "luxury"
+        style: d.content?.primaryButton?.style ?? d.button?.style ?? d.primaryButton?.style ?? d.buttonStyle ?? "luxury",
+        bgColor: d.content?.primaryButton?.bgColor ?? d.button?.bgColor ?? d.primaryButton?.bgColor,
+        textColor: d.content?.primaryButton?.textColor ?? d.button?.textColor ?? d.primaryButton?.textColor
       },
       secondaryButton: {
         enabled: d.content?.secondaryButton?.enabled ?? d.secondaryButton?.enabled ?? false,
