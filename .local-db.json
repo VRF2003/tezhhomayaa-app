@@ -49961,7 +49961,7 @@
       "failedLoginAttempts": 0,
       "createdAt": "2026-07-28T07:11:44.150Z",
       "updatedAt": "2026-07-28T07:11:44.150Z",
-      "lastLoginAt": "2026-07-28T08:47:17.541Z"
+      "lastLoginAt": "2026-07-29T08:51:46.907Z"
     }
   },
   "iam_sessions": {
@@ -50282,6 +50282,28 @@
       "lastActivityAt": "2026-07-28T08:47:17.568Z",
       "createdAt": "2026-07-28T08:47:17.568Z",
       "expiresAt": "2026-08-04T08:47:17.568Z",
+      "revokedAt": null
+    },
+    "7657be7a-33ae-4b2c-bc00-2aa12f9f4440": {
+      "id": "7657be7a-33ae-4b2c-bc00-2aa12f9f4440",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T11:24:53.273Z",
+      "createdAt": "2026-07-28T11:24:53.273Z",
+      "expiresAt": "2026-08-04T11:24:53.273Z",
+      "revokedAt": null
+    },
+    "738b601c-b939-41e5-aaed-579c7b5e7aa6": {
+      "id": "738b601c-b939-41e5-aaed-579c7b5e7aa6",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-29T08:51:46.930Z",
+      "createdAt": "2026-07-29T08:51:46.930Z",
+      "expiresAt": "2026-08-05T08:51:46.930Z",
       "revokedAt": null
     }
   },
