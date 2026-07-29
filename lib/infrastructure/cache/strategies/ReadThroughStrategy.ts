@@ -18,10 +18,13 @@ export class ReadThroughStrategy {
     
     try {
       // In development, Next.js worker threads isolate memory singletons.
-      // We bypass the memory cache to ensure fresh reads from the file-backed driver.
+      // In Vercel serverless, memory is isolated across instances, causing stale reads.
+      // We bypass the memory cache to ensure fresh reads from the file-backed or remote driver.
       const isDev = process.env.NODE_ENV !== "production";
+      const isVercel = !!process.env.VERCEL;
+      
       let cached = null;
-      if (!isDev) {
+      if (!isDev && !isVercel) {
         cached = await provider.get<T>(key);
       }
       

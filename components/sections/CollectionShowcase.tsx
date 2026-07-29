@@ -312,14 +312,14 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
           
-          <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 w-full gap-4">
+          <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 md:px-0 w-full gap-4 items-center sm:justify-center md:justify-start">
             {items.map((item: any, i: number) => (
               <CollectionCard 
                 key={item.id || i} 
                 item={item} 
                 sectionId={sectionId} 
                 isEdgeToEdge={true} 
-                className="w-[85vw] flex-shrink-0 snap-center" 
+                className="w-[85vw] sm:w-[60vw] md:w-auto flex-shrink-0 snap-center" 
               />
             ))}
           </div>
