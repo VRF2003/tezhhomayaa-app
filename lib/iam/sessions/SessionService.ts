@@ -17,7 +17,7 @@ export class SessionService {
       device,
       browser,
       ip,
-      location,
+      location: location || "",
       lastActivityAt: now,
       createdAt: now,
       expiresAt,

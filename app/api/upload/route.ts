@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { writeFileSync, mkdirSync, existsSync } from "fs";
-import { join } from "path";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "@/lib/firebase";
 import { Observability } from "@/lib/infrastructure/observability";
 
 export const maxDuration = 60; 
@@ -15,27 +15,25 @@ export async function POST(req: NextRequest) {
     }
 
     const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Save locally
-    const uploadsDir = join(process.cwd(), "public", "uploads");
-    if (!existsSync(uploadsDir)) {
-      mkdirSync(uploadsDir, { recursive: true });
-    }
+    const buffer = new Uint8Array(bytes);
 
     const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
     const originalName = file.name || "upload.png";
     const extension = originalName.split('.').pop() || 'png';
     const filename = `media-${uniqueSuffix}.${extension}`;
     
-    const filePath = join(uploadsDir, filename);
-    writeFileSync(filePath, buffer);
-
-    const url = `/uploads/${filename}`;
+    // Upload to Firebase Storage
+    const storageRef = ref(storage, `uploads/${filename}`);
+    
+    const snapshot = await uploadBytes(storageRef, buffer, {
+      contentType: file.type || 'image/jpeg',
+    });
+    
+    const url = await getDownloadURL(snapshot.ref);
 
     return NextResponse.json({ success: true, url });
   } catch (err: any) {
-    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Local Upload Error:", err);
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Firebase Upload Error:", err);
     return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }

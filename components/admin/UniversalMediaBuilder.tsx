@@ -111,10 +111,22 @@ export function UniversalMediaBuilder({
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Dimensions:</strong> {dDim || (media.desktop.width ? `${media.desktop.width} × ${media.desktop.height}` : "Unknown")}</div>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Size:</strong> {formatBytes(dSize || media.desktop.sizeBytes || 0)}</div>
             </div>
-            <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
-              {displayDesktopUrl ? "Replace" : "Upload"}
-              <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onDesktopFileChange(e.target.files[0]) }} style={{ display: "none" }} />
-            </label>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <input 
+                type="text" 
+                placeholder="Or paste URL here..." 
+                value={pendingDesktopFile ? "" : (media.desktop.url || "")}
+                onChange={(e) => {
+                  onMediaChange({ ...media, desktop: { ...media.desktop, url: e.target.value } });
+                  onDesktopFileChange(null);
+                }}
+                style={{ padding: "0.4rem", fontSize: "0.7rem", border: "1px solid #ccc9c4", borderRadius: "2px", width: "180px" }}
+              />
+              <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
+                {displayDesktopUrl ? "Replace" : "Upload"}
+                <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onDesktopFileChange(e.target.files[0]) }} style={{ display: "none" }} />
+              </label>
+            </div>
           </div>
         </div>
 
@@ -142,10 +154,22 @@ export function UniversalMediaBuilder({
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Dimensions:</strong> {mDim || (media.mobile.width ? `${media.mobile.width} × ${media.mobile.height}` : "Unknown")}</div>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Size:</strong> {formatBytes(mSize || media.mobile.sizeBytes || 0)}</div>
             </div>
-            <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
-              {displayMobileUrl ? "Replace" : "Upload"}
-              <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onMobileFileChange(e.target.files[0]) }} style={{ display: "none" }} />
-            </label>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+              <input 
+                type="text" 
+                placeholder="Or paste URL here..." 
+                value={pendingMobileFile ? "" : (media.mobile.url || "")}
+                onChange={(e) => {
+                  onMediaChange({ ...media, mobile: { ...media.mobile, url: e.target.value } });
+                  onMobileFileChange(null);
+                }}
+                style={{ padding: "0.4rem", fontSize: "0.7rem", border: "1px solid #ccc9c4", borderRadius: "2px", width: "180px" }}
+              />
+              <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
+                {displayMobileUrl ? "Replace" : "Upload"}
+                <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onMobileFileChange(e.target.files[0]) }} style={{ display: "none" }} />
+              </label>
+            </div>
           </div>
         </div>
 
