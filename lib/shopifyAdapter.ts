@@ -24,6 +24,7 @@ export function adaptShopifyProduct(node: any): Product {
   // Most specific tags first so products with multiple tags get classified correctly
   if (node.tags?.some((t: string) => t.toLowerCase().includes('dress') || t.toLowerCase().includes('jumpsuit'))) itemCategory = 'dresses-jumpsuits';
   else if (node.tags?.some((t: string) => t.toLowerCase().includes('coat') || t.toLowerCase().includes('jacket') || t.toLowerCase().includes('hoodie'))) itemCategory = 'coats-jackets';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('skirt'))) itemCategory = 'skirts';
   else if (node.tags?.some((t: string) => t.includes('trouser') || t.includes('short') || t.includes('bottom') || t.includes('pant'))) itemCategory = gender === 'men' ? 'trousers-shorts' : 'pants-shorts';
   else if (node.tags?.some((t: string) => t.includes('polo') || t.includes('t_shirt'))) itemCategory = 't-shirts-polos';
   else if (node.tags?.some((t: string) => t.includes('shirt') || t.includes('top'))) itemCategory = gender === 'men' ? 'shirts' : 'tops-shirts';
