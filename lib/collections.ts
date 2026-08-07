@@ -92,7 +92,7 @@ export const categoryMeta: Record<string, CategoryMeta> = {
   bags: { title: "Bags", subtitle: "The Signature Collection", bannerImage: "/images/category-bags.jpg", description: "Architecturally precise. Every bag is a study in proportion and restraint." },
 };
 
-import { shopifyFetch, getProductsQuery, getProductByHandleQuery } from '@/lib/shopify';
+import { shopifyFetch, getProductsQuery, getProductByHandleQuery, getCollectionByHandleQuery } from '@/lib/shopify';
 import { adaptShopifyProducts, adaptShopifyProduct } from '@/lib/shopifyAdapter';
 import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
 import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
@@ -227,7 +227,7 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
   const normalize = (str: string) => (str || "").toLowerCase().replace(/[^a-z0-9\/]+/g, '');
   const normKey = normalize(categoryKey);
 
-  return merged.filter((p) => {
+  const filtered = merged.filter((p) => {
     const pCat = normalize(p.category);
     
     // 1. Exact match
@@ -245,6 +245,53 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     
     return false;
   });
+
+  // Attempt to sort based on live Shopify Collection order
+  try {
+    const lastSegment = categoryKey.split('/').pop() || '';
+    
+    // Map our category keys to known live website Shopify collection handles
+    const handleMap: Record<string, string> = {
+      'tops-shirts': 'tops-and-shirts',
+      'dresses-jumpsuits': 'dresses-and-jumpsuits',
+      'pants-shorts': 'pants-and-shorts',
+      't-shirts-polos': 't-shirts-and-polos',
+      'coats-jackets': 'coats-and-jackets',
+      'tracksuits-sweatshirts': 'tracksuit-and-sweatshirts',
+      'trousers-shorts': 'trousers-and-shorts',
+      'women': 'women',
+      'men': 'men',
+      'skirts': 'skirts',
+      'shirts': 'shirts'
+    };
+
+    const shopifyHandle = handleMap[lastSegment] || lastSegment;
+    
+    const collectionData = await shopifyFetch({
+      query: getCollectionByHandleQuery,
+      variables: { handle: shopifyHandle }
+    });
+
+    if (collectionData?.collection?.products?.edges) {
+      const orderedIds = collectionData.collection.products.edges.map((e: any) => e.node.id);
+      if (orderedIds.length > 0) {
+        filtered.sort((a, b) => {
+          const idxA = orderedIds.indexOf(a.id);
+          const idxB = orderedIds.indexOf(b.id);
+          // If neither found in Shopify collection, keep original order
+          if (idxA === -1 && idxB === -1) return 0;
+          // If a is not in collection but b is, push a to bottom
+          if (idxA === -1) return 1;
+          if (idxB === -1) return -1;
+          return idxA - idxB;
+        });
+      }
+    }
+  } catch (e) {
+    console.error("Failed to apply Shopify collection sort order:", e);
+  }
+
+  return filtered;
 }
 
 // Alias kept for any legacy consumer — delegates to the dynamic function.
