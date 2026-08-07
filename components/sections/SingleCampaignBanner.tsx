@@ -204,7 +204,7 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                 style={{
                   fontSize: `${norm.style.button.fontSize}rem`,
                   ...getButtonStyle(
-                    norm.content.primaryButton?.style || norm.style.buttonStyle || "filled", 
+                    (norm.content.primaryButton as any)?.style || (norm.style as any).buttonStyle || "filled", 
                     norm.style.button.textColor || "#ffffff",
                     norm.style.button.backgroundColor,
                     norm.style.button.textColor
@@ -232,14 +232,14 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                 style={{
                   fontSize: `${norm.style.button.fontSize}rem`,
                   ...getButtonStyle(
-                    norm.content.secondaryButton?.style || norm.style.buttonStyle || "filled", 
+                    (norm.content.secondaryButton as any)?.style || (norm.style as any).buttonStyle || "filled", 
                     norm.style.button.textColor || "#ffffff",
                     norm.style.button.backgroundColor,
                     norm.style.button.textColor
                   ),
                   pointerEvents: "auto",
                   borderRadius: `${norm.style.button.borderRadius}px`,
-                  opacity: (norm.content.secondaryButton?.style || norm.style.buttonStyle) === "luxury" ? 0.6 : undefined
+                  opacity: ((norm.content.secondaryButton as any)?.style || (norm.style as any).buttonStyle) === "luxury" ? 0.6 : undefined
                 }}
                 draggable={false}
               >
