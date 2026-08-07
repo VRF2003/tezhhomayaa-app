@@ -44,11 +44,20 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
   const displayX = localPos?.x ?? layout.x;
   const displayY = localPos?.y ?? layout.y;
 
-  const buttonStyleMap: any = {
-    filled: "bg-black text-white px-8 py-3 hover:bg-black/80",
-    outline: "border border-black px-8 py-3 hover:bg-black hover:text-white",
-    ghost: "px-8 py-3 hover:bg-black/5",
-    luxury: "border-b border-black pb-1 hover:text-brand hover:border-brand"
+  const getButtonStyle = (styleType: string, color: string, customBg?: string, customText?: string) => {
+    const isWhiteText = color === "#ffffff" || color.toLowerCase() === "#fff";
+    const contrastColor = isWhiteText ? "#1a1a18" : "#ffffff";
+    
+    const bg = customBg || (styleType === "filled" ? color : "transparent");
+    const text = customText || (styleType === "filled" ? contrastColor : color);
+    
+    switch(styleType) {
+      case "filled": return { background: bg, color: text, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "outline": return { background: bg, color: text, border: `1px solid ${text}`, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "ghost": return { background: bg, color: text, padding: "0.6rem 1.4rem", textDecoration: "none", transition: "opacity 0.2s ease" };
+      case "luxury":
+      default: return { borderBottom: `1px solid ${text}`, paddingBottom: "3px", textDecoration: "none", color: text, transition: "opacity 0.2s ease" };
+    }
   };
 
   const mAuto = norm.layout.mobile.height === 0;
@@ -191,29 +200,17 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
             return (
               <Link 
                 href={href} 
-                className="hover:opacity-80 transition-opacity"
+                className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70 transition-opacity`}
                 style={{
                   fontSize: `${norm.style.button.fontSize}rem`,
-                  fontWeight: norm.style.button.fontWeight,
-                  padding: norm.style.button.padding,
+                  ...getButtonStyle(
+                    norm.content.primaryButton?.style || norm.style.buttonStyle || "filled", 
+                    norm.style.button.textColor || "#ffffff",
+                    norm.style.button.backgroundColor,
+                    norm.style.button.textColor
+                  ),
+                  pointerEvents: "auto",
                   borderRadius: `${norm.style.button.borderRadius}px`,
-                  color: norm.style.button.textColor,
-                  backgroundColor: (() => {
-                    const hex = norm.style.button.backgroundColor.replace('#', '');
-                    if (hex.length !== 6 && hex.length !== 3) return norm.style.button.backgroundColor;
-                    const fullHex = hex.length === 3 ? hex.split('').map(x => x + x).join('') : hex;
-                    const r = parseInt(fullHex.substring(0, 2), 16);
-                    const g = parseInt(fullHex.substring(2, 4), 16);
-                    const b = parseInt(fullHex.substring(4, 6), 16);
-                    const opacity = (norm.style.button.backgroundOpacity ?? 100) / 100;
-                    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-                  })(),
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  border: "1px solid currentColor",
-                  display: "inline-block",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase"
                 }}
                 draggable={false}
               >
@@ -231,29 +228,18 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
             return (
               <Link 
                 href={href} 
-                className="hover:opacity-80 transition-opacity"
+                className={`inline-block text-xs tracking-[0.2em] uppercase mt-2 md:mt-0 hover:opacity-70 transition-opacity`}
                 style={{
                   fontSize: `${norm.style.button.fontSize}rem`,
-                  fontWeight: norm.style.button.fontWeight,
-                  padding: norm.style.button.padding,
+                  ...getButtonStyle(
+                    norm.content.secondaryButton?.style || norm.style.buttonStyle || "filled", 
+                    norm.style.button.textColor || "#ffffff",
+                    norm.style.button.backgroundColor,
+                    norm.style.button.textColor
+                  ),
+                  pointerEvents: "auto",
                   borderRadius: `${norm.style.button.borderRadius}px`,
-                  color: norm.style.button.textColor,
-                  backgroundColor: (() => {
-                    const hex = norm.style.button.backgroundColor.replace('#', '');
-                    if (hex.length !== 6 && hex.length !== 3) return norm.style.button.backgroundColor;
-                    const fullHex = hex.length === 3 ? hex.split('').map(x => x + x).join('') : hex;
-                    const r = parseInt(fullHex.substring(0, 2), 16);
-                    const g = parseInt(fullHex.substring(2, 4), 16);
-                    const b = parseInt(fullHex.substring(4, 6), 16);
-                    const opacity = (norm.style.button.backgroundOpacity ?? 100) / 100;
-                    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-                  })(),
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
-                  border: "1px solid currentColor",
-                  display: "inline-block",
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase"
+                  opacity: (norm.content.secondaryButton?.style || norm.style.buttonStyle) === "luxury" ? 0.6 : undefined
                 }}
                 draggable={false}
               >
