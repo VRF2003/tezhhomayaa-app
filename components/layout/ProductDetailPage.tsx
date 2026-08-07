@@ -582,9 +582,9 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               {product.name}
             </h1>
             <p style={{
-              fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "0.95rem",
-              fontWeight: 500, letterSpacing: "0.03em", color: "#1a1a18", margin: "0 0 2rem",
+              fontFamily: "var(--font-jost, sans-serif)",
+              fontSize: "1rem",
+              fontWeight: 400, letterSpacing: "0.04em", color: "#1a1a18", margin: "0 0 2rem",
               display: "flex", gap: "0.75rem", alignItems: "center"
             }}>
               {getProductComparePrice(product) ? (
@@ -1004,7 +1004,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                 <span style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "1.1rem", color: "#1a1a18" }}>
                   {product.name}
                 </span>
-                <span style={{ fontSize: "1.1rem", letterSpacing: "0.06em", color: "var(--obsidian)" }}>
+                <span style={{ fontFamily: "var(--font-jost, sans-serif)", fontSize: "1.1rem", letterSpacing: "0.04em", color: "var(--obsidian)" }}>
                   {formatPrice(getProductPrice(product))}
                 </span>
               </div>
