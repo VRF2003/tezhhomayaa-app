@@ -344,7 +344,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                       fontSize: `${norm.style.button.fontSize}rem`,
                       ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor, slide.buttonBgColor, slide.buttonTextColor), 
                       pointerEvents: "auto",
-                      opacity: slide.buttonStyle === "luxury" ? 0.6 : 1 
+                      opacity: slide.buttonStyle === "luxury" ? 0.6 : undefined 
                     }}
                     draggable={false}
                     onClick={e => isPreviewMode && e.preventDefault()}
