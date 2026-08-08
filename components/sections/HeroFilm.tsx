@@ -32,6 +32,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
 
   const displaySlides = React.useMemo(() => {
     if (!cmsData) return slides;
+    console.log("HeroFilm cmsData:", JSON.stringify(cmsData, null, 2));
     if (cmsData.video) {
       return [{
         id: "video-slide",
