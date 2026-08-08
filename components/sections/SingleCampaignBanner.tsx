@@ -11,6 +11,7 @@ import { Observability } from "@/lib/infrastructure/observability";
 
 export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?: any, sectionId?: string }) {
   if (!cmsData) return null;
+  console.log("SingleCampaignBanner cmsData:", JSON.stringify(cmsData, null, 2));
 
   const norm = normalizeSectionData(cmsData);
   const containerRef = useRef<HTMLElement>(null);
@@ -205,9 +206,9 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                   fontSize: `${norm.style.button.fontSize}rem`,
                   ...getButtonStyle(
                     (norm.content.primaryButton as any)?.style || (norm.style as any).buttonStyle || "filled", 
-                    norm.style.button.textColor || "#ffffff",
-                    norm.style.button.backgroundColor,
-                    norm.style.button.textColor
+                    (norm.content.primaryButton as any)?.textColor || norm.style.button.textColor || "#ffffff",
+                    (norm.content.primaryButton as any)?.bgColor,
+                    (norm.content.primaryButton as any)?.textColor
                   ),
                   pointerEvents: "auto",
                   borderRadius: `${norm.style.button.borderRadius}px`,
@@ -233,9 +234,9 @@ export default function SingleCampaignBanner({ cmsData, sectionId }: { cmsData?:
                   fontSize: `${norm.style.button.fontSize}rem`,
                   ...getButtonStyle(
                     (norm.content.secondaryButton as any)?.style || (norm.style as any).buttonStyle || "filled", 
-                    norm.style.button.textColor || "#ffffff",
-                    norm.style.button.backgroundColor,
-                    norm.style.button.textColor
+                    (norm.content.secondaryButton as any)?.textColor || norm.style.button.textColor || "#ffffff",
+                    (norm.content.secondaryButton as any)?.bgColor,
+                    (norm.content.secondaryButton as any)?.textColor
                   ),
                   pointerEvents: "auto",
                   borderRadius: `${norm.style.button.borderRadius}px`,
