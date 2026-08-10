@@ -8203,7 +8203,12 @@
           "typographyOverrides": {
             "enabled": false
           },
-          "productSequence": [],
+          "productSequence": [
+            "imported_2",
+            "imported_69",
+            "imported_3",
+            "imported_4"
+          ],
           "includeProducts": [],
           "excludeProducts": []
         },
