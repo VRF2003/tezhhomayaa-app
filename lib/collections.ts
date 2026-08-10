@@ -220,6 +220,28 @@ export async function getRelatedProducts(product: Product, count = 4): Promise<P
   return related.slice(0, count);
 }
 
+
+function getShopifyCollectionHandle(categoryKey: string): string | null {
+  const parts = categoryKey.split('/');
+  const lastPart = parts[parts.length - 1];
+  
+  if (lastPart === 'dresses-jumpsuits') return 'dresses-and-jumpsuits';
+  if (lastPart === 'pants-shorts') return 'pants-and-shorts';
+  if (lastPart === 'tops-shirts') return 'tops-and-shirts';
+  if (lastPart === 'trousers-shorts') return 'trousers-and-shorts';
+  if (lastPart === 'skirts') return 'skirts';
+  if (lastPart === 'shirts') return 'shirts';
+  if (lastPart === 't-shirts-polos') return 't-shirts-and-polos';
+  if (lastPart === 'coats-jackets') return 'coats-and-jackets';
+  
+  if (lastPart === 'sweatshirts' && categoryKey.includes('women')) return 't-shirts-and-sweatshirts';
+  if (lastPart === 'tracksuits-sweatshirts' && categoryKey.includes('men')) return 'tracksuit-and-sweatshirts';
+  
+  if (lastPart === 'bags') return 'bags';
+  
+  return null;
+}
+
 export async function getProductsByCategory(categoryKey: string): Promise<Product[]> {
   const merged = await getAllProducts();
   
@@ -227,7 +249,7 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
   const normalize = (str: string) => (str || "").toLowerCase().replace(/[^a-z0-9\/]+/g, '');
   const normKey = normalize(categoryKey);
 
-  return merged.filter((p) => {
+  let filtered = merged.filter((p) => {
     const pCat = normalize(p.category);
     
     // 1. Exact match
@@ -252,9 +274,32 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     
     return false;
   });
+
+  // Attempt to fetch exact native order from Shopify Collection
+  const shopifyHandle = getShopifyCollectionHandle(categoryKey);
+  if (shopifyHandle) {
+    try {
+      const query = `query { collection(handle: "${shopifyHandle}") { products(first: 250) { edges { node { handle } } } } }`;
+      const data = await shopifyFetch({ query });
+      if (data?.collection?.products?.edges) {
+        const order = data.collection.products.edges.map((e: any) => e.node.handle);
+        filtered.sort((a, b) => {
+          const idxA = order.indexOf(a.slug);
+          const idxB = order.indexOf(b.slug);
+          if (idxA === -1 && idxB === -1) return 0;
+          if (idxA === -1) return 1;
+          if (idxB === -1) return -1;
+          return idxA - idxB;
+        });
+      }
+    } catch (err) {
+      console.error("Error fetching collection order", err);
+    }
+  }
+  
+  return filtered;
 }
 
-// Alias kept for any legacy consumer — delegates to the dynamic function.
 export async function productsByCategory(categoryKey: string): Promise<Product[]> {
   return await getProductsByCategory(categoryKey);
 }
