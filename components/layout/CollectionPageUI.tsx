@@ -210,9 +210,6 @@ export default function CollectionPageUI({
       <main>
         <Navbar />
 
-        {/* Spacer for fixed header */}
-        <div style={{ height: "80px" }} aria-hidden="true" />
-
         {/* Editorial Banner */}
         <CollectionBanner
           categoryKey={categoryKey}
