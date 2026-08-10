@@ -210,6 +210,8 @@ export default function CollectionPageUI({
       <main>
         <Navbar />
 
+        {/* Spacer removed so banner underlaps header */}
+
         {/* Editorial Banner */}
         <CollectionBanner
           categoryKey={categoryKey}
