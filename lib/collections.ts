@@ -273,17 +273,18 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
       const data = await shopifyFetch({ query });
       if (data?.collection?.products?.edges) {
         const order = data.collection.products.edges.map((e: any) => e.node.handle);
-        filtered.sort((a, b) => {
-          const idxA = order.indexOf(a.slug);
-          const idxB = order.indexOf(b.slug);
-          if (idxA === -1 && idxB === -1) return 0;
-          if (idxA === -1) return 1;
-          if (idxB === -1) return -1;
-          return idxA - idxB;
-        });
+        
+        // Map the exact products from the collection, in exact order, bypassing tag filters
+        const collectionProducts = order
+          .map((slug: string) => merged.find(p => p.slug === slug))
+          .filter(Boolean) as Product[];
+          
+        if (collectionProducts.length > 0) {
+          return collectionProducts;
+        }
       }
     } catch (err) {
-      console.error("Error fetching collection order", err);
+      console.error("Error fetching collection exact products", err);
     }
   }
   
