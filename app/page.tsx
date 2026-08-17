@@ -32,7 +32,12 @@ export async function generateMetadata(
   }
 
   const seoService = new SeoService(RepositoryResolver.resolve<ISeoRepository>("ISeoRepository"));
-  const resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
+  let resolvedSeo: any = null;
+  try {
+    resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
+  } catch (err) {
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Could not load SEO metadata", { message: (err as any)?.message });
+  }
 
   if (!resolvedSeo) return {}; // Fallback to Next.js defaults if nothing resolves
 
@@ -78,7 +83,12 @@ export default async function HomePage() {
 
   // Structured Data component from LSE
   const seoService = new SeoService(RepositoryResolver.resolve<ISeoRepository>("ISeoRepository"));
-  const resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
+  let resolvedSeo: any = null;
+  try {
+    resolvedSeo = await seoService.resolveMetadata("homepage", currentMarket, runtime);
+  } catch (err) {
+    Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Could not load SEO metadata in page", { message: (err as any)?.message });
+  }
 
   // We map LEP generic sections. For Phase 2.8.2, we target the Hero component explicitly.
   // IMPORTANT: The slug 'home-hero-banner' must match the slot name used in Campaign sections.
