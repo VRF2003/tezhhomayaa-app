@@ -258,17 +258,7 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     // 2. Prefix match (e.g. 'men/ready-to-wear' loads 'men/ready-to-wear/shirts')
     if (pCat.startsWith(normKey + '/')) return true;
     
-    // 3. Substring match for subcategories but strictly enforcing the department
-    // E.g. 'dresses' in 'women/ready-to-wear/dresses'
-    const pDept = pCat.split('/')[0];
-    const nDept = normKey.split('/')[0];
-    
-    if (pDept === nDept) {
-      if (normKey.includes(pCat) && pCat.length > 5) return true;
-      if (pCat.includes(normKey) && normKey.length > 5) return true;
-    }
-    
-    // Special top-level fallback
+    // 3. Special top-level fallback
     if (categoryKey === "bags" && pCat.includes("bags")) return true;
     if (categoryKey === "fragrances" && pCat.startsWith("fragrances")) return true;
     
