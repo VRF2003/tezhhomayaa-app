@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import Link from "next/link";
 import UniversalMediaRenderer from "../UniversalMediaRenderer";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
@@ -17,6 +18,8 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
   const rawText = data.content.description || "";
   const lines = rawText.split("\n").filter((l: string) => l.trim() !== "");
 
+  const customTypo = data.typographyOverrides?.enabled;
+
   return (
     <section 
       id={sectionId} 
@@ -24,7 +27,8 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
       className="relative w-full"
       style={{ 
         backgroundColor: data.style.backgroundColor,
-        height: `${lines.length * 100 + 50}vh` // Extra 50vh for the buttons at the end
+        height: `${lines.length * 100 + 50}vh`, // Extra 50vh for the buttons at the end
+        ...injectTypographyOverrides(data.typographyOverrides)
       }}
     >
       <div className="sticky top-0 w-full h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden">
@@ -52,10 +56,10 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
           >
             {data.content.subheading && (
               <h3 
-                className="uppercase tracking-[0.2em] mb-2"
+                className={`uppercase tracking-[0.2em] mb-2 ${customTypo ? getResponsiveTypographyClass(data.style.subheading.fontSize) : ''}`}
                 style={{
                   color: data.style.subheading.textColor,
-                  fontSize: `${data.style.subheading.fontSize * 0.8}rem`,
+                  fontSize: customTypo ? undefined : `${data.style.subheading.fontSize * 0.8}rem`,
                   fontWeight: data.style.subheading.fontWeight,
                   letterSpacing: `${data.style.subheading.letterSpacing}em`,
                   fontFamily: data.style.fontFamily,
@@ -67,10 +71,10 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
             )}
             {data.content.heading && (
               <h2 
-                className="uppercase"
+                className={`uppercase ${customTypo ? getResponsiveTypographyClass(data.style.heading.fontSize) : ''}`}
                 style={{
                   color: data.style.heading.textColor,
-                  fontSize: `clamp(1.2rem, ${data.style.heading.fontSize * 0.8}vw, 2.5rem)`,
+                  fontSize: customTypo ? undefined : `clamp(1.2rem, ${data.style.heading.fontSize * 0.8}vw, 2.5rem)`,
                   fontWeight: data.style.heading.fontWeight,
                   letterSpacing: `${data.style.heading.letterSpacing}em`,
                   fontFamily: data.style.fontFamily,
@@ -112,13 +116,13 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
           return (
             <motion.p
               key={index}
-              className="absolute text-center"
+              className={`absolute text-center ${customTypo ? getResponsiveTypographyClass(data.style.description.fontSize) : ''}`}
               style={{
                 opacity,
                 y,
                 filter,
                 color: data.style.description.textColor,
-                fontSize: `clamp(1.5rem, ${data.style.description.fontSize}vw, 4rem)`,
+                fontSize: customTypo ? undefined : `clamp(1.5rem, ${data.style.description.fontSize}vw, 4rem)`,
                 fontWeight: data.style.description.fontWeight,
                 letterSpacing: `${data.style.description.letterSpacing}em`,
                 lineHeight: data.style.description.lineHeight,

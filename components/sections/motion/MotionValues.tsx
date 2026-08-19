@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import UniversalMediaRenderer from "../UniversalMediaRenderer";
 import Link from "next/link";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function MotionValues({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
@@ -27,12 +28,14 @@ export default function MotionValues({ cmsData, sectionId }: { cmsData: any; sec
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const bgOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.6, 0.2, 0]);
 
+  const customTypo = data.typographyOverrides?.enabled;
+
   return (
     <section 
       id={sectionId} 
       ref={containerRef}
       className="relative w-full h-[200svh]"
-      style={{ backgroundColor: data.style.backgroundColor }}
+      style={{ backgroundColor: data.style.backgroundColor, ...injectTypographyOverrides(data.typographyOverrides) }}
     >
       <div className="sticky top-0 w-full h-[100svh] flex flex-col items-center justify-center overflow-hidden">
         
@@ -60,10 +63,10 @@ export default function MotionValues({ cmsData, sectionId }: { cmsData: any; sec
           >
             {data.content.subheading && (
               <h3 
-                className="uppercase tracking-[0.2em]"
+                className={`uppercase tracking-[0.2em] ${customTypo ? getResponsiveTypographyClass(data.style.subheading.fontSize) : ''}`}
                 style={{
                   color: data.style.subheading.textColor,
-                  fontSize: `${data.style.subheading.fontSize}rem`,
+                  fontSize: customTypo ? undefined : `${data.style.subheading.fontSize}rem`,
                   fontWeight: data.style.subheading.fontWeight,
                   letterSpacing: `${data.style.subheading.letterSpacing}em`,
                   lineHeight: data.style.subheading.lineHeight,
@@ -76,16 +79,16 @@ export default function MotionValues({ cmsData, sectionId }: { cmsData: any; sec
             )}
             {data.content.heading && (
               <h2
+                className={`uppercase whitespace-pre-wrap ${customTypo ? getResponsiveTypographyClass(data.style.heading.fontSize) : ''}`}
                 style={{ 
                   color: data.style.heading.textColor,
-                  fontSize: `clamp(3rem, ${data.style.heading.fontSize}vw, 12rem)`,
+                  fontSize: customTypo ? undefined : `clamp(3rem, ${data.style.heading.fontSize}vw, 12rem)`,
                   fontWeight: data.style.heading.fontWeight,
                   letterSpacing: `${data.style.heading.letterSpacing}em`,
                   lineHeight: 1,
                   fontFamily: data.style.fontFamily,
                   textShadow: data.style.heading.textShadow
                 }}
-                className="uppercase whitespace-pre-wrap"
               >
                 {data.content.heading}
               </h2>
@@ -98,15 +101,15 @@ export default function MotionValues({ cmsData, sectionId }: { cmsData: any; sec
           >
             {data.content.description && (
               <p
+                className={`whitespace-pre-wrap ${customTypo ? getResponsiveTypographyClass(data.style.description.fontSize) : ''}`}
                 style={{
                   color: data.style.description.textColor,
-                  fontSize: `clamp(1.2rem, ${data.style.description.fontSize}vw, 3rem)`,
+                  fontSize: customTypo ? undefined : `clamp(1.2rem, ${data.style.description.fontSize}vw, 3rem)`,
                   fontWeight: data.style.description.fontWeight,
                   letterSpacing: `${data.style.description.letterSpacing}em`,
                   lineHeight: data.style.description.lineHeight,
                   fontFamily: data.style.fontFamily,
                 }}
-                className="whitespace-pre-wrap"
               >
                 {data.content.description}
               </p>

@@ -5,15 +5,18 @@ import { motion } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import Link from "next/link";
 import UniversalMediaRenderer from "../UniversalMediaRenderer";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
+
+  const customTypo = data.typographyOverrides?.enabled;
 
   return (
     <section 
       id={sectionId} 
       className="relative w-full h-[100svh] flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: data.style.backgroundColor }}
+      style={{ backgroundColor: data.style.backgroundColor, ...injectTypographyOverrides(data.typographyOverrides) }}
     >
       {/* Background Media */}
       {(data.media.desktop?.url || data.media.mobile?.url) && (
@@ -38,10 +41,10 @@ export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; 
         className="flex flex-col items-center justify-center space-y-12 text-center px-6"
       >
         <h1 
-          className="font-light tracking-[0.2em]"
+          className={`font-light tracking-[0.2em] ${customTypo ? getResponsiveTypographyClass(data.style.subheading.fontSize) : ''}`}
           style={{ 
             color: data.style.subheading.textColor || data.style.textColor,
-            fontSize: "clamp(1.5rem, 4vw, 3rem)",
+            fontSize: customTypo ? undefined : "clamp(1.5rem, 4vw, 3rem)",
             fontFamily: data.style.fontFamily 
           }}
         >
@@ -53,10 +56,10 @@ export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.8 }}
           transition={{ duration: 2, delay: 1, ease: "easeOut" }}
-          className="uppercase"
+          className={`uppercase ${customTypo ? getResponsiveTypographyClass(data.style.heading.fontSize) : ''}`}
           style={{
             color: data.style.heading.textColor,
-            fontSize: `${data.style.heading.fontSize}rem`,
+            fontSize: customTypo ? undefined : `${data.style.heading.fontSize}rem`,
             fontWeight: data.style.heading.fontWeight,
             letterSpacing: `${data.style.heading.letterSpacing}em`,
             lineHeight: data.style.heading.lineHeight,
@@ -72,10 +75,10 @@ export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.8 }}
             transition={{ duration: 2, delay: 1.5, ease: "easeOut" }}
-            className="max-w-2xl mx-auto whitespace-pre-wrap"
+            className={`max-w-2xl mx-auto whitespace-pre-wrap ${customTypo ? getResponsiveTypographyClass(data.style.description.fontSize) : ''}`}
             style={{
               color: data.style.description.textColor,
-              fontSize: `${data.style.description.fontSize}rem`,
+              fontSize: customTypo ? undefined : `${data.style.description.fontSize}rem`,
               fontWeight: data.style.description.fontWeight,
               letterSpacing: `${data.style.description.letterSpacing}em`,
               lineHeight: data.style.description.lineHeight,

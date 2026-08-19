@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import UniversalMediaRenderer from "../UniversalMediaRenderer";
 import Link from "next/link";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
@@ -15,6 +16,8 @@ export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sec
     offset: ["start end", "end start"]
   });
 
+  const customTypo = data.typographyOverrides?.enabled;
+
   // Extremely subtle, elegant scale effect on scroll
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
@@ -24,7 +27,7 @@ export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sec
       id={sectionId} 
       ref={containerRef}
       className="relative w-full h-[120svh] flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: data.style.backgroundColor }}
+      style={{ backgroundColor: data.style.backgroundColor, ...injectTypographyOverrides(data.typographyOverrides) }}
     >
       {/* Sticky wrapper to create a natural overlap effect with adjacent sections */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -50,10 +53,10 @@ export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sec
         >
           {data.content.subheading && (
             <h3 
-              className="uppercase tracking-[0.2em] mb-4"
+              className={`uppercase tracking-[0.2em] mb-4 ${customTypo ? getResponsiveTypographyClass(data.style.subheading.fontSize) : ''}`}
               style={{
                 color: data.style.subheading.textColor,
-                fontSize: `${data.style.subheading.fontSize}rem`,
+                fontSize: customTypo ? undefined : `${data.style.subheading.fontSize}rem`,
                 fontWeight: data.style.subheading.fontWeight,
                 letterSpacing: `${data.style.subheading.letterSpacing}em`,
                 lineHeight: data.style.subheading.lineHeight,
@@ -67,10 +70,10 @@ export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sec
           
           {data.content.heading && (
             <h2 
-              className="uppercase"
+              className={`uppercase ${customTypo ? getResponsiveTypographyClass(data.style.heading.fontSize) : ''}`}
               style={{
                 color: data.style.heading.textColor,
-                fontSize: `clamp(1.5rem, ${data.style.heading.fontSize}vw, 4rem)`,
+                fontSize: customTypo ? undefined : `clamp(1.5rem, ${data.style.heading.fontSize}vw, 4rem)`,
                 fontWeight: data.style.heading.fontWeight,
                 letterSpacing: `${data.style.heading.letterSpacing}em`,
                 lineHeight: data.style.heading.lineHeight,
@@ -84,10 +87,10 @@ export default function MotionCanvas({ cmsData, sectionId }: { cmsData: any; sec
 
           {data.content.description && (
             <p
-              className="mt-6 max-w-2xl whitespace-pre-wrap"
+              className={`mt-6 max-w-2xl whitespace-pre-wrap ${customTypo ? getResponsiveTypographyClass(data.style.description.fontSize) : ''}`}
               style={{
                 color: data.style.description.textColor,
-                fontSize: `${data.style.description.fontSize}rem`,
+                fontSize: customTypo ? undefined : `${data.style.description.fontSize}rem`,
                 fontWeight: data.style.description.fontWeight,
                 letterSpacing: `${data.style.description.letterSpacing}em`,
                 lineHeight: data.style.description.lineHeight,
