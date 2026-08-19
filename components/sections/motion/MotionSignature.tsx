@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
 import Link from "next/link";
+import UniversalMediaRenderer from "../UniversalMediaRenderer";
 
 export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
@@ -14,6 +15,21 @@ export default function MotionSignature({ cmsData, sectionId }: { cmsData: any; 
       className="relative w-full h-[100svh] flex flex-col items-center justify-center overflow-hidden"
       style={{ backgroundColor: data.style.backgroundColor }}
     >
+      {/* Background Media */}
+      {(data.media.desktop?.url || data.media.mobile?.url) && (
+        <div className="absolute inset-0 w-full h-full">
+          <UniversalMediaRenderer 
+            media={data.media}
+            className="w-full h-full object-cover opacity-60"
+          />
+        </div>
+      )}
+      
+      {/* Optional Gradient Overlay for Readability */}
+      {(data.media.desktop?.url || data.media.mobile?.url) && (
+        <div className="absolute inset-0 bg-black/40" />
+      )}
+
       <motion.div
         initial={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
         whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
