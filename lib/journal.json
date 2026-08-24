@@ -2799,10 +2799,7 @@
           },
           "splitLayout": {
             "ratio": "50-50",
-            "layout": "image-right",
-            "": {
-              "layout": "image-right"
-            }
+            "layout": "image-right"
           },
           "contactInfo": {
             "fields": []

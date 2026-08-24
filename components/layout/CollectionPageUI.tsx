@@ -7,6 +7,8 @@ import CollectionBanner from "@/components/sections/CollectionBanner";
 import ProductGrid from "@/components/sections/ProductGrid";
 import FilterSortOverlay, { FilterState, FilterGroup } from "@/components/ecommerce/FilterSortOverlay";
 import { getProductPrice } from "@/lib/currency";
+import Link from "next/link";
+import menuData from "@/lib/menus.json";
 
 type CollectionPageUIProps = {
   categoryKey: string;
@@ -151,7 +153,45 @@ export default function CollectionPageUI({
 
   const handleClearAll = () => setSelectedFilters({});
 
-  if (!pageMeta && finalProducts.length === 0) {
+  // Find sub-categories based on categoryKey (e.g. "men/ready-to-wear/shirts")
+  const subCategoryLinks = useMemo(() => {
+    const keyPath = "/" + categoryKey;
+    let foundItems: { label: string, href: string }[] = [];
+    let parentLabel: string | null = null;
+    let parentHref: string | null = null;
+
+    for (const topLevel of menuData) {
+      if (topLevel.categories) {
+        for (const cat of topLevel.categories) {
+          if (cat.href === keyPath) {
+             foundItems = cat.items || [];
+             parentLabel = cat.label;
+             parentHref = cat.href;
+             break;
+          }
+          if (cat.items && cat.items.some((item: any) => item.href === keyPath)) {
+             foundItems = cat.items;
+             parentLabel = cat.label;
+             parentHref = cat.href;
+             break;
+          }
+        }
+      }
+    }
+
+    if (foundItems.length > 0 && parentHref && parentLabel) {
+       return [
+         { label: `View All ${parentLabel}`, href: parentHref },
+         ...foundItems
+       ];
+    }
+    
+    return [];
+  }, [categoryKey]);
+
+  const hasCustomBanner = bannerData?.media?.desktop?.url || (bannerData?.content?.heading && bannerData.content.heading !== "New Banner" && bannerData.content.heading !== "Collection");
+
+  if (!pageMeta && !hasCustomBanner && finalProducts.length === 0) {
     return (
       <main>
         <Navbar />
@@ -170,8 +210,7 @@ export default function CollectionPageUI({
       <main>
         <Navbar />
 
-        {/* Spacer for fixed header */}
-        <div style={{ height: "80px" }} aria-hidden="true" />
+        {/* Spacer removed so banner underlaps header */}
 
         {/* Editorial Banner */}
         <CollectionBanner
@@ -180,14 +219,56 @@ export default function CollectionPageUI({
           presentation={smartCollection?.presentation}
         />
 
+        {/* Sub-Category Navigation Bar */}
+        {subCategoryLinks.length > 0 && (
+          <div style={{ borderTop: "1px solid #e8e4df", borderBottom: "1px solid #e8e4df", padding: "1rem clamp(1rem, 5vw, 4rem)", background: "#ffffff" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "2rem", overflowX: "auto", whiteSpace: "nowrap", paddingBottom: "0.25rem", msOverflowStyle: "none", scrollbarWidth: "none" }} className="hide-scrollbar">
+              {subCategoryLinks.map((link) => {
+                const isActive = "/" + categoryKey === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    style={{
+                      textDecoration: "none",
+                      fontFamily: "var(--font-jost, sans-serif)", fontSize: "0.75rem",
+                      letterSpacing: "0.1em", textTransform: "uppercase",
+                      fontWeight: isActive ? 600 : 400,
+                      color: isActive ? "#1a1a18" : "#6b6865",
+                      padding: "0 0 0.2rem 0",
+                      borderBottom: isActive ? "2px solid #1a1a18" : "2px solid transparent",
+                      transition: "all 0.2s"
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        <style dangerouslySetInnerHTML={{__html: `
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+        `}} />
+
         {/* Filter Bar */}
         <div style={{ 
           padding: "1rem clamp(1rem, 5vw, 4rem)", 
           display: "flex", 
-          justifyContent: "flex-end",
+          justifyContent: "space-between",
+          alignItems: "center",
           background: "#ffffff",
-          borderTop: "1px solid #e8e4df"
+          borderBottom: "1px solid #e8e4df"
         }}>
+          <div style={{ fontFamily: "var(--font-jost, sans-serif)", fontSize: "0.75rem", color: "#1a1a18", letterSpacing: "0.025em", fontWeight: 300 }}>
+            {filteredAndSortedProducts.length} items sorted by <strong 
+              onClick={() => setIsFilterOpen(true)}
+              style={{ fontWeight: 300, textDecoration: "underline", textDecorationThickness: "1px", textUnderlineOffset: "2px", cursor: "pointer" }}
+            >
+              {sortMethod === "recommended" ? "Recommended" : sortMethod === "price-low" ? "Price Low to High" : sortMethod === "price-high" ? "Price High to Low" : "Newest"}
+            </strong>
+          </div>
           <button 
             onClick={() => setIsFilterOpen(true)}
             style={{

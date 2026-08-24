@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { iamUserRepo, iamRoleRepo, iamSessionRepo } from "@/lib/iam/server";
 import { IdentityProvider } from "@/lib/iam";
 import AdminLayoutClient from "./AdminLayoutClient";
+import { GlobalExperienceProvider } from "@/lib/global-experience/context/GlobalExperienceContext";
 
 export default async function ProtectedLayout({ children }: { children: React.ReactNode }) {
   const headersList = await headers();
@@ -40,9 +41,11 @@ export default async function ProtectedLayout({ children }: { children: React.Re
 
   return (
     <IdentityProvider initialState={initialState}>
-      <AdminLayoutClient>
-        {children}
-      </AdminLayoutClient>
+      <GlobalExperienceProvider>
+        <AdminLayoutClient>
+          {children}
+        </AdminLayoutClient>
+      </GlobalExperienceProvider>
     </IdentityProvider>
   );
 }

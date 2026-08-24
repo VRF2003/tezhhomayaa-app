@@ -1,6 +1,7 @@
 import React from "react";
 import { CampaignService } from "@/lib/lep/services/CampaignService";
 import { FirestoreCampaignRepository } from "@/lib/lep/repositories/FirestoreCampaignRepository";
+import { FirestoreContentItemRepository } from "@/lib/lep/repositories/FirestoreContentItemRepository";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Campaign } from "@/lib/lep/campaigns/types";
@@ -19,6 +20,17 @@ export default async function CampaignEditPage({ params }: { params: Promise<{ i
   if (!campaign) {
     return notFound();
   }
+
+  const contentRepo = new FirestoreContentItemRepository();
+  const sectionsWithPayload = await Promise.all(
+    campaign.sections.map(async (sec) => {
+      const contentItem = await contentRepo.findById(sec.contentItemId);
+      return {
+        ...sec,
+        _payload: contentItem ? contentItem.payload : null
+      };
+    })
+  );
 
   return (
     <form action={saveCampaignAction}>
@@ -86,7 +98,7 @@ export default async function CampaignEditPage({ params }: { params: Promise<{ i
             </div>
           </div>
 
-          <CampaignSectionsEditor campaignId={campaign.id} initialSections={campaign.sections} />
+          <CampaignSectionsEditor campaignId={campaign.id} initialSections={sectionsWithPayload} />
 
         </div>
 

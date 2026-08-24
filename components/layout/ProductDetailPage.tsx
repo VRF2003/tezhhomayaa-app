@@ -303,7 +303,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
                     loop
                     muted
                     playsInline
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+                    style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center", pointerEvents: "none", backgroundColor: "#ffffff" }}
                   />
                 ) : (
                   <Image
@@ -312,7 +312,7 @@ export function CinematicMorphingGallery({ images, isPreviewMode, merchandising 
                     fill
                     priority={i === 0}
                     sizes="(max-width: 900px) 100vw, 78vw"
-                    style={{ objectFit: "cover", objectPosition: "center", pointerEvents: "none" }}
+                    style={{ objectFit: "contain", objectPosition: "center", pointerEvents: "none", backgroundColor: "#ffffff" }}
                     draggable={false}
                   />
                 )}
@@ -582,9 +582,9 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
               {product.name}
             </h1>
             <p style={{
-              fontFamily: "var(--font-cormorant, serif)",
-              fontSize: "0.95rem",
-              fontWeight: 500, letterSpacing: "0.03em", color: "#1a1a18", margin: "0 0 2rem",
+              fontFamily: "var(--font-jost, sans-serif)",
+              fontSize: "1rem",
+              fontWeight: 400, letterSpacing: "0.04em", color: "#1a1a18", margin: "0 0 2rem",
               display: "flex", gap: "0.75rem", alignItems: "center"
             }}>
               {getProductComparePrice(product) ? (
@@ -1004,7 +1004,7 @@ export default function ProductDetailPage({ product, related, isPreviewMode }: P
                 <span style={{ fontFamily: "var(--font-cormorant, serif)", fontSize: "1.1rem", color: "#1a1a18" }}>
                   {product.name}
                 </span>
-                <span style={{ fontSize: "1.1rem", letterSpacing: "0.06em", color: "var(--obsidian)" }}>
+                <span style={{ fontFamily: "var(--font-jost, sans-serif)", fontSize: "1.1rem", letterSpacing: "0.04em", color: "var(--obsidian)" }}>
                   {formatPrice(getProductPrice(product))}
                 </span>
               </div>
@@ -1104,9 +1104,9 @@ function RelatedCard({ product }: { product: Product }) {
             style={{ width: "100%", height: "100%" }}
           >
             <Image
-              src={product.gallery?.[0] || product.image} alt={product.name} fill
+              src={product.image || product.gallery?.[0]} alt={product.name} fill
               sizes="(max-width: 768px) 50vw, 25vw"
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "contain", backgroundColor: "#f8f8f8" }}
             />
           </motion.div>
         </div>

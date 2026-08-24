@@ -1,6 +1,10 @@
 import { IExporter } from "../exporters/IExporter";
 import { ObservabilityContext } from "./ObservabilityContext";
-import { randomUUID } from "crypto";
+
+function generateId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+  return `span-${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
+}
 
 export class TracingService {
   private exporters: IExporter[];
@@ -10,7 +14,7 @@ export class TracingService {
   }
 
   public startSpan(context: ObservabilityContext, name: string, tags?: Record<string, string>): { spanId: string, end: (status: "OK"|"ERROR") => void } {
-    const spanId = randomUUID();
+    const spanId = generateId();
     const parentSpanId = context.spanId;
     const startTime = Date.now();
 

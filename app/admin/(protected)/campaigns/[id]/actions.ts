@@ -26,7 +26,7 @@ export async function saveCampaignAction(formData: FormData) {
     campaign.name = name;
     campaign.description = description;
     campaign.marketId = marketId;
-    campaign.regionId = (marketId === "REGION" && regionId) ? regionId : undefined;
+    campaign.regionId = (marketId === "REGION" && regionId) ? regionId : null;
     if (status) campaign.status = status;
     campaign.validFrom = validFrom;
     campaign.validUntil = validUntil;
@@ -52,8 +52,38 @@ export async function saveCampaignAction(formData: FormData) {
       const newContentCta3Label = formData.get(`sections[${i}].newContentCta3Label`) as string;
       const newContentCta3Url = formData.get(`sections[${i}].newContentCta3Url`) as string;
       
+      const newContentButtonStyle = formData.get(`sections[${i}].newContentButtonStyle`) as string;
+      const newContentButtonBgColor = formData.get(`sections[${i}].newContentButtonBgColor`) as string;
+      const newContentButtonTextColor = formData.get(`sections[${i}].newContentButtonTextColor`) as string;
+      const newContentTextColor = formData.get(`sections[${i}].newContentTextColor`) as string;
+      
+      const newContentDesktopX = formData.get(`sections[${i}].newContentDesktopX`);
+      const newContentDesktopY = formData.get(`sections[${i}].newContentDesktopY`);
+      const newContentMobileX = formData.get(`sections[${i}].newContentMobileX`);
+      const newContentMobileY = formData.get(`sections[${i}].newContentMobileY`);
+      
+      const payloadData = {
+        title: newContentTitle || "",
+        desktopImage: newContentImageUrl || "",
+        mobileImage: newContentImageUrl || "",
+        cta1Label: newContentCta1Label || "",
+        cta1Url: newContentCta1Url || "",
+        cta2Label: newContentCta2Label || "",
+        cta2Url: newContentCta2Url || "",
+        cta3Label: newContentCta3Label || "",
+        cta3Url: newContentCta3Url || "",
+        buttonStyle: newContentButtonStyle || "luxury",
+        buttonBgColor: newContentButtonBgColor || "",
+        buttonTextColor: newContentButtonTextColor || "",
+        textColor: newContentTextColor || "#ffffff",
+        desktopX: newContentDesktopX ? Number(newContentDesktopX) : 50,
+        desktopY: newContentDesktopY ? Number(newContentDesktopY) : 50,
+        mobileX: newContentMobileX ? Number(newContentMobileX) : 50,
+        mobileY: newContentMobileY ? Number(newContentMobileY) : 50,
+      };
+
       // If we passed new content payloads OR it's a new section from the UI, we actually need to create a ContentItem in the mock repository!
-      if (contentItemId.startsWith("new-content-") || newContentTitle || newContentImageUrl) {
+      if (contentItemId.startsWith("new-content-")) {
         const generatedContentId = `ci-auto-${Date.now()}-${i}`;
         const newContent: ContentItem = {
           id: generatedContentId,
@@ -66,20 +96,18 @@ export async function saveCampaignAction(formData: FormData) {
           updatedAt: new Date().toISOString(),
           deletedAt: null,
           deletedBy: null,
-          payload: {
-            title: newContentTitle || "",
-            desktopImage: newContentImageUrl || "",
-            mobileImage: newContentImageUrl || "",
-            cta1Label: newContentCta1Label || "",
-            cta1Url: newContentCta1Url || "",
-            cta2Label: newContentCta2Label || "",
-            cta2Url: newContentCta2Url || "",
-            cta3Label: newContentCta3Label || "",
-            cta3Url: newContentCta3Url || "",
-          }
+          payload: payloadData
         };
         await contentRepo.create(newContent);
         contentItemId = generatedContentId; // Assign the real ID
+      } else if (newContentTitle !== null) {
+        // Update existing content item
+        const existing = await contentRepo.findById(contentItemId);
+        if (existing) {
+          existing.payload = payloadData;
+          existing.updatedAt = new Date().toISOString();
+          await contentRepo.update(existing);
+        }
       }
       
       newSections.push({

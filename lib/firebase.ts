@@ -1,6 +1,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA1tyHbTMzw-kxd-z5RBugt1Wt9kABnpDs",
@@ -11,9 +12,9 @@ const firebaseConfig = {
   appId: "1:28962444668:web:d4eef13a14a20a2576c0f9"
 };
 
-// Initialize Firebase only if it hasn't been initialized already (critical for Next.js SSR)
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
-export { app, auth, db };
+export { app, auth, db, storage };

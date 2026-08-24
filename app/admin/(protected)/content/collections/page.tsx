@@ -243,7 +243,13 @@ export default function CollectionsBuilderPage() {
 
       // Step 2: Save to JSON
       const finalData = { ...banners };
-      if (hasNewMedia && finalData[activeCategory]) {
+      if (!finalData[activeCategory]) {
+        // Initialize with the current preview state if it doesn't exist yet
+        const currentBanner = normalizeSectionData({ content: { heading: "New Banner" } });
+        finalData[activeCategory] = currentBanner;
+      }
+
+      if (hasNewMedia) {
         finalData[activeCategory] = {
           ...finalData[activeCategory],
           media: {

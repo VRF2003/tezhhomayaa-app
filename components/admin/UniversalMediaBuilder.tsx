@@ -24,6 +24,17 @@ function formatBytes(bytes: number) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
 }
 
+const normalizeUrl = (url: string) => {
+  if (url.startsWith("gs://")) {
+    const withoutGs = url.replace("gs://", "");
+    const parts = withoutGs.split("/");
+    const bucket = parts[0];
+    const path = parts.slice(1).join("/");
+    return `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodeURIComponent(path)}?alt=media`;
+  }
+  return url;
+};
+
 export function UniversalMediaBuilder({
   label,
   media,
@@ -88,7 +99,7 @@ export function UniversalMediaBuilder({
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: "#e8e4df" }}>
         
         {/* Desktop Media */}
-        <div style={{ background: "#fafaf8", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ background: "#fafaf8", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem", minWidth: 0 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#6b6865" }}>Desktop Media</span>
             {pendingDesktopFile && <span style={{ fontSize: "0.6rem", color: "#2d6b3a", background: "#e8f5e9", padding: "0.25rem 0.5rem", borderRadius: "2px", textTransform: "uppercase", letterSpacing: "0.1em" }}>New File</span>}
@@ -106,20 +117,41 @@ export function UniversalMediaBuilder({
             )}
           </div>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <div style={{ fontSize: "0.65rem", color: "#6b6865", lineHeight: 1.6 }}>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Dimensions:</strong> {dDim || (media.desktop.width ? `${media.desktop.width} × ${media.desktop.height}` : "Unknown")}</div>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Size:</strong> {formatBytes(dSize || media.desktop.sizeBytes || 0)}</div>
             </div>
-            <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
-              {displayDesktopUrl ? "Replace" : "Upload"}
-              <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onDesktopFileChange(e.target.files[0]) }} style={{ display: "none" }} />
-            </label>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                <div style={{ display: "flex", alignItems: "center", border: "1px solid #ccc9c4", borderRadius: "2px", overflow: "hidden", flex: 1, minWidth: "120px" }}>
+                  <input 
+                    type="text" 
+                    placeholder="Paste gs:// or https:// URL..." 
+                    value={pendingDesktopFile ? "" : (media.desktop.url || "")}
+                    onChange={(e) => {
+                      const newUrl = normalizeUrl(e.target.value);
+                      onMediaChange({ ...media, desktop: { ...media.desktop, url: newUrl } });
+                      onDesktopFileChange(null);
+                    }}
+                    style={{ padding: "0.4rem", fontSize: "0.7rem", border: "none", width: "100%", outline: "none" }}
+                  />
+                  {displayDesktopUrl && (
+                    <button onClick={() => { onMediaChange({ ...media, desktop: { ...media.desktop, url: "" } }); onDesktopFileChange(null); }} style={{ background: "#f0ece6", border: "none", padding: "0 0.5rem", cursor: "pointer", fontSize: "0.8rem", color: "#6b6865" }}>×</button>
+                  )}
+                </div>
+                <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s", whiteSpace: "nowrap" }}>
+                  {displayDesktopUrl ? "Or Upload" : "Upload"}
+                  <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onDesktopFileChange(e.target.files[0]) }} style={{ display: "none" }} />
+                </label>
+              </div>
+              <span style={{ fontSize: "0.55rem", color: "#9a9690" }}>Auto-saves when pasted. Will auto-convert gs:// links.</span>
+            </div>
           </div>
         </div>
 
         {/* Mobile Media */}
-        <div style={{ background: "#fafaf8", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ background: "#fafaf8", padding: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem", minWidth: 0 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.1em", color: "#6b6865" }}>Mobile Media</span>
             {pendingMobileFile && <span style={{ fontSize: "0.6rem", color: "#2d6b3a", background: "#e8f5e9", padding: "0.25rem 0.5rem", borderRadius: "2px", textTransform: "uppercase", letterSpacing: "0.1em" }}>New File</span>}
@@ -137,15 +169,36 @@ export function UniversalMediaBuilder({
             )}
           </div>
 
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
             <div style={{ fontSize: "0.65rem", color: "#6b6865", lineHeight: 1.6 }}>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Dimensions:</strong> {mDim || (media.mobile.width ? `${media.mobile.width} × ${media.mobile.height}` : "Unknown")}</div>
               <div><strong style={{ color: "#1a1a18", fontWeight: 500 }}>Size:</strong> {formatBytes(mSize || media.mobile.sizeBytes || 0)}</div>
             </div>
-            <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s" }}>
-              {displayMobileUrl ? "Replace" : "Upload"}
-              <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onMobileFileChange(e.target.files[0]) }} style={{ display: "none" }} />
-            </label>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
+                <div style={{ display: "flex", alignItems: "center", border: "1px solid #ccc9c4", borderRadius: "2px", overflow: "hidden", flex: 1, minWidth: "120px" }}>
+                  <input 
+                    type="text" 
+                    placeholder="Paste gs:// or https:// URL..." 
+                    value={pendingMobileFile ? "" : (media.mobile.url || "")}
+                    onChange={(e) => {
+                      const newUrl = normalizeUrl(e.target.value);
+                      onMediaChange({ ...media, mobile: { ...media.mobile, url: newUrl } });
+                      onMobileFileChange(null);
+                    }}
+                    style={{ padding: "0.4rem", fontSize: "0.7rem", border: "none", width: "100%", outline: "none" }}
+                  />
+                  {displayMobileUrl && (
+                    <button onClick={() => { onMediaChange({ ...media, mobile: { ...media.mobile, url: "" } }); onMobileFileChange(null); }} style={{ background: "#f0ece6", border: "none", padding: "0 0.5rem", cursor: "pointer", fontSize: "0.8rem", color: "#6b6865" }}>×</button>
+                  )}
+                </div>
+                <label style={{ cursor: "pointer", display: "inline-block", padding: "0.4rem 0.8rem", background: "#ffffff", color: "#1a1a18", border: "1px solid #1a1a18", fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "0.1em", borderRadius: "2px", transition: "all 0.2s", whiteSpace: "nowrap" }}>
+                  {displayMobileUrl ? "Or Upload" : "Upload"}
+                  <input type="file" accept="image/*,video/*" onChange={(e) => { if(e.target.files?.[0]) onMobileFileChange(e.target.files[0]) }} style={{ display: "none" }} />
+                </label>
+              </div>
+              <span style={{ fontSize: "0.55rem", color: "#9a9690" }}>Auto-saves when pasted. Will auto-convert gs:// links.</span>
+            </div>
           </div>
         </div>
 

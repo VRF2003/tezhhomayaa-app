@@ -91,7 +91,7 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
               const cardImg = article.thumbnailImage?.url || article.heroImage?.url;
               return (
               <Link href={isPreview ? `/journal/${article.slug}?preview=true` : `/journal/${article.slug}`} key={article.id} className="group flex flex-col gap-4">
-                <div className="relative aspect-[4/5] bg-gray-100 overflow-hidden">
+                <div className="relative aspect-square bg-gray-100 overflow-hidden">
                   {cardImg ? (
                     <img src={cardImg} alt={article.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   ) : null}
@@ -152,17 +152,17 @@ export default function JournalSection({ cmsData, sectionId }: Props) {
         )}
 
         {layout === "carousel" && (
-          <div className="flex overflow-x-auto gap-8 w-full snap-x snap-mandatory pb-8 hide-scrollbar">
+          <div className={`flex overflow-x-auto gap-8 w-full snap-x snap-mandatory pb-8 hide-scrollbar ${displayArticles.length <= 3 ? "md:justify-center" : ""}`}>
             {displayArticles.map(article => {
               const cardImg = article.thumbnailImage?.url || article.heroImage?.url;
               return (
               <Link href={isPreview ? `/journal/${article.slug}?preview=true` : `/journal/${article.slug}`} key={article.id} className="group flex-shrink-0 w-[85vw] md:w-[400px] flex flex-col gap-4 snap-start">
-                <div className="relative aspect-[3/4] bg-gray-100 overflow-hidden">
+                <div className="relative aspect-square bg-gray-100 overflow-hidden">
                   {cardImg ? (
                     <img src={cardImg} alt={article.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   ) : null}
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 text-center items-center">
                   <span className="text-[0.65rem] uppercase tracking-widest text-gray-500">{article.category}</span>
                   <h3 className="text-xl font-light text-[#1a1a18]">{article.title}</h3>
                 </div>

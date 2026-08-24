@@ -828,7 +828,8 @@
                         "padding": "0.6rem 1.4rem",
                         "borderRadius": 0,
                         "textColor": "#ffffff",
-                        "backgroundColor": "#1a1a18"
+                        "backgroundColor": "#1a1a18",
+                        "backgroundOpacity": 100
                       },
                       "fontFamily": "var(--font-cormorant, serif)",
                       "backgroundColor": "transparent",
@@ -850,14 +851,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783404516/tezhhomayaa_app/zjdvjugekuykn4cosixb.jpg",
+                        "url": "/uploads/media-1785212551602-907062392.jpg",
                         "width": 2752,
                         "height": 1536
                       },
                       "mobile": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912303/tezhhomayaa_app/in5xc40u37omosvkcmci.jpg",
-                        "width": 1400,
-                        "height": 640
+                        "url": "/uploads/media-1785212551634-87894521.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -1016,7 +1017,8 @@
                         "padding": "0.6rem 1.4rem",
                         "borderRadius": 0,
                         "textColor": "#000000",
-                        "backgroundColor": "#000000"
+                        "backgroundColor": "#000000",
+                        "backgroundOpacity": 100
                       },
                       "fontFamily": "var(--font-cormorant, serif)",
                       "backgroundColor": "transparent",
@@ -1038,14 +1040,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782907228/tezhhomayaa_app/yblekeb5rup4uidwyiie.jpg",
-                        "width": 1612,
-                        "height": 2160
+                        "url": "/uploads/media-1785212551675-576519302.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1782912305/tezhhomayaa_app/dqxmtfydvwayptcj8gmq.jpg",
-                        "width": 1400,
-                        "height": 640
+                        "url": "/uploads/media-1785212551706-613566529.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -1227,14 +1229,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784907722025-666919014.jpg",
-                        "width": 1792,
-                        "height": 2400
+                        "url": "/uploads/media-1785228588345-526453253.jpg",
+                        "width": 1380,
+                        "height": 1840
                       },
                       "mobile": {
-                        "url": "/uploads/media-1784907722049-703925743.jpg",
-                        "width": 1792,
-                        "height": 2400
+                        "url": "/uploads/media-1785228468366-707425253.jpg",
+                        "width": 1380,
+                        "height": 1840
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -2077,12 +2079,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784976346049-66638771.jpg",
-                        "width": 1920,
-                        "height": 1080
+                        "url": "/uploads/media-1785231245400-803602696.jpg",
+                        "width": 2752,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": ""
+                        "url": "/uploads/media-1785231245412-449456336.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -2264,12 +2268,14 @@
                     "media": {
                       "type": "image",
                       "desktop": {
-                        "url": "/uploads/media-1784976346084-162996435.jpg",
-                        "width": 1920,
-                        "height": 1080
+                        "url": "/uploads/media-1785232258010-98347090.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "mobile": {
-                        "url": ""
+                        "url": "/uploads/media-1785232258026-593756021.jpg",
+                        "width": 1152,
+                        "height": 1536
                       },
                       "videoSettings": {
                         "autoplay": true,
@@ -3264,28 +3270,35 @@
     "lookbook": {
       "data": [
         {
-          "id": "cosmic-chaos",
-          "name": "Cosmic Chaos",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783947396/tezhhomayaa_app/tkcrecz1eitlq3r6w6yf.jpg",
-          "subtitle": "The Collision of Form and Void"
+          "id": "easy-is-right",
+          "name": "Easy Is Right",
+          "image": "/uploads/media-1785139450295-160877858.jpg",
+          "subtitle": "The Collision of Form and Void",
+          "description": "",
+          "mobileImage": "/uploads/media-1785148856411-300688454.jpg"
         },
         {
-          "id": "rough-notes",
-          "name": "Rough Notes",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783950091/tezhhomayaa_app/ywjbcnearxmylnsuk3xn.jpg",
-          "subtitle": "Drafting the Silhouette"
+          "id": "luminous-reign",
+          "name": "Luminous Reign",
+          "image": "/uploads/media-1785140688328-926092522.jpg",
+          "subtitle": "Drafting the Silhouette",
+          "description": "",
+          "mobileImage": "/uploads/media-1785144521714-345637896.jpg"
         },
         {
           "id": "auralith",
           "name": "Auralith",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783949683/tezhhomayaa_app/yowhn9iqjqzcjqykbxnq.jpg",
-          "subtitle": "Structured Serenity"
+          "image": "/uploads/media-1785141851484-452486481.jpg",
+          "subtitle": "Structured Serenity",
+          "mobileImage": "/uploads/media-1785144526312-477390429.jpg"
         },
         {
-          "id": "timeless-impressions",
-          "name": "Timeless Impressions",
-          "image": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783949923/tezhhomayaa_app/retblkwojji0yrdcyqqj.jpg",
-          "subtitle": "Enduring Proportions"
+          "id": "astral-dynasty",
+          "name": "Astral Dynasty",
+          "image": "/uploads/media-1785143330166-517828238.jpg",
+          "subtitle": "Enduring Proportions",
+          "description": "",
+          "mobileImage": "/uploads/media-1785144530082-770135630.jpg"
         }
       ]
     },
@@ -3557,6 +3570,15 @@
                     }
                   }
                 ]
+              }
+            },
+            {
+              "id": "sec_1785146429579",
+              "type": "spacer",
+              "hidden": false,
+              "data": {
+                "heightMobile": 64,
+                "heightDesktop": 120
               }
             },
             {
@@ -4344,19 +4366,206 @@
               }
             },
             {
+              "id": "sec_1785146373929",
+              "type": "spacer",
+              "hidden": false,
+              "data": {
+                "heightMobile": 64,
+                "heightDesktop": 120
+              }
+            },
+            {
               "id": "sec_17834149312148",
               "type": "image-text",
               "hidden": false,
               "data": {
                 "content": {
                   "heading": "TRANSLUCENCY AND WEIGHT",
-                  "description": "To balance the heavy, protective outerwear that defines the season, we introduced elements of extreme fragility. Silk organza, woven so finely it resembles spun glass, acts as a counterpoint to the dense Melton wools. It is a study in contrasts—vulnerability shielded by armor."
+                  "italicHeading": "",
+                  "subheading": "",
+                  "description": "To balance the heavy, protective outerwear that defines the season, we introduced elements of extreme fragility. Silk organza, woven so finely it resembles spun glass, acts as a counterpoint to the dense Melton wools. It is a study in contrasts—vulnerability shielded by armor.",
+                  "primaryButton": {
+                    "enabled": true,
+                    "label": "Explore",
+                    "url": "#",
+                    "style": "luxury"
+                  },
+                  "secondaryButton": {
+                    "enabled": false,
+                    "label": "Learn More",
+                    "url": "#",
+                    "style": "outline"
+                  },
+                  "tertiaryButton": {
+                    "enabled": false,
+                    "label": "Contact Us",
+                    "url": "#",
+                    "style": "ghost"
+                  }
                 },
                 "layout": {
                   "desktop": {
-                    "align": "right"
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 80
+                  },
+                  "tablet": {
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 80
+                  },
+                  "mobile": {
+                    "x": 50,
+                    "y": 50,
+                    "width": 100,
+                    "height": 80,
+                    "align": "center",
+                    "padding": "0",
+                    "margin": "0",
+                    "textWidth": 90
                   }
-                }
+                },
+                "style": {
+                  "heading": {
+                    "fontSize": 4,
+                    "fontWeight": 300,
+                    "letterSpacing": 0.05,
+                    "lineHeight": 1.1,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "center"
+                  },
+                  "subheading": {
+                    "fontSize": 1,
+                    "fontWeight": 400,
+                    "letterSpacing": 0.2,
+                    "lineHeight": 1.2,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "right"
+                  },
+                  "description": {
+                    "fontSize": 1.1,
+                    "fontWeight": 300,
+                    "letterSpacing": 0.02,
+                    "lineHeight": 1.6,
+                    "textColor": "#1a1a18",
+                    "textShadow": "none",
+                    "align": "center",
+                    "maxWidth": 800
+                  },
+                  "button": {
+                    "fontSize": 0.75,
+                    "fontWeight": 400,
+                    "padding": "0.6rem 1.4rem",
+                    "borderRadius": 0,
+                    "textColor": "#ffffff",
+                    "backgroundColor": "#1a1a18",
+                    "backgroundOpacity": 100
+                  },
+                  "fontFamily": "var(--font-cormorant, serif)",
+                  "backgroundColor": "transparent",
+                  "borderColor": "transparent",
+                  "borderWidth": 0,
+                  "borderRadius": 0,
+                  "darkOverlay": 0,
+                  "lightOverlay": 0,
+                  "gradientOverlay": false,
+                  "fontSize": 4,
+                  "subheadingFontSize": 1,
+                  "descriptionFontSize": 1.1,
+                  "fontWeight": 300,
+                  "letterSpacing": 0.05,
+                  "lineHeight": 1.1,
+                  "textColor": "#1a1a18",
+                  "textShadow": "none"
+                },
+                "media": {
+                  "type": "image",
+                  "desktop": {
+                    "url": "/uploads/media-1785146355623-833265156.jpg",
+                    "width": 1152,
+                    "height": 1536
+                  },
+                  "mobile": {
+                    "url": ""
+                  },
+                  "videoSettings": {
+                    "autoplay": true,
+                    "loop": true,
+                    "muted": true,
+                    "controls": false,
+                    "lazyLoad": true,
+                    "playOnHover": false
+                  }
+                },
+                "animation": {
+                  "type": "slide-up",
+                  "duration": 1.2,
+                  "delay": 0,
+                  "easing": "ease",
+                  "scrollTrigger": true
+                },
+                "advanced": {
+                  "anchorId": "",
+                  "customCssClass": ""
+                },
+                "collectionShowcase": {
+                  "layoutType": {
+                    "desktop": {
+                      "align": "right"
+                    }
+                  },
+                  "maxWidth": "boxed",
+                  "items": []
+                },
+                "splitLayout": {
+                  "ratio": "50-50",
+                  "layout": "image-right"
+                },
+                "contactInfo": {
+                  "fields": []
+                },
+                "contactForm": {
+                  "successMessage": "Thank you for your message. We will be in touch shortly.",
+                  "destinationEmail": "care@tezhhomayaa.com",
+                  "subjects": [
+                    "Client Services",
+                    "Order Support",
+                    "Wholesale",
+                    "Press",
+                    "Collaboration",
+                    "Other"
+                  ]
+                },
+                "socialPresence": {
+                  "links": [
+                    {
+                      "platform": "Instagram",
+                      "url": "#"
+                    },
+                    {
+                      "platform": "Facebook",
+                      "url": "#"
+                    }
+                  ]
+                },
+                "typographyOverrides": {
+                  "enabled": false
+                },
+                "productSequence": [],
+                "includeProducts": [],
+                "excludeProducts": []
               }
             },
             {
@@ -4369,7 +4578,7 @@
               }
             }
           ],
-          "updatedAt": "2026-07-07T14:03:17.922Z"
+          "updatedAt": "2026-07-27T10:01:43.264Z"
         },
         {
           "id": "article_1783415315420",
@@ -6509,7 +6718,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -6531,12 +6741,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/uploads/1781267753997-Bnn.jpg",
-              "width": 6336,
-              "height": 2688
+              "url": "/uploads/media-1785220110057-468084279.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": ""
+              "url": "/uploads/media-1785221549749-302426020.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -6901,14 +7113,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/uploads/1781352484623-hf_20260611_084633_d6e6dc98-913f-47f6-ac56-d2360f6b7dbd.png",
-              "width": 6336,
-              "height": 2688
+              "url": "/uploads/media-1785220063413-430045024.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/uploads/1781352485631-hf_20260611_084633_d6e6dc98-913f-47f6-ac56-d2360f6b7dbd.png",
-              "width": 6336,
-              "height": 2688
+              "url": "/uploads/media-1785221566397-123395460.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -6986,7 +7198,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -7091,14 +7304,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/images/category-bags.jpg",
-              "width": 1792,
-              "height": 2400
+              "url": "/uploads/media-1785228633239-28402622.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/images/category-bags.jpg",
-              "width": 1792,
-              "height": 2400
+              "url": "/uploads/media-1785228633273-983078993.jpg",
+              "width": 1380,
+              "height": 1840
             },
             "videoSettings": {
               "autoplay": true,
@@ -7144,7 +7357,7 @@
           "style": {
             "heading": {
               "fontSize": 4,
-              "fontWeight": 300,
+              "fontWeight": 500,
               "letterSpacing": 0.05,
               "lineHeight": 1.1,
               "textColor": "#ffffff",
@@ -7153,9 +7366,9 @@
             },
             "subheading": {
               "fontSize": 1,
-              "fontWeight": 400,
-              "letterSpacing": 0.2,
-              "lineHeight": 1.2,
+              "fontWeight": 800,
+              "letterSpacing": 0.15,
+              "lineHeight": 1.4,
               "textColor": "#ffffff",
               "textShadow": "none",
               "align": "center"
@@ -7176,16 +7389,17 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
             "borderColor": "transparent",
             "borderWidth": 0,
             "borderRadius": 0,
-            "darkOverlay": 0,
+            "darkOverlay": 9,
             "lightOverlay": 0,
-            "gradientOverlay": false,
+            "gradientOverlay": true,
             "fontSize": 4,
             "subheadingFontSize": 1,
             "descriptionFontSize": 1.1,
@@ -7244,7 +7458,10 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear": {
           "content": {
@@ -7359,7 +7576,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -7427,7 +7645,10 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/tops-shirts": {
           "content": {
@@ -7457,14 +7678,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "/uploads/1781355206265-Top___Shirt_W.jpg",
-              "width": 3121,
-              "height": 2330
+              "url": "/uploads/media-1785225964384-725392075.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/uploads/1781355206310-Top___Shirt_W.jpg",
-              "width": 3121,
-              "height": 2330
+              "url": "/uploads/media-1785225805363-700863699.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -7542,7 +7763,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -7610,7 +7832,10 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/dresses-jumpsuits": {
           "content": {
@@ -7793,7 +8018,15 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [
+            "imported_2",
+            "imported_69",
+            "imported_3",
+            "imported_4"
+          ],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/pants-shorts": {
           "content": {
@@ -7823,14 +8056,14 @@
           "media": {
             "type": "image",
             "desktop": {
-              "url": "https://res.cloudinary.com/dhezwtyku/image/upload/v1783930047/tezhhomayaa_app/yhfzvlbwykd3dvmsshfp.jpg",
-              "width": 1920,
-              "height": 1080
+              "url": "/uploads/media-1785227300054-435447939.jpg",
+              "width": 2752,
+              "height": 1536
             },
             "mobile": {
-              "url": "/images/collection-banner.jpg",
-              "width": 5504,
-              "height": 3072
+              "url": "/uploads/media-1785226543476-528029265.jpg",
+              "width": 1792,
+              "height": 2400
             },
             "videoSettings": {
               "autoplay": true,
@@ -7908,7 +8141,8 @@
               "padding": "0.6rem 1.4rem",
               "borderRadius": 0,
               "textColor": "#ffffff",
-              "backgroundColor": "#1a1a18"
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
             },
             "fontFamily": "var(--font-cormorant, serif)",
             "backgroundColor": "transparent",
@@ -7976,7 +8210,15 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [
+            "imported_0",
+            "imported_39",
+            "imported_40",
+            "imported_41"
+          ],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/skirts": {
           "content": {
@@ -10191,6 +10433,193 @@
             "ratio": "50-50",
             "layout": "image-left"
           }
+        },
+        "women/bags/tote-bags": {
+          "content": {
+            "heading": "New Banner",
+            "italicHeading": "",
+            "subheading": "",
+            "description": "",
+            "primaryButton": {
+              "enabled": true,
+              "label": "Explore",
+              "url": "#",
+              "style": "luxury"
+            },
+            "secondaryButton": {
+              "enabled": false,
+              "label": "Learn More",
+              "url": "#",
+              "style": "outline"
+            },
+            "tertiaryButton": {
+              "enabled": false,
+              "label": "Contact Us",
+              "url": "#",
+              "style": "ghost"
+            }
+          },
+          "layout": {
+            "desktop": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "tablet": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 80
+            },
+            "mobile": {
+              "x": 50,
+              "y": 50,
+              "width": 100,
+              "height": 80,
+              "align": "center",
+              "padding": "0",
+              "margin": "0",
+              "textWidth": 90
+            }
+          },
+          "style": {
+            "heading": {
+              "fontSize": 4,
+              "fontWeight": 300,
+              "letterSpacing": 0.05,
+              "lineHeight": 1.1,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "subheading": {
+              "fontSize": 1,
+              "fontWeight": 400,
+              "letterSpacing": 0.2,
+              "lineHeight": 1.2,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center"
+            },
+            "description": {
+              "fontSize": 1.1,
+              "fontWeight": 300,
+              "letterSpacing": 0.02,
+              "lineHeight": 1.6,
+              "textColor": "#1a1a18",
+              "textShadow": "none",
+              "align": "center",
+              "maxWidth": 800
+            },
+            "button": {
+              "fontSize": 0.75,
+              "fontWeight": 400,
+              "padding": "0.6rem 1.4rem",
+              "borderRadius": 0,
+              "textColor": "#ffffff",
+              "backgroundColor": "#1a1a18",
+              "backgroundOpacity": 100
+            },
+            "fontFamily": "var(--font-cormorant, serif)",
+            "backgroundColor": "transparent",
+            "borderColor": "transparent",
+            "borderWidth": 0,
+            "borderRadius": 0,
+            "darkOverlay": 0,
+            "lightOverlay": 0,
+            "gradientOverlay": false,
+            "fontSize": 4,
+            "subheadingFontSize": 1,
+            "descriptionFontSize": 1.1,
+            "fontWeight": 300,
+            "letterSpacing": 0.05,
+            "lineHeight": 1.1,
+            "textColor": "#1a1a18",
+            "textShadow": "none"
+          },
+          "media": {
+            "type": "image",
+            "desktop": {
+              "url": "/uploads/media-1785223303502-301869767.jpg",
+              "width": 2752,
+              "height": 1536
+            },
+            "mobile": {
+              "url": "/uploads/media-1785223311569-860285598.jpg",
+              "width": 1624,
+              "height": 2165
+            },
+            "videoSettings": {
+              "autoplay": true,
+              "loop": true,
+              "muted": true,
+              "controls": false,
+              "lazyLoad": true,
+              "playOnHover": false
+            }
+          },
+          "animation": {
+            "type": "slide-up",
+            "duration": 1.2,
+            "delay": 0,
+            "easing": "ease",
+            "scrollTrigger": true
+          },
+          "advanced": {
+            "anchorId": "",
+            "customCssClass": ""
+          },
+          "collectionShowcase": {
+            "layoutType": "grid",
+            "maxWidth": "boxed",
+            "items": []
+          },
+          "splitLayout": {
+            "ratio": "50-50",
+            "layout": "image-left"
+          },
+          "contactInfo": {
+            "fields": []
+          },
+          "contactForm": {
+            "successMessage": "Thank you for your message. We will be in touch shortly.",
+            "destinationEmail": "care@tezhhomayaa.com",
+            "subjects": [
+              "Client Services",
+              "Order Support",
+              "Wholesale",
+              "Press",
+              "Collaboration",
+              "Other"
+            ]
+          },
+          "socialPresence": {
+            "links": [
+              {
+                "platform": "Instagram",
+                "url": "#"
+              },
+              {
+                "platform": "Facebook",
+                "url": "#"
+              }
+            ]
+          },
+          "typographyOverrides": {
+            "enabled": false
+          },
+          "productSequence": [],
+          "includeProducts": [],
+          "excludeProducts": []
         }
       }
     },
@@ -48758,26 +49187,776 @@
       "userType": "GUEST",
       "deviceType": "DESKTOP",
       "source": "http://localhost:3001/"
+    },
+    "55e234ef-744d-48e9-94c6-42c51f4573d2": {
+      "eventId": "55e234ef-744d-48e9-94c6-42c51f4573d2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T13:49:22.348Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "62c61700-12d8-49d5-ac35-2c09a94de139": {
+      "eventId": "62c61700-12d8-49d5-ac35-2c09a94de139",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:00:21.159Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "de6a53ca-bba8-4193-819d-6cd815fa5662": {
+      "eventId": "de6a53ca-bba8-4193-819d-6cd815fa5662",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:10:59.242Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "bf9bd321-f8bd-4123-b168-fb97d341187d": {
+      "eventId": "bf9bd321-f8bd-4123-b168-fb97d341187d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:19:16.436Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "586fddaf-29d4-4d79-9788-5345e7ab1f4e": {
+      "eventId": "586fddaf-29d4-4d79-9788-5345e7ab1f4e",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:21:13.198Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "9c1a3d18-4570-42e0-9039-6630b560cace": {
+      "eventId": "9c1a3d18-4570-42e0-9039-6630b560cace",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:21:15.894Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "d11f8625-4163-419c-8f4a-6f951ee008e2": {
+      "eventId": "d11f8625-4163-419c-8f4a-6f951ee008e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:23:21.038Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "09a8cd02-bb34-4cae-95d3-ab0075c5ce9c": {
+      "eventId": "09a8cd02-bb34-4cae-95d3-ab0075c5ce9c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:23:21.129Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "8ba2021b-d0d8-4a73-ade5-93fbc0e52222": {
+      "eventId": "8ba2021b-d0d8-4a73-ade5-93fbc0e52222",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-25T14:24:33.509Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "ad39f000-7ebb-461f-9a51-947880076811": {
+      "eventId": "ad39f000-7ebb-461f-9a51-947880076811",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T07:38:27.172Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c0eb35e8-a518-4ef7-8c9b-5e5e2e98e307": {
+      "eventId": "c0eb35e8-a518-4ef7-8c9b-5e5e2e98e307",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T07:50:32.303Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "54aaf2af-a3ae-4e04-a76e-fb1e29bd7978": {
+      "eventId": "54aaf2af-a3ae-4e04-a76e-fb1e29bd7978",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T08:05:57.862Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "7efce7f3-07d0-4777-be0b-1309bd24308f": {
+      "eventId": "7efce7f3-07d0-4777-be0b-1309bd24308f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T08:06:09.090Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "8cbcb73b-89c7-497a-87f0-2ac4075b2491": {
+      "eventId": "8cbcb73b-89c7-497a-87f0-2ac4075b2491",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:09:09.336Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "65d6d788-db83-496d-94a1-c9ef115c7ff5": {
+      "eventId": "65d6d788-db83-496d-94a1-c9ef115c7ff5",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:52:36.278Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "09c24e0c-6816-4114-a2f8-3d326e2f65d6": {
+      "eventId": "09c24e0c-6816-4114-a2f8-3d326e2f65d6",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:52:49.015Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "c5d98639-e882-47c1-a2e0-c22e33ee6179": {
+      "eventId": "c5d98639-e882-47c1-a2e0-c22e33ee6179",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:54:27.258Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "b856134c-f1d9-4049-a7d3-f9b1a6a763e2": {
+      "eventId": "b856134c-f1d9-4049-a7d3-f9b1a6a763e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:54:37.881Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "6c8c8de2-f5dd-4195-81f5-2b8b43003e6b": {
+      "eventId": "6c8c8de2-f5dd-4195-81f5-2b8b43003e6b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T09:58:57.546Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "36a98da9-66c1-41e6-910c-0bac6da824e2": {
+      "eventId": "36a98da9-66c1-41e6-910c-0bac6da824e2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T10:01:56.088Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "91c05918-a8e4-499e-80f1-ed8ccca8f5d2": {
+      "eventId": "91c05918-a8e4-499e-80f1-ed8ccca8f5d2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T10:16:33.121Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "95ca39de-d457-4962-a550-acb34d211de7": {
+      "eventId": "95ca39de-d457-4962-a550-acb34d211de7",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T11:57:52.915Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "1fa3d392-931c-48c4-a271-684fe5743a19": {
+      "eventId": "1fa3d392-931c-48c4-a271-684fe5743a19",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:07:00.751Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "a5af720c-6ec7-45d4-a205-8280d594f61f": {
+      "eventId": "a5af720c-6ec7-45d4-a205-8280d594f61f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:12:50.268Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "afde8ff3-8ade-4365-863c-7c6fbfff49cb": {
+      "eventId": "afde8ff3-8ade-4365-863c-7c6fbfff49cb",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:18:45.862Z",
+      "experienceId": "mkt_in_English_NONE",
+      "marketId": "mkt_in",
+      "regionId": "Asia Pacific",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "871b1a98-3c5c-4932-aba5-e8532a92e018": {
+      "eventId": "871b1a98-3c5c-4932-aba5-e8532a92e018",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:19:18.493Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "4b9396b2-b2c6-4029-a54e-04b206223ebf": {
+      "eventId": "4b9396b2-b2c6-4029-a54e-04b206223ebf",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-27T12:19:43.712Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3001/"
+    },
+    "62bb16d8-464b-4a7d-98e1-70bcce1dfe7c": {
+      "eventId": "62bb16d8-464b-4a7d-98e1-70bcce1dfe7c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:04:20.109Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "97368719-87ea-406c-8c60-9dc6de3d8cad": {
+      "eventId": "97368719-87ea-406c-8c60-9dc6de3d8cad",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:04:42.769Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "2d2745b4-190b-4047-9dd7-d8fd2827197d": {
+      "eventId": "2d2745b4-190b-4047-9dd7-d8fd2827197d",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:22:37.748Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "c54d1249-397f-4622-9201-fa0b238edd3f": {
+      "eventId": "c54d1249-397f-4622-9201-fa0b238edd3f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T04:23:45.348Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "4a335b34-5994-4a0a-af49-933994f18def": {
+      "eventId": "4a335b34-5994-4a0a-af49-933994f18def",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:20:10.667Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "bc037bde-b715-4c88-a237-d54b3b361042": {
+      "eventId": "bc037bde-b715-4c88-a237-d54b3b361042",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:23:48.452Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "b47edb45-126b-4d07-860a-0bb7c6e24355": {
+      "eventId": "b47edb45-126b-4d07-860a-0bb7c6e24355",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:28:40.219Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "a3062aa3-019f-4bb6-b923-5538c6fee57a": {
+      "eventId": "a3062aa3-019f-4bb6-b923-5538c6fee57a",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:30:52.996Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "94e9319e-da80-4a0f-afa0-cca91ce354ad": {
+      "eventId": "94e9319e-da80-4a0f-afa0-cca91ce354ad",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:39:00.965Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "41e667cd-98a3-40ca-bbd1-51f45fe6b39b": {
+      "eventId": "41e667cd-98a3-40ca-bbd1-51f45fe6b39b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:51:41.621Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "1784db3c-89eb-4f2a-872d-023e0ee3f0d0": {
+      "eventId": "1784db3c-89eb-4f2a-872d-023e0ee3f0d0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:59:25.591Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "d8ec49d5-a159-4369-b939-b90845968a0c": {
+      "eventId": "d8ec49d5-a159-4369-b939-b90845968a0c",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:59:32.373Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "e9230223-7a70-4e09-8119-366f699820fd": {
+      "eventId": "e9230223-7a70-4e09-8119-366f699820fd",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T06:59:56.287Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "78696166-f6de-4e8f-992d-7f65f3fa6d75": {
+      "eventId": "78696166-f6de-4e8f-992d-7f65f3fa6d75",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:29:09.291Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "7f794e82-bcd2-44aa-9f1f-cc220257a0a0": {
+      "eventId": "7f794e82-bcd2-44aa-9f1f-cc220257a0a0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:47:21.117Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "1165c709-46b9-497f-b9b3-ad05f6bbe99b": {
+      "eventId": "1165c709-46b9-497f-b9b3-ad05f6bbe99b",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:49:36.134Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "c2c76fdc-22dd-400d-bbad-923a2c83a6f7": {
+      "eventId": "c2c76fdc-22dd-400d-bbad-923a2c83a6f7",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T08:49:51.041Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "f3ab4e67-6ff2-46da-a326-dc4c200f4ce2": {
+      "eventId": "f3ab4e67-6ff2-46da-a326-dc4c200f4ce2",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:24:53.401Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "8663f173-17da-40fa-b554-7cd25febc15f": {
+      "eventId": "8663f173-17da-40fa-b554-7cd25febc15f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:33:49.142Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/?preview=true&adminPreview=true&viewMode=desktop"
+    },
+    "5399346e-5348-458d-81f1-e6f9319a91e3": {
+      "eventId": "5399346e-5348-458d-81f1-e6f9319a91e3",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:34:10.101Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "081188ca-d850-4fef-9d00-0b2b5d599a2f": {
+      "eventId": "081188ca-d850-4fef-9d00-0b2b5d599a2f",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:34:27.672Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "16af69e8-5dc2-4183-9999-c35ec9e23deb": {
+      "eventId": "16af69e8-5dc2-4183-9999-c35ec9e23deb",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T09:51:03.401Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
+    },
+    "08583282-1e3f-46db-b327-56dd2c7abbe0": {
+      "eventId": "08583282-1e3f-46db-b327-56dd2c7abbe0",
+      "eventType": "PAGE_VIEW",
+      "eventVersion": "1.0",
+      "timestamp": "2026-07-28T10:35:54.698Z",
+      "experienceId": "mkt_ae_English_NONE",
+      "marketId": "mkt_ae",
+      "regionId": "Middle East",
+      "languageCode": "English",
+      "pageId": "homepage",
+      "sessionId": "anonymous-session",
+      "userType": "GUEST",
+      "deviceType": "DESKTOP",
+      "source": "http://localhost:3000/"
     }
   },
   "analytics_aggregates": {
     "main_dashboard_report": {
-      "totalViews": 109,
+      "totalViews": 159,
       "viewsByMarket": {
         "mkt_bh": 27,
         "mkt_jp": 43,
-        "mkt_ae": 30,
-        "mkt_in": 9
+        "mkt_ae": 57,
+        "mkt_in": 32
       },
       "viewsByLanguage": {
         "Arabic": 27,
         "Japanese": 43,
-        "English": 39
+        "English": 89
       },
       "viewsByCampaign": {},
       "viewsBySection": {},
       "viewsByDevice": {
-        "DESKTOP": 109
+        "DESKTOP": 159
       },
       "previewActivity": 0
     }
@@ -48789,13 +49968,13 @@
       "username": "admin",
       "name": "System Admin",
       "roleId": "role_super_admin",
-      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$bGyBTlZNuS7V6dbhSIYy1g$s4lupfjjDxk4rFxvOn22pwrcKgl3V5oSXKikaGpzzN0",
+      "passwordHash": "$argon2id$v=19$m=65536,p=4,t=3$bONbXq9QW2nZct2Ux1EUHA$vh68HJA3FS5ENQU+iMVDiN5motE/L/OoXby++rwZ5mA",
       "isActive": true,
       "isLocked": false,
       "failedLoginAttempts": 0,
-      "createdAt": "2026-07-25T10:04:32.551Z",
-      "updatedAt": "2026-07-25T10:04:32.551Z",
-      "lastLoginAt": "2026-07-25T11:04:34.776Z"
+      "createdAt": "2026-07-28T07:11:44.150Z",
+      "updatedAt": "2026-07-28T07:11:44.150Z",
+      "lastLoginAt": "2026-07-29T08:51:46.907Z"
     }
   },
   "iam_sessions": {
@@ -48995,6 +50174,149 @@
       "lastActivityAt": "2026-07-25T11:04:34.796Z",
       "createdAt": "2026-07-25T11:04:34.796Z",
       "expiresAt": "2026-08-01T11:04:34.796Z",
+      "revokedAt": null
+    },
+    "113aa24d-b66f-4987-b7a3-cd16dfb309a7": {
+      "id": "113aa24d-b66f-4987-b7a3-cd16dfb309a7",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T07:38:56.946Z",
+      "createdAt": "2026-07-27T07:38:56.946Z",
+      "expiresAt": "2026-08-03T07:38:56.946Z",
+      "revokedAt": null
+    },
+    "9df99da5-e22a-4a40-92bd-fb1e672e6852": {
+      "id": "9df99da5-e22a-4a40-92bd-fb1e672e6852",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T09:40:21.521Z",
+      "createdAt": "2026-07-27T09:40:21.521Z",
+      "expiresAt": "2026-08-03T09:40:21.521Z",
+      "revokedAt": null
+    },
+    "55fc6079-a2cf-4197-ae65-0a9706219c30": {
+      "id": "55fc6079-a2cf-4197-ae65-0a9706219c30",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T09:55:01.400Z",
+      "createdAt": "2026-07-27T09:55:01.400Z",
+      "expiresAt": "2026-08-03T09:55:01.400Z",
+      "revokedAt": null
+    },
+    "cb097440-d280-4f8b-8937-49e04834bdc5": {
+      "id": "cb097440-d280-4f8b-8937-49e04834bdc5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T10:40:37.486Z",
+      "createdAt": "2026-07-27T10:40:37.486Z",
+      "expiresAt": "2026-08-03T10:40:37.486Z",
+      "revokedAt": null
+    },
+    "380457f5-5e47-4a74-ac2f-7ecb3103a737": {
+      "id": "380457f5-5e47-4a74-ac2f-7ecb3103a737",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T11:22:43.911Z",
+      "createdAt": "2026-07-27T11:22:43.911Z",
+      "expiresAt": "2026-08-03T11:22:43.911Z",
+      "revokedAt": null
+    },
+    "2054b1cb-9f19-44e4-8b9b-55a7956d8735": {
+      "id": "2054b1cb-9f19-44e4-8b9b-55a7956d8735",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T11:57:46.482Z",
+      "createdAt": "2026-07-27T11:57:46.482Z",
+      "expiresAt": "2026-08-03T11:57:46.482Z",
+      "revokedAt": null
+    },
+    "d31a4d8a-c5d1-425c-be63-299fe39aa8b8": {
+      "id": "d31a4d8a-c5d1-425c-be63-299fe39aa8b8",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-27T13:51:03.966Z",
+      "createdAt": "2026-07-27T13:51:03.966Z",
+      "expiresAt": "2026-08-03T13:51:03.966Z",
+      "revokedAt": null
+    },
+    "8be2c4ec-e187-4b81-9f36-998354dc0aa5": {
+      "id": "8be2c4ec-e187-4b81-9f36-998354dc0aa5",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T04:03:58.237Z",
+      "createdAt": "2026-07-28T04:03:58.237Z",
+      "expiresAt": "2026-08-04T04:03:58.237Z",
+      "revokedAt": null
+    },
+    "06915058-0a5b-4019-b05f-d22b59cadee9": {
+      "id": "06915058-0a5b-4019-b05f-d22b59cadee9",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T06:19:39.571Z",
+      "createdAt": "2026-07-28T06:19:39.571Z",
+      "expiresAt": "2026-08-04T06:19:39.571Z",
+      "revokedAt": null
+    },
+    "4509d190-f8b6-4a0e-a26b-d685e5904bbf": {
+      "id": "4509d190-f8b6-4a0e-a26b-d685e5904bbf",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T07:21:58.569Z",
+      "createdAt": "2026-07-28T07:21:58.569Z",
+      "expiresAt": "2026-08-04T07:21:58.569Z",
+      "revokedAt": null
+    },
+    "4922d0c7-0e44-4563-80f8-7dd91c89152c": {
+      "id": "4922d0c7-0e44-4563-80f8-7dd91c89152c",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T08:47:17.568Z",
+      "createdAt": "2026-07-28T08:47:17.568Z",
+      "expiresAt": "2026-08-04T08:47:17.568Z",
+      "revokedAt": null
+    },
+    "7657be7a-33ae-4b2c-bc00-2aa12f9f4440": {
+      "id": "7657be7a-33ae-4b2c-bc00-2aa12f9f4440",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-28T11:24:53.273Z",
+      "createdAt": "2026-07-28T11:24:53.273Z",
+      "expiresAt": "2026-08-04T11:24:53.273Z",
+      "revokedAt": null
+    },
+    "738b601c-b939-41e5-aaed-579c7b5e7aa6": {
+      "id": "738b601c-b939-41e5-aaed-579c7b5e7aa6",
+      "userId": "usr_super_admin",
+      "device": "Unknown Device",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.3.1 Safari/605.1.15",
+      "ip": "::1",
+      "lastActivityAt": "2026-07-29T08:51:46.930Z",
+      "createdAt": "2026-07-29T08:51:46.930Z",
+      "expiresAt": "2026-08-05T08:51:46.930Z",
       "revokedAt": null
     }
   },

@@ -21,12 +21,13 @@ export function adaptShopifyProduct(node: any): Product {
   if (node.tags?.some((t: string) => t.includes('fragrance'))) subCategory = 'fragrances';
 
   let itemCategory = '';
-  // Most specific tags first so products with multiple tags get classified correctly
   if (node.tags?.some((t: string) => t.toLowerCase().includes('dress') || t.toLowerCase().includes('jumpsuit'))) itemCategory = 'dresses-jumpsuits';
   else if (node.tags?.some((t: string) => t.toLowerCase().includes('coat') || t.toLowerCase().includes('jacket') || t.toLowerCase().includes('hoodie'))) itemCategory = 'coats-jackets';
-  else if (node.tags?.some((t: string) => t.includes('trouser') || t.includes('short') || t.includes('bottom') || t.includes('pant'))) itemCategory = gender === 'men' ? 'trousers-shorts' : 'pants-shorts';
-  else if (node.tags?.some((t: string) => t.includes('polo') || t.includes('t_shirt'))) itemCategory = 't-shirts-polos';
-  else if (node.tags?.some((t: string) => t.includes('shirt') || t.includes('top'))) itemCategory = gender === 'men' ? 'shirts' : 'tops-shirts';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('skirt'))) itemCategory = 'skirts';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('sweatshirt') || t.toLowerCase().includes('tracksuit'))) itemCategory = gender === 'men' ? 'tracksuits-sweatshirts' : 'sweatshirts';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('trouser') || t.toLowerCase().includes('short') || t.toLowerCase().includes('bottom') || t.toLowerCase().includes('pant'))) itemCategory = gender === 'men' ? 'trousers-shorts' : 'pants-shorts';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('polo') || t.toLowerCase().includes('t_shirt') || t.toLowerCase().includes('t-shirt'))) itemCategory = 't-shirts-polos';
+  else if (node.tags?.some((t: string) => t.toLowerCase().includes('shirt') || t.toLowerCase().includes('top') || t.toLowerCase().includes('blouse'))) itemCategory = gender === 'men' ? 'shirts' : 'tops-shirts';
 
   let mappedCategory = `${gender}/${subCategory}`;
   if (itemCategory && subCategory === 'ready-to-wear') {

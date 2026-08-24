@@ -46,12 +46,13 @@ export async function loginAction(formData: FormData) {
     });
 
     return { success: true };
-  } catch (error) {
-    if (error instanceof AuthenticationError) {
+  } catch (error: any) {
+    if (error instanceof AuthenticationError || error.name === "AuthenticationError") {
       return { success: false, error: error.message };
     }
     Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error")("Login failed unexpectedly:", error);
-    return { success: false, error: "An unexpected error occurred." };
+    // Return actual error message temporarily to help debug if it continues failing
+    return { success: false, error: error.message || "An unexpected error occurred." };
   }
 }
 

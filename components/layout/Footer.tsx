@@ -109,11 +109,15 @@ function NewsletterForm({ block, settings }: { block: FooterBlock; settings: Foo
 // ── Main Footer ───────────────────────────────────────────────
 export default function Footer({ initialData }: { initialData?: FooterData }) {
   const [data, setData] = useState<FooterData>(initialData || defaultFooterData);
+  const [headerLogo, setHeaderLogo] = useState("/branding/tezhhomayaa-logo-v3.png");
 
   useEffect(() => {
     if (!initialData) {
       fetch("/api/footer").then((r) => r.json()).then((json) => { if (json.success && json.data) setData(json.data); }).catch(Observability.getLogger("System").error.bind(Observability.getLogger("System"), "Error"));
     }
+    
+    // The footer will now use a dedicated outline logo image instead of copying the header logo.
+
     const handleMsg = (e: MessageEvent) => { if (e.data?.type === "SYNC_FOOTER_PREVIEW") setData(e.data.data); };
     window.addEventListener("message", handleMsg);
     return () => window.removeEventListener("message", handleMsg);
@@ -334,7 +338,7 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
   };
 
   return (
-    <footer role="contentinfo" className="w-full relative" style={{ background: settings.backgroundColor, borderTop: `1px solid ${settings.borderColor}` }}>
+    <footer role="contentinfo" className="w-full relative overflow-hidden" style={{ background: settings.backgroundColor, borderTop: `1px solid ${settings.borderColor}` }}>
       <div className="w-full max-w-none">
         <div className="w-full mx-auto px-8 md:px-16 lg:px-24">
           <div className="grid grid-cols-1 md:grid-cols-12 w-full" style={{ gap: settings.columnGap || "2rem", paddingTop: settings.paddingTop, paddingBottom: settings.paddingBottom }}>
@@ -357,6 +361,24 @@ export default function Footer({ initialData }: { initialData?: FooterData }) {
           </div>
 
         </div>
+
+        {/* Oversized Brand Wordmark */}
+        <div className="w-full overflow-hidden flex justify-center items-end relative pb-4 md:pb-8 px-4 md:px-8" style={{ marginTop: "-2rem" }}>
+          <img 
+            src="/branding/footer-logo.png"
+            alt="Tezhhomayaa Outline Logo"
+            className="select-none pointer-events-none"
+            style={{ 
+              width: "100%",
+              maxWidth: "2400px",
+              height: "auto",
+              opacity: 1,
+              display: "block",
+              transform: "translateY(5%)" // optical adjustment for baseline flushness
+            }}
+          />
+        </div>
+
       </div>
     </footer>
   );

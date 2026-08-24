@@ -3,6 +3,9 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { normalizeSectionData } from "@/lib/types/homepage";
+import Link from "next/link";
+import UniversalMediaRenderer from "../UniversalMediaRenderer";
+import { getResponsiveTypographyClass, injectTypographyOverrides } from "@/lib/typography";
 
 export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; sectionId: string }) {
   const data = normalizeSectionData(cmsData);
@@ -15,6 +18,8 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
   const rawText = data.content.description || "";
   const lines = rawText.split("\n").filter((l: string) => l.trim() !== "");
 
+  const customTypo = data.typographyOverrides?.enabled;
+
   return (
     <section 
       id={sectionId} 
@@ -22,10 +27,65 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
       className="relative w-full"
       style={{ 
         backgroundColor: data.style.backgroundColor,
-        height: `${lines.length * 100}vh` // 100vh per line to give plenty of scroll space
+        height: `${lines.length * 100 + 50}vh`, // Extra 50vh for the buttons at the end
+        ...injectTypographyOverrides(data.typographyOverrides)
       }}
     >
       <div className="sticky top-0 w-full h-[100svh] flex flex-col items-center justify-center px-6 overflow-hidden">
+        
+        {/* Background Media */}
+        {(data.media.desktop?.url || data.media.mobile?.url) && (
+          <div className="absolute inset-0 w-full h-full">
+            <UniversalMediaRenderer 
+              media={data.media}
+              className="w-full h-full object-cover opacity-60"
+            />
+          </div>
+        )}
+        
+        {/* Optional Gradient Overlay for Readability */}
+        {(data.media.desktop?.url || data.media.mobile?.url) && (
+          <div className="absolute inset-0 bg-black/40" />
+        )}
+        
+        {/* Persistent Heading / Subheading */}
+        {(data.content.heading || data.content.subheading) && (
+          <motion.div 
+            className="absolute top-12 left-0 right-0 text-center flex flex-col items-center z-10 pointer-events-none"
+            style={{ opacity: useTransform(scrollYProgress, [0.8, 1], [1, 0]) }}
+          >
+            {data.content.subheading && (
+              <h3 
+                className={`uppercase tracking-[0.2em] mb-2 ${customTypo ? getResponsiveTypographyClass(data.style.subheading.fontSize) : ''}`}
+                style={{
+                  color: data.style.subheading.textColor,
+                  fontSize: customTypo ? undefined : `${data.style.subheading.fontSize * 0.8}rem`,
+                  fontWeight: data.style.subheading.fontWeight,
+                  letterSpacing: `${data.style.subheading.letterSpacing}em`,
+                  fontFamily: data.style.fontFamily,
+                  textShadow: data.style.subheading.textShadow
+                }}
+              >
+                {data.content.subheading}
+              </h3>
+            )}
+            {data.content.heading && (
+              <h2 
+                className={`uppercase ${customTypo ? getResponsiveTypographyClass(data.style.heading.fontSize) : ''}`}
+                style={{
+                  color: data.style.heading.textColor,
+                  fontSize: customTypo ? undefined : `clamp(1.2rem, ${data.style.heading.fontSize * 0.8}vw, 2.5rem)`,
+                  fontWeight: data.style.heading.fontWeight,
+                  letterSpacing: `${data.style.heading.letterSpacing}em`,
+                  fontFamily: data.style.fontFamily,
+                  textShadow: data.style.heading.textShadow
+                }}
+              >
+                {data.content.heading}
+              </h2>
+            )}
+          </motion.div>
+        )}
         {lines.map((line: string, index: number) => {
           // Calculate when this line should appear
           const start = index / lines.length;
@@ -56,13 +116,13 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
           return (
             <motion.p
               key={index}
-              className="absolute text-center"
+              className={`absolute text-center ${customTypo ? getResponsiveTypographyClass(data.style.description.fontSize) : ''}`}
               style={{
                 opacity,
                 y,
                 filter,
                 color: data.style.description.textColor,
-                fontSize: `clamp(1.5rem, ${data.style.description.fontSize}vw, 4rem)`,
+                fontSize: customTypo ? undefined : `clamp(1.5rem, ${data.style.description.fontSize}vw, 4rem)`,
                 fontWeight: data.style.description.fontWeight,
                 letterSpacing: `${data.style.description.letterSpacing}em`,
                 lineHeight: data.style.description.lineHeight,
@@ -73,6 +133,63 @@ export default function MotionManifesto({ cmsData, sectionId }: { cmsData: any; 
             </motion.p>
           );
         })}
+
+        {/* Buttons at the end */}
+        {(data.content.primaryButton.enabled || data.content.secondaryButton.enabled || data.content.tertiaryButton?.enabled) && (
+          <motion.div
+            className="absolute bottom-1/4 left-0 right-0 flex flex-col sm:flex-row items-center justify-center gap-6"
+            style={{ 
+              opacity: useTransform(scrollYProgress, [0.9, 1], [0, 1]),
+              y: useTransform(scrollYProgress, [0.9, 1], [50, 0]),
+              pointerEvents: useTransform(scrollYProgress, v => v > 0.95 ? "auto" : "none") as any
+            }}
+          >
+            {data.content.primaryButton.enabled && (
+              <Link 
+                href={data.content.primaryButton.url}
+                className={`inline-block border uppercase tracking-[0.1em] transition-all duration-500 hover:bg-white hover:text-black ${
+                  data.content.primaryButton.style === "luxury" ? "bg-[#1a1a18] text-white border-transparent" : "border-current"
+                }`}
+                style={{
+                  color: data.style.button.textColor,
+                  padding: data.style.button.padding,
+                  fontSize: `${data.style.button.fontSize}rem`,
+                }}
+              >
+                {data.content.primaryButton.label}
+              </Link>
+            )}
+            
+            {data.content.secondaryButton.enabled && (
+              <Link 
+                href={data.content.secondaryButton.url}
+                className={`inline-block border uppercase tracking-[0.1em] transition-all duration-500 hover:bg-[#1a1a18] hover:text-white ${
+                  data.content.secondaryButton.style === "luxury" ? "bg-white text-black border-transparent" : "border-current"
+                }`}
+                style={{
+                  color: data.style.button.textColor,
+                  padding: data.style.button.padding,
+                  fontSize: `${data.style.button.fontSize}rem`,
+                }}
+              >
+                {data.content.secondaryButton.label}
+              </Link>
+            )}
+
+            {data.content.tertiaryButton?.enabled && (
+              <Link 
+                href={data.content.tertiaryButton.url}
+                className="inline-block uppercase tracking-[0.1em] transition-all duration-500 opacity-70 hover:opacity-100 underline underline-offset-4"
+                style={{
+                  color: data.style.button.textColor,
+                  fontSize: `${data.style.button.fontSize * 0.9}rem`,
+                }}
+              >
+                {data.content.tertiaryButton.label}
+              </Link>
+            )}
+          </motion.div>
+        )}
       </div>
     </section>
   );

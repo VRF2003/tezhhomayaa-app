@@ -1,4 +1,7 @@
-import { randomUUID } from "crypto";
+function generateId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+  return `ctx-${Date.now()}-${Math.floor(Math.random() * 1000000)}`;
+}
 
 export class ObservabilityContext {
   public correlationId: string;
@@ -12,9 +15,9 @@ export class ObservabilityContext {
     traceId?: string;
     spanId?: string;
   }) {
-    this.correlationId = opts?.correlationId || randomUUID();
-    this.requestId = opts?.requestId || randomUUID();
-    this.traceId = opts?.traceId || randomUUID();
+    this.correlationId = opts?.correlationId || generateId();
+    this.requestId = opts?.requestId || generateId();
+    this.traceId = opts?.traceId || generateId();
     this.spanId = opts?.spanId;
   }
 

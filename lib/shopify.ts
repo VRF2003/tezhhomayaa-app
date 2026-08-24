@@ -12,7 +12,7 @@ export async function shopifyFetch({ query, variables }: { query: string; variab
         'X-Shopify-Storefront-Access-Token': storefrontAccessToken!,
       },
       body: JSON.stringify({ query, variables }),
-      // Optional: Add caching strategies for Next.js 13+ (e.g. { next: { revalidate: 60 } })
+      cache: 'no-store',
     });
 
     const text = await result.text();

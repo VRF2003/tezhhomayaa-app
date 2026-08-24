@@ -25,7 +25,7 @@ if (!globalAny.iamRepositories) {
   // Seed default Super Admin user
   (async () => {
     try {
-      const defaultHash = await argon2.hash("Tezh2026Admin");
+      const defaultHash = await argon2.hash("Billionaire@123");
       await globalAny.iamRepositories.userRepo.create({
         id: "usr_super_admin",
         email: "office@tezhhomayaa.com",

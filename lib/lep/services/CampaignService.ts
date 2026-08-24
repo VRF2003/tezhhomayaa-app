@@ -88,7 +88,7 @@ export class CampaignService {
           id: `variant-${campaign.id}-${section.id}`,
           contentItemId: item.id,
           marketId: campaign.marketId, // Pass through: "GLOBAL", "REGION", or "mkt_ae" etc.
-          regionId: campaign.regionId, // Used by ContentResolver for region matching
+          regionId: campaign.regionId ?? undefined, // Used by ContentResolver for region matching
           status: campaign.status as any,
           validFrom: campaign.validFrom,
           validUntil: campaign.validUntil,

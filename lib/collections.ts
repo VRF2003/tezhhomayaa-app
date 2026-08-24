@@ -220,6 +220,28 @@ export async function getRelatedProducts(product: Product, count = 4): Promise<P
   return related.slice(0, count);
 }
 
+
+function getShopifyCollectionHandle(categoryKey: string): string | null {
+  const parts = categoryKey.split('/');
+  const lastPart = parts[parts.length - 1];
+  
+  if (lastPart === 'dresses-jumpsuits') return 'dresses-and-jumpsuits';
+  if (lastPart === 'pants-shorts') return 'pants-and-shorts';
+  if (lastPart === 'tops-shirts') return 'tops-and-shirts';
+  if (lastPart === 'trousers-shorts') return 'trousers-and-shorts';
+  if (lastPart === 'skirts') return 'skirts';
+  if (lastPart === 'shirts') return 'shirts';
+  if (lastPart === 't-shirts-polos') return 't-shirts-and-polos';
+  if (lastPart === 'coats-jackets') return 'coats-and-jackets';
+  
+  if (lastPart === 'sweatshirts' && categoryKey.includes('women')) return 't-shirts-and-sweatshirts';
+  if (lastPart === 'tracksuits-sweatshirts' && categoryKey.includes('men')) return 'tracksuit-and-sweatshirts';
+  
+  if (lastPart === 'bags') return 'bags';
+  
+  return null;
+}
+
 export async function getProductsByCategory(categoryKey: string): Promise<Product[]> {
   const merged = await getAllProducts();
   
@@ -227,7 +249,7 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
   const normalize = (str: string) => (str || "").toLowerCase().replace(/[^a-z0-9\/]+/g, '');
   const normKey = normalize(categoryKey);
 
-  return merged.filter((p) => {
+  let filtered = merged.filter((p) => {
     const pCat = normalize(p.category);
     
     // 1. Exact match
@@ -236,25 +258,39 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     // 2. Prefix match (e.g. 'men/ready-to-wear' loads 'men/ready-to-wear/shirts')
     if (pCat.startsWith(normKey + '/')) return true;
     
-    // 3. Substring match for subcategories but strictly enforcing the department
-    // E.g. 'dresses' in 'women/ready-to-wear/dresses'
-    const pDept = pCat.split('/')[0];
-    const nDept = normKey.split('/')[0];
-    
-    if (pDept === nDept) {
-      if (normKey.includes(pCat) && pCat.length > 5) return true;
-      if (pCat.includes(normKey) && normKey.length > 5) return true;
-    }
-    
-    // Special top-level fallback
+    // 3. Special top-level fallback
     if (categoryKey === "bags" && pCat.includes("bags")) return true;
     if (categoryKey === "fragrances" && pCat.startsWith("fragrances")) return true;
     
     return false;
   });
+
+  // Attempt to fetch exact native order from Shopify Collection
+  const shopifyHandle = getShopifyCollectionHandle(categoryKey);
+  if (shopifyHandle) {
+    try {
+      const query = `query { collection(handle: "${shopifyHandle}") { products(first: 250) { edges { node { handle } } } } }`;
+      const data = await shopifyFetch({ query });
+      if (data?.collection?.products?.edges) {
+        const order = data.collection.products.edges.map((e: any) => e.node.handle);
+        
+        // Map the exact products from the collection, in exact order, bypassing tag filters
+        const collectionProducts = order
+          .map((slug: string) => merged.find(p => p.slug === slug))
+          .filter(Boolean) as Product[];
+          
+        if (collectionProducts.length > 0) {
+          return collectionProducts;
+        }
+      }
+    } catch (err) {
+      console.error("Error fetching collection exact products", err);
+    }
+  }
+  
+  return filtered;
 }
 
-// Alias kept for any legacy consumer — delegates to the dynamic function.
 export async function productsByCategory(categoryKey: string): Promise<Product[]> {
   return await getProductsByCategory(categoryKey);
 }
