@@ -50,11 +50,11 @@ export default function CollectionBanner({ categoryKey, data, sectionId, present
     luxury: "border-b border-current pb-1 hover:opacity-70 transition-opacity"
   };
 
-  let bannerHeightStyle = "clamp(52vh, 65vh, 78vh)";
+  let bannerHeightStyle = "calc(clamp(52vh, 65vh, 78vh) + 80px)";
   if (presentation?.bannerHeight) {
-    if (presentation.bannerHeight === "small") bannerHeightStyle = "35vh";
-    if (presentation.bannerHeight === "medium") bannerHeightStyle = "50vh";
-    if (presentation.bannerHeight === "large") bannerHeightStyle = "75vh";
+    if (presentation.bannerHeight === "small") bannerHeightStyle = "calc(35vh + 80px)";
+    if (presentation.bannerHeight === "medium") bannerHeightStyle = "calc(50vh + 80px)";
+    if (presentation.bannerHeight === "large") bannerHeightStyle = "calc(75vh + 80px)";
     if (presentation.bannerHeight === "cinematic") bannerHeightStyle = "100vh";
   }
 

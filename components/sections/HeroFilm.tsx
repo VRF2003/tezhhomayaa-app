@@ -32,6 +32,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
 
   const displaySlides = React.useMemo(() => {
     if (!cmsData) return slides;
+    console.log("HeroFilm cmsData:", JSON.stringify(cmsData, null, 2));
     if (cmsData.video) {
       return [{
         id: "video-slide",
@@ -344,7 +345,7 @@ export default function HeroFilm({ cmsData, sectionId }: { cmsData?: any, sectio
                       fontSize: `${norm.style.button.fontSize}rem`,
                       ...getButtonStyle(slide.buttonStyle || "luxury", slide.textColor, slide.buttonBgColor, slide.buttonTextColor), 
                       pointerEvents: "auto",
-                      opacity: slide.buttonStyle === "luxury" ? 0.6 : 1 
+                      opacity: slide.buttonStyle === "luxury" ? 0.6 : undefined 
                     }}
                     draggable={false}
                     onClick={e => isPreviewMode && e.preventDefault()}

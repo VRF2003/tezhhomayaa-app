@@ -211,18 +211,18 @@ export function CampaignSectionsEditor({ campaignId, initialSections }: Props) {
                   <input type="hidden" name={`sections[${index}].slug`} value={sec.slug} />
                   <input type="hidden" name={`sections[${index}].sectionType`} value={sec.sectionType} />
                   <input type="hidden" name={`sections[${index}].contentItemId`} value={sec.contentItemId} />
-                  {(sec as any)._newContentTitle && <input type="hidden" name={`sections[${index}].newContentTitle`} value={(sec as any)._newContentTitle} />}
-                  {(sec as any)._newContentImageUrl && <input type="hidden" name={`sections[${index}].newContentImageUrl`} value={(sec as any)._newContentImageUrl} />}
-                  {(sec as any)._newContentCta1Label && <input type="hidden" name={`sections[${index}].newContentCta1Label`} value={(sec as any)._newContentCta1Label} />}
-                  {(sec as any)._newContentCta1Url && <input type="hidden" name={`sections[${index}].newContentCta1Url`} value={(sec as any)._newContentCta1Url} />}
-                  {(sec as any)._newContentCta2Label && <input type="hidden" name={`sections[${index}].newContentCta2Label`} value={(sec as any)._newContentCta2Label} />}
-                  {(sec as any)._newContentCta2Url && <input type="hidden" name={`sections[${index}].newContentCta2Url`} value={(sec as any)._newContentCta2Url} />}
-                  {(sec as any)._newContentCta3Label && <input type="hidden" name={`sections[${index}].newContentCta3Label`} value={(sec as any)._newContentCta3Label} />}
-                  {(sec as any)._newContentCta3Url && <input type="hidden" name={`sections[${index}].newContentCta3Url`} value={(sec as any)._newContentCta3Url} />}
-                  {(sec as any)._newContentButtonStyle && <input type="hidden" name={`sections[${index}].newContentButtonStyle`} value={(sec as any)._newContentButtonStyle} />}
-                  {(sec as any)._newContentButtonBgColor && <input type="hidden" name={`sections[${index}].newContentButtonBgColor`} value={(sec as any)._newContentButtonBgColor} />}
-                  {(sec as any)._newContentButtonTextColor && <input type="hidden" name={`sections[${index}].newContentButtonTextColor`} value={(sec as any)._newContentButtonTextColor} />}
-                  {(sec as any)._newContentTextColor && <input type="hidden" name={`sections[${index}].newContentTextColor`} value={(sec as any)._newContentTextColor} />}
+                  {(sec as any)._newContentTitle !== undefined && <input type="hidden" name={`sections[${index}].newContentTitle`} value={(sec as any)._newContentTitle} />}
+                  {(sec as any)._newContentImageUrl !== undefined && <input type="hidden" name={`sections[${index}].newContentImageUrl`} value={(sec as any)._newContentImageUrl} />}
+                  {(sec as any)._newContentCta1Label !== undefined && <input type="hidden" name={`sections[${index}].newContentCta1Label`} value={(sec as any)._newContentCta1Label} />}
+                  {(sec as any)._newContentCta1Url !== undefined && <input type="hidden" name={`sections[${index}].newContentCta1Url`} value={(sec as any)._newContentCta1Url} />}
+                  {(sec as any)._newContentCta2Label !== undefined && <input type="hidden" name={`sections[${index}].newContentCta2Label`} value={(sec as any)._newContentCta2Label} />}
+                  {(sec as any)._newContentCta2Url !== undefined && <input type="hidden" name={`sections[${index}].newContentCta2Url`} value={(sec as any)._newContentCta2Url} />}
+                  {(sec as any)._newContentCta3Label !== undefined && <input type="hidden" name={`sections[${index}].newContentCta3Label`} value={(sec as any)._newContentCta3Label} />}
+                  {(sec as any)._newContentCta3Url !== undefined && <input type="hidden" name={`sections[${index}].newContentCta3Url`} value={(sec as any)._newContentCta3Url} />}
+                  {(sec as any)._newContentButtonStyle !== undefined && <input type="hidden" name={`sections[${index}].newContentButtonStyle`} value={(sec as any)._newContentButtonStyle} />}
+                  {(sec as any)._newContentButtonBgColor !== undefined && <input type="hidden" name={`sections[${index}].newContentButtonBgColor`} value={(sec as any)._newContentButtonBgColor} />}
+                  {(sec as any)._newContentButtonTextColor !== undefined && <input type="hidden" name={`sections[${index}].newContentButtonTextColor`} value={(sec as any)._newContentButtonTextColor} />}
+                  {(sec as any)._newContentTextColor !== undefined && <input type="hidden" name={`sections[${index}].newContentTextColor`} value={(sec as any)._newContentTextColor} />}
                   {((sec as any)._newContentDesktopX !== undefined) && <input type="hidden" name={`sections[${index}].newContentDesktopX`} value={(sec as any)._newContentDesktopX} />}
                   {((sec as any)._newContentDesktopY !== undefined) && <input type="hidden" name={`sections[${index}].newContentDesktopY`} value={(sec as any)._newContentDesktopY} />}
                   {((sec as any)._newContentMobileX !== undefined) && <input type="hidden" name={`sections[${index}].newContentMobileX`} value={(sec as any)._newContentMobileX} />}

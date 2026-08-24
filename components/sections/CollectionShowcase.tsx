@@ -55,7 +55,7 @@ function CollectionCard({ item, sectionId, isEdgeToEdge = false, delay = 0, clas
 }
 
 function CardInner({ norm, isEdgeToEdge, aspectRatio, containerRef, handlePointerDown, isDragging, localPos, isPreviewMode, mounted }: any) {
-  const isMasonry = aspectRatio === "auto";
+  const isMasonry = aspectRatio === "auto" && !isEdgeToEdge;
   const [hoveredHotspot, setHoveredHotspot] = useState<number | null>(null);
   const hotspots = norm.hotspots || [];
 
@@ -252,7 +252,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
                 isEdgeToEdge={isEdgeToEdge} 
                 delay={i * 0.15} 
                 aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
-                className={`w-[85vw] flex-shrink-0 snap-center ${isEdgeToEdge ? "h-[60vh]" : "h-full"}`} 
+                className={`w-[85vw] flex-shrink-0 snap-center h-full`} 
               />
             ))}
           </div>
@@ -268,7 +268,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
               isEdgeToEdge={isEdgeToEdge} 
               delay={i * 0.15} 
               aspectRatio={isEdgeToEdge ? "auto" : "3/4"} 
-              className={isEdgeToEdge ? "md:h-[80vh]" : "h-full"} 
+              className="h-full" 
             />
           ))}
         </div>
@@ -312,7 +312,7 @@ export default function CollectionShowcase({ cmsData, sectionId }: { cmsData?: a
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </button>
           
-          <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 md:px-0 w-full gap-4 items-center sm:justify-center md:justify-start">
+          <div ref={scrollRef} className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 px-4 md:px-0 w-full gap-4 items-stretch sm:justify-center md:justify-start">
             {items.map((item: any, i: number) => (
               <CollectionCard 
                 key={item.id || i} 

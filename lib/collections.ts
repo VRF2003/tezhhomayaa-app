@@ -220,6 +220,28 @@ export async function getRelatedProducts(product: Product, count = 4): Promise<P
   return related.slice(0, count);
 }
 
+
+function getShopifyCollectionHandle(categoryKey: string): string | null {
+  const parts = categoryKey.split('/');
+  const lastPart = parts[parts.length - 1];
+  
+  if (lastPart === 'dresses-jumpsuits') return 'dresses-and-jumpsuits';
+  if (lastPart === 'pants-shorts') return 'pants-and-shorts';
+  if (lastPart === 'tops-shirts') return 'tops-and-shirts';
+  if (lastPart === 'trousers-shorts') return 'trousers-and-shorts';
+  if (lastPart === 'skirts') return 'skirts';
+  if (lastPart === 'shirts') return 'shirts';
+  if (lastPart === 't-shirts-polos') return 't-shirts-and-polos';
+  if (lastPart === 'coats-jackets') return 'coats-and-jackets';
+  
+  if (lastPart === 'sweatshirts' && categoryKey.includes('women')) return 't-shirts-and-sweatshirts';
+  if (lastPart === 'tracksuits-sweatshirts' && categoryKey.includes('men')) return 'tracksuit-and-sweatshirts';
+  
+  if (lastPart === 'bags') return 'bags';
+  
+  return null;
+}
+
 export async function getProductsByCategory(categoryKey: string): Promise<Product[]> {
   const merged = await getAllProducts();
   
@@ -227,7 +249,7 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
   const normalize = (str: string) => (str || "").toLowerCase().replace(/[^a-z0-9\/]+/g, '');
   const normKey = normalize(categoryKey);
 
-  const filtered = merged.filter((p) => {
+  let filtered = merged.filter((p) => {
     const pCat = normalize(p.category);
     
     // 1. Exact match
@@ -246,55 +268,31 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     return false;
   });
 
-  // Attempt to sort based on live Shopify Collection order
-  try {
-    const lastSegment = categoryKey.split('/').pop() || '';
-    
-    // Map our category keys to known live website Shopify collection handles
-    const handleMap: Record<string, string> = {
-      'tops-shirts': 'tops-and-shirts',
-      'dresses-jumpsuits': 'dresses-and-jumpsuits',
-      'pants-shorts': 'pants-and-shorts',
-      't-shirts-polos': 't-shirts-and-polos',
-      'coats-jackets': 'coats-and-jackets',
-      'tracksuits-sweatshirts': 'tracksuit-and-sweatshirts',
-      'trousers-shorts': 'trousers-and-shorts',
-      'women': 'women',
-      'men': 'men',
-      'skirts': 'skirts',
-      'shirts': 'shirts'
-    };
-
-    const shopifyHandle = handleMap[lastSegment] || lastSegment;
-    
-    const collectionData = await shopifyFetch({
-      query: getCollectionByHandleQuery,
-      variables: { handle: shopifyHandle }
-    });
-
-    if (collectionData?.collection?.products?.edges) {
-      const orderedIds = collectionData.collection.products.edges.map((e: any) => e.node.id);
-      if (orderedIds.length > 0) {
-        filtered.sort((a, b) => {
-          const idxA = orderedIds.indexOf(a.id);
-          const idxB = orderedIds.indexOf(b.id);
-          // If neither found in Shopify collection, keep original order
-          if (idxA === -1 && idxB === -1) return 0;
-          // If a is not in collection but b is, push a to bottom
-          if (idxA === -1) return 1;
-          if (idxB === -1) return -1;
-          return idxA - idxB;
-        });
+  // Attempt to fetch exact native order from Shopify Collection
+  const shopifyHandle = getShopifyCollectionHandle(categoryKey);
+  if (shopifyHandle) {
+    try {
+      const query = `query { collection(handle: "${shopifyHandle}") { products(first: 250) { edges { node { handle } } } } }`;
+      const data = await shopifyFetch({ query });
+      if (data?.collection?.products?.edges) {
+        const order = data.collection.products.edges.map((e: any) => e.node.handle);
+        
+        // Map the exact products from the collection, in exact order, bypassing tag filters
+        const collectionProducts = order
+          .map((slug: string) => merged.find(p => p.slug === slug))
+          .filter(Boolean) as Product[];
+          
+        if (collectionProducts.length > 0) {
+          return collectionProducts;
+        }
       }
+    } catch (err) {
+      console.error("Error fetching collection exact products", err);
     }
-  } catch (e) {
-    console.error("Failed to apply Shopify collection sort order:", e);
   }
-
   return filtered;
 }
 
-// Alias kept for any legacy consumer — delegates to the dynamic function.
 export async function productsByCategory(categoryKey: string): Promise<Product[]> {
   return await getProductsByCategory(categoryKey);
 }

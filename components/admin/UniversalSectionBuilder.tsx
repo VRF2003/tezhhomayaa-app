@@ -506,11 +506,11 @@ export function UniversalSectionBuilder({ data, onChange, viewMode, onMediaFiles
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             <div>
               <label style={{ fontSize: "0.75rem", display: "block", marginBottom: "0.5rem" }}>Entry Animation</label>
-              <select value={norm.animation?.type} onChange={e => updateDeep("animation", "", "type", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
+              <select value={norm.animation?.type} onChange={e => update("animation", "type", e.target.value)} style={{ width: "100%", padding: "0.8rem", border: "1px solid #ccc9c4" }}>
                 <option value="none">None</option><option value="fade">Fade In</option><option value="slide-up">Slide Up</option><option value="slide-left">Slide Left</option><option value="slide-right">Slide Right</option><option value="zoom">Zoom</option>
               </select>
             </div>
-            <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Duration (s)</span><span>{norm.animation?.duration}</span></label><input type="range" min="0.1" max="3" step="0.1" value={norm.animation?.duration} onChange={e => updateDeep("animation", "", "duration", Number(e.target.value))} style={{ width: "100%" }} /></div>
+            <div><label style={{ fontSize: "0.75rem", display: "flex", justifyContent: "space-between" }}><span>Duration (s)</span><span>{norm.animation?.duration}</span></label><input type="range" min="0.1" max="3" step="0.1" value={norm.animation?.duration} onChange={e => update("animation", "duration", Number(e.target.value))} style={{ width: "100%" }} /></div>
           </div>
         )}
 

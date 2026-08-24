@@ -8018,7 +8018,15 @@
           },
           "typographyOverrides": {
             "enabled": false
-          }
+          },
+          "productSequence": [
+            "imported_2",
+            "imported_69",
+            "imported_3",
+            "imported_4"
+          ],
+          "includeProducts": [],
+          "excludeProducts": []
         },
         "women/ready-to-wear/pants-shorts": {
           "content": {
@@ -8203,7 +8211,12 @@
           "typographyOverrides": {
             "enabled": false
           },
-          "productSequence": [],
+          "productSequence": [
+            "imported_0",
+            "imported_39",
+            "imported_40",
+            "imported_41"
+          ],
           "includeProducts": [],
           "excludeProducts": []
         },

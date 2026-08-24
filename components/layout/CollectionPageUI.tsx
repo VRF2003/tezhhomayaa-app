@@ -210,8 +210,7 @@ export default function CollectionPageUI({
       <main>
         <Navbar />
 
-        {/* Spacer for fixed header */}
-        <div style={{ height: "80px" }} aria-hidden="true" />
+        {/* Spacer removed so banner underlaps header */}
 
         {/* Editorial Banner */}
         <CollectionBanner

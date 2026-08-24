@@ -41,6 +41,34 @@ export function adaptPayload(type: string, payload: any): any {
           }
         ]
       };
+    case "HERO_BANNER":
+      return {
+        ...payload,
+        content: {
+          heading: payload.title || "",
+          description: payload.description || "",
+          primaryButton: {
+            label: payload.cta1Label || payload.primaryCta || "",
+            url: payload.cta1Url || payload.primaryCtaUrl || "#",
+            enabled: !!(payload.cta1Label || payload.primaryCta),
+            style: payload.buttonStyle || "luxury",
+            bgColor: payload.buttonBgColor || "",
+            textColor: payload.buttonTextColor || ""
+          },
+          secondaryButton: {
+            label: payload.cta2Label || payload.secondaryCta || "",
+            url: payload.cta2Url || payload.secondaryCtaUrl || "#",
+            enabled: !!(payload.cta2Label || payload.secondaryCta),
+            style: payload.buttonStyle || "luxury",
+            bgColor: payload.buttonBgColor || "",
+            textColor: payload.buttonTextColor || ""
+          }
+        },
+        layout: {
+          desktop: { x: payload.desktopX ?? 50, y: payload.desktopY ?? 50 },
+          mobile: { x: payload.mobileX ?? 50, y: payload.mobileY ?? 50 }
+        }
+      };
     default:
       return payload;
   }

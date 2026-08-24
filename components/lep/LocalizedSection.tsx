@@ -49,6 +49,7 @@ export default async function LocalizedSection({ slug, market, type, fallbackDat
 
     // 1. Convert pure LEP payload to the legacy layout component's exact needs.
     const cmsData = adaptPayload(type, variant.payload);
+    console.log(`\n\n\nLocalizedSection type=${type} cmsData:`, JSON.stringify(cmsData, null, 2), `\n\n\n`);
     
     // 2. Render the generic UI component using Server-Side Rendering
     return (
