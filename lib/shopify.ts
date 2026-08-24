@@ -160,6 +160,24 @@ export const getProductByHandleQuery = `
 `;
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Queries
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const getCollectionByHandleQuery = `
+  query getCollectionByHandle($handle: String!) {
+    collection(handle: $handle) {
+      products(first: 250) {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  }
+`;
+
+// ─────────────────────────────────────────────────────────────────────────────
 // Mutations (Cart)
 // ─────────────────────────────────────────────────────────────────────────────
 

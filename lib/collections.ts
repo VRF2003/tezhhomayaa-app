@@ -92,7 +92,7 @@ export const categoryMeta: Record<string, CategoryMeta> = {
   bags: { title: "Bags", subtitle: "The Signature Collection", bannerImage: "/images/category-bags.jpg", description: "Architecturally precise. Every bag is a study in proportion and restraint." },
 };
 
-import { shopifyFetch, getProductsQuery, getProductByHandleQuery } from '@/lib/shopify';
+import { shopifyFetch, getProductsQuery, getProductByHandleQuery, getCollectionByHandleQuery } from '@/lib/shopify';
 import { adaptShopifyProducts, adaptShopifyProduct } from '@/lib/shopifyAdapter';
 import { RepositoryResolver } from "@/lib/infrastructure/persistence/resolver/RepositoryResolver";
 import { IDocumentRepository } from "@/lib/content/repositories/IDocumentRepository";
@@ -258,7 +258,10 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
     // 2. Prefix match (e.g. 'men/ready-to-wear' loads 'men/ready-to-wear/shirts')
     if (pCat.startsWith(normKey + '/')) return true;
     
-    // 3. Special top-level fallback
+    // 3. Special substring match to allow /dresses to match women/ready-to-wear/dresses
+    if (pCat.endsWith('/' + normKey)) return true;
+    
+    // Special top-level fallback
     if (categoryKey === "bags" && pCat.includes("bags")) return true;
     if (categoryKey === "fragrances" && pCat.startsWith("fragrances")) return true;
     
@@ -287,7 +290,6 @@ export async function getProductsByCategory(categoryKey: string): Promise<Produc
       console.error("Error fetching collection exact products", err);
     }
   }
-  
   return filtered;
 }
 
